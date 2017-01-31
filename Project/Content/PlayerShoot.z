@@ -1,5 +1,8 @@
 class PlayerShoot : ZilchComponent
 {
+    [Property] var BulletDelay : Real = 1;
+    [Property] var BulletSpeed : Real = 1000;
+    var TimeUntilNextShot : Real = 0;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -7,11 +10,15 @@ class PlayerShoot : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        var mouseScreenPosition : Real2 = Zero.Mouse.ScreenPosition;
-        var mouseWorldPosition : Real3 = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(mouseScreenPosition, 0);
-        if(Zero.Keyboard.KeyIsDown(Keys.Space))
+        this.TimeUntilNextShot -= event.Dt;
+        var mouseScreenPosition = Zero.Mouse.ScreenPosition;
+        var mouseWorldPosition = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(mouseScreenPosition, 0);
+        if(Zero.Keyboard.KeyIsDown(Keys.Space) && this.TimeUntilNextShot <= 0)
         {
-            this.Space.CreateAtPosition(Archetype.Bullet, this.Owner.Transform.Translation + Real3(0, 1, 0));
+            this.TimeUntilNextShot = this.BulletDelay;
+            var shotAngle = Math.Normalize(mouseWorldPosition - this.Owner.Transform.Translation);
+            var bullet = this.Space.CreateAtPosition(Archetype.Bullet, this.Owner.Transform.Translation + shotAngle);
+            bullet.RigidBody.ApplyForce(shotAngle * this.BulletSpeed);
         }
     }
 }
