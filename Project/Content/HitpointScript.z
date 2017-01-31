@@ -3,6 +3,7 @@ class HitpointScript : ZilchComponent
     [Property]
     var PrivateHP : Integer = 5;
     
+    //Manipulates HP by accessing through other scripts
     var HP : Integer
     {
         get
