@@ -1,0 +1,25 @@
+80 character limit (enforce above property rule)
+
+Curly braces on the next line
+
+Comments above every function
+
+Naming conventions:
+
+Enum: ALL_CAPS
+Constant variables: ALL_CAPS
+Properties: StartWithCaps
+Parameters: lowerCase
+Local variables: lowerCase
+Archetype: nameArch
+Animation Asset: NameAnimframe.ext (PlayerWalk2.png)
+
+
+HEADER:
+/*
+Copyright © DigiPen SOMETHING SOMETHING LEGAL TERMS
+
+Author: Billy Bob Joe
+
+Description: The file that does the thing.
+*/
