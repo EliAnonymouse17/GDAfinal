@@ -1,0 +1,7 @@
+ContentLibrary = 
+{
+	string Name = "BIGTEAMPROJECT",
+	uint64 LibraryId = 5815de26cca4fe8c,
+	string SourceControlType = "",
+	bool ReadOnly = false,
+},

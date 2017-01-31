@@ -1,0 +1,23 @@
+class PlayerMove : ZilchComponent
+{
+    [Property] var MoveSpeed : Real = 10;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(Zero.Keyboard.KeyIsDown(Keys.Right) || Zero.Keyboard.KeyIsDown(Keys.D)) //if we press up, we should go up
+            this.Owner.Transform.Translation += Real3(this.MoveSpeed * event.Dt, 0, 0);
+            
+        if(Zero.Keyboard.KeyIsDown(Keys.Left) || Zero.Keyboard.KeyIsDown(Keys.A)) //down goes down
+            this.Owner.Transform.Translation -= Real3(this.MoveSpeed * event.Dt, 0, 0);
+            
+        if(Zero.Keyboard.KeyIsDown(Keys.Down) || Zero.Keyboard.KeyIsDown(Keys.S)) //left goes left
+            this.Owner.Transform.Translation -= Real3(0, this.MoveSpeed * event.Dt, 0);
+            
+        if(Zero.Keyboard.KeyIsDown(Keys.Up) || Zero.Keyboard.KeyIsDown(Keys.W)) //right goes right
+            this.Owner.Transform.Translation += Real3(0, this.MoveSpeed * event.Dt, 0);
+    }
+}
