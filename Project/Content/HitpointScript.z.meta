@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "HitpointScript",
+		uint64 ResourceId = 5814142bdadb515e,
+	},
+},

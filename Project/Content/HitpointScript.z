@@ -1,0 +1,32 @@
+class HitpointScript : ZilchComponent
+{
+    [Property]
+    var PrivateHP : Integer = 5;
+    
+    var HP : Integer
+    {
+        get
+        {
+            return this.PrivateHP;
+        }
+        
+        set
+        {
+            this.PrivateHP = value;
+            
+            if(this.PrivateHP <= 0)
+            {
+                this.Owner.Destroy();
+            }
+        }
+    }
+    
+    function Initialize(init : CogInitializer)
+    {
+        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+    }
+}

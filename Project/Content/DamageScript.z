@@ -1,0 +1,19 @@
+class DamageScript : ZilchComponent
+{
+    [Property]
+    var Damage : Integer = 1;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+}
+
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        if(event.OtherObject.HitpointScript == null) return;
+        
+        event.OtherObject.HitpointScript.HP -= this.Damage;
+        
+        this.Owner.Destroy();
+    }
+}
