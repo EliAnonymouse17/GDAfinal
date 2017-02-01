@@ -1,8 +1,25 @@
+/* ----------------------------------------------------------------------------
+** Team MagiDev
+** © 2017 DigiPen Institute of Technology, All Rights Reserved.
+**
+** DamageScript
+**
+** Author:
+** - Eli Miller
+**
+** Contributors:
+** - Nelson Athow
+** - Others?
+** --------------------------------------------------------------------------*/
+
 class PlayerShoot : ZilchComponent
 {
     [Property] var BulletDelay : Real = 1;
-    [Property] var BulletSpeed : Real = 1000;
+    [Property] var BulletSpeed : Real = 200;
+    [Property] var BulletType : Archetype = Archetype.Bullet;
+    
     var TimeUntilNextShot : Real = 0;
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -17,7 +34,7 @@ class PlayerShoot : ZilchComponent
         {
             this.TimeUntilNextShot = this.BulletDelay;
             var shotAngle = Math.Normalize(mouseWorldPosition - this.Owner.Transform.Translation);
-            var bullet = this.Space.CreateAtPosition(Archetype.Bullet, this.Owner.Transform.Translation + shotAngle);
+            var bullet = this.Space.CreateAtPosition(this.BulletType, this.Owner.Transform.Translation + shotAngle);
             bullet.RigidBody.ApplyForce(shotAngle * this.BulletSpeed);
         }
     }
