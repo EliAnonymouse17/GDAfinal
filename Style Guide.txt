@@ -16,10 +16,15 @@ Animation Asset: NameAnimframe.ext (PlayerWalk2.png)
 
 
 HEADER:
-/*
-Copyright © DigiPen SOMETHING SOMETHING LEGAL TERMS
-
-Author: Billy Bob Joe
-
-Description: The file that does the thing.
-*/
+/* ----------------------------------------------------------------------------
+** Team MagiDev
+** © 2017 DigiPen Institute of Technology, All Rights Reserved.
+**
+** FILE NAME
+**
+** Author:
+** - StudentName
+**
+** Contributors:
+** - <list in same format as author if applicable>
+** --------------------------------------------------------------------------*/
