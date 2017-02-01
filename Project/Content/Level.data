@@ -175,6 +175,8 @@ Level =
 		},
 		PlayerShoot = 
 		{
+			float BulletDelay = 1,
+			float BulletSpeed = 1000,
 		},
 		BoxCollider = 
 		{
@@ -257,6 +259,10 @@ Level =
 			bool Inherit2DMode = true,
 			Vec3 Velocity = [0, 0, 0],
 			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		HitpointScript = 
+		{
+			int PrivateHP = 3,
 		},
 		Hierarchy = 
 		{
