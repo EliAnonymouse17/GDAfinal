@@ -3,6 +3,6 @@ TextContent =
 	ZilchScriptBuilder = 
 	{
 		string Name = "Spawner",
-		uint64 ResourceId = 5814160122e1a0e7,
+		uint64 ResourceId = 58ee52a856cdfcc2,
 	},
 },
