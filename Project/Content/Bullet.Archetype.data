@@ -15,7 +15,7 @@ Cog =
 	Transform = 
 	{
 		Vec3 Translation = [0, 0, 0],
-		Vec3 Scale = [1, 1, 1],
+		Vec3 Scale = [2, 2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -28,7 +28,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "5274db4c2e7c11f9:Circle",
+		string SpriteSource = "58169686fd37cdcb:Texture_PlayerBasicProjectile",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -44,7 +44,7 @@ Cog =
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "4e740859314e5515:DefaultGroup",
 		Vec3 Offset = [0, 0, 0],
-		float Radius = 0.5,
+		float Radius = 0.25,
 	},
 	RigidBody = 
 	{
