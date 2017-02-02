@@ -268,6 +268,16 @@ Level =
 		{
 			int PrivateHP = 3,
 		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 1, 0],
+			Vec3 UpVector = [0, 1, 0],
+			Vec3 ForwardVector = [0, 0, 1],
+			OrientationBases DefaultBases = ForwardZUpY,
+		},
+		PointTowardsPlayer = 
+		{
+		},
 		Hierarchy = 
 		{
 		},
