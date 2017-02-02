@@ -1,7 +1,23 @@
+/* ----------------------------------------------------------------------------
+** Team MagiDev
+** © 2017 DigiPen Institute of Technology, All Rights Reserved.
+**
+** PlayerShoot.z
+**
+** Author:
+** - Eli
+**
+** Contributors:
+** - none
+** --------------------------------------------------------------------------*/
+
+enum ShotPatternID {SINGLE, TRIPLE}
+
 class PlayerShoot : ZilchComponent
 {
     [Property] var BulletDelay : Real = 1;
     [Property] var BulletSpeed : Real = 1000;
+    [Property] var ShotPattern : ShotPatternID = ShotPatternID.SINGLE;
     var TimeUntilNextShot : Real = 0;
     function Initialize(init : CogInitializer)
     {
@@ -13,12 +29,11 @@ class PlayerShoot : ZilchComponent
         this.TimeUntilNextShot -= event.Dt;
         var mouseScreenPosition = Zero.Mouse.ScreenPosition;
         var mouseWorldPosition = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(mouseScreenPosition, 0);
-        if(Zero.Keyboard.KeyIsDown(Keys.Space) && this.TimeUntilNextShot <= 0)
+        var shotAngle = Math.Normalize(mouseWorldPosition - this.Owner.Transform.Translation);
+        if(Zero.Mouse.IsButtonDown(MouseButtons.Left) && this.TimeUntilNextShot <= 0)
         {
             this.TimeUntilNextShot = this.BulletDelay;
-            var shotAngle = Math.Normalize(mouseWorldPosition - this.Owner.Transform.Translation);
-            var bullet = this.Space.CreateAtPosition(Archetype.Bullet, this.Owner.Transform.Translation + shotAngle);
-            bullet.RigidBody.ApplyForce(shotAngle * this.BulletSpeed);
+            this.Owner.Shoot.Shoot(this.BulletSpeed, shotAngle, this.ShotPattern);
         }
     }
 }

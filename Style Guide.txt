@@ -1,4 +1,4 @@
-80 character limit (enforce above property rule)
+100 character limit
 
 Curly braces on the next line
 
@@ -12,11 +12,12 @@ Properties: StartWithCaps
 Parameters: lowerCase
 Local variables: lowerCase
 Archetype: nameArch
-Animation Asset: NameAnimframe.ext (PlayerWalk2.png)
+Animation Asset: Frame_NameAnimframe.ext (Frame_PlayerWalk2.png)
+Asset: Type_Name.ext (Texture_Player.png)
 
 
 HEADER:
-/* ----------------------------------------------------------------------------
+/* --------------------------------------------------------------------------------------------------
 ** Team MagiDev
 ** © 2017 DigiPen Institute of Technology, All Rights Reserved.
 **
@@ -27,4 +28,10 @@ HEADER:
 **
 ** Contributors:
 ** - <list in same format as author if applicable>
-** --------------------------------------------------------------------------*/
+**
+** Description:
+** - Thing that it does
+** - Possibly another thing that it does
+**
+**      10        20        30        40        50        60        70        80        90       100
+** -----------------------------------------------------------------------------------------------*/
