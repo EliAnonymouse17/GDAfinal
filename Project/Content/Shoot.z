@@ -8,17 +8,20 @@
 ** - Eli
 **
 ** Contributors:
-** - none
+** - Nelson
 ** --------------------------------------------------------------------------*/
 //      10        20        30        40        50        60        70        80        90       100
 class Shoot : ZilchComponent
 {
+    [Property]
+    var BulletType : Archetype = Archetype.Bullet;
+    
     function Shoot(bulletSpeed : Real, angle : Real3, shotPattern : ShotPatternID)
     {
         if(shotPattern == ShotPatternID.SINGLE)
         {
             var bulletPos = this.Owner.Transform.Translation + angle;
-            var bullet = this.Space.CreateAtPosition(Archetype.Bullet, bulletPos);
+            var bullet = this.Space.CreateAtPosition(this.BulletType, bulletPos);
             bullet.RigidBody.ApplyForce(angle * bulletSpeed);
         }
         if(shotPattern == ShotPatternID.TRIPLE)
@@ -28,7 +31,7 @@ class Shoot : ZilchComponent
                 var radAngle = Math.ATan2(angle.X, angle.Y) - (i-1)*(Math.Pi/6); //atan2 returns a radian -pi to pi for any normalized vector.
                 var newAngle = Real3(Math.Sin(radAngle), Math.Cos(radAngle), 0);
                 var bulletPos = this.Owner.Transform.Translation + newAngle;
-                var bullet = this.Space.CreateAtPosition(Archetype.Bullet, bulletPos);
+                var bullet = this.Space.CreateAtPosition(this.BulletType, bulletPos);
                 bullet.RigidBody.ApplyForce(newAngle * bulletSpeed);
             }
         }
