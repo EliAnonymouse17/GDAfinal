@@ -1,0 +1,51 @@
+/* --------------------------------------------------------------------------------------------------
+** Team MagiDev
+** © 2017 DigiPen Institute of Technology, All Rights Reserved.
+**
+** PlayerFade.z
+**
+** Author:
+** - Nelson Athow
+**
+** Contributors:
+** - None
+**
+** Description:
+** Changes player collision group to a collision group that only interacts with default.
+** Changes back to normal collision after timer is up.
+** --------------------------------------------------------------------------*/
+//      10        20        30        40        50        60        70        80        90       100
+class PlayerFade : ZilchComponent
+{
+    var Cooldown : Real = 2;
+    var TimeLeft : Real = 0;
+    var FadeDuration : Real = 1;
+    var FadeIsActive : Boolean = false;
+    var Duration : Real = 0;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.TimeLeft -= event.Dt;
+        if (this.FadeIsActive)
+        {
+            this.Duration -= event.Dt;
+        }
+        
+        if (Zero.Mouse.IsButtonDown(MouseButtons.Right) && this.TimeLeft <= 0)
+        {
+            this.Owner.BoxCollider.CollisionGroup = CollisionGroup.PlayerFaded;
+            this.Duration = this.FadeDuration;
+            this.FadeIsActive = true;
+        }
+        if (this.Duration <= 0)
+        {
+            this.Owner.BoxCollider.CollisionGroup = CollisionGroup.Player;
+            this.FadeIsActive = false;
+            this.Duration = this.FadeDuration;
+        }
+    }
+}
