@@ -185,7 +185,7 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "581ea65048dd782f:Player",
+			string SerializedGroupName = "580e65c5299c6b69:Player",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
@@ -256,7 +256,7 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "581e906709ff328a:enemy.CollisionGroup",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
@@ -294,7 +294,7 @@ Level =
 		},
 		Shoot = 
 		{
-			string BulletType = "581e906709ff51f6:EnemyBullet.Archetype",
+			string BulletType = "580e65c5299defb0:EnemyBullet",
 		},
 		Hierarchy = 
 		{
@@ -599,7 +599,7 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "581e906709ff328a:enemy.CollisionGroup",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
@@ -637,7 +637,7 @@ Level =
 		},
 		Shoot = 
 		{
-			string BulletType = "581e906709ff51f6:EnemyBullet.Archetype",
+			string BulletType = "580e65c5299defb0:EnemyBullet",
 		},
 		Hierarchy = 
 		{
@@ -683,7 +683,7 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "581e906709ff328a:enemy.CollisionGroup",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
@@ -721,7 +721,7 @@ Level =
 		},
 		Shoot = 
 		{
-			string BulletType = "581e906709ff51f6:EnemyBullet.Archetype",
+			string BulletType = "580e65c5299defb0:EnemyBullet",
 		},
 		Hierarchy = 
 		{
@@ -767,7 +767,7 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "581e906709ff328a:enemy.CollisionGroup",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
@@ -805,7 +805,7 @@ Level =
 		},
 		Shoot = 
 		{
-			string BulletType = "581e906709ff51f6:EnemyBullet.Archetype",
+			string BulletType = "580e65c5299defb0:EnemyBullet",
 		},
 		Hierarchy = 
 		{
@@ -851,7 +851,7 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "581e906709ff328a:enemy.CollisionGroup",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
@@ -889,7 +889,7 @@ Level =
 		},
 		Shoot = 
 		{
-			string BulletType = "581e906709ff51f6:EnemyBullet.Archetype",
+			string BulletType = "580e65c5299defb0:EnemyBullet",
 		},
 		Hierarchy = 
 		{
@@ -935,7 +935,7 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "581e906709ff328a:enemy.CollisionGroup",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
@@ -973,7 +973,7 @@ Level =
 		},
 		Shoot = 
 		{
-			string BulletType = "581e906709ff51f6:EnemyBullet.Archetype",
+			string BulletType = "580e65c5299defb0:EnemyBullet",
 		},
 		Hierarchy = 
 		{
