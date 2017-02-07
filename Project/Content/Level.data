@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [1.14708, 4.86714, 50],
+			Vec3 Translation = [-0.334535, 0.803468, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [1.14708, 4.86714, 9.13855e-008],
+			Vec3 LookTarget = [-0.334535, 0.803468, 9.13855e-008],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -339,7 +339,7 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "Sprite",
+			string Name = "Wall",
 		},
 		Transform = 
 		{
@@ -371,7 +371,7 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			string SerializedGroupName = "58e6c97efdcaf1f5:Wall",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
@@ -396,7 +396,7 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "Sprite",
+			string Name = "Wall",
 		},
 		Transform = 
 		{
@@ -428,7 +428,7 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			string SerializedGroupName = "58e6c97efdcaf1f5:Wall",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
@@ -453,7 +453,7 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "Sprite",
+			string Name = "Wall",
 		},
 		Transform = 
 		{
@@ -485,7 +485,7 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			string SerializedGroupName = "58e6c97efdcaf1f5:Wall",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
@@ -510,7 +510,7 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "Sprite",
+			string Name = "Wall",
 		},
 		Transform = 
 		{
@@ -542,7 +542,7 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
+			string SerializedGroupName = "58e6c97efdcaf1f5:Wall",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
