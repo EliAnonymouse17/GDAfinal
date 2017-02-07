@@ -37,14 +37,14 @@ class PlayerFade : ZilchComponent
         
         if (Zero.Mouse.IsButtonDown(MouseButtons.Right) && this.TimeLeft <= 0)
         {
-            this.Owner.BoxCollider.CollisionGroup = CollisionGroup.PlayerFaded;
+            this.Owner.BoxCollider.CollisionGroup = CollisionGroup.Find("PlayerFaded");
             this.Owner.Sprite.SpriteSource = SpriteSource.Find("Circle");
             this.Duration = this.FadeDuration;
             this.FadeIsActive = true;
         }
         if (this.Duration <= 0)
         {
-            this.Owner.BoxCollider.CollisionGroup = CollisionGroup.Player;
+            this.Owner.BoxCollider.CollisionGroup = CollisionGroup.Find("Player");
             this.FadeIsActive = false;
             this.Owner.Sprite.SpriteSource = SpriteSource.Find("Square");
             this.Duration = this.FadeDuration;
