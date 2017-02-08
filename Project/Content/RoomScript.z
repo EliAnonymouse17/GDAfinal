@@ -1,5 +1,7 @@
 enum EnemyTypeID {BASIC, TRIPLESHOT}
 
+enum Directions {UP, DOWN, RIGHT, LEFT}
+
 class Enemy
 {
     var Position : Real3;
@@ -63,6 +65,7 @@ class RoomScript : ZilchComponent
     var CurrentRoom : Room;
     var Map : Array[Array[Array[Enemy]]];
     var MapPosition : Real2;
+    var MapDimensions : Real = 3;
     
     function Initialize(init : CogInitializer)
     {
@@ -77,10 +80,10 @@ class RoomScript : ZilchComponent
     function InitMap() : Array[Array[Array[Enemy]]]
     {
         var map = new Array[Array[Array[Enemy]]]();
-        for(var i = 0; i < 3; ++i)
+        for(var i = 0; i < this.MapDimensions; ++i)
         {
             map.Add(new Array[Array[Enemy]]());
-            for(var j = 0; j < 3; ++j)
+            for(var j = 0; j < this.MapDimensions; ++j)
             {
                 map[i].Add(new Array[Enemy]());
                 for(var k = 0; k < i+j+1; ++k)
@@ -97,10 +100,53 @@ class RoomScript : ZilchComponent
         var empty = this.CurrentRoom.Decrement();
         if(empty)
         {
-            //this.MapPosition += Real2(0, 1);
-            //this.CurrentRoom = new Room(this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer]);
-            //this.CurrentRoom.InitRoom(this.Space);
-            
+            foreach(var door in this.Space.FindAllObjectsByName("Door"))
+            {
+                var posCheck = this.MapPosition;
+                if(door.Door.Direction == Directions.RIGHT)
+                {
+                    posCheck += Real2(1, 0);
+                }
+                else if(door.Door.Direction == Directions.LEFT)
+                {
+                    posCheck += Real2(-1, 0);
+                }
+                else if(door.Door.Direction == Directions.UP)
+                {
+                    posCheck += Real2(0, -1);
+                }
+                else if(door.Door.Direction == Directions.DOWN)
+                {
+                    posCheck += Real2(0, 1);
+                }
+                if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1)
+                {
+                    door.Door.SetActive();
+                }
+            }
         }
+    }
+    
+    function NextRoom(direction : Directions)
+    {
+        if(direction == Directions.RIGHT)
+        {
+            this.MapPosition += Real2(1, 0);
+        }
+        else if(direction == Directions.LEFT)
+        {
+            this.MapPosition += Real2(-1, 0);
+        }
+        else if(direction == Directions.UP)
+        {
+            this.MapPosition += Real2(0, -1);
+        }
+        else if(direction == Directions.DOWN)
+        {
+            this.MapPosition += Real2(0, 1);
+        }
+        this.CurrentRoom = new Room(this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer]);
+        this.CurrentRoom.InitRoom(this.Space);
+        Console.WriteLine("Moving to ", this.MapPosition.X, ",", this.MapPosition.Y);
     }
 }
