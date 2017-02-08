@@ -28,7 +28,6 @@ class HitpointScript : ZilchComponent
         set
         {
             this.PrivateHP = value;
-            
             if(this.PrivateHP <= 0)
             {
                 if(this.Owner.Name == "Enemy")
