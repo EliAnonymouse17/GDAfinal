@@ -29,7 +29,6 @@ class EnemyShoot : ZilchComponent
         var radianRotation = Math.ToRadians(this.Owner.Transform.Rotation.Z);
         var shotAngle = Real3(Math.Sin(radianRotation), Math.Cos(radianRotation), 0);
         var forward = this.Owner.Orientation.WorldForward;
-        
         if(this.TimeUntilNextShot <= 0)
         {
             this.TimeUntilNextShot = this.BulletDelay;

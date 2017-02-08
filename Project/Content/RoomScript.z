@@ -1,0 +1,106 @@
+enum EnemyTypeID {BASIC, TRIPLESHOT}
+
+class Enemy
+{
+    var Position : Real3;
+    var Sprite : SpriteSource;
+    var ShotType : ShotPatternID;
+    var AIScript : String;
+    constructor(enemyType : EnemyTypeID, position : Real3)
+    {
+        this.Position = position;
+        if(enemyType == EnemyTypeID.BASIC)
+        {
+            this.Sprite = SpriteSource.Square;
+            this.ShotType = ShotPatternID.SINGLE;
+            this.AIScript = "PointTowardsPlayer";
+        }
+        else if(enemyType == EnemyTypeID.BASIC)
+        {
+            this.Sprite = SpriteSource.Square;
+            this.ShotType = ShotPatternID.TRIPLE;
+            this.AIScript = "PointTowardsPlayer";
+        }
+    }
+}
+
+class Room
+{
+    var Enemies : Array[Enemy];
+    var NumEnemies : Integer;
+    
+    constructor(enemies : Array[Enemy])
+    {
+        this.NumEnemies = enemies.Count;
+        this.Enemies = new Array[Enemy](this.NumEnemies);
+        for(var i = 0; i < this.NumEnemies; ++i)
+        {
+            this.Enemies[i] = enemies[i];
+        }
+    }
+    
+    function Decrement() : Boolean
+    {
+        this.NumEnemies -=1;
+        return(this.NumEnemies == 0);
+    }
+    
+    function InitRoom(space : Space)
+    {
+        for(var i = 0; i < this.NumEnemies; ++i)
+        {
+            var currentEnemy = space.CreateAtPosition(Archetype.Enemy, this.Enemies[i].Position);
+            currentEnemy.AddComponentByName(this.Enemies[i].AIScript);
+            currentEnemy.Sprite.SpriteSource = this.Enemies[i].Sprite;
+            currentEnemy.EnemyShoot.ShotPattern = this.Enemies[i].ShotType;
+        }
+    }
+}
+
+class RoomScript : ZilchComponent
+{
+    var CurrentEnemyList : Array[Enemy];
+    var CurrentRoom : Room;
+    var Map : Array[Array[Array[Enemy]]];
+    var MapPosition : Real2;
+    
+    function Initialize(init : CogInitializer)
+    {
+        this.Map = this.InitMap();
+        this.MapPosition = Real2(0, 0);
+        this.CurrentEnemyList = new Array[Enemy]();
+        this.CurrentEnemyList.Add(new Enemy(EnemyTypeID.BASIC, Real3(-7, 7.5, 0)));
+        this.CurrentRoom = new Room(this.CurrentEnemyList);
+        Zero.Connect(this.Space, Events.EnemyDeathEvent, this.OnEnemyDeath);
+    }
+    
+    function InitMap() : Array[Array[Array[Enemy]]]
+    {
+        var map = new Array[Array[Array[Enemy]]]();
+        for(var i = 0; i < 3; ++i)
+        {
+            map.Add(new Array[Array[Enemy]]());
+            for(var j = 0; j < 3; ++j)
+            {
+                map[i].Add(new Array[Enemy]());
+                for(var k = 0; k < i+j+1; ++k)
+                {
+                    map[i][j].Add(new Enemy(EnemyTypeID.BASIC, Real3(-8+(3*k), 7.5, 0)));
+                }
+            }
+        }
+        return map;
+    }
+
+    function OnEnemyDeath(event : ZilchEvent)
+    {
+        var empty = this.CurrentRoom.Decrement();
+        if(empty)
+        {
+            //this.MapPosition += Real2(0, 1);
+            //this.CurrentRoom = new Room(this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer]);
+            //this.CurrentRoom.InitRoom(this.Space);
+            
+        }
+    }
+}

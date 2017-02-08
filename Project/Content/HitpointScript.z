@@ -8,11 +8,12 @@
 ** - Bar Ben-zvi
 **
 ** Contributors:
-** - None
+** - Eli
 ** --------------------------------------------------------------------------*/
 
 class HitpointScript : ZilchComponent
 {
+    sends EnemyDeathEvent : Event;
     [Property]
     var PrivateHP : Integer = 5;
     
@@ -30,17 +31,12 @@ class HitpointScript : ZilchComponent
             
             if(this.PrivateHP <= 0)
             {
+                if(this.Owner.Name == "Enemy")
+                {
+                    this.Space.DispatchEvent(Events.EnemyDeathEvent, ZilchEvent());
+                }
                 this.Owner.Destroy();
             }
         }
-    }
-    
-    function Initialize(init : CogInitializer)
-    {
-        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
-    }
-
-    function OnLogicUpdate(event : UpdateEvent)
-    {
     }
 }
