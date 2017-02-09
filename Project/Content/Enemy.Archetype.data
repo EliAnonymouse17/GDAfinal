@@ -79,6 +79,9 @@ Cog =
 		Vec3 ForwardVector = [0, 1, 0],
 		OrientationBases DefaultBases = ForwardYUpZ,
 	},
+	PointTowardsPlayer = 
+	{
+	},
 	Hierarchy = 
 	{
 	},
