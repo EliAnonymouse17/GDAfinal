@@ -34,6 +34,6 @@ class PlayerMove : ZilchComponent
         if(Zero.Keyboard.KeyIsDown(Keys.Up) || Zero.Keyboard.KeyIsDown(Keys.W)) //right goes right
             toAdd += Real3(0, this.MoveSpeed * event.Dt, 0);
             
-        this.Owner.RigidBody.ApplyForce(toAdd);
+        this.Owner.RigidBody.Velocity = toAdd;
     }
 }

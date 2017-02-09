@@ -129,6 +129,7 @@ class RoomScript : ZilchComponent
     
     function NextRoom(direction : Directions)
     {
+        this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer] = new Array[Enemy]();
         if(direction == Directions.RIGHT)
         {
             this.MapPosition += Real2(1, 0);
@@ -147,7 +148,6 @@ class RoomScript : ZilchComponent
         }
         this.CurrentRoom = new Room(this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer]);
         this.CurrentRoom.InitRoom(this.Space);
-        Console.WriteLine("Moving to ", this.MapPosition.X, ",", this.MapPosition.Y);
         foreach(var door in this.Space.FindAllObjectsByName("Door"))
         {
             door.Door.SetActive(false);

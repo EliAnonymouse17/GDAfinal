@@ -1,0 +1,15 @@
+class Score : ZilchComponent
+{
+    var Score : Integer = 0;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.EnemyDeathEvent, this.OnEnemyDeath);
+    }
+
+    function OnEnemyDeath(event : ZilchEvent)
+    {
+        ++this.Score;
+        this.Owner.SpriteText.Text = "`this.Score`";
+    }
+}
