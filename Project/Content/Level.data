@@ -167,7 +167,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.0295143, 0.0444493, 0],
+			Vec3 Translation = [0.0133206, 0.0444493, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -676,7 +676,7 @@ Level =
 		},
 		BoxCollider = 
 		{
-			bool Ghost = false,
+			bool Ghost = true,
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
@@ -686,7 +686,7 @@ Level =
 		},
 		RigidBody = 
 		{
-			bool Static = false,
+			bool Static = true,
 			bool Asleep = false,
 			bool Kinematic = false,
 			bool RotationLocked = false,
@@ -737,7 +737,7 @@ Level =
 		},
 		BoxCollider = 
 		{
-			bool Ghost = false,
+			bool Ghost = true,
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
@@ -747,7 +747,7 @@ Level =
 		},
 		RigidBody = 
 		{
-			bool Static = false,
+			bool Static = true,
 			bool Asleep = false,
 			bool Kinematic = false,
 			bool RotationLocked = false,
@@ -798,7 +798,7 @@ Level =
 		},
 		BoxCollider = 
 		{
-			bool Ghost = false,
+			bool Ghost = true,
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
@@ -808,7 +808,7 @@ Level =
 		},
 		RigidBody = 
 		{
-			bool Static = false,
+			bool Static = true,
 			bool Asleep = false,
 			bool Kinematic = false,
 			bool RotationLocked = false,
@@ -859,7 +859,7 @@ Level =
 		},
 		BoxCollider = 
 		{
-			bool Ghost = false,
+			bool Ghost = true,
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
@@ -869,7 +869,7 @@ Level =
 		},
 		RigidBody = 
 		{
-			bool Static = false,
+			bool Static = true,
 			bool Asleep = false,
 			bool Kinematic = false,
 			bool RotationLocked = false,

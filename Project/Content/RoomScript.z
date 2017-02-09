@@ -121,7 +121,7 @@ class RoomScript : ZilchComponent
                 }
                 if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1)
                 {
-                    door.Door.SetActive();
+                    door.Door.SetActive(true);
                 }
             }
         }
@@ -148,5 +148,9 @@ class RoomScript : ZilchComponent
         this.CurrentRoom = new Room(this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer]);
         this.CurrentRoom.InitRoom(this.Space);
         Console.WriteLine("Moving to ", this.MapPosition.X, ",", this.MapPosition.Y);
+        foreach(var door in this.Space.FindAllObjectsByName("Door"))
+        {
+            door.Door.SetActive(false);
+        }
     }
 }

@@ -5,23 +5,21 @@ class Door : ZilchComponent
     
     function Initialize(init : CogInitializer)
     {
-        Zero.Connect(this.Space, Events.CollisionStarted, this.OnCollisionStarted);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
     }
 
     function OnCollisionStarted(event : CollisionEvent)
     {
-        Console.WriteLine("Collision with door", this.Direction);
         if(event.OtherObject.Name == "Player" && this.Active)
         {
             this.Space.FindObjectByName("Room").RoomScript.NextRoom(this.Direction);
-            this.Owner.Sprite.Visible = false;
-            this.Active = false;
         }
     }
     
-    function SetActive()
+    function SetActive(b : Boolean)
     {
-        this.Owner.Sprite.Visible = true;
-        this.Active = true;
+        this.Owner.Sprite.Visible = b;
+        this.Active = b;
+        this.Owner.BoxCollider.Ghost = !b;
     }
 }
