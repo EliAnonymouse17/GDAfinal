@@ -308,41 +308,6 @@ Level =
 				},
 				Named = 
 				{
-					string Name = "FadeCooldown",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [-18.4989, 7.87515, 20],
-					Vec3 Scale = [2, 1, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Sprite = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [0, 0, 1, 0.6],
-					BlendMode BlendMode = Alpha,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string SpriteSource = "5275aa4d802dd6dc:Square",
-					bool RenderMask = false,
-					bool FlipX = false,
-					bool FlipY = false,
-					bool AnimationActive = true,
-					float AnimationSpeed = 1,
-					uint StartFrame = 0,
-				},
-			},
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 7,
-				},
-				Named = 
-				{
 					string Name = "SpriteText",
 				},
 				Transform = 
@@ -372,13 +337,89 @@ Level =
 				{
 				},
 			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 7,
+				},
+				Named = 
+				{
+					string Name = "FadeCooldownParent",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-19.6096, 7.87515, 20],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = false,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+				HUDFadeCooldown = 
+				{
+				},
+				Hierarchy = 
+				{
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 8,
+						},
+						Named = 
+						{
+							string Name = "FadeCooldown",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [1.5, 0, 0],
+							Vec3 Scale = [3, 1, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						Sprite = 
+						{
+							bool Visible = true,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [0, 0, 1, 0.6],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string SpriteSource = "5275aa4d802dd6dc:Square",
+							bool RenderMask = false,
+							bool FlipX = false,
+							bool FlipY = false,
+							bool AnimationActive = true,
+							float AnimationSpeed = 1,
+							uint StartFrame = 0,
+						},
+					},
+				},
+			},
 		},
 	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 8,
+			uint Id = 9,
 		},
 		Named = 
 		{
@@ -435,7 +476,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 9,
+			uint Id = 10,
 		},
 		Named = 
 		{
@@ -492,7 +533,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 10,
+			uint Id = 11,
 		},
 		Named = 
 		{
@@ -549,7 +590,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 11,
+			uint Id = 12,
 		},
 		Named = 
 		{
@@ -607,7 +648,7 @@ Level =
 		string Name = "58e6b86cc88e7f69:Enemy",
 		LinkId = 
 		{
-			uint Id = 12,
+			uint Id = 13,
 		},
 		Transform = 
 		{
@@ -624,7 +665,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 13,
+			uint Id = 14,
 		},
 		Named = 
 		{
@@ -644,7 +685,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 14,
+			uint Id = 15,
 		},
 		Named = 
 		{
@@ -705,7 +746,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 15,
+			uint Id = 16,
 		},
 		Named = 
 		{
@@ -766,7 +807,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 16,
+			uint Id = 17,
 		},
 		Named = 
 		{
@@ -827,7 +868,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 17,
+			uint Id = 18,
 		},
 		Named = 
 		{

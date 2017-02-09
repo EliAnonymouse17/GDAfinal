@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "HUDFadeCooldown",
+		uint64 ResourceId = 5819e68d8d3098a1,
+	},
+},
