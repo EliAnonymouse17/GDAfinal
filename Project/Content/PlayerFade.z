@@ -35,7 +35,7 @@ class PlayerFade : ZilchComponent
             this.Duration -= event.Dt;
         }
         
-        if (Zero.Mouse.IsButtonDown(MouseButtons.Right) && this.TimeLeft <= 0)
+        if (Zero.Keyboard.KeyIsPressed(Keys.Space) && this.TimeLeft <= 0)
         {
             this.Owner.BoxCollider.CollisionGroup = CollisionGroup.Find("PlayerFaded");
             this.Owner.Sprite.SpriteSource = SpriteSource.Find("Circle");
