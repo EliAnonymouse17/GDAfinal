@@ -44,7 +44,7 @@ class Room
     function Decrement() : Boolean
     {
         this.NumEnemies -=1;
-        return(this.NumEnemies == 0);
+        return(this.NumEnemies <= 0);
     }
     
     function InitRoom(space : Space)
@@ -148,9 +148,14 @@ class RoomScript : ZilchComponent
         }
         this.CurrentRoom = new Room(this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer]);
         this.CurrentRoom.InitRoom(this.Space);
+        this.Space.FindObjectByName("Player").Transform.Translation = Real3(0, 0, 0);
         foreach(var door in this.Space.FindAllObjectsByName("Door"))
         {
             door.Door.SetActive(false);
+        }
+        if(this.CurrentRoom.NumEnemies == 0)
+        {
+            this.OnEnemyDeath(ZilchEvent());
         }
     }
 }
