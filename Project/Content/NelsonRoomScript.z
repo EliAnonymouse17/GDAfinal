@@ -1,0 +1,16 @@
+class NelsonRoomScript : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+    }
+
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        if(event.OtherObject.Name == "Player")
+        {
+            var enemy = this.Space.CreateAtPosition(Archetype.Enemy, Real3(-7,-7,0));
+        }
+    }
+}
