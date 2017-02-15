@@ -2,6 +2,7 @@ class NelsonRoomScript : ZilchComponent
 {
     var Enemy : Cog;
     var Door : Cog;
+    var RoomBeaten : Boolean = false;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -10,7 +11,7 @@ class NelsonRoomScript : ZilchComponent
 
     function OnCollisionStarted(event : CollisionEvent)
     {
-        if(event.OtherObject.Name == "Player")
+        if(event.OtherObject.Name == "Player" && this.RoomBeaten == false)
         {
             this.Enemy = this.Space.CreateAtPosition(Archetype.Enemy, Real3(-7,-7,0));
             this.Door = this.Space.FindObjectByName("NelsonDoor1");
@@ -18,6 +19,7 @@ class NelsonRoomScript : ZilchComponent
             this.Door.BoxCollider.Ghost = false;
             this.Door.NelsonDoor.IsLocked = true;
             this.Space.FindObjectByName("HideRoom").Destroy();
+            this.RoomBeaten = true;
         }
     }
     
