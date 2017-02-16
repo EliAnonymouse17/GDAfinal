@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "Minimap",
+		uint64 ResourceId = 58230e87131fa786,
+	},
+},
