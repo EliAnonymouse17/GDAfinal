@@ -13,7 +13,7 @@ class Enemy
         this.Position = position;
         if(enemyType == EnemyTypeID.BASIC)
         {
-            this.Sprite = SpriteSource.Square;
+            this.Sprite = SpriteSource.Texture_SkeletonStill;
             this.ShotType = ShotPatternID.SINGLE;
             this.AIScript = "PointTowardsPlayer";
         }
