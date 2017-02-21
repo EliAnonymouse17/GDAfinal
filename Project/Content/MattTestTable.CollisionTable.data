@@ -2,6 +2,7 @@ CollisionTable =
 {
 	Array RegisteredGroups = 
 	[
+		"58298afcb83a18af:Item",
 		"4e740859314e5515:DefaultGroup",
 		"580e65c5299c4df4:PlayerFaded",
 		"580e65c5299dde20:Enemy",

@@ -36,6 +36,10 @@ class HitpointScript : ZilchComponent
                 }
                 this.Owner.Destroy();
             }
+            if(this.Owner.Name == "Player" && this.PrivateHP > 6)
+            {
+                this.PrivateHP = 6;
+            }
         }
     }
 }
