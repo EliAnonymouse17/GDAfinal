@@ -26,7 +26,7 @@ class HUDFadeCooldown : ZilchComponent
     {
         var player = this.Space.FindObjectByName("Player");
         
-        if(player.PlayerFade == null)
+        if(player == null || player.PlayerFade == null)
         {
             return;
         }

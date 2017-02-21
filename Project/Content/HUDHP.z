@@ -24,7 +24,7 @@ class HUDHP : ZilchComponent
         
         var player = this.Space.FindObjectByName("Player");
         
-        if(player.HitpointScript == null)
+        if(player == null || player.HitpointScript == null)
         {
             return;
         }
