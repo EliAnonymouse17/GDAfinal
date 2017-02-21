@@ -64,13 +64,13 @@ class RoomScript : ZilchComponent
     var CurrentEnemyList : Array[Enemy];
     var CurrentRoom : Room;
     var Map : Array[Array[Array[Enemy]]];
-    var MapPosition : Real2;
-    var MapDimensions : Real = 3;
+    var MapPosition : Integer2;
+    var MapDimensions : Integer = 3;
     
     function Initialize(init : CogInitializer)
     {
         this.Map = this.InitMap();
-        this.MapPosition = Real2(0, 0);
+        this.MapPosition = Integer2(0, 0);
         this.CurrentEnemyList = new Array[Enemy]();
         this.CurrentEnemyList.Add(new Enemy(EnemyTypeID.BASIC, Real3(-7, 7.5, 0)));
         this.CurrentRoom = new Room(this.CurrentEnemyList);
@@ -105,19 +105,19 @@ class RoomScript : ZilchComponent
                 var posCheck = this.MapPosition;
                 if(door.Door.Direction == Directions.RIGHT)
                 {
-                    posCheck += Real2(1, 0);
+                    posCheck += Integer2(1, 0);
                 }
                 else if(door.Door.Direction == Directions.LEFT)
                 {
-                    posCheck += Real2(-1, 0);
+                    posCheck += Integer2(-1, 0);
                 }
                 else if(door.Door.Direction == Directions.UP)
                 {
-                    posCheck += Real2(0, -1);
+                    posCheck += Integer2(0, -1);
                 }
                 else if(door.Door.Direction == Directions.DOWN)
                 {
-                    posCheck += Real2(0, 1);
+                    posCheck += Integer2(0, 1);
                 }
                 if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1)
                 {
@@ -129,22 +129,22 @@ class RoomScript : ZilchComponent
     
     function NextRoom(direction : Directions)
     {
-        this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer] = new Array[Enemy]();
+        this.Map[this.MapPosition.X][this.MapPosition.Y] = new Array[Enemy]();
         if(direction == Directions.RIGHT)
         {
-            this.MapPosition += Real2(1, 0);
+            this.MapPosition += Integer2(1, 0);
         }
         else if(direction == Directions.LEFT)
         {
-            this.MapPosition += Real2(-1, 0);
+            this.MapPosition += Integer2(-1, 0);
         }
         else if(direction == Directions.UP)
         {
-            this.MapPosition += Real2(0, -1);
+            this.MapPosition += Integer2(0, -1);
         }
         else if(direction == Directions.DOWN)
         {
-            this.MapPosition += Real2(0, 1);
+            this.MapPosition += Integer2(0, 1);
         }
         this.CurrentRoom = new Room(this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer]);
         this.CurrentRoom.InitRoom(this.Space);

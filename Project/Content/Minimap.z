@@ -18,14 +18,20 @@ class Minimap : ZilchComponent
     
     function Initialize(init : CogInitializer)
     {
-        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
-    }
-
-    function OnLogicUpdate(event : UpdateEvent)
-    {
+        this.MMArray = this.InitMinimap(this.Space.FindObjectByName("Room").RoomScript.MapDimensions);
     }
     
-    function InitMap(dimensions : Integer) : Array[Array[MMNode]]
+    function SetNodeState(nodePos : Integer2, newState : MMNodeState)
+    {
+        this.MMArray[nodePos.X][nodePos.Y].State = newState;
+    }
+    
+    function GetNodeState(nodePos : Integer2) : MMNodeState
+    {
+        return this.MMArray[nodePos.X][nodePos.Y].State;
+    }
+    
+    function InitMinimap(dimensions : Integer) : Array[Array[MMNode]]
     {
         var miniMap = new Array[Array[MMNode]]();
         for(var i = 0; i < dimensions; ++i)
@@ -33,7 +39,7 @@ class Minimap : ZilchComponent
             miniMap.Add(new Array[MMNode]());
             for(var j = 0; j < dimensions; ++j)
             {
-                miniMap[i][j] = new MMNode(MMNodeState.Unknown, this.Space, this.Owner, this.Owner.Transform.Translation);
+                miniMap[i].Add(new MMNode(MMNodeState.Unknown, this.Space, this.Owner, this.Owner.Transform.Translation));
             }
         }
         return miniMap;
