@@ -1,5 +1,21 @@
+enum MMNodeState {Unknown, Unexplored, Current, Complete, Boss}
+
+class MMNode
+{
+    var State : MMNodeState;
+    var Object : Cog;
+    constructor(state : MMNodeState, space : Space, minimap : Cog, position : Real3)
+    {
+        this.State = state;
+        this.Object = space.CreateAtPosition(Archetype.MinimapNode, position);
+        this.Object.AttachTo(minimap);
+    }
+}
+
 class Minimap : ZilchComponent
 {
+    var MMArray : Array[Array[MMNode]] = new Array[Array[MMNode]]();
+    
     function Initialize(init : CogInitializer)
     {
         //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -9,8 +25,17 @@ class Minimap : ZilchComponent
     {
     }
     
-    function InitMinimap(dimensions : Real)
+    function InitMap(dimensions : Integer) : Array[Array[MMNode]]
     {
-        
+        var miniMap = new Array[Array[MMNode]]();
+        for(var i = 0; i < dimensions; ++i)
+        {
+            miniMap.Add(new Array[MMNode]());
+            for(var j = 0; j < dimensions; ++j)
+            {
+                miniMap[i][j] = new MMNode(MMNodeState.Unknown, this.Space, this.Owner, this.Owner.Transform.Translation);
+            }
+        }
+        return miniMap;
     }
 }
