@@ -8,7 +8,7 @@
 ** - Bar Ben-zvi
 **
 ** Contributors:
-** - Eli
+** - Eli, Nelson
 ** --------------------------------------------------------------------------*/
 //      10        20        30        40        50        60        70        80        90       100
 class EnemyShoot : ZilchComponent
@@ -27,12 +27,11 @@ class EnemyShoot : ZilchComponent
     {
         this.TimeUntilNextShot -= event.Dt;
         var radianRotation = Math.ToRadians(this.Owner.Transform.Rotation.Z);
-        var shotAngle = Real3(Math.Sin(radianRotation), Math.Cos(radianRotation), 0);
-        var forward = this.Owner.Orientation.WorldForward;
+        var shotAngle = Math.Normalize(this.Space.FindObjectByName("Player").Transform.Translation - this.Owner.Transform.Translation);
         if(this.TimeUntilNextShot <= 0)
         {
             this.TimeUntilNextShot = this.BulletDelay;
-            this.Owner.Shoot.Shoot(this.BulletSpeed, forward, this.ShotPattern);
+            this.Owner.Shoot.Shoot(this.BulletSpeed, shotAngle, this.ShotPattern);
         }
     }
 }
