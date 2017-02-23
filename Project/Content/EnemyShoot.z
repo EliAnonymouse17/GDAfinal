@@ -27,6 +27,10 @@ class EnemyShoot : ZilchComponent
     {
         this.TimeUntilNextShot -= event.Dt;
         var radianRotation = Math.ToRadians(this.Owner.Transform.Rotation.Z);
+        if (this.Space.FindObjectByName("Player") == null)
+        {
+            return;
+        }
         var shotAngle = Math.Normalize(this.Space.FindObjectByName("Player").Transform.Translation - this.Owner.Transform.Translation);
         if(this.TimeUntilNextShot <= 0)
         {
