@@ -1,8 +1,0 @@
-TextContent = 
-{
-	ZilchScriptBuilder = 
-	{
-		string Name = "NelsonDoorScript",
-		uint64 ResourceId = 582655cd18438b3d,
-	},
-},

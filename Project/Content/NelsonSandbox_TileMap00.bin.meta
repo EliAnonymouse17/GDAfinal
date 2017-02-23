@@ -1,0 +1,12 @@
+BinaryContent = 
+{
+	BinaryBuilder = 
+	{
+		string Name = "NelsonSandbox_TileMap00",
+		uint64 ResourceId = 582a49b4d2251d2a,
+		string LoaderType = "TileMapSource",
+		uint Version = 0,
+		string FilterTag = "",
+		string ResourceOwner = "582a48d484c1723b:NelsonSandbox",
+	},
+},

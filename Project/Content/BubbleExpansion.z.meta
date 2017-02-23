@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "BubbleExpansion",
+		uint64 ResourceId = 582a4900cda43000,
+	},
+},

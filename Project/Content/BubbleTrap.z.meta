@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "BubbleTrap",
+		uint64 ResourceId = 582a51bee846c9f7,
+	},
+},
