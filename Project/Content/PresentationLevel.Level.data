@@ -135,7 +135,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 27.2532,
+			float Size = 24.6597,
 		},
 		EditorCameraController = 
 		{
@@ -804,7 +804,7 @@ Level =
 		},
 		TileMap = 
 		{
-			string SourceName = "58231a961ee6848b:Level_TileMap00",
+			string SourceName = "582a3fecff68550c:PresentationLevel_TileMap00",
 			string PaletteName = "5823179c8dceb415:StandardPalette",
 			float UnitsPerTile = 1,
 			float MeshThickness = 1.2,
