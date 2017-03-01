@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "SpellSwitchHandler",
+		uint64 ResourceId = 583d7c57838a2ebb,
+	},
+},

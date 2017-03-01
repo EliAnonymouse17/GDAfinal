@@ -135,7 +135,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 27.2532,
+			float Size = 36.7879,
 		},
 		EditorCameraController = 
 		{
@@ -230,6 +230,9 @@ Level =
 			int PrivateHP = 6,
 		},
 		PlayerFade = 
+		{
+		},
+		SpellSwitchHandler = 
 		{
 		},
 		Hierarchy = 
