@@ -46,6 +46,12 @@ class SpellSwitchHandler : ZilchComponent
         this.Owner.Shoot.BulletType = bulletType;
     }
     
+    //function SetSpellHUD(bulletSprite : SpriteSource, spellName : SpriteText)
+    //{
+    //    this.Owner.Camera.SpellHUD.SpellIcon.SpriteSource = bulletSprite;
+    //    this.Owner.Camera.SpellHUD.SpellName.SpriteText = spellName;
+    //}
+    
     function Initialize(init : CogInitializer)
     {
         this.SpellArray.Add(SpellTypes.BASIC);
