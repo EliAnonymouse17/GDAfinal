@@ -46,11 +46,17 @@ class SpellSwitchHandler : ZilchComponent
         this.Owner.Shoot.BulletType = bulletType;
     }
     
-    //function SetSpellHUD(bulletSprite : SpriteSource, spellName : SpriteText)
-    //{
-    //    this.Owner.Camera.SpellHUD.SpellIcon.SpriteSource = bulletSprite;
-    //    this.Owner.Camera.SpellHUD.SpellName.SpriteText = spellName;
-    //}
+    function SetSpellHUD(bulletSprite : SpriteSource, spellName : String)
+    {
+        var childCamera = this.Owner.FindChildByName("Camera");
+        
+        if(childCamera != null)
+        {
+            childCamera.FindChildByName("SpellHUD").FindChildByName("SpellIcon").Sprite.SpriteSource = bulletSprite;
+            childCamera.FindChildByName("SpellHUD").FindChildByName("SpellName").SpriteText.Text = spellName;
+        }
+        
+    }
     
     function Initialize(init : CogInitializer)
     {
@@ -68,11 +74,13 @@ class SpellSwitchHandler : ZilchComponent
             this.CurrentSpell = this.SpellArray.Get(this.PrivateSpellIndex);
             if(this.CurrentSpell == SpellTypes.BASIC)
             {
-                this.SetSpell(200, 1, Archetype.Bullet, ShotPatternID.SINGLE);
+                this.SetSpell(25, 1, Archetype.Bullet, ShotPatternID.SINGLE);
+                this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Magic Missile");
             }
             else if(this.CurrentSpell == SpellTypes.BUBBLETRAP)
             {
                 this.SetSpell(200, 1, Archetype.BubbleBullet, ShotPatternID.SINGLE);
+                this.SetSpellHUD(SpriteSource.Texture_BubbleBullet, "Bubble Trap");
             }
         }
     }

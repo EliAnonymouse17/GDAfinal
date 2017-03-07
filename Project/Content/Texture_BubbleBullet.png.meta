@@ -2,8 +2,8 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "Texture_PlayerBasicProjectile",
-		uint64 ResourceId = 58169686fd37cdcb,
+		string Name = "Texture_BubbleBullet",
+		uint64 ResourceId = 583a1b2cfe6b1569,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 32,
 		uint FrameSizeY = 32,

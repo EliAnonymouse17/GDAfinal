@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [16.5768, -0.00473876, 4.53751e-007],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [4, 4, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,11 +24,11 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [0, 0, 1, 0.5],
+		Vec4 Color = [1, 1, 1, 0.5],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "5274db4c2e7c11f9:Circle",
+		string SpriteSource = "583a1b2cfe6b1569:Texture_BubbleBullet",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,

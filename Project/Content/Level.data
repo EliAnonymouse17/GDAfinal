@@ -135,7 +135,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 18.05,
+			float Size = 26.9274,
 		},
 		EditorCameraController = 
 		{
@@ -196,7 +196,7 @@ Level =
 		PlayerShoot = 
 		{
 			float BulletDelay = 1,
-			float BulletSpeed = 200,
+			float BulletSpeed = 25,
 			Enum ShotPattern = TRIPLE,
 		},
 		BoxCollider = 
@@ -503,7 +503,7 @@ Level =
 								Transform = 
 								{
 									Vec3 Translation = [-0.0302734, 0, 1],
-									Vec3 Scale = [2, 2, 1],
+									Vec3 Scale = [1, 1, 1],
 									Quat Rotation = [0, 0, 0, 1],
 								},
 								Sprite = 
