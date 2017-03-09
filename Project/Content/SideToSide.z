@@ -1,0 +1,28 @@
+class SideToSide : ZilchComponent
+{
+    var Speed : Real = 5;
+    
+    var Right : Boolean = true;
+    
+    var Timer : Real = 0;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if (this.Right)
+            this.Owner.RigidBody.Velocity = Real3(1, 0, 0) * this.Speed;
+        else
+            this.Owner.RigidBody.Velocity = Real3(-1, 0, 0) * this.Speed;
+            
+        if (this.Timer >= 1)
+        {
+            this.Timer = 0;
+            this.Right = !this.Right;
+        }
+        this.Timer += event.Dt;
+    }
+}

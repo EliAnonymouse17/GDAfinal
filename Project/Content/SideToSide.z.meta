@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "SideToSide",
+		uint64 ResourceId = 58bc3bc8f96c28f8,
+	},
+},

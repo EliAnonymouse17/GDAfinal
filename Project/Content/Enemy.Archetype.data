@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-7, 7.5, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -78,6 +78,9 @@ Cog =
 		Vec3 UpVector = [0, 0, 1],
 		Vec3 ForwardVector = [0, 1, 0],
 		OrientationBases DefaultBases = ForwardYUpZ,
+	},
+	SideToSide = 
+	{
 	},
 	Hierarchy = 
 	{

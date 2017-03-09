@@ -15,13 +15,13 @@ class Enemy
         {
             this.Sprite = SpriteSource.Texture_SkeletonStill;
             this.ShotType = ShotPatternID.SINGLE;
-            this.AIScript = "PointTowardsPlayer";
+            this.AIScript = "SideToSide";
         }
         else if(enemyType == EnemyTypeID.BASIC)
         {
             this.Sprite = SpriteSource.Square;
             this.ShotType = ShotPatternID.TRIPLE;
-            this.AIScript = "PointTowardsPlayer";
+            this.AIScript = "SideToSide";
         }
     }
 }
