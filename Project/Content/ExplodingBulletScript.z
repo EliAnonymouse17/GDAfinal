@@ -1,5 +1,8 @@
 class ExplodingBulletScript : ZilchComponent
 {
+    [Property] 
+    var AngleOffset : Real = 90;
+    
     var Angle : Real = 0;
     function Initialize(init : CogInitializer)
     {
@@ -11,9 +14,16 @@ class ExplodingBulletScript : ZilchComponent
         for (var i = 0; i < 10; ++i)
         {
             this.Angle = Math.ATan2(0,0) - (i-1)*(Math.Pi/5);
-            var bullet = this.Space.CreateAtPosition(Archetype.Bullet, this.Owner.Transform.Translation);
+            var bullet = this.Space.CreateAtPosition(Archetype.Spike, this.Owner.Transform.Translation);
             var newAngle = Real3(Math.Sin(this.Angle), Math.Cos(this.Angle), 0);
+            newAngle = Math.Normalize(newAngle);
             bullet.RigidBody.ApplyForce(newAngle * 25);
+            
+            // calculate the angle of the firing vector in radians, apply angle offset
+            var fireAngle = Math.ATan2(newAngle.Y, newAngle.X) - Math.ToRadians(this.AngleOffset);
+            
+            // set the z rotation for this bullet
+            bullet.Transform.SetEulerAnglesXYZ(0, 0, fireAngle);
         }
         this.Owner.Destroy();
     }

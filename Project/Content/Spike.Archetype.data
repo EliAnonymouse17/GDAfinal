@@ -6,16 +6,16 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "ExplodingBullet",
+		string Name = "Bullet",
 	},
 	Archetyped = 
 	{
-		string Name = "5844b1f4b9428374:ExplodingBullet",
+		string Name = "5844c3d44bf7f043:Spike",
 	},
 	Transform = 
 	{
 		Vec3 Translation = [0, 0, 0],
-		Vec3 Scale = [2, 2, 1],
+		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -28,23 +28,13 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "5844c21540463a97:Texture_SpikeBall",
+		string SpriteSource = "5844c3b37b493413:SpikeAnim",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
 		bool AnimationActive = true,
 		float AnimationSpeed = 1,
 		uint StartFrame = 0,
-	},
-	SphereCollider = 
-	{
-		bool Ghost = false,
-		bool SendsMessages = true,
-		bool Seamless = true,
-		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-		string SerializedGroupName = "580e65c5299c3bbe:PlayerBullet",
-		Vec3 Offset = [0, 0, 0],
-		float Radius = 0.25,
 	},
 	RigidBody = 
 	{
@@ -58,7 +48,27 @@ Cog =
 		Vec3 Velocity = [0, 0, 0],
 		Vec3 AngularVelocity = [0, 0, 0],
 	},
-	ExplodingBulletScript = 
+	DamageScript = 
 	{
+		int Damage = 3,
+	},
+	MassOverride = 
+	{
+		bool Active = true,
+		float invMass = 71.4286,
+		Vec3 invInertiaX = [240.77, 0, 0],
+		Vec3 invInertiaY = [0, 575.264, 0],
+		Vec3 invInertiaZ = [0, 0, 281.03],
+		Vec3 LocalCenterOfMass = [0, 0, 0],
+	},
+	SphereCollider = 
+	{
+		bool Ghost = false,
+		bool SendsMessages = true,
+		bool Seamless = true,
+		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+		string SerializedGroupName = "580e65c5299c3bbe:PlayerBullet",
+		Vec3 Offset = [0, 0, 0],
+		float Radius = 0.15,
 	},
 },

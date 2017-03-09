@@ -90,7 +90,7 @@ class SpellSwitchHandler : ZilchComponent
             else if(this.CurrentSpell == SpellTypes.EXPLODINGBUllET)
             {
                 this.SetSpell(800, 5, Archetype.ExplodingBullet, ShotPatternID.SINGLE);
-                this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Exploding Shrapnel");
+                this.SetSpellHUD(SpriteSource.Texture_SpikeBall, "Exploding Shrapnel");
             }
         }
     }
