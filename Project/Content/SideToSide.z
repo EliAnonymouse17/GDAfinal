@@ -16,19 +16,18 @@ class SideToSide : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        if(this.Bubble == false)
+        if(this.Bubble == true) return;
+        
+        if (this.Right)
+            this.Owner.RigidBody.Velocity = Real3(1, 0, 0) * this.Speed;
+        else
+            this.Owner.RigidBody.Velocity = Real3(-1, 0, 0) * this.Speed;
+        
+        if (this.Timer >= 1)
         {
-            if (this.Right)
-                this.Owner.RigidBody.Velocity = Real3(1, 0, 0) * this.Speed;
-            else
-                this.Owner.RigidBody.Velocity = Real3(-1, 0, 0) * this.Speed;
-                
-            if (this.Timer >= 1)
-            {
-                this.Timer = 0;
-                this.Right = !this.Right;
-            }
-            this.Timer += event.Dt;
+            this.Timer = 0;
+            this.Right = !this.Right;
         }
+        this.Timer += event.Dt;
     }
 }

@@ -38,15 +38,13 @@ class BubbleTrap : ZilchComponent
         if(this.DespawnTimer <= 0)
         {
             event.OtherObject.SideToSide.Bubble = false;
+            
+            this.Owner.Destroy();
         }
     }
     
     function OnLogicUpdate(event : UpdateEvent)
     {
         this.DespawnTimer -= event.Dt;
-        if (this.DespawnTimer <= 0)
-        {
-            this.Owner.Destroy();
-        }
     }
 }
