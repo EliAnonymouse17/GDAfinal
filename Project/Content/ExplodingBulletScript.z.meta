@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "ExplodingBulletScript",
+		uint64 ResourceId = 5844aa33a93ed93c,
+	},
+},
