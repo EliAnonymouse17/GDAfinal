@@ -28,6 +28,8 @@ class BubbleTrap : ZilchComponent
     {
         
         event.OtherObject.RigidBody.Velocity = Real3(0, 0, 0);
+        event.OtherObject.SideToSide.Bubble = true;
+        event.OtherObject.SideToSide.BubbleTimer = 0.1;
     }
     
     function OnLogicUpdate(event : UpdateEvent)
