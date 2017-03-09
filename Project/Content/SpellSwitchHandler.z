@@ -15,7 +15,7 @@
 ** Changes back to normal collision after timer is up.
 ** --------------------------------------------------------------------------*/
 //      10        20        30        40        50        60        70        80        90       100
-enum SpellTypes {BASIC, BUBBLETRAP}
+enum SpellTypes {BASIC, BUBBLETRAP, EXPLODINGBUllET}
 class SpellSwitchHandler : ZilchComponent
 {
     var SpellArray : Array[SpellTypes] = Array[SpellTypes]();
@@ -37,6 +37,7 @@ class SpellSwitchHandler : ZilchComponent
         }
     }
     
+    // Sets all data for the Spell
     function SetSpell(bulletSpeed : Real, bulletDelay : Real, bulletType : Archetype, shotPattern : ShotPatternID)
     {
         this.Owner.PlayerShoot.BulletSpeed = bulletSpeed;
@@ -46,6 +47,7 @@ class SpellSwitchHandler : ZilchComponent
         this.Owner.Shoot.BulletType = bulletType;
     }
     
+    // Sets hud representation of spell
     function SetSpellHUD(bulletSprite : SpriteSource, spellName : String)
     {
         var childCamera = this.Owner.FindChildByName("Camera");
@@ -60,8 +62,10 @@ class SpellSwitchHandler : ZilchComponent
     
     function Initialize(init : CogInitializer)
     {
+        //Starting Spells Go here
         this.SpellArray.Add(SpellTypes.BASIC);
         this.SpellArray.Add(SpellTypes.BUBBLETRAP);
+        this.SpellArray.Add(SpellTypes.EXPLODINGBUllET);
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
 
@@ -70,6 +74,7 @@ class SpellSwitchHandler : ZilchComponent
         
         if (Zero.Keyboard.KeyIsPressed(Keys.Q))
         {
+            // Implementation of How spells work
             this.SpellIndex += 1;
             this.CurrentSpell = this.SpellArray.Get(this.PrivateSpellIndex);
             if(this.CurrentSpell == SpellTypes.BASIC)
@@ -81,6 +86,11 @@ class SpellSwitchHandler : ZilchComponent
             {
                 this.SetSpell(200, 1, Archetype.BubbleBullet, ShotPatternID.SINGLE);
                 this.SetSpellHUD(SpriteSource.Texture_BubbleBullet, "Bubble Trap");
+            }
+            else if(this.CurrentSpell == SpellTypes.EXPLODINGBUllET)
+            {
+                this.SetSpell(800, 5, Archetype.ExplodingBullet, ShotPatternID.SINGLE);
+                this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Exploding Shrapnel");
             }
         }
     }

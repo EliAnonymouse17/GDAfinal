@@ -1,5 +1,6 @@
 class ExplodingBulletScript : ZilchComponent
 {
+    var Angle : Real = 0;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
@@ -7,6 +8,13 @@ class ExplodingBulletScript : ZilchComponent
 
     function OnCollisionStarted(event : CollisionEvent)
     {
-        
+        for (var i = 0; i < 10; ++i)
+        {
+            this.Angle = Math.ATan2(0,0) - (i-1)*(Math.Pi/5);
+            var bullet = this.Space.CreateAtPosition(Archetype.Bullet, this.Owner.Transform.Translation);
+            var newAngle = Real3(Math.Sin(this.Angle), Math.Cos(this.Angle), 0);
+            bullet.RigidBody.ApplyForce(newAngle * 25);
+        }
+        this.Owner.Destroy();
     }
 }
