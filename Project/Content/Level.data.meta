@@ -2,8 +2,8 @@ DataContent =
 {
 	DataBuilder = 
 	{
-		string Name = "EliSandbox",
-		uint64 ResourceId = 583a236b358d9cc0,
+		string Name = "Level",
+		uint64 ResourceId = 554cea0f94af672f,
 		string LoaderType = "Level",
 		uint Version = 0,
 		bool ShowInEditor = true,
