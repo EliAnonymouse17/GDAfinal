@@ -26,25 +26,16 @@ class BubbleTrap : ZilchComponent
 
     function OnCollisionPersisted(event : CollisionEvent)
     {
-        if(event.OtherObject.SideToSide == null)
-        {
-            return;
-        }
-        
-        event.OtherObject.SideToSide.Bubble = true;
         
         event.OtherObject.RigidBody.Velocity = Real3(0, 0, 0);
-        
-        if(this.DespawnTimer <= 0)
-        {
-            event.OtherObject.SideToSide.Bubble = false;
-            
-            this.Owner.Destroy();
-        }
     }
     
     function OnLogicUpdate(event : UpdateEvent)
     {
         this.DespawnTimer -= event.Dt;
+        if (this.DespawnTimer <= 0)
+        {
+            this.Owner.Destroy();
+        }
     }
 }
