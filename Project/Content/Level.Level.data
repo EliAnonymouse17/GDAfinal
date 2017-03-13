@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.259565, 7.24632, 49.999],
+			Vec3 Translation = [5.70356, 1.27644, 49.999],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 13.3718,
+			float Size = 26.9275,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-0.259565, 7.24632, -0.000999441],
+			Vec3 LookTarget = [5.70356, 1.27644, -0.000999441],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -1036,6 +1036,24 @@ Level =
 		},
 		Hierarchy = 
 		{
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584d4ddb6f528990:SeekingBullet",
+		LinkId = 
+		{
+			uint Id = 23,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [16.6408, 2.97586, -0.000999451],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Bullet",
 		},
 	},
 },

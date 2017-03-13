@@ -1,0 +1,18 @@
+class SeekingBulletScript : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStart);
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnCollisionStart(event : CollisionEvent)
+    {
+        
+    }
+    
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.Owner.FindChildByName("SeekingDetector").RigidBody.Velocity = this.Owner.RigidBody.Velocity;
+    }
+}

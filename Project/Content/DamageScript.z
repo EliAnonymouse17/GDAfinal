@@ -15,6 +15,19 @@ class DamageScript : ZilchComponent
     [Property]
     var Damage : Integer = 1;
     
+    [Property]
+    var PRVHitCount : Integer = 1;
+    var HitCount : Integer
+    {
+        get {return this.PRVHitCount;}
+        
+        set
+        {
+            this.PRVHitCount -= 1;
+            if (this.PRVHitCount <= 0) {this.Owner.Destroy;}
+        }
+    }
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
@@ -30,6 +43,6 @@ class DamageScript : ZilchComponent
         
         event.OtherObject.HitpointScript.HP -= this.Damage;
         
-        this.Owner.Destroy();
+        this.HitCount -= 1;
     }
 }
