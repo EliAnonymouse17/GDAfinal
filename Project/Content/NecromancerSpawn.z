@@ -1,0 +1,30 @@
+class NecromancerSpawn : ZilchComponent
+{
+    [Property]
+    var SpawnDelay : Real = 5;
+    
+    [Property]
+    var EnemyToSpawn : Archetype = null;
+    
+    var SpawnPosition : Real3 = Real3();
+    
+    var Timer : Real = 3;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.Timer -= event.Dt;
+        
+        this.SpawnPosition = this.Owner.Transform.Translation;
+        if(this.Timer <= 0)
+        {
+            this.Space.CreateAtPosition(this.EnemyToSpawn, this.SpawnPosition);
+            
+            this.Timer = this.SpawnDelay;
+        }
+    }
+}
