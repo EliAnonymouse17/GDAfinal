@@ -90,32 +90,12 @@ Level =
 			int HilightInterval = 10,
 			bool FollowEditorCamera = false,
 		},
-		HUDCreator = 
-		{
-			string HUDLevel = "",
-			string SpaceArchetype = "554cea0f94af6dc4:Space",
-			CogPath PlayerRef = 
-			{
-				string Path = ":/Player",
-				bool ErrorOnResolveToNull = false,
-				bool ErrorOnPathCantCompute = false,
-				bool ErrorOnDirectLinkFail = false,
-				bool UpdateCogOnPathChange = true,
-				bool UpdatePathOnCogChange = true,
-				bool UpdateCogOnInitialize = true,
-				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 3,
-				CogPathPreference PathPreference0 = CogRelative,
-				CogPathPreference PathPreference1 = SpaceRelative,
-				CogPathPreference PathPreference2 = Absolute,
-			},
-		},
 	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 4,
+			uint Id = 3,
 		},
 		Named = 
 		{
@@ -123,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0.00259085, -0.0136303, 49.999],
+			Vec3 Translation = [2.3351, -0.195895, 49.999],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -135,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 29.7595,
+			float Size = 24.6597,
 		},
 		EditorCameraController = 
 		{
@@ -143,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0.00259085, -0.0136303, -0.000999027],
+			Vec3 LookTarget = [2.3351, -0.195895, -0.000999441],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -159,7 +139,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 3,
+			uint Id = 4,
 		},
 		Named = 
 		{
@@ -196,7 +176,7 @@ Level =
 		PlayerShoot = 
 		{
 			float BulletDelay = 1,
-			float BulletSpeed = 25,
+			float BulletSpeed = 200,
 			Enum ShotPattern = TRIPLE,
 		},
 		BoxCollider = 
@@ -503,7 +483,7 @@ Level =
 								Transform = 
 								{
 									Vec3 Translation = [-0.0302734, 0, 1],
-									Vec3 Scale = [1, 1, 1],
+									Vec3 Scale = [2, 2, 1],
 									Quat Rotation = [0, 0, 0, 1],
 								},
 								Sprite = 
@@ -885,12 +865,15 @@ Level =
 			Enum Direction = LEFT,
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "584d28f172acfcba:TMSquare",
 		LinkId = 
 		{
 			uint Id = 20,
+		},
+		Named = 
+		{
+			string Name = "BasicRoomTileMap",
 		},
 		Transform = 
 		{
@@ -898,9 +881,23 @@ Level =
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		MultiSprite = 
 		{
-			string Name = "BasicRoomTileMap",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+		},
+		TileMap = 
+		{
+			string SourceName = "58231a961ee6848b:Level_TileMap00",
+			string PaletteName = "5823179c8dceb415:StandardPalette",
+			float UnitsPerTile = 1,
+			float MeshThickness = 1.2,
 		},
 	},
 	Cog = 
@@ -925,11 +922,11 @@ Level =
 			bool VisibilityCulling = true,
 			bool VisibilityEvents = true,
 			bool CastShadows = false,
-			Vec4 Color = [1, 0, 0, 1],
+			Vec4 Color = [1, 1, 1, 1],
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5275aa4d802dd6dc:Square",
+			string SpriteSource = "582a276197a1d2f3:HeartTexture_000",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -949,6 +946,42 @@ Level =
 			string SerializedGroupName = "58298afcb83a18af:Item",
 			Vec3 Offset = [0, 0, 0],
 			Vec3 Size = [0.5, 0.5, 0.5],
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5812cd3d46ba25e2:Necromancer",
+		LinkId = 
+		{
+			uint Id = 22,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-2.14505, 7.5, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584d30a5b4310262:Zombie",
+		LinkId = 
+		{
+			uint Id = 23,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-5.4069, -4.83154, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
 		},
 	},
 },
