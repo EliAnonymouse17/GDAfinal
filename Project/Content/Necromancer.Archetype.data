@@ -6,7 +6,7 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "Necromancer",
+		string Name = "Enemy",
 	},
 	Archetyped = 
 	{
@@ -28,7 +28,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "58230430c7b3754c:Texture_SkeletonStill",
+		string SpriteSource = "5812ccbbee47ded7:Texture_NecromancerDown1",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -79,8 +79,10 @@ Cog =
 		Vec3 ForwardVector = [0, 1, 0],
 		OrientationBases DefaultBases = ForwardYUpZ,
 	},
-	SideToSide = 
+	NecromancerSpawn = 
 	{
+		float SpawnDelay = 5,
+		string EnemyToSpawn = "58e6b86cc88e7f69:Enemy",
 	},
 	Hierarchy = 
 	{

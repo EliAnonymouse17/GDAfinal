@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [5.70356, 1.27644, 49.999],
+			Vec3 Translation = [0.466662, 2.09538, 49.999],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 26.9275,
+			float Size = 27.2532,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [5.70356, 1.27644, -0.000999441],
+			Vec3 LookTarget = [0.466662, 2.09538, -0.000999441],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -948,19 +948,12 @@ Level =
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "5812cd3d46ba25e2:Necromancer",
 		LinkId = 
 		{
 			uint Id = 22,
-		},
-		Named = 
-		{
-			string Name = "Necromancer",
-		},
-		Archetyped = 
-		{
-			string Name = "5812cd3d46ba25e2:Necromancer",
 		},
 		Transform = 
 		{
@@ -968,215 +961,9 @@ Level =
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5812ccbbee47ded7:Texture_NecromancerDown1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "580e65c5299dde20:Enemy",
-			Vec3 Offset = [-0.05, 0, 0],
-			Vec3 Size = [0.375, 1, 0.5],
-		},
-		RigidBody = 
-		{
-			bool Static = false,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = true,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		HitpointScript = 
-		{
-			int PrivateHP = 15,
-		},
-		EnemyShoot = 
-		{
-			float BulletDelay = 4,
-			float BulletSpeed = 150,
-			Enum ShotPattern = TRIPLE,
-		},
-		Shoot = 
-		{
-			string BulletType = "580e65c5299defb0:EnemyBullet",
-		},
-		Orientation = 
-		{
-			Vec3 GlobalUp = [0, 1, 0],
-			Vec3 UpVector = [0, 0, 1],
-			Vec3 ForwardVector = [0, 1, 0],
-			OrientationBases DefaultBases = ForwardYUpZ,
-		},
-		NecromancerSpawn = 
-		{
-			float SpawnDelay = 5,
-			string EnemyToSpawn = "58e6b86cc88e7f69:Enemy",
-		},
-		Hierarchy = 
-		{
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 23,
-		},
 		Named = 
 		{
-			string Name = "Bullet",
-		},
-		Archetyped = 
-		{
-			string Name = "584d4ddb6f528990:SeekingBullet",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [16.6408, 2.97586, -0.000999451],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "58169686fd37cdcb:Texture_PlayerBasicProjectile",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		SphereCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "580e65c5299c3bbe:PlayerBullet",
-			Vec3 Offset = [0.01, -0.005, 0],
-			float Radius = 0.25,
-		},
-		RigidBody = 
-		{
-			bool Static = false,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = false,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		DamageScript = 
-		{
-			int Damage = 3,
-			int PRVHitCount = 3,
-		},
-		SeekingBulletScript = 
-		{
-		},
-		Hierarchy = 
-		{
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 24,
-				},
-				Named = 
-				{
-					string Name = "SeekingDetector",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0, 0, 0],
-					Vec3 Scale = [1, 1, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Sprite = 
-				{
-					bool Visible = false,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [1, 1, 1, 1],
-					BlendMode BlendMode = Alpha,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string SpriteSource = "5274db4c2e7c11f9:Circle",
-					bool RenderMask = false,
-					bool FlipX = false,
-					bool FlipY = false,
-					bool AnimationActive = true,
-					float AnimationSpeed = 1,
-					uint StartFrame = 0,
-				},
-				SphereCollider = 
-				{
-					bool Ghost = true,
-					bool SendsMessages = true,
-					bool Seamless = true,
-					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-					string SerializedGroupName = "580e65c5299c3bbe:PlayerBullet",
-					Vec3 Offset = [0, 0, 0],
-					float Radius = 4,
-				},
-				RigidBody = 
-				{
-					bool Static = false,
-					bool Asleep = false,
-					bool Kinematic = false,
-					bool RotationLocked = false,
-					bool Mode2D = true,
-					bool AllowSleep = true,
-					bool Inherit2DMode = true,
-					Vec3 Velocity = [0, 0, 0],
-					Vec3 AngularVelocity = [0, 0, 0],
-				},
-				MassOverride = 
-				{
-					bool Active = true,
-					float invMass = 15.2789,
-					Vec3 invInertiaX = [2.38733, 0, 0],
-					Vec3 invInertiaY = [0, 2.38733, 0],
-					Vec3 invInertiaZ = [0, 0, 2.38733],
-					Vec3 LocalCenterOfMass = [0, 0, 0],
-				},
-				SeekingDetectorScript = 
-				{
-				},
-			},
+			string Name = "Enemy",
 		},
 	},
 },

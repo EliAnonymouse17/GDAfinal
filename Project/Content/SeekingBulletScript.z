@@ -1,24 +1,29 @@
 /*
 class SeekingBulletScript : ZilchComponent
 {
+    var EnemyList : Array[CogNameRange];
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStart);
-        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
 
     function OnCollisionStart(event : CollisionEvent)
     {
-        if (event.OtherObject.Collider.CollisionGroup == CollisionGroup.DefaultGroup) {this.Owner.Destroy;}
-        if (this.Owner.FindChildByName("SeekingDetector").SeekingDetectorScript.NoEnemy) {this.Owner.Destroy();}
-        var enemyPos : Real3 = (this.Owner.FindChildByName("SeekingDetector").SeekingDetectorScript.FindEnemy) as Real3;
+        var nextEnemy : Cog = this.Owner;
+        var closestDistance : Real = 900;
+        this.EnemyList.Add(this.Space.FindAllObjectsByName("Enemy"));
+        for (var i = 0; i < this.EnemyList.Count; ++i)
+        {
+            if (Math.Distance(this.EnemyList.Get(i).Transform.Translation, this.Owner.Transform.Translation) < closestDistance)
+            {
+                
+            }
+        }
+        var enemyPos : Real3;
         var newAngle = Math.Normalize(enemyPos - this.Owner.Transform.Translation);
         this.Owner.RigidBody.ApplyForce(newAngle * 100);
     }
     
-    function OnLogicUpdate(event : UpdateEvent)
-    {
-        this.Owner.FindChildByName("SeekingDetector").RigidBody.Velocity = this.Owner.RigidBody.Velocity;
-    }
 }
 */
