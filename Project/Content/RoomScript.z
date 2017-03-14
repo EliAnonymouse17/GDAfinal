@@ -41,11 +41,6 @@ class Room
         }
     }
     
-    function Decrement() : Boolean
-    {
-        this.NumEnemies -=1;
-        return(this.NumEnemies <= 0);
-    }
     
     function InitRoom(space : Space)
     {
@@ -97,32 +92,35 @@ class RoomScript : ZilchComponent
 
     function OnEnemyDeath(event : ZilchEvent)
     {
-        var empty = this.CurrentRoom.Decrement();
-        if(empty)
+        var enemyCheck = 0;
+        foreach (var enemy in this.Space.FindAllObjectsByName("Enemy"))
         {
-            foreach(var door in this.Space.FindAllObjectsByName("Door"))
+            if(enemyCheck > 0)
+                return;
+            enemyCheck += 1;
+        }
+        foreach(var door in this.Space.FindAllObjectsByName("Door"))
+        {
+            var posCheck = this.MapPosition;
+            if(door.Door.Direction == Directions.RIGHT)
             {
-                var posCheck = this.MapPosition;
-                if(door.Door.Direction == Directions.RIGHT)
-                {
-                    posCheck += Integer2(1, 0);
-                }
-                else if(door.Door.Direction == Directions.LEFT)
-                {
-                    posCheck += Integer2(-1, 0);
-                }
-                else if(door.Door.Direction == Directions.UP)
-                {
-                    posCheck += Integer2(0, -1);
-                }
-                else if(door.Door.Direction == Directions.DOWN)
-                {
-                    posCheck += Integer2(0, 1);
-                }
-                if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1)
-                {
-                    door.Door.SetActive(true);
-                }
+                posCheck += Integer2(1, 0);
+            }
+            else if(door.Door.Direction == Directions.LEFT)
+            {
+                posCheck += Integer2(-1, 0);
+            }
+            else if(door.Door.Direction == Directions.UP)
+            {
+                posCheck += Integer2(0, -1);
+            }
+            else if(door.Door.Direction == Directions.DOWN)
+            {
+                posCheck += Integer2(0, 1);
+            }
+            if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1)
+            {
+                door.Door.SetActive(true);
             }
         }
     }
