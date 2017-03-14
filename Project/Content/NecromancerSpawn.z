@@ -17,6 +17,9 @@ class NecromancerSpawn : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
+        var room = this.Space.FindObjectByName("Room");
+        
+        
         this.Timer -= event.Dt;
         
         this.SpawnPosition = this.Owner.Transform.Translation;
@@ -25,6 +28,13 @@ class NecromancerSpawn : ZilchComponent
             this.Space.CreateAtPosition(this.EnemyToSpawn, this.SpawnPosition);
             
             this.Timer = this.SpawnDelay;
+            
+            if(room == null)
+            {
+                return;
+            }
+            
+            room.RoomScript.CurrentRoom.NumEnemies += 1;
         }
     }
 }
