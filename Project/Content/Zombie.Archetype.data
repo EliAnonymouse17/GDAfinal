@@ -10,11 +10,11 @@ Cog =
 	},
 	Archetyped = 
 	{
-		string Name = "58e6b86cc88e7f69:Enemy",
+		string Name = "584d30a5b4310262:Zombie",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-7, 7.5, 0],
+		Vec3 Translation = [4.7724, 2.81488, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,7 +24,7 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [1, 1, 1, 1],
+		Vec4 Color = [0, 1, 0, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -72,6 +72,9 @@ Cog =
 		Vec3 UpVector = [0, 0, 1],
 		Vec3 ForwardVector = [0, 1, 0],
 		OrientationBases DefaultBases = ForwardYUpZ,
+	},
+	BrainEaterScript = 
+	{
 	},
 	Hierarchy = 
 	{
