@@ -10,7 +10,7 @@ Cog =
 	},
 	Archetyped = 
 	{
-		string Name = "58e6b86cc88e7f69:Enemy",
+		string Name = "584d38bbc0e476d3:Skeleton",
 	},
 	Transform = 
 	{
@@ -76,7 +76,7 @@ Cog =
 	EnemyShoot = 
 	{
 		float BulletDelay = 1,
-		float BulletSpeed = 100,
+		float BulletSpeed = 150,
 		Enum ShotPattern = SINGLE,
 	},
 	SideToSide = 

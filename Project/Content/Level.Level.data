@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [2.3351, -0.195895, 49.999],
+			Vec3 Translation = [2.3351, -5.20236, 49.999],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 24.6597,
+			float Size = 33.2871,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [2.3351, -0.195895, -0.000999441],
+			Vec3 LookTarget = [2.3351, -5.20236, -0.000999441],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -585,7 +585,7 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "58e6b86cc88e7f69:Enemy",
+		string Name = "584d38bbc0e476d3:Skeleton",
 		LinkId = 
 		{
 			uint Id = 14,
