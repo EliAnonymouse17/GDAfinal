@@ -1,0 +1,39 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "BasicRoomTileMap",
+	},
+	Archetyped = 
+	{
+		string Name = "584d28f172acfcba:TMSquare",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [-1.61544, -1.39506, 0],
+		Vec3 Scale = [1, 1, 1],
+		Quat Rotation = [0, 0, 0, 1],
+	},
+	MultiSprite = 
+	{
+		bool Visible = true,
+		bool VisibilityCulling = true,
+		bool VisibilityEvents = true,
+		bool CastShadows = false,
+		Vec4 Color = [1, 1, 1, 1],
+		BlendMode BlendMode = Alpha,
+		SpriteGeometryMode GeometryMode = ZPlane,
+		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+	},
+	TileMap = 
+	{
+		string SourceName = "58231a961ee6848b:Level_TileMap00",
+		string PaletteName = "5823179c8dceb415:StandardPalette",
+		float UnitsPerTile = 1,
+		float MeshThickness = 1.2,
+	},
+},

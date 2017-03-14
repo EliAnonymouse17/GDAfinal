@@ -123,7 +123,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.57114, -0.597317, 49.999],
+			Vec3 Translation = [0.00259085, -0.0136303, 49.999],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -135,7 +135,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 19.9483,
+			float Size = 29.7595,
 		},
 		EditorCameraController = 
 		{
@@ -143,7 +143,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-0.57114, -0.597317, -0.000998999],
+			Vec3 LookTarget = [0.00259085, -0.0136303, -0.000999027],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -885,15 +885,12 @@ Level =
 			Enum Direction = LEFT,
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "584d28f172acfcba:TMSquare",
 		LinkId = 
 		{
 			uint Id = 20,
-		},
-		Named = 
-		{
-			string Name = "BasicRoomTileMap",
 		},
 		Transform = 
 		{
@@ -901,23 +898,9 @@ Level =
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		MultiSprite = 
+		Named = 
 		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		},
-		TileMap = 
-		{
-			string SourceName = "58231a961ee6848b:Level_TileMap00",
-			string PaletteName = "5823179c8dceb415:StandardPalette",
-			float UnitsPerTile = 1,
-			float MeshThickness = 1.2,
+			string Name = "BasicRoomTileMap",
 		},
 	},
 	Cog = 
