@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-14.3453, -2.93627, -0.000999451],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [0.5, 0.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -42,7 +42,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -51,6 +51,7 @@ Cog =
 	DamageScript = 
 	{
 		int Damage = 3,
+		int PRVHitCount = 1,
 	},
 	MassOverride = 
 	{

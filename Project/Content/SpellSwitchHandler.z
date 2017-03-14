@@ -72,11 +72,23 @@ class SpellSwitchHandler : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        
+        var keyPressed = Keys.A;
         if (Zero.Keyboard.KeyIsPressed(Keys.Q))
         {
+            keyPressed = Keys.Q;
+        }
+        else if (Zero.Keyboard.KeyIsPressed(Keys.E))
+        {
+            keyPressed = Keys.E;
+        }
+        if (keyPressed == Keys.E || keyPressed == Keys.Q)
+        {
             // Implementation of How spells work
-            this.SpellIndex += 1;
+            if (keyPressed == Keys.Q)
+            {
+                this.SpellIndex += 1;
+            }
+            else {this.SpellIndex -= 1;}
             this.CurrentSpell = this.SpellArray.Get(this.PrivateSpellIndex);
             if(this.CurrentSpell == SpellTypes.BASIC)
             {

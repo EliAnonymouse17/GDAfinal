@@ -20,7 +20,7 @@ Level =
 		},
 		DragEffect = 
 		{
-			bool Active = true,
+			bool Active = false,
 			bool WakeUpOnChange = false,
 			float Drag = 0.7,
 		},
@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [2.3351, -5.20236, 49.999],
+			Vec3 Translation = [3.19403, -0.194032, 49.999],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 33.2871,
+			float Size = 27.2531,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [2.3351, -5.20236, -0.000999441],
+			Vec3 LookTarget = [3.19403, -0.194032, -0.000999675],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -873,41 +873,6 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "BasicRoomTileMap",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-1.61544, -1.39506, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		MultiSprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		},
-		TileMap = 
-		{
-			string SourceName = "58231a961ee6848b:Level_TileMap00",
-			string PaletteName = "5823179c8dceb415:StandardPalette",
-			float UnitsPerTile = 1,
-			float MeshThickness = 1.2,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 21,
-		},
-		Named = 
-		{
 			string Name = "Heart Pickup",
 		},
 		Transform = 
@@ -953,7 +918,7 @@ Level =
 		string Name = "5812cd3d46ba25e2:Necromancer",
 		LinkId = 
 		{
-			uint Id = 22,
+			uint Id = 21,
 		},
 		Transform = 
 		{
@@ -971,7 +936,7 @@ Level =
 		string Name = "584d30a5b4310262:Zombie",
 		LinkId = 
 		{
-			uint Id = 23,
+			uint Id = 22,
 		},
 		Transform = 
 		{
@@ -982,6 +947,41 @@ Level =
 		Named = 
 		{
 			string Name = "Enemy",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 23,
+		},
+		Named = 
+		{
+			string Name = "TileMap",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, -1],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		MultiSprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+		},
+		TileMap = 
+		{
+			string SourceName = "584d497d7a0d7118:Level_TileMap05",
+			string PaletteName = "5823179c8dceb415:StandardPalette",
+			float UnitsPerTile = 2,
+			float MeshThickness = 1.2,
 		},
 	},
 },
