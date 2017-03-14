@@ -133,6 +133,9 @@ Cog =
 				Vec3 invInertiaZ = [0, 0, 2.38733],
 				Vec3 LocalCenterOfMass = [0, 0, 0],
 			},
+			SeekingDetectorScript = 
+			{
+			},
 		},
 	},
 },

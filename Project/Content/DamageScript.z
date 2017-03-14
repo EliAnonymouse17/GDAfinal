@@ -8,7 +8,7 @@
 ** - Bar Ben-zvi
 **
 ** Contributors:
-** - None
+** - Nelson Athow
 ** --------------------------------------------------------------------------*/
 class DamageScript : ZilchComponent
 {

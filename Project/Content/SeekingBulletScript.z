@@ -1,3 +1,4 @@
+/*
 class SeekingBulletScript : ZilchComponent
 {
     function Initialize(init : CogInitializer)
@@ -8,7 +9,11 @@ class SeekingBulletScript : ZilchComponent
 
     function OnCollisionStart(event : CollisionEvent)
     {
-        
+        if (event.OtherObject.Collider.CollisionGroup == CollisionGroup.DefaultGroup) {this.Owner.Destroy;}
+        if (this.Owner.FindChildByName("SeekingDetector").SeekingDetectorScript.NoEnemy) {this.Owner.Destroy();}
+        var enemyPos : Real3 = (this.Owner.FindChildByName("SeekingDetector").SeekingDetectorScript.FindEnemy) as Real3;
+        var newAngle = Math.Normalize(enemyPos - this.Owner.Transform.Translation);
+        this.Owner.RigidBody.ApplyForce(newAngle * 100);
     }
     
     function OnLogicUpdate(event : UpdateEvent)
@@ -16,3 +21,4 @@ class SeekingBulletScript : ZilchComponent
         this.Owner.FindChildByName("SeekingDetector").RigidBody.Velocity = this.Owner.RigidBody.Velocity;
     }
 }
+*/
