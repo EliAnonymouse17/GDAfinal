@@ -2,6 +2,8 @@ class BrainEaterScript : ZilchComponent
 {
     var Player : Cog;
     var AttackTimer : Real = 0;
+    var BubbleBool : Boolean = false;
+    var BubbleTimer : Real = 0;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -17,8 +19,16 @@ class BrainEaterScript : ZilchComponent
             playerPos = this.Player.Transform.Translation;
         }
         var angle = Math.Normalize(playerPos - this.Owner.Transform.Translation);
-        this.Owner.RigidBody.Velocity = angle * 4;
+        if (this.BubbleBool == false)
+        {
+            this.Owner.RigidBody.Velocity = angle * 4;
+        }
         this.AttackTimer -= event.Dt;
+        this.BubbleTimer -= event.Dt;
+        if (this.BubbleTimer <= 0)
+        {
+            this.BubbleBool = false;
+        }
     }
     
     function OnCollisionPersist(event : CollisionEvent)

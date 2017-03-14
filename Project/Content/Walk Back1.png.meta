@@ -2,16 +2,16 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "FloorTile",
-		uint64 ResourceId = 5823175fb7d23813,
+		string Name = "Walk Back1",
+		uint64 ResourceId = 584d3c75a2fb0b48,
 		uint64 AtlasId = 5274cf95e4a661fd,
-		uint FrameSizeX = 32,
-		uint FrameSizeY = 32,
+		uint FrameSizeX = 0,
+		uint FrameSizeY = 0,
 		uint FrameCount = 1,
 		float FrameDelay = 0.0833333,
 		float OriginX = 16,
-		float OriginY = 16,
-		float PixelsPerUnit = 16,
+		float OriginY = 21,
+		float PixelsPerUnit = 64,
 		bool Smoothing = true,
 		bool Looping = true,
 		Vec4 Slices = [0, 0, 0, 0],
