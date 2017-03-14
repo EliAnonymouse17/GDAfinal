@@ -24,7 +24,10 @@ class DamageScript : ZilchComponent
         set
         {
             this.PRVHitCount -= 1;
-            if (this.PRVHitCount <= 0) {this.Owner.Destroy;}
+            if (this.PRVHitCount <= 0) 
+            {
+                this.Owner.Destroy();
+            }
         }
     }
     
