@@ -49,10 +49,10 @@ Cog =
 	RigidBody = 
 	{
 		bool Static = false,
-		bool Asleep = false,
+		bool Asleep = true,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -61,7 +61,7 @@ Cog =
 	DamageScript = 
 	{
 		int Damage = 3,
-		int PRVHitCount = 4,
+		int PRVHitCount = 3,
 	},
 	SeekingBulletScript = 
 	{
@@ -115,10 +115,10 @@ Cog =
 			RigidBody = 
 			{
 				bool Static = false,
-				bool Asleep = false,
+				bool Asleep = true,
 				bool Kinematic = false,
 				bool RotationLocked = false,
-				bool Mode2D = true,
+				bool Mode2D = false,
 				bool AllowSleep = true,
 				bool Inherit2DMode = true,
 				Vec3 Velocity = [0, 0, 0],

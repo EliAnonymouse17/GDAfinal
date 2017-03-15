@@ -7,28 +7,39 @@ class SeekingBulletScript : ZilchComponent
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStart);
         //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
+    
+    function CheckForPriorCollision(currEnemy : Cog) : Boolean
+    {
+        var wasHit = false;
+        foreach (var enemy in this.HitEnemies)
+        {
+            if (currEnemy == enemy)
+            {
+                return true;
+            }
+        }
+            
+        return false;
+    }
 
     function OnCollisionStart(event : CollisionEvent)
     {
+        var currentSpeed = Math.Length(this.Owner.RigidBody.Velocity);
+        var normVelocity = this.Owner.RigidBody.Velocity / currentSpeed;
+        
         this.HitEnemies.Add(event.OtherObject);
         var enemyList = this.Space.FindAllObjectsByName("Enemy");
         
         var closest = this.Owner;
         
-        var closestDistance = 9000000000000.0;
+        var closestDistance = Real.PositiveMax;
         
         foreach(var currEnemy in enemyList)
         {
-            var wasHit = false;
-            foreach (var enemy in this.HitEnemies)
+            if (this.CheckForPriorCollision(currEnemy))
             {
-                if (currEnemy == enemy)
-                {
-                    wasHit = true;
-                    break;
-                }
+                continue;
             }
-            if (wasHit) {continue;}
             var bulletToEnemy = currEnemy.Transform.WorldTranslation - this.Owner.Transform.WorldTranslation;
             
             var distance = Math.Length(bulletToEnemy);
@@ -36,7 +47,7 @@ class SeekingBulletScript : ZilchComponent
             // normalize the vector
             bulletToEnemy /= distance;
             
-            if(distance < closestDistance && Math.Dot(this.Owner.RigidBody.Velocity, bulletToEnemy) > 0)
+            if(distance < closestDistance && Math.Dot(normVelocity, bulletToEnemy) > 0)
             {
                 closestDistance = distance;
                 
@@ -48,7 +59,7 @@ class SeekingBulletScript : ZilchComponent
             this.Owner.Destroy();
         }
         var angle = Math.Normalize(closest.Transform.Translation - this.Owner.Transform.Translation);
-        this.Owner.RigidBody.Velocity = angle * 25;
+        this.Owner.RigidBody.Velocity = angle * currentSpeed;
     }
     
 }
