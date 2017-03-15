@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [16.6408, 2.97586, -0.000999451],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -61,7 +61,7 @@ Cog =
 	DamageScript = 
 	{
 		int Damage = 3,
-		int PRVHitCount = 3,
+		int PRVHitCount = 4,
 	},
 	SeekingBulletScript = 
 	{

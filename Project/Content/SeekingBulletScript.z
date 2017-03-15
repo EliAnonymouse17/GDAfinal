@@ -1,6 +1,7 @@
 
 class SeekingBulletScript : ZilchComponent
 {
+    var HitEnemies : Array[Cog] = Array[Cog]();
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStart);
@@ -9,6 +10,7 @@ class SeekingBulletScript : ZilchComponent
 
     function OnCollisionStart(event : CollisionEvent)
     {
+        this.HitEnemies.Add(event.OtherObject);
         var enemyList = this.Space.FindAllObjectsByName("Enemy");
         
         var closest = this.Owner;
@@ -17,6 +19,16 @@ class SeekingBulletScript : ZilchComponent
         
         foreach(var currEnemy in enemyList)
         {
+            var wasHit = false;
+            foreach (var enemy in this.HitEnemies)
+            {
+                if (currEnemy == enemy)
+                {
+                    wasHit = true;
+                    break;
+                }
+            }
+            if (wasHit) {continue;}
             var bulletToEnemy = currEnemy.Transform.WorldTranslation - this.Owner.Transform.WorldTranslation;
             
             var distance = Math.Length(bulletToEnemy);
@@ -31,6 +43,9 @@ class SeekingBulletScript : ZilchComponent
                 closest = currEnemy;
             }
         }
+        if (closest == this.Owner) {this.Owner.Destroy();}
+        var angle = Math.Normalize(closest.Transform.Translation - this.Owner.Transform.Translation);
+        this.Owner.RigidBody.Velocity = angle * 25;
     }
     
 }
