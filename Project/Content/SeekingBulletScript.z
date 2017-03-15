@@ -43,7 +43,10 @@ class SeekingBulletScript : ZilchComponent
                 closest = currEnemy;
             }
         }
-        if (closest == this.Owner) {this.Owner.Destroy();}
+        if (closest == this.Owner) 
+        {
+            this.Owner.Destroy();
+        }
         var angle = Math.Normalize(closest.Transform.Translation - this.Owner.Transform.Translation);
         this.Owner.RigidBody.Velocity = angle * 25;
     }
