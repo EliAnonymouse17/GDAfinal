@@ -62,11 +62,10 @@ class SeekingBulletScript : ZilchComponent
         }
         if (closest == this.Owner) 
         {
-             Console.WriteLine(this.HitEnemies);
             this.Owner.Destroy();
         }
         var angle = Math.Normalize(closest.Transform.Translation - this.Owner.Transform.Translation);
-        this.Owner.RigidBody.Velocity = angle * currentSpeed;
+        this.Owner.RigidBody.Velocity = angle * currentSpeed * 2;
     }
     
 }

@@ -60,7 +60,7 @@ Cog =
 	},
 	DamageScript = 
 	{
-		int Damage = 3,
+		int Damage = 2,
 		int PRVHitCount = 3,
 	},
 	SeekingBulletScript = 

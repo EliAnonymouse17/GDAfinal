@@ -26,13 +26,17 @@ class SpellSwitchHandler : ZilchComponent
         get {return this.PrivateSpellIndex;}
         set 
         {
-            if(this.PrivateSpellIndex < this.SpellArray.Count-1)
+            if(value > this.SpellArray.Count - 1)
             {
-                this.PrivateSpellIndex += 1;
+                this.PrivateSpellIndex = 0;
+            }
+            else if (value < 0)
+            {
+                this.PrivateSpellIndex = this.SpellArray.Count - 1;
             }
             else 
             {
-                this.PrivateSpellIndex = 0;
+                this.PrivateSpellIndex = value;
             }
         }
     }
@@ -59,6 +63,31 @@ class SpellSwitchHandler : ZilchComponent
         }
         
     }
+    function ChangeSpell()
+    {
+        // Implementation of How spells work
+        this.CurrentSpell = this.SpellArray.Get(this.PrivateSpellIndex);
+        if(this.CurrentSpell == SpellTypes.BASIC)
+        {
+            this.SetSpell(120, 1, Archetype.Bullet, ShotPatternID.SINGLE);
+            this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Magic Missile");
+        }
+        else if(this.CurrentSpell == SpellTypes.BUBBLETRAP)
+        {
+            this.SetSpell(200, 1, Archetype.BubbleBullet, ShotPatternID.SINGLE);
+            this.SetSpellHUD(SpriteSource.Texture_BubbleBullet, "Bubble Trap");
+        }
+        else if(this.CurrentSpell == SpellTypes.EXPLODINGBUllET)
+        {
+            this.SetSpell(1200, 5, Archetype.ExplodingBullet, ShotPatternID.SINGLE);
+            this.SetSpellHUD(SpriteSource.Texture_SpikeBall, "Exploding Shrapnel");
+        }
+        else if (this.CurrentSpell == SpellTypes.SEEKINGSPELL)
+        {
+            this.SetSpell(100, 2, Archetype.SeekingBullet, ShotPatternID.SINGLE);
+            this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Seeking Bullet");
+        }
+    }
     
     function Initialize(init : CogInitializer)
     {
@@ -67,49 +96,34 @@ class SpellSwitchHandler : ZilchComponent
         this.SpellArray.Add(SpellTypes.BUBBLETRAP);
         this.SpellArray.Add(SpellTypes.EXPLODINGBUllET);
         this.SpellArray.Add(SpellTypes.SEEKINGSPELL);
-        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyUpdate);
+        Zero.Connect(this.Space, Events.MouseScroll, this.OnMouseUpdate);
     }
 
-    function OnLogicUpdate(event : UpdateEvent)
+    function OnKeyUpdate(event : KeyboardEvent)
     {
-        var keyPressed = Keys.A;
-        if (Zero.Keyboard.KeyIsPressed(Keys.Q))
+        if (event.Key == Keys.Q)
         {
-            keyPressed = Keys.Q;
+            this.SpellIndex += 1;
         }
-        else if (Zero.Keyboard.KeyIsPressed(Keys.E))
+        else if (event.Key == Keys.E)
         {
-            keyPressed = Keys.E;
+            this.SpellIndex -= 1;
         }
-        if (keyPressed == Keys.E || keyPressed == Keys.Q)
+        this.ChangeSpell();
+    }
+    
+    function OnMouseUpdate(event : MouseEvent)
+    {
+        if (event.Scroll.Y > 0)
         {
-            // Implementation of How spells work
-            if (keyPressed == Keys.Q)
-            {
-                this.SpellIndex += 1;
-            }
-            else {this.SpellIndex -= 1;}
-            this.CurrentSpell = this.SpellArray.Get(this.PrivateSpellIndex);
-            if(this.CurrentSpell == SpellTypes.BASIC)
-            {
-                this.SetSpell(120, 1, Archetype.Bullet, ShotPatternID.SINGLE);
-                this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Magic Missile");
-            }
-            else if(this.CurrentSpell == SpellTypes.BUBBLETRAP)
-            {
-                this.SetSpell(200, 1, Archetype.BubbleBullet, ShotPatternID.SINGLE);
-                this.SetSpellHUD(SpriteSource.Texture_BubbleBullet, "Bubble Trap");
-            }
-            else if(this.CurrentSpell == SpellTypes.EXPLODINGBUllET)
-            {
-                this.SetSpell(1200, 5, Archetype.ExplodingBullet, ShotPatternID.SINGLE);
-                this.SetSpellHUD(SpriteSource.Texture_SpikeBall, "Exploding Shrapnel");
-            }
-            else if (this.CurrentSpell == SpellTypes.SEEKINGSPELL)
-            {
-                this.SetSpell(100, 2, Archetype.SeekingBullet, ShotPatternID.SINGLE);
-                this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Seeking Bullet");
-            }
+            this.SpellIndex += 1;
         }
+        else 
+        {
+            this.SpellIndex -= 1;
+        }
+        this.ChangeSpell();
+        
     }
 }
