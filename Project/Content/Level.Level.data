@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 50],
+			Vec3 Translation = [2.57154, 0.415537, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 49.6583,
+			float Size = 14.9568,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0, 0, 0],
+			Vec3 LookTarget = [2.57154, 0.415537, 1.12405e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -913,12 +913,19 @@ Level =
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "5812cd3d46ba25e2:Necromancer",
 		LinkId = 
 		{
 			uint Id = 21,
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+		Archetyped = 
+		{
+			string Name = "5812cd3d46ba25e2:Necromancer",
 		},
 		Transform = 
 		{
@@ -926,9 +933,76 @@ Level =
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		Sprite = 
 		{
-			string Name = "Enemy",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5812ccbbee47ded7:Texture_NecromancerDown1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
+			Vec3 Offset = [-0.05, 0, 0],
+			Vec3 Size = [0.375, 1, 0.5],
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		HitpointScript = 
+		{
+			int PrivateHP = 15,
+		},
+		EnemyShoot = 
+		{
+			float BulletDelay = 4,
+			float BulletSpeed = 150,
+			Enum ShotPattern = TRIPLE,
+			string ShootSound = "584fc8fb746f1d3e:NecromancerAttackSummon",
+		},
+		Shoot = 
+		{
+			string BulletType = "580e65c5299defb0:EnemyBullet",
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 1, 0],
+			Vec3 UpVector = [0, 0, 1],
+			Vec3 ForwardVector = [0, 1, 0],
+			OrientationBases DefaultBases = ForwardYUpZ,
+		},
+		NecromancerSpawn = 
+		{
+			string SpawnSound = "584fc8fb746f1d3e:NecromancerAttackSummon",
+			float SpawnDelay = 5,
+			string EnemyToSpawn = "58e6b86cc88e7f69:Enemy",
+		},
+		Hierarchy = 
+		{
 		},
 	},
 	ArchetypeInstance = 

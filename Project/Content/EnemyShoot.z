@@ -16,7 +16,8 @@ class EnemyShoot : ZilchComponent
     [Property] var BulletDelay : Real = 1;
     [Property] var BulletSpeed : Real = 1000;
     [Property] var ShotPattern : ShotPatternID = ShotPatternID.SINGLE;
-    var TimeUntilNextShot : Real = 0;
+    [Property] var ShootSound : SoundCue = null;
+    var TimeUntilNextShot : Real = 1;
     
     function Initialize(init : CogInitializer)
     {
@@ -34,6 +35,10 @@ class EnemyShoot : ZilchComponent
         var shotAngle = Math.Normalize(this.Space.FindObjectByName("Player").Transform.Translation - this.Owner.Transform.Translation);
         if(this.TimeUntilNextShot <= 0)
         {
+            if(this.ShootSound != null)
+            {
+                this.Space.SoundSpace.PlayCue(this.ShootSound);
+            }
             this.TimeUntilNextShot = this.BulletDelay;
             this.Owner.Shoot.Shoot(this.BulletSpeed, shotAngle, this.ShotPattern);
         }

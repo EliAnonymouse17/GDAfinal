@@ -1,6 +1,9 @@
 class NecromancerSpawn : ZilchComponent
 {
     [Property]
+    var SpawnSound : SoundCue = null;
+    
+    [Property]
     var SpawnDelay : Real = 5;
     
     [Property]
@@ -25,6 +28,11 @@ class NecromancerSpawn : ZilchComponent
         this.SpawnPosition = this.Owner.Transform.Translation;
         if(this.Timer <= 0)
         {
+            if(this.SpawnSound != null)
+            {
+                this.Space.SoundSpace.PlayCue(this.SpawnSound);
+            }
+            
             this.Space.CreateAtPosition(this.EnemyToSpawn, this.SpawnPosition);
             
             this.Timer = this.SpawnDelay;
