@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "GolemPound",
+		uint64 ResourceId = 584ff045cb239b0c,
+	},
+},

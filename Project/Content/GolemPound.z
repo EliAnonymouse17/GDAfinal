@@ -1,0 +1,20 @@
+class GolemBound : ZilchComponent
+{
+    var MaxDelay : Real = 3;
+    var Delay : Real = 3;
+    function Initialize(init : CogInitializer)
+    {
+        this.Delay = this.Owner.EnemyShoot.BulletDelay;
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.Delay -= event.Dt;
+        if (this.Delay <= 0)
+        {
+            this.Space.CreateAtPosition(Archetype.PoundArea, this.Owner.Transform.Translation);
+            this.Delay = this.MaxDelay;
+        }
+    }
+}
