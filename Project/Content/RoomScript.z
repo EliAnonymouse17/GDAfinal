@@ -1,27 +1,49 @@
-enum EnemyTypeID {BASIC, TRIPLESHOT}
+enum EnemyTypeID {SKELETON, ZOMBIE, NECROMANCER}
 
 enum Directions {UP, DOWN, RIGHT, LEFT}
+
+enum ItemID {HEALTH, BLOCKADE}
 
 class Enemy
 {
     var Position : Real3;
     var Sprite : SpriteSource;
     var ShotType : ShotPatternID;
-    var AIScript : String;
+    var AIScript1 : String;
+    var AIScript2 : String;
     constructor(enemyType : EnemyTypeID, position : Real3)
     {
         this.Position = position;
-        if(enemyType == EnemyTypeID.BASIC)
+        if(enemyType == EnemyTypeID.SKELETON)
         {
             this.Sprite = SpriteSource.Texture_SkeletonStill;
             this.ShotType = ShotPatternID.SINGLE;
-            this.AIScript = "SideToSide";
+            this.AIScript1 = "SideToSide";
+            this.AIScript2 = "Empty";
         }
-        else if(enemyType == EnemyTypeID.BASIC)
+    }
+}
+
+class Item
+{
+    var Position : Real3;
+    var Sprite : SpriteSource;
+    var ItemScript1 : String;
+    var ItemScript2 : String;
+    constructor(itemID : ItemID, position : Real3)
+    {
+        this.Position = position;
+        if(itemID == ItemID.BLOCKADE)
         {
             this.Sprite = SpriteSource.Square;
-            this.ShotType = ShotPatternID.TRIPLE;
-            this.AIScript = "SideToSide";
+            this.ItemScript1 = "RigidBody";
+            this.ItemScript2 = "BoxCollider";
+        }
+        else if(itemID == ItemID.HEALTH)
+        {
+            this.Sprite = SpriteSource.Square;
+            this.ItemScript1 = "HeartPickupScript";
+            this.ItemScript2 = "BoxCollider";
         }
     }
 }
@@ -47,7 +69,8 @@ class Room
         for(var i = 0; i < this.NumEnemies; ++i)
         {
             var currentEnemy = space.CreateAtPosition(Archetype.Enemy, this.Enemies[i].Position);
-            currentEnemy.AddComponentByName(this.Enemies[i].AIScript);
+            currentEnemy.AddComponentByName(this.Enemies[i].AIScript1);
+            currentEnemy.AddComponentByName(this.Enemies[i].AIScript2);
             currentEnemy.Sprite.SpriteSource = this.Enemies[i].Sprite;
             currentEnemy.EnemyShoot.ShotPattern = this.Enemies[i].ShotType;
         }
@@ -67,7 +90,7 @@ class RoomScript : ZilchComponent
         this.Map = this.InitMap();
         this.MapPosition = Integer2(0, 0);
         this.CurrentEnemyList = new Array[Enemy]();
-        this.CurrentEnemyList.Add(new Enemy(EnemyTypeID.BASIC, Real3(-7, 7.5, 0)));
+        this.CurrentEnemyList.Add(new Enemy(EnemyTypeID.SKELETON, Real3(-7, 7.5, 0)));
         this.CurrentRoom = new Room(this.CurrentEnemyList);
         Zero.Connect(this.Space, Events.EnemyDeathEvent, this.OnEnemyDeath);
     }
@@ -83,7 +106,7 @@ class RoomScript : ZilchComponent
                 map[i].Add(new Array[Enemy]());
                 for(var k = 0; k < i+j+1; ++k)
                 {
-                    map[i][j].Add(new Enemy(EnemyTypeID.BASIC, Real3(-8+(3*k), 7.5, 0)));
+                    map[i][j].Add(new Enemy(EnemyTypeID.SKELETON, Real3(-8+(3*k), 7.5, 0)));
                 }
             }
         }
