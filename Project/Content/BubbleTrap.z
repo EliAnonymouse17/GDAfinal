@@ -33,10 +33,10 @@ class BubbleTrap : ZilchComponent
             event.OtherObject.SideToSide.Bubble = true;
             event.OtherObject.SideToSide.BubbleTimer = 0.1;
         }
-        if (event.OtherObject.BrainEaterScript != null)
+        if (event.OtherObject.AIMoveToPlayer != null)
         {
-            event.OtherObject.BrainEaterScript.BubbleBool = true;
-            event.OtherObject.BrainEaterScript.BubbleTimer = 0.1;
+            event.OtherObject.AIMoveToPlayer.BubbleBool = true;
+            event.OtherObject.AIMoveToPlayer.BubbleTimer = 0.1;
         }
     }
     

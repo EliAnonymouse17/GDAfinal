@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "RockShockScript",
+		uint64 ResourceId = 584e03f5bfd0c8df,
+	},
+},

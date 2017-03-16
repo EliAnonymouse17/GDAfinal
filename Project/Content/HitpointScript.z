@@ -30,14 +30,14 @@ class HitpointScript : ZilchComponent
             this.PrivateHP = value;
             if(this.PrivateHP <= 0)
             {
-                if(this.Owner.Name == "Player")
-                {
-                    this.Space.LoadLevel(Level.DieLevel);
-                }
-                
                 if(this.Owner.Name == "Enemy")
                 {
                     this.Space.DispatchEvent(Events.EnemyDeathEvent, ZilchEvent());
+                }
+                if (this.Owner.ArchetypeName == "AnimatedGolem")
+                {
+                    this.Space.CreateAtPosition(Archetype.MiniGolem, this.Owner.Transform.Translation - Real3(1,1,0));
+                    this.Space.CreateAtPosition(Archetype.MiniGolem, this.Owner.Transform.Translation - Real3(-1,-1,0));
                 }
                 this.Owner.Destroy();
             }

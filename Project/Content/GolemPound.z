@@ -1,17 +1,23 @@
-class GolemBound : ZilchComponent
+class GolemPound : ZilchComponent
 {
     var MaxDelay : Real = 3;
-    var Delay : Real = 3;
+    var Delay : Real = 0;
+    var Player : Cog;
+    var DistFromPlayer : Real = 900;
     function Initialize(init : CogInitializer)
     {
-        this.Delay = this.Owner.EnemyShoot.BulletDelay;
+        this.Player = this.Space.FindObjectByName("Player");
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
 
     function OnLogicUpdate(event : UpdateEvent)
     {
+        if (this.Player != null)
+        {
+            this.DistFromPlayer = Math.Distance(this.Player.Transform.Translation, this.Owner.Transform.Translation);
+        }
         this.Delay -= event.Dt;
-        if (this.Delay <= 0)
+        if (this.Delay <= 0 && this.DistFromPlayer <= 2)
         {
             this.Space.CreateAtPosition(Archetype.PoundArea, this.Owner.Transform.Translation);
             this.Delay = this.MaxDelay;
