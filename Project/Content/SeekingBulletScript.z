@@ -32,7 +32,7 @@ class SeekingBulletScript : ZilchComponent
         
         var closest = this.Owner;
         
-        var closestDistance = Real.PositiveMax;
+        var closestDistanceSq = Real.PositiveMax;
         
         foreach(var currEnemy in enemyList)
         {
@@ -42,20 +42,27 @@ class SeekingBulletScript : ZilchComponent
             }
             var bulletToEnemy = currEnemy.Transform.WorldTranslation - this.Owner.Transform.WorldTranslation;
             
-            var distance = Math.Length(bulletToEnemy);
+            var distanceSq = Math.LengthSq(bulletToEnemy);
             
             // normalize the vector
-            bulletToEnemy /= distance;
+            bulletToEnemy /= distanceSq;
             
-            if(distance < closestDistance && Math.Dot(normVelocity, bulletToEnemy) > 0)
+           // if(distanceSq < closestDistanceSq && Math.Dot(normVelocity, bulletToEnemy) > 0)
+           // {
+           //    closestDistanceSq = distanceSq;
+                
+           //    closest = currEnemy;
+           //}
+            if(distanceSq < closestDistanceSq)
             {
-                closestDistance = distance;
+                closestDistanceSq = distanceSq;
                 
                 closest = currEnemy;
             }
         }
         if (closest == this.Owner) 
         {
+             Console.WriteLine(this.HitEnemies);
             this.Owner.Destroy();
         }
         var angle = Math.Normalize(closest.Transform.Translation - this.Owner.Transform.Translation);
