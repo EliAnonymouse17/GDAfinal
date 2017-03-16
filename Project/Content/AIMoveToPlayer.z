@@ -1,0 +1,33 @@
+class AIMoveToPlayer : ZilchComponent
+{
+    [Property]
+    var MoveSpeed : Real = 4;
+    
+    var Player : Cog;
+    var BubbleBool : Boolean = false;
+    var BubbleTimer : Real = 0;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        this.Player = this.Space.FindObjectByName("Player");
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var playerPos : Real3 = Real3(0,0,0);
+        if (this.Player != null)
+        {
+            playerPos = this.Player.Transform.Translation;
+        }
+        var angle = Math.Normalize(playerPos - this.Owner.Transform.Translation);
+        if (this.BubbleBool == false)
+        {
+            this.Owner.RigidBody.Velocity = angle * this.MoveSpeed;
+        }
+        this.BubbleTimer -= event.Dt;
+        if (this.BubbleTimer <= 0)
+        {
+            this.BubbleBool = false;
+        }
+    }
+}

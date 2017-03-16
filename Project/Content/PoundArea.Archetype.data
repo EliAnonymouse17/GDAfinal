@@ -14,8 +14,8 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [12.4006, 2.71271, 0],
-		Vec3 Scale = [1, 1, 1],
+		Vec3 Translation = [-0.996936, 5.89594, 0],
+		Vec3 Scale = [4, 4, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -44,7 +44,7 @@ Cog =
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "580e65c5299dfb9d:EnemyBullet",
 		Vec3 Offset = [0, 0, 0],
-		float Radius = 1.4,
+		float Radius = 0.35,
 	},
 	RigidBody = 
 	{

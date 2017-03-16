@@ -10,12 +10,12 @@ Cog =
 	},
 	Archetyped = 
 	{
-		string Name = "584fefeabfc0ca66:AnimatedGolem",
+		string Name = "584ffadd5e943f48:MiniGolem",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-7.94999, 1.5324, 0],
-		Vec3 Scale = [1, 1, 1],
+		Vec3 Translation = [-0.979958, 1.39854, 0],
+		Vec3 Scale = [0.75, 0.75, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -69,18 +69,12 @@ Cog =
 		Vec3 ForwardVector = [0, 1, 0],
 		OrientationBases DefaultBases = ForwardYUpZ,
 	},
-	Shoot = 
+	GolemPound = 
 	{
-		string BulletType = "580e65c5299defb0:EnemyBullet",
 	},
-	EnemyShoot = 
+	AIMoveToPlayer = 
 	{
-		float BulletDelay = 3,
-		float BulletSpeed = 150,
-		Enum ShotPattern = TRIPLE,
-		string ShootSound = "",
-		string WalkAnimation = "",
-		string AttackAnimation = "",
+		float MoveSpeed = 3,
 	},
 	Hierarchy = 
 	{
