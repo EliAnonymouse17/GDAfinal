@@ -11,9 +11,9 @@ class ExplodingBulletScript : ZilchComponent
 
     function OnCollisionStarted(event : CollisionEvent)
     {
-        for (var i = 0; i < 10; ++i)
+        for (var i = 0; i < 14; ++i)
         {
-            this.Angle = Math.ATan2(0,0) - (i-1)*(Math.Pi/5);
+            this.Angle = Math.ATan2(0,0) - (i-1)*(Math.ToRadians(360 / 14));
             var bullet = this.Space.CreateAtPosition(Archetype.Spike, this.Owner.Transform.Translation);
             var newAngle = Real3(Math.Sin(this.Angle), Math.Cos(this.Angle), 0);
             newAngle = Math.Normalize(newAngle);
