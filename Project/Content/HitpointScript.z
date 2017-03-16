@@ -36,7 +36,8 @@ class HitpointScript : ZilchComponent
                 }
                 if (this.Owner.ArchetypeName == "AnimatedGolem")
                 {
-                    
+                    this.Space.CreateAtPosition(Archetype.MiniGolem, this.Owner.Transform.Translation - Real3(1,1,0));
+                    this.Space.CreateAtPosition(Archetype.MiniGolem, this.Owner.Transform.Translation - Real3(-1,-1,0));
                 }
                 this.Owner.Destroy();
             }

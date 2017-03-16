@@ -6,15 +6,15 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "Enemy",
+		string Name = "Bullet",
 	},
 	Archetyped = 
 	{
-		string Name = "584fefeabfc0ca66:AnimatedGolem",
+		string Name = "584e02809931b6fa:GolemRock",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-7.94999, 1.5324, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,11 +24,11 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [0.375, 0.18525, 0.03, 1],
+		Vec4 Color = [0.445, 0.2136, 0, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "58230430c7b3754c:Texture_SkeletonStill",
+		string SpriteSource = "58169686fd37cdcb:Texture_PlayerBasicProjectile",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -36,53 +36,34 @@ Cog =
 		float AnimationSpeed = 1,
 		uint StartFrame = 0,
 	},
-	HitpointScript = 
-	{
-		int PrivateHP = 3,
-	},
-	BoxCollider = 
+	SphereCollider = 
 	{
 		bool Ghost = false,
 		bool SendsMessages = true,
 		bool Seamless = true,
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-		string SerializedGroupName = "580e65c5299dde20:Enemy",
-		Vec3 Offset = [-0.05, 0, 0],
-		Vec3 Size = [0.375, 1, 0.5],
+		string SerializedGroupName = "580e65c5299dfb9d:EnemyBullet",
+		Vec3 Offset = [0.01, -0.005, 0],
+		float Radius = 0.3,
 	},
 	RigidBody = 
 	{
 		bool Static = false,
 		bool Asleep = false,
 		bool Kinematic = false,
-		bool RotationLocked = true,
+		bool RotationLocked = false,
 		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
 		Vec3 AngularVelocity = [0, 0, 0],
 	},
-	Orientation = 
+	DamageScript = 
 	{
-		Vec3 GlobalUp = [0, 1, 0],
-		Vec3 UpVector = [0, 0, 1],
-		Vec3 ForwardVector = [0, 1, 0],
-		OrientationBases DefaultBases = ForwardYUpZ,
+		int Damage = 1,
+		int PRVHitCount = 1,
 	},
-	Shoot = 
-	{
-		string BulletType = "584e02809931b6fa:GolemRock",
-	},
-	EnemyShoot = 
-	{
-		float BulletDelay = 3,
-		float BulletSpeed = 100,
-		Enum ShotPattern = SINGLE,
-		string ShootSound = "",
-		string WalkAnimation = "",
-		string AttackAnimation = "",
-	},
-	Hierarchy = 
+	RockShockScript = 
 	{
 	},
 },

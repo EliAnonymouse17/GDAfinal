@@ -12,7 +12,10 @@ class GolemPound : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        this.DistFromPlayer = Math.Distance(this.Player.Transform.Translation, this.Owner.Transform.Translation);
+        if (this.Player != null)
+        {
+            this.DistFromPlayer = Math.Distance(this.Player.Transform.Translation, this.Owner.Transform.Translation);
+        }
         this.Delay -= event.Dt;
         if (this.Delay <= 0 && this.DistFromPlayer <= 2)
         {

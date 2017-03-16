@@ -1,0 +1,20 @@
+class RockShockScript : ZilchComponent
+{
+    var PlayerPos : Real3 = Real3(0,0,0);
+    var DistFromImpact : Real = 900;
+    function Initialize(init : CogInitializer)
+    {
+        this.PlayerPos = this.Space.FindObjectByName("Player").Transform.WorldTranslation;
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.DistFromImpact = Math.Distance(this.PlayerPos, this.Owner.Transform.WorldTranslation);
+        if (this.DistFromImpact <= 2.0)
+        {
+            this.Space.CreateAtPosition(Archetype.PoundArea, this.Owner.Transform.Translation);
+            this.Owner.Destroy();
+        }
+    }
+}

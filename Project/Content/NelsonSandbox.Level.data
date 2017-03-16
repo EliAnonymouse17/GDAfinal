@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0.417958, 0.482557, 50],
+			Vec3 Translation = [3.32189, 1.31485, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0.417958, 0.482557, 0],
+			Vec3 LookTarget = [3.32189, 1.31485, 0],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -940,60 +940,6 @@ Level =
 		Transform = 
 		{
 			Vec3 Translation = [-7.94999, 1.5324, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "584ff2fc0e46547b:PoundArea",
-		LinkId = 
-		{
-			uint Id = 22,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-0.996936, 5.89594, 0],
-			Vec3 Scale = [4, 4, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Bullet",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "584ffadd5e943f48:MiniGolem",
-		LinkId = 
-		{
-			uint Id = 23,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-0.979958, 1.39854, 0],
-			Vec3 Scale = [0.75, 0.75, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "584d30a5b4310262:Zombie",
-		LinkId = 
-		{
-			uint Id = 24,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-0.946281, -3.47024, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
