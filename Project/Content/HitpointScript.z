@@ -30,6 +30,11 @@ class HitpointScript : ZilchComponent
             this.PrivateHP = value;
             if(this.PrivateHP <= 0)
             {
+                if(this.Owner.Name == "Player")
+                {
+                    this.Space.LoadLevel(Level.DieLevel);
+                }
+                
                 if(this.Owner.Name == "Enemy")
                 {
                     this.Space.DispatchEvent(Events.EnemyDeathEvent, ZilchEvent());
