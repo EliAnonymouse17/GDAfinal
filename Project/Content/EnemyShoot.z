@@ -17,6 +17,9 @@ class EnemyShoot : ZilchComponent
     [Property] var BulletSpeed : Real = 1000;
     [Property] var ShotPattern : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var ShootSound : SoundCue = null;
+    var FinishedAnimation : Boolean = false;
+    [Property] var WalkAnimation : SpriteSource  = null;
+    [Property] var AttackAnimation : SpriteSource  = null;
     var TimeUntilNextShot : Real = 1;
     
     function Initialize(init : CogInitializer)
@@ -35,12 +38,33 @@ class EnemyShoot : ZilchComponent
         var shotAngle = Math.Normalize(this.Space.FindObjectByName("Player").Transform.Translation - this.Owner.Transform.Translation);
         if(this.TimeUntilNextShot <= 0)
         {
+            
             if(this.ShootSound != null)
             {
                 this.Space.SoundSpace.PlayCue(this.ShootSound);
             }
+            if(this.AttackAnimation != null)
+            {
+                Console.WriteLine("Work2");
+                
+                this.Owner.Sprite.SpriteSource = this.AttackAnimation;
+            }
             this.TimeUntilNextShot = this.BulletDelay;
             this.Owner.Shoot.Shoot(this.BulletSpeed, shotAngle, this.ShotPattern);
+        }
+        if(this.Owner.Sprite.SpriteSource == this.AttackAnimation)
+        {
+            if(this.Owner.Sprite.CurrentFrame >= this.AttackAnimation.FrameCount - 1)
+            {
+                Console.WriteLine("Work");
+                this.FinishedAnimation = true;
+            }
+            if(this.Owner.Sprite.CurrentFrame == 0 && this.FinishedAnimation)
+            {
+                this.FinishedAnimation = false;
+                
+                this.Owner.Sprite.SpriteSource = this.WalkAnimation;
+            }
         }
     }
 }

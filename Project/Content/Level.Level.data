@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [2.57154, 0.415537, 50],
+			Vec3 Translation = [2.57154, 3.53804, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 14.9568,
+			float Size = 13.5335,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [2.57154, 0.415537, 1.12405e-007],
+			Vec3 LookTarget = [2.57154, 3.53804, 1.12405e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -983,6 +983,8 @@ Level =
 			float BulletSpeed = 150,
 			Enum ShotPattern = TRIPLE,
 			string ShootSound = "584fc8fb746f1d3e:NecromancerAttackSummon",
+			string WalkAnimation = "584fdb207bf8dc4b:NecroMoveAnimation",
+			string AttackAnimation = "584fced65555e419:NecroAttackAnimation",
 		},
 		Shoot = 
 		{
