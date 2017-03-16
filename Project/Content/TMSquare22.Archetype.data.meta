@@ -2,8 +2,8 @@ DataContent =
 {
 	DataBuilder = 
 	{
-		string Name = "TMSquare",
-		uint64 ResourceId = 584d28f172acfcba,
+		string Name = "TMSquare22",
+		uint64 ResourceId = 584fd2007ec97999,
 		string LoaderType = "Cog",
 		uint Version = 0,
 		bool ShowInEditor = true,
