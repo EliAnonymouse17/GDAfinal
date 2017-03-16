@@ -2,7 +2,7 @@ DataContent =
 {
 	DataBuilder = 
 	{
-		string Name = "TileMapTriL",
+		string Name = "TMTriL",
 		uint64 ResourceId = 584fd3545388b89f,
 		string LoaderType = "Cog",
 		uint Version = 0,
