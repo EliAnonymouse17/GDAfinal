@@ -1,0 +1,12 @@
+BinaryContent = 
+{
+	BinaryBuilder = 
+	{
+		string Name = "BarSandbox_TileMap00",
+		uint64 ResourceId = 58185eb9a26db7bd,
+		string LoaderType = "TileMapSource",
+		uint Version = 0,
+		string FilterTag = "",
+		string ResourceOwner = "58185f6543dfa229:BarSandbox",
+	},
+},
