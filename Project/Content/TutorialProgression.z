@@ -1,0 +1,32 @@
+class TutorialProgression : ZilchComponent
+{
+    var TextArray : Array[String] = Array[String]();
+    var TextIndex : Integer = 0;
+    function Initialize(init : CogInitializer)
+    {
+        this.TextArray.Add("Greetings, Wand Man!");
+        this.TextArray.Add("I, the acclaimed Hamburger Wizard, \nwill be your guide in this dungeon.");
+        this.TextArray.Add("We will start with the basics.\nUse the WASD keys to move.");
+        this.TextArray.Add("Left-click to cast a spell.");
+        this.TextArray.Add("Try hitting that target over there.");
+        Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyDown);
+    }
+    
+    function IncrementProgression()
+    {
+        this.Owner.FindChildByName("Tutorial Text").SpriteText.Text = this.TextArray[this.TextIndex];
+        if (this.TextIndex == 4)
+        {
+            this.Space.CreateAtPosition(Archetype.Target, Real3(12,1,0));
+        }
+        this.TextIndex += 1;
+    }
+
+    function OnKeyDown(event : KeyboardEvent)
+    {
+        if (event.Key == Keys.F)
+        {
+            this.IncrementProgression();
+        }
+    }
+}
