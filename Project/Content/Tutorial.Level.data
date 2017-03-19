@@ -57,7 +57,7 @@ Level =
 				bool UpdatePathOnCogChange = true,
 				bool UpdateCogOnInitialize = true,
 				bool ResolvedNullErrorOccurred = false,
-				uint ResolvedCog = 4294967293,
+				uint ResolvedCog = 2,
 				CogPathPreference PathPreference0 = CogRelative,
 				CogPathPreference PathPreference1 = SpaceRelative,
 				CogPathPreference PathPreference2 = Absolute,
@@ -95,7 +95,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 2,
+			uint Id = 3,
 		},
 		Named = 
 		{
@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0.922462, 0.766442, 50],
+			Vec3 Translation = [3.45282, -0.312931, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 18.2683,
+			float Size = 19.9484,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0.922462, 0.766442, 0],
+			Vec3 LookTarget = [3.45282, -0.312931, 0],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -140,7 +140,7 @@ Level =
 		string Name = "584fd6f9f9cdb9ac:TMTriLine",
 		LinkId = 
 		{
-			uint Id = 3,
+			uint Id = 4,
 		},
 		Transform = 
 		{
@@ -157,7 +157,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 4,
+			uint Id = 5,
 		},
 		Named = 
 		{
@@ -239,7 +239,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 5,
+					uint Id = 2,
 				},
 				Named = 
 				{
@@ -279,7 +279,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-17, 9.5, -20],
+							Vec3 Translation = [-10.316, 6.8594, -20],
 							Vec3 Scale = [6, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -314,7 +314,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-17.25, 10, -20],
+							Vec3 Translation = [-10.566, 7.3594, -20],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -338,6 +338,9 @@ Level =
 						HUDHP = 
 						{
 						},
+						Hierarchy = 
+						{
+						},
 					},
 					Cog = 
 					{
@@ -351,7 +354,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-13.5, 10, -20],
+							Vec3 Translation = [-6.81599, 7.3594, -20],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -388,7 +391,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-20.0259, 7.9196, -20],
+							Vec3 Translation = [-13.3419, 5.279, -20],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -464,7 +467,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-18.4628, 6.51319, -20],
+							Vec3 Translation = [-11.7788, 3.87259, -20],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -514,7 +517,7 @@ Level =
 									BlendMode BlendMode = Alpha,
 									SpriteGeometryMode GeometryMode = ZPlane,
 									string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-									string SpriteSource = "58169686fd37cdcb:Texture_PlayerBasicProjectile",
+									string SpriteSource = "584558c2c978f519:Texture_PlayerBasicProjectile",
 									bool RenderMask = false,
 									bool FlipX = false,
 									bool FlipY = false,
@@ -535,7 +538,7 @@ Level =
 								},
 								Transform = 
 								{
-									Vec3 Translation = [-1.20519, -0.616958, -0.000999546],
+									Vec3 Translation = [-1.20519, -0.616958, -0.000999451],
 									Vec3 Scale = [1, 1, 1],
 									Quat Rotation = [0, 0, 0, 1],
 								},

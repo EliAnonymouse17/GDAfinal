@@ -34,11 +34,13 @@ class HitpointScript : ZilchComponent
                 {
                     this.Space.DispatchEvent(Events.EnemyDeathEvent, ZilchEvent());
                 }
+                //Special cases that trigger events on destruction
                 if (this.Owner.ArchetypeName == "AnimatedGolem")
                 {
                     this.Space.CreateAtPosition(Archetype.MiniGolem, this.Owner.Transform.Translation - Real3(1,1,0));
                     this.Space.CreateAtPosition(Archetype.MiniGolem, this.Owner.Transform.Translation - Real3(-1,-1,0));
                 }
+
                 this.Owner.Destroy();
             }
             if(this.Owner.Name == "Player" && this.PrivateHP > 6)

@@ -1,0 +1,19 @@
+class SpellScrollScript : ZilchComponent
+{
+    [Property]
+    var Spell : SpellTypes = SpellTypes.BUBBLETRAP;
+    [Property]
+    var SpellIcon : SpriteSource = SpriteSource.Texture_BubbleBullet;
+    
+    function Initialize(init : CogInitializer)
+    {
+        this.Owner.FindChildByName("SpellIcon").Sprite.SpriteSource = this.SpellIcon;
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+    }
+
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        event.OtherObject.SpellSwitchHandler.SpellArray.Add(this.Spell);
+        this.Owner.Destroy();
+    }
+}
