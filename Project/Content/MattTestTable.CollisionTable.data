@@ -2,16 +2,17 @@ CollisionTable =
 {
 	Array RegisteredGroups = 
 	[
+		"580474add6d2282f:BoneSpawner",
 		"58298afcb83a18af:Item",
 		"4e740859314e5515:DefaultGroup",
 		"580e65c5299c4df4:PlayerFaded",
 		"580e65c5299dde20:Enemy",
 		"58e6c97efdcaf1f5:Wall",
 		"58e7a2ca3abd68ad:Door",
-		"5812cf391818e72b:Necromancer",
+		"580e65c5299dfb9d:EnemyBullet",
 		"580e65c5299c3bbe:PlayerBullet",
 		"580e65c5299c6b69:Player",
-		"580e65c5299dfb9d:EnemyBullet",
+		"5812cf391818e72b:Necromancer",
 	],
 	Array CollisionFilters = 
 	[

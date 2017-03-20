@@ -1,0 +1,14 @@
+class BoneShotLogic : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+    }
+
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        var position = this.Owner.Transform.WorldTranslation;
+        
+        this.Space.CreateAtPosition(Archetype.BoneSpawner, position);
+    }
+}

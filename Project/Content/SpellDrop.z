@@ -1,0 +1,15 @@
+class SpellDrop : ZilchComponent
+{
+    
+    
+    
+    function Initialize(init : CogInitializer)
+    {
+        
+    }
+    
+    function SpellDrop()
+    {
+        
+    }
+}
