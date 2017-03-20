@@ -16,6 +16,10 @@ class TutorialProgression : ZilchComponent
         this.TextArray.Add("Above this display are your health bar and your fade cooldown bar.\nYour health bar displays your current health,\nand your fade cooldown bar displays the remaining cooldown on your fade ability.");
         this.TextArray.Add("You can't see your fade cooldown bar right now because your fade is ready for use!");
         this.TextArray.Add("Press space to use your fade ability.\nWhile active, your fade ability allows you to avoid spells cast by enemies.\nTry it now!");
+        this.TextArray.Add("Great! You are now ready to face your first enemy!\nPress F to begin the fight!");
+        this.TextArray.Add(" ");
+        this.TextArray.Add("Now you can practice some more by clearing a couple of rooms.");
+        this.TextArray.Add("Enter the door at the far side of this room to continue.");
         Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyDown);
     }
     
@@ -29,6 +33,14 @@ class TutorialProgression : ZilchComponent
         if (this.TextIndex == 6)
         {
             this.Space.CreateAtPosition(Archetype.TutorialSpellScroll, Real3(8,1,0));
+        }
+        if (this.TextIndex == 13)
+        {
+            this.Space.CreateAtPosition(Archetype.TutorialSkeleton, Real3(12,4,0));
+        }
+        if (this.TextIndex == 14)
+        {
+            this.Space.FindObjectByName("TutorialDoor").Sprite.Visible = true;
         }
         this.TextIndex += 1;
     }
