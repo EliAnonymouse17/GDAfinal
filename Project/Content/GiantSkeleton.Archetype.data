@@ -6,7 +6,7 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "Boss",
+		string Name = "Enemy",
 	},
 	Archetyped = 
 	{
@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 100,
+		int PrivateHP = 50,
 	},
 	Shoot = 
 	{
@@ -75,12 +75,21 @@ Cog =
 	},
 	EnemyShoot = 
 	{
-		float BulletDelay = 6,
+		float BulletDelay = 1,
 		float BulletSpeed = 100,
 		Enum ShotPattern = TRIPLE,
 		string ShootSound = "",
 		string WalkAnimation = "",
 		string AttackAnimation = "",
+	},
+	SpellDrop = 
+	{
+		Enum SpellDrop1 = EXPLODINGBUllET,
+		Enum SpellDrop2 = BUBBLETRAP,
+		Enum SpellDrop3 = SEEKINGSPELL,
+		string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
+		string SpellDropSprite2 = "583a1b2cfe6b1569:Texture_BubbleBullet",
+		string SpellDropSprite3 = "584558c2c978f519:Texture_PlayerBasicProjectile",
 	},
 	Hierarchy = 
 	{

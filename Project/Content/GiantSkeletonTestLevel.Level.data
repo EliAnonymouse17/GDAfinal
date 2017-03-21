@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-1.50145, 4.11472, 50],
+			Vec3 Translation = [-1.50145, 6.62061, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 22.0464,
+			float Size = 54.2253,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-1.50145, 4.11472, 7.68534e-008],
+			Vec3 LookTarget = [-1.50145, 6.62061, 7.68534e-008],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -639,12 +639,19 @@ Level =
 			string Name = "TileMap",
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "58040c758067a641:GiantSkeleton",
 		LinkId = 
 		{
 			uint Id = 17,
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+		Archetyped = 
+		{
+			string Name = "58040c758067a641:GiantSkeleton",
 		},
 		Transform = 
 		{
@@ -652,9 +659,81 @@ Level =
 			Vec3 Scale = [2.5, 2.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		Sprite = 
 		{
-			string Name = "Boss",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "58230430c7b3754c:Texture_SkeletonStill",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
+			Vec3 Offset = [-0.05, 0, 0],
+			Vec3 Size = [0.375, 1, 0.5],
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		HitpointScript = 
+		{
+			int PrivateHP = 50,
+		},
+		Shoot = 
+		{
+			string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 1, 0],
+			Vec3 UpVector = [0, 0, 1],
+			Vec3 ForwardVector = [0, 1, 0],
+			OrientationBases DefaultBases = ForwardYUpZ,
+		},
+		EnemyShoot = 
+		{
+			float BulletDelay = 5,
+			float BulletSpeed = 100,
+			Enum ShotPattern = TRIPLE,
+			string ShootSound = "",
+			string WalkAnimation = "",
+			string AttackAnimation = "",
+		},
+		SpellDrop = 
+		{
+			Enum SpellDrop1 = EXPLODINGBUllET,
+			Enum SpellDrop2 = BUBBLETRAP,
+			Enum SpellDrop3 = SEEKINGSPELL,
+			string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
+			string SpellDropSprite2 = "583a1b2cfe6b1569:Texture_BubbleBullet",
+			string SpellDropSprite3 = "584558c2c978f519:Texture_PlayerBasicProjectile",
+		},
+		Hierarchy = 
+		{
 		},
 	},
 },

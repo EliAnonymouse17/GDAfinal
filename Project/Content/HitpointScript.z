@@ -32,6 +32,10 @@ class HitpointScript : ZilchComponent
             {
                 if(this.Owner.Name == "Enemy")
                 {
+                    if(this.Owner.SpellDrop != null)
+                    {
+                        this.Owner.SpellDrop.SpellDrop();
+                    }
                     this.Space.DispatchEvent(Events.EnemyDeathEvent, ZilchEvent());
                 }
                 //Special cases that trigger events on destruction

@@ -126,14 +126,6 @@ class RoomScript : ZilchComponent
             }
             enemyCheck += 1;
         }
-        foreach (var boss in this.Space.FindAllObjectsByName("Boss"))
-        {
-            if(enemyCheck > 0)
-            {
-                return;
-            }
-            enemyCheck += 1;
-        }
         foreach(var door in this.Space.FindAllObjectsByName("Door"))
         {
             var posCheck = this.MapPosition;
