@@ -69,7 +69,7 @@ class SpellSwitchHandler : ZilchComponent
         this.CurrentSpell = this.SpellArray.Get(this.PrivateSpellIndex);
         if(this.CurrentSpell == SpellTypes.BASIC)
         {
-            this.SetSpell(120, 1, Archetype.Bullet, ShotPatternID.SINGLE);
+            this.SetSpell(120, 0.5, Archetype.Bullet, ShotPatternID.SINGLE);
             this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Magic Missile");
         }
         else if(this.CurrentSpell == SpellTypes.BUBBLETRAP)
