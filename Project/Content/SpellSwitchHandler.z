@@ -15,7 +15,7 @@
 ** Changes back to normal collision after timer is up.
 ** --------------------------------------------------------------------------*/
 //      10        20        30        40        50        60        70        80        90       100
-enum SpellTypes {BASIC, BUBBLETRAP, EXPLODINGBUllET, SEEKINGSPELL}
+enum SpellTypes {NULL, BASIC, BUBBLETRAP, EXPLODINGBUllET, SEEKINGSPELL}
 class SpellSwitchHandler : ZilchComponent
 {
     var SpellArray : Array[SpellTypes] = Array[SpellTypes]();
