@@ -119,7 +119,17 @@ class RoomScript : ZilchComponent
         foreach (var enemy in this.Space.FindAllObjectsByName("Enemy"))
         {
             if(enemyCheck > 0)
+            {
                 return;
+            }
+            enemyCheck += 1;
+        }
+        foreach (var boss in this.Space.FindAllObjectsByName("Boss"))
+        {
+            if(enemyCheck > 0)
+            {
+                return;
+            }
             enemyCheck += 1;
         }
         foreach(var door in this.Space.FindAllObjectsByName("Door"))
