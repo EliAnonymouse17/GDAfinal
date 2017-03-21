@@ -41,7 +41,7 @@ class Item
         }
         else if(itemID == ItemID.HEALTH)
         {
-            this.Sprite = SpriteSource.Square;
+            this.Sprite = SpriteSource.HeartTexture_000;
             this.ItemScript1 = "HeartPickupScript";
             this.ItemScript2 = "BoxCollider";
         }
@@ -51,22 +51,29 @@ class Item
 class Room
 {
     var Enemies : Array[Enemy];
-    var NumEnemies : Integer;
+    var Items : Array[Item];
+    var TM : Archetype;
     
-    constructor(enemies : Array[Enemy])
+    constructor(enemies : Array[Enemy], items : Array[Item], tileMap : Archetype)
     {
-        this.NumEnemies = enemies.Count;
-        this.Enemies = new Array[Enemy](this.NumEnemies);
-        for(var i = 0; i < this.NumEnemies; ++i)
+        this.Enemies = new Array[Enemy](enemies.Count);
+        for(var i = 0; i < this.Enemies.Count; ++i)
         {
             this.Enemies[i] = enemies[i];
         }
+        this.Items = new Array[Item](items.Count);
+        for(var i = 0; i < this.Items.Count; ++i)
+        {
+            this.Items[i] = items[i];
+        }
+        
+        this.TM = tileMap;
     }
     
     
     function InitRoom(space : Space)
     {
-        for(var i = 0; i < this.NumEnemies; ++i)
+        for(var i = 0; i < this.Enemies.Count; ++i)
         {
             var currentEnemy = space.CreateAtPosition(Archetype.Enemy, this.Enemies[i].Position);
             currentEnemy.AddComponentByName(this.Enemies[i].AIScript1);
@@ -74,14 +81,25 @@ class Room
             currentEnemy.Sprite.SpriteSource = this.Enemies[i].Sprite;
             currentEnemy.EnemyShoot.ShotPattern = this.Enemies[i].ShotType;
         }
+        
+        for(var i = 0; i < this.Items.Count; ++i)
+        {
+            var currentItem = space.CreateAtPosition(Archetype.Item, this.Items[i].Position);
+            currentItem.AddComponentByName(this.Items[i].ItemScript1);
+            currentItem.AddComponentByName(this.Items[i].ItemScript2);
+            currentItem.Sprite.SpriteSource = this.Items[i].Sprite;
+        }
+        
+        space.CreateAtPosition(this.TM, Real3(0, 0, 0));
     }
 }
 
 class RoomScript : ZilchComponent
 {
     var CurrentEnemyList : Array[Enemy];
+    var CurrentItemList : Array[Item];
     var CurrentRoom : Room;
-    var Map : Array[Array[Array[Enemy]]];
+    var Map : Array[Array[Room]];
     var MapPosition : Integer2;
     var MapDimensions : Integer = 3;
     
@@ -91,23 +109,26 @@ class RoomScript : ZilchComponent
         this.MapPosition = Integer2(0, 0);
         this.CurrentEnemyList = new Array[Enemy]();
         this.CurrentEnemyList.Add(new Enemy(EnemyTypeID.SKELETON, Real3(-7, 7.5, 0)));
-        this.CurrentRoom = new Room(this.CurrentEnemyList);
+        this.CurrentItemList = new Array[Item]();
+        this.CurrentItemList.Add(new Item(ItemID.BLOCKADE, Real3(7, 7.5, 0)));
+        this.CurrentRoom = new Room(this.CurrentEnemyList, this.CurrentItemList, Archetype.TMSquare22);
         Zero.Connect(this.Space, Events.EnemyDeathEvent, this.OnEnemyDeath);
     }
     
-    function InitMap() : Array[Array[Array[Enemy]]]
+    function InitMap() : Array[Array[Room]]
     {
-        var map = new Array[Array[Array[Enemy]]]();
+        var map = new Array[Array[Room]]();
         for(var i = 0; i < this.MapDimensions; ++i)
         {
-            map.Add(new Array[Array[Enemy]]());
+            map.Add(new Array[Room]());
             for(var j = 0; j < this.MapDimensions; ++j)
             {
-                map[i].Add(new Array[Enemy]());
+                var enemyList = new Array[Enemy]();
                 for(var k = 0; k < i+j+1; ++k)
                 {
-                    map[i][j].Add(new Enemy(EnemyTypeID.SKELETON, Real3(-8+(3*k), 7.5, 0)));
+                    enemyList.Add(new Enemy(EnemyTypeID.SKELETON, Real3(-8+(3*k), 7.5, 0)));
                 }
+                map[i].Add(new Room(enemyList, new Array[Item](), Archetype.TMChip));
             }
         }
         return map;
@@ -150,7 +171,7 @@ class RoomScript : ZilchComponent
     
     function NextRoom(direction : Directions)
     {
-        this.Map[this.MapPosition.X][this.MapPosition.Y] = new Array[Enemy]();
+        this.Map[this.MapPosition.X][this.MapPosition.Y] = new Room(new Array[Enemy](), new Array[Item](), this.CurrentRoom.TM);
         if(direction == Directions.RIGHT)
         {
             this.MapPosition += Integer2(1, 0);
@@ -167,17 +188,16 @@ class RoomScript : ZilchComponent
         {
             this.MapPosition += Integer2(0, 1);
         }
-        this.CurrentRoom = new Room(this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer]);
+        this.CurrentRoom = this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer];
         this.CurrentRoom.InitRoom(this.Space);
         this.Space.FindObjectByName("Player").Transform.Translation = Real3(0, 0, 0);
         foreach(var door in this.Space.FindAllObjectsByName("Door"))
         {
             door.Door.SetActive(false);
         }
-        if(this.CurrentRoom.NumEnemies == 0)
+        if(this.CurrentRoom.Enemies.Count == 0)
         {
             this.OnEnemyDeath(ZilchEvent());
         }
     }
-    
 }

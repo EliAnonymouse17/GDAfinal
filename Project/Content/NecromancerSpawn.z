@@ -41,8 +41,6 @@ class NecromancerSpawn : ZilchComponent
             {
                 return;
             }
-            
-            room.RoomScript.CurrentRoom.NumEnemies += 1;
         }
     }
 }

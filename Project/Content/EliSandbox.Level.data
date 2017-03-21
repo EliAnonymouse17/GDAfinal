@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 29.7595,
+			float Size = 26.9275,
 		},
 		EditorCameraController = 
 		{
@@ -559,7 +559,7 @@ Level =
 						},
 						Sprite = 
 						{
-							bool Visible = true,
+							bool Visible = false,
 							bool VisibilityCulling = true,
 							bool VisibilityEvents = true,
 							bool CastShadows = false,
@@ -592,7 +592,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-7, 7.5, 0],
+			Vec3 Translation = [-6, 6, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -630,13 +630,13 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [2.96051, -0.398743, 0],
+			Vec3 Translation = [4, -2, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Named = 
 		{
-			string Name = "Heart Pickup",
+			string Name = "Item",
 		},
 	},
 	ArchetypeInstance = 
@@ -648,7 +648,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-2.14505, 7.5, 0],
+			Vec3 Translation = [-2, 6, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -666,7 +666,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-5.4069, -4.83154, 0],
+			Vec3 Translation = [-6, -6, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
