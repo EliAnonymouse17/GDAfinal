@@ -6,7 +6,7 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "Boss",
+		string Name = "Enemy",
 	},
 	Archetyped = 
 	{
@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 100,
+		int PrivateHP = 2,
 	},
 	Shoot = 
 	{
@@ -81,6 +81,12 @@ Cog =
 		string ShootSound = "",
 		string WalkAnimation = "",
 		string AttackAnimation = "",
+	},
+	SpellDrop = 
+	{
+		string SpellDrop1 = "",
+		string SpellDrop2 = "",
+		string SpellDrop3 = "",
 	},
 	Hierarchy = 
 	{

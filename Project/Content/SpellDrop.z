@@ -1,7 +1,39 @@
+/* ----------------------------------------------------------------------------
+** Team MagiDev
+** © 2017 DigiPen Institute of Technology, All Rights Reserved.
+**
+** HitpointScript.z
+**
+** Author:
+** - Bar Ben-zvi
+**
+** Contributors:
+** - None
+** --------------------------------------------------------------------------*/
+
+
 class SpellDrop : ZilchComponent
 {
     
     
+    
+    [Property]
+    var SpellDrop1 : SpellTypes = SpellTypes.NULL;
+    
+    [Property]
+    var SpellDrop2 : SpellTypes = SpellTypes.NULL;
+    
+    [Property]
+    var SpellDrop3 : SpellTypes = SpellTypes.NULL;
+    
+    [Property]
+    var SpellDropSprite1 : SpriteSource = null;
+    
+    [Property]
+    var SpellDropSprite2 : SpriteSource = null;
+    
+    [Property]
+    var SpellDropSprite3 : SpriteSource = null;
     
     function Initialize(init : CogInitializer)
     {
@@ -10,6 +42,33 @@ class SpellDrop : ZilchComponent
     
     function SpellDrop()
     {
+        
+        var position = this.Owner.Transform.WorldTranslation;
+        
+        var randomGenerator : Random = Random();
+        
+        var randomDrop = randomGenerator.Range(0, 100);
+        
+        Console.WriteLine(randomDrop);
+        
+        if(randomDrop <= 1)
+        {
+            var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
+            spell.SpellScrollScript.Spell = this.SpellDrop1;
+            spell.SpellScrollScript.SpellIcon = this.SpellDropSprite1;
+        }
+        if(randomDrop >= 2 && randomDrop <= 45)
+        {
+            var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
+            spell.SpellScrollScript.Spell = this.SpellDrop2;
+            spell.SpellScrollScript.SpellIcon = this.SpellDropSprite2;
+        }
+        if(randomDrop >= 46 && randomDrop <= 100)
+        {
+            var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
+            spell.SpellScrollScript.Spell = this.SpellDrop3;
+            spell.SpellScrollScript.SpellIcon = this.SpellDropSprite3;
+        }
         
     }
 }
