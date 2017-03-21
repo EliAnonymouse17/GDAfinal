@@ -3,6 +3,6 @@ TextContent =
 	ZilchScriptBuilder = 
 	{
 		string Name = "BoneSpawnerLogic",
-		uint64 ResourceId = 58040a4bdbcde5de,
+		uint64 ResourceId = 5804472c150bffce,
 	},
 },

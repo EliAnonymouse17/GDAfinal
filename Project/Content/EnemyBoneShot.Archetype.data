@@ -62,8 +62,6 @@ Cog =
 	{
 		int Damage = 1,
 		int PRVHitCount = 1,
-	},
-	BoneShotLogic = 
-	{
+		string SpawnOnDeath = "5804081ec54e02a3:BoneSpawner",
 	},
 },
