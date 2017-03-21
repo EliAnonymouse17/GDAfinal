@@ -40,9 +40,9 @@ Cog =
 	{
 		bool Static = false,
 		bool Asleep = false,
-		bool Kinematic = false,
+		bool Kinematic = true,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -50,7 +50,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 5,
+		int PrivateHP = 2,
 	},
 	BoxCollider = 
 	{
@@ -71,7 +71,7 @@ Cog =
 	},
 	BoneSpawnerLogic = 
 	{
+		float SpawnTimer = 4,
 		string EnemyToSpawn = "584d38bbc0e476d3:Skeleton",
-		float SpawnTime = 4,
 	},
 },
