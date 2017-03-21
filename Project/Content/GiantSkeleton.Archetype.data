@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 2,
+		int PrivateHP = 50,
 	},
 	Shoot = 
 	{
@@ -75,7 +75,7 @@ Cog =
 	},
 	EnemyShoot = 
 	{
-		float BulletDelay = 6,
+		float BulletDelay = 1,
 		float BulletSpeed = 100,
 		Enum ShotPattern = TRIPLE,
 		string ShootSound = "",
