@@ -84,9 +84,11 @@ class RoomScript : ZilchComponent
     var Map : Array[Array[Array[Enemy]]];
     var MapPosition : Integer2;
     var MapDimensions : Integer = 3;
+    var Minimap : Minimap;
     
     function Initialize(init : CogInitializer)
     {
+        this.Minimap = this.Space.FindObjectByName("Minimap").Minimap;
         this.Map = this.InitMap();
         this.MapPosition = Integer2(0, 0);
         this.CurrentEnemyList = new Array[Enemy]();
@@ -154,6 +156,8 @@ class RoomScript : ZilchComponent
             if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1)
             {
                 door.Door.SetActive(true);
+                if(this.Minimap.GetNodeState(posCheck) == MMNodeState.Unknown)
+                    this.Minimap.SetNodeState(posCheck, MMNodeState.Unexplored);
             }
         }
     }
@@ -161,6 +165,7 @@ class RoomScript : ZilchComponent
     function NextRoom(direction : Directions)
     {
         this.Map[this.MapPosition.X][this.MapPosition.Y] = new Array[Enemy]();
+        this.Minimap.SetNodeState(this.MapPosition, MMNodeState.Complete);
         if(direction == Directions.RIGHT)
         {
             this.MapPosition += Integer2(1, 0);
@@ -177,6 +182,7 @@ class RoomScript : ZilchComponent
         {
             this.MapPosition += Integer2(0, 1);
         }
+        this.Minimap.SetNodeState(this.MapPosition, MMNodeState.Current);
         this.CurrentRoom = new Room(this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer]);
         this.CurrentRoom.InitRoom(this.Space);
         this.Space.FindObjectByName("Player").Transform.Translation = Real3(0, 0, 0);
