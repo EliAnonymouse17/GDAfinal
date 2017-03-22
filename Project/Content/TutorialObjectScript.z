@@ -8,5 +8,6 @@ class TutorialObjectScript : ZilchComponent
     function OnCollisionStarted(event : CollisionEvent)
     {
         this.Space.FindObjectByName("Tutorial NPC").TutorialProgression.IncrementProgression();
+        this.Space.FindObjectByName("Tutorial NPC").TutorialProgression.FLock = false;
     }
 }

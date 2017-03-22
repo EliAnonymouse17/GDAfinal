@@ -15,7 +15,7 @@
 ** Changes back to normal collision after timer is up.
 ** --------------------------------------------------------------------------*/
 //      10        20        30        40        50        60        70        80        90       100
-enum SpellTypes {BASIC, BUBBLETRAP, EXPLODINGBUllET, SEEKINGSPELL}
+enum SpellTypes {NULL, BASIC, BUBBLETRAP, EXPLODINGBUllET, SEEKINGSPELL}
 class SpellSwitchHandler : ZilchComponent
 {
     var SpellArray : Array[SpellTypes] = Array[SpellTypes]();
@@ -47,6 +47,7 @@ class SpellSwitchHandler : ZilchComponent
         this.Owner.PlayerShoot.BulletSpeed = bulletSpeed;
         this.Owner.PlayerShoot.BulletDelay = bulletDelay;
         this.Owner.PlayerShoot.ShotPattern = shotPattern;
+        this.Owner.PlayerShoot.TimeUntilNextShot = bulletDelay;
         
         this.Owner.Shoot.BulletType = bulletType;
     }
@@ -69,7 +70,7 @@ class SpellSwitchHandler : ZilchComponent
         this.CurrentSpell = this.SpellArray.Get(this.PrivateSpellIndex);
         if(this.CurrentSpell == SpellTypes.BASIC)
         {
-            this.SetSpell(120, 1, Archetype.Bullet, ShotPatternID.SINGLE);
+            this.SetSpell(120, 0.5, Archetype.Bullet, ShotPatternID.SINGLE);
             this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Magic Missile");
         }
         else if(this.CurrentSpell == SpellTypes.BUBBLETRAP)
@@ -79,7 +80,7 @@ class SpellSwitchHandler : ZilchComponent
         }
         else if(this.CurrentSpell == SpellTypes.EXPLODINGBUllET)
         {
-            this.SetSpell(1200, 5, Archetype.ExplodingBullet, ShotPatternID.SINGLE);
+            this.SetSpell(1200, 3, Archetype.ExplodingBullet, ShotPatternID.SINGLE);
             this.SetSpellHUD(SpriteSource.Texture_SpikeBall, "Exploding Shrapnel");
         }
         else if (this.CurrentSpell == SpellTypes.SEEKINGSPELL)
@@ -94,7 +95,7 @@ class SpellSwitchHandler : ZilchComponent
         //Starting Spells Go here
         this.SpellArray.Add(SpellTypes.BASIC);
         //this.SpellArray.Add(SpellTypes.BUBBLETRAP);
-        //this.SpellArray.Add(SpellTypes.EXPLODINGBUllET);
+        this.SpellArray.Add(SpellTypes.EXPLODINGBUllET);
         //this.SpellArray.Add(SpellTypes.SEEKINGSPELL);
         Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyUpdate);
         Zero.Connect(this.Space, Events.MouseScroll, this.OnMouseUpdate);

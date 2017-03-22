@@ -6,12 +6,16 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "Minimap",
+		string Name = "Minimap Node",
+	},
+	Archetyped = 
+	{
+		string Name = "582318d089878808:MinimapNode",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [15, -5, -40],
-		Vec3 Scale = [7, 7, 1],
+		Vec3 Translation = [0, 0, 0],
+		Vec3 Scale = [0.2, 0.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -20,7 +24,7 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [1, 1, 1, 1],
+		Vec4 Color = [1, 1, 1, 0],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
