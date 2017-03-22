@@ -17,6 +17,12 @@ class DamageScript : ZilchComponent
     
     [Property]
     var PRVHitCount : Integer = 1;
+    
+    [Property]
+    var SpawnOnDeath : Archetype = null;
+    
+    var DidSpawn : Boolean = false;
+    
     var HitCount : Integer
     {
         get {return this.PRVHitCount;}
@@ -34,15 +40,25 @@ class DamageScript : ZilchComponent
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
-}
-        //Deals damage to other object if it has hitpoints and then destroys owner
+    }
+        
+    //Deals damage to other object if it has hitpoints and then destroys owner
     function OnCollisionStarted(event : CollisionEvent)
     {
+        if(!this.DidSpawn && this.SpawnOnDeath != null)
+        {
+            var position = this.Owner.Transform.WorldTranslation;
+            
+            this.DidSpawn = true;
+            this.Space.CreateAtPosition(this.SpawnOnDeath, position);
+        }
+        
         if(event.OtherObject.HitpointScript == null) 
         {
             this.Owner.Destroy();
             return;
         }
+        
         
         event.OtherObject.HitpointScript.HP -= this.Damage;
         

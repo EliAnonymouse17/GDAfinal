@@ -2,8 +2,8 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "Texture_PlayerBasicProjectile",
-		uint64 ResourceId = 584558c2c978f519,
+		string Name = "Texture_Scroll",
+		uint64 ResourceId = 58455b774dd3ee6c,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 32,
 		uint FrameSizeY = 32,

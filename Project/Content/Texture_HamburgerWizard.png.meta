@@ -2,8 +2,8 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "Texture_PlayerBasicProjectile",
-		uint64 ResourceId = 584558c2c978f519,
+		string Name = "Texture_HamburgerWizard",
+		uint64 ResourceId = 58472d641bdb8518,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 32,
 		uint FrameSizeY = 32,
@@ -11,7 +11,7 @@ ImageContent =
 		float FrameDelay = 0.0833333,
 		float OriginX = 16,
 		float OriginY = 16,
-		float PixelsPerUnit = 32,
+		float PixelsPerUnit = 24,
 		bool Smoothing = false,
 		bool Looping = true,
 		Vec4 Slices = [0, 0, 0, 0],

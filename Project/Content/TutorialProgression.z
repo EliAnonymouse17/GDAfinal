@@ -1,0 +1,55 @@
+class TutorialProgression : ZilchComponent
+{
+    var TextArray : Array[String] = Array[String]();
+    var TextIndex : Integer = 0;
+    function Initialize(init : CogInitializer)
+    {
+        this.TextArray.Add("Greetings, Wand Man!");
+        this.TextArray.Add("I, the acclaimed Hamburger Wizard, \nwill be your guide in this dungeon.");
+        this.TextArray.Add("We will start with the basics.\nUse the WASD keys to move.");
+        this.TextArray.Add("Left-click to cast a spell.");
+        this.TextArray.Add("Try hitting that target over there.");
+        this.TextArray.Add("Good job!\nBut no wizard worth their salt knows only one spell!");
+        this.TextArray.Add("Go pick up that scroll.\nIt contains the Bubble Trap Spell, which you may find useful.");
+        this.TextArray.Add("You can switch between spells using the scroll wheel,\nor Q and E.");
+        this.TextArray.Add("You may have noticed that the spell you are currently using\nis displayed in the upper left-hand corner of your screen.");
+        this.TextArray.Add("Above this display are your health bar and your fade cooldown bar.\nYour health bar displays your current health,\nand your fade cooldown bar displays the remaining cooldown on your fade ability.");
+        this.TextArray.Add("You can't see your fade cooldown bar right now because your fade is ready for use!");
+        this.TextArray.Add("Press space to use your fade ability.\nWhile active, your fade ability allows you to avoid spells cast by enemies.\nTry it now!");
+        this.TextArray.Add("Great! You are now ready to face your first enemy!\nPress F to begin the fight!");
+        this.TextArray.Add(" ");
+        this.TextArray.Add("Now you can practice some more by clearing a couple of rooms.");
+        this.TextArray.Add("Enter the door at the far side of this room to continue.");
+        Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyDown);
+    }
+    
+    function IncrementProgression()
+    {
+        this.Owner.FindChildByName("Tutorial Text").SpriteText.Text = this.TextArray[this.TextIndex];
+        if (this.TextIndex == 4)
+        {
+            this.Space.CreateAtPosition(Archetype.Target, Real3(12,1,0));
+        }
+        if (this.TextIndex == 6)
+        {
+            this.Space.CreateAtPosition(Archetype.TutorialSpellScroll, Real3(8,1,0));
+        }
+        if (this.TextIndex == 13)
+        {
+            this.Space.CreateAtPosition(Archetype.TutorialSkeleton, Real3(12,4,0));
+        }
+        if (this.TextIndex == 14)
+        {
+            this.Space.FindObjectByName("TutorialDoor").Sprite.Visible = true;
+        }
+        this.TextIndex += 1;
+    }
+
+    function OnKeyDown(event : KeyboardEvent)
+    {
+        if (event.Key == Keys.F)
+        {
+            this.IncrementProgression();
+        }
+    }
+}

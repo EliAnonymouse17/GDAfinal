@@ -1,0 +1,28 @@
+class BoneSpawnerLogic : ZilchComponent
+{
+    [Property]
+    var SpawnTimer : Real = 4;
+    
+    [Property]
+    var EnemyToSpawn : Archetype = null;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.SpawnTimer -= event.Dt;
+        
+        if(this.SpawnTimer <= 0)
+        {
+            var position = this.Owner.Transform.WorldTranslation;
+            
+            this.Space.CreateAtPosition(this.EnemyToSpawn, position);
+            
+            this.Owner.Destroy();
+        }
+        
+    }
+}

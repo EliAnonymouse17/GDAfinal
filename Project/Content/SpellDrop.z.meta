@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "SpellDrop",
+		uint64 ResourceId = 58040fdc00c9a568,
+	},
+},

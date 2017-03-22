@@ -1,0 +1,25 @@
+class GiantSkeletonLogic : ZilchComponent
+{
+    [Property]
+    var AttackDelay1 : Real = 3;
+    
+    [Property]
+    var AttackDelay2 : Real = 3;
+    
+    [Property]
+    var AttackDelay3 : Real = 3;
+    
+    var AttackTimer1 : Real = 1;
+    var AttackTimer2 : Real = 2;
+    var AttackTimer3 : Real = 3;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        
+    }
+}

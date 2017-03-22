@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "SpellScrollScript",
+		uint64 ResourceId = 58455a68b09895ad,
+	},
+},
