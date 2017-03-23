@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 50,
+		int PrivateHP = 40,
 	},
 	Shoot = 
 	{
