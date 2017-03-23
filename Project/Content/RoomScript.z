@@ -37,13 +37,13 @@ class Item
         {
             this.Sprite = SpriteSource.Square;
             this.ItemScript1 = "RigidBody";
-            this.ItemScript2 = "BoxCollider";
+            this.ItemScript2 = "Empty";
         }
         else if(itemID == ItemID.HEALTH)
         {
             this.Sprite = SpriteSource.HeartTexture_000;
             this.ItemScript1 = "HeartPickupScript";
-            this.ItemScript2 = "BoxCollider";
+            this.ItemScript2 = "Empty";
         }
     }
 }
@@ -95,7 +95,7 @@ class Room
         }
         
         var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, 0));
-        tileMap.Transform.RotateAnglesLocal(Real3(0, 0, this.Rotation));
+        //tileMap.Transform.RotateAnglesLocal(Real3(0, 0, Math.ToRadians(this.Rotation)));
     }
 }
 
@@ -130,12 +130,14 @@ class RoomScript : ZilchComponent
             map.Add(new Array[Room]());
             for(var j = 0; j < this.MapDimensions; ++j)
             {
+                /*
                 var enemyList = new Array[Enemy]();
                 for(var k = 0; k < i+j+1; ++k)
                 {
                     enemyList.Add(new Enemy(EnemyTypeID.SKELETON, Real3(-8+(3*k), 7.5, 0)));
                 }
-                map[i].Add(new Room(enemyList, new Array[Item](), Archetype.TMChip, 0));
+                map[i].Add(new Room(enemyList, new Array[Item](), Archetype.TMChip, 0));*/
+                map[i].Add(this.RandomGen());
             }
         }
         return map;
@@ -227,11 +229,11 @@ class RoomScript : ZilchComponent
         {
             temp = random.DieRoll(10);
             if(temp < 6)
-                enemies.Add(new Enemy(EnemyTypeID.SKELETON, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap)));
+                enemies.Add(new Enemy(EnemyTypeID.SKELETON, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
             else if(temp < 10)
-                enemies.Add(new Enemy(EnemyTypeID.ZOMBIE, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap)));
+                enemies.Add(new Enemy(EnemyTypeID.ZOMBIE, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
             else
-                enemies.Add(new Enemy(EnemyTypeID.NECROMANCER, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap)));
+                enemies.Add(new Enemy(EnemyTypeID.NECROMANCER, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
         }
         
         var itemNum = random.DieRoll(4) - 2 + Math.Floor(roomSize/2.0);
@@ -240,17 +242,161 @@ class RoomScript : ZilchComponent
         {
             temp = random.DieRoll(10);
             if(temp < 8)
-                items.Add(new Item(ItemID.BLOCKADE, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap)));
+                items.Add(new Item(ItemID.BLOCKADE, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
             else
-                items.Add(new Item(ItemID.HEALTH, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap)));
+                items.Add(new Item(ItemID.HEALTH, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
         }
         
         return new Room(enemies, items, tileMap, rotation);
     }
     
-    function GetPosition(x : Integer, y : Integer, tileMap : Archetype) : Real3
+    function GetPosition(x : Integer, y : Integer, tileMap : Archetype, rotation : Integer) : Real3
     {
-        return Real3(0, 0, 0);
+        var position = Real3(0, 0, 0);
+        if(tileMap == Archetype.TMTriL)
+        {
+            if(x == 1)
+                position = Real3(0, 0, 0);
+            else if(x == 2)
+                position = Real3(-12, 0, 0);
+            else if(x == 3)
+                position = Real3(-12, 12, 0);
+        }
+        else if(tileMap == Archetype.TMTriLine)
+        {
+            if(x == 1)
+                position = Real3(6, 0, 0);
+            else if(x == 2)
+                position = Real3(-6, 0, 0);
+            else if(x == 3)
+                position = Real3(-18, 0, 0);
+        }
+        else if(tileMap == Archetype.TMSquare22)
+        {
+            if(x == 1)
+                position = Real3(0, 0, 0);
+            else if(x == 2)
+                position = Real3(-12, 0, 0);
+            else if(x == 3)
+                position = Real3(0, 12, 0);
+            else if(x == 4)
+                position = Real3(-12, 12, 0);
+        }
+        else if(tileMap == Archetype.TMQuadLL)
+        {
+            if(x == 1)
+                position = Real3(0, 0, 0);
+            else if(x == 2)
+                position = Real3(-12, 0, 0);
+            else if(x == 3)
+                position = Real3(-12, 12, 0);
+            else if(x == 4)
+                position = Real3(-12, 24, 0);
+        }
+        else if(tileMap == Archetype.TMQuadLR)
+        {
+            if(x == 1)
+                position = Real3(0, 0, 0);
+            else if(x == 2)
+                position = Real3(0, 12, 0);
+            else if(x == 3)
+                position = Real3(0, 24, 0);
+            else if(x == 4)
+                position = Real3(-12, 0, 0);
+        }
+        else if(tileMap == Archetype.TMBulgeL)
+        {
+            if(x == 1)
+                position = Real3(0, 0, 0);
+            else if(x == 2)
+                position = Real3(-12, 0, 0);
+            else if(x == 3)
+                position = Real3(-12, 12, 0);
+            else if(x == 4)
+                position = Real3(-12, 24, 0);
+            else if(x == 5)
+                position = Real3(-0, 12, 0);
+        }
+        else if(tileMap == Archetype.TMBulgeR)
+        {
+            if(x == 1)
+                position = Real3(0, 0, 0);
+            else if(x == 2)
+                position = Real3(0, 12, 0);
+            else if(x == 3)
+                position = Real3(0, 24, 0);
+            else if(x == 4)
+                position = Real3(-12, 0, 0);
+            else if(x == 5)
+                position = Real3(-12, 12, 0);
+        }
+        else if(tileMap == Archetype.TMSquare23)
+        {
+            if(x == 1)
+                position = Real3(-6, 0, 0);
+            else if(x == 2)
+                position = Real3(6, 0, 0);
+            else if(x == 3)
+                position = Real3(-6, 12, 0);
+            else if(x == 4)
+                position = Real3(6, 12, 0);
+            else if(x == 5)
+                position = Real3(-18, 0, 0);
+            else if(x == 6)
+                position = Real3(-18, 12, 0);
+        }
+        else if(tileMap == Archetype.TMSquare24)
+        {
+            if(x == 1)
+                position = Real3(0, 0, 0);
+            else if(x == 2)
+                position = Real3(-12, 0, 0);
+            else if(x == 3)
+                position = Real3(12, 0, 0);
+            else if(x == 4)
+                position = Real3(24, 0, 0);
+            else if(x == 5)
+                position = Real3(-12, 12, 0);
+            else if(x == 6)
+                position = Real3(0, 12, 0);
+            else if(x == 7)
+                position = Real3(12, 12, 0);
+            else if(x == 8)
+                position = Real3(24, 12, 0);
+        }
+        else if(tileMap == Archetype.TMChip)
+        {
+            if(x == 1)
+                position = Real3(0, 0, 0);
+            else if(x == 2)
+                position = Real3(-12, 0, 0);
+            else if(x == 3)
+                position = Real3(12, 0, 0);
+            else if(x == 4)
+                position = Real3(0, 24, 0);
+            else if(x == 5)
+                position = Real3(-12, 24, 0);
+            else if(x == 6)
+                position = Real3(-12, 12, 0);
+            else if(x == 7)
+                position = Real3(0, 12, 0);
+            else if(x == 8)
+                position = Real3(12, 12, 0);
+        }
+        var xIncrease : Real = 2;
+        var yIncrease : Real = 2;
+        
+        xIncrease += Math.Floor(y/3.0);
+        yIncrease += y % 3;
+        position += Real3(xIncrease, 0-yIncrease, 0);
+        /*
+        if(rotation == 90)
+            position = Real3(position.Y, position.X, 0);
+        if(rotation == 180)
+            position *= -1;
+        if(rotation == 270)
+            position = Real3(0-position.Y, 0-position.X, 0);*/
+        return position;
     }
 
     function OnEnemyDeath(event : ZilchEvent)
