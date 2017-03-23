@@ -28,7 +28,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "58230430c7b3754c:Texture_SkeletonStill",
+		string SpriteSource = "585125feabef951a:GiantSkeletonFront000",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -44,7 +44,7 @@ Cog =
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "580e65c5299dde20:Enemy",
 		Vec3 Offset = [-0.05, 0, 0],
-		Vec3 Size = [0.375, 1, 0.5],
+		Vec3 Size = [0.325, 1, 0.5],
 	},
 	RigidBody = 
 	{
@@ -88,14 +88,15 @@ Cog =
 		float BulletSpeed1 = 150,
 		Enum ShotPattern1 = SINGLE,
 		string BulletType1 = "5804092c3eb1cc11:EnemyBoneShot",
-		float AttackDelay2 = 0.7,
-		float BulletSpeed2 = 175,
+		float AttackDelay2 = 6,
+		float BulletSpeed2 = 1000,
 		Enum ShotPattern2 = SINGLE,
-		string BulletType2 = "580e65c5299defb0:EnemyBullet",
+		string BulletType2 = "58512f553b58e4ef:GiantEnemyBullet",
 		float AttackDelay3 = 2,
 		float BulletSpeed3 = 200,
 		Enum ShotPattern3 = TRIPLE,
 		string BulletType3 = "580e65c5299defb0:EnemyBullet",
+		bool ChallengeMeter = false,
 	},
 	Hierarchy = 
 	{

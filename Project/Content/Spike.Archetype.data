@@ -50,8 +50,9 @@ Cog =
 	},
 	DamageScript = 
 	{
-		int Damage = 3,
+		int Damage = 2,
 		int PRVHitCount = 1,
+		string SpawnOnDeath = "",
 	},
 	MassOverride = 
 	{

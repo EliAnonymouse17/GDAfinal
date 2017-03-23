@@ -47,7 +47,8 @@ class SpellSwitchHandler : ZilchComponent
         this.Owner.PlayerShoot.BulletSpeed = bulletSpeed;
         this.Owner.PlayerShoot.BulletDelay = bulletDelay;
         this.Owner.PlayerShoot.ShotPattern = shotPattern;
-        this.Owner.PlayerShoot.TimeUntilNextShot = bulletDelay;
+        this.Owner.PlayerShoot.TimeUntilNextShot = 0.5;
+        
         
         this.Owner.Shoot.BulletType = bulletType;
     }
@@ -80,7 +81,7 @@ class SpellSwitchHandler : ZilchComponent
         }
         else if(this.CurrentSpell == SpellTypes.EXPLODINGBUllET)
         {
-            this.SetSpell(1200, 3, Archetype.ExplodingBullet, ShotPatternID.SINGLE);
+            this.SetSpell(1200, 2, Archetype.ExplodingBullet, ShotPatternID.SINGLE);
             this.SetSpellHUD(SpriteSource.Texture_SpikeBall, "Exploding Shrapnel");
         }
         else if (this.CurrentSpell == SpellTypes.SEEKINGSPELL)
@@ -106,12 +107,14 @@ class SpellSwitchHandler : ZilchComponent
         if (event.Key == Keys.Q)
         {
             this.SpellIndex += 1;
+            this.ChangeSpell();
         }
         else if (event.Key == Keys.E)
         {
             this.SpellIndex -= 1;
+            this.ChangeSpell();
         }
-        this.ChangeSpell();
+        
     }
     
     function OnMouseUpdate(event : MouseEvent)

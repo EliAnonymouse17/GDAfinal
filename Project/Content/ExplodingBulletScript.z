@@ -3,6 +3,14 @@ class ExplodingBulletScript : ZilchComponent
     [Property] 
     var AngleOffset : Real = 90;
     
+    [Property]
+    var ArchetypeToSpawn : Archetype = null;
+    
+    [Property]
+    var SpawnedBulletVelocity : Real = 25;
+    
+    var HasCollided : Boolean = false;
+    
     var Angle : Real = 0;
     function Initialize(init : CogInitializer)
     {
@@ -11,13 +19,18 @@ class ExplodingBulletScript : ZilchComponent
 
     function OnCollisionStarted(event : CollisionEvent)
     {
+        if(this.HasCollided)
+        {
+            return;
+        }
+        
         for (var i = 0; i < 14; ++i)
         {
             this.Angle = Math.ATan2(0,0) - (i-1)*(Math.ToRadians(360 / 14));
-            var bullet = this.Space.CreateAtPosition(Archetype.Spike, this.Owner.Transform.Translation);
+            var bullet = this.Space.CreateAtPosition(this.ArchetypeToSpawn, this.Owner.Transform.Translation);
             var newAngle = Real3(Math.Sin(this.Angle), Math.Cos(this.Angle), 0);
             newAngle = Math.Normalize(newAngle);
-            bullet.RigidBody.ApplyForce(newAngle * 25);
+            bullet.RigidBody.ApplyForce(newAngle * this.SpawnedBulletVelocity);
             
             // calculate the angle of the firing vector in radians, apply angle offset
             var fireAngle = Math.ATan2(newAngle.Y, newAngle.X) - Math.ToRadians(this.AngleOffset);
@@ -25,6 +38,12 @@ class ExplodingBulletScript : ZilchComponent
             // set the z rotation for this bullet
             bullet.Transform.SetEulerAnglesXYZ(0, 0, fireAngle);
         }
+        
+        if(!this.HasCollided)
+        {
+            this.HasCollided = true;
+        }
+        
         this.Owner.Destroy();
     }
 }
