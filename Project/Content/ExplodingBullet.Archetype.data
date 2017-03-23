@@ -61,5 +61,6 @@ Cog =
 	ExplodingBulletScript = 
 	{
 		float AngleOffset = 90,
+		string ArchetypeToSpawn = "5844c3d44bf7f043:Spike",
 	},
 },
