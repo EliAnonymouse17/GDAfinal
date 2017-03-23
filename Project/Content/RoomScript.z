@@ -53,14 +53,16 @@ class Room
     var Enemies : Array[Enemy];
     var Items : Array[Item];
     var TM : Archetype;
+    var Rotation : Integer;
     
-    constructor(enemies : Array[Enemy], items : Array[Item], tileMap : Archetype)
+    constructor(enemies : Array[Enemy], items : Array[Item], tileMap : Archetype, rotation : Integer)
     {
         this.Enemies = new Array[Enemy](enemies.Count);
         for(var i = 0; i < this.Enemies.Count; ++i)
         {
             this.Enemies[i] = enemies[i];
         }
+        
         this.Items = new Array[Item](items.Count);
         for(var i = 0; i < this.Items.Count; ++i)
         {
@@ -68,6 +70,8 @@ class Room
         }
         
         this.TM = tileMap;
+        
+        this.Rotation = rotation;
     }
     
     
@@ -90,7 +94,8 @@ class Room
             currentItem.Sprite.SpriteSource = this.Items[i].Sprite;
         }
         
-        space.CreateAtPosition(this.TM, Real3(0, 0, 0));
+        var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, 0));
+        tileMap.Transform.RotateAnglesLocal(Real3(0, 0, this.Rotation));
     }
 }
 
@@ -113,7 +118,7 @@ class RoomScript : ZilchComponent
         this.CurrentEnemyList.Add(new Enemy(EnemyTypeID.SKELETON, Real3(-7, 7.5, 0)));
         this.CurrentItemList = new Array[Item]();
         this.CurrentItemList.Add(new Item(ItemID.BLOCKADE, Real3(7, 7.5, 0)));
-        this.CurrentRoom = new Room(this.CurrentEnemyList, this.CurrentItemList, Archetype.TMSquare22);
+        this.CurrentRoom = new Room(this.CurrentEnemyList, this.CurrentItemList, Archetype.TMSquare22, 0);
         Zero.Connect(this.Space, Events.EnemyDeathEvent, this.OnEnemyDeath);
     }
     
@@ -130,10 +135,122 @@ class RoomScript : ZilchComponent
                 {
                     enemyList.Add(new Enemy(EnemyTypeID.SKELETON, Real3(-8+(3*k), 7.5, 0)));
                 }
-                map[i].Add(new Room(enemyList, new Array[Item](), Archetype.TMChip));
+                map[i].Add(new Room(enemyList, new Array[Item](), Archetype.TMChip, 0));
             }
         }
         return map;
+    }
+    
+    function RandomGen() : Room
+    {
+        //(12)  roll d12 for tilemap (1-TriL(3) 2-TriLine(3) 3-TriLine(3) 4-Square22(4) 5-Square22(4) 6-QuadLL(4) 7-QuadLR(4) 8-BulgeL(5) 9-BulgeR(5) 10-Square23(6) 11-Square24(8) 12-Chip(8))
+        //(4)   roll d4 for rotation ((d4 - 1) * 90)
+        //(4)   roll d4 for #enemies (d4 + roomsize - 4, max 8 enemies)
+        //(10^8)roll [#enemies]d10 for enemy type (1-5 = skeleton, 6-9 = zombie, 10 = necro)
+        //(8^8) roll [#enemies]d[roomsize] for placement
+        //(9^8) roll [#enemies]d9 for placement
+        //(4)   roll d4 for #items (d4 + floor(roomsize / 2) - 2, max 6 items)
+        //(10^6)roll [#items]d10 for item type
+        //(8^6) roll [#items]d[roomsize] for placement
+        //(9^6) roll [#items]d9 for placement
+        //2: 54 3: 29 5: 14 = > 10^39 (sh*t)
+        
+        var roomSize = 0;
+        var tileMap = Archetype.TMSquare22;
+        var rotation = 0;
+        var enemies = new Array[Enemy]();
+        var items = new Array[Item]();
+        var random = Random();
+        //var seedGen = Random();
+        var temp : Integer = 0;
+        
+        //random.Seed(seedGen.Integer());
+        //http://i.imgur.com/ZfnkeKM.png
+        //goddamn seeds
+        temp = random.DieRoll(12);
+        if(temp == 1)
+        {
+            tileMap = Archetype.TMTriL;
+            roomSize = 3;
+        }
+        else if(temp == 2 || temp == 3)
+        {
+            tileMap = Archetype.TMTriLine;
+            roomSize = 3;
+        }
+        else if(temp == 4 || temp == 5)
+        {
+            tileMap = Archetype.TMSquare22;
+            roomSize = 4;
+        }
+        else if(temp == 6)
+        {
+            tileMap = Archetype.TMQuadLL;
+            roomSize = 4;
+        }
+        else if(temp == 7)
+        {
+            tileMap = Archetype.TMQuadLR;
+            roomSize = 4;
+        }
+        else if(temp == 8)
+        {
+            tileMap = Archetype.TMBulgeL;
+            roomSize = 5;
+        }
+        else if(temp == 9)
+        {
+            tileMap = Archetype.TMBulgeR;
+            roomSize = 5;
+        }
+        else if(temp == 10)
+        {
+            tileMap = Archetype.TMSquare23;
+            roomSize = 6;
+        }
+        else if(temp == 11)
+        {
+            tileMap = Archetype.TMSquare24;
+            roomSize = 8;
+        }
+        else if(temp == 12)
+        {
+            tileMap = Archetype.TMChip;
+            roomSize = 8;
+        }
+        
+        rotation = (random.DieRoll(4) - 1) * 90;
+        
+        var enemyNum = random.DieRoll(4) - 4 + roomSize;
+        
+        for(var i = 0; i < enemyNum; ++i)
+        {
+            temp = random.DieRoll(10);
+            if(temp < 6)
+                enemies.Add(new Enemy(EnemyTypeID.SKELETON, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap)));
+            else if(temp < 10)
+                enemies.Add(new Enemy(EnemyTypeID.ZOMBIE, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap)));
+            else
+                enemies.Add(new Enemy(EnemyTypeID.NECROMANCER, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap)));
+        }
+        
+        var itemNum = random.DieRoll(4) - 2 + Math.Floor(roomSize/2.0);
+        
+        for(var i = 0; i < enemyNum; ++i)
+        {
+            temp = random.DieRoll(10);
+            if(temp < 8)
+                items.Add(new Item(ItemID.BLOCKADE, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap)));
+            else
+                items.Add(new Item(ItemID.HEALTH, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap)));
+        }
+        
+        return new Room(enemies, items, tileMap, rotation);
+    }
+    
+    function GetPosition(x : Integer, y : Integer, tileMap : Archetype) : Real3
+    {
+        return Real3(0, 0, 0);
     }
 
     function OnEnemyDeath(event : ZilchEvent)
@@ -175,10 +292,16 @@ class RoomScript : ZilchComponent
         }
     }
     
+    
     function NextRoom(direction : Directions)
     {
-        this.Map[this.MapPosition.X][this.MapPosition.Y] = new Room(new Array[Enemy](), new Array[Item](), this.CurrentRoom.TM);
+        this.Map[this.MapPosition.X][this.MapPosition.Y] = new Room(new Array[Enemy](), new Array[Item](), this.CurrentRoom.TM, this.CurrentRoom.Rotation);
         this.Minimap.SetNodeState(this.MapPosition, MMNodeState.Complete);
+        foreach (var bullet in this.Space.FindAllObjectsByName("Bullet"))
+        {
+            bullet.Destroy();
+        }
+        this.Space.FindObjectByName("TileMap").Destroy();
         if(direction == Directions.RIGHT)
         {
             this.MapPosition += Integer2(1, 0);
