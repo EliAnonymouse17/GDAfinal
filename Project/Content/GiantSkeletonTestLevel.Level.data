@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-1.50145, 6.62061, 50],
+			Vec3 Translation = [2.64902, -1.68476, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 54.2253,
+			float Size = 24.365,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-1.50145, 6.62061, 7.68534e-008],
+			Vec3 LookTarget = [2.64902, -1.68476, 3.71217e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -563,7 +563,7 @@ Level =
 							bool VisibilityCulling = true,
 							bool VisibilityEvents = true,
 							bool CastShadows = false,
-							Vec4 Color = [1, 1, 1, 1],
+							Vec4 Color = [1, 1, 1, 0.9999],
 							BlendMode BlendMode = Alpha,
 							SpriteGeometryMode GeometryMode = ZPlane,
 							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -701,7 +701,7 @@ Level =
 		},
 		HitpointScript = 
 		{
-			int PrivateHP = 50,
+			int PrivateHP = 1,
 		},
 		Shoot = 
 		{
@@ -714,15 +714,6 @@ Level =
 			Vec3 ForwardVector = [0, 1, 0],
 			OrientationBases DefaultBases = ForwardYUpZ,
 		},
-		EnemyShoot = 
-		{
-			float BulletDelay = 5,
-			float BulletSpeed = 100,
-			Enum ShotPattern = TRIPLE,
-			string ShootSound = "",
-			string WalkAnimation = "",
-			string AttackAnimation = "",
-		},
 		SpellDrop = 
 		{
 			Enum SpellDrop1 = EXPLODINGBUllET,
@@ -731,6 +722,21 @@ Level =
 			string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
 			string SpellDropSprite2 = "583a1b2cfe6b1569:Texture_BubbleBullet",
 			string SpellDropSprite3 = "584558c2c978f519:Texture_PlayerBasicProjectile",
+		},
+		BossAttackLogic = 
+		{
+			float AttackDelay1 = 4,
+			float BulletSpeed1 = 150,
+			Enum ShotPattern1 = SINGLE,
+			string BulletType1 = "5804092c3eb1cc11:EnemyBoneShot",
+			float AttackDelay2 = 1,
+			float BulletSpeed2 = 225,
+			Enum ShotPattern2 = SINGLE,
+			string BulletType2 = "580e65c5299defb0:EnemyBullet",
+			float AttackDelay3 = 2,
+			float BulletSpeed3 = 200,
+			Enum ShotPattern3 = TRIPLE,
+			string BulletType3 = "580e65c5299defb0:EnemyBullet",
 		},
 		Hierarchy = 
 		{

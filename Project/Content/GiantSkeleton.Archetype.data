@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 50,
+		int PrivateHP = 40,
 	},
 	Shoot = 
 	{
@@ -73,15 +73,6 @@ Cog =
 		Vec3 ForwardVector = [0, 1, 0],
 		OrientationBases DefaultBases = ForwardYUpZ,
 	},
-	EnemyShoot = 
-	{
-		float BulletDelay = 1,
-		float BulletSpeed = 100,
-		Enum ShotPattern = TRIPLE,
-		string ShootSound = "",
-		string WalkAnimation = "",
-		string AttackAnimation = "",
-	},
 	SpellDrop = 
 	{
 		Enum SpellDrop1 = EXPLODINGBUllET,
@@ -90,6 +81,21 @@ Cog =
 		string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
 		string SpellDropSprite2 = "583a1b2cfe6b1569:Texture_BubbleBullet",
 		string SpellDropSprite3 = "584558c2c978f519:Texture_PlayerBasicProjectile",
+	},
+	BossAttackLogic = 
+	{
+		float AttackDelay1 = 4,
+		float BulletSpeed1 = 150,
+		Enum ShotPattern1 = SINGLE,
+		string BulletType1 = "5804092c3eb1cc11:EnemyBoneShot",
+		float AttackDelay2 = 0.7,
+		float BulletSpeed2 = 175,
+		Enum ShotPattern2 = SINGLE,
+		string BulletType2 = "580e65c5299defb0:EnemyBullet",
+		float AttackDelay3 = 2,
+		float BulletSpeed3 = 200,
+		Enum ShotPattern3 = TRIPLE,
+		string BulletType3 = "580e65c5299defb0:EnemyBullet",
 	},
 	Hierarchy = 
 	{

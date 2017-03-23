@@ -1,8 +1,0 @@
-TextContent = 
-{
-	ZilchScriptBuilder = 
-	{
-		string Name = "GiantSkeletonLogic",
-		uint64 ResourceId = 58040f99c80484c3,
-	},
-},

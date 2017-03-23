@@ -50,7 +50,7 @@ class Minimap : ZilchComponent
             for(var j = 0; j < dimensions; ++j)
             {
                 miniMap[i].Add(new MMNode(MMNodeState.Unknown, this.Space,
-                this.Owner, Real3((3.0 * i - 3) / 10.0, (3.0 * (2 - j) - 3) / 10.0, 0)));
+                this.Owner, Real3((3.0 * i - 3) / 10.0, (3.0 * (2 - j) - 3) / 10.0, 0.1)));
             }
         }
         return miniMap;

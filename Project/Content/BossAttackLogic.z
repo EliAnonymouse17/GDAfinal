@@ -1,0 +1,76 @@
+class BossAttackLogic : ZilchComponent
+{
+    [Property]
+    var AttackDelay1 : Real = 3;
+    [Property] var BulletSpeed1 : Real = 1000;
+    [Property] var ShotPattern1 : ShotPatternID = ShotPatternID.SINGLE;
+    [Property] var BulletType1 : Archetype = null;
+    
+    [Property]
+    var AttackDelay2 : Real = 3;
+    [Property] var BulletSpeed2 : Real = 1000;
+    [Property] var ShotPattern2 : ShotPatternID = ShotPatternID.SINGLE;
+    [Property] var BulletType2 : Archetype = null;
+    
+    [Property]
+    var AttackDelay3 : Real = 3;
+    [Property] var BulletSpeed3 : Real = 1000;
+    [Property] var ShotPattern3 : ShotPatternID = ShotPatternID.SINGLE;
+    [Property] var BulletType3 : Archetype = null;
+    
+    var AttackTimer1 : Real = 4;
+    var AttackTimer2 : Real = 1;
+    var AttackTimer3 : Real = 2;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.Owner.Shoot == null)
+        {
+            return;
+        }
+        
+        this.AttackTimer1 -= event.Dt;
+        this.AttackTimer2 -= event.Dt;
+        this.AttackTimer3 -= event.Dt;
+        
+        if(this.Space.FindObjectByName("Player") == null)
+        {
+            return;
+        }
+        
+        var shotAngle = Math.Normalize(this.Space.FindObjectByName("Player").Transform.Translation - this.Owner.Transform.Translation);
+        
+        if(this.AttackTimer1 <= 0)
+        {
+            this.Owner.Shoot.BulletType = this.BulletType1;
+            
+            this.Owner.Shoot.Shoot(this.BulletSpeed1, shotAngle, this.ShotPattern1);
+            
+            this.AttackTimer1 = this.AttackDelay1;
+        }
+        
+        if(this.AttackTimer2 <= 0)
+        {
+            this.Owner.Shoot.BulletType = this.BulletType2;
+            
+            this.Owner.Shoot.Shoot(this.BulletSpeed2, shotAngle, this.ShotPattern2);
+            
+            this.AttackTimer2 = this.AttackDelay2;
+        }
+        
+        if(this.AttackTimer3 <= 0)
+        {
+            this.Owner.Shoot.BulletType = this.BulletType3;
+            
+            this.Owner.Shoot.Shoot(this.BulletSpeed3, shotAngle, this.ShotPattern3);
+            
+            this.AttackTimer3 = this.AttackDelay3;
+        }
+        
+    }
+}
