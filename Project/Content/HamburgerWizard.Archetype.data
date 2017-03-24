@@ -75,7 +75,7 @@ Cog =
 	},
 	BossAttackLogic = 
 	{
-		float AttackDelay1 = 900000,
+		float AttackDelay1 = 90000,
 		float BulletSpeed1 = 100,
 		Enum ShotPattern1 = SINGLE,
 		string BulletType1 = "580e65c5299defb0:EnemyBullet",

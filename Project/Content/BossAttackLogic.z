@@ -1,28 +1,46 @@
 class BossAttackLogic : ZilchComponent
 {
-    [Property]
-    var AttackDelay1 : Real = 3;
+    [Property] var AttackDelay1 : Real = 3;
     [Property] var BulletSpeed1 : Real = 1000;
     [Property] var ShotPattern1 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var BulletType1 : Archetype = null;
     
-    [Property]
-    var AttackDelay2 : Real = 3;
+    [Property] var AttackDelay2 : Real = 3;
     [Property] var BulletSpeed2 : Real = 1000;
     [Property] var ShotPattern2 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var BulletType2 : Archetype = null;
     
-    [Property]
-    var AttackDelay3 : Real = 3;
+    [Property] var AttackDelay3 : Real = 3;
     [Property] var BulletSpeed3 : Real = 1000;
     [Property] var ShotPattern3 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var BulletType3 : Archetype = null;
     
-    [Property] var ChallengeMeter : Boolean = false;
+    [Property] var StageSwitch : Real = 0;
     
+    [Property] var ChallengeAttackDelay1 : Real = 3;
+    [Property] var ChallengeBulletSpeed1 : Real = 1000;
+    [Property] var ChallengeShotPattern1 : ShotPatternID = ShotPatternID.SINGLE;
+    [Property] var ChallengeBulletType1 : Archetype = null;
+    
+    [Property] var ChallengeAttackDelay2 : Real = 3;
+    [Property] var ChallengeBulletSpeed2 : Real = 1000;
+    [Property] var ChallengeShotPattern2 : ShotPatternID = ShotPatternID.SINGLE;
+    [Property] var ChallengeBulletType2 : Archetype = null;
+    
+    [Property] var ChallengeAttackDelay3 : Real = 3;
+    [Property] var ChallengeBulletSpeed3 : Real = 1000;
+    [Property] var ChallengeShotPattern3 : ShotPatternID = ShotPatternID.SINGLE;
+    [Property] var ChallengeBulletType3 : Archetype = null;
+    
+    
+    var StageSwitchBool : Boolean = false;
     var AttackTimer1 : Real = 4;
     var AttackTimer2 : Real = 1;
     var AttackTimer3 : Real = 2;
+    
+    var ChallengeAttackTimer1 : Real = 4;
+    var ChallengeAttackTimer2 : Real = 1;
+    var ChallengeAttackTimer3 : Real = 2;
     
     function Initialize(init : CogInitializer)
     {
@@ -36,9 +54,24 @@ class BossAttackLogic : ZilchComponent
             return;
         }
         
-        this.AttackTimer1 -= event.Dt;
-        this.AttackTimer2 -= event.Dt;
-        this.AttackTimer3 -= event.Dt;
+        if(this.Owner.HitpointScript.PrivateHP <= this.StageSwitch)
+        {
+            this.StageSwitchBool = true;
+        }
+        
+        
+        if(!this.StageSwitchBool)
+        {
+            this.AttackTimer1 -= event.Dt;
+            this.AttackTimer2 -= event.Dt;
+            this.AttackTimer3 -= event.Dt;
+        }
+        else
+        {
+            this.ChallengeAttackTimer1 -= event.Dt;
+            this.ChallengeAttackTimer2 -= event.Dt;
+            this.ChallengeAttackTimer3 -= event.Dt;
+        }
         
         if(this.Space.FindObjectByName("Player") == null)
         {
@@ -47,31 +80,73 @@ class BossAttackLogic : ZilchComponent
         
         var shotAngle = Math.Normalize(this.Space.FindObjectByName("Player").Transform.Translation - this.Owner.Transform.Translation);
         
-        if(this.AttackTimer1 <= 0)
+        if(!this.StageSwitchBool)
         {
-            this.Owner.Shoot.BulletType = this.BulletType1;
-            
-            this.Owner.Shoot.Shoot(this.BulletSpeed1, shotAngle, this.ShotPattern1);
-            
-            this.AttackTimer1 = this.AttackDelay1;
+            if(this.AttackTimer1 <= 0)
+            {
+                this.Owner.Shoot.BulletType = this.BulletType1;
+                
+                this.Owner.Shoot.Shoot(this.BulletSpeed1, shotAngle, this.ShotPattern1);
+                
+                this.AttackTimer1 = this.AttackDelay1;
+            }
+        }
+        else
+        {
+            if(this.ChallengeAttackTimer1 <= 0)
+            {
+                this.Owner.Shoot.BulletType = this.ChallengeBulletType1;
+                
+                this.Owner.Shoot.Shoot(this.ChallengeBulletSpeed1, shotAngle, this.ChallengeShotPattern1);
+                
+                this.ChallengeAttackTimer1 = this.ChallengeAttackDelay1;
+            }
         }
         
-        if(this.AttackTimer2 <= 0)
+        if(!this.StageSwitchBool)
         {
-            this.Owner.Shoot.BulletType = this.BulletType2;
-            
-            this.Owner.Shoot.Shoot(this.BulletSpeed2, shotAngle, this.ShotPattern2);
-            
-            this.AttackTimer2 = this.AttackDelay2;
+            if(this.AttackTimer2 <= 0)
+            {
+                this.Owner.Shoot.BulletType = this.BulletType2;
+                
+                this.Owner.Shoot.Shoot(this.BulletSpeed2, shotAngle, this.ShotPattern2);
+                
+                this.AttackTimer2 = this.AttackDelay2;
+            }
+        }
+        else
+        {
+            if(this.ChallengeAttackTimer2 <= 0)
+            {
+                this.Owner.Shoot.BulletType = this.ChallengeBulletType2;
+                
+                this.Owner.Shoot.Shoot(this.ChallengeBulletSpeed2, shotAngle, this.ChallengeShotPattern2);
+                
+                this.ChallengeAttackTimer2 = this.ChallengeAttackDelay2;
+            }
         }
         
-        if(this.AttackTimer3 <= 0)
+        if(!this.StageSwitchBool)
         {
-            this.Owner.Shoot.BulletType = this.BulletType3;
-            
-            this.Owner.Shoot.Shoot(this.BulletSpeed3, shotAngle, this.ShotPattern3);
-            
-            this.AttackTimer3 = this.AttackDelay3;
+            if(this.AttackTimer3 <= 0)
+            {
+                this.Owner.Shoot.BulletType = this.BulletType3;
+                
+                this.Owner.Shoot.Shoot(this.BulletSpeed1, shotAngle, this.ShotPattern3);
+                
+                this.AttackTimer3 = this.AttackDelay3;
+            }
+        }
+        else
+        {
+            if(this.ChallengeAttackTimer3 <= 0)
+            {
+                this.Owner.Shoot.BulletType = this.ChallengeBulletType3;
+                
+                this.Owner.Shoot.Shoot(this.ChallengeBulletSpeed3, shotAngle, this.ChallengeShotPattern3);
+                
+                this.ChallengeAttackTimer3 = this.ChallengeAttackDelay3;
+            }
         }
         
     }
