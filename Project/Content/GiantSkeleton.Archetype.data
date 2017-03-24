@@ -65,6 +65,8 @@ Cog =
 	Shoot = 
 	{
 		string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
+		int RingCount = 20,
+		float RingOffset = 90,
 	},
 	Orientation = 
 	{
@@ -92,9 +94,9 @@ Cog =
 		float BulletSpeed2 = 1000,
 		Enum ShotPattern2 = SINGLE,
 		string BulletType2 = "58512f553b58e4ef:GiantEnemyBullet",
-		float AttackDelay3 = 2,
-		float BulletSpeed3 = 200,
-		Enum ShotPattern3 = TRIPLE,
+		float AttackDelay3 = 6,
+		float BulletSpeed3 = 25,
+		Enum ShotPattern3 = RING,
 		string BulletType3 = "580e65c5299defb0:EnemyBullet",
 		float StageSwitch = 15,
 		float ChallengeAttackDelay1 = 5,
@@ -105,9 +107,9 @@ Cog =
 		float ChallengeBulletSpeed2 = 1300,
 		Enum ChallengeShotPattern2 = SINGLE,
 		string ChallengeBulletType2 = "58512f553b58e4ef:GiantEnemyBullet",
-		float ChallengeAttackDelay3 = 1.5,
-		float ChallengeBulletSpeed3 = 200,
-		Enum ChallengeShotPattern3 = TRIPLE,
+		float ChallengeAttackDelay3 = 4,
+		float ChallengeBulletSpeed3 = 35,
+		Enum ChallengeShotPattern3 = RING,
 		string ChallengeBulletType3 = "580e65c5299defb0:EnemyBullet",
 		Vec4 ChallengeColor = [0.955, 0.042975, 0.042975, 1],
 	},

@@ -54,10 +54,10 @@ class Shoot : ZilchComponent
                 bullet.RigidBody.ApplyForce(newAngle * bulletSpeed);
                 
                 // calculate the angle of the firing vector in radians, apply angle offset
-                var fireAngle = Math.ATan2(newAngle.Y, newAngle.X) - Math.ToRadians(this.RingOffset);
+                //var fireAngle = Math.ATan2(newAngle.Y, newAngle.X) - Math.ToRadians(this.RingOffset);
                 
                 // set the z rotation for this bullet
-                bullet.Transform.SetEulerAnglesXYZ(0, 0, fireAngle);
+                //bullet.Transform.SetEulerAnglesXYZ(0, 0, fireAngle);
             }
         }
     }

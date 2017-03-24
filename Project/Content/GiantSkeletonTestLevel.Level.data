@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 16.3323,
+			float Size = 24.3649,
 		},
 		EditorCameraController = 
 		{
@@ -204,6 +204,8 @@ Level =
 		Shoot = 
 		{
 			string BulletType = "5815eae6be2978a9:Bullet",
+			int RingCount = 10,
+			float RingOffset = 90,
 		},
 		HitpointScript = 
 		{
