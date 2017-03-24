@@ -101,8 +101,8 @@ Cog =
 		float ChallengeBulletSpeed1 = 140,
 		Enum ChallengeShotPattern1 = TRIPLE,
 		string ChallengeBulletType1 = "5804092c3eb1cc11:EnemyBoneShot",
-		float ChallengeAttackDelay2 = 4,
-		float ChallengeBulletSpeed2 = 1200,
+		float ChallengeAttackDelay2 = 3.5,
+		float ChallengeBulletSpeed2 = 1300,
 		Enum ChallengeShotPattern2 = SINGLE,
 		string ChallengeBulletType2 = "58512f553b58e4ef:GiantEnemyBullet",
 		float ChallengeAttackDelay3 = 1.5,
@@ -128,7 +128,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [0.00219032, -1.04978, 8],
+				Vec3 Translation = [0.00219029, 1.09644, 8],
 				Vec3 Scale = [0.4, 0.2, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
