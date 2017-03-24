@@ -1,0 +1,16 @@
+class BossHealthBarScript : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var healthBar = this.Owner.FindChildByName("BossHealthBar");
+        
+        var currHealth = Real3(this.Owner.HitpointScript.PrivateHP, 0.5, 1);
+        
+        healthBar.Transform.Scale = currHealth / 10;
+    }
+}

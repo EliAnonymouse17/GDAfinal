@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0.772535, 6.02278, 50],
+			Vec3 Translation = [-4.36919, 6.01259, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 29.7594,
+			float Size = 18.05,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0.772535, 6.02278, 3.71217e-007],
+			Vec3 LookTarget = [-4.36919, 6.01259, 3.71217e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -639,12 +639,19 @@ Level =
 			string Name = "TileMap",
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "58040c758067a641:GiantSkeleton",
 		LinkId = 
 		{
 			uint Id = 17,
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+		Archetyped = 
+		{
+			string Name = "58040c758067a641:GiantSkeleton",
 		},
 		Transform = 
 		{
@@ -652,9 +659,139 @@ Level =
 			Vec3 Scale = [2.5, 2.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		Sprite = 
 		{
-			string Name = "Enemy",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "585125feabef951a:GiantSkeletonFront000",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
+			Vec3 Offset = [-0.05, 0, 0],
+			Vec3 Size = [0.325, 1, 0.5],
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		HitpointScript = 
+		{
+			int PrivateHP = 40,
+		},
+		Shoot = 
+		{
+			string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 1, 0],
+			Vec3 UpVector = [0, 0, 1],
+			Vec3 ForwardVector = [0, 1, 0],
+			OrientationBases DefaultBases = ForwardYUpZ,
+		},
+		SpellDrop = 
+		{
+			Enum SpellDrop1 = EXPLODINGBUllET,
+			Enum SpellDrop2 = BUBBLETRAP,
+			Enum SpellDrop3 = SEEKINGSPELL,
+			string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
+			string SpellDropSprite2 = "583a1b2cfe6b1569:Texture_BubbleBullet",
+			string SpellDropSprite3 = "584558c2c978f519:Texture_PlayerBasicProjectile",
+		},
+		BossAttackLogic = 
+		{
+			float AttackDelay1 = 4,
+			float BulletSpeed1 = 150,
+			Enum ShotPattern1 = SINGLE,
+			string BulletType1 = "5804092c3eb1cc11:EnemyBoneShot",
+			float AttackDelay2 = 6,
+			float BulletSpeed2 = 1000,
+			Enum ShotPattern2 = SINGLE,
+			string BulletType2 = "58512f553b58e4ef:GiantEnemyBullet",
+			float AttackDelay3 = 2,
+			float BulletSpeed3 = 200,
+			Enum ShotPattern3 = TRIPLE,
+			string BulletType3 = "580e65c5299defb0:EnemyBullet",
+			float StageSwitch = 10,
+			float ChallengeAttackDelay1 = 5,
+			float ChallengeBulletSpeed1 = 140,
+			Enum ChallengeShotPattern1 = TRIPLE,
+			string ChallengeBulletType1 = "5804092c3eb1cc11:EnemyBoneShot",
+			float ChallengeAttackDelay2 = 4,
+			float ChallengeBulletSpeed2 = 1200,
+			Enum ChallengeShotPattern2 = SINGLE,
+			string ChallengeBulletType2 = "58512f553b58e4ef:GiantEnemyBullet",
+			float ChallengeAttackDelay3 = 1.5,
+			float ChallengeBulletSpeed3 = 200,
+			Enum ChallengeShotPattern3 = TRIPLE,
+			string ChallengeBulletType3 = "580e65c5299defb0:EnemyBullet",
+			Vec4 ChallengeColor = [0.955, 0.042975, 0.042975, 1],
+		},
+		BossHealthBarScript = 
+		{
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 18,
+				},
+				Named = 
+				{
+					string Name = "BossHealthBar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.00219029, 1.09644, 8],
+					Vec3 Scale = [0.4, 0.2, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 0, 0, 0.5],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+			},
 		},
 	},
 },
