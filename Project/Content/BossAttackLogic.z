@@ -136,7 +136,7 @@ class BossAttackLogic : ZilchComponent
             {
                 this.Owner.Shoot.BulletType = this.BulletType3;
                 
-                this.Owner.Shoot.Shoot(this.BulletSpeed1, shotAngle, this.ShotPattern3);
+                this.Owner.Shoot.Shoot(this.BulletSpeed3, shotAngle, this.ShotPattern3);
                 
                 this.AttackTimer3 = this.AttackDelay3;
             }
