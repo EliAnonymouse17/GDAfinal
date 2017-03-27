@@ -1,5 +1,5 @@
 
-class SeekingBulletScript : ZilchComponent
+class IceSpearScript : ZilchComponent
 {
     var HitEnemies : Array[Cog] = Array[Cog]();
     function Initialize(init : CogInitializer)
@@ -65,7 +65,7 @@ class SeekingBulletScript : ZilchComponent
             this.Owner.Destroy();
         }
         var angle = Math.Normalize(closest.Transform.Translation - this.Owner.Transform.Translation);
-        this.Owner.RigidBody.Velocity = angle * currentSpeed * 2;
+        this.Owner.RigidBody.Velocity = angle * currentSpeed;
     }
     
 }

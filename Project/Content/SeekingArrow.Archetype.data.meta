@@ -2,8 +2,8 @@ DataContent =
 {
 	DataBuilder = 
 	{
-		string Name = "SeekingBullet",
-		uint64 ResourceId = 584d4ddb6f528990,
+		string Name = "SeekingArrow",
+		uint64 ResourceId = 5852c445964b36c9,
 		string LoaderType = "Cog",
 		uint Version = 0,
 		bool ShowInEditor = true,

@@ -2,7 +2,7 @@ TextContent =
 {
 	ZilchScriptBuilder = 
 	{
-		string Name = "SeekingBulletScript",
+		string Name = "IceSpearScript",
 		uint64 ResourceId = 584d4d887057e501,
 	},
 },

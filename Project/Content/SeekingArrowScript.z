@@ -1,0 +1,27 @@
+enum TrackCogs{MOUSE, PLAYER}
+class SeekingArrowScript : ZilchComponent
+{
+    [Property]
+    var TrackedCog : TrackCogs = TrackCogs.MOUSE;
+
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var mouseScreenPosition = Zero.Mouse.ScreenPosition;
+        var mouseWorldPosition = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(mouseScreenPosition, 0);
+        var position = this.Owner.Transform.Translation;
+
+        var vectorToMouse = mouseWorldPosition - position;
+
+        // The ATan2 function returns an angle in radians
+        var mouseAngle = Math.ATan2(vectorToMouse.Y, vectorToMouse.X);
+        mouseAngle -= Math.Pi/2;
+        // The SetEulerAnglesXYZ function expects angles in radians
+        this.Owner.Transform.SetEulerAnglesXYZ(0.0, 0.0, mouseAngle);
+    }
+
+}
