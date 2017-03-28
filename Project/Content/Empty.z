@@ -1,1 +1,7 @@
-class Empty:ZilchComponent{}
+class Empty : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        this.Owner.RemoveComponentByName("Empty");
+    }
+}

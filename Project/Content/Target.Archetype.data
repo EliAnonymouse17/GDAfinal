@@ -6,7 +6,7 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "Target",
+		string Name = "Enemy",
 	},
 	Archetyped = 
 	{

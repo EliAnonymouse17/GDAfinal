@@ -6,7 +6,7 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "Scroll",
+		string Name = "Enemy",
 	},
 	Archetyped = 
 	{

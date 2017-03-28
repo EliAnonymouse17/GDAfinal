@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-7, 7.5, 0],
+		Vec3 Translation = [-6, 6, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -65,6 +65,9 @@ Cog =
 	Shoot = 
 	{
 		string BulletType = "580e65c5299defb0:EnemyBullet",
+		int RingCount = 10,
+		float RingOffset = 90,
+		int SpreadBullets = 3,
 	},
 	Orientation = 
 	{
@@ -78,6 +81,9 @@ Cog =
 		float BulletDelay = 1,
 		float BulletSpeed = 100,
 		Enum ShotPattern = SINGLE,
+		string ShootSound = "585fbc88d0adb726:MagicMissile",
+		string WalkAnimation = "",
+		string AttackAnimation = "",
 	},
 	SideToSide = 
 	{

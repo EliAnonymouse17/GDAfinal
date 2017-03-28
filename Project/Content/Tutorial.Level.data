@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [19.2694, -2.10658, 49.999],
+			Vec3 Translation = [-1.56813, 4.0852, 49.999],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 8.1104,
+			float Size = 5.43656,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [19.2694, -2.10658, -0.000999401],
+			Vec3 LookTarget = [-1.56813, 4.0852, -0.00100031],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -195,7 +195,8 @@ Level =
 		{
 			float BulletDelay = 1,
 			float BulletSpeed = 200,
-			Enum ShotPattern = TRIPLE,
+			Enum ShotPattern = SINGLE,
+			bool TimerFreeze = false,
 		},
 		BoxCollider = 
 		{
@@ -222,6 +223,9 @@ Level =
 		Shoot = 
 		{
 			string BulletType = "5815eae6be2978a9:Bullet",
+			int RingCount = 10,
+			float RingOffset = 90,
+			int SpreadBullets = 3,
 		},
 		HitpointScript = 
 		{
@@ -645,6 +649,40 @@ Level =
 					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
 					string FontName = "4e7bac697bec55c5:Verdana",
 					uint FontSize = 24,
+					string Text = "",
+					TextAlign Align = Left,
+					float PixelsPerUnit = 64,
+					bool Smoothing = true,
+				},
+			},
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 16,
+				},
+				Named = 
+				{
+					string Name = "Tutorial Text2",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.412423, 0.451544, 0],
+					Vec3 Scale = [0.666667, 0.666667, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				SpriteText = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 1, 1, 1],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string FontName = "4e7bac697bec55c5:Verdana",
+					uint FontSize = 24,
 					string Text = "Press F to talk.",
 					TextAlign Align = Left,
 					float PixelsPerUnit = 64,
@@ -657,7 +695,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 16,
+			uint Id = 17,
 		},
 		Named = 
 		{

@@ -9,6 +9,9 @@ class ExplodingBulletScript : ZilchComponent
     [Property]
     var SpawnedBulletVelocity : Real = 25;
     
+    [Property]
+    var BoomSound : SoundCue = SoundCue.ExplodingBulletImpact;
+    
     var HasCollided : Boolean = false;
     
     var Angle : Real = 0;
@@ -44,6 +47,10 @@ class ExplodingBulletScript : ZilchComponent
             this.HasCollided = true;
         }
         
+        if (this.BoomSound != null)
+        {
+            this.Space.SoundSpace.PlayCue(this.BoomSound);
+        }
         this.Owner.Destroy();
     }
 }

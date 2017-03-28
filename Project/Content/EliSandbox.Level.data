@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [1.75821, -0.0169148, 50],
+			Vec3 Translation = [-1.49788, -3.10482, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 26.9275,
+			float Size = 32.8893,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [1.75821, -0.0169148, 7.68534e-008],
+			Vec3 LookTarget = [-1.49788, -3.10482, 7.68534e-008],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -178,6 +178,7 @@ Level =
 			float BulletDelay = 1,
 			float BulletSpeed = 150,
 			Enum ShotPattern = SPREAD,
+			bool TimerFreeze = false,
 		},
 		BoxCollider = 
 		{
@@ -206,7 +207,7 @@ Level =
 			string BulletType = "5815eae6be2978a9:Bullet",
 			int RingCount = 10,
 			float RingOffset = 90,
-			int SpreadBullets = 500,
+			int SpreadBullets = 50,
 		},
 		HitpointScript = 
 		{
