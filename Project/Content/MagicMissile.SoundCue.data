@@ -14,7 +14,7 @@ SoundCue =
 	Array Sounds = 
 	[
 		{
-			string SoundName = "585fbf932307da56:Magic Missile2",
+			string SoundName = "585fbc88d0a83d26:Magic Missile",
 			float Weight = 1,
 		},
 	],

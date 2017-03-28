@@ -50,8 +50,8 @@ Cog =
 	},
 	DamageScript = 
 	{
-		int Damage = 4,
-		int PRVHitCount = 3,
+		int Damage = 6,
+		int PRVHitCount = 1,
 		string SpawnOnDeath = "",
 	},
 	BoxCollider = 
@@ -75,6 +75,6 @@ Cog =
 	{
 		Enum TrackedCog = MOUSE,
 		float Speed = 20,
-		float Radians = 0.1,
+		float Radians = 0.2,
 	},
 },

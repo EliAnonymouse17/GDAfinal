@@ -13,6 +13,10 @@ SoundCue =
 	bool LinearRollOff = false,
 	Array Sounds = 
 	[
+		{
+			string SoundName = "585fbcffab05d6ea:Seeking Arrow",
+			float Weight = 1,
+		},
 	],
 	string RolloffCurveName = "",
 },

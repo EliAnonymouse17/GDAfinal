@@ -92,7 +92,7 @@ class SpellSwitchHandler : ZilchComponent
         }
         else if (this.CurrentSpell == SpellTypes.SEEKINGARROW)
         {
-            this.SetSpell(250, 2, Archetype.SeekingArrow, ShotPatternID.SINGLE);
+            this.SetSpell(250, 0.2, Archetype.SeekingArrow, ShotPatternID.SINGLE);
             this.SetSpellHUD(SpriteSource.Texture_SeekingArrow, "Seeking Arrow", SoundCue.SeekingArrow);
         }
     }
