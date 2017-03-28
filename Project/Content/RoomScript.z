@@ -27,24 +27,11 @@ class Enemy
 class Item
 {
     var Position : Real3;
-    var Sprite : SpriteSource;
-    var ItemScript1 : String;
-    var ItemScript2 : String;
+    var ID : ItemID;
     constructor(itemID : ItemID, position : Real3)
     {
         this.Position = position;
-        if(itemID == ItemID.BLOCKADE)
-        {
-            this.Sprite = SpriteSource.Square;
-            this.ItemScript1 = "RigidBody";
-            this.ItemScript2 = "Empty";
-        }
-        else if(itemID == ItemID.HEALTH)
-        {
-            this.Sprite = SpriteSource.HeartTexture_000;
-            this.ItemScript1 = "HeartPickupScript";
-            this.ItemScript2 = "RigidBody";
-        }
+        this.ID = itemID;
     }
 }
 
@@ -88,10 +75,10 @@ class Room
         
         for(var i = 0; i < this.Items.Count; ++i)
         {
-            var currentItem = space.CreateAtPosition(Archetype.Item, this.Items[i].Position);
-            currentItem.AddComponentByName(this.Items[i].ItemScript1);
-            currentItem.AddComponentByName(this.Items[i].ItemScript2);
-            currentItem.Sprite.SpriteSource = this.Items[i].Sprite;
+            if(this.Items[i].ID == ItemID.BLOCKADE)
+                space.CreateAtPosition(Archetype.Blockade, this.Items[i].Position);
+            if(this.Items[i].ID == ItemID.HEALTH)
+                space.CreateAtPosition(Archetype.HeartPickup, this.Items[i].Position);
         }
         
         var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, 0));
@@ -238,7 +225,7 @@ class RoomScript : ZilchComponent
         
         var itemNum = random.DieRoll(4) - 2 + Math.Floor(roomSize/2.0);
         
-        for(var i = 0; i < enemyNum; ++i)
+        for(var i = 0; i < itemNum; ++i)
         {
             temp = random.DieRoll(10);
             if(temp < 8)
