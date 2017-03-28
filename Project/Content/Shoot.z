@@ -22,6 +22,9 @@ class Shoot : ZilchComponent
     [Property]
     var RingOffset : Real = 90;
     
+    [Property]
+    var SpreadBullets : Integer = 3;
+    
     function Shoot(bulletSpeed : Real, angle : Real3, shotPattern : ShotPatternID)
     {
         if(shotPattern == ShotPatternID.SINGLE)
@@ -30,11 +33,11 @@ class Shoot : ZilchComponent
             var bullet = this.Space.CreateAtPosition(this.BulletType, bulletPos);
             bullet.RigidBody.ApplyForce(angle * bulletSpeed);
         }
-        if(shotPattern == ShotPatternID.TRIPLE)
+        if(shotPattern == ShotPatternID.SPREAD)
         {
-            for(var i : Real = 0; i < 3; ++i)
+            for(var i : Real = 0; i < this.SpreadBullets; ++i)
             {
-                var radAngle = Math.ATan2(angle.X, angle.Y) - (i-1)*(Math.Pi/6); //atan2 returns a radian -pi to pi for any normalized vector.
+                var radAngle = Math.ATan2(angle.X, angle.Y) - (i-(this.SpreadBullets/2))*(Math.Pi/(this.SpreadBullets*2)); //atan2 returns a radian -pi to pi for any normalized vector.
                 var newAngle = Real3(Math.Sin(radAngle), Math.Cos(radAngle), 0);
                 var bulletPos = this.Owner.Transform.Translation + newAngle;
                 var bullet = this.Space.CreateAtPosition(this.BulletType, bulletPos);

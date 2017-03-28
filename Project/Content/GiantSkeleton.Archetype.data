@@ -65,8 +65,9 @@ Cog =
 	Shoot = 
 	{
 		string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
-		int RingCount = 20,
+		int RingCount = 16,
 		float RingOffset = 90,
+		int SpreadBullets = 3,
 	},
 	Orientation = 
 	{
@@ -79,7 +80,7 @@ Cog =
 	{
 		Enum SpellDrop1 = EXPLODINGBUllET,
 		Enum SpellDrop2 = BUBBLETRAP,
-		Enum SpellDrop3 = SEEKINGSPELL,
+		Enum SpellDrop3 = NULL,
 		string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
 		string SpellDropSprite2 = "583a1b2cfe6b1569:Texture_BubbleBullet",
 		string SpellDropSprite3 = "584558c2c978f519:Texture_PlayerBasicProjectile",
@@ -95,13 +96,13 @@ Cog =
 		Enum ShotPattern2 = SINGLE,
 		string BulletType2 = "58512f553b58e4ef:GiantEnemyBullet",
 		float AttackDelay3 = 6,
-		float BulletSpeed3 = 25,
+		float BulletSpeed3 = 250,
 		Enum ShotPattern3 = RING,
 		string BulletType3 = "580e65c5299defb0:EnemyBullet",
 		float StageSwitch = 15,
 		float ChallengeAttackDelay1 = 5,
 		float ChallengeBulletSpeed1 = 140,
-		Enum ChallengeShotPattern1 = TRIPLE,
+		Enum ChallengeShotPattern1 = SINGLE,
 		string ChallengeBulletType1 = "5804092c3eb1cc11:EnemyBoneShot",
 		float ChallengeAttackDelay2 = 3.5,
 		float ChallengeBulletSpeed2 = 1300,
