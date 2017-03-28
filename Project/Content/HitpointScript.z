@@ -17,6 +17,8 @@ class HitpointScript : ZilchComponent
     [Property]
     var PrivateHP : Integer = 5;
     
+    var SpellDropBool : Boolean = false;
+    
     //Manipulates HP by accessing through other scripts
     var HP : Integer
     {
@@ -32,9 +34,11 @@ class HitpointScript : ZilchComponent
             {
                 if(this.Owner.Name == "Enemy")
                 {
-                    if(this.Owner.SpellDrop != null)
+                    if(this.Owner.SpellDrop != null && !this.SpellDropBool)
                     {
                         this.Owner.SpellDrop.SpellDrop();
+                        
+                        this.SpellDropBool = true;
                     }
                     this.Space.DispatchEvent(Events.EnemyDeathEvent, ZilchEvent());
                 }
