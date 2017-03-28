@@ -15,7 +15,7 @@
 ** Changes back to normal collision after timer is up.
 ** --------------------------------------------------------------------------*/
 //      10        20        30        40        50        60        70        80        90       100
-enum SpellTypes {NULL, BASIC, BUBBLETRAP, EXPLODINGBUllET, ICESPEAR, SEEKINGARROW}
+enum SpellTypes {NULL, BASIC, BUBBLETRAP, EXPLODINGBULLET, ICESPEAR, SEEKINGARROW}
 class SpellSwitchHandler : ZilchComponent
 {
     var SpellArray : Array[SpellTypes] = Array[SpellTypes]();
@@ -79,7 +79,7 @@ class SpellSwitchHandler : ZilchComponent
             this.SetSpell(200, 1, Archetype.BubbleBullet, ShotPatternID.SINGLE);
             this.SetSpellHUD(SpriteSource.Texture_BubbleBullet, "Bubble Trap");
         }
-        else if(this.CurrentSpell == SpellTypes.EXPLODINGBUllET)
+        else if(this.CurrentSpell == SpellTypes.EXPLODINGBULLET)
         {
             this.SetSpell(1200, 2, Archetype.ExplodingBullet, ShotPatternID.SINGLE);
             this.SetSpellHUD(SpriteSource.Texture_SpikeBall, "Exploding Shrapnel");
@@ -91,7 +91,7 @@ class SpellSwitchHandler : ZilchComponent
         }
         else if (this.CurrentSpell == SpellTypes.SEEKINGARROW)
         {
-            this.SetSpell(100, 2, Archetype.SeekingArrow, ShotPatternID.SINGLE);
+            this.SetSpell(250, 2, Archetype.SeekingArrow, ShotPatternID.SINGLE);
             this.SetSpellHUD(SpriteSource.Texture_SeekingArrow, "Seeking Arrow");
         }
     }
