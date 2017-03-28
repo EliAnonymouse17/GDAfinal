@@ -32,6 +32,10 @@ class DamageScript : ZilchComponent
             this.PRVHitCount -= 1;
             if (this.PRVHitCount <= 0) 
             {
+                if (this.Owner.ArchetypeName == "SeekingArrow")
+                {
+                    this.Space.FindObjectByName("Player").PlayerShoot.TimerFreeze = false;
+                }
                 this.Owner.Destroy();
             }
         }
@@ -53,8 +57,12 @@ class DamageScript : ZilchComponent
             this.Space.CreateAtPosition(this.SpawnOnDeath, position);
         }
         
-        if(event.OtherObject.HitpointScript == null) 
-        {
+        if(event.OtherObject.HitpointScript == null)
+        { 
+            if (this.Owner.ArchetypeName == "SeekingArrow")
+            {
+                this.Space.FindObjectByName("Player").PlayerShoot.TimerFreeze = false;
+            }
             this.Owner.Destroy();
             return;
         }

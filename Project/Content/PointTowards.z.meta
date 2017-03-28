@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "PointTowards",
+		uint64 ResourceId = 585f9a5c3289c71e,
+	},
+},

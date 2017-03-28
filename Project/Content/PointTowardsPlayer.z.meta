@@ -1,8 +1,0 @@
-TextContent = 
-{
-	ZilchScriptBuilder = 
-	{
-		string Name = "PointTowardsPlayer",
-		uint64 ResourceId = 58169a65b18322e0,
-	},
-},

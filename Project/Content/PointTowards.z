@@ -1,0 +1,55 @@
+/* ----------------------------------------------------------------------------
+** Team MagiDev
+** © 2017 DigiPen Institute of Technology, All Rights Reserved.
+**
+** PointTowardsPlayer.z
+**
+** Author:
+** - Bar Ben-zvi
+**
+** Contributors:
+** - None
+** --------------------------------------------------------------------------*/
+enum TrackCogs{MOUSE, PLAYER}
+class PointTowards : ZilchComponent
+{
+    [Property]
+    var TrackedCog : TrackCogs = TrackCogs.PLAYER;
+    
+    [Property]
+    var Speed : Real = 5;
+    
+    var Rotation : Quaternion = Quaternion();
+    [Property] var Radians : Real = 0.1;
+    
+    function Initialize(init : CogInitializer)
+    {
+        this.Space.FindObjectByName("Player").PlayerShoot.TimerFreeze = true;
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if (this.TrackedCog == TrackCogs.PLAYER)
+        {
+            if(this.Space.FindObjectByName("Player") == null) return;
+            
+            var player = this.Space.FindObjectByName("Player").Transform.Translation;
+            
+            this.Owner.Orientation.LookAtPointWithUp(player, Real3(0.0, 0.0, 1.0));
+        }
+        
+        if (this.TrackedCog == TrackCogs.MOUSE)
+        {
+        var screenMouse = Zero.Mouse.ScreenPosition;
+        var worldMouse = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(screenMouse, 0);
+        
+        this.Rotation = this.Owner.Orientation.GetLookAtPointWithUpRotation(worldMouse, Real3(0, 0, 1));
+        
+        this.Owner.Transform.Rotation = Math.RotateTowards(this.Owner.Transform.Rotation, this.Rotation, this.Radians);
+        
+        var forward = this.Owner.Orientation.WorldForward;
+        this.Owner.RigidBody.Velocity = forward * this.Speed;
+        }
+    }
+}
