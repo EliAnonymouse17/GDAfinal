@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-2.14505, 7.5, 0],
+		Vec3 Translation = [-2, 6, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -66,14 +66,17 @@ Cog =
 	{
 		float BulletDelay = 4,
 		float BulletSpeed = 150,
-		Enum ShotPattern = TRIPLE,
-		string ShootSound = "584fc8fb746f1d3e:NecromancerAttackSummon",
+		Enum ShotPattern = SINGLE,
+		string ShootSound = "585fd19df8e88f11:TripleShot",
 		string WalkAnimation = "584fdb207bf8dc4b:NecroMoveAnimation",
 		string AttackAnimation = "584fced65555e419:NecroAttackAnimation",
 	},
 	Shoot = 
 	{
 		string BulletType = "580e65c5299defb0:EnemyBullet",
+		int RingCount = 10,
+		float RingOffset = 90,
+		int SpreadBullets = 3,
 	},
 	Orientation = 
 	{

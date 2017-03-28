@@ -12,6 +12,7 @@
 ** --------------------------------------------------------------------------*/
 class DamageScript : ZilchComponent
 {
+    sends BulletDestroyedEvent : Event;
     [Property]
     var Damage : Integer = 1;
     
