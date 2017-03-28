@@ -54,7 +54,7 @@ class SpellSwitchHandler : ZilchComponent
     }
     
     // Sets hud representation of spell
-    function SetSpellHUD(bulletSprite : SpriteSource, spellName : String)
+    function SetSpellHUD(bulletSprite : SpriteSource, spellName : String, shootSound : SoundCue)
     {
         var childCamera = this.Owner.FindChildByName("Camera");
         
@@ -63,6 +63,7 @@ class SpellSwitchHandler : ZilchComponent
             childCamera.FindChildByName("SpellHUD").FindChildByName("SpellIcon").Sprite.SpriteSource = bulletSprite;
             childCamera.FindChildByName("SpellHUD").FindChildByName("SpellName").SpriteText.Text = spellName;
         }
+        this.Owner.PlayerShoot.ShootSound = shootSound;
         
     }
     function ChangeSpell()
@@ -72,27 +73,27 @@ class SpellSwitchHandler : ZilchComponent
         if(this.CurrentSpell == SpellTypes.BASIC)
         {
             this.SetSpell(120, 0.5, Archetype.Bullet, ShotPatternID.SINGLE);
-            this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Magic Missile");
+            this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Magic Missile", SoundCue.MagicMissile);
         }
         else if(this.CurrentSpell == SpellTypes.BUBBLETRAP)
         {
             this.SetSpell(200, 1, Archetype.BubbleBullet, ShotPatternID.SINGLE);
-            this.SetSpellHUD(SpriteSource.Texture_BubbleBullet, "Bubble Trap");
+            this.SetSpellHUD(SpriteSource.Texture_BubbleBullet, "Bubble Trap", null);
         }
         else if(this.CurrentSpell == SpellTypes.EXPLODINGBULLET)
         {
             this.SetSpell(1200, 2, Archetype.ExplodingBullet, ShotPatternID.SINGLE);
-            this.SetSpellHUD(SpriteSource.Texture_SpikeBall, "Exploding Shrapnel");
+            this.SetSpellHUD(SpriteSource.Texture_SpikeBall, "Exploding Shrapnel", SoundCue.ExplodingBulletLaunch);
         }
         else if (this.CurrentSpell == SpellTypes.ICESPEAR)
         {
             this.SetSpell(100, 2, Archetype.IceSpear, ShotPatternID.SINGLE);
-            this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Ice Spear");
+            this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Ice Spear", null);
         }
         else if (this.CurrentSpell == SpellTypes.SEEKINGARROW)
         {
             this.SetSpell(250, 0.2, Archetype.SeekingArrow, ShotPatternID.SINGLE);
-            this.SetSpellHUD(SpriteSource.Texture_SeekingArrow, "Seeking Arrow");
+            this.SetSpellHUD(SpriteSource.Texture_SeekingArrow, "Seeking Arrow", SoundCue.SeekingArrow);
         }
     }
     
