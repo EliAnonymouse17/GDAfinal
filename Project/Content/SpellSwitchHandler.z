@@ -91,7 +91,7 @@ class SpellSwitchHandler : ZilchComponent
         }
         else if (this.CurrentSpell == SpellTypes.SEEKINGARROW)
         {
-            this.SetSpell(250, 2, Archetype.SeekingArrow, ShotPatternID.SINGLE);
+            this.SetSpell(250, 0.2, Archetype.SeekingArrow, ShotPatternID.SINGLE);
             this.SetSpellHUD(SpriteSource.Texture_SeekingArrow, "Seeking Arrow");
         }
     }
@@ -103,7 +103,7 @@ class SpellSwitchHandler : ZilchComponent
         //this.SpellArray.Add(SpellTypes.BUBBLETRAP);
         //this.SpellArray.Add(SpellTypes.ICESPEAR);
         //this.SpellArray.Add(SpellTypes.SEEKINGARROW);
-        this.SpellArray.Add(SpellTypes.EXPLODINGBULLET);
+        //this.SpellArray.Add(SpellTypes.EXPLODINGBULLET);
         Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyUpdate);
         Zero.Connect(this.Space, Events.MouseScroll, this.OnMouseUpdate);
     }
