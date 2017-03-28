@@ -2,10 +2,20 @@ class TutorialObjectScript : ZilchComponent
 {
     function Initialize(init : CogInitializer)
     {
+        Zero.Connect(this.Space, Events.EnemyDeathEvent, this.OnDeath);
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
     }
 
     function OnCollisionStarted(event : CollisionEvent)
+    {
+        if (this.Owner.Archetype == Archetype.TutorialSpellScroll)
+        {
+        this.Space.FindObjectByName("Tutorial NPC").TutorialProgression.IncrementProgression();
+        this.Space.FindObjectByName("Tutorial NPC").TutorialProgression.FLock = false;
+        }
+    }
+
+    function OnDeath(event : ZilchEvent)
     {
         this.Space.FindObjectByName("Tutorial NPC").TutorialProgression.IncrementProgression();
         this.Space.FindObjectByName("Tutorial NPC").TutorialProgression.FLock = false;

@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0.152036, 0.467734, 50],
+			Vec3 Translation = [1.02972, 0.393862, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0.152036, 0.467734, -1.38559e-007],
+			Vec3 LookTarget = [1.02972, 0.393862, -1.00194e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -177,7 +177,8 @@ Level =
 		{
 			float BulletDelay = 1,
 			float BulletSpeed = 200,
-			Enum ShotPattern = TRIPLE,
+			Enum ShotPattern = SINGLE,
+			bool TimerFreeze = false,
 		},
 		BoxCollider = 
 		{
@@ -206,6 +207,7 @@ Level =
 			string BulletType = "5815eae6be2978a9:Bullet",
 			int RingCount = 10,
 			float RingOffset = 90,
+			int SpreadBullets = 3,
 		},
 		HitpointScript = 
 		{
@@ -857,7 +859,7 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "BasicRoomTileMap",
+			string Name = "TileMap",
 		},
 		Transform = 
 		{
