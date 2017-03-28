@@ -18,6 +18,7 @@ class PlayerShoot : ZilchComponent
     [Property] var BulletDelay : Real = 1;
     [Property] var BulletSpeed : Real = 1000;
     [Property] var ShotPattern : ShotPatternID = ShotPatternID.SINGLE;
+    [Property] var ShootSound : SoundCue = null;
     [Property] var TimerFreeze : Boolean = false;
     var TimeUntilNextShot : Real = 0;
     function Initialize(init : CogInitializer)
@@ -38,6 +39,10 @@ class PlayerShoot : ZilchComponent
         {
             this.TimeUntilNextShot = this.BulletDelay;
             this.Owner.Shoot.Shoot(this.BulletSpeed, shotAngle, this.ShotPattern);
+            if (this.ShootSound != null)
+            {
+                this.Space.SoundSpace.PlayCue(this.ShootSound);
+            }
         }
     }
 }
