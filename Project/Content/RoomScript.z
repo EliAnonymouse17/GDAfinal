@@ -43,7 +43,7 @@ class Item
         {
             this.Sprite = SpriteSource.HeartTexture_000;
             this.ItemScript1 = "HeartPickupScript";
-            this.ItemScript2 = "Empty";
+            this.ItemScript2 = "RigidBody";
         }
     }
 }
