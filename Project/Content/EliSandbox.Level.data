@@ -176,8 +176,8 @@ Level =
 		PlayerShoot = 
 		{
 			float BulletDelay = 1,
-			float BulletSpeed = 200,
-			Enum ShotPattern = TRIPLE,
+			float BulletSpeed = 150,
+			Enum ShotPattern = SPREAD,
 		},
 		BoxCollider = 
 		{
@@ -204,6 +204,9 @@ Level =
 		Shoot = 
 		{
 			string BulletType = "5815eae6be2978a9:Bullet",
+			int RingCount = 10,
+			float RingOffset = 90,
+			int SpreadBullets = 500,
 		},
 		HitpointScript = 
 		{
