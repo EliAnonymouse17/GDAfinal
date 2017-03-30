@@ -21,5 +21,7 @@ GameSession =
 	},
 	MusicManager = 
 	{
+		float FadeTime = 2,
+		float MusicVolume = 1,
 	},
 },
