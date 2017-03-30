@@ -32,8 +32,6 @@ class PlayerShoot : ZilchComponent
         {
             this.TimeUntilNextShot -= event.Dt;
         }
-        this.Owner.Shoot.SpreadBullets = (Math.Floor(Math.Sqrt(this.Space.FindObjectByName("Score").Score.Score)) + 1) as Integer;
-        this.Owner.Shoot.RingCount = (Math.Floor(Math.Sqrt(this.Space.FindObjectByName("Score").Score.Score)) + 1) as Integer * 2;
         var mouseScreenPosition = Zero.Mouse.ScreenPosition;
         var mouseWorldPosition = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(mouseScreenPosition, 0);
         var shotAngle = Math.Normalize(mouseWorldPosition - this.Owner.Transform.Translation);
