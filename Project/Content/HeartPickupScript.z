@@ -24,6 +24,8 @@ class HeartPickupScript : ZilchComponent
 
     function OnCollisionStarted(event : CollisionEvent)
     {
+        if(event.OtherObject.Name != "Player")
+            return;
         event.OtherObject.HitpointScript.HP += 1;
         this.Owner.Destroy();
     }
