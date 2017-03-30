@@ -87,8 +87,8 @@ class SpellSwitchHandler : ZilchComponent
         }
         else if (this.CurrentSpell == SpellTypes.ICESPEAR)
         {
-            this.SetSpell(100, 2, Archetype.IceSpear, ShotPatternID.SINGLE);
-            this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Ice Spear", null);
+            this.SetSpell(250, 2, Archetype.IceSpear, ShotPatternID.SINGLE);
+            this.SetSpellHUD(SpriteSource.Texture_BigIce, "Ice Spear", null);
         }
         else if (this.CurrentSpell == SpellTypes.SEEKINGARROW)
         {

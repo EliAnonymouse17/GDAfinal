@@ -1,6 +1,7 @@
 
 class IceSpearScript : ZilchComponent
 {
+    var Rotation : Quaternion = Quaternion();
     var HitEnemies : Array[Cog] = Array[Cog]();
     function Initialize(init : CogInitializer)
     {
@@ -66,6 +67,8 @@ class IceSpearScript : ZilchComponent
         }
         var angle = Math.Normalize(closest.Transform.Translation - this.Owner.Transform.Translation);
         this.Owner.RigidBody.Velocity = angle * currentSpeed;
+        this.Rotation = this.Owner.Orientation.GetLookAtPointWithUpRotation(closest.Transform.WorldTranslation, Real3(0, 0, 1));
+        this.Owner.Transform.Rotation = Math.RotateTowards(this.Owner.Transform.Rotation, this.Rotation, 1);
     }
     
 }

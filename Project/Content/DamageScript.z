@@ -31,6 +31,14 @@ class DamageScript : ZilchComponent
         set
         {
             this.PRVHitCount -= 1;
+            if (this.Owner.ArchetypeName == "IceSpear" && this.PRVHitCount == 2)
+            {
+                this.Owner.Sprite.SpriteSource = SpriteSource.Texture_MediumIce;
+            }
+            if (this.Owner.ArchetypeName == "IceSpear" && this.PRVHitCount == 1)
+            {
+                this.Owner.Sprite.SpriteSource = SpriteSource.Texture_SmallIce;
+            }
             if (this.PRVHitCount <= 0) 
             {
                 if (this.Owner.ArchetypeName == "SeekingArrow")
