@@ -30,9 +30,20 @@ class HUDFadeCooldown : ZilchComponent
         {
             return;
         }
-        
-        var timeLeft = Real3(player.PlayerFade.TimeLeft, 1, 1);
-        
-        this.Owner.Transform.Scale = timeLeft;
+        var timeLeft = player.PlayerFade.TimeLeft;
+        if (timeLeft < 0)
+        {
+            timeLeft = 0;
+        }
+        var timeLeft3 = Real3(player.PlayerFade.Cooldown - timeLeft, 1, 1);
+        var duration = Real3(player.PlayerFade.Duration * player.PlayerFade.Cooldown/player.PlayerFade.FadeDuration, 1, 1);
+        if (player.PlayerFade.FadeIsActive)
+        {
+            this.Owner.Transform.Scale = duration;
+        }
+        else
+        {
+            this.Owner.Transform.Scale = timeLeft3;
+        }
     }
 }
