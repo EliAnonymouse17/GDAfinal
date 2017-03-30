@@ -1,0 +1,52 @@
+class MusicManager : ZilchComponent
+{
+    var MusicSpace : Space = null;
+    
+    var CurrentEmitter : SoundEmitter = null;
+    var NextCue : SoundCue = null;
+    var CurrentEmitterIsPlaying : Boolean = false;
+    
+    [Property]
+    var FadeTime : Real = 2;
+    
+    [Property]
+    var MusicVolume : Real = 1;
+    
+    var TimeSinceFadeStart : Real = 0;
+    
+    function Initialize(init : CogInitializer)
+    {
+        this.MusicSpace = this.GameSession.CreateNamedSpace("MusicSpace", Archetype.Space);
+        Zero.Connect(this.MusicSpace, Events.LogicUpdate, this.OnLogicUpdate);
+        var current = this.MusicSpace.Create(Archetype.Transform);
+        
+        current.AddComponentByName("SoundEmitter");
+        
+        this.CurrentEmitter = current.SoundEmitter;
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        // Are we trying to fade?
+        if (this.NextCue != null)
+        {
+            this.TimeSinceFadeStart += event.Dt;
+            this.CurrentEmitter.Volume -= event.Dt / this.FadeTime;
+        }
+    }
+
+    function SwitchTracks(cue : SoundCue)
+    {
+        if (this.CurrentEmitterIsPlaying == false)
+        {
+            this.CurrentEmitter.PlayCue(cue);
+            this.CurrentEmitterIsPlaying = true;
+        }
+        else
+        {
+            this.NextCue = cue;
+            this.TimeSinceFadeStart = 0;
+        }
+    }
+
+}
