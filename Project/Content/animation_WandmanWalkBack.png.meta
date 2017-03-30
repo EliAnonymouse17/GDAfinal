@@ -2,16 +2,16 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "animation_WandmanWalkForward0",
-		uint64 ResourceId = 58096fb04e9fc68a,
+		string Name = "animation_WandmanWalkBack",
+		uint64 ResourceId = 58586c25bcd98f54,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 32,
 		uint FrameSizeY = 32,
 		uint FrameCount = 4,
-		float FrameDelay = 0.25,
+		float FrameDelay = 0.0833333,
 		float OriginX = 16,
 		float OriginY = 16,
-		float PixelsPerUnit = 26,
+		float PixelsPerUnit = 32,
 		bool Smoothing = false,
 		bool Looping = true,
 		Vec4 Slices = [0, 0, 0, 0],
