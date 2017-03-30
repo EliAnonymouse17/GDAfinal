@@ -91,6 +91,10 @@ Cog =
 		float SpawnDelay = 5,
 		string EnemyToSpawn = "58e6b86cc88e7f69:Enemy",
 	},
+	Wanderer = 
+	{
+		float MoveSpeed = 1,
+	},
 	Hierarchy = 
 	{
 	},

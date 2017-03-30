@@ -17,6 +17,8 @@ class HitpointScript : ZilchComponent
     [Property]
     var PrivateHP : Integer = 5;
     
+    var Dead : Boolean = false;
+    
     var SpellDropBool : Boolean = false;
     
     //Manipulates HP by accessing through other scripts
@@ -40,7 +42,11 @@ class HitpointScript : ZilchComponent
                         
                         this.SpellDropBool = true;
                     }
-                    this.Space.DispatchEvent(Events.EnemyDeathEvent, ZilchEvent());
+                    if(!this.Dead)
+                    {
+                        this.Dead = true;
+                        this.Space.DispatchEvent(Events.EnemyDeathEvent, ZilchEvent());
+                    }
                 }
                 //Special cases that trigger events on destruction
                 if (this.Owner.ArchetypeName == "AnimatedGolem")
