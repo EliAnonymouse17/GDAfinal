@@ -66,7 +66,7 @@ Cog =
 	{
 		float BulletDelay = 4,
 		float BulletSpeed = 150,
-		Enum ShotPattern = SINGLE,
+		Enum ShotPattern = SPREAD,
 		string ShootSound = "585fd19df8e88f11:TripleShot",
 		string WalkAnimation = "584fdb207bf8dc4b:NecroMoveAnimation",
 		string AttackAnimation = "584fced65555e419:NecroAttackAnimation",
@@ -90,10 +90,6 @@ Cog =
 		string SpawnSound = "584fc8fb746f1d3e:NecromancerAttackSummon",
 		float SpawnDelay = 5,
 		string EnemyToSpawn = "58e6b86cc88e7f69:Enemy",
-	},
-	Wanderer = 
-	{
-		float MoveSpeed = 1,
 	},
 	Hierarchy = 
 	{

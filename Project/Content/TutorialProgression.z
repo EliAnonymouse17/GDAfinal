@@ -14,8 +14,8 @@ class TutorialProgression : ZilchComponent
         this.TextArray.Add("Go pick up that scroll.\nIt contains the Bubble Trap Spell, which you may find useful.");
         this.TextArray.Add("You can switch between spells using the scroll wheel,\nor Q and E.");
         this.TextArray.Add("You may have noticed that the spell you are currently using\nis displayed in the upper left-hand corner of your screen.");
-        this.TextArray.Add("Above this display are your health bar and your fade cooldown bar.\nYour health bar displays your current health,\nand your fade cooldown bar displays the remaining cooldown on your fade ability.");
-        this.TextArray.Add("You can't see your fade cooldown bar right now because your fade is ready for use!");
+        this.TextArray.Add("Above this display are your health bar and your fade bar.\nYour health bar displays your current health.");
+        this.TextArray.Add("Your fade bar displays the remaining time on your fade ability\nand the remaining cooldown of your fade ability. ");
         this.TextArray.Add("Press space to use your fade ability.\nWhile active, your fade ability allows you to avoid spells cast by enemies.\nTry it now!");
         this.TextArray.Add("Great! You are now ready to face your first enemy!\nPress F to begin the fight!");
         this.TextArray.Add(" ");
