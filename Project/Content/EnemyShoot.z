@@ -44,21 +44,14 @@ class EnemyShoot : ZilchComponent
                 this.Space.SoundSpace.PlayCue(this.ShootSound);
             }
             if(this.AttackAnimation != null)
-            {
-                Console.WriteLine("Work2");
-                
                 this.Owner.Sprite.SpriteSource = this.AttackAnimation;
-            }
             this.TimeUntilNextShot = this.BulletDelay;
             this.Owner.Shoot.Shoot(this.BulletSpeed, shotAngle, this.ShotPattern);
         }
         if(this.Owner.Sprite.SpriteSource == this.AttackAnimation)
         {
             if(this.Owner.Sprite.CurrentFrame >= this.AttackAnimation.FrameCount - 1)
-            {
-                Console.WriteLine("Work");
                 this.FinishedAnimation = true;
-            }
             if(this.Owner.Sprite.CurrentFrame == 0 && this.FinishedAnimation)
             {
                 this.FinishedAnimation = false;

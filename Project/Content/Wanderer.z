@@ -1,0 +1,31 @@
+class Wanderer : ZilchComponent
+{
+    var Timer : Real = 0;
+    
+    [Property]
+    var MoveSpeed : Real = 1;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.Timer += event.Dt;
+        if(this.Timer < 0.5)
+            return;
+        this.Timer = 0;
+        var random = Random();
+        var num = 0;
+        num = random.DieRoll(4);
+        if(num == 1)
+            this.Owner.RigidBody.Velocity += Real3(0, 1, 0) * this.MoveSpeed;
+        else if(num == 2)
+            this.Owner.RigidBody.Velocity += Real3(0, -1, 0) * this.MoveSpeed;
+        else if(num == 3)
+            this.Owner.RigidBody.Velocity += Real3(-1, 0, 0) * this.MoveSpeed;
+        else if(num == 4)
+            this.Owner.RigidBody.Velocity += Real3(1, 0, 0) * this.MoveSpeed;
+    }
+}
