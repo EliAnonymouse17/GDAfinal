@@ -41,16 +41,6 @@ class PlayerAnimations : ZilchComponent
             {
                 this.Owner.Sprite.SpriteSource = this.PlayerStand;
             }
-            
-            if(Zero.Keyboard.KeyIsDown(Keys.Up) || Zero.Keyboard.KeyIsDown(Keys.W))
-            {
-                this.Owner.Sprite.SpriteSource = this.PlayerWalkUp;
-            }
-            
-            if(Zero.Keyboard.KeyIsDown(Keys.Down) || Zero.Keyboard.KeyIsDown(Keys.S))
-            {
-                this.Owner.Sprite.SpriteSource = this.PlayerWalkDown;
-            }
         }
         
         else if(this.Owner.Sprite.SpriteSource == this.PlayerWalkUp)
@@ -65,11 +55,6 @@ class PlayerAnimations : ZilchComponent
             {
                 this.Owner.Sprite.SpriteSource = this.PlayerWalkSide;
             }
-            
-            if(Zero.Keyboard.KeyIsDown(Keys.Down) || Zero.Keyboard.KeyIsDown(Keys.S))
-            {
-                this.Owner.Sprite.SpriteSource = this.PlayerWalkDown;
-            }
         }
         
         else if(this.Owner.Sprite.SpriteSource == this.PlayerWalkDown)
@@ -83,11 +68,6 @@ class PlayerAnimations : ZilchComponent
             || Zero.Keyboard.KeyIsDown(Keys.Left))
             {
                 this.Owner.Sprite.SpriteSource = this.PlayerWalkSide;
-            }
-            
-            if(Zero.Keyboard.KeyIsDown(Keys.Up) || Zero.Keyboard.KeyIsDown(Keys.W))
-            {
-                this.Owner.Sprite.SpriteSource = this.PlayerWalkUp;
             }
         }
         
