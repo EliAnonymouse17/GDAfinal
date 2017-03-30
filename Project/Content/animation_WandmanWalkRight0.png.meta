@@ -1,0 +1,20 @@
+ImageContent = 
+{
+	SpriteSourceBuilder = 
+	{
+		string Name = "animation_WandmanWalkRight0",
+		uint64 ResourceId = 5809715245a5cca4,
+		uint64 AtlasId = 5274cf95e4a661fd,
+		uint FrameSizeX = 32,
+		uint FrameSizeY = 32,
+		uint FrameCount = 4,
+		float FrameDelay = 0.25,
+		float OriginX = 16,
+		float OriginY = 16,
+		float PixelsPerUnit = 26,
+		bool Smoothing = false,
+		bool Looping = true,
+		Vec4 Slices = [0, 0, 0, 0],
+		SpriteFill Fill = Stretch,
+	},
+},

@@ -1,0 +1,96 @@
+class PlayerAnimations : ZilchComponent
+{
+    [Property] var PlayerStand : SpriteSource = null;
+    
+    [Property] var PlayerWalkSide : SpriteSource = null;
+    
+    [Property] var PlayerWalkUp : SpriteSource = null;
+    
+    [Property] var PlayerWalkDown : SpriteSource = null;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.Owner.Sprite.SpriteSource == this.PlayerStand)
+        {
+            if(Zero.Keyboard.KeyIsDown(Keys.A) || Zero.Keyboard.KeyIsDown(Keys.Right) || Zero.Keyboard.KeyIsDown(Keys.D)
+            || Zero.Keyboard.KeyIsDown(Keys.Left))
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerWalkSide;
+            }
+            
+            if(Zero.Keyboard.KeyIsDown(Keys.Up) || Zero.Keyboard.KeyIsDown(Keys.W))
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerWalkUp;
+            }
+            
+            if(Zero.Keyboard.KeyIsDown(Keys.Down) || Zero.Keyboard.KeyIsDown(Keys.S))
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerWalkDown;
+            }
+        }
+        
+        else if(this.Owner.Sprite.SpriteSource == this.PlayerWalkSide)
+        {
+            if(Zero.Keyboard.KeyIsDown(Keys.A) == false && Zero.Keyboard.KeyIsDown(Keys.Right) == false &&
+            Zero.Keyboard.KeyIsDown(Keys.D) == false && Zero.Keyboard.KeyIsDown(Keys.Left) == false)
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerStand;
+            }
+            
+            if(Zero.Keyboard.KeyIsDown(Keys.Up) || Zero.Keyboard.KeyIsDown(Keys.W))
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerWalkUp;
+            }
+            
+            if(Zero.Keyboard.KeyIsDown(Keys.Down) || Zero.Keyboard.KeyIsDown(Keys.S))
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerWalkDown;
+            }
+        }
+        
+        else if(this.Owner.Sprite.SpriteSource == this.PlayerWalkUp)
+        {
+            if(Zero.Keyboard.KeyIsDown(Keys.W) == false && Zero.Keyboard.KeyIsDown(Keys.Up) == false)
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerStand;
+            }
+            
+            if(Zero.Keyboard.KeyIsDown(Keys.A) || Zero.Keyboard.KeyIsDown(Keys.Right) || Zero.Keyboard.KeyIsDown(Keys.D)
+            || Zero.Keyboard.KeyIsDown(Keys.Left))
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerWalkSide;
+            }
+            
+            if(Zero.Keyboard.KeyIsDown(Keys.Down) || Zero.Keyboard.KeyIsDown(Keys.S))
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerWalkDown;
+            }
+        }
+        
+        else if(this.Owner.Sprite.SpriteSource == this.PlayerWalkDown)
+        {
+            if(Zero.Keyboard.KeyIsDown(Keys.S) == false && Zero.Keyboard.KeyIsDown(Keys.Down) == false)
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerStand;
+            }
+            
+            if(Zero.Keyboard.KeyIsDown(Keys.A) || Zero.Keyboard.KeyIsDown(Keys.Right) || Zero.Keyboard.KeyIsDown(Keys.D)
+            || Zero.Keyboard.KeyIsDown(Keys.Left))
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerWalkSide;
+            }
+            
+            if(Zero.Keyboard.KeyIsDown(Keys.Up) || Zero.Keyboard.KeyIsDown(Keys.W))
+            {
+                this.Owner.Sprite.SpriteSource = this.PlayerWalkUp;
+            }
+        }
+        
+        
+    }
+}
