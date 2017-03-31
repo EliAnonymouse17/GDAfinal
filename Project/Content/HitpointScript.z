@@ -17,6 +17,12 @@ class HitpointScript : ZilchComponent
     [Property]
     var PrivateHP : Integer = 5;
     
+    [Property]
+    var HurtSound : SoundCue = null;
+    
+    [Property]
+    var DeathSound : SoundCue = null;
+    
     var Dead : Boolean = false;
     
     var SpellDropBool : Boolean = false;
@@ -31,6 +37,10 @@ class HitpointScript : ZilchComponent
         
         set
         {
+            if (this.PrivateHP > value && value > 0)
+            {
+                this.Space.SoundSpace.PlayCue(this.HurtSound);
+            }
             this.PrivateHP = value;
             if(this.PrivateHP <= 0)
             {
@@ -54,7 +64,7 @@ class HitpointScript : ZilchComponent
                     this.Space.CreateAtPosition(Archetype.MiniGolem, this.Owner.Transform.Translation - Real3(1,1,0));
                     this.Space.CreateAtPosition(Archetype.MiniGolem, this.Owner.Transform.Translation - Real3(-1,-1,0));
                 }
-
+                this.Space.SoundSpace.PlayCue(this.DeathSound);
                 this.Owner.Destroy();
             }
             if(this.Owner.Name == "Player" && this.PrivateHP > 6)

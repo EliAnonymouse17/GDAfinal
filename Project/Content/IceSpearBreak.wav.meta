@@ -2,7 +2,7 @@ AudioContent =
 {
 	SoundBuilder = 
 	{
-		string Name = "Ice Spear Break",
+		string Name = "IceSpearBreak",
 		uint64 ResourceId = 585fcd0c7df7caaf,
 		bool Compressed = true,
 		uint Quality = 100,

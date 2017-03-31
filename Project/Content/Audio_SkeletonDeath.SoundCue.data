@@ -1,7 +1,7 @@
 SoundCue = 
 {
 	SoundPlayMode PlayMode = Single,
-	float Volume = 0.6,
+	float Volume = 0.3,
 	float VolumeVariation = 0,
 	float Pitch = 0,
 	float PitchVariation = 0,
@@ -10,11 +10,11 @@ SoundCue =
 	float PositionRandomization = 0,
 	uint MaxPlaybacks = 10,
 	int Priority = 128,
-	bool LinearRollOff = false,
+	bool LinearRollOff = true,
 	Array Sounds = 
 	[
 		{
-			string SoundName = "585fcd0c7df7caaf:Ice Spear Break",
+			string SoundName = "5854e0e94b4af164:Audio_SkeletonDeath",
 			float Weight = 1,
 		},
 	],

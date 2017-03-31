@@ -14,7 +14,7 @@ SoundCue =
 	Array Sounds = 
 	[
 		{
-			string SoundName = "585fcd0c7df7caaf:Ice Spear Break",
+			string SoundName = "5854e6c788fbabe2:Audio_EnemyHurtLow",
 			float Weight = 1,
 		},
 	],

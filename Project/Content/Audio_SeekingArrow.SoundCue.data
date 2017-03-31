@@ -1,7 +1,7 @@
 SoundCue = 
 {
 	SoundPlayMode PlayMode = Single,
-	float Volume = 0.6,
+	float Volume = 1,
 	float VolumeVariation = 0,
 	float Pitch = 0,
 	float PitchVariation = 0,
@@ -14,7 +14,7 @@ SoundCue =
 	Array Sounds = 
 	[
 		{
-			string SoundName = "585fcd0c7df7caaf:Ice Spear Break",
+			string SoundName = "5854e8fa63e9dd71:Audio_SeekingArrow",
 			float Weight = 1,
 		},
 	],

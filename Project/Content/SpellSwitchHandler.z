@@ -78,7 +78,7 @@ class SpellSwitchHandler : ZilchComponent
         else if(this.CurrentSpell == SpellTypes.BUBBLETRAP)
         {
             this.SetSpell(200, 1, Archetype.BubbleBullet, ShotPatternID.SINGLE);
-            this.SetSpellHUD(SpriteSource.Texture_BubbleBullet, "Bubble Trap", null);
+            this.SetSpellHUD(SpriteSource.Texture_BubbleBullet, "Bubble Trap", SoundCue.Audio_BubbleTrap);
         }
         else if(this.CurrentSpell == SpellTypes.EXPLODINGBULLET)
         {
@@ -88,12 +88,12 @@ class SpellSwitchHandler : ZilchComponent
         else if (this.CurrentSpell == SpellTypes.ICESPEAR)
         {
             this.SetSpell(250, 2, Archetype.IceSpear, ShotPatternID.SINGLE);
-            this.SetSpellHUD(SpriteSource.Texture_BigIce, "Ice Spear", null);
+            this.SetSpellHUD(SpriteSource.Texture_BigIce, "Ice Spear", SoundCue.IceSpear);
         }
         else if (this.CurrentSpell == SpellTypes.SEEKINGARROW)
         {
             this.SetSpell(250, 0.2, Archetype.SeekingArrow, ShotPatternID.SINGLE);
-            this.SetSpellHUD(SpriteSource.Texture_SeekingArrow, "Seeking Arrow", SoundCue.SeekingArrow);
+            this.SetSpellHUD(SpriteSource.Texture_SeekingArrow, "Seeking Arrow", SoundCue.Audio_SeekingArrow);
         }
     }
     

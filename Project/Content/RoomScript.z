@@ -433,6 +433,7 @@ class RoomScript : ZilchComponent
         foreach (var bullet in this.Space.FindAllObjectsByName("Bullet"))
         {
             bullet.Destroy();
+            this.Space.FindObjectByName("Player").PlayerShoot.TimerFreeze = false;
         }
         this.Space.FindObjectByName("TileMap").Destroy();
         if(direction == Directions.RIGHT)
