@@ -1,5 +1,7 @@
 class BossAttackLogic : ZilchComponent
 {
+    [Property] var StandTexture : SpriteSource = null;
+    
     [Property] var AttackDelay1 : Real = 3;
     [Property] var BulletSpeed1 : Real = 1000;
     [Property] var ShotPattern1 : ShotPatternID = ShotPatternID.SINGLE;
@@ -46,6 +48,8 @@ class BossAttackLogic : ZilchComponent
     var ChallengeAttackTimer1 : Real = 4;
     var ChallengeAttackTimer2 : Real = 1;
     var ChallengeAttackTimer3 : Real = 2;
+    
+    var FinishedAnimation : Boolean = false;
     
     function Initialize(init : CogInitializer)
     {
@@ -95,6 +99,12 @@ class BossAttackLogic : ZilchComponent
                 
                 this.Owner.Shoot.Shoot(this.BulletSpeed1, shotAngle, this.ShotPattern1);
                 
+                if(this.Owner.Sprite.SpriteSource == this.StandTexture)
+                {
+                    if(this.AttackAnimation1 != null)
+                        this.Owner.Sprite.SpriteSource = this.AttackAnimation1;
+                }
+                
                 this.AttackTimer1 = this.AttackDelay1;
             }
         }
@@ -105,6 +115,12 @@ class BossAttackLogic : ZilchComponent
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType1;
                 
                 this.Owner.Shoot.Shoot(this.ChallengeBulletSpeed1, shotAngle, this.ChallengeShotPattern1);
+                
+                if(this.Owner.Sprite.SpriteSource == this.StandTexture)
+                {
+                    if(this.AttackAnimation1 != null)
+                        this.Owner.Sprite.SpriteSource = this.AttackAnimation1;
+                }               
                 
                 this.ChallengeAttackTimer1 = this.ChallengeAttackDelay1;
             }
@@ -118,6 +134,12 @@ class BossAttackLogic : ZilchComponent
                 
                 this.Owner.Shoot.Shoot(this.BulletSpeed2, shotAngle, this.ShotPattern2);
                 
+                if(this.Owner.Sprite.SpriteSource == this.StandTexture)
+                {
+                    if(this.AttackAnimation2 != null)
+                        this.Owner.Sprite.SpriteSource = this.AttackAnimation2;
+                }
+                
                 this.AttackTimer2 = this.AttackDelay2;
             }
         }
@@ -128,6 +150,12 @@ class BossAttackLogic : ZilchComponent
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType2;
                 
                 this.Owner.Shoot.Shoot(this.ChallengeBulletSpeed2, shotAngle, this.ChallengeShotPattern2);
+                
+                if(this.Owner.Sprite.SpriteSource == this.StandTexture)
+                {
+                    if(this.AttackAnimation2 != null)
+                        this.Owner.Sprite.SpriteSource = this.AttackAnimation2;
+                }
                 
                 this.ChallengeAttackTimer2 = this.ChallengeAttackDelay2;
             }
@@ -141,6 +169,12 @@ class BossAttackLogic : ZilchComponent
                 
                 this.Owner.Shoot.Shoot(this.BulletSpeed3, shotAngle, this.ShotPattern3);
                 
+                if(this.Owner.Sprite.SpriteSource == this.StandTexture)
+                {
+                    if(this.AttackAnimation3 != null)
+                        this.Owner.Sprite.SpriteSource = this.AttackAnimation3;
+                }
+                
                 this.AttackTimer3 = this.AttackDelay3;
             }
         }
@@ -152,7 +186,49 @@ class BossAttackLogic : ZilchComponent
                 
                 this.Owner.Shoot.Shoot(this.ChallengeBulletSpeed3, shotAngle, this.ChallengeShotPattern3);
                 
+                if(this.Owner.Sprite.SpriteSource == this.StandTexture)
+                {
+                    if(this.AttackAnimation3 != null)
+                        this.Owner.Sprite.SpriteSource = this.AttackAnimation3;
+                }
+                
                 this.ChallengeAttackTimer3 = this.ChallengeAttackDelay3;
+            }
+        }
+        
+        if(this.Owner.Sprite.SpriteSource == this.AttackAnimation1)
+        {
+            if(this.Owner.Sprite.CurrentFrame >= this.AttackAnimation1.FrameCount - 1)
+                this.FinishedAnimation = true;
+            if(this.Owner.Sprite.CurrentFrame == 0 && this.FinishedAnimation)
+            {
+                this.FinishedAnimation = false;
+                
+                this.Owner.Sprite.SpriteSource = this.StandTexture;
+            }
+        }
+        
+        if(this.Owner.Sprite.SpriteSource == this.AttackAnimation2)
+        {
+            if(this.Owner.Sprite.CurrentFrame >= this.AttackAnimation2.FrameCount - 1)
+                this.FinishedAnimation = true;
+            if(this.Owner.Sprite.CurrentFrame == 0 && this.FinishedAnimation)
+            {
+                this.FinishedAnimation = false;
+                
+                this.Owner.Sprite.SpriteSource = this.StandTexture;
+            }
+        }
+        
+        if(this.Owner.Sprite.SpriteSource == this.AttackAnimation3)
+        {
+            if(this.Owner.Sprite.CurrentFrame >= this.AttackAnimation3.FrameCount - 1)
+                this.FinishedAnimation = true;
+            if(this.Owner.Sprite.CurrentFrame == 0 && this.FinishedAnimation)
+            {
+                this.FinishedAnimation = false;
+                
+                this.Owner.Sprite.SpriteSource = this.StandTexture;
             }
         }
         
