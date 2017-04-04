@@ -31,7 +31,10 @@ class Shoot : ZilchComponent
         {
             var bulletPos = this.Owner.Transform.Translation + angle;
             var bullet = this.Space.CreateAtPosition(this.BulletType, bulletPos);
-            bullet.RigidBody.ApplyForce(angle * bulletSpeed);
+            if(this.BulletType != null)
+            {
+                bullet.RigidBody.ApplyForce(angle * bulletSpeed);
+            }
         }
         if(shotPattern == ShotPatternID.SPREAD)
         {

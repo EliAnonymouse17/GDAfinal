@@ -61,12 +61,16 @@ Cog =
 	HitpointScript = 
 	{
 		int PrivateHP = 25,
+		string HurtSound = "",
+		string DeathSound = "",
+		float HurtDuration = 0.1,
 	},
 	Shoot = 
 	{
 		string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
 		int RingCount = 20,
 		float RingOffset = 34,
+		int SpreadBullets = 4,
 	},
 	Orientation = 
 	{
@@ -75,37 +79,38 @@ Cog =
 		Vec3 ForwardVector = [0, 1, 0],
 		OrientationBases DefaultBases = ForwardYUpZ,
 	},
+	BossHealthBarScript = 
+	{
+		float HealthBarSize = 10,
+	},
 	BossAttackLogic = 
 	{
-		float AttackDelay1 = 90000,
-		float BulletSpeed1 = 100,
+		float AttackDelay1 = 3,
+		float BulletSpeed1 = 1000,
 		Enum ShotPattern1 = SINGLE,
-		string BulletType1 = "580e65c5299defb0:EnemyBullet",
-		float AttackDelay2 = 5,
-		float BulletSpeed2 = 2500,
+		string BulletType1 = "",
+		float AttackDelay2 = 3,
+		float BulletSpeed2 = 2000,
 		Enum ShotPattern2 = SINGLE,
 		string BulletType2 = "585ef2a2cbb10556:BigBurger",
-		float AttackDelay3 = 2,
-		float BulletSpeed3 = 100,
-		Enum ShotPattern3 = TRIPLE,
+		float AttackDelay3 = 5,
+		float BulletSpeed3 = 250,
+		Enum ShotPattern3 = SPREAD,
 		string BulletType3 = "580e65c5299defb0:EnemyBullet",
-		float StageSwitch = 10,
+		float StageSwitch = 15,
 		float ChallengeAttackDelay1 = 3,
 		float ChallengeBulletSpeed1 = 1000,
 		Enum ChallengeShotPattern1 = SINGLE,
-		string ChallengeBulletType1 = "584fefeabfc0ca66:AnimatedGolem",
-		float ChallengeAttackDelay2 = 4,
-		float ChallengeBulletSpeed2 = 3000,
+		string ChallengeBulletType1 = "",
+		float ChallengeAttackDelay2 = 3,
+		float ChallengeBulletSpeed2 = 1000,
 		Enum ChallengeShotPattern2 = SINGLE,
-		string ChallengeBulletType2 = "585ef2a2cbb10556:BigBurger",
+		string ChallengeBulletType2 = "",
 		float ChallengeAttackDelay3 = 3,
-		float ChallengeBulletSpeed3 = 150,
-		Enum ChallengeShotPattern3 = RING,
-		string ChallengeBulletType3 = "580e65c5299defb0:EnemyBullet",
-		Vec4 ChallengeColor = [1, 1, 0, 1],
-	},
-	BossHealthBarScript = 
-	{
+		float ChallengeBulletSpeed3 = 1000,
+		Enum ChallengeShotPattern3 = SINGLE,
+		string ChallengeBulletType3 = "",
+		Vec4 ChallengeColor = [1, 0.96, 0, 1],
 	},
 	Hierarchy = 
 	{

@@ -178,6 +178,8 @@ Level =
 			float BulletDelay = 0.5,
 			float BulletSpeed = 200,
 			Enum ShotPattern = SINGLE,
+			string ShootSound = "",
+			bool TimerFreeze = false,
 		},
 		BoxCollider = 
 		{
@@ -206,10 +208,14 @@ Level =
 			string BulletType = "5815eae6be2978a9:Bullet",
 			int RingCount = 10,
 			float RingOffset = 90,
+			int SpreadBullets = 3,
 		},
 		HitpointScript = 
 		{
 			int PrivateHP = 6,
+			string HurtSound = "",
+			string DeathSound = "",
+			float HurtDuration = 0.1,
 		},
 		PlayerFade = 
 		{
