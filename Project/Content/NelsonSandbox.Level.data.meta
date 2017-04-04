@@ -3,7 +3,7 @@ DataContent =
 	DataBuilder = 
 	{
 		string Name = "NelsonSandbox",
-		uint64 ResourceId = 585fbc00c2b93367,
+		uint64 ResourceId = 5866d9dca2eb4c1e,
 		string LoaderType = "Level",
 		uint Version = 0,
 		bool ShowInEditor = true,

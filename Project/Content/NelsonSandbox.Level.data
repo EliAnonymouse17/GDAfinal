@@ -91,11 +91,29 @@ Level =
 			bool FollowEditorCamera = false,
 		},
 	},
+	ArchetypeInstance = 
+	{
+		string Name = "584d4ddb6f528990:IceSpear",
+		LinkId = 
+		{
+			uint Id = 3,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Bullet",
+		},
+	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 3,
+			uint Id = 4,
 		},
 		Named = 
 		{
@@ -103,7 +121,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 50],
+			Vec3 Translation = [1.12746, 1.38386, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +133,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 32.8892,
+			float Size = 20.1896,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +141,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0, 0, 0],
+			Vec3 LookTarget = [1.12746, 1.38386, 4.92824e-008],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -139,7 +157,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 4,
+			uint Id = 5,
 		},
 		Named = 
 		{
@@ -147,7 +165,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 0],
+			Vec3 Translation = [0.0133206, 0.0444493, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -161,7 +179,7 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5275aa4d802dd6dc:Square",
+			string SpriteSource = "585fc298140f20a7:Texture_WandmanFront000",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -171,13 +189,13 @@ Level =
 		},
 		PlayerMove = 
 		{
-			float MoveSpeed = 500,
+			float MoveSpeed = 700,
 		},
 		PlayerShoot = 
 		{
 			float BulletDelay = 1,
-			float BulletSpeed = 50,
-			Enum ShotPattern = SPREAD,
+			float BulletSpeed = 200,
+			Enum ShotPattern = SINGLE,
 			string ShootSound = "",
 			bool TimerFreeze = false,
 		},
@@ -189,7 +207,7 @@ Level =
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 			string SerializedGroupName = "580e65c5299c6b69:Player",
 			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.5, 0.5, 0.5],
+			Vec3 Size = [0.4, 0.6, 0.5],
 		},
 		RigidBody = 
 		{
@@ -208,7 +226,7 @@ Level =
 			string BulletType = "5815eae6be2978a9:Bullet",
 			int RingCount = 10,
 			float RingOffset = 90,
-			int SpreadBullets = 4,
+			int SpreadBullets = 3,
 		},
 		HitpointScript = 
 		{
@@ -222,6 +240,13 @@ Level =
 		},
 		SpellSwitchHandler = 
 		{
+		},
+		PlayerAnimations = 
+		{
+			string PlayerStand = "585fc298140f20a7:Texture_WandmanFront000",
+			string PlayerWalkSide = "58586c83879fbdf0:animation_WandmanWalkRight",
+			string PlayerWalkUp = "58586c25bcd98f54:animation_WandmanWalkBack",
+			string PlayerWalkDown = "58586dcfa50649dc:animation_WandmanWalkForward",
 		},
 		Hierarchy = 
 		{
@@ -261,7 +286,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 5,
+							uint Id = 6,
 						},
 						Named = 
 						{
@@ -296,7 +321,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 6,
+							uint Id = 7,
 						},
 						Named = 
 						{
@@ -333,7 +358,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 7,
+							uint Id = 8,
 						},
 						Named = 
 						{
@@ -370,7 +395,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 8,
+							uint Id = 9,
 						},
 						Named = 
 						{
@@ -409,7 +434,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 9,
+									uint Id = 10,
 								},
 								Named = 
 								{
@@ -446,7 +471,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 10,
+							uint Id = 11,
 						},
 						Named = 
 						{
@@ -482,7 +507,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 11,
+									uint Id = 12,
 								},
 								Named = 
 								{
@@ -517,7 +542,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 12,
+									uint Id = 13,
 								},
 								Named = 
 								{
@@ -553,7 +578,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 13,
+							uint Id = 14,
 						},
 						Named = 
 						{
@@ -571,7 +596,7 @@ Level =
 							bool VisibilityCulling = true,
 							bool VisibilityEvents = true,
 							bool CastShadows = false,
-							Vec4 Color = [1, 1, 1, 0.5],
+							Vec4 Color = [1, 1, 1, 1],
 							BlendMode BlendMode = Alpha,
 							SpriteGeometryMode GeometryMode = ZPlane,
 							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -595,7 +620,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 14,
+			uint Id = 15,
 		},
 		Named = 
 		{
@@ -609,24 +634,6 @@ Level =
 		},
 		RoomScript = 
 		{
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "584e01664b4e55af:HeartPickup",
-		LinkId = 
-		{
-			uint Id = 15,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [4, -2, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Item",
 		},
 	},
 	ArchetypeInstance = 
@@ -647,101 +654,40 @@ Level =
 			string Name = "TileMap",
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "5866d9a8dc659bcc:StaffOgre",
 		LinkId = 
 		{
 			uint Id = 17,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-6.97185, 4.67053, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
 		},
 		Named = 
 		{
 			string Name = "Enemy",
 		},
-		Archetyped = 
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584e01664b4e55af:HeartPickup",
+		LinkId = 
 		{
-			string Name = "58e6b86cc88e7f69:Enemy",
+			uint Id = 18,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-3.6282, 4.81042, 0],
+			Vec3 Translation = [3.63159, -0.533366, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
+		Named = 
 		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "58230430c7b3754c:Texture_SkeletonStill",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "580e65c5299dde20:Enemy",
-			Vec3 Offset = [-0.05, 0, 0],
-			Vec3 Size = [0.375, 1, 0.5],
-		},
-		RigidBody = 
-		{
-			bool Static = false,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = true,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		HitpointScript = 
-		{
-			int PrivateHP = 3,
-			string HurtSound = "5854e373c41f5152:Audio_BasicHurtEnemy",
-			string DeathSound = "5854e0e94b4d9613:Audio_SkeletonDeath",
-			float HurtDuration = 0.25,
-		},
-		Shoot = 
-		{
-			string BulletType = "580e65c5299defb0:EnemyBullet",
-			int RingCount = 10,
-			float RingOffset = 90,
-			int SpreadBullets = 3,
-		},
-		Orientation = 
-		{
-			Vec3 GlobalUp = [0, 1, 0],
-			Vec3 UpVector = [0, 0, 1],
-			Vec3 ForwardVector = [0, 1, 0],
-			OrientationBases DefaultBases = ForwardYUpZ,
-		},
-		EnemyShoot = 
-		{
-			float BulletDelay = 1,
-			float BulletSpeed = 100,
-			Enum ShotPattern = SINGLE,
-			string ShootSound = "585fbf932318682e:MagicMissile",
-			string WalkAnimation = "",
-			string AttackAnimation = "",
-		},
-		SideToSide = 
-		{
-		},
-		Hierarchy = 
-		{
+			string Name = "Heart Pickup",
 		},
 	},
 },
