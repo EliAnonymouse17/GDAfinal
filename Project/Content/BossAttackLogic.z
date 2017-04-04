@@ -230,7 +230,7 @@ class BossAttackLogic : ZilchComponent
                 
                 this.Owner.Sprite.SpriteSource = this.StandTexture;
             }
-        }
+        } 
         
     }
 }
