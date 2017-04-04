@@ -24,9 +24,11 @@ class HitpointScript : ZilchComponent
     var DeathSound : SoundCue = null;
     
     [Property]
-    var HurtDuration : Real = 0.25;
+    var HurtDuration : Real = 0.1;
     
-    var HurtTimer : Real = 0;
+    var HurtTimer : Real = 0.1;
+    
+    var HurtBool : Boolean = false;
     
     var Dead : Boolean = false;
     
@@ -87,13 +89,21 @@ class HitpointScript : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        if (this.HurtTimer >= 0)
+        
+        if(this.HurtTimer >= 0 && this.HurtBool == true)
         {
+            this.Owner.Sprite.Color = Real4(1,0,0,0.9);
+            
             this.HurtTimer -= event.Dt;
         }
-        if (this.HurtTimer <= 0)
+        
+        if(this.HurtTimer <= 0 && this.HurtBool == true)
         {
             this.Owner.Sprite.Color = Real4(1,1,1,1);
+            
+            this.HurtTimer = this.HurtDuration;
+            
+            this.HurtBool = false;
         }
     }
 }

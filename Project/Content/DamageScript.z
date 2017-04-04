@@ -76,6 +76,11 @@ class DamageScript : ZilchComponent
             return;
         }
         
+        if(event.OtherObject.HitpointScript != null)
+        {
+            event.OtherObject.HitpointScript.HurtBool = true;
+        }
+        
         
         event.OtherObject.HitpointScript.HP -= this.Damage;
         
