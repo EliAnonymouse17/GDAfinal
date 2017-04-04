@@ -133,7 +133,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 30.1193,
+			float Size = 6.72053,
 		},
 		EditorCameraController = 
 		{
@@ -179,7 +179,7 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5275aa4d802dd6dc:Square",
+			string SpriteSource = "585fc298140f20a7:Texture_WandmanFront000",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -189,7 +189,7 @@ Level =
 		},
 		PlayerMove = 
 		{
-			float MoveSpeed = 500,
+			float MoveSpeed = 700,
 		},
 		PlayerShoot = 
 		{
@@ -207,7 +207,7 @@ Level =
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 			string SerializedGroupName = "580e65c5299c6b69:Player",
 			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.5, 0.5, 0.5],
+			Vec3 Size = [0.4, 0.6, 0.5],
 		},
 		RigidBody = 
 		{
@@ -231,6 +231,9 @@ Level =
 		HitpointScript = 
 		{
 			int PrivateHP = 6,
+			string HurtSound = "",
+			string DeathSound = "",
+			float HurtDuration = 0.25,
 		},
 		PlayerFade = 
 		{
@@ -241,7 +244,7 @@ Level =
 		PlayerAnimations = 
 		{
 			string PlayerStand = "585fc298140f20a7:Texture_WandmanFront000",
-			string PlayerWalkSide = "",
+			string PlayerWalkSide = "58586c83879fbdf0:animation_WandmanWalkRight",
 			string PlayerWalkUp = "58586c25bcd98f54:animation_WandmanWalkBack",
 			string PlayerWalkDown = "58586dcfa50649dc:animation_WandmanWalkForward",
 		},
