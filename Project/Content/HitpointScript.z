@@ -87,7 +87,6 @@ class HitpointScript : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        Console.WriteLine(this.HurtTimer);
         if (this.HurtTimer >= 0)
         {
             this.HurtTimer -= event.Dt;
