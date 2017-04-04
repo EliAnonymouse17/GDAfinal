@@ -36,19 +36,19 @@ class PointTowards : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        this.DestroyTimer -= event.Dt;
-        if (this.DestroyTimer <= 0)
-        {
-            this.Owner.DamageScript.HitCount = 0;
-        }
         if (this.TrackedCog == TrackCogs.PLAYER)
         {
+            this.DestroyTimer -= event.Dt;
+            if (this.DestroyTimer <= 0)
+            {
+                this.Owner.DamageScript.HitCount = 0;
+            }
             if(this.Space.FindObjectByName("Player") == null) return;
             
             var player = this.Space.FindObjectByName("Player").Transform.Translation;
-        this.Rotation = this.Owner.Orientation.GetLookAtPointWithUpRotation(player, Real3(0, 0, 1));
-        
-        this.Owner.Transform.Rotation = Math.RotateTowards(this.Owner.Transform.Rotation, this.Rotation, this.Radians);
+            this.Rotation = this.Owner.Orientation.GetLookAtPointWithUpRotation(player, Real3(0, 0, 1));
+            
+            this.Owner.Transform.Rotation = Math.RotateTowards(this.Owner.Transform.Rotation, this.Rotation, this.Radians);
         }
         
         if (this.TrackedCog == TrackCogs.MOUSE)
