@@ -132,7 +132,7 @@ class RoomScript : ZilchComponent
             {
                 enemyCheck += 1;
             }
-            if(enemyCheck > 1)
+            if(enemyCheck > 0)
                 return;
             foreach(var door in this.Space.FindAllObjectsByName("Door"))
             {
@@ -484,8 +484,12 @@ class RoomScript : ZilchComponent
         foreach (var bullet in this.Space.FindAllObjectsByName("Bullet"))
         {
             bullet.Destroy();
-            this.Space.FindObjectByName("Player").PlayerShoot.TimerFreeze = false;
         }
+        foreach (var item in this.Space.FindAllObjectsByName("Item"))
+        {
+            item.Destroy();
+        }
+        this.Space.FindObjectByName("Player").PlayerShoot.TimerFreeze = false;
         this.Space.FindObjectByName("TileMap").Destroy();
         if(direction == Directions.RIGHT)
             this.MapPosition += Integer2(1, 0);
