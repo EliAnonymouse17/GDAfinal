@@ -484,6 +484,7 @@ class RoomScript : ZilchComponent
         this.CurrentRoom = this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer];
         this.Minimap.SetNodeState(this.MapPosition, MMNodeState.Current);
         this.CurrentRoom.InitRoom(this.Space);
+        this.Space.FindObjectByName("Player").Transform.Translation = Real3(0, 0, 0);
         foreach(var door in this.Space.FindAllObjectsByName("Door"))
         {
             door.Door.SetActive(false);
@@ -492,7 +493,7 @@ class RoomScript : ZilchComponent
         {
             this.OnEnemyDeath(ZilchEvent());
         }
-        this.Space.FindObjectByName("Player").Transform.WorldTranslation = 
-            this.GetDoorPosition(this.OppositeDirection(direction));
+        //this.Space.FindObjectByName("Player").Transform.WorldTranslation = 
+            //this.GetDoorPosition(this.OppositeDirection(direction));
     }
 }
