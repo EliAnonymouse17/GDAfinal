@@ -4,16 +4,19 @@ class BossAttackLogic : ZilchComponent
     [Property] var BulletSpeed1 : Real = 1000;
     [Property] var ShotPattern1 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var BulletType1 : Archetype = null;
+    [Property] var AttackAnimation1 : SpriteSource = null;
     
     [Property] var AttackDelay2 : Real = 3;
     [Property] var BulletSpeed2 : Real = 1000;
     [Property] var ShotPattern2 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var BulletType2 : Archetype = null;
+    [Property] var AttackAnimation2 : SpriteSource = null;
     
     [Property] var AttackDelay3 : Real = 3;
     [Property] var BulletSpeed3 : Real = 1000;
     [Property] var ShotPattern3 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var BulletType3 : Archetype = null;
+    [Property] var AttackAnimation3 : SpriteSource = null;
     
     [Property] var StageSwitch : Real = 0;
     
