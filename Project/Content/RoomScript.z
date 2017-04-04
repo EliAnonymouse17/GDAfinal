@@ -272,50 +272,50 @@ class RoomScript : ZilchComponent
         else if(tileMap == Archetype.TMQuadLL)
         {
             if(x == 1)
-                position = Real3(0, 0, 0);
+                position = Real3(0, -6, 0);
             else if(x == 2)
-                position = Real3(-12, 0, 0);
+                position = Real3(-12, -6, 0);
             else if(x == 3)
-                position = Real3(-12, 12, 0);
+                position = Real3(-12, 6, 0);
             else if(x == 4)
-                position = Real3(-12, 24, 0);
+                position = Real3(-12, 18, 0);
         }
         else if(tileMap == Archetype.TMQuadLR)
         {
             if(x == 1)
-                position = Real3(0, 0, 0);
+                position = Real3(0, -6, 0);
             else if(x == 2)
-                position = Real3(0, 12, 0);
+                position = Real3(0, 6, 0);
             else if(x == 3)
-                position = Real3(0, 24, 0);
+                position = Real3(0, 18, 0);
             else if(x == 4)
-                position = Real3(-12, 0, 0);
+                position = Real3(-12, -6, 0);
         }
         else if(tileMap == Archetype.TMBulgeL)
         {
             if(x == 1)
-                position = Real3(0, 0, 0);
+                position = Real3(0, -6, 0);
             else if(x == 2)
-                position = Real3(-12, 0, 0);
+                position = Real3(-12, -6, 0);
             else if(x == 3)
-                position = Real3(-12, 12, 0);
+                position = Real3(-12, 6, 0);
             else if(x == 4)
-                position = Real3(-12, 24, 0);
+                position = Real3(-12, 18, 0);
             else if(x == 5)
-                position = Real3(-0, 12, 0);
+                position = Real3(-0, 6, 0);
         }
         else if(tileMap == Archetype.TMBulgeR)
         {
             if(x == 1)
-                position = Real3(0, 0, 0);
+                position = Real3(0, -6, 0);
             else if(x == 2)
-                position = Real3(0, 12, 0);
+                position = Real3(0, 6, 0);
             else if(x == 3)
-                position = Real3(0, 24, 0);
+                position = Real3(0, 18, 0);
             else if(x == 4)
-                position = Real3(-12, 0, 0);
+                position = Real3(-12, -6, 0);
             else if(x == 5)
-                position = Real3(-12, 12, 0);
+                position = Real3(-12, 6, 0);
         }
         else if(tileMap == Archetype.TMSquare23)
         {
@@ -337,38 +337,38 @@ class RoomScript : ZilchComponent
             if(x == 1)
                 position = Real3(0, 0, 0);
             else if(x == 2)
-                position = Real3(-12, 0, 0);
-            else if(x == 3)
                 position = Real3(12, 0, 0);
+            else if(x == 3)
+                position = Real3(-12, 0, 0);
             else if(x == 4)
-                position = Real3(24, 0, 0);
+                position = Real3(-24, 0, 0);
             else if(x == 5)
-                position = Real3(-12, 12, 0);
+                position = Real3(12, 12, 0);
             else if(x == 6)
                 position = Real3(0, 12, 0);
             else if(x == 7)
-                position = Real3(12, 12, 0);
+                position = Real3(-12, 12, 0);
             else if(x == 8)
-                position = Real3(24, 12, 0);
+                position = Real3(-24, 12, 0);
         }
         else if(tileMap == Archetype.TMChip)
         {
             if(x == 1)
-                position = Real3(0, 0, 0);
+                position = Real3(0, -6, 0);
             else if(x == 2)
-                position = Real3(-12, 0, 0);
+                position = Real3(-12, -6, 0);
             else if(x == 3)
-                position = Real3(12, 0, 0);
+                position = Real3(12, -6, 0);
             else if(x == 4)
-                position = Real3(0, 24, 0);
+                position = Real3(0, 18, 0);
             else if(x == 5)
-                position = Real3(-12, 24, 0);
+                position = Real3(-12, 18, 0);
             else if(x == 6)
-                position = Real3(-12, 12, 0);
+                position = Real3(-12, 6, 0);
             else if(x == 7)
-                position = Real3(0, 12, 0);
+                position = Real3(0, 6, 0);
             else if(x == 8)
-                position = Real3(12, 12, 0);
+                position = Real3(12, 6, 0);
         }
         var xIncrease : Real = 2;
         var yIncrease : Real = 2;
