@@ -425,6 +425,42 @@ class RoomScript : ZilchComponent
         }
     }
     
+    function FindDoorByDirection(direction : Directions) : Cog
+    {
+        foreach (var door in this.Space.FindAllObjectsByName("Door"))
+        {
+            if(door.Door.Direction == direction)
+                return door;
+        }
+        return null;
+    }
+    
+    function OppositeDirection(direction : Directions) : Directions
+    {
+        if(direction == Directions.DOWN)
+            return Directions.UP;
+        if(direction == Directions.UP)
+            return Directions.DOWN;
+        if(direction == Directions.LEFT)
+            return Directions.RIGHT;
+        if(direction == Directions.RIGHT)
+            return Directions.LEFT;
+        return Directions.UP;
+    }
+    
+    function GetDoorPosition(direction : Directions) : Real3
+    {
+        var pos = this.FindDoorByDirection(direction).Transform.Translation;
+        if(direction == Directions.DOWN)
+            pos += Real3(0, 1, 0);
+        if(direction == Directions.UP)
+            pos += Real3(0, -1, 0);
+        if(direction == Directions.LEFT)
+            pos += Real3(1, 0, 0);
+        if(direction == Directions.RIGHT)
+            pos += Real3(-1, 0, 0);
+        return pos;
+    }
     
     function NextRoom(direction : Directions)
     {
@@ -437,25 +473,17 @@ class RoomScript : ZilchComponent
         }
         this.Space.FindObjectByName("TileMap").Destroy();
         if(direction == Directions.RIGHT)
-        {
             this.MapPosition += Integer2(1, 0);
-        }
         else if(direction == Directions.LEFT)
-        {
             this.MapPosition += Integer2(-1, 0);
-        }
         else if(direction == Directions.UP)
-        {
             this.MapPosition += Integer2(0, -1);
-        }
         else if(direction == Directions.DOWN)
-        {
             this.MapPosition += Integer2(0, 1);
-        }
+        
         this.CurrentRoom = this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer];
         this.Minimap.SetNodeState(this.MapPosition, MMNodeState.Current);
         this.CurrentRoom.InitRoom(this.Space);
-        this.Space.FindObjectByName("Player").Transform.WorldTranslation = Real3(0, 0, 0);
         foreach(var door in this.Space.FindAllObjectsByName("Door"))
         {
             door.Door.SetActive(false);
@@ -464,5 +492,7 @@ class RoomScript : ZilchComponent
         {
             this.OnEnemyDeath(ZilchEvent());
         }
+        this.Space.FindObjectByName("Player").Transform.WorldTranslation = 
+            this.GetDoorPosition(this.OppositeDirection(direction));
     }
 }
