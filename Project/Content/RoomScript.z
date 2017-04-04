@@ -95,6 +95,9 @@ class RoomScript : ZilchComponent
     var MapPosition : Integer2;
     var MapDimensions : Integer = 3;
     var Minimap : Minimap;
+    var Timer : Real = 0;
+    var LoadDirection : Directions;
+    var CheckTimer : Real = 0;
     
     function Initialize(init : CogInitializer)
     {
@@ -106,7 +109,58 @@ class RoomScript : ZilchComponent
         this.CurrentItemList = new Array[Item]();
         this.CurrentItemList.Add(new Item(ItemID.BLOCKADE, Real3(7, 7.5, 0)));
         this.CurrentRoom = new Room(this.CurrentEnemyList, this.CurrentItemList, Archetype.TMSquare22, 0);
-        Zero.Connect(this.Space, Events.EnemyDeathEvent, this.OnEnemyDeath);
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.Timer > 0)
+        {
+            this.Timer -= event.Dt;
+            if(this.Timer <= 0)
+            {
+                this.Space.FindObjectByName("Player").Transform.WorldTranslation = 
+                    this.GetDoorPosition(this.OppositeDirection(this.LoadDirection));
+            }
+        }
+        this.CheckTimer -= event.Dt;
+        if(this.CheckTimer <= 0)
+        {
+            this.CheckTimer = 1;
+            var enemyCheck = 0;
+            foreach (var enemy in this.Space.FindAllObjectsByName("Enemy"))
+            {
+                enemyCheck += 1;
+            }
+            if(enemyCheck > 1)
+                return;
+            foreach(var door in this.Space.FindAllObjectsByName("Door"))
+            {
+                var posCheck = this.MapPosition;
+                if(door.Door.Direction == Directions.RIGHT)
+                {
+                    posCheck += Integer2(1, 0);
+                }
+                else if(door.Door.Direction == Directions.LEFT)
+                {
+                    posCheck += Integer2(-1, 0);
+                }
+                else if(door.Door.Direction == Directions.UP)
+                {
+                    posCheck += Integer2(0, -1);
+                }
+                else if(door.Door.Direction == Directions.DOWN)
+                {
+                    posCheck += Integer2(0, 1);
+                }
+                if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1)
+                {
+                    door.Door.SetActive(true);
+                    if(this.Minimap.GetNodeState(posCheck) == MMNodeState.Unknown)
+                        this.Minimap.SetNodeState(posCheck, MMNodeState.Unexplored);
+                }
+            }
+        }
     }
     
     function InitMap() : Array[Array[Room]]
@@ -385,45 +439,6 @@ class RoomScript : ZilchComponent
             position = Real3(0-position.Y, 0-position.X, 0);*/
         return position;
     }
-
-    function OnEnemyDeath(event : ZilchEvent)
-    {
-        var enemyCheck = 0;
-        foreach (var enemy in this.Space.FindAllObjectsByName("Enemy"))
-        {
-            if(enemyCheck > 0)
-            {
-                return;
-            }
-            enemyCheck += 1;
-        }
-        foreach(var door in this.Space.FindAllObjectsByName("Door"))
-        {
-            var posCheck = this.MapPosition;
-            if(door.Door.Direction == Directions.RIGHT)
-            {
-                posCheck += Integer2(1, 0);
-            }
-            else if(door.Door.Direction == Directions.LEFT)
-            {
-                posCheck += Integer2(-1, 0);
-            }
-            else if(door.Door.Direction == Directions.UP)
-            {
-                posCheck += Integer2(0, -1);
-            }
-            else if(door.Door.Direction == Directions.DOWN)
-            {
-                posCheck += Integer2(0, 1);
-            }
-            if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1)
-            {
-                door.Door.SetActive(true);
-                if(this.Minimap.GetNodeState(posCheck) == MMNodeState.Unknown)
-                    this.Minimap.SetNodeState(posCheck, MMNodeState.Unexplored);
-            }
-        }
-    }
     
     function FindDoorByDirection(direction : Directions) : Cog
     {
@@ -452,13 +467,13 @@ class RoomScript : ZilchComponent
     {
         var pos = this.FindDoorByDirection(direction).Transform.Translation;
         if(direction == Directions.DOWN)
-            pos += Real3(0, 1, 0);
+            pos += Real3(0, 2, 0);
         if(direction == Directions.UP)
-            pos += Real3(0, -1, 0);
+            pos += Real3(0, -2, 0);
         if(direction == Directions.LEFT)
-            pos += Real3(1, 0, 0);
+            pos += Real3(2, 0, 0);
         if(direction == Directions.RIGHT)
-            pos += Real3(-1, 0, 0);
+            pos += Real3(-2, 0, 0);
         return pos;
     }
     
@@ -489,11 +504,7 @@ class RoomScript : ZilchComponent
         {
             door.Door.SetActive(false);
         }
-        if(this.CurrentRoom.Enemies.Count == 0)
-        {
-            this.OnEnemyDeath(ZilchEvent());
-        }
-        //this.Space.FindObjectByName("Player").Transform.WorldTranslation = 
-            //this.GetDoorPosition(this.OppositeDirection(direction));
+        this.Timer = 0.2;
+        this.LoadDirection = direction;
     }
 }
