@@ -10,11 +10,11 @@ Cog =
 	},
 	Archetyped = 
 	{
-		string Name = "584d30a5b4310262:Zombie",
+		string Name = "58639e0fc7f7898f:Apprentice",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-10.0514, -10.311, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,7 +24,7 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [0, 1, 0, 1],
+		Vec4 Color = [0.063, 0.42, 0.33432, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -79,13 +79,21 @@ Cog =
 		Vec3 ForwardVector = [0, 1, 0],
 		OrientationBases DefaultBases = ForwardYUpZ,
 	},
-	BrainEaterScript = 
+	EnemyShoot = 
 	{
+		float BulletDelay = 3,
+		float BulletSpeed = 150,
+		Enum ShotPattern = SINGLE,
+		string ShootSound = "",
+		string WalkAnimation = "",
+		string AttackAnimation = "",
+		float BurstDelay = 0.1,
+		int BurstCount = 4,
 	},
 	AIMoveFromPlayer = 
 	{
 		float MoveSpeed = 4,
-		bool MovesAwayFromPlayer = false,
+		bool MovesAwayFromPlayer = true,
 	},
 	Hierarchy = 
 	{

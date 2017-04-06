@@ -1,7 +1,10 @@
-class AIMoveToPlayer : ZilchComponent
+class AIMoveFromPlayer : ZilchComponent
 {
     [Property]
     var MoveSpeed : Real = 4;
+    
+    [Property]
+    var MovesAwayFromPlayer : Boolean = false;
     
     var Player : Cog;
     var BubbleBool : Boolean = false;
@@ -15,11 +18,19 @@ class AIMoveToPlayer : ZilchComponent
     function OnLogicUpdate(event : UpdateEvent)
     {
         var playerPos : Real3 = Real3(0,0,0);
+        var angle : Real3 = Real3(0,0,0);
         if (this.Player != null)
         {
             playerPos = this.Player.Transform.Translation;
         }
-        var angle = Math.Normalize(playerPos - this.Owner.Transform.Translation);
+        if (this.MovesAwayFromPlayer)
+        {
+            angle = Math.Normalize(this.Owner.Transform.Translation - playerPos);
+        }
+        else
+        {
+            angle = Math.Normalize(playerPos - this.Owner.Transform.Translation);
+        }
         if (this.BubbleBool == false)
         {
             this.Owner.RigidBody.Velocity = angle * this.MoveSpeed;

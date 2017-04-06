@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.979958, 1.39854, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [0.75, 0.75, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -61,6 +61,9 @@ Cog =
 	HitpointScript = 
 	{
 		int PrivateHP = 3,
+		string HurtSound = "",
+		string DeathSound = "",
+		float HurtDuration = 0.1,
 	},
 	Orientation = 
 	{
@@ -72,9 +75,10 @@ Cog =
 	GolemPound = 
 	{
 	},
-	AIMoveToPlayer = 
+	AIMoveFromPlayer = 
 	{
-		float MoveSpeed = 3,
+		float MoveSpeed = 4,
+		bool MovesAwayFromPlayer = false,
 	},
 	Hierarchy = 
 	{

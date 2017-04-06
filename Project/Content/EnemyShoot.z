@@ -21,6 +21,12 @@ class EnemyShoot : ZilchComponent
     [Property] var WalkAnimation : SpriteSource  = null;
     [Property] var AttackAnimation : SpriteSource  = null;
     var TimeUntilNextShot : Real = 1;
+    // A burst is a series of consecutive shots
+    [Property] var BurstDelay : Real = 0; // Time between shots within a burst
+    var BurstTimer : Real = 0;
+    [Property] var BurstCount : Integer = 1;
+    var ShotsLeft : Integer = 0;
+    var IsBursting : Boolean = false;
     
     function Initialize(init : CogInitializer)
     {
@@ -36,18 +42,39 @@ class EnemyShoot : ZilchComponent
             return;
         }
         var shotAngle = Math.Normalize(this.Space.FindObjectByName("Player").Transform.Translation - this.Owner.Transform.Translation);
-        if(this.TimeUntilNextShot <= 0)
+        if(this.TimeUntilNextShot <= 0 && this.IsBursting == false)
         {
-            
-            if(this.ShootSound != null)
-            {
-                this.Space.SoundSpace.PlayCue(this.ShootSound);
-            }
             if(this.AttackAnimation != null)
                 this.Owner.Sprite.SpriteSource = this.AttackAnimation;
             this.TimeUntilNextShot = this.BulletDelay;
-            this.Owner.Shoot.Shoot(this.BulletSpeed, shotAngle, this.ShotPattern);
+            this.BurstTimer = 0;
+            this.ShotsLeft = this.BurstCount;
+            this.IsBursting = true;
         }
+        // Tick down time left bewtween shots
+        if (this.IsBursting)
+        {
+            this.BurstTimer -= event.Dt;
+        }
+        
+        // Fire Shot
+        if (this.BurstTimer <= 0 && this.ShotsLeft > 0)
+        {
+            this.Owner.Shoot.Shoot(this.BulletSpeed, shotAngle, this.ShotPattern);
+            if (this.ShootSound != null)
+            {
+                this.Space.SoundSpace.PlayCue(this.ShootSound);
+            }
+            this.BurstTimer = this.BurstDelay;
+            this.ShotsLeft -= 1;
+        }
+        
+        // End burst
+        if (this.ShotsLeft <= 0)
+        {
+            this.IsBursting = false;
+        }
+        
         if(this.Owner.Sprite.SpriteSource == this.AttackAnimation)
         {
             if(this.Owner.Sprite.CurrentFrame >= this.AttackAnimation.FrameCount - 1)

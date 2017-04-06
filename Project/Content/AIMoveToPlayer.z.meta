@@ -1,8 +1,0 @@
-TextContent = 
-{
-	ZilchScriptBuilder = 
-	{
-		string Name = "AIMoveToPlayer",
-		uint64 ResourceId = 584ffa7376a2165a,
-	},
-},
