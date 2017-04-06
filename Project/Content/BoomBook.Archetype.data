@@ -81,7 +81,7 @@ Cog =
 	},
 	AIMoveToPlayer = 
 	{
-		float MoveSpeed = 14,
+		float MoveSpeed = 16,
 	},
 	BoomBook = 
 	{

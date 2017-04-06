@@ -121,7 +121,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-6.99753, -8.59127, 50],
+			Vec3 Translation = [-0.0380576, -0.0533955, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -133,7 +133,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 13.3718,
+			float Size = 18.05,
 		},
 		EditorCameraController = 
 		{
@@ -141,7 +141,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-6.99753, -8.59127, 4.92824e-008],
+			Vec3 LookTarget = [-0.0380576, -0.0533955, -2.93463e-008],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -193,11 +193,13 @@ Level =
 		},
 		PlayerShoot = 
 		{
-			float BulletDelay = 1,
-			float BulletSpeed = 200,
+			float BulletDelay = 2,
+			float BulletSpeed = 125,
 			Enum ShotPattern = SINGLE,
 			string ShootSound = "",
 			bool TimerFreeze = false,
+			float BurstDelay = 0.1,
+			int BurstCount = 5,
 		},
 		BoxCollider = 
 		{
@@ -224,7 +226,7 @@ Level =
 		Shoot = 
 		{
 			string BulletType = "5815eae6be2978a9:Bullet",
-			int RingCount = 10,
+			int RingCount = 20,
 			float RingOffset = 90,
 			int SpreadBullets = 3,
 		},
@@ -684,12 +686,19 @@ Level =
 			Vec3 Size = [0.5, 0.5, 0.5],
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "5866e54b88d72e10:BoomBook",
 		LinkId = 
 		{
 			uint Id = 17,
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+		Archetyped = 
+		{
+			string Name = "5866e54b88d72e10:BoomBook",
 		},
 		Transform = 
 		{
@@ -697,9 +706,76 @@ Level =
 			Vec3 Scale = [0.5, 0.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		Sprite = 
 		{
-			string Name = "Enemy",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.784314, 0, 0, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "58230430c7b3754c:Texture_SkeletonStill",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
+			Vec3 Offset = [-0.05, 0, 0],
+			Vec3 Size = [0.375, 1, 0.5],
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		HitpointScript = 
+		{
+			int PrivateHP = 3,
+			string HurtSound = "",
+			string DeathSound = "",
+			float HurtDuration = 0.1,
+		},
+		Shoot = 
+		{
+			string BulletType = "580e65c5299defb0:EnemyBullet",
+			int RingCount = 10,
+			float RingOffset = 90,
+			int SpreadBullets = 3,
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 1, 0],
+			Vec3 UpVector = [0, 0, 1],
+			Vec3 ForwardVector = [0, 1, 0],
+			OrientationBases DefaultBases = ForwardYUpZ,
+		},
+		AIMoveToPlayer = 
+		{
+			float MoveSpeed = 16,
+		},
+		BoomBook = 
+		{
+		},
+		Hierarchy = 
+		{
 		},
 	},
 	ArchetypeInstance = 

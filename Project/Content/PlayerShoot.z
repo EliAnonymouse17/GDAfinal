@@ -8,18 +8,25 @@
 ** - Eli
 **
 ** Contributors:
-** - none
+** - Nelson
 ** --------------------------------------------------------------------------*/
 //      10        20        30        40        50        60        70        80        90       100
 enum ShotPatternID {SINGLE, SPREAD, RING}
 
 class PlayerShoot : ZilchComponent
 {
-    [Property] var BulletDelay : Real = 1;
+    [Property] var BulletDelay : Real = 1; // Time bewteen bursts
     [Property] var BulletSpeed : Real = 1000;
     [Property] var ShotPattern : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var ShootSound : SoundCue = null;
     [Property] var TimerFreeze : Boolean = false;
+    // A burst is a series of consecutive shots
+    [Property] var BurstDelay : Real = 0; // Time between shots within a burst
+    var BurstTimer : Real = 0;
+    [Property] var BurstCount : Integer = 1;
+    var ShotsLeft : Integer = 0;
+
+    var IsBursting : Boolean = false;
     var TimeUntilNextShot : Real = 0;
     function Initialize(init : CogInitializer)
     {
@@ -28,21 +35,47 @@ class PlayerShoot : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
+        // Tick down time until next burst
         if (this.TimerFreeze == false)
         {
             this.TimeUntilNextShot -= event.Dt;
         }
+        // Calculate shot angle
         var mouseScreenPosition = Zero.Mouse.ScreenPosition;
         var mouseWorldPosition = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(mouseScreenPosition, 0);
         var shotAngle = Math.Normalize(mouseWorldPosition - this.Owner.Transform.Translation);
-        if(Zero.Mouse.IsButtonDown(MouseButtons.Left) && this.TimeUntilNextShot <= 0)
+        
+        // Start a new burst
+        if(Zero.Mouse.IsButtonDown(MouseButtons.Left) && this.TimeUntilNextShot <= 0 && this.IsBursting == false)
         {
             this.TimeUntilNextShot = this.BulletDelay;
+            this.BurstTimer = 0;
+            this.ShotsLeft = this.BurstCount;
+            this.IsBursting = true;
+        }
+        
+        // Tick down time left bewtween shots
+        if (this.IsBursting)
+        {
+            this.BurstTimer -= event.Dt;
+        }
+        
+        // Fire Shot
+        if (this.BurstTimer <= 0 && this.ShotsLeft > 0)
+        {
             this.Owner.Shoot.Shoot(this.BulletSpeed, shotAngle, this.ShotPattern);
             if (this.ShootSound != null)
             {
                 this.Space.SoundSpace.PlayCue(this.ShootSound);
             }
+            this.BurstTimer = this.BurstDelay;
+            this.ShotsLeft -= 1;
+        }
+        
+        // End burst
+        if (this.ShotsLeft <= 0)
+        {
+            this.IsBursting = false;
         }
     }
 }
