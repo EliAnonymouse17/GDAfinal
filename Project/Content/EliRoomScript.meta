@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "EliRoomScript",
+		uint64 ResourceId = 58e6f937b6d67bc7,
+	},
+},

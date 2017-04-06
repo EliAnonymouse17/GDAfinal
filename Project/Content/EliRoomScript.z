@@ -1,0 +1,561 @@
+enum EnemyTypeID {SKELETON, ZOMBIE, NECROMANCER}
+
+enum Directions {UP, DOWN, RIGHT, LEFT}
+
+enum ItemID {HEALTH, BLOCKADE}
+
+enum RoomType {BASIC, TREASURE, BOSS}
+
+class Enemy
+{
+    var Position : Real3;
+    var Sprite : SpriteSource;
+    var ShotType : ShotPatternID;
+    var AIScript1 : String;
+    var AIScript2 : String;
+    constructor(enemyType : EnemyTypeID, position : Real3)
+    {
+        this.Position = position;
+        if(enemyType == EnemyTypeID.SKELETON)
+        {
+            this.Sprite = SpriteSource.Texture_SkeletonStill;
+            this.ShotType = ShotPatternID.SINGLE;
+            this.AIScript1 = "SideToSide";
+            this.AIScript2 = "Empty";
+        }
+    }
+}
+
+class Item
+{
+    var Position : Real3;
+    var ID : ItemID;
+    constructor(itemID : ItemID, position : Real3)
+    {
+        this.Position = position;
+        this.ID = itemID;
+    }
+}
+
+class Room
+{
+    var Enemies : Array[Enemy];
+    var Items : Array[Item];
+    var TM : Archetype;
+    var Rotation : Integer;
+    var Type : RoomType;
+    constructor(enemies : Array[Enemy], items : Array[Item], tileMap : Archetype, rotation : Integer, roomType : RoomType)
+    {
+        this.Enemies = new Array[Enemy](enemies.Count);
+        for(var i = 0; i < this.Enemies.Count; ++i)
+        {
+            this.Enemies[i] = enemies[i];
+        }
+        
+        this.Items = new Array[Item](items.Count);
+        for(var i = 0; i < this.Items.Count; ++i)
+        {
+            this.Items[i] = items[i];
+        }
+        
+        this.TM = tileMap;
+        
+        this.Rotation = rotation;
+    }
+    
+    
+    function InitRoom(space : Space)
+    {
+        if(this.Type == RoomType.BASIC)
+        {
+            for(var i = 0; i < this.Enemies.Count; ++i)
+            {
+                var currentEnemy = space.CreateAtPosition(Archetype.Enemy, this.Enemies[i].Position);
+                currentEnemy.AddComponentByName(this.Enemies[i].AIScript1);
+                currentEnemy.AddComponentByName(this.Enemies[i].AIScript2);
+                currentEnemy.Sprite.SpriteSource = this.Enemies[i].Sprite;
+                currentEnemy.EnemyShoot.ShotPattern = this.Enemies[i].ShotType;
+            }
+            
+            for(var i = 0; i < this.Items.Count; ++i)
+            {
+                if(this.Items[i].ID == ItemID.BLOCKADE)
+                    space.CreateAtPosition(Archetype.Blockade, this.Items[i].Position);
+                if(this.Items[i].ID == ItemID.HEALTH)
+                    space.CreateAtPosition(Archetype.HeartPickup, this.Items[i].Position);
+            }
+            var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, 0));
+            //tileMap.Transform.RotateAnglesLocal(Real3(0, 0, Math.ToRadians(this.Rotation)));
+        }
+        else if(this.Type == RoomType.TREASURE)
+        {
+            space.CreateAtPosition(Archetype.Treasure, Real3(0, 0, 0));
+            var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, 0));
+            //tileMap.Transform.RotateAnglesLocal(Real3(0, 0, Math.ToRadians(this.Rotation)));
+        }
+        else if(this.Type == RoomType.BOSS)
+        {
+            space.CreateAtPosition(Archetype.GiantSkeleton, Real3(0, 0, 0));
+            space.CreateAtPosition(Archetype.TMSquare22, Real3(0, 0, 0));
+        }
+    }
+}
+
+class RoomScript : ZilchComponent
+{
+    var CurrentEnemyList : Array[Enemy];
+    var CurrentItemList : Array[Item];
+    var CurrentRoom : Room;
+    var Map : Array[Array[Room]];
+    var MapPosition : Integer2;
+    var MapDimensions : Integer = 3;
+    var Minimap : Minimap;
+    var Timer : Real = 0;
+    var LoadDirection : Directions;
+    var CheckTimer : Real = 0;
+    var FadeTime : Real = 1;
+    var MapDirection : Directions = Directions.UP;
+    var FadeBool : Boolean = false;
+    function Initialize(init : CogInitializer)
+    {
+        this.Minimap = this.Space.FindObjectByName("Minimap").Minimap;
+        this.Map = this.InitMap();
+        this.MapPosition = Integer2(0, 0);
+        this.CurrentEnemyList = new Array[Enemy]();
+        this.CurrentEnemyList.Add(new Enemy(EnemyTypeID.SKELETON, Real3(-7, 7.5, 0)));
+        this.CurrentItemList = new Array[Item]();
+        this.CurrentItemList.Add(new Item(ItemID.BLOCKADE, Real3(7, 7.5, 0)));
+        this.CurrentRoom = new Room(this.CurrentEnemyList, this.CurrentItemList, Archetype.TMSquare22, 0, RoomType.BASIC);
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.Timer > 0)
+        {
+            this.Timer -= event.Dt;
+            this.Space.FindObjectByName("Loading").Sprite.Color = Real4(0, 0, 0, ((this.FadeTime/2)-Math.Abs((this.FadeTime/2)-this.Timer))*(2/this.FadeTime));
+            if(this.Timer <= this.FadeTime/4)
+            {
+                this.Space.FindObjectByName("Player").Transform.WorldTranslation = 
+                    this.GetDoorPosition(this.LoadDirection);
+            }
+            else if(!this.FadeBool)
+            {
+                this.NextRoom(this.MapDirection);
+                this.FadeBool = true;
+            }
+        }
+        else
+        {
+            if(this.Space.FindObjectByName("Loading") != null)
+                this.Space.FindObjectByName("Loading").Sprite.Color = Real4(0, 0, 0, 0);
+        }
+        this.CheckTimer -= event.Dt;
+        if(this.CheckTimer <= 0)
+        {
+            this.CheckTimer = 1;
+            var enemyCheck = 0;
+            foreach (var enemy in this.Space.FindAllObjectsByName("Enemy"))
+            {
+                enemyCheck += 1;
+            }
+            if(enemyCheck > 0)
+                return;
+            foreach(var door in this.Space.FindAllObjectsByName("Door"))
+            {
+                var posCheck = this.MapPosition;
+                if(door.Door.Direction == Directions.RIGHT)
+                {
+                    posCheck += Integer2(1, 0);
+                }
+                else if(door.Door.Direction == Directions.LEFT)
+                {
+                    posCheck += Integer2(-1, 0);
+                }
+                else if(door.Door.Direction == Directions.UP)
+                {
+                    posCheck += Integer2(0, -1);
+                }
+                else if(door.Door.Direction == Directions.DOWN)
+                {
+                    posCheck += Integer2(0, 1);
+                }
+                if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1)
+                {
+                    door.Door.SetActive(true);
+                    if(this.Minimap.GetNodeState(posCheck) == MMNodeState.Unknown)
+                        this.Minimap.SetNodeState(posCheck, MMNodeState.Unexplored);
+                }
+            }
+        }
+    }
+    
+    function InitMap() : Array[Array[Room]]
+    {
+        var random = Random();
+        var map = new Array[Array[Room]]();
+        for(var i = 0; i < this.MapDimensions; ++i)
+        {
+            map.Add(new Array[Room]());
+            for(var j = 0; j < this.MapDimensions; ++j)
+            {
+                /*
+                var enemyList = new Array[Enemy]();
+                for(var k = 0; k < i+j+1; ++k)
+                {
+                    enemyList.Add(new Enemy(EnemyTypeID.SKELETON, Real3(-8+(3*k), 7.5, 0)));
+                }
+                map[i].Add(new Room(enemyList, new Array[Item](), Archetype.TMChip, 0));*/
+                map[i].Add(this.RandomGen());
+            }
+        }
+        var x = 0;
+        var y = 0;
+        while(x + y < 1 || x + y > 3)
+        {
+            x = random.DieRoll(3) - 1;
+            y = random.DieRoll(3) - 1;
+        }
+        map[x][y].Type = RoomType.TREASURE;
+        map[2][2].Type = RoomType.BOSS;
+        return map;
+    }
+    
+    function RandomGen() : Room
+    {
+        //(12)  roll d12 for tilemap (1-TriL(3) 2-TriLine(3) 3-TriLine(3) 4-Square22(4) 5-Square22(4) 6-QuadLL(4) 7-QuadLR(4) 8-BulgeL(5) 9-BulgeR(5) 10-Square23(6) 11-Square24(8) 12-Chip(8))
+        //(4)   roll d4 for rotation ((d4 - 1) * 90)
+        //(4)   roll d4 for #enemies (d4 + roomsize - 4, max 8 enemies)
+        //(10^8)roll [#enemies]d10 for enemy type (1-5 = skeleton, 6-9 = zombie, 10 = necro)
+        //(8^8) roll [#enemies]d[roomsize] for placement
+        //(9^8) roll [#enemies]d9 for placement
+        //(4)   roll d4 for #items (d4 + floor(roomsize / 2) - 2, max 6 items)
+        //(10^6)roll [#items]d10 for item type
+        //(8^6) roll [#items]d[roomsize] for placement
+        //(9^6) roll [#items]d9 for placement
+        //2: 54 3: 29 5: 14 = > 10^39 (sh*t)
+        
+        var roomSize = 0;
+        var tileMap = Archetype.TMSquare22;
+        var rotation = 0;
+        var enemies = new Array[Enemy]();
+        var items = new Array[Item]();
+        var random = Random();
+        //var seedGen = Random();
+        var temp : Integer = 0;
+        
+        //random.Seed(seedGen.Integer());
+        //http://i.imgur.com/ZfnkeKM.png
+        //goddamn seeds
+        temp = random.DieRoll(12);
+        if(temp == 1)
+        {
+            tileMap = Archetype.TMTriL;
+            roomSize = 3;
+        }
+        else if(temp == 2 || temp == 3)
+        {
+            tileMap = Archetype.TMTriLine;
+            roomSize = 3;
+        }
+        else if(temp == 4 || temp == 5)
+        {
+            tileMap = Archetype.TMSquare22;
+            roomSize = 4;
+        }
+        else if(temp == 6)
+        {
+            tileMap = Archetype.TMQuadLL;
+            roomSize = 4;
+        }
+        else if(temp == 7)
+        {
+            tileMap = Archetype.TMQuadLR;
+            roomSize = 4;
+        }
+        else if(temp == 8)
+        {
+            tileMap = Archetype.TMBulgeL;
+            roomSize = 5;
+        }
+        else if(temp == 9)
+        {
+            tileMap = Archetype.TMBulgeR;
+            roomSize = 5;
+        }
+        else if(temp == 10)
+        {
+            tileMap = Archetype.TMSquare23;
+            roomSize = 6;
+        }
+        else if(temp == 11)
+        {
+            tileMap = Archetype.TMSquare24;
+            roomSize = 8;
+        }
+        else if(temp == 12)
+        {
+            tileMap = Archetype.TMChip;
+            roomSize = 8;
+        }
+        
+        rotation = (random.DieRoll(4) - 1) * 90;
+        
+        var enemyNum = random.DieRoll(4) - 4 + roomSize;
+        
+        for(var i = 0; i < enemyNum; ++i)
+        {
+            temp = random.DieRoll(10);
+            if(temp < 6)
+                enemies.Add(new Enemy(EnemyTypeID.SKELETON, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+            else if(temp < 10)
+                enemies.Add(new Enemy(EnemyTypeID.ZOMBIE, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+            else
+                enemies.Add(new Enemy(EnemyTypeID.NECROMANCER, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+        }
+        
+        var itemNum = random.DieRoll(4) - 2 + Math.Floor(roomSize/2.0);
+        
+        for(var i = 0; i < itemNum; ++i)
+        {
+            temp = random.DieRoll(10);
+            if(temp < 8)
+                items.Add(new Item(ItemID.BLOCKADE, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+            else
+                items.Add(new Item(ItemID.HEALTH, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+        }
+        
+        return new Room(enemies, items, tileMap, rotation, RoomType.BASIC);
+    }
+    
+    function GetPosition(x : Integer, y : Integer, tileMap : Archetype, rotation : Integer) : Real3
+    {
+        var position = Real3(0, 0, 0);
+        if(tileMap == Archetype.TMTriL)
+        {
+            if(x == 1)
+                position = Real3(0, 0, 0);
+            else if(x == 2)
+                position = Real3(-12, 0, 0);
+            else if(x == 3)
+                position = Real3(-12, 12, 0);
+        }
+        else if(tileMap == Archetype.TMTriLine)
+        {
+            if(x == 1)
+                position = Real3(6, 0, 0);
+            else if(x == 2)
+                position = Real3(-6, 0, 0);
+            else if(x == 3)
+                position = Real3(-18, 0, 0);
+        }
+        else if(tileMap == Archetype.TMSquare22)
+        {
+            if(x == 1)
+                position = Real3(0, 0, 0);
+            else if(x == 2)
+                position = Real3(-12, 0, 0);
+            else if(x == 3)
+                position = Real3(0, 12, 0);
+            else if(x == 4)
+                position = Real3(-12, 12, 0);
+        }
+        else if(tileMap == Archetype.TMQuadLL)
+        {
+            if(x == 1)
+                position = Real3(0, -6, 0);
+            else if(x == 2)
+                position = Real3(-12, -6, 0);
+            else if(x == 3)
+                position = Real3(-12, 6, 0);
+            else if(x == 4)
+                position = Real3(-12, 18, 0);
+        }
+        else if(tileMap == Archetype.TMQuadLR)
+        {
+            if(x == 1)
+                position = Real3(0, -6, 0);
+            else if(x == 2)
+                position = Real3(0, 6, 0);
+            else if(x == 3)
+                position = Real3(0, 18, 0);
+            else if(x == 4)
+                position = Real3(-12, -6, 0);
+        }
+        else if(tileMap == Archetype.TMBulgeL)
+        {
+            if(x == 1)
+                position = Real3(0, -6, 0);
+            else if(x == 2)
+                position = Real3(-12, -6, 0);
+            else if(x == 3)
+                position = Real3(-12, 6, 0);
+            else if(x == 4)
+                position = Real3(-12, 18, 0);
+            else if(x == 5)
+                position = Real3(-0, 6, 0);
+        }
+        else if(tileMap == Archetype.TMBulgeR)
+        {
+            if(x == 1)
+                position = Real3(0, -6, 0);
+            else if(x == 2)
+                position = Real3(0, 6, 0);
+            else if(x == 3)
+                position = Real3(0, 18, 0);
+            else if(x == 4)
+                position = Real3(-12, -6, 0);
+            else if(x == 5)
+                position = Real3(-12, 6, 0);
+        }
+        else if(tileMap == Archetype.TMSquare23)
+        {
+            if(x == 1)
+                position = Real3(-6, 0, 0);
+            else if(x == 2)
+                position = Real3(6, 0, 0);
+            else if(x == 3)
+                position = Real3(-6, 12, 0);
+            else if(x == 4)
+                position = Real3(6, 12, 0);
+            else if(x == 5)
+                position = Real3(-18, 0, 0);
+            else if(x == 6)
+                position = Real3(-18, 12, 0);
+        }
+        else if(tileMap == Archetype.TMSquare24)
+        {
+            if(x == 1)
+                position = Real3(0, 0, 0);
+            else if(x == 2)
+                position = Real3(12, 0, 0);
+            else if(x == 3)
+                position = Real3(-12, 0, 0);
+            else if(x == 4)
+                position = Real3(-24, 0, 0);
+            else if(x == 5)
+                position = Real3(12, 12, 0);
+            else if(x == 6)
+                position = Real3(0, 12, 0);
+            else if(x == 7)
+                position = Real3(-12, 12, 0);
+            else if(x == 8)
+                position = Real3(-24, 12, 0);
+        }
+        else if(tileMap == Archetype.TMChip)
+        {
+            if(x == 1)
+                position = Real3(0, -6, 0);
+            else if(x == 2)
+                position = Real3(-12, -6, 0);
+            else if(x == 3)
+                position = Real3(12, -6, 0);
+            else if(x == 4)
+                position = Real3(0, 18, 0);
+            else if(x == 5)
+                position = Real3(-12, 18, 0);
+            else if(x == 6)
+                position = Real3(-12, 6, 0);
+            else if(x == 7)
+                position = Real3(0, 6, 0);
+            else if(x == 8)
+                position = Real3(12, 6, 0);
+        }
+        var xIncrease : Real = 2;
+        var yIncrease : Real = 2;
+        
+        xIncrease += Math.Floor(y/3.0);
+        yIncrease += y % 3;
+        position += Real3(xIncrease, 0-yIncrease, 0);
+        /*
+        if(rotation == 90)
+            position = Real3(position.Y, position.X, 0);
+        if(rotation == 180)
+            position *= -1;
+        if(rotation == 270)
+            position = Real3(0-position.Y, 0-position.X, 0);*/
+        return position;
+    }
+    
+    function FindDoorByDirection(direction : Directions) : Cog
+    {
+        foreach (var door in this.Space.FindAllObjectsByName("Door"))
+        {
+            if(door.Door.Direction == direction)
+                return door;
+        }
+        return null;
+    }
+    
+    function OppositeDirection(direction : Directions) : Directions
+    {
+        if(direction == Directions.DOWN)
+            return Directions.UP;
+        if(direction == Directions.UP)
+            return Directions.DOWN;
+        if(direction == Directions.LEFT)
+            return Directions.RIGHT;
+        if(direction == Directions.RIGHT)
+            return Directions.LEFT;
+        return Directions.UP;
+    }
+    
+    function GetDoorPosition(direction : Directions) : Real3
+    {
+        var pos = this.FindDoorByDirection(direction).Transform.Translation;
+        if(direction == Directions.DOWN)
+            pos += Real3(0, 2, 0);
+        if(direction == Directions.UP)
+            pos += Real3(0, -2, 0);
+        if(direction == Directions.LEFT)
+            pos += Real3(2, 0, 0);
+        if(direction == Directions.RIGHT)
+            pos += Real3(-2, 0, 0);
+        return pos;
+    }
+    
+    function NextRoom(direction : Directions)
+    {
+        if(this.Timer <= 0)
+        {
+            this.MapDirection = direction;
+            this.Timer = this.FadeTime;
+            this.Space.FindObjectByName("Loading").Transform.Translation = Real3(0, 0, -1);
+            this.FadeBool = false;
+        }
+        if(this.Timer <= this.FadeTime/2)
+        {
+            this.Map[this.MapPosition.X][this.MapPosition.Y] = new Room(new Array[Enemy](), new Array[Item](), this.CurrentRoom.TM, this.CurrentRoom.Rotation, this.CurrentRoom.Type);
+            this.Minimap.SetNodeState(this.MapPosition, MMNodeState.Complete);
+            foreach (var bullet in this.Space.FindAllObjectsByName("Bullet"))
+            {
+                bullet.Destroy();
+            }
+            foreach (var item in this.Space.FindAllObjectsByName("Item"))
+            {
+                item.Destroy();
+            }
+            this.Space.FindObjectByName("Player").PlayerShoot.TimerFreeze = false;
+            this.Space.FindObjectByName("TileMap").Destroy();
+            if(direction == Directions.RIGHT)
+                this.MapPosition += Integer2(1, 0);
+            else if(direction == Directions.LEFT)
+                this.MapPosition += Integer2(-1, 0);
+            else if(direction == Directions.UP)
+                this.MapPosition += Integer2(0, -1);
+            else if(direction == Directions.DOWN)
+                this.MapPosition += Integer2(0, 1);
+            Console.WriteLine(this.MapPosition.X);
+            this.CurrentRoom = this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer];
+            this.Minimap.SetNodeState(this.MapPosition, MMNodeState.Current);
+            this.CurrentRoom.InitRoom(this.Space);
+            this.Space.FindObjectByName("Player").Transform.Translation = Real3(0, 0, 0);
+            foreach(var door in this.Space.FindAllObjectsByName("Door"))
+            {
+                door.Door.SetActive(false);
+            }
+            this.LoadDirection = direction;
+        }
+    }
+}
