@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-7.94999, 1.5324, 0],
+		Vec3 Translation = [-6.67006, 5.21728, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -39,6 +39,9 @@ Cog =
 	HitpointScript = 
 	{
 		int PrivateHP = 3,
+		string HurtSound = "",
+		string DeathSound = "",
+		float HurtDuration = 0.1,
 	},
 	BoxCollider = 
 	{
@@ -72,15 +75,20 @@ Cog =
 	Shoot = 
 	{
 		string BulletType = "584e02809931b6fa:GolemRock",
+		int RingCount = 10,
+		float RingOffset = 90,
+		int SpreadBullets = 3,
 	},
 	EnemyShoot = 
 	{
 		float BulletDelay = 3,
 		float BulletSpeed = 100,
 		Enum ShotPattern = SINGLE,
-		string ShootSound = "",
+		string ShootSound = "585fc1e7955bc872:ExplodingBulletLaunch",
 		string WalkAnimation = "",
 		string AttackAnimation = "",
+		float BurstDelay = 0,
+		int BurstCount = 1,
 	},
 	Hierarchy = 
 	{

@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-4.85898, 3.57498, 0],
+		Vec3 Translation = [-9.59241, -6.47214, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -84,9 +84,11 @@ Cog =
 		float BulletDelay = 3,
 		float BulletSpeed = 100,
 		Enum ShotPattern = SINGLE,
-		string ShootSound = "",
+		string ShootSound = "5854e8fb63ec9806:Audio_SeekingArrow",
 		string WalkAnimation = "",
 		string AttackAnimation = "",
+		float BurstDelay = 0,
+		int BurstCount = 1,
 	},
 	Hierarchy = 
 	{
