@@ -121,7 +121,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.0380576, -0.0533955, 50],
+			Vec3 Translation = [1.4186, -0.0533955, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -141,7 +141,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-0.0380576, -0.0533955, -2.93463e-008],
+			Vec3 LookTarget = [1.4186, -0.0533955, -2.93463e-008],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -195,7 +195,7 @@ Level =
 		{
 			float BulletDelay = 2,
 			float BulletSpeed = 125,
-			Enum ShotPattern = SINGLE,
+			Enum ShotPattern = RING,
 			string ShootSound = "",
 			bool TimerFreeze = false,
 			float BurstDelay = 0.1,
@@ -226,7 +226,7 @@ Level =
 		Shoot = 
 		{
 			string BulletType = "5815eae6be2978a9:Bullet",
-			int RingCount = 20,
+			int RingCount = 50,
 			float RingOffset = 90,
 			int SpreadBullets = 3,
 		},

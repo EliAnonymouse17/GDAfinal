@@ -42,15 +42,20 @@ class SpellSwitchHandler : ZilchComponent
     }
     
     // Sets all data for the Spell
-    function SetSpell(bulletSpeed : Real, bulletDelay : Real, bulletType : Archetype, shotPattern : ShotPatternID)
+    function SetSpell(bulletSpeed : Real, bulletDelay : Real, spreadCount : Integer, ringCount : Integer,
+     bulletType : Archetype, shotPattern : ShotPatternID, burstDelay : Real, burstCount : Integer)
     {
         this.Owner.PlayerShoot.BulletSpeed = bulletSpeed;
         this.Owner.PlayerShoot.BulletDelay = bulletDelay;
         this.Owner.PlayerShoot.ShotPattern = shotPattern;
         this.Owner.PlayerShoot.TimeUntilNextShot = 0.5;
         
+        this.Owner.PlayerShoot.BurstCount = burstCount;
+        this.Owner.PlayerShoot.BurstDelay = burstDelay;
         
         this.Owner.Shoot.BulletType = bulletType;
+        this.Owner.Shoot.RingCount = ringCount;
+        this.Owner.Shoot.SpreadBullets = spreadCount;
     }
     
     // Sets hud representation of spell
@@ -72,27 +77,27 @@ class SpellSwitchHandler : ZilchComponent
         this.CurrentSpell = this.SpellArray.Get(this.PrivateSpellIndex);
         if(this.CurrentSpell == SpellTypes.BASIC)
         {
-            this.SetSpell(120, 0.7, Archetype.Bullet, ShotPatternID.SINGLE);
+            this.SetSpell(120, 0.7, 1, 1, Archetype.Bullet, ShotPatternID.SINGLE, 0, 1);
             this.SetSpellHUD(SpriteSource.Texture_PlayerBasicProjectile, "Magic Missile", SoundCue.MagicMissile);
         }
         else if(this.CurrentSpell == SpellTypes.BUBBLETRAP)
         {
-            this.SetSpell(200, 1, Archetype.BubbleBullet, ShotPatternID.SINGLE);
+            this.SetSpell(200, 1, 1, 1, Archetype.BubbleBullet, ShotPatternID.SINGLE, 0, 1);
             this.SetSpellHUD(SpriteSource.Texture_BubbleBullet, "Bubble Trap", SoundCue.Audio_BubbleTrap);
         }
         else if(this.CurrentSpell == SpellTypes.EXPLODINGBULLET)
         {
-            this.SetSpell(1200, 2, Archetype.ExplodingBullet, ShotPatternID.SINGLE);
+            this.SetSpell(1200, 2, 1, 1, Archetype.ExplodingBullet, ShotPatternID.SINGLE, 0, 1);
             this.SetSpellHUD(SpriteSource.Texture_SpikeBall, "Exploding Shrapnel", SoundCue.ExplodingBulletLaunch);
         }
         else if (this.CurrentSpell == SpellTypes.ICESPEAR)
         {
-            this.SetSpell(250, 2, Archetype.IceSpear, ShotPatternID.SINGLE);
+            this.SetSpell(250, 2, 1, 1, Archetype.IceSpear, ShotPatternID.SINGLE, 0, 1);
             this.SetSpellHUD(SpriteSource.Texture_BigIce, "Ice Spear", SoundCue.IceSpear);
         }
         else if (this.CurrentSpell == SpellTypes.SEEKINGARROW)
         {
-            this.SetSpell(250, 0.2, Archetype.SeekingArrow, ShotPatternID.SINGLE);
+            this.SetSpell(250, 0.2, 1, 1, Archetype.SeekingArrow, ShotPatternID.SINGLE, 0, 1);
             this.SetSpellHUD(SpriteSource.Texture_SeekingArrow, "Seeking Arrow", SoundCue.Audio_SeekingArrow);
         }
     }

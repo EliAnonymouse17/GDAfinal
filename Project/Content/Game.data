@@ -21,6 +21,7 @@ GameSession =
 	},
 	MusicManager = 
 	{
+		string NextCue = "",
 		float FadeTime = 2,
 		float MusicVolume = 1,
 	},
