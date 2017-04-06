@@ -1,0 +1,8 @@
+class Treasure : ZilchComponent
+{
+    function Initialize(init : CogInitializer)
+    {
+        this.Owner.SpellDrop.SpellDrop();
+        Console.Write("hi");
+    }
+}

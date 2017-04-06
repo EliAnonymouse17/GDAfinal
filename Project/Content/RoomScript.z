@@ -4,6 +4,8 @@ enum Directions {UP, DOWN, RIGHT, LEFT}
 
 enum ItemID {HEALTH, BLOCKADE}
 
+enum RoomType {BASIC, TREASURE, BOSS}
+
 class Enemy
 {
     var Position : Real3;
@@ -41,8 +43,8 @@ class Room
     var Items : Array[Item];
     var TM : Archetype;
     var Rotation : Integer;
-    
-    constructor(enemies : Array[Enemy], items : Array[Item], tileMap : Archetype, rotation : Integer)
+    var Type : RoomType;
+    constructor(enemies : Array[Enemy], items : Array[Item], tileMap : Archetype, rotation : Integer, roomType : RoomType)
     {
         this.Enemies = new Array[Enemy](enemies.Count);
         for(var i = 0; i < this.Enemies.Count; ++i)
@@ -64,25 +66,38 @@ class Room
     
     function InitRoom(space : Space)
     {
-        for(var i = 0; i < this.Enemies.Count; ++i)
+        if(this.Type == RoomType.BASIC)
         {
-            var currentEnemy = space.CreateAtPosition(Archetype.Enemy, this.Enemies[i].Position);
-            currentEnemy.AddComponentByName(this.Enemies[i].AIScript1);
-            currentEnemy.AddComponentByName(this.Enemies[i].AIScript2);
-            currentEnemy.Sprite.SpriteSource = this.Enemies[i].Sprite;
-            currentEnemy.EnemyShoot.ShotPattern = this.Enemies[i].ShotType;
+            for(var i = 0; i < this.Enemies.Count; ++i)
+            {
+                var currentEnemy = space.CreateAtPosition(Archetype.Enemy, this.Enemies[i].Position);
+                currentEnemy.AddComponentByName(this.Enemies[i].AIScript1);
+                currentEnemy.AddComponentByName(this.Enemies[i].AIScript2);
+                currentEnemy.Sprite.SpriteSource = this.Enemies[i].Sprite;
+                currentEnemy.EnemyShoot.ShotPattern = this.Enemies[i].ShotType;
+            }
+            
+            for(var i = 0; i < this.Items.Count; ++i)
+            {
+                if(this.Items[i].ID == ItemID.BLOCKADE)
+                    space.CreateAtPosition(Archetype.Blockade, this.Items[i].Position);
+                if(this.Items[i].ID == ItemID.HEALTH)
+                    space.CreateAtPosition(Archetype.HeartPickup, this.Items[i].Position);
+            }
+            var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, 0));
+            //tileMap.Transform.RotateAnglesLocal(Real3(0, 0, Math.ToRadians(this.Rotation)));
         }
-        
-        for(var i = 0; i < this.Items.Count; ++i)
+        else if(this.Type == RoomType.TREASURE)
         {
-            if(this.Items[i].ID == ItemID.BLOCKADE)
-                space.CreateAtPosition(Archetype.Blockade, this.Items[i].Position);
-            if(this.Items[i].ID == ItemID.HEALTH)
-                space.CreateAtPosition(Archetype.HeartPickup, this.Items[i].Position);
+            space.CreateAtPosition(Archetype.Treasure, Real3(0, 0, 0));
+            var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, 0));
+            //tileMap.Transform.RotateAnglesLocal(Real3(0, 0, Math.ToRadians(this.Rotation)));
         }
-        
-        var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, 0));
-        //tileMap.Transform.RotateAnglesLocal(Real3(0, 0, Math.ToRadians(this.Rotation)));
+        else if(this.Type == RoomType.BOSS)
+        {
+            space.CreateAtPosition(Archetype.GiantSkeleton, Real3(0, 0, 0));
+            space.CreateAtPosition(Archetype.TMSquare22, Real3(0, 0, 0));
+        }
     }
 }
 
@@ -108,7 +123,7 @@ class RoomScript : ZilchComponent
         this.CurrentEnemyList.Add(new Enemy(EnemyTypeID.SKELETON, Real3(-7, 7.5, 0)));
         this.CurrentItemList = new Array[Item]();
         this.CurrentItemList.Add(new Item(ItemID.BLOCKADE, Real3(7, 7.5, 0)));
-        this.CurrentRoom = new Room(this.CurrentEnemyList, this.CurrentItemList, Archetype.TMSquare22, 0);
+        this.CurrentRoom = new Room(this.CurrentEnemyList, this.CurrentItemList, Archetype.TMSquare22, 0, RoomType.BASIC);
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
 
@@ -165,6 +180,7 @@ class RoomScript : ZilchComponent
     
     function InitMap() : Array[Array[Room]]
     {
+        var random = Random();
         var map = new Array[Array[Room]]();
         for(var i = 0; i < this.MapDimensions; ++i)
         {
@@ -181,6 +197,15 @@ class RoomScript : ZilchComponent
                 map[i].Add(this.RandomGen());
             }
         }
+        var x = 0;
+        var y = 0;
+        while(x + y < 1 || x + y > 3)
+        {
+            x = random.DieRoll(3) - 1;
+            y = random.DieRoll(3) - 1;
+        }
+        map[x][y].Type = RoomType.TREASURE;
+        map[2][2].Type = RoomType.BOSS;
         return map;
     }
     
@@ -288,7 +313,7 @@ class RoomScript : ZilchComponent
                 items.Add(new Item(ItemID.HEALTH, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
         }
         
-        return new Room(enemies, items, tileMap, rotation);
+        return new Room(enemies, items, tileMap, rotation, RoomType.BASIC);
     }
     
     function GetPosition(x : Integer, y : Integer, tileMap : Archetype, rotation : Integer) : Real3
@@ -479,7 +504,7 @@ class RoomScript : ZilchComponent
     
     function NextRoom(direction : Directions)
     {
-        this.Map[this.MapPosition.X][this.MapPosition.Y] = new Room(new Array[Enemy](), new Array[Item](), this.CurrentRoom.TM, this.CurrentRoom.Rotation);
+        this.Map[this.MapPosition.X][this.MapPosition.Y] = new Room(new Array[Enemy](), new Array[Item](), this.CurrentRoom.TM, this.CurrentRoom.Rotation, this.CurrentRoom.Type);
         this.Minimap.SetNodeState(this.MapPosition, MMNodeState.Complete);
         foreach (var bullet in this.Space.FindAllObjectsByName("Bullet"))
         {
@@ -508,7 +533,7 @@ class RoomScript : ZilchComponent
         {
             door.Door.SetActive(false);
         }
-        this.Timer = 0.2;
+        this.Timer = 0.1;
         this.LoadDirection = direction;
     }
 }
