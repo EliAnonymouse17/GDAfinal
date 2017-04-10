@@ -19,11 +19,11 @@ class EnemyAnimationHandler : ZilchComponent
         var previousPosition : Real3 = this.Position;
         
         
-        if(previousPosition != this.Owner.Transform.Translation)
+        if(previousPosition != this.Owner.Transform.Translation && this.Owner.Sprite.SpriteSource != this.EnemyWalk)
         {
             this.Owner.Sprite.SpriteSource = this.EnemyWalk;
         }
-        else
+        else if(previousPosition == this.Owner.Transform.Translation && this.Owner.Sprite.SpriteSource != this.EnemyStand)
         {
             this.Owner.Sprite.SpriteSource = this.EnemyStand;
         }
