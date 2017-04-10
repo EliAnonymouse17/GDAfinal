@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 22.0463,
+			float Size = 24.3649,
 		},
 		EditorCameraController = 
 		{
@@ -180,6 +180,8 @@ Level =
 			Enum ShotPattern = SINGLE,
 			string ShootSound = "",
 			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
 		},
 		BoxCollider = 
 		{
@@ -213,6 +215,9 @@ Level =
 		HitpointScript = 
 		{
 			int PrivateHP = 6,
+			string HurtSound = "",
+			string DeathSound = "",
+			float HurtDuration = 0.1,
 		},
 		PlayerFade = 
 		{
@@ -649,6 +654,110 @@ Level =
 		Named = 
 		{
 			string Name = "TileMap",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 17,
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+		Archetyped = 
+		{
+			string Name = "58e6b86cc88e7f69:Enemy",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-0.901018, 7.96877, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "58230430c7b3754c:Texture_SkeletonStill",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
+			Vec3 Offset = [-0.05, 0, 0],
+			Vec3 Size = [0.375, 1, 0.5],
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		HitpointScript = 
+		{
+			int PrivateHP = 3,
+			string HurtSound = "5854e373c41f5152:Audio_BasicHurtEnemy",
+			string DeathSound = "5854e0e94b4d9613:Audio_SkeletonDeath",
+			float HurtDuration = 0.25,
+		},
+		Shoot = 
+		{
+			string BulletType = "580e65c5299defb0:EnemyBullet",
+			int RingCount = 10,
+			float RingOffset = 90,
+			int SpreadBullets = 3,
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 1, 0],
+			Vec3 UpVector = [0, 0, 1],
+			Vec3 ForwardVector = [0, 1, 0],
+			OrientationBases DefaultBases = ForwardYUpZ,
+		},
+		EnemyShoot = 
+		{
+			float BulletDelay = 1,
+			float BulletSpeed = 100,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "585fbf932318682e:MagicMissile",
+			string WalkAnimation = "",
+			string AttackAnimation = "",
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		SideToSide = 
+		{
+		},
+		EnemyAnimationHandler = 
+		{
+			string EnemyStand = "58230430c7b3754c:Texture_SkeletonStill",
+			string EnemyWalk = "58586c83879fbdf0:animation_WandmanWalkRight",
+		},
+		Hierarchy = 
+		{
 		},
 	},
 },

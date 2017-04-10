@@ -1,0 +1,33 @@
+class EnemyAnimationHandler : ZilchComponent
+{
+    [Property]
+    var EnemyStand : SpriteSource = null;
+    
+    [Property]
+    var EnemyWalk : SpriteSource = null;
+    
+    var Position : Real3 = Real3(0, 0, 0);
+    
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var previousPosition : Real3 = this.Position;
+        
+        
+        if(previousPosition != this.Owner.Transform.Translation)
+        {
+            this.Owner.Sprite.SpriteSource = this.EnemyWalk;
+        }
+        else
+        {
+            this.Owner.Sprite.SpriteSource = this.EnemyStand;
+        }
+        
+        this.Position = this.Owner.Transform.Translation;
+    }
+}
