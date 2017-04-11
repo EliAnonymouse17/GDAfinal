@@ -2,8 +2,8 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "animation_WandmanWalkBack",
-		uint64 ResourceId = 58586c25bcd98f54,
+		string Name = "animation_ZombieWalkForward",
+		uint64 ResourceId = 586826eeeb5a0c42,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 32,
 		uint FrameSizeY = 32,
@@ -11,7 +11,7 @@ ImageContent =
 		float FrameDelay = 0.166667,
 		float OriginX = 16,
 		float OriginY = 16,
-		float PixelsPerUnit = 20,
+		float PixelsPerUnit = 16,
 		bool Smoothing = false,
 		bool Looping = true,
 		Vec4 Slices = [0, 0, 0, 0],
