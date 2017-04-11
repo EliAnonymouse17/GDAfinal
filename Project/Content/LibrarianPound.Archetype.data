@@ -66,5 +66,13 @@ Cog =
 	},
 	DestroyTimer = 
 	{
+		float WarpScale = 2,
+		float IntensityFallOff = 5,
+	},
+	ScreenWarpRing = 
+	{
+		float Size = 5,
+		float Thickness = 1,
+		float Intensity = 0.1,
 	},
 },
