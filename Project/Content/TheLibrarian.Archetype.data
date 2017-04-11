@@ -82,11 +82,11 @@ Cog =
 	SpellDrop = 
 	{
 		Enum SpellDrop1 = EXPLODINGBULLET,
-		Enum SpellDrop2 = BUBBLETRAP,
-		Enum SpellDrop3 = SEEKINGARROW,
+		Enum SpellDrop2 = SEEKINGARROW,
+		Enum SpellDrop3 = ICESPEAR,
 		string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
-		string SpellDropSprite2 = "583a1b2cfe6b1569:Texture_BubbleBullet",
-		string SpellDropSprite3 = "5852c59e8c1f9264:Texture_SeekingArrow",
+		string SpellDropSprite2 = "5852c59e8c1f9264:Texture_SeekingArrow",
+		string SpellDropSprite3 = "5858739c8bef319d:Texture_BigIce",
 	},
 	BossHealthBarScript = 
 	{
