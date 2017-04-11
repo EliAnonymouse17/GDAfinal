@@ -106,10 +106,10 @@ class SpellSwitchHandler : ZilchComponent
     {
         //Starting Spells Go here
         this.SpellArray.Add(SpellTypes.BASIC);
-        this.SpellArray.Add(SpellTypes.BUBBLETRAP);
-        this.SpellArray.Add(SpellTypes.ICESPEAR);
-        this.SpellArray.Add(SpellTypes.SEEKINGARROW);
-        this.SpellArray.Add(SpellTypes.EXPLODINGBULLET);
+        //this.SpellArray.Add(SpellTypes.BUBBLETRAP);
+        //this.SpellArray.Add(SpellTypes.ICESPEAR);
+       // this.SpellArray.Add(SpellTypes.SEEKINGARROW);
+        //this.SpellArray.Add(SpellTypes.EXPLODINGBULLET);
         Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyUpdate);
         Zero.Connect(this.Space, Events.MouseScroll, this.OnMouseUpdate);
     }
