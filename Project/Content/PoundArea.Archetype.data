@@ -14,13 +14,13 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.996936, 5.89594, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [4.5, 4.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
 	{
-		bool Visible = true,
+		bool Visible = false,
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
@@ -28,7 +28,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "58169686fd37cdcb:Texture_PlayerBasicProjectile",
+		string SpriteSource = "584558c2c978f519:Texture_PlayerBasicProjectile",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -60,10 +60,19 @@ Cog =
 	},
 	DamageScript = 
 	{
-		int Damage = 1,
-		int PRVHitCount = 1,
+		int Damage = 2,
+		int PRVHitCount = 2,
+		string SpawnOnDeath = "",
 	},
 	DestroyTimer = 
 	{
+		float WarpScale = 0.3,
+		float IntensityFallOff = 2,
+	},
+	ScreenWarpRing = 
+	{
+		float Size = 0.01,
+		float Thickness = 0.03,
+		float Intensity = 0.05,
 	},
 },

@@ -66,15 +66,6 @@ Level =
 			Vec2 Resolution = [1280, 720],
 			Vec4 MarginColor = [0, 0, 0, 1],
 		},
-		ForwardRenderer = 
-		{
-			Vec4 ClearColor = [0.155, 0.155, 0.155, 1],
-			bool DrawNonVisible = false,
-			bool DrawDebugObjects = true,
-			bool DrawEditorIcons = true,
-			bool EditorIconDepth = true,
-			bool Wireframe = false,
-		},
 		GridDraw = 
 		{
 			bool Active = true,
@@ -90,30 +81,30 @@ Level =
 			int HilightInterval = 10,
 			bool FollowEditorCamera = false,
 		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "584d4ddb6f528990:IceSpear",
-		LinkId = 
+		DeferredRenderer = 
 		{
-			uint Id = 3,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [0, 0, 0],
-			Vec3 Scale = [2, 2, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Bullet",
+			Vec4 ClearColor = [0, 0, 0, 1],
+			bool DrawNonVisible = false,
+			bool DrawDebugObjects = true,
+			bool DrawEditorIcons = true,
+			bool EditorIconDepth = true,
+			bool Hdr = true,
+			bool Shadows = true,
+			bool AntiAliasing = false,
+			bool Refraction = true,
+			bool Reflections = true,
+			string ReflectionEnvironmentName = "4fab71e8bcb7a8ce:DefaultTexture",
+			bool GodRays = true,
+			bool RenderMasks = false,
+			bool Glow = false,
+			float GlowThreshold = 1,
 		},
 	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 4,
+			uint Id = 3,
 		},
 		Named = 
 		{
@@ -121,7 +112,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [2.89042, -2.77472, 50],
+			Vec3 Translation = [0, 3.75595, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -141,7 +132,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [2.89042, -2.77472, -2.93463e-008],
+			Vec3 LookTarget = [0, 3.75595, 0],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -157,7 +148,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 5,
+			uint Id = 4,
 		},
 		Named = 
 		{
@@ -226,7 +217,7 @@ Level =
 		Shoot = 
 		{
 			string BulletType = "5815eae6be2978a9:Bullet",
-			int RingCount = 50,
+			int RingCount = 3,
 			float RingOffset = 90,
 			int SpreadBullets = 3,
 		},
@@ -288,7 +279,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 6,
+							uint Id = 5,
 						},
 						Named = 
 						{
@@ -323,7 +314,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 7,
+							uint Id = 6,
 						},
 						Named = 
 						{
@@ -360,7 +351,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 8,
+							uint Id = 7,
 						},
 						Named = 
 						{
@@ -397,7 +388,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 9,
+							uint Id = 8,
 						},
 						Named = 
 						{
@@ -436,7 +427,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 10,
+									uint Id = 9,
 								},
 								Named = 
 								{
@@ -473,7 +464,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 11,
+							uint Id = 10,
 						},
 						Named = 
 						{
@@ -509,7 +500,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 12,
+									uint Id = 11,
 								},
 								Named = 
 								{
@@ -544,7 +535,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 13,
+									uint Id = 12,
 								},
 								Named = 
 								{
@@ -580,7 +571,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 14,
+							uint Id = 13,
 						},
 						Named = 
 						{
@@ -622,7 +613,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 15,
+			uint Id = 14,
 		},
 		Named = 
 		{
@@ -643,7 +634,7 @@ Level =
 		string Name = "584fd2007ec97999:TMSquare22",
 		LinkId = 
 		{
-			uint Id = 16,
+			uint Id = 15,
 		},
 		Transform = 
 		{
@@ -658,46 +649,10 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "5868159e656290e3:Ghost",
-		LinkId = 
-		{
-			uint Id = 17,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-6.83752, -7.96733, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "5812cd3d46ba25e2:Necromancer",
-		LinkId = 
-		{
-			uint Id = 18,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-7.08079, 4.47961, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
 		string Name = "584e01664b4e55af:HeartPickup",
 		LinkId = 
 		{
-			uint Id = 19,
+			uint Id = 16,
 		},
 		Transform = 
 		{
@@ -708,6 +663,60 @@ Level =
 		Named = 
 		{
 			string Name = "Heart Pickup",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584fefeabfc0ca66:AnimatedGolem",
+		LinkId = 
+		{
+			uint Id = 17,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-5.80677, 7.84868, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5866e54b88d72e10:BoomBook",
+		LinkId = 
+		{
+			uint Id = 18,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-1.74903, 9.14296, 0],
+			Vec3 Scale = [0.5, 0.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584d30a5b4310262:Zombie",
+		LinkId = 
+		{
+			uint Id = 19,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-8.53525, 5.71486, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
 		},
 	},
 },

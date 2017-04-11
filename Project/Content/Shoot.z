@@ -50,20 +50,16 @@ class Shoot : ZilchComponent
         
         if(shotPattern == ShotPatternID.RING)
         {
-            var ringAngle : Real = 0;
-            for (var i = 0; i < this.RingCount; ++i)
+            var currentAngle = Math.ToRadians(this.RingOffset);
+            var angleStep = (Math.Pi * 2) / this.RingCount;
+            
+            for(var i = 0; i < this.RingCount; ++i)
             {
-                ringAngle = Math.ATan2(0,0) - (i-1)*(Math.ToRadians(360 / this.RingCount));
                 var bullet = this.Space.CreateAtPosition(this.BulletType, this.Owner.Transform.Translation);
-                var newAngle = Real3(Math.Sin(ringAngle), Math.Cos(ringAngle), 0);
-                newAngle = Math.Normalize(newAngle);
-                bullet.RigidBody.ApplyForce(newAngle * bulletSpeed);
+                var fireDir = Real3(Math.Cos(currentAngle), Math.Sin(currentAngle), 0);
+                bullet.RigidBody.ApplyForce(fireDir * bulletSpeed);
                 
-                // calculate the angle of the firing vector in radians, apply angle offset
-                //var fireAngle = Math.ATan2(newAngle.Y, newAngle.X) - Math.ToRadians(this.RingOffset);
-                
-                // set the z rotation for this bullet
-                //bullet.Transform.SetEulerAnglesXYZ(0, 0, fireAngle);
+                currentAngle += angleStep;
             }
         }
     }
