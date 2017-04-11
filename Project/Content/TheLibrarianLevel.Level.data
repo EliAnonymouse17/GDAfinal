@@ -91,29 +91,11 @@ Level =
 			bool FollowEditorCamera = false,
 		},
 	},
-	ArchetypeInstance = 
-	{
-		string Name = "584d4ddb6f528990:IceSpear",
-		LinkId = 
-		{
-			uint Id = 3,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [0, 0, 0],
-			Vec3 Scale = [2, 2, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Bullet",
-		},
-	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 4,
+			uint Id = 3,
 		},
 		Named = 
 		{
@@ -121,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [2.89042, -2.77472, 50],
+			Vec3 Translation = [0.246597, 5.77828, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -133,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 18.05,
+			float Size = 44.3959,
 		},
 		EditorCameraController = 
 		{
@@ -141,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [2.89042, -2.77472, -2.93463e-008],
+			Vec3 LookTarget = [0.246597, 5.77828, 3.71217e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -157,7 +139,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 5,
+			uint Id = 4,
 		},
 		Named = 
 		{
@@ -165,8 +147,8 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0.0133206, 0.0444493, 0],
-			Vec3 Scale = [1, 1, 1],
+			Vec3 Translation = [-0.915757, -3.24035, 0],
+			Vec3 Scale = [1.2, 1.2, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Sprite = 
@@ -189,17 +171,17 @@ Level =
 		},
 		PlayerMove = 
 		{
-			float MoveSpeed = 700,
+			float MoveSpeed = 500,
 		},
 		PlayerShoot = 
 		{
-			float BulletDelay = 2,
-			float BulletSpeed = 125,
-			Enum ShotPattern = RING,
+			float BulletDelay = 0.5,
+			float BulletSpeed = 150,
+			Enum ShotPattern = SINGLE,
 			string ShootSound = "",
 			bool TimerFreeze = false,
-			float BurstDelay = 0.1,
-			int BurstCount = 5,
+			float BurstDelay = 0,
+			int BurstCount = 1,
 		},
 		BoxCollider = 
 		{
@@ -209,7 +191,7 @@ Level =
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 			string SerializedGroupName = "580e65c5299c6b69:Player",
 			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.4, 0.6, 0.5],
+			Vec3 Size = [0.35, 0.55, 0.5],
 		},
 		RigidBody = 
 		{
@@ -226,29 +208,22 @@ Level =
 		Shoot = 
 		{
 			string BulletType = "5815eae6be2978a9:Bullet",
-			int RingCount = 50,
+			int RingCount = 10,
 			float RingOffset = 90,
-			int SpreadBullets = 3,
+			int SpreadBullets = 200,
 		},
 		HitpointScript = 
 		{
 			int PrivateHP = 6,
 			string HurtSound = "",
 			string DeathSound = "",
-			float HurtDuration = 0.25,
+			float HurtDuration = 0.1,
 		},
 		PlayerFade = 
 		{
 		},
 		SpellSwitchHandler = 
 		{
-		},
-		PlayerAnimations = 
-		{
-			string PlayerStand = "585fc298140f20a7:Texture_WandmanFront000",
-			string PlayerWalkSide = "58586c83879fbdf0:animation_WandmanWalkRight",
-			string PlayerWalkUp = "58586c25bcd98f54:animation_WandmanWalkBack",
-			string PlayerWalkDown = "58586dcfa50649dc:animation_WandmanWalkForward",
 		},
 		Hierarchy = 
 		{
@@ -288,7 +263,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 6,
+							uint Id = 5,
 						},
 						Named = 
 						{
@@ -296,7 +271,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-17, 9.5, -20],
+							Vec3 Translation = [-15.7024, 8.6349, -20],
 							Vec3 Scale = [6, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -323,7 +298,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 7,
+							uint Id = 6,
 						},
 						Named = 
 						{
@@ -331,7 +306,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-17.25, 10, -20],
+							Vec3 Translation = [-15.9524, 9.1349, -20],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -360,7 +335,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 8,
+							uint Id = 7,
 						},
 						Named = 
 						{
@@ -368,7 +343,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-13.5, 10, -20],
+							Vec3 Translation = [-12.2024, 9.1349, -20],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -397,7 +372,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 9,
+							uint Id = 8,
 						},
 						Named = 
 						{
@@ -405,7 +380,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-20.0259, 7.9196, -20],
+							Vec3 Translation = [-18.7283, 7.0545, -20],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -436,7 +411,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 10,
+									uint Id = 9,
 								},
 								Named = 
 								{
@@ -473,7 +448,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 11,
+							uint Id = 10,
 						},
 						Named = 
 						{
@@ -481,7 +456,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-18.4628, 6.51319, -20],
+							Vec3 Translation = [-17.1652, 5.64809, -20],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -509,7 +484,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 12,
+									uint Id = 11,
 								},
 								Named = 
 								{
@@ -544,7 +519,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 13,
+									uint Id = 12,
 								},
 								Named = 
 								{
@@ -580,7 +555,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 14,
+							uint Id = 13,
 						},
 						Named = 
 						{
@@ -598,7 +573,7 @@ Level =
 							bool VisibilityCulling = true,
 							bool VisibilityEvents = true,
 							bool CastShadows = false,
-							Vec4 Color = [1, 1, 1, 1],
+							Vec4 Color = [1, 1, 1, 0.9999],
 							BlendMode BlendMode = Alpha,
 							SpriteGeometryMode GeometryMode = ZPlane,
 							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -622,7 +597,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 15,
+			uint Id = 14,
 		},
 		Named = 
 		{
@@ -640,74 +615,56 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "584fd2007ec97999:TMSquare22",
-		LinkId = 
-		{
-			uint Id = 16,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [0, 0, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "TileMap",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "5868159e656290e3:Ghost",
-		LinkId = 
-		{
-			uint Id = 17,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-6.83752, -7.96733, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "5812cd3d46ba25e2:Necromancer",
-		LinkId = 
-		{
-			uint Id = 18,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-7.08079, 4.47961, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
 		string Name = "584e01664b4e55af:HeartPickup",
 		LinkId = 
 		{
-			uint Id = 19,
+			uint Id = 15,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [1.13876, 1.80058, 0],
+			Vec3 Translation = [2.96051, -0.398743, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Named = 
 		{
 			string Name = "Heart Pickup",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58681d50bb219a4c:TheLibrarian",
+		LinkId = 
+		{
+			uint Id = 16,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-1.1704, 14.4738, 0],
+			Vec3 Scale = [2.5, 2.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584fd89208ba642f:TMSquare24",
+		LinkId = 
+		{
+			uint Id = 17,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-1.14958, 6.58088, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "TileMap",
 		},
 	},
 },

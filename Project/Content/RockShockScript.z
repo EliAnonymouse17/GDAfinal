@@ -4,6 +4,10 @@ class RockShockScript : ZilchComponent
     var DistFromImpact : Real = 900;
     [Property]
     var ImpactSound : SoundCue = SoundCue.ExplodingBulletImpact;
+    [Property]
+    var SpawnArchetype : Archetype = Archetype.PoundArea;
+    [Property]
+    var SpawnArchetype2 : Archetype = null;
     function Initialize(init : CogInitializer)
     {
         this.PlayerPos = this.Space.FindObjectByName("Player").Transform.WorldTranslation;
@@ -13,9 +17,13 @@ class RockShockScript : ZilchComponent
     function OnLogicUpdate(event : UpdateEvent)
     {
         this.DistFromImpact = Math.Distance(this.PlayerPos, this.Owner.Transform.WorldTranslation);
-        if (this.DistFromImpact <= 2.0)
+        if (this.DistFromImpact <= 1.0)
         {
-            this.Space.CreateAtPosition(Archetype.PoundArea, this.Owner.Transform.Translation);
+            this.Space.CreateAtPosition(this.SpawnArchetype, this.Owner.Transform.Translation);
+            if (this.SpawnArchetype2 != null)
+            {
+                this.Space.CreateAtPosition(this.SpawnArchetype2, this.Owner.Transform.Translation);
+            }
             this.Space.SoundSpace.PlayCue(this.ImpactSound);
             this.Owner.Destroy();
         }

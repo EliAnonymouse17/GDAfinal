@@ -10,11 +10,11 @@ Cog =
 	},
 	Archetyped = 
 	{
-		string Name = "584fefeabfc0ca66:AnimatedGolem",
+		string Name = "5868159e656290e3:Ghost",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-6.83752, -7.96733, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,7 +24,7 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [0.375, 0.18525, 0.03, 1],
+		Vec4 Color = [0.605, 0.605, 0.605, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -35,13 +35,6 @@ Cog =
 		bool AnimationActive = true,
 		float AnimationSpeed = 1,
 		uint StartFrame = 0,
-	},
-	HitpointScript = 
-	{
-		int PrivateHP = 15,
-		string HurtSound = "",
-		string DeathSound = "",
-		float HurtDuration = 0.1,
 	},
 	BoxCollider = 
 	{
@@ -59,11 +52,25 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
 		Vec3 AngularVelocity = [0, 0, 0],
+	},
+	HitpointScript = 
+	{
+		int PrivateHP = 3,
+		string HurtSound = "",
+		string DeathSound = "",
+		float HurtDuration = 0.1,
+	},
+	Shoot = 
+	{
+		string BulletType = "580e65c5299defb0:EnemyBullet",
+		int RingCount = 10,
+		float RingOffset = 90,
+		int SpreadBullets = 3,
 	},
 	Orientation = 
 	{
@@ -72,23 +79,21 @@ Cog =
 		Vec3 ForwardVector = [0, 1, 0],
 		OrientationBases DefaultBases = ForwardYUpZ,
 	},
-	Shoot = 
-	{
-		string BulletType = "584e02809931b6fa:GolemRock",
-		int RingCount = 10,
-		float RingOffset = 90,
-		int SpreadBullets = 3,
-	},
 	EnemyShoot = 
 	{
-		float BulletDelay = 3,
-		float BulletSpeed = 100,
+		float BulletDelay = 0.3,
+		float BulletSpeed = 125,
 		Enum ShotPattern = SINGLE,
-		string ShootSound = "585fc1e7955bc872:ExplodingBulletLaunch",
+		string ShootSound = "585fbf932318682e:MagicMissile",
 		string WalkAnimation = "",
 		string AttackAnimation = "",
 		float BurstDelay = 0,
 		int BurstCount = 1,
+	},
+	AIMoveFromPlayer = 
+	{
+		float MoveSpeed = 4,
+		bool MovesAwayFromPlayer = true,
 	},
 	Hierarchy = 
 	{

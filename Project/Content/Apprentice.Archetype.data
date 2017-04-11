@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-2.22366, 1.95247, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,7 +24,7 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [0.063, 0.42, 0.33432, 1],
+		Vec4 Color = [0, 0, 1, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 3,
+		int PrivateHP = 7,
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,
@@ -81,13 +81,13 @@ Cog =
 	},
 	EnemyShoot = 
 	{
-		float BulletDelay = 3,
+		float BulletDelay = 1.4,
 		float BulletSpeed = 150,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "585fbf932318682e:MagicMissile",
 		string WalkAnimation = "",
 		string AttackAnimation = "",
-		float BurstDelay = 0.1,
+		float BurstDelay = 0.06,
 		int BurstCount = 4,
 	},
 	AIMoveFromPlayer = 

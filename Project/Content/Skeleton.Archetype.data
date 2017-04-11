@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-7, 7.5, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -60,11 +60,17 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 3,
+		int PrivateHP = 4,
+		string HurtSound = "",
+		string DeathSound = "",
+		float HurtDuration = 0.1,
 	},
 	Shoot = 
 	{
 		string BulletType = "580e65c5299defb0:EnemyBullet",
+		int RingCount = 10,
+		float RingOffset = 90,
+		int SpreadBullets = 3,
 	},
 	Orientation = 
 	{
@@ -78,6 +84,11 @@ Cog =
 		float BulletDelay = 1,
 		float BulletSpeed = 150,
 		Enum ShotPattern = SINGLE,
+		string ShootSound = "",
+		string WalkAnimation = "",
+		string AttackAnimation = "",
+		float BurstDelay = 0,
+		int BurstCount = 1,
 	},
 	SideToSide = 
 	{
