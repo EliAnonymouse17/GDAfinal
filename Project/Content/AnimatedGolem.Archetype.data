@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-6.41874, 8.45833, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,7 +24,7 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [0.375, 0.18525, 0.03, 1],
+		Vec4 Color = [1, 1, 1, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -59,7 +59,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -89,6 +89,16 @@ Cog =
 		string AttackAnimation = "",
 		float BurstDelay = 0,
 		int BurstCount = 1,
+	},
+	AIMoveFromPlayer = 
+	{
+		float MoveSpeed = 1,
+		bool MovesAwayFromPlayer = false,
+	},
+	EnemyAnimationHandler = 
+	{
+		string EnemyStand = "",
+		string EnemyWalk = "586836b37ae47131:animation_GolemWalkforward",
 	},
 	Hierarchy = 
 	{
