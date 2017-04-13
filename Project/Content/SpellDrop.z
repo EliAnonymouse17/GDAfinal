@@ -35,6 +35,9 @@ class SpellDrop : ZilchComponent
     [Property]
     var SpellDropSprite3 : SpriteSource = null;
     
+    [Property]
+    var TreasureRoomBool : Boolean = false;
+    
     function Initialize(init : CogInitializer)
     {
         
@@ -47,9 +50,10 @@ class SpellDrop : ZilchComponent
         
         var randomGenerator : Random = Random();
         
-        if(this.Owner.ArchetypeName != "TreasureSpellDrop")
+        if(this.TreasureRoomBool == false)
         {
             var randomDrop = randomGenerator.DieRoll(100);
+            
             
             Console.WriteLine(randomDrop);
             
@@ -70,6 +74,19 @@ class SpellDrop : ZilchComponent
                 var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
                 spell.SpellScrollScript.Spell = this.SpellDrop3;
                 spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite3;
+            }
+        }
+        else
+        {
+            var randomDrop = randomGenerator.DieRoll(140);
+            
+            if(randomDrop >= 1 && randomDrop <= 15)
+            {
+                // speed drop
+            }
+            if(randomDrop >= 16 && randomDrop <= 40)
+            {
+                // heart drop
             }
         }
         

@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-3.6282, 4.81042, 0],
+		Vec3 Translation = [-0.901018, 7.96877, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -87,9 +87,18 @@ Cog =
 		string ShootSound = "585fbf932318682e:MagicMissile",
 		string WalkAnimation = "",
 		string AttackAnimation = "",
+		float BurstDelay = 0,
+		int BurstCount = 1,
 	},
 	SideToSide = 
 	{
+	},
+	NewEnemyAnimationHandler = 
+	{
+		string EnemyStand = "58230430c7b3754c:Texture_SkeletonStill",
+		string EnemyWalkSide = "",
+		string EnemyWalkUp = "",
+		string EnemyWalkDown = "",
 	},
 	Hierarchy = 
 	{

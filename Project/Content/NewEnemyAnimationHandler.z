@@ -1,0 +1,91 @@
+enum MoveDirection { Up, Down, Left, Right }
+
+class NewEnemyAnimationHandler : ZilchComponent
+{
+    
+    [Property]
+    var EnemyStand : SpriteSource = null;
+    
+    [Property]
+    var EnemyWalkSide : SpriteSource = null;
+    
+    [Property]
+    var EnemyWalkUp : SpriteSource = null;
+    
+    [Property]
+    var EnemyWalkDown : SpriteSource = null;
+    
+    var MoveDirection : MoveDirection = MoveDirection.Down;
+    
+    var Position : Real3
+    {
+        get { return this.Owner.Transform.WorldTranslation; }
+        set { this.Owner.Transform.WorldTranslation = value; }
+        
+    }
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        
+        var y = this.Position.Y;
+        var x = this.Position.X;
+        
+        if(y > 0)
+        {
+            if (Math.Abs(y) > Math.Abs(x))
+            {
+                this.MoveDirection = MoveDirection.Up;
+            }
+            else if (x > 0)
+            {
+                this.MoveDirection = MoveDirection.Right;
+                
+                this.Owner.Sprite.FlipX = false;
+            }
+            else
+            {
+                this.MoveDirection = MoveDirection.Left;
+                
+                this.Owner.Sprite.FlipX = true;
+            }
+        }
+        else
+        {
+            if (Math.Abs(y) > Math.Abs(x))
+            {
+                this.MoveDirection = MoveDirection.Up;
+            }
+            else if (x > 0)
+            {
+                this.MoveDirection = MoveDirection.Right;
+                
+                this.Owner.Sprite.FlipX = false;
+            }
+            else
+            {
+                this.MoveDirection = MoveDirection.Left;
+                
+                this.Owner.Sprite.FlipX = true;
+            }
+        }
+        
+        if(this.MoveDirection == MoveDirection.Up)
+        {
+            this.Owner.Sprite.SpriteSource = this.EnemyWalkUp;
+        }
+        
+        if(this.MoveDirection == MoveDirection.Down)
+        {
+            this.Owner.Sprite.SpriteSource = this.EnemyWalkDown;
+        }
+        
+        if(this.MoveDirection == MoveDirection.Left || this.MoveDirection == MoveDirection.Right)
+        {
+            this.Owner.Sprite.SpriteSource = this.EnemyWalkSide;
+        }
+    }
+}
