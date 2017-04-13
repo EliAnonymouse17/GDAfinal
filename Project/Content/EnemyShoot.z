@@ -46,7 +46,9 @@ class EnemyShoot : ZilchComponent
         {
             if(this.AttackAnimation != null)
                 this.Owner.Sprite.SpriteSource = this.AttackAnimation;
-            this.TimeUntilNextShot = this.BulletDelay;
+            var randomGenerator : Random = Random();
+            var random = randomGenerator.Range(-0.05, 0.1);
+            this.TimeUntilNextShot = this.BulletDelay + random;
             this.BurstTimer = 0;
             this.ShotsLeft = this.BurstCount;
             this.IsBursting = true;
