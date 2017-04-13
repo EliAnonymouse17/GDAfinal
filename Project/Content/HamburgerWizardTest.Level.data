@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 24.3649,
+			float Size = 22.0463,
 		},
 		EditorCameraController = 
 		{
@@ -161,7 +161,7 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5275aa4d802dd6dc:Square",
+			string SpriteSource = "585fc298140f20a7:Texture_WandmanFront000",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -180,6 +180,8 @@ Level =
 			Enum ShotPattern = SINGLE,
 			string ShootSound = "",
 			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
 		},
 		BoxCollider = 
 		{
@@ -222,6 +224,13 @@ Level =
 		},
 		SpellSwitchHandler = 
 		{
+		},
+		PlayerAnimations = 
+		{
+			string PlayerStand = "585fc298140f20a7:Texture_WandmanFront000",
+			string PlayerWalkSide = "58586c83879fbdf0:animation_WandmanWalkRight",
+			string PlayerWalkUp = "58586c25bcd98f54:animation_WandmanWalkBack",
+			string PlayerWalkDown = "58586dcfa50649dc:animation_WandmanWalkForward",
 		},
 		Hierarchy = 
 		{

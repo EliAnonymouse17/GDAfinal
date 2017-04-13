@@ -7,12 +7,6 @@ class TutorialDoorScript : ZilchComponent
 
     function OnCollisionStarted(event : CollisionEvent)
     {
-        this.Space.FindObjectByName("TileMap").Destroy();
-        this.Space.FindObjectByName("Tutorial NPC").Destroy();
-        this.Space.CreateAtPosition(Archetype.TMTriL, this.Owner.Transform.Translation + Real3(-10,3,0));
-        this.Space.CreateAtPosition(Archetype.Skeleton, this.Owner.Transform.Translation + Real3(-18,14,0));
-        this.Space.CreateAtPosition(Archetype.Skeleton, this.Owner.Transform.Translation + Real3(-12,14,0));
-        this.Space.CreateAtPosition(Archetype.Skeleton, this.Owner.Transform.Translation + Real3(-18,10,0));
-        this.Owner.Destroy();
+        this.Space.LoadLevel(Level.HamburgerWizardTest);
     }
 }
