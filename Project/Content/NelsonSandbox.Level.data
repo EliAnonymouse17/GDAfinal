@@ -184,7 +184,7 @@ Level =
 		},
 		PlayerShoot = 
 		{
-			float BulletDelay = 0.1,
+			float BulletDelay = 1,
 			float BulletSpeed = 125,
 			Enum ShotPattern = RING,
 			string ShootSound = "",
@@ -631,28 +631,10 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "584fd2007ec97999:TMSquare22",
-		LinkId = 
-		{
-			uint Id = 15,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [0, 0, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "TileMap",
-		},
-	},
-	ArchetypeInstance = 
-	{
 		string Name = "584e01664b4e55af:HeartPickup",
 		LinkId = 
 		{
-			uint Id = 16,
+			uint Id = 15,
 		},
 		Transform = 
 		{

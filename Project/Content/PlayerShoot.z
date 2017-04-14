@@ -36,7 +36,7 @@ class PlayerShoot : ZilchComponent
     function OnLogicUpdate(event : UpdateEvent)
     {
         // Tick down time until next burst
-        if (this.TimerFreeze == false)
+        if (this.TimerFreeze == false && this.IsBursting == false)
         {
             this.TimeUntilNextShot -= event.Dt;
         }
@@ -73,7 +73,7 @@ class PlayerShoot : ZilchComponent
         }
         
         // End burst
-        if (this.ShotsLeft <= 0)
+        if (this.ShotsLeft <= 0 && this.IsBursting)
         {
             this.IsBursting = false;
         }
