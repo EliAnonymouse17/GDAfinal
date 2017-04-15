@@ -1,0 +1,52 @@
+class LibrarianTeleport : ZilchComponent
+{
+    
+    var TeleportRuneArray : Array[Cog] = Array[Cog]();
+    
+    [Property]
+    var TeleportAnimation : SpriteSource = null;
+    
+    [Property]
+    var TeleportDelay : Real = 10;
+    
+    var TeleportTimer : Real = 4;
+    
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var teleportRunes = this.Space.FindAllObjectsByName("TeleportRune");
+        
+        if(this.TeleportRuneArray.Count != 5)
+        {
+            foreach (var rune in teleportRunes)
+            {
+                this.TeleportRuneArray.Add(rune);
+                
+            }
+        }
+        this.TeleportTimer -= event.Dt;
+        
+        if(this.TeleportTimer <= 0)
+        {
+            var randomGenerator : Random = Random();
+            
+            var dieRoll = randomGenerator.DieRoll(5);
+            
+            if(this.Owner.Transform.WorldTranslation != this.TeleportRuneArray[dieRoll - 1].Transform.WorldTranslation)
+            {
+                this.Owner.Transform.WorldTranslation = this.TeleportRuneArray[dieRoll - 1].Transform.WorldTranslation;
+                
+                this.TeleportTimer = this.TeleportDelay;
+            }
+            
+        }
+        
+        
+        
+    }
+}

@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-1.1704, 14.4738, 0],
+		Vec3 Translation = [-1.1704, 14.4738, 0.1],
 		Vec3 Scale = [2.5, 2.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -87,6 +87,7 @@ Cog =
 		string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
 		string SpellDropSprite2 = "5852c59e8c1f9264:Texture_SeekingArrow",
 		string SpellDropSprite3 = "5858739c8bef319d:Texture_BigIce",
+		bool TreasureRoomBool = false,
 	},
 	BossHealthBarScript = 
 	{
@@ -124,6 +125,9 @@ Cog =
 		Enum ChallengeShotPattern3 = SINGLE,
 		string ChallengeBulletType3 = "580e65c5299defb0:EnemyBullet",
 		Vec4 ChallengeColor = [0, 0, 1, 1],
+	},
+	LibrarianTeleport = 
+	{
 	},
 	Hierarchy = 
 	{
