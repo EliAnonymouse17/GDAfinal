@@ -21,8 +21,11 @@ class LibrarianTeleport : ZilchComponent
     {
         var teleportRunes = this.Space.FindAllObjectsByName("TeleportRune");
         
+        
+        // check to see if all teleport runes are already in the array
         if(this.TeleportRuneArray.Count != 5)
         {
+            // add the teleport runes to the teleportrunearay
             foreach (var rune in teleportRunes)
             {
                 this.TeleportRuneArray.Add(rune);
@@ -34,14 +37,31 @@ class LibrarianTeleport : ZilchComponent
         if(this.TeleportTimer <= 0)
         {
             var randomGenerator : Random = Random();
-            
+            // get our random number
             var dieRoll = randomGenerator.DieRoll(5);
             
-            if(this.Owner.Transform.WorldTranslation != this.TeleportRuneArray[dieRoll - 1].Transform.WorldTranslation)
+            
+            // make variables so we don't need to type as much
+            var runePosition = this.TeleportRuneArray[dieRoll - 1].Transform.WorldTranslation;
+            var ownerPosition = this.Owner.Transform.WorldTranslation;
+            
+            if(ownerPosition.X != runePosition.X)
             {
-                this.Owner.Transform.WorldTranslation = this.TeleportRuneArray[dieRoll - 1].Transform.WorldTranslation;
                 
+                ownerPosition = runePosition;
+                
+                // set position
+                this.Owner.Transform.WorldTranslation = ownerPosition;
+                
+                // reset timer
                 this.TeleportTimer = this.TeleportDelay;
+                
+                if(ownerPosition.Z == runePosition.Z)
+                {
+                    ownerPosition.Z += 0.1;
+                    
+                    this.Owner.Transform.WorldTranslation = ownerPosition;
+                }
             }
             
         }

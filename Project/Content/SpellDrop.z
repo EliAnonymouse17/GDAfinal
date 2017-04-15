@@ -36,7 +36,7 @@ class SpellDrop : ZilchComponent
     var SpellDropSprite3 : SpriteSource = null;
     
     [Property]
-    var TreasureRoomBool : Boolean = false;
+    var TreasureDropBool : Boolean = false;
     
     function Initialize(init : CogInitializer)
     {
@@ -50,7 +50,7 @@ class SpellDrop : ZilchComponent
         
         var randomGenerator : Random = Random();
         
-        if(this.TreasureRoomBool == false)
+        if(this.TreasureDropBool == false)
         {
             var randomDrop = randomGenerator.DieRoll(100);
             
@@ -63,13 +63,13 @@ class SpellDrop : ZilchComponent
                 spell.SpellScrollScript.Spell = this.SpellDrop1;
                 spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite1;
             }
-            if(randomDrop >= 11 && randomDrop <= 45)
+            else if(randomDrop >= 11 && randomDrop <= 45)
             {
                 var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
                 spell.SpellScrollScript.Spell = this.SpellDrop2;
                 spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite2;
             }
-            if(randomDrop >= 46 && randomDrop <= 100)
+            else if(randomDrop >= 46 && randomDrop <= 100)
             {
                 var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
                 spell.SpellScrollScript.Spell = this.SpellDrop3;
@@ -84,9 +84,27 @@ class SpellDrop : ZilchComponent
             {
                 // speed drop
             }
-            if(randomDrop >= 16 && randomDrop <= 40)
+            else if(randomDrop >= 16 && randomDrop <= 40)
             {
-                // heart drop
+                // health drop
+            }
+            else if(randomDrop >= 41 && randomDrop <= 50)
+            {
+                var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
+                spell.SpellScrollScript.Spell = this.SpellDrop1;
+                spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite1;
+            }
+            else if(randomDrop >= 51 && randomDrop <= 85)
+            {
+                var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
+                spell.SpellScrollScript.Spell = this.SpellDrop2;
+                spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite2;
+            }
+            else if(randomDrop >= 86 && randomDrop <= 140)
+            {
+                var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
+                spell.SpellScrollScript.Spell = this.SpellDrop3;
+                spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite3;
             }
         }
         

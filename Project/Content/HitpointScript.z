@@ -18,6 +18,9 @@ class HitpointScript : ZilchComponent
     var PrivateHP : Integer = 5;
     
     [Property]
+    var MaxHP : Integer = 5;
+    
+    [Property]
     var HurtSound : SoundCue = null;
     
     [Property]
@@ -76,9 +79,9 @@ class HitpointScript : ZilchComponent
                 this.Space.SoundSpace.PlayCue(this.DeathSound);
                 this.Owner.Destroy();
             }
-            if(this.Owner.Name == "Player" && this.PrivateHP > 6)
+            if(this.Owner.Name == "Player" && this.PrivateHP > this.MaxHP)
             {
-                this.PrivateHP = 6;
+                this.PrivateHP = this.MaxHP;
             }
         }
     }
