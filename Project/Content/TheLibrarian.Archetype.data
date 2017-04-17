@@ -14,8 +14,8 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-1.1704, 14.4738, 0.1],
-		Vec3 Scale = [2.5, 2.5, 1],
+		Vec3 Translation = [-1, 13.5, 0.1],
+		Vec3 Scale = [1.5, 1.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -61,6 +61,7 @@ Cog =
 	HitpointScript = 
 	{
 		int PrivateHP = 60,
+		int MaxHP = 5,
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,
@@ -87,7 +88,7 @@ Cog =
 		string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
 		string SpellDropSprite2 = "5852c59e8c1f9264:Texture_SeekingArrow",
 		string SpellDropSprite3 = "5858739c8bef319d:Texture_BigIce",
-		bool TreasureRoomBool = false,
+		bool TreasureDropBool = false,
 	},
 	BossHealthBarScript = 
 	{
@@ -106,7 +107,7 @@ Cog =
 		Enum ShotPattern2 = SINGLE,
 		string BulletType2 = "5866d949db695a28:EnemyArrow",
 		string AttackAnimation2 = "",
-		float AttackDelay3 = 10,
+		float AttackDelay3 = 14,
 		float BulletSpeed3 = 1000,
 		Enum ShotPattern3 = SINGLE,
 		string BulletType3 = "5868238f9aba4218:LibrarianRock",
@@ -128,6 +129,8 @@ Cog =
 	},
 	LibrarianTeleport = 
 	{
+		string TeleportAnimation = "",
+		float TeleportDelay = 10,
 	},
 	Hierarchy = 
 	{
