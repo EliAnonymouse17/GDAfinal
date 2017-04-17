@@ -1,0 +1,17 @@
+class TeleportRuneAnimations : ZilchComponent
+{
+    [Property]
+    var StillTexture : SpriteSource = null;
+    
+    [Property]
+    var RuneAnimation : SpriteSource = null;
+    
+    function Initialize(init : CogInitializer)
+    {
+        //Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+    }
+}

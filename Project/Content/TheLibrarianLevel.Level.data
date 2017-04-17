@@ -694,13 +694,18 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "582110fabe7988be:animation_Rune1",
+			string SpriteSource = "582117b7e380f555:texture_Rune1",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
 			bool AnimationActive = true,
 			float AnimationSpeed = 1,
 			uint StartFrame = 0,
+		},
+		TeleportRuneAnimations = 
+		{
+			string StillTexture = "582117b7e380f555:texture_Rune1",
+			string RuneAnimation = "582110fabe7988be:animation_Rune1",
 		},
 	},
 	Cog = 
@@ -737,6 +742,11 @@ Level =
 			float AnimationSpeed = 1,
 			uint StartFrame = 0,
 		},
+		TeleportRuneAnimations = 
+		{
+			string StillTexture = "5821176b4a96cb09:texture_Rune2",
+			string RuneAnimation = "5821188b65ca591d:animation_Rune2",
+		},
 	},
 	Cog = 
 	{
@@ -764,13 +774,18 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5821106f3da6342b:animation_Rune3",
+			string SpriteSource = "58211757a28a8a34:texture_Rune3",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
 			bool AnimationActive = true,
 			float AnimationSpeed = 1,
 			uint StartFrame = 0,
+		},
+		TeleportRuneAnimations = 
+		{
+			string StillTexture = "58211757a28a8a34:texture_Rune3",
+			string RuneAnimation = "5821106f3da6342b:animation_Rune3",
 		},
 	},
 	Cog = 
@@ -807,6 +822,11 @@ Level =
 			float AnimationSpeed = 1,
 			uint StartFrame = 0,
 		},
+		TeleportRuneAnimations = 
+		{
+			string StillTexture = "582116e5c3fcaaaf:texture_Rune4",
+			string RuneAnimation = "582118f15be09184:animation_Rune4",
+		},
 	},
 	Cog = 
 	{
@@ -841,6 +861,11 @@ Level =
 			bool AnimationActive = true,
 			float AnimationSpeed = 1,
 			uint StartFrame = 0,
+		},
+		TeleportRuneAnimations = 
+		{
+			string StillTexture = "582116c03b9e4e94:texture_Rune5",
+			string RuneAnimation = "5821181d8a348f80:animation_Rune5",
 		},
 	},
 },

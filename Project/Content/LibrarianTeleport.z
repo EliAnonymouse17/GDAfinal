@@ -11,6 +11,10 @@ class LibrarianTeleport : ZilchComponent
     
     var TeleportTimer : Real = 4;
     
+    var RandomRollBool : Boolean = false;
+    
+    var RandomNumber : Integer = 1;
+    
     
     function Initialize(init : CogInitializer)
     {
@@ -34,39 +38,56 @@ class LibrarianTeleport : ZilchComponent
         }
         this.TeleportTimer -= event.Dt;
         
-        if(this.TeleportTimer <= 0)
+        if(this.TeleportTimer <= 1)
         {
             var randomGenerator : Random = Random();
             // get our random number
+            
             var dieRoll = randomGenerator.DieRoll(5);
+            
+            // we only want to change 1 rune's spritesource to the animation so we want to store the first one that isn't the same position
+            if(!this.RandomRollBool)
+            {
+                this.RandomNumber = dieRoll;
+            }
             
             
             // make variables so we don't need to type as much
-            var runePosition = this.TeleportRuneArray[dieRoll - 1].Transform.WorldTranslation;
+            var runePosition = this.TeleportRuneArray[this.RandomNumber - 1].Transform.WorldTranslation;
             var ownerPosition = this.Owner.Transform.WorldTranslation;
             
             if(ownerPosition.X != runePosition.X)
             {
+                this.RandomRollBool = true;
+                // ease of access variable
+                var rune = this.TeleportRuneArray[this.RandomNumber - 1];
+                // set rune sprite to animation
+                rune.Sprite.SpriteSource = rune.TeleportRuneAnimations.RuneAnimation;
                 
-                ownerPosition = runePosition;
                 
-                // set position
-                this.Owner.Transform.WorldTranslation = ownerPosition;
                 
-                // reset timer
-                this.TeleportTimer = this.TeleportDelay;
-                
-                if(ownerPosition.Z == runePosition.Z)
+                if(this.TeleportTimer <= 0)
                 {
-                    ownerPosition.Z += 0.1;
+                    ownerPosition = runePosition;
                     
+                    // set position
                     this.Owner.Transform.WorldTranslation = ownerPosition;
+                    // set rune sprite to still texture
+                    rune.Sprite.SpriteSource = rune.TeleportRuneAnimations.StillTexture;
+                    
+                    this.RandomRollBool = false;
+                    
+                    // reset timer
+                    this.TeleportTimer = this.TeleportDelay;
+                    
+                    if(ownerPosition.Z == runePosition.Z)
+                    {
+                        ownerPosition.Z += 0.1;
+                        
+                        this.Owner.Transform.WorldTranslation = ownerPosition;
+                    }
                 }
             }
-            
         }
-        
-        
-        
     }
 }

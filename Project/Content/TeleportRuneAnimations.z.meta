@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "TeleportRuneAnimations",
+		uint64 ResourceId = 58211853c31af072,
+	},
+},
