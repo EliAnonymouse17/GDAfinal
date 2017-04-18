@@ -13,6 +13,8 @@ class LibrarianTeleport : ZilchComponent
     
     var RandomRollBool : Boolean = false;
     
+    var IsAnimatedBool : Boolean = false;
+    
     var RandomNumber : Integer = 1;
     
     
@@ -62,7 +64,12 @@ class LibrarianTeleport : ZilchComponent
                 // ease of access variable
                 var rune = this.TeleportRuneArray[this.RandomNumber - 1];
                 // set rune sprite to animation
-                rune.Sprite.SpriteSource = rune.TeleportRuneAnimations.RuneAnimation;
+                if(!this.IsAnimatedBool)
+                {
+                    rune.Sprite.SpriteSource = rune.TeleportRuneAnimations.RuneAnimation;
+                    
+                    this.IsAnimatedBool = true;
+                }
                 
                 
                 
@@ -76,6 +83,8 @@ class LibrarianTeleport : ZilchComponent
                     rune.Sprite.SpriteSource = rune.TeleportRuneAnimations.StillTexture;
                     
                     this.RandomRollBool = false;
+                    
+                    this.IsAnimatedBool = false;
                     
                     // reset timer
                     this.TeleportTimer = this.TeleportDelay;
