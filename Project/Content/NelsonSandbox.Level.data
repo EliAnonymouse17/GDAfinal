@@ -112,7 +112,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [2.45358, 24.1973, 50],
+			Vec3 Translation = [21.423, 40.3488, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -124,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 40.1711,
+			float Size = 44.3959,
 		},
 		EditorCameraController = 
 		{
@@ -132,7 +132,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [2.45358, 24.1973, 1.42537e-007],
+			Vec3 LookTarget = [21.423, 40.3488, 9.71714e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -648,6 +648,24 @@ Level =
 		Named = 
 		{
 			string Name = "Heart Pickup",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584fd2007ec97999:TMSquare22",
+		LinkId = 
+		{
+			uint Id = 16,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-0.0857845, -0.0116419, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "TileMap",
 		},
 	},
 },
