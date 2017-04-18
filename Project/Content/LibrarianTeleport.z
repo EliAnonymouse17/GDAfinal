@@ -7,6 +7,9 @@ class LibrarianTeleport : ZilchComponent
     var TeleportAnimation : SpriteSource = null;
     
     [Property]
+    var OriginalTexture : SpriteSource = null;
+    
+    [Property]
     var TeleportDelay : Real = 10;
     
     var TeleportTimer : Real = 4;
@@ -68,6 +71,8 @@ class LibrarianTeleport : ZilchComponent
                 {
                     rune.Sprite.SpriteSource = rune.TeleportRuneAnimations.RuneAnimation;
                     
+                    this.Owner.Sprite.SpriteSource = this.TeleportAnimation;
+                    
                     this.IsAnimatedBool = true;
                 }
                 
@@ -80,6 +85,8 @@ class LibrarianTeleport : ZilchComponent
                     this.Owner.Transform.WorldTranslation = ownerPosition;
                     // set rune sprite to still texture
                     rune.Sprite.SpriteSource = rune.TeleportRuneAnimations.StillTexture;
+                    
+                    this.Owner.Sprite.SpriteSource = this.OriginalTexture;
                     
                     this.RandomRollBool = false;
                     
