@@ -1,0 +1,59 @@
+enum StatUpgradeID {SPEEDUP, HEALTHUP}
+class StatUpgradeScript : ZilchComponent
+{
+    [Property]
+    var StatToUpgrade : StatUpgradeID = StatUpgradeID.SPEEDUP;
+    
+    [Property]
+    var SpeedUpTexture : SpriteSource = null;
+    
+    [Property]
+    var HealthUpTexture : SpriteSource = null;
+    
+    [Property]
+    var HealthIncrease : Integer = 1;
+    
+    [Property]
+    var SpeedIncrease : Integer = 100;
+    
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+        
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        if(this.StatToUpgrade == StatUpgradeID.HEALTHUP)
+        {
+            this.Owner.Sprite.SpriteSource = this.HealthUpTexture;
+        }
+        else
+        {
+            this.Owner.Sprite.SpriteSource = this.SpeedUpTexture;
+        }
+        
+        
+    }
+
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        if(event.OtherObject.Name != "Player")
+        {
+            return;
+        }
+        
+        if(this.StatToUpgrade == StatUpgradeID.HEALTHUP)
+        {
+            event.OtherObject.HitpointScript.MaxHP += this.HealthIncrease;
+            
+            event.OtherObject.HitpointScript.PrivateHP = event.OtherObject.HitpointScript.PrivateHP;
+        }
+        else
+        {
+            event.OtherObject.PlayerMove.MoveSpeed += this.SpeedIncrease;
+        }
+    }
+}

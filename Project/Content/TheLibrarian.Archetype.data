@@ -134,7 +134,8 @@ Cog =
 	},
 	LibrarianTeleport = 
 	{
-		string TeleportAnimation = "",
+		string TeleportAnimation = "584fdb207bf8dc4b:NecroMoveAnimation",
+		string OriginalTexture = "584fced65555e419:NecroAttackAnimation",
 		float TeleportDelay = 5.5,
 	},
 	Hierarchy = 
