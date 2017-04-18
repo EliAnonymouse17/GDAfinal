@@ -38,7 +38,10 @@ class PlayerFade : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        this.TimeLeft -= event.Dt;
+        if (!this.FadeIsActive)
+        {
+            this.TimeLeft -= event.Dt;
+        }
         if (this.FadeIsActive)
         {
             this.Duration -= event.Dt;
@@ -50,6 +53,7 @@ class PlayerFade : ZilchComponent
             this.Owner.Sprite.Color = Real4(1, 1, 1, 0.5);
             this.Duration = this.FadeDuration;
             this.FadeIsActive = true;
+            this.TimeLeft = this.Cooldown;
         }
         if (this.Duration <= 0)
         {
@@ -57,7 +61,6 @@ class PlayerFade : ZilchComponent
             this.FadeIsActive = false;
             this.Owner.Sprite.Color = Real4(1, 1, 1, 1);
             this.Duration = this.FadeDuration;
-            this.TimeLeft = this.Cooldown;
         }
     }
 }

@@ -141,7 +141,7 @@ Cog =
 		string ChallengeBulletType3 = "580e65c5299defb0:EnemyBullet",
 		float BurstDelay6 = 0,
 		int BurstCount6 = 1,
-		float StageSwitch = 60,
+		float StageSwitch = 20,
 		Vec4 ChallengeColor = [0, 0, 1, 1],
 	},
 	LibrarianTeleport = 
