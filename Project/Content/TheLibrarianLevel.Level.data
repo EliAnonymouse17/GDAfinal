@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 19.9484,
+			float Size = 36.3483,
 		},
 		EditorCameraController = 
 		{
@@ -634,19 +634,12 @@ Level =
 			string Name = "Heart Pickup",
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "58681d50bb219a4c:TheLibrarian",
 		LinkId = 
 		{
 			uint Id = 16,
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-		Archetyped = 
-		{
-			string Name = "58681d50bb219a4c:TheLibrarian",
 		},
 		Transform = 
 		{
@@ -654,450 +647,16 @@ Level =
 			Vec3 Scale = [1.5, 1.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "584fced65555e419:NecroAttackAnimation",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "580e65c5299dde20:Enemy",
-			Vec3 Offset = [-0.05, 0, 0],
-			Vec3 Size = [0.325, 1, 0.5],
-		},
-		RigidBody = 
-		{
-			bool Static = false,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = true,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		HitpointScript = 
-		{
-			int PrivateHP = 60,
-			int MaxHP = 5,
-			string HurtSound = "",
-			string DeathSound = "",
-			float HurtDuration = 0.1,
-		},
-		Shoot = 
-		{
-			string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
-			int RingCount = 100,
-			float RingOffset = 90,
-			int SpreadBullets = 3,
-		},
-		Orientation = 
-		{
-			Vec3 GlobalUp = [0, 1, 0],
-			Vec3 UpVector = [0, 0, 1],
-			Vec3 ForwardVector = [0, 1, 0],
-			OrientationBases DefaultBases = ForwardYUpZ,
-		},
-		SpellDrop = 
-		{
-			Enum SpellDrop1 = EXPLODINGBULLET,
-			Enum SpellDrop2 = SEEKINGARROW,
-			Enum SpellDrop3 = ICESPEAR,
-			string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
-			string SpellDropSprite2 = "5852c59e8c1f9264:Texture_SeekingArrow",
-			string SpellDropSprite3 = "5858739c8bef319d:Texture_BigIce",
-			bool TreasureDropBool = false,
-		},
-		BossHealthBarScript = 
-		{
-			float HealthBarSize = 15,
-		},
-		BossAttackLogic = 
-		{
-			string StandTexture = "584fced65555e419:NecroAttackAnimation",
-			float AttackDelay1 = 4,
-			float BulletSpeed1 = 175,
-			Enum ShotPattern1 = RING,
-			string BulletType1 = "580e65c5299defb0:EnemyBullet",
-			string AttackAnimation1 = "",
-			float AttackDelay2 = 2,
-			float BulletSpeed2 = 1000,
-			Enum ShotPattern2 = SINGLE,
-			string BulletType2 = "5866d949db695a28:EnemyArrow",
-			string AttackAnimation2 = "",
-			float AttackDelay3 = 14,
-			float BulletSpeed3 = 1000,
-			Enum ShotPattern3 = SINGLE,
-			string BulletType3 = "5868238f9aba4218:LibrarianRock",
-			string AttackAnimation3 = "",
-			float StageSwitch = 20,
-			float ChallengeAttackDelay1 = 3,
-			float ChallengeBulletSpeed1 = 210,
-			Enum ChallengeShotPattern1 = RING,
-			string ChallengeBulletType1 = "580e65c5299defb0:EnemyBullet",
-			float ChallengeAttackDelay2 = 2,
-			float ChallengeBulletSpeed2 = 210,
-			Enum ChallengeShotPattern2 = SPREAD,
-			string ChallengeBulletType2 = "5866d949db695a28:EnemyArrow",
-			float ChallengeAttackDelay3 = 0.1,
-			float ChallengeBulletSpeed3 = 150,
-			Enum ChallengeShotPattern3 = SINGLE,
-			string ChallengeBulletType3 = "580e65c5299defb0:EnemyBullet",
-			Vec4 ChallengeColor = [0, 0, 1, 1],
-		},
-		LibrarianTeleport = 
-		{
-			string TeleportAnimation = "",
-			float TeleportDelay = 5.5,
-		},
-		Hierarchy = 
-		{
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 17,
-				},
-				Named = 
-				{
-					string Name = "BossHealthBar",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0.00219029, -1.13192, 8],
-					Vec3 Scale = [0.4, 0.4, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Sprite = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [1, 0, 0, 0.5],
-					BlendMode BlendMode = Alpha,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string SpriteSource = "5275aa4d802dd6dc:Square",
-					bool RenderMask = false,
-					bool FlipX = false,
-					bool FlipY = false,
-					bool AnimationActive = true,
-					float AnimationSpeed = 1,
-					uint StartFrame = 0,
-				},
-			},
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 18,
-		},
 		Named = 
 		{
-			string Name = "TileMap",
-		},
-		Archetyped = 
-		{
-			string Name = "584fd89208ba642f:TMSquare24",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-1.14958, 6.58088, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		MultiSprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		},
-		TileMap = 
-		{
-			string SourceName = "58681e14c890f96c:TheLibrarianLevel_TileMap00",
-			string PaletteName = "5823179c8dceb415:StandardPalette",
-			float UnitsPerTile = 2,
-			float MeshThickness = 1.2,
-		},
-		Hierarchy = 
-		{
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 19,
-				},
-				Named = 
-				{
-					string Name = "Door",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [24, 0, 0],
-					Vec3 Scale = [1, 3, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Sprite = 
-				{
-					bool Visible = false,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [0, 0, 1, 1],
-					BlendMode BlendMode = Alpha,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string SpriteSource = "5275aa4d802dd6dc:Square",
-					bool RenderMask = false,
-					bool FlipX = false,
-					bool FlipY = false,
-					bool AnimationActive = true,
-					float AnimationSpeed = 1,
-					uint StartFrame = 0,
-				},
-				BoxCollider = 
-				{
-					bool Ghost = true,
-					bool SendsMessages = true,
-					bool Seamless = true,
-					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-					string SerializedGroupName = "58e7a2ca3abd68ad:Door",
-					Vec3 Offset = [-0.1, 0, 0],
-					Vec3 Size = [0.6, 0.5, 0.5],
-				},
-				RigidBody = 
-				{
-					bool Static = true,
-					bool Asleep = false,
-					bool Kinematic = false,
-					bool RotationLocked = false,
-					bool Mode2D = true,
-					bool AllowSleep = true,
-					bool Inherit2DMode = true,
-					Vec3 Velocity = [0, 0, 0],
-					Vec3 AngularVelocity = [0, 0, 0],
-				},
-				Door = 
-				{
-					Enum Direction = RIGHT,
-				},
-			},
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 20,
-				},
-				Named = 
-				{
-					string Name = "Door",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [-24, 0, 0],
-					Vec3 Scale = [1, 3, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Sprite = 
-				{
-					bool Visible = false,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [0, 0, 1, 1],
-					BlendMode BlendMode = Alpha,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string SpriteSource = "5275aa4d802dd6dc:Square",
-					bool RenderMask = false,
-					bool FlipX = false,
-					bool FlipY = false,
-					bool AnimationActive = true,
-					float AnimationSpeed = 1,
-					uint StartFrame = 0,
-				},
-				BoxCollider = 
-				{
-					bool Ghost = true,
-					bool SendsMessages = true,
-					bool Seamless = true,
-					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-					string SerializedGroupName = "58e7a2ca3abd68ad:Door",
-					Vec3 Offset = [0.1, 0, 0],
-					Vec3 Size = [0.6, 0.5, 0.5],
-				},
-				RigidBody = 
-				{
-					bool Static = true,
-					bool Asleep = false,
-					bool Kinematic = false,
-					bool RotationLocked = false,
-					bool Mode2D = true,
-					bool AllowSleep = true,
-					bool Inherit2DMode = true,
-					Vec3 Velocity = [0, 0, 0],
-					Vec3 AngularVelocity = [0, 0, 0],
-				},
-				Door = 
-				{
-					Enum Direction = LEFT,
-				},
-			},
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 21,
-				},
-				Named = 
-				{
-					string Name = "Door",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0, -12, 0],
-					Vec3 Scale = [1, 3, 1],
-					Quat Rotation = [0, 0, 0.707107, 0.707107],
-				},
-				Sprite = 
-				{
-					bool Visible = false,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [0, 0, 1, 1],
-					BlendMode BlendMode = Alpha,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string SpriteSource = "5275aa4d802dd6dc:Square",
-					bool RenderMask = false,
-					bool FlipX = false,
-					bool FlipY = false,
-					bool AnimationActive = true,
-					float AnimationSpeed = 1,
-					uint StartFrame = 0,
-				},
-				BoxCollider = 
-				{
-					bool Ghost = true,
-					bool SendsMessages = true,
-					bool Seamless = true,
-					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-					string SerializedGroupName = "58e7a2ca3abd68ad:Door",
-					Vec3 Offset = [0.1, 0, 0],
-					Vec3 Size = [0.6, 0.5, 0.5],
-				},
-				RigidBody = 
-				{
-					bool Static = true,
-					bool Asleep = false,
-					bool Kinematic = false,
-					bool RotationLocked = false,
-					bool Mode2D = true,
-					bool AllowSleep = true,
-					bool Inherit2DMode = true,
-					Vec3 Velocity = [0, 0, 0],
-					Vec3 AngularVelocity = [0, 0, 0],
-				},
-				Door = 
-				{
-					Enum Direction = DOWN,
-				},
-			},
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 22,
-				},
-				Named = 
-				{
-					string Name = "Door",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0, 12, 0],
-					Vec3 Scale = [1, 3, 1],
-					Quat Rotation = [0, 0, 0.707107, 0.707107],
-				},
-				Sprite = 
-				{
-					bool Visible = false,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [0, 0, 1, 1],
-					BlendMode BlendMode = Alpha,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string SpriteSource = "5275aa4d802dd6dc:Square",
-					bool RenderMask = false,
-					bool FlipX = false,
-					bool FlipY = false,
-					bool AnimationActive = true,
-					float AnimationSpeed = 1,
-					uint StartFrame = 0,
-				},
-				BoxCollider = 
-				{
-					bool Ghost = true,
-					bool SendsMessages = true,
-					bool Seamless = true,
-					string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-					string SerializedGroupName = "58e7a2ca3abd68ad:Door",
-					Vec3 Offset = [-0.1, 0, 0],
-					Vec3 Size = [0.6, 0.5, 0.5],
-				},
-				RigidBody = 
-				{
-					bool Static = true,
-					bool Asleep = false,
-					bool Kinematic = false,
-					bool RotationLocked = false,
-					bool Mode2D = true,
-					bool AllowSleep = true,
-					bool Inherit2DMode = true,
-					Vec3 Velocity = [0, 0, 0],
-					Vec3 AngularVelocity = [0, 0, 0],
-				},
-				Door = 
-				{
-					Enum Direction = UP,
-				},
-			},
+			string Name = "Enemy",
 		},
 	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 23,
+			uint Id = 17,
 		},
 		Named = 
 		{
@@ -1137,7 +696,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 24,
+			uint Id = 18,
 		},
 		Named = 
 		{
@@ -1177,7 +736,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 25,
+			uint Id = 19,
 		},
 		Named = 
 		{
@@ -1217,7 +776,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 26,
+			uint Id = 20,
 		},
 		Named = 
 		{
@@ -1257,7 +816,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 27,
+			uint Id = 21,
 		},
 		Named = 
 		{
@@ -1291,6 +850,24 @@ Level =
 		{
 			string StillTexture = "582116c03b9e4e94:texture_Rune5",
 			string RuneAnimation = "5821181d8a348f80:animation_Rune5",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584fd89208ba642f:TMSquare24",
+		LinkId = 
+		{
+			uint Id = 22,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-1.06941, 5.28007, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "TileMap",
 		},
 	},
 },

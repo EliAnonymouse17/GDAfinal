@@ -7,37 +7,81 @@ class BossAttackLogic : ZilchComponent
     [Property] var ShotPattern1 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var BulletType1 : Archetype = null;
     [Property] var AttackAnimation1 : SpriteSource = null;
+    // Bursting stuff
+    [Property] var BurstDelay1 : Real = 0;
+    var BurstTimer1 : Real = 0;
+    [Property] var BurstCount1 : Integer = 1;
+    var ShotsLeft1 : Integer = 0;
+    var IsBursting1 : Boolean = false;
+    
+    [Property] var Space1 : Real4 = Real4(1,1,1,1);
     
     [Property] var AttackDelay2 : Real = 3;
     [Property] var BulletSpeed2 : Real = 1000;
     [Property] var ShotPattern2 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var BulletType2 : Archetype = null;
     [Property] var AttackAnimation2 : SpriteSource = null;
+    // Bursting stuff
+    [Property] var BurstDelay2 : Real = 0;
+    var BurstTimer2 : Real = 0;
+    [Property] var BurstCount2 : Integer = 1;
+    var ShotsLeft2 : Integer = 0;
+    var IsBursting2 : Boolean = false;
+    
+    [Property] var Space2 : Real4 = Real4(1,1,1,1);
     
     [Property] var AttackDelay3 : Real = 3;
     [Property] var BulletSpeed3 : Real = 1000;
     [Property] var ShotPattern3 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var BulletType3 : Archetype = null;
     [Property] var AttackAnimation3 : SpriteSource = null;
+    // Bursting stuff
+    [Property] var BurstDelay3 : Real = 0;
+    var BurstTimer3 : Real = 0;
+    [Property] var BurstCount3 : Integer = 1;
+    var ShotsLeft3 : Integer = 0;
+    var IsBursting3 : Boolean = false;
     
-    [Property] var StageSwitch : Real = 0;
+    [Property] var Space3 : Real4 = Real4(1,1,1,1);
     
     [Property] var ChallengeAttackDelay1 : Real = 3;
     [Property] var ChallengeBulletSpeed1 : Real = 1000;
     [Property] var ChallengeShotPattern1 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var ChallengeBulletType1 : Archetype = null;
+    // Bursting stuff
+    [Property] var BurstDelay4 : Real = 0;
+    var BurstTimer4 : Real = 0;
+    [Property] var BurstCount4 : Integer = 1;
+    var ShotsLeft4 : Integer = 0;
+    var IsBursting4 : Boolean = false;
+    
+    [Property] var Space4 : Real4 = Real4(1,1,1,1);
     
     [Property] var ChallengeAttackDelay2 : Real = 3;
     [Property] var ChallengeBulletSpeed2 : Real = 1000;
     [Property] var ChallengeShotPattern2 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var ChallengeBulletType2 : Archetype = null;
+    // Bursting stuff
+    [Property] var BurstDelay5 : Real = 0;
+    var BurstTimer5 : Real = 0;
+    [Property] var BurstCount5 : Integer = 1;
+    var ShotsLeft5 : Integer = 0;
+    var IsBursting5 : Boolean = false;
+    
+    [Property] var Space5 : Real4 = Real4(1,1,1,1);
     
     [Property] var ChallengeAttackDelay3 : Real = 3;
     [Property] var ChallengeBulletSpeed3 : Real = 1000;
     [Property] var ChallengeShotPattern3 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var ChallengeBulletType3 : Archetype = null;
+    // Bursting stuff
+    [Property] var BurstDelay6 : Real = 0;
+    var BurstTimer6 : Real = 0;
+    [Property] var BurstCount6 : Integer = 1;
+    var ShotsLeft6 : Integer = 0;
+    var IsBursting6 : Boolean = false;
     
-    
+    [Property] var StageSwitch : Real = 0;
     [Property] var ChallengeColor : Real4 = Real4(1, 1, 1, 1);
     
     var StageSwitchBool : Boolean = false;
@@ -73,17 +117,23 @@ class BossAttackLogic : ZilchComponent
         // if stage 1 these timers should go
         if(!this.StageSwitchBool)
         {
-            this.AttackTimer1 -= event.Dt;
-            this.AttackTimer2 -= event.Dt;
-            this.AttackTimer3 -= event.Dt;
+            if (!this.IsBursting1)
+                this.AttackTimer1 -= event.Dt;
+            if (!this.IsBursting2)
+                this.AttackTimer2 -= event.Dt;
+            if (!this.IsBursting3)
+                this.AttackTimer3 -= event.Dt;
         }
         else
         
         //if stage 2 these timers should go
         {
-            this.ChallengeAttackTimer1 -= event.Dt;
-            this.ChallengeAttackTimer2 -= event.Dt;
-            this.ChallengeAttackTimer3 -= event.Dt;
+            if (!this.IsBursting4)
+                this.ChallengeAttackTimer1 -= event.Dt;
+            if (!this.IsBursting5)
+                this.ChallengeAttackTimer2 -= event.Dt;
+            if (!this.IsBursting6)
+                this.ChallengeAttackTimer3 -= event.Dt;
         }
         
         if(this.Space.FindObjectByName("Player") == null)
@@ -97,12 +147,8 @@ class BossAttackLogic : ZilchComponent
         if(!this.StageSwitchBool)
         {
             // attack 1
-            if(this.AttackTimer1 <= 0)
+            if(this.AttackTimer1 <= 0 && this.IsBursting1 == false)
             {
-                this.Owner.Shoot.BulletType = this.BulletType1;
-                
-                this.Owner.Shoot.Shoot(this.BulletSpeed1, shotAngle, this.ShotPattern1);
-                
                 if(this.Owner.Sprite.SpriteSource == this.StandTexture)
                 {
                     if(this.AttackAnimation1 != null)
@@ -110,13 +156,36 @@ class BossAttackLogic : ZilchComponent
                 }
                 
                 this.AttackTimer1 = this.AttackDelay1;
+                this.BurstTimer1 = 0;
+                this.ShotsLeft1 = this.BurstCount1;
+                this.IsBursting1 = true;
+            }
+            // Tick down time left bewtween shots
+            if (this.IsBursting1)
+            {
+                this.BurstTimer1 -= event.Dt;
+            }
+            
+            // Fire Shot
+            if (this.BurstTimer1 <= 0 && this.ShotsLeft1 > 0)
+            {
+                this.Owner.Shoot.BulletType = this.BulletType1;
+                this.Owner.Shoot.Shoot(this.BulletSpeed1, shotAngle, this.ShotPattern1);
+                this.BurstTimer1 = this.BurstDelay1;
+                this.ShotsLeft1 -= 1;
+            }
+            
+            // End burst
+            if (this.ShotsLeft1 <= 0)
+            {
+                this.IsBursting1 = false;
             }
         }
         // stage 2 attacks
         else
         {
             // stage 2 attack 1
-            if(this.ChallengeAttackTimer1 <= 0)
+            if(this.ChallengeAttackTimer1 <= 0 && this.IsBursting4 == false)
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType1;
                 
@@ -129,13 +198,36 @@ class BossAttackLogic : ZilchComponent
                 }               
                 
                 this.ChallengeAttackTimer1 = this.ChallengeAttackDelay1;
+                this.BurstTimer4 = 0;
+                this.ShotsLeft4 = this.BurstCount4;
+                this.IsBursting4 = true;
+            }
+            // Tick down time left bewtween shots
+            if (this.IsBursting4)
+            {
+                this.BurstTimer4 -= event.Dt;
+            }
+            
+            // Fire Shot
+            if (this.BurstTimer4 <= 0 && this.ShotsLeft4 > 0)
+            {
+                this.Owner.Shoot.BulletType = this.ChallengeBulletType1;
+                this.Owner.Shoot.Shoot(this.ChallengeBulletSpeed1, shotAngle, this.ChallengeShotPattern1);
+                this.BurstTimer4 = this.BurstDelay4;
+                this.ShotsLeft4 -= 1;
+            }
+            
+            // End burst
+            if (this.ShotsLeft4 <= 0)
+            {
+                this.IsBursting4 = false;
             }
         }
         
         if(!this.StageSwitchBool)
         {
             // attack 2 stage 1
-            if(this.AttackTimer2 <= 0)
+            if(this.AttackTimer2 <= 0 && this.IsBursting2 == false)
             {
                 this.Owner.Shoot.BulletType = this.BulletType2;
                 
@@ -148,12 +240,35 @@ class BossAttackLogic : ZilchComponent
                 }
                 
                 this.AttackTimer2 = this.AttackDelay2;
+                this.BurstTimer2 = 0;
+                this.ShotsLeft2 = this.BurstCount2;
+                this.IsBursting2 = true;
+            }
+            // Tick down time left bewtween shots
+            if (this.IsBursting2)
+            {
+                this.BurstTimer2 -= event.Dt;
+            }
+            
+            // Fire Shot
+            if (this.BurstTimer2 <= 0 && this.ShotsLeft2 > 0)
+            {
+                this.Owner.Shoot.BulletType = this.BulletType2;
+                this.Owner.Shoot.Shoot(this.BulletSpeed2, shotAngle, this.ShotPattern2);
+                this.BurstTimer2 = this.BurstDelay2;
+                this.ShotsLeft2 -= 2;
+            }
+            
+            // End burst
+            if (this.ShotsLeft2 <= 0)
+            {
+                this.IsBursting2 = false;
             }
         }
         else
         {
             // attack 2 stage 2
-            if(this.ChallengeAttackTimer2 <= 0)
+            if(this.ChallengeAttackTimer2 <= 0 && this.IsBursting5 == false)
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType2;
                 
@@ -166,13 +281,36 @@ class BossAttackLogic : ZilchComponent
                 }
                 
                 this.ChallengeAttackTimer2 = this.ChallengeAttackDelay2;
+                this.BurstTimer5 = 0;
+                this.ShotsLeft5 = this.BurstCount5;
+                this.IsBursting5 = true;
+            }
+            // Tick down time left bewtween shots
+            if (this.IsBursting5)
+            {
+                this.BurstTimer5 -= event.Dt;
+            }
+            
+            // Fire Shot
+            if (this.BurstTimer5 <= 0 && this.ShotsLeft5 > 0)
+            {
+                this.Owner.Shoot.BulletType = this.ChallengeBulletType2;
+                this.Owner.Shoot.Shoot(this.BulletSpeed1, shotAngle, this.ChallengeShotPattern2);
+                this.BurstTimer5 = this.BurstDelay5;
+                this.ShotsLeft5 -= 1;
+            }
+            
+            // End burst
+            if (this.ShotsLeft5 <= 0)
+            {
+                this.IsBursting5 = false;
             }
         }
         
         if(!this.StageSwitchBool)
         {
             // attack 3 stage 1
-            if(this.AttackTimer3 <= 0)
+            if(this.AttackTimer3 <= 0 && this.IsBursting3 == false)
             {
                 this.Owner.Shoot.BulletType = this.BulletType3;
                 
@@ -185,12 +323,35 @@ class BossAttackLogic : ZilchComponent
                 }
                 
                 this.AttackTimer3 = this.AttackDelay3;
+                this.BurstTimer3 = 0;
+                this.ShotsLeft3 = this.BurstCount3;
+                this.IsBursting3 = true;
+            }
+            // Tick down time left bewtween shots
+            if (this.IsBursting3)
+            {
+                this.BurstTimer3 -= event.Dt;
+            }
+            
+            // Fire Shot
+            if (this.BurstTimer3 <= 0 && this.ShotsLeft3 > 0)
+            {
+                this.Owner.Shoot.BulletType = this.BulletType3;
+                this.Owner.Shoot.Shoot(this.BulletSpeed3, shotAngle, this.ShotPattern3);
+                this.BurstTimer3 = this.BurstDelay3;
+                this.ShotsLeft3 -= 1;
+            }
+            
+            // End burst
+            if (this.ShotsLeft3 <= 0)
+            {
+                this.IsBursting3 = false;
             }
         }
         else
         {
             // attack 3 stage 2
-            if(this.ChallengeAttackTimer3 <= 0)
+            if(this.ChallengeAttackTimer3 <= 0 && this.IsBursting6 == false)
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType3;
                 
@@ -203,6 +364,29 @@ class BossAttackLogic : ZilchComponent
                 }
                 
                 this.ChallengeAttackTimer3 = this.ChallengeAttackDelay3;
+                this.BurstTimer6 = 0;
+                this.ShotsLeft6 = this.BurstCount6;
+                this.IsBursting6 = true;
+            }
+            // Tick down time left bewtween shots
+            if (this.IsBursting6)
+            {
+                this.BurstTimer6 -= event.Dt;
+            }
+            
+            // Fire Shot
+            if (this.BurstTimer6 <= 0 && this.ShotsLeft6 > 0)
+            {
+                this.Owner.Shoot.BulletType = this.ChallengeBulletType3;
+                this.Owner.Shoot.Shoot(this.ChallengeBulletSpeed3, shotAngle, this.ChallengeShotPattern3);
+                this.BurstTimer6 = this.BurstDelay6;
+                this.ShotsLeft6 -= 1;
+            }
+            
+            // End burst
+            if (this.ShotsLeft6 <= 0)
+            {
+                this.IsBursting6 = false;
             }
         }
         // attack animations

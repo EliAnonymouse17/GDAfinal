@@ -35,7 +35,10 @@ class EnemyShoot : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        this.TimeUntilNextShot -= event.Dt;
+        if (this.IsBursting == false)
+        {
+            this.TimeUntilNextShot -= event.Dt;
+        }
         var radianRotation = Math.ToRadians(this.Owner.Transform.Rotation.Z);
         if (this.Space.FindObjectByName("Player") == null)
         {
