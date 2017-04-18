@@ -12,7 +12,7 @@ class BossHealthBarScript : ZilchComponent
     {
         var healthBar = this.Owner.FindChildByName("BossHealthBar");
         
-        var currHealth = Real3(this.Owner.HitpointScript.PrivateHP, 0.5, 1);
+        var currHealth = Real3(this.Owner.HitpointScript.PrivateHP, 1, 1);
         
         healthBar.Transform.Scale = currHealth / this.HealthBarSize;
     }

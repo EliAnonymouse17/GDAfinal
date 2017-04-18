@@ -20,9 +20,14 @@ class PlayerFade : ZilchComponent
 
     var BaseSprite : SpriteSource;
     
+    [Property]
     var Cooldown : Real = 2;
+    
     var TimeLeft : Real = 0;
+    
+    [Property]
     var FadeDuration : Real = 1;
+    
     var FadeIsActive : Boolean = false;
     var Duration : Real = 0;
     function Initialize(init : CogInitializer)

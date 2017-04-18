@@ -45,7 +45,9 @@ class EnemyShoot : ZilchComponent
         if(this.TimeUntilNextShot <= 0 && this.IsBursting == false)
         {
             if(this.AttackAnimation != null)
+            {
                 this.Owner.Sprite.SpriteSource = this.AttackAnimation;
+            }
             var randomGenerator : Random = Random();
             var random = randomGenerator.Range(-0.05, 0.1);
             this.TimeUntilNextShot = this.BulletDelay + random;
@@ -80,7 +82,9 @@ class EnemyShoot : ZilchComponent
         if(this.Owner.Sprite.SpriteSource == this.AttackAnimation)
         {
             if(this.Owner.Sprite.CurrentFrame >= this.AttackAnimation.FrameCount - 1)
+            {
                 this.FinishedAnimation = true;
+            }
             if(this.Owner.Sprite.CurrentFrame == 0 && this.FinishedAnimation)
             {
                 this.FinishedAnimation = false;

@@ -72,7 +72,6 @@ class LibrarianTeleport : ZilchComponent
                 }
                 
                 
-                
                 if(this.TeleportTimer <= 0)
                 {
                     ownerPosition = runePosition;

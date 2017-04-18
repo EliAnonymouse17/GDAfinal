@@ -130,7 +130,7 @@ Cog =
 	LibrarianTeleport = 
 	{
 		string TeleportAnimation = "",
-		float TeleportDelay = 10,
+		float TeleportDelay = 6,
 	},
 	Hierarchy = 
 	{
@@ -147,7 +147,7 @@ Cog =
 			Transform = 
 			{
 				Vec3 Translation = [0.00219029, -1.13192, 8],
-				Vec3 Scale = [0.4, 0.2, 1],
+				Vec3 Scale = [0.4, 0.4, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
 			Sprite = 
