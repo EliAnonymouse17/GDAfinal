@@ -251,7 +251,6 @@ class BossAttackLogic : ZilchComponent
             if (this.BurstTimer2 <= 0 && this.ShotsLeft2 > 0)
             {
                 this.Owner.Shoot.BulletType = this.BulletType2;
-                Console.WriteLine("BANG!");
                 this.Owner.Shoot.Shoot(this.BulletSpeed2, shotAngle, this.ShotPattern2);
                 this.BurstTimer2 = this.BurstDelay2;
                 this.ShotsLeft2 -= 1;
@@ -291,7 +290,7 @@ class BossAttackLogic : ZilchComponent
             if (this.BurstTimer5 <= 0 && this.ShotsLeft5 > 0)
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType2;
-                this.Owner.Shoot.Shoot(this.BulletSpeed1, shotAngle, this.ChallengeShotPattern2);
+                this.Owner.Shoot.Shoot(this.ChallengeBulletSpeed2, shotAngle, this.ChallengeShotPattern2);
                 this.BurstTimer5 = this.BurstDelay5;
                 this.ShotsLeft5 -= 1;
             }
