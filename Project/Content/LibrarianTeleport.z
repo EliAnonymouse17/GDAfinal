@@ -12,7 +12,7 @@ class LibrarianTeleport : ZilchComponent
     [Property]
     var TeleportDelay : Real = 10;
     
-    var TeleportTimer : Real = 4;
+    var TeleportTimer : Real = 5;
     
     var RandomRollBool : Boolean = false;
     
