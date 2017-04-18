@@ -1,0 +1,64 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "Enemy",
+	},
+	Archetyped = 
+	{
+		string Name = "58737f1a36f3cb1f:BoneSummon",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [6.58526, 4.77923, 0],
+		Vec3 Scale = [1, 1, 1],
+		Quat Rotation = [0, 0, 0, 1],
+	},
+	Sprite = 
+	{
+		bool Visible = true,
+		bool VisibilityCulling = true,
+		bool VisibilityEvents = true,
+		bool CastShadows = false,
+		Vec4 Color = [0, 1, 0, 1],
+		BlendMode BlendMode = Alpha,
+		SpriteGeometryMode GeometryMode = ZPlane,
+		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+		string SpriteSource = "585fa9b4d9ed16a3:Texture_PileOfBones000",
+		bool RenderMask = false,
+		bool FlipX = false,
+		bool FlipY = false,
+		bool AnimationActive = true,
+		float AnimationSpeed = 1,
+		uint StartFrame = 0,
+	},
+	Orientation = 
+	{
+		Vec3 GlobalUp = [0, 1, 0],
+		Vec3 UpVector = [0, 0, 1],
+		Vec3 ForwardVector = [0, 1, 0],
+		OrientationBases DefaultBases = ForwardYUpZ,
+	},
+	EnemyShoot = 
+	{
+		float BulletDelay = 2,
+		float BulletSpeed = 150,
+		Enum ShotPattern = RING,
+		string ShootSound = "",
+		string WalkAnimation = "",
+		string AttackAnimation = "",
+		float BurstDelay = 0,
+		int BurstCount = 1,
+	},
+	Shoot = 
+	{
+		string BulletType = "5815eae6be2978a9:Bullet",
+		int RingCount = 14,
+		float RingOffset = 90,
+		int SpreadBullets = 3,
+	},
+},
