@@ -112,7 +112,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.648192, 5.92574, 50],
+			Vec3 Translation = [2.45358, 24.1973, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -124,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 29.7595,
+			float Size = 40.1711,
 		},
 		EditorCameraController = 
 		{
@@ -132,7 +132,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-0.648192, 5.92574, 6.95418e-009],
+			Vec3 LookTarget = [2.45358, 24.1973, 1.42537e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -224,12 +224,15 @@ Level =
 		HitpointScript = 
 		{
 			int PrivateHP = 6,
+			int MaxHP = 5,
 			string HurtSound = "",
 			string DeathSound = "",
 			float HurtDuration = 0.25,
 		},
 		PlayerFade = 
 		{
+			float Cooldown = 2,
+			float FadeDuration = 1,
 		},
 		SpellSwitchHandler = 
 		{
