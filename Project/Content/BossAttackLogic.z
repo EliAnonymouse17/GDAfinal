@@ -70,7 +70,7 @@ class BossAttackLogic : ZilchComponent
             this.Owner.Sprite.Color = this.ChallengeColor;
         }
         
-        
+        // if stage 1 these timers should go
         if(!this.StageSwitchBool)
         {
             this.AttackTimer1 -= event.Dt;
@@ -78,6 +78,8 @@ class BossAttackLogic : ZilchComponent
             this.AttackTimer3 -= event.Dt;
         }
         else
+        
+        //if stage 2 these timers should go
         {
             this.ChallengeAttackTimer1 -= event.Dt;
             this.ChallengeAttackTimer2 -= event.Dt;
@@ -88,11 +90,13 @@ class BossAttackLogic : ZilchComponent
         {
             return;
         }
-        
+        // find which direction to shoot
         var shotAngle = Math.Normalize(this.Space.FindObjectByName("Player").Transform.Translation - this.Owner.Transform.Translation);
         
+        // stage 1 attacks
         if(!this.StageSwitchBool)
         {
+            // attack 1
             if(this.AttackTimer1 <= 0)
             {
                 this.Owner.Shoot.BulletType = this.BulletType1;
@@ -108,8 +112,10 @@ class BossAttackLogic : ZilchComponent
                 this.AttackTimer1 = this.AttackDelay1;
             }
         }
+        // stage 2 attacks
         else
         {
+            // stage 2 attack 1
             if(this.ChallengeAttackTimer1 <= 0)
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType1;
@@ -128,6 +134,7 @@ class BossAttackLogic : ZilchComponent
         
         if(!this.StageSwitchBool)
         {
+            // attack 2 stage 1
             if(this.AttackTimer2 <= 0)
             {
                 this.Owner.Shoot.BulletType = this.BulletType2;
@@ -145,6 +152,7 @@ class BossAttackLogic : ZilchComponent
         }
         else
         {
+            // attack 2 stage 2
             if(this.ChallengeAttackTimer2 <= 0)
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType2;
@@ -163,6 +171,7 @@ class BossAttackLogic : ZilchComponent
         
         if(!this.StageSwitchBool)
         {
+            // attack 3 stage 1
             if(this.AttackTimer3 <= 0)
             {
                 this.Owner.Shoot.BulletType = this.BulletType3;
@@ -180,6 +189,7 @@ class BossAttackLogic : ZilchComponent
         }
         else
         {
+            // attack 3 stage 2
             if(this.ChallengeAttackTimer3 <= 0)
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType3;
@@ -195,7 +205,7 @@ class BossAttackLogic : ZilchComponent
                 this.ChallengeAttackTimer3 = this.ChallengeAttackDelay3;
             }
         }
-        
+        // attack animations
         if(this.Owner.Sprite.SpriteSource == this.AttackAnimation1)
         {
             if(this.Owner.Sprite.CurrentFrame >= this.AttackAnimation1.FrameCount - 1)
