@@ -1,10 +1,9 @@
 class DestroyTimer : ZilchComponent
 {
+    [Property]
     var Time : Real = 0.1;
     [Property]
     var WarpScale : Real = 2;
-    [Property]
-    var IntensityFallOff : Real = 5;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -13,8 +12,11 @@ class DestroyTimer : ZilchComponent
     function OnLogicUpdate(event : UpdateEvent)
     {
         var warp = this.Owner.ScreenWarpRing;
-        warp.Size += event.Dt * this.WarpScale;
-        warp.Intensity -= event.Dt *  warp.Intensity / this.Time;
+        if(warp != null)
+        {
+            warp.Size += event.Dt * this.WarpScale;
+            warp.Intensity -= event.Dt *  warp.Intensity / this.Time;
+        }
         this.Time -= event.Dt;
         if (this.Time <= 0)
         {

@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [6.58526, 4.77923, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -60,5 +60,10 @@ Cog =
 		int RingCount = 14,
 		float RingOffset = 90,
 		int SpreadBullets = 3,
+	},
+	DestroyTimer = 
+	{
+		float Time = 6,
+		float WarpScale = 0,
 	},
 },

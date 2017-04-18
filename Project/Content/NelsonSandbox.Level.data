@@ -186,11 +186,11 @@ Level =
 		{
 			float BulletDelay = 1,
 			float BulletSpeed = 125,
-			Enum ShotPattern = RING,
+			Enum ShotPattern = SINGLE,
 			string ShootSound = "",
 			bool TimerFreeze = false,
-			float BurstDelay = 0.1,
-			int BurstCount = 5,
+			float BurstDelay = 0,
+			int BurstCount = 1,
 		},
 		BoxCollider = 
 		{
@@ -216,7 +216,7 @@ Level =
 		},
 		Shoot = 
 		{
-			string BulletType = "5815eae6be2978a9:Bullet",
+			string BulletType = "5873834ea3abcd96:BoneShot",
 			int RingCount = 111,
 			float RingOffset = 90,
 			int SpreadBullets = 3,
