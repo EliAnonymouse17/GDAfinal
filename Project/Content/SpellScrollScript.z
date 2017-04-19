@@ -13,6 +13,10 @@ class SpellScrollScript : ZilchComponent
 
     function OnCollisionStarted(event : CollisionEvent)
     {
+        if(event.OtherObject.Name != "Player")
+        {
+            return;
+        }
         event.OtherObject.SpellSwitchHandler.SpellArray.Add(this.Spell);
         this.Owner.Destroy();
     }

@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-19.1577, 5.0987, 50],
+			Vec3 Translation = [-7.73267, 5.0987, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 4.45108,
+			float Size = 29.7594,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-19.1577, 5.0987, 3.71217e-007],
+			Vec3 LookTarget = [-7.73267, 5.0987, 3.71217e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -689,7 +689,7 @@ Level =
 		TeleportRuneAnimations = 
 		{
 			string StillTexture = "582117b7e380f555:texture_Rune1",
-			string RuneAnimation = "582110fabe7988be:animation_Rune1",
+			string RuneAnimation = "5823824b8605fb40:Animation_Rune1",
 		},
 	},
 	Cog = 
@@ -729,7 +729,7 @@ Level =
 		TeleportRuneAnimations = 
 		{
 			string StillTexture = "5821176b4a96cb09:texture_Rune2",
-			string RuneAnimation = "5821188b65ca591d:animation_Rune2",
+			string RuneAnimation = "58238da9e312d1a5:Animation_Rune2",
 		},
 	},
 	Cog = 
@@ -769,7 +769,7 @@ Level =
 		TeleportRuneAnimations = 
 		{
 			string StillTexture = "58211757a28a8a34:texture_Rune3",
-			string RuneAnimation = "5821106f3da6342b:animation_Rune3",
+			string RuneAnimation = "58238d8cc1641e86:Animation_Rune3",
 		},
 	},
 	Cog = 
@@ -809,7 +809,7 @@ Level =
 		TeleportRuneAnimations = 
 		{
 			string StillTexture = "582116e5c3fcaaaf:texture_Rune4",
-			string RuneAnimation = "582118f15be09184:animation_Rune4",
+			string RuneAnimation = "58238ddd2ab6c774:Animation_Rune4",
 		},
 	},
 	Cog = 
@@ -849,7 +849,7 @@ Level =
 		TeleportRuneAnimations = 
 		{
 			string StillTexture = "582116c03b9e4e94:texture_Rune5",
-			string RuneAnimation = "5821181d8a348f80:animation_Rune5",
+			string RuneAnimation = "58238d330821d465:Animation_Rune5",
 		},
 	},
 	ArchetypeInstance = 

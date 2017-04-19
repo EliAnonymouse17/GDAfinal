@@ -2,8 +2,8 @@ ImageContent =
 {
 	SpriteSourceBuilder = 
 	{
-		string Name = "animation_Rune4",
-		uint64 ResourceId = 582118f15be09184,
+		string Name = "Animation_Rune4",
+		uint64 ResourceId = 58238ddd2ab6c774,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 64,
 		uint FrameSizeY = 64,
