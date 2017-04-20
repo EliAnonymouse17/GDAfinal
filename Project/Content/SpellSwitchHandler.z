@@ -120,8 +120,8 @@ class SpellSwitchHandler : ZilchComponent
         //this.SpellArray.Add(SpellTypes.ICESPEAR);
         // this.SpellArray.Add(SpellTypes.SEEKINGARROW);
         //this.SpellArray.Add(SpellTypes.EXPLODINGBULLET);
-        //this.SpellArray.Add(SpellTypes.WATERSTREAM);
-        this.SpellArray.Add(SpellTypes.BONESHOT);
+        this.SpellArray.Add(SpellTypes.WATERSTREAM);
+        //this.SpellArray.Add(SpellTypes.BONESHOT);
         Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyUpdate);
         Zero.Connect(this.Space, Events.MouseScroll, this.OnMouseUpdate);
     }
