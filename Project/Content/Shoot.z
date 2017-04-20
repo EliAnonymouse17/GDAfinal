@@ -31,9 +31,12 @@ class Shoot : ZilchComponent
         {
             var bulletPos = this.Owner.Transform.Translation + angle;
             var bullet = this.Space.CreateAtPosition(this.BulletType, bulletPos);
+            var rotationAngle = Math.ATan2(angle.Y, angle.X);
             if(this.BulletType != null)
             {
                 bullet.RigidBody.ApplyForce(angle * bulletSpeed);
+                
+                bullet.Transform.SetEulerAnglesXYZ(0, 0, rotationAngle);
             }
         }
         if(shotPattern == ShotPatternID.SPREAD)
@@ -42,9 +45,12 @@ class Shoot : ZilchComponent
             {
                 var radAngle = Math.ATan2(angle.X, angle.Y) - (i-(this.SpreadBullets/2))*(Math.Pi/(this.SpreadBullets*2)); //atan2 returns a radian -pi to pi for any normalized vector.
                 var newAngle = Real3(Math.Sin(radAngle), Math.Cos(radAngle), 0);
+                var rotationAngle = Math.ATan2(newAngle.Y, newAngle.X);
                 var bulletPos = this.Owner.Transform.Translation + newAngle;
                 var bullet = this.Space.CreateAtPosition(this.BulletType, bulletPos);
                 bullet.RigidBody.ApplyForce(newAngle * bulletSpeed);
+                
+                bullet.Transform.SetEulerAnglesXYZ(0, 0, rotationAngle);
             }
         }
         
@@ -57,7 +63,10 @@ class Shoot : ZilchComponent
             {
                 var bullet = this.Space.CreateAtPosition(this.BulletType, this.Owner.Transform.Translation);
                 var fireDir = Real3(Math.Cos(currentAngle), Math.Sin(currentAngle), 0);
+                var rotationAngle = Math.ATan2(fireDir.Y, fireDir.X);
                 bullet.RigidBody.ApplyForce(fireDir * bulletSpeed);
+                
+                bullet.Transform.SetEulerAnglesXYZ(0, 0, rotationAngle);
                 
                 currentAngle += angleStep;
             }
