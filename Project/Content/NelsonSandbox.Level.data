@@ -112,7 +112,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-1.64056, -1.30626, 50],
+			Vec3 Translation = [7.67157, -0.893306, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -124,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 32.8892,
+			float Size = 36.3482,
 		},
 		EditorCameraController = 
 		{
@@ -132,7 +132,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-1.64056, -1.30626, -1.27291e-007],
+			Vec3 LookTarget = [7.67157, -0.893306, 2.79755e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -654,122 +654,20 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "584fd2007ec97999:TMSquare22",
+		string Name = "584fd6f9f9cdb9ac:TMTriLine",
 		LinkId = 
 		{
 			uint Id = 16,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.0857845, -0.0116419, 0],
+			Vec3 Translation = [-0.00662791, 0.30421, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Named = 
 		{
 			string Name = "TileMap",
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 17,
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-		Archetyped = 
-		{
-			string Name = "587c1333d2cf95cb:FlamingTotem",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [3.18049, 5.87683, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 0, 0, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "585fa9b4d9ed16a3:Texture_PileOfBones000",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		Orientation = 
-		{
-			Vec3 GlobalUp = [0, 1, 0],
-			Vec3 UpVector = [0, 0, 1],
-			Vec3 ForwardVector = [0, 1, 0],
-			OrientationBases DefaultBases = ForwardYUpZ,
-		},
-		EnemyShoot = 
-		{
-			float BulletDelay = 2,
-			float BulletSpeed = 75,
-			Enum ShotPattern = RING,
-			string ShootSound = "",
-			string WalkAnimation = "",
-			string AttackAnimation = "",
-			float BurstDelay = 0,
-			int BurstCount = 1,
-		},
-		Shoot = 
-		{
-			string BulletType = "580e65c5299defb0:EnemyBullet",
-			int RingCount = 18,
-			float RingOffset = 90,
-			int SpreadBullets = 3,
-		},
-		HitpointScript = 
-		{
-			int PrivateHP = 15,
-			int MaxHP = 15,
-			string HurtSound = "",
-			string DeathSound = "",
-			float HurtDuration = 0.1,
-			string SpawnOnDeath = "587c02da03a631fd:Fireling",
-			int SpawnCount = 4,
-		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "580e65c5299dde20:Enemy",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.5, 0.5, 0.5],
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "584fefeabfc0ca66:AnimatedGolem",
-		LinkId = 
-		{
-			uint Id = 18,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-9.16721, -2.97383, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
 		},
 	},
 },
