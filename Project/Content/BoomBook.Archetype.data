@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-1.74903, 9.14296, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [0.5, 0.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -60,7 +60,8 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 3,
+		int PrivateHP = 2,
+		int MaxHP = 5,
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,

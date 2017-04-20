@@ -17,6 +17,9 @@
 //      10        20        30        40        50        60        70        80        90       100
 class HeartPickupScript : ZilchComponent
 {
+    [Property]
+    var HealthToHeal : Integer = 2;
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
@@ -26,7 +29,7 @@ class HeartPickupScript : ZilchComponent
     {
         if(event.OtherObject.Name != "Player")
             return;
-        event.OtherObject.HitpointScript.HP += 1;
+        event.OtherObject.HitpointScript.HP += this.HealthToHeal;
         this.Owner.Destroy();
     }
 }

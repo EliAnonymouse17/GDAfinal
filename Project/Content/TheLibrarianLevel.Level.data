@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0.798213, 6.16386, 50],
+			Vec3 Translation = [-1.86164, 6.35986, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0.798213, 6.16386, 3.71217e-007],
+			Vec3 LookTarget = [-1.86164, 6.35986, 3.37935e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -228,6 +228,13 @@ Level =
 		SpellSwitchHandler = 
 		{
 		},
+		PlayerAnimations = 
+		{
+			string PlayerStand = "585fc298140f20a7:Texture_WandmanFront000",
+			string PlayerWalkSide = "58586c83879fbdf0:animation_WandmanWalkRight",
+			string PlayerWalkUp = "58586c25bcd98f54:animation_WandmanWalkBack",
+			string PlayerWalkDown = "58586dcfa50649dc:animation_WandmanWalkForward",
+		},
 		Hierarchy = 
 		{
 			Cog = 
@@ -242,7 +249,7 @@ Level =
 				},
 				Transform = 
 				{
-					Vec3 Translation = [-0.0133206, -0.0444493, 40],
+					Vec3 Translation = [-0.0133206, 1.10559, 40],
 					Vec3 Scale = [1, 1, 1],
 					Quat Rotation = [0, 0, 0, 1],
 				},
@@ -254,7 +261,7 @@ Level =
 					float FieldOfView = 45,
 					float NearPlane = 0.5,
 					float FarPlane = 200,
-					float Size = 20,
+					float Size = 25,
 				},
 				Microphone = 
 				{
