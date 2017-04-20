@@ -66,15 +66,6 @@ Level =
 			Vec2 Resolution = [1280, 720],
 			Vec4 MarginColor = [0, 0, 0, 1],
 		},
-		ForwardRenderer = 
-		{
-			Vec4 ClearColor = [0.155, 0.155, 0.155, 1],
-			bool DrawNonVisible = false,
-			bool DrawDebugObjects = true,
-			bool DrawEditorIcons = true,
-			bool EditorIconDepth = true,
-			bool Wireframe = false,
-		},
 		GridDraw = 
 		{
 			bool Active = true,
@@ -90,6 +81,24 @@ Level =
 			int HilightInterval = 10,
 			bool FollowEditorCamera = false,
 		},
+		DeferredRenderer = 
+		{
+			Vec4 ClearColor = [0, 0, 0, 1],
+			bool DrawNonVisible = false,
+			bool DrawDebugObjects = true,
+			bool DrawEditorIcons = true,
+			bool EditorIconDepth = true,
+			bool Hdr = true,
+			bool Shadows = true,
+			bool AntiAliasing = false,
+			bool Refraction = true,
+			bool Reflections = true,
+			string ReflectionEnvironmentName = "4fab71e8bcb7a8ce:DefaultTexture",
+			bool GodRays = true,
+			bool RenderMasks = false,
+			bool Glow = false,
+			float GlowThreshold = 1,
+		},
 	},
 	Cog = 
 	{
@@ -103,7 +112,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-7.73267, 5.0987, 50],
+			Vec3 Translation = [0.373037, 3.81799, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 29.7594,
+			float Size = 32.8892,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +132,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-7.73267, 5.0987, 3.71217e-007],
+			Vec3 LookTarget = [0.373037, 3.81799, 3.71217e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -242,7 +251,7 @@ Level =
 				},
 				Transform = 
 				{
-					Vec3 Translation = [-0.0133206, -0.0444493, 40],
+					Vec3 Translation = [-0.931742, 5.22194, 40],
 					Vec3 Scale = [1, 1, 1],
 					Quat Rotation = [0, 0, 0, 1],
 				},
@@ -254,7 +263,7 @@ Level =
 					float FieldOfView = 45,
 					float NearPlane = 0.5,
 					float FarPlane = 200,
-					float Size = 20,
+					float Size = 25,
 				},
 				Microphone = 
 				{

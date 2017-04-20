@@ -1,9 +1,9 @@
 class DestroyTimer : ZilchComponent
 {
     [Property]
-    var Time : Real = 0.1;
-    [Property]
-    var WarpScale : Real = 2;
+    var Time : Real = 0.2;
+    //[Property]
+    //var WarpScale : Real = 2;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -12,9 +12,11 @@ class DestroyTimer : ZilchComponent
     function OnLogicUpdate(event : UpdateEvent)
     {
         var warp = this.Owner.ScreenWarpRing;
+        var screenSize = this.LevelSettings.CameraViewport.ViewportResolution.Y;
+        var maxRingSize = screenSize/this.Owner.Transform.Scale.X;
         if(warp != null)
         {
-            warp.Size += event.Dt * this.WarpScale;
+            warp.Size += event.Dt * maxRingSize / this.Time;
             warp.Intensity -= event.Dt *  warp.Intensity / this.Time;
         }
         this.Time -= event.Dt;

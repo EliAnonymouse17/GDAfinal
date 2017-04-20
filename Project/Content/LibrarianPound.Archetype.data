@@ -20,7 +20,7 @@ Cog =
 	},
 	Sprite = 
 	{
-		bool Visible = true,
+		bool Visible = false,
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -66,13 +66,12 @@ Cog =
 	},
 	DestroyTimer = 
 	{
-		float WarpScale = 2,
-		float IntensityFallOff = 5,
+		float Time = 0.2,
 	},
 	ScreenWarpRing = 
 	{
-		float Size = 5,
-		float Thickness = 1,
+		float Size = 0.05,
+		float Thickness = 0.05,
 		float Intensity = 0.1,
 	},
 },
