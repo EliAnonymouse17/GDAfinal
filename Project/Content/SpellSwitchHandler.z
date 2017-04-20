@@ -124,7 +124,7 @@ class SpellSwitchHandler : ZilchComponent
         }
         else if (this.CurrentSpell == SpellTypes.WATERSTREAM)
         {
-            this.SetSpell(200, 1.2, 1, 1, Archetype.WaterBullet, ShotPatternID.SINGLE, 0.02, 6);
+            this.SetSpell(180, 1.2, 1, 1, Archetype.WaterBullet, ShotPatternID.SINGLE, 0.02, 5);
             this.SetSpellHUD(SpriteSource.Circle, "Water Stream", null);
         }
         else if (this.CurrentSpell == SpellTypes.BONESHOT)

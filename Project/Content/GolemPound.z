@@ -4,6 +4,9 @@ class GolemPound : ZilchComponent
     var Delay : Real = 0;
     var Player : Cog;
     var DistFromPlayer : Real = 900;
+    
+    [Property]
+    var DetonationRange : Real = 4;
     function Initialize(init : CogInitializer)
     {
         this.Player = this.Space.FindObjectByName("Player");
@@ -17,7 +20,7 @@ class GolemPound : ZilchComponent
             this.DistFromPlayer = Math.Distance(this.Player.Transform.Translation, this.Owner.Transform.Translation);
         }
         this.Delay -= event.Dt;
-        if (this.Delay <= 0 && this.DistFromPlayer <= 2)
+        if (this.Delay <= 0 && this.DistFromPlayer <= this.DetonationRange)
         {
             this.Space.CreateAtPosition(Archetype.PoundArea, this.Owner.Transform.Translation);
             this.Delay = this.MaxDelay;

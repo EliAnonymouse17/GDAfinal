@@ -112,7 +112,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [1.50295, -0.580129, 50],
+			Vec3 Translation = [7.67157, -0.893306, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -124,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 16.3323,
+			float Size = 36.3482,
 		},
 		EditorCameraController = 
 		{
@@ -132,7 +132,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [1.50295, -0.580129, -7.15686e-008],
+			Vec3 LookTarget = [7.67157, -0.893306, 2.79755e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -224,7 +224,7 @@ Level =
 		HitpointScript = 
 		{
 			int PrivateHP = 6,
-			int MaxHP = 5,
+			int MaxHP = 6,
 			string HurtSound = "",
 			string DeathSound = "",
 			float HurtDuration = 0.25,
@@ -654,38 +654,20 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "584fd2007ec97999:TMSquare22",
+		string Name = "584fd6f9f9cdb9ac:TMTriLine",
 		LinkId = 
 		{
 			uint Id = 16,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.0857845, -0.0116419, 0],
+			Vec3 Translation = [-0.00662791, 0.30421, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Named = 
 		{
 			string Name = "TileMap",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "587c1333d2cf95cb:FlamingTotem",
-		LinkId = 
-		{
-			uint Id = 17,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [3.18049, 5.87683, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
 		},
 	},
 },

@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-9.16721, -2.97383, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -43,6 +43,8 @@ Cog =
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,
+		string SpawnOnDeath = "584ffadd5e943f48:MiniGolem",
+		int SpawnCount = 2,
 	},
 	BoxCollider = 
 	{
