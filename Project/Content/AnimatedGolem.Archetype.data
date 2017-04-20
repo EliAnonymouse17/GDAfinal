@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-5.80677, 7.84868, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -38,7 +38,8 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 15,
+		int PrivateHP = 12,
+		int MaxHP = 5,
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,
@@ -81,7 +82,7 @@ Cog =
 	},
 	EnemyShoot = 
 	{
-		float BulletDelay = 3,
+		float BulletDelay = 4,
 		float BulletSpeed = 100,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "585fc1e7955bc872:ExplodingBulletLaunch",
