@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [6.25898, 5.21298, 0],
+		Vec3 Translation = [7.89661, 8.02915, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -42,7 +42,7 @@ Cog =
 		bool SendsMessages = true,
 		bool Seamless = true,
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-		string SerializedGroupName = "580e65c5299dde20:Enemy",
+		string SerializedGroupName = "587c10e02c261d51:FollowerEnemy",
 		Vec3 Offset = [0.05, 0, 0],
 		Vec3 Size = [0.3, 0.5, 0.5],
 	},

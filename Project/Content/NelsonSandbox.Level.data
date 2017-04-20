@@ -216,7 +216,7 @@ Level =
 		},
 		Shoot = 
 		{
-			string BulletType = "5873834ea3abcd96:BoneShot",
+			string BulletType = "5815eae6be2978a9:Bullet",
 			int RingCount = 111,
 			float RingOffset = 90,
 			int SpreadBullets = 3,
@@ -751,6 +751,24 @@ Level =
 		{
 			Vec3 Translation = [-3.59299, 8.40897, 0],
 			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584d30a5b4310262:Zombie",
+		LinkId = 
+		{
+			uint Id = 22,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [4.2883, 3.5979, 0],
+			Vec3 Scale = [1.2, 1.2, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Named = 

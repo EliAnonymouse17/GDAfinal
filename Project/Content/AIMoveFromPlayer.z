@@ -18,6 +18,8 @@ class AIMoveFromPlayer : ZilchComponent
     function OnLogicUpdate(event : UpdateEvent)
     {
         var playerPos : Real3 = Real3(0,0,0);
+        var randGen : Random = Random();
+        var randomAngle = Real3(randGen.Range(-0.2, 0.2), randGen.Range(-0.2, 0.2), 0);
         var angle : Real3 = Real3(0,0,0);
         if (this.Player != null)
         {
@@ -33,7 +35,7 @@ class AIMoveFromPlayer : ZilchComponent
         }
         if (this.BubbleBool == false)
         {
-            this.Owner.RigidBody.Velocity = angle * this.MoveSpeed;
+            this.Owner.RigidBody.Velocity = (angle+randomAngle) * this.MoveSpeed;
         }
         this.BubbleTimer -= event.Dt;
         if (this.BubbleTimer <= 0)

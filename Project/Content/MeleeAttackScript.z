@@ -23,7 +23,7 @@ class MeleeAttackScript : ZilchComponent
     
     function OnCollisionPersist(event : CollisionEvent)
     {
-        if (event.OtherObject.HitpointScript != null && this.AttackTimer <= 0)
+        if (event.OtherObject.HitpointScript != null && this.AttackTimer <= 0 && event.OtherObject.Name == "Player")
         {
             event.OtherObject.HitpointScript.HP -= this.Damage;
             this.Owner.HitpointScript.HP -= this.RecoilDamage;

@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0.246597, 5.77828, 50],
+			Vec3 Translation = [-0.452966, 0.327601, 64.75],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0.246597, 5.77828, 3.71217e-007],
+			Vec3 LookTarget = [-0.452966, 0.327601, 14.75],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -180,6 +180,8 @@ Level =
 			Enum ShotPattern = SINGLE,
 			string ShootSound = "",
 			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
 		},
 		BoxCollider = 
 		{
@@ -213,12 +215,15 @@ Level =
 		HitpointScript = 
 		{
 			int PrivateHP = 6,
+			int MaxHP = 6,
 			string HurtSound = "",
 			string DeathSound = "",
 			float HurtDuration = 0.1,
 		},
 		PlayerFade = 
 		{
+			float Cooldown = 2,
+			float FadeDuration = 1,
 		},
 		SpellSwitchHandler = 
 		{
@@ -249,7 +254,7 @@ Level =
 					float FieldOfView = 45,
 					float NearPlane = 0.5,
 					float FarPlane = 200,
-					float Size = 20,
+					float Size = 25,
 				},
 				Microphone = 
 				{
