@@ -49,14 +49,18 @@ class PlayerFade : ZilchComponent
         
         if (Zero.Keyboard.KeyIsPressed(Keys.Space) && this.TimeLeft <= 0)
         {
+            
             this.Owner.BoxCollider.CollisionGroup = CollisionGroup.Find("PlayerFaded");
-            this.Owner.Sprite.Color = Real4(1, 1, 1, 0.5);
             this.Duration = this.FadeDuration;
             this.FadeIsActive = true;
             this.TimeLeft = this.Cooldown;
+            
+            var seq = Action.Sequence(this.Owner.Actions);
+            Action.Property(seq, @this.Owner.Sprite.Color, Real4(1, 1, 1, 0.2), this.FadeDuration, Ease.Linear);
         }
         if (this.Duration <= 0)
         {
+            this.Owner.Actions.Cancel();
             this.Owner.BoxCollider.CollisionGroup = CollisionGroup.Find("Player");
             this.FadeIsActive = false;
             this.Owner.Sprite.Color = Real4(1, 1, 1, 1);
