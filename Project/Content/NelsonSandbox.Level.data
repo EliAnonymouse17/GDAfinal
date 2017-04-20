@@ -112,7 +112,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [3.3704, 2.86991, 50],
+			Vec3 Translation = [1.50295, -0.580129, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -132,7 +132,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [3.3704, 2.86991, 1.00604e-008],
+			Vec3 LookTarget = [1.50295, -0.580129, -7.15686e-008],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -228,6 +228,8 @@ Level =
 			string HurtSound = "",
 			string DeathSound = "",
 			float HurtDuration = 0.25,
+			string SpawnOnDeath = "",
+			int SpawnCount = 1,
 		},
 		PlayerFade = 
 		{
@@ -670,105 +672,15 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "587c02da03a631fd:Fireling",
+		string Name = "587c1333d2cf95cb:FlamingTotem",
 		LinkId = 
 		{
 			uint Id = 17,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [7.89661, 8.02915, 0],
+			Vec3 Translation = [3.18049, 5.87683, 0],
 			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "587c02da03a631fd:Fireling",
-		LinkId = 
-		{
-			uint Id = 18,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [3.94014, 8.40897, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "587c02da03a631fd:Fireling",
-		LinkId = 
-		{
-			uint Id = 19,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-0.491116, 8.88375, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "587c02da03a631fd:Fireling",
-		LinkId = 
-		{
-			uint Id = 20,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-6.25175, 7.49107, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "587c02da03a631fd:Fireling",
-		LinkId = 
-		{
-			uint Id = 21,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-3.59299, 8.40897, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "584d30a5b4310262:Zombie",
-		LinkId = 
-		{
-			uint Id = 22,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [4.2883, 3.5979, 0],
-			Vec3 Scale = [1.2, 1.2, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Named = 

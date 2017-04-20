@@ -37,6 +37,14 @@ class HitpointScript : ZilchComponent
     
     var SpellDropBool : Boolean = false;
     
+    [Property]
+    var SpawnOnDeath : Archetype = null;
+    
+    [Property]
+    var SpawnCount : Integer = 1;
+    
+    var DidSpawn : Boolean = false;
+    
     //Manipulates HP by accessing through other scripts
     var HP : Integer
     {
@@ -68,6 +76,15 @@ class HitpointScript : ZilchComponent
                     {
                         this.Dead = true;
                         this.Space.DispatchEvent(Events.EnemyDeathEvent, ZilchEvent());
+                    }
+                    if(!this.DidSpawn && this.SpawnOnDeath != null)
+                    {
+                        var position = this.Owner.Transform.WorldTranslation;
+                        this.DidSpawn = true;
+                        for (var i = 0; i < this.SpawnCount; ++i)
+                        {
+                            this.Space.CreateAtPosition(this.SpawnOnDeath, position);
+                        }
                     }
                 }
                 //Special cases that trigger events on destruction
