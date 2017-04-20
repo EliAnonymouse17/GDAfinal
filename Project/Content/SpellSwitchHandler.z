@@ -15,7 +15,29 @@
 ** Changes back to normal collision after timer is up.
 ** --------------------------------------------------------------------------*/
 //      10        20        30        40        50        60        70        80        90       100
-enum SpellTypes {NULL, BASIC, BUBBLETRAP, EXPLODINGBULLET, ICESPEAR, SEEKINGARROW, WATERSTREAM, BONESHOT}
+
+class BasicPlayerShoot : PlayerShoot{}
+class BubbleTrapPlayerShoot : PlayerShoot{}
+class ExplodingBulletPlayerShoot : PlayerShoot{}
+class IceSpearPlayerShoot : PlayerShoot{}
+class SeekingArrowPlayerShoot : PlayerShoot{}
+class WaterStreamPlayerShoot : PlayerShoot{}
+class BoneShotPlayerShoot : PlayerShoot{}
+
+enum SpellTypes 
+    {
+    NULL, 
+    BASIC, 
+    BUBBLETRAP, 
+    EXPLODINGBULLET, 
+    ICESPEAR, 
+    SEEKINGARROW, 
+    WATERSTREAM, 
+    BONESHOT
+    }
+    
+    
+    
 class SpellSwitchHandler : ZilchComponent
 {
     var SpellArray : Array[SpellTypes] = Array[SpellTypes]();
