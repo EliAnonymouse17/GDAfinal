@@ -1,6 +1,15 @@
-class BrainEaterScript : ZilchComponent
+class MeleeAttackScript : ZilchComponent
 {
+    [Property]
+    var AttackDelay : Real = 0.5;
+    
     var AttackTimer : Real = 0;
+    
+    [Property]
+    var Damage : Integer = 1;
+    
+    [Property]
+    var RecoilDamage : Integer = 0;
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Owner, Events.CollisionPersisted, this.OnCollisionPersist);
@@ -16,8 +25,13 @@ class BrainEaterScript : ZilchComponent
     {
         if (event.OtherObject.HitpointScript != null && this.AttackTimer <= 0)
         {
-            event.OtherObject.HitpointScript.HP -= 1;
-            this.AttackTimer = 0.5;
+            event.OtherObject.HitpointScript.HP -= this.Damage;
+            this.Owner.HitpointScript.HP -= this.RecoilDamage;
+            this.AttackTimer = this.AttackDelay;
+        if(event.OtherObject.HitpointScript != null)
+        {
+            event.OtherObject.HitpointScript.HurtBool = true;
+        }
         }
     }
 }

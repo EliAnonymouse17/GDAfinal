@@ -1,8 +1,0 @@
-TextContent = 
-{
-	ZilchScriptBuilder = 
-	{
-		string Name = "BrainEaterScript",
-		uint64 ResourceId = 584d3029a314c457,
-	},
-},
