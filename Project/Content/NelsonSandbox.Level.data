@@ -670,4 +670,22 @@ Level =
 			string Name = "TileMap",
 		},
 	},
+	ArchetypeInstance = 
+	{
+		string Name = "584fefeabfc0ca66:AnimatedGolem",
+		LinkId = 
+		{
+			uint Id = 17,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-11.9818, 2.2766, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+	},
 },
