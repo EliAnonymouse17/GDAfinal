@@ -97,7 +97,7 @@ Cog =
 	BossAttackLogic = 
 	{
 		string StandTexture = "584fced65555e419:NecroAttackAnimation",
-		float AttackDelay1 = 4,
+		float AttackDelay1 = 6,
 		float BulletSpeed1 = 175,
 		Enum ShotPattern1 = RING,
 		string BulletType1 = "580e65c5299defb0:EnemyBullet",
