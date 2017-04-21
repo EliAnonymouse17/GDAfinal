@@ -755,7 +755,7 @@ Level =
 		},
 		TutorialDoorScript = 
 		{
-			string LevelToLoad = "585ef9e0f89a2b0a:HamburgerWizardTest",
+			string LevelToLoad = "582db66f021b067c:PlaytestHamburgerWizard",
 		},
 	},
 },
