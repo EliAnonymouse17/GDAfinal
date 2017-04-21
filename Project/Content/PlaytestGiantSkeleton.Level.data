@@ -171,12 +171,12 @@ Level =
 		},
 		PlayerMove = 
 		{
-			float MoveSpeed = 500,
+			float MoveSpeed = 700,
 		},
 		PlayerShoot = 
 		{
-			float BulletDelay = 0.5,
-			float BulletSpeed = 150,
+			float BulletDelay = 0.7,
+			float BulletSpeed = 120,
 			Enum ShotPattern = SINGLE,
 			string ShootSound = "",
 			bool TimerFreeze = false,
