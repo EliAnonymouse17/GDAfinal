@@ -15,6 +15,25 @@ enum ShotPatternID {SINGLE, SPREAD, RING}
 
 class PlayerShoot : ZilchComponent
 {
+    [Property]
+    var SpellTypes : SpellTypes = SpellTypes.NULL;
+    
+    var Active : Boolean
+    {
+        get
+        {
+            if(this.Owner.SpellSwitchHandler == null) return false;
+            
+            return this.Owner.SpellSwitchHandler.CurrentSpell == this.SpellTypes;
+        }
+        set
+        {
+            if(this.Owner.SpellSwitchHandler == null) return;
+            
+            this.Owner.SpellSwitchHandler.CurrentSpell = this.SpellTypes;
+        }
+    }
+    
     [Property] var BulletDelay : Real = 1; // Time bewteen bursts
     [Property] var BulletSpeed : Real = 1000;
     [Property] var ShotPattern : ShotPatternID = ShotPatternID.SINGLE;
@@ -25,6 +44,8 @@ class PlayerShoot : ZilchComponent
     var BurstTimer : Real = 0;
     [Property] var BurstCount : Integer = 1;
     var ShotsLeft : Integer = 0;
+    
+
 
     var IsBursting : Boolean = false;
     var TimeUntilNextShot : Real = 0;
@@ -35,6 +56,8 @@ class PlayerShoot : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
+        if(!this.Active) return;
+        
         // Tick down time until next burst
         if (this.TimerFreeze == false && this.IsBursting == false)
         {

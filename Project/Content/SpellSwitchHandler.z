@@ -8,7 +8,7 @@
 ** - Nelson Athow
 **
 ** Contributors:
-** - None
+** - Bar Ben-zvi
 **
 ** Description:
 ** Changes player collision group to a collision group that only interacts with default.
@@ -16,6 +16,7 @@
 ** --------------------------------------------------------------------------*/
 //      10        20        30        40        50        60        70        80        90       100
 
+class NullPlayerShoot : PlayerShoot{}
 class BasicPlayerShoot : PlayerShoot{}
 class BubbleTrapPlayerShoot : PlayerShoot{}
 class ExplodingBulletPlayerShoot : PlayerShoot{}
@@ -41,7 +42,21 @@ enum SpellTypes
 class SpellSwitchHandler : ZilchComponent
 {
     var SpellArray : Array[SpellTypes] = Array[SpellTypes]();
-    var CurrentSpell : SpellTypes = SpellTypes.BASIC;
+    var CurrentSpell : SpellTypes
+    {
+        get
+        {
+            return this.SpellArray[this.SpellIndex];
+        }
+        set
+        {
+            var index = this.SpellArray.FindFirstIndex(value);
+            if(index >= 0)
+            {
+                this.SpellIndex = index;
+            }
+        }
+    }
     var PrivateSpellIndex : Integer = 0;
     var SpellIndex : Integer
     {
@@ -96,7 +111,7 @@ class SpellSwitchHandler : ZilchComponent
     function ChangeSpell()
     {
         // Implementation of How spells work
-        this.CurrentSpell = this.SpellArray.Get(this.PrivateSpellIndex);
+        /*this.CurrentSpell = this.SpellArray.Get(this.PrivateSpellIndex);
         if(this.CurrentSpell == SpellTypes.BASIC)
         {
             this.SetSpell(120, 0.7, 1, 1, Archetype.Bullet, ShotPatternID.SINGLE, 0, 1);
@@ -131,7 +146,7 @@ class SpellSwitchHandler : ZilchComponent
         {
             this.SetSpell(1000, 6.5, 1, 1, Archetype.BoneShot, ShotPatternID.SINGLE, 0, 1);
             this.SetSpellHUD(SpriteSource.Texture_Bone, "Bone Shot", null);
-        }
+        }*/
     }
     
     function Initialize(init : CogInitializer)
