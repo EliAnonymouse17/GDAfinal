@@ -36,7 +36,7 @@ class Shoot : ZilchComponent
             {
                 bullet.RigidBody.ApplyForce(angle * bulletSpeed);
                 
-                bullet.Transform.SetEulerAnglesXYZ(0, 0, rotationAngle);
+                bullet.Transform.SetEulerAnglesXYZ(0, 0, rotationAngle - 3.14/2);
             }
         }
         if(shotPattern == ShotPatternID.SPREAD)
@@ -50,7 +50,7 @@ class Shoot : ZilchComponent
                 var bullet = this.Space.CreateAtPosition(this.BulletType, bulletPos);
                 bullet.RigidBody.ApplyForce(newAngle * bulletSpeed);
                 
-                bullet.Transform.SetEulerAnglesXYZ(0, 0, rotationAngle);
+                bullet.Transform.SetEulerAnglesXYZ(0, 0, rotationAngle - 3.14/2);
             }
         }
         
@@ -66,7 +66,7 @@ class Shoot : ZilchComponent
                 var rotationAngle = Math.ATan2(fireDir.Y, fireDir.X);
                 bullet.RigidBody.ApplyForce(fireDir * bulletSpeed);
                 
-                bullet.Transform.SetEulerAnglesXYZ(0, 0, rotationAngle);
+                bullet.Transform.SetEulerAnglesXYZ(0, 0, rotationAngle - 3.14/2);
                 
                 currentAngle += angleStep;
             }
