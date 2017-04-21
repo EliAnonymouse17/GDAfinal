@@ -1,5 +1,8 @@
 class TutorialDoorScript : ZilchComponent
 {
+    [Property]
+    var LevelToLoad : Level = null;
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
@@ -7,6 +10,6 @@ class TutorialDoorScript : ZilchComponent
 
     function OnCollisionStarted(event : CollisionEvent)
     {
-        this.Space.LoadLevel(Level.HamburgerWizardTest);
+        this.Space.LoadLevel(this.LevelToLoad);
     }
 }

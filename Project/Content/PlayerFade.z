@@ -56,14 +56,15 @@ class PlayerFade : ZilchComponent
             this.TimeLeft = this.Cooldown;
             
             var seq = Action.Sequence(this.Owner.Actions);
-            Action.Property(seq, @this.Owner.Sprite.Color, Real4(1, 1, 1, 0.2), this.FadeDuration, Ease.Linear);
+            Action.Property(seq, @this.Owner.Sprite.Color, Real4(1, 1, 1, 0.2), this.FadeDuration / 2, Ease.Linear);
         }
         if (this.Duration <= 0)
         {
             this.Owner.Actions.Cancel();
             this.Owner.BoxCollider.CollisionGroup = CollisionGroup.Find("Player");
             this.FadeIsActive = false;
-            this.Owner.Sprite.Color = Real4(1, 1, 1, 1);
+            var seq = Action.Sequence(this.Owner.Actions);
+            Action.Property(seq, @this.Owner.Sprite.Color, Real4(1, 1, 1, 1), this.FadeDuration / 2, Ease.Linear);
             this.Duration = this.FadeDuration;
         }
     }

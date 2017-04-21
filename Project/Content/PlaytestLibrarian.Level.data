@@ -49,7 +49,7 @@ Level =
 			},
 			CogPath Camera = 
 			{
-				string Path = ":/Player/Camera",
+				string Path = ":/Camera",
 				bool ErrorOnResolveToNull = false,
 				bool ErrorOnPathCantCompute = false,
 				bool ErrorOnDirectLinkFail = false,
@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [11.3855, 2.72542, 49.999],
+			Vec3 Translation = [-0.611871, 6.3856, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 26.9274,
+			float Size = 29.7594,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [11.3855, 2.72542, -0.00100031],
+			Vec3 LookTarget = [-0.611871, 6.3856, 3.37935e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -135,29 +135,11 @@ Level =
 			bool Wireframe = false,
 		},
 	},
-	ArchetypeInstance = 
-	{
-		string Name = "584fd6f9f9cdb9ac:TMTriLine",
-		LinkId = 
-		{
-			uint Id = 4,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [13.2894, 0.0498519, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "TileMap",
-		},
-	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 5,
+			uint Id = 4,
 		},
 		Named = 
 		{
@@ -165,8 +147,8 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0.0133206, 0.0444493, 0],
-			Vec3 Scale = [1, 1, 1],
+			Vec3 Translation = [-0.915757, -3.24035, 0],
+			Vec3 Scale = [1.2, 1.2, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Sprite = 
@@ -189,12 +171,12 @@ Level =
 		},
 		PlayerMove = 
 		{
-			float MoveSpeed = 500,
+			float MoveSpeed = 700,
 		},
 		PlayerShoot = 
 		{
-			float BulletDelay = 1,
-			float BulletSpeed = 200,
+			float BulletDelay = 0.5,
+			float BulletSpeed = 100,
 			Enum ShotPattern = SINGLE,
 			string ShootSound = "",
 			bool TimerFreeze = false,
@@ -209,7 +191,7 @@ Level =
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 			string SerializedGroupName = "580e65c5299c6b69:Player",
 			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.5, 0.5, 0.5],
+			Vec3 Size = [0.35, 0.55, 0.5],
 		},
 		RigidBody = 
 		{
@@ -228,12 +210,12 @@ Level =
 			string BulletType = "5815eae6be2978a9:Bullet",
 			int RingCount = 10,
 			float RingOffset = 90,
-			int SpreadBullets = 3,
+			int SpreadBullets = 200,
 		},
 		HitpointScript = 
 		{
 			int PrivateHP = 6,
-			int MaxHP = 5,
+			int MaxHP = 6,
 			string HurtSound = "",
 			string DeathSound = "",
 			float HurtDuration = 0.1,
@@ -269,7 +251,7 @@ Level =
 				},
 				Transform = 
 				{
-					Vec3 Translation = [-0.0133206, -0.0444493, 40],
+					Vec3 Translation = [-0.0133206, 1.10559, 40],
 					Vec3 Scale = [1, 1, 1],
 					Quat Rotation = [0, 0, 0, 1],
 				},
@@ -281,7 +263,7 @@ Level =
 					float FieldOfView = 45,
 					float NearPlane = 0.5,
 					float FarPlane = 200,
-					float Size = 15,
+					float Size = 25,
 				},
 				Microphone = 
 				{
@@ -293,7 +275,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 6,
+							uint Id = 5,
 						},
 						Named = 
 						{
@@ -301,7 +283,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-10.316, 6.8594, -20],
+							Vec3 Translation = [-13.4385, 7.63469, -20],
 							Vec3 Scale = [6, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -328,7 +310,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 7,
+							uint Id = 6,
 						},
 						Named = 
 						{
@@ -336,7 +318,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-10.566, 7.3594, -20],
+							Vec3 Translation = [-13.6885, 8.13469, -20],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -360,15 +342,12 @@ Level =
 						HUDHP = 
 						{
 						},
-						Hierarchy = 
-						{
-						},
 					},
 					Cog = 
 					{
 						LinkId = 
 						{
-							uint Id = 8,
+							uint Id = 7,
 						},
 						Named = 
 						{
@@ -376,7 +355,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-6.81599, 7.3594, -20],
+							Vec3 Translation = [-9.9385, 8.13469, -20],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -405,7 +384,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 9,
+							uint Id = 8,
 						},
 						Named = 
 						{
@@ -413,7 +392,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-13.3419, 5.279, -20],
+							Vec3 Translation = [-16.4644, 6.05429, -20],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -444,7 +423,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 10,
+									uint Id = 9,
 								},
 								Named = 
 								{
@@ -481,7 +460,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 11,
+							uint Id = 10,
 						},
 						Named = 
 						{
@@ -489,13 +468,13 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-11.7788, 3.87259, -20],
+							Vec3 Translation = [-20.3372, 5.64809, -20],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
 						Sprite = 
 						{
-							bool Visible = true,
+							bool Visible = false,
 							bool VisibilityCulling = true,
 							bool VisibilityEvents = true,
 							bool CastShadows = false,
@@ -517,7 +496,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 12,
+									uint Id = 11,
 								},
 								Named = 
 								{
@@ -525,7 +504,7 @@ Level =
 								},
 								Transform = 
 								{
-									Vec3 Translation = [-0.0302734, 0, 1],
+									Vec3 Translation = [5.40567, -1.00021, 1],
 									Vec3 Scale = [2, 2, 1],
 									Quat Rotation = [0, 0, 0, 1],
 								},
@@ -552,7 +531,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 13,
+									uint Id = 12,
 								},
 								Named = 
 								{
@@ -560,7 +539,7 @@ Level =
 								},
 								Transform = 
 								{
-									Vec3 Translation = [-1.20519, -0.616958, -0.000999451],
+									Vec3 Translation = [4.23075, -1.61717, -0.000999546],
 									Vec3 Scale = [1, 1, 1],
 									Quat Rotation = [0, 0, 0, 1],
 								},
@@ -584,6 +563,44 @@ Level =
 							},
 						},
 					},
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 13,
+						},
+						Named = 
+						{
+							string Name = "Minimap",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [15, -5, -10],
+							Vec3 Scale = [7, 7, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						Sprite = 
+						{
+							bool Visible = true,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [1, 1, 1, 0.9999],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string SpriteSource = "5275aa4d802dd6dc:Square",
+							bool RenderMask = false,
+							bool FlipX = false,
+							bool FlipY = false,
+							bool AnimationActive = true,
+							float AnimationSpeed = 1,
+							uint StartFrame = 0,
+						},
+						Minimap = 
+						{
+						},
+					},
 				},
 			},
 		},
@@ -596,11 +613,53 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "Tutorial NPC",
+			string Name = "Room",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-3.72086, 5.01721, 0],
+			Vec3 Translation = [0, 0, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		RoomScript = 
+		{
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584e01664b4e55af:HeartPickup",
+		LinkId = 
+		{
+			uint Id = 15,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [2.96051, -0.398743, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Heart Pickup",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 16,
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+		Archetyped = 
+		{
+			string Name = "58681d50bb219a4c:TheLibrarian",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-1, 13.5, 0.1],
 			Vec3 Scale = [1.5, 1.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -614,128 +673,7 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "58472d641bdb8518:Texture_HamburgerWizard",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		CapsuleCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "4e740859314e5515:DefaultGroup",
-			Vec3 Offset = [-0.05, -0.1, 0],
-			float Radius = 0.35,
-			float Height = 0.6,
-			uint Direction = 1,
-		},
-		TutorialProgression = 
-		{
-		},
-		Hierarchy = 
-		{
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 15,
-				},
-				Named = 
-				{
-					string Name = "Tutorial Text",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [-0.297, -0.686342, 0],
-					Vec3 Scale = [0.666667, 0.666667, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				SpriteText = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [1, 1, 1, 1],
-					BlendMode BlendMode = Alpha,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string FontName = "4e7bac697bec55c5:Verdana",
-					uint FontSize = 24,
-					string Text = "",
-					TextAlign Align = Left,
-					float PixelsPerUnit = 64,
-					bool Smoothing = true,
-				},
-			},
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 16,
-				},
-				Named = 
-				{
-					string Name = "Tutorial Text2",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0.412423, 0.451544, 0],
-					Vec3 Scale = [0.666667, 0.666667, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				SpriteText = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [1, 1, 1, 1],
-					BlendMode BlendMode = Alpha,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string FontName = "4e7bac697bec55c5:Verdana",
-					uint FontSize = 24,
-					string Text = "Press F to talk.",
-					TextAlign Align = Left,
-					float PixelsPerUnit = 64,
-					bool Smoothing = true,
-				},
-			},
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 17,
-		},
-		Named = 
-		{
-			string Name = "TutorialDoor",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [31, 0, 0],
-			Vec3 Scale = [1, 3, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = false,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0, 0, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5275aa4d802dd6dc:Square",
+			string SpriteSource = "584fced65555e419:NecroAttackAnimation",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -749,13 +687,371 @@ Level =
 			bool SendsMessages = true,
 			bool Seamless = true,
 			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "58e7a2ca3abd68ad:Door",
-			Vec3 Offset = [0, 0, 0],
-			Vec3 Size = [0.5, 0.5, 0.5],
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
+			Vec3 Offset = [-0.05, 0, 0],
+			Vec3 Size = [0.325, 1, 0.5],
 		},
-		TutorialDoorScript = 
+		RigidBody = 
 		{
-			string LevelToLoad = "585ef9e0f89a2b0a:HamburgerWizardTest",
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		HitpointScript = 
+		{
+			int PrivateHP = 60,
+			int MaxHP = 5,
+			string HurtSound = "",
+			string DeathSound = "",
+			float HurtDuration = 0.1,
+			string SpawnOnDeath = "",
+			int SpawnCount = 1,
+		},
+		Shoot = 
+		{
+			string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
+			int RingCount = 100,
+			float RingOffset = 90,
+			int SpreadBullets = 5,
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 1, 0],
+			Vec3 UpVector = [0, 0, 1],
+			Vec3 ForwardVector = [0, 1, 0],
+			OrientationBases DefaultBases = ForwardYUpZ,
+		},
+		SpellDrop = 
+		{
+			Enum SpellDrop1 = EXPLODINGBULLET,
+			Enum SpellDrop2 = SEEKINGARROW,
+			Enum SpellDrop3 = ICESPEAR,
+			string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
+			string SpellDropSprite2 = "5852c59e8c1f9264:Texture_SeekingArrow",
+			string SpellDropSprite3 = "5858739c8bef319d:Texture_BigIce",
+			bool TreasureDropBool = false,
+		},
+		BossHealthBarScript = 
+		{
+			float HealthBarSize = 15,
+		},
+		BossAttackLogic = 
+		{
+			string StandTexture = "584fced65555e419:NecroAttackAnimation",
+			float AttackDelay1 = 4,
+			float BulletSpeed1 = 125,
+			Enum ShotPattern1 = SPREAD,
+			string BulletType1 = "580e65c5299defb0:EnemyBullet",
+			string AttackAnimation1 = "",
+			float BurstDelay1 = 0.03,
+			int BurstCount1 = 6,
+			Vec4 Space1 = [1, 1, 1, 1],
+			float AttackDelay2 = 2,
+			float BulletSpeed2 = 1000,
+			Enum ShotPattern2 = SINGLE,
+			string BulletType2 = "5866d949db695a28:EnemyArrow",
+			string AttackAnimation2 = "",
+			float BurstDelay2 = 0,
+			int BurstCount2 = 1,
+			Vec4 Space2 = [1, 1, 1, 1],
+			float AttackDelay3 = 22,
+			float BulletSpeed3 = 1000,
+			Enum ShotPattern3 = SINGLE,
+			string BulletType3 = "5868238f9aba4218:LibrarianRock",
+			string AttackAnimation3 = "",
+			float BurstDelay3 = 0,
+			int BurstCount3 = 1,
+			Vec4 Space3 = [1, 1, 1, 1],
+			float ChallengeAttackDelay1 = 7,
+			float ChallengeBulletSpeed1 = 1000,
+			Enum ChallengeShotPattern1 = SINGLE,
+			string ChallengeBulletType1 = "5866e54b88d72e10:BoomBook",
+			float BurstDelay4 = 1,
+			int BurstCount4 = 3,
+			Vec4 Space4 = [1, 1, 1, 1],
+			float ChallengeAttackDelay2 = 2,
+			float ChallengeBulletSpeed2 = 210,
+			Enum ChallengeShotPattern2 = SINGLE,
+			string ChallengeBulletType2 = "5866d949db695a28:EnemyArrow",
+			float BurstDelay5 = 0.3,
+			int BurstCount5 = 3,
+			Vec4 Space5 = [1, 1, 1, 1],
+			float ChallengeAttackDelay3 = 0.2,
+			float ChallengeBulletSpeed3 = 150,
+			Enum ChallengeShotPattern3 = SINGLE,
+			string ChallengeBulletType3 = "580e65c5299defb0:EnemyBullet",
+			float BurstDelay6 = 0.02,
+			int BurstCount6 = 4,
+			float StageSwitch = 20,
+			Vec4 ChallengeColor = [0, 0, 1, 1],
+		},
+		LibrarianTeleport = 
+		{
+			string TeleportAnimation = "584fdb207bf8dc4b:NecroMoveAnimation",
+			string OriginalTexture = "584fced65555e419:NecroAttackAnimation",
+			float TeleportDelay = 5.5,
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 17,
+				},
+				Named = 
+				{
+					string Name = "BossHealthBar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.00219029, -1.13192, 8],
+					Vec3 Scale = [0.4, 0.4, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 0, 0, 0.5],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+			},
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 18,
+		},
+		Named = 
+		{
+			string Name = "TeleportRune",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-20.5, 13.5, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "582117b7e380f555:texture_Rune1",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		TeleportRuneAnimations = 
+		{
+			string StillTexture = "582117b7e380f555:texture_Rune1",
+			string RuneAnimation = "5823824b8605fb40:Animation_Rune1",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 19,
+		},
+		Named = 
+		{
+			string Name = "TeleportRune",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-10.5, 13.5, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5821176b4a96cb09:texture_Rune2",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		TeleportRuneAnimations = 
+		{
+			string StillTexture = "5821176b4a96cb09:texture_Rune2",
+			string RuneAnimation = "58238da9e312d1a5:Animation_Rune2",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 20,
+		},
+		Named = 
+		{
+			string Name = "TeleportRune",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-1, 13.5, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "58211757a28a8a34:texture_Rune3",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		TeleportRuneAnimations = 
+		{
+			string StillTexture = "58211757a28a8a34:texture_Rune3",
+			string RuneAnimation = "58238d8cc1641e86:Animation_Rune3",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 21,
+		},
+		Named = 
+		{
+			string Name = "TeleportRune",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [9, 13.5, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "582116e5c3fcaaaf:texture_Rune4",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		TeleportRuneAnimations = 
+		{
+			string StillTexture = "582116e5c3fcaaaf:texture_Rune4",
+			string RuneAnimation = "58238ddd2ab6c774:Animation_Rune4",
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 22,
+		},
+		Named = 
+		{
+			string Name = "TeleportRune",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [18.5, 13.5, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "582116c03b9e4e94:texture_Rune5",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		TeleportRuneAnimations = 
+		{
+			string StillTexture = "582116c03b9e4e94:texture_Rune5",
+			string RuneAnimation = "58238d330821d465:Animation_Rune5",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584fd89208ba642f:TMSquare24",
+		LinkId = 
+		{
+			uint Id = 23,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-1.06941, 5.28007, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "TileMap",
 		},
 	},
 },

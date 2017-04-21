@@ -48,8 +48,8 @@ Cog =
 	},
 	SpellScrollScript = 
 	{
-		Enum Spell = BUBBLETRAP,
-		string SpellIcon = "583a1b2cfe6b1569:Texture_BubbleBullet",
+		Enum Spell = WATERSTREAM,
+		string SpellIcon = "587c2c7990aee772:Texture_Raindrop",
 	},
 	TutorialObjectScript = 
 	{

@@ -72,6 +72,10 @@ class HitpointScript : ZilchComponent
                         
                         this.SpellDropBool = true;
                     }
+                    if(this.Owner.ChangeLevelOnDeath != null)
+                    {
+                        this.Space.LoadLevel(this.Owner.ChangeLevelOnDeath.LevelToLoad);
+                    }
                     if(!this.Dead)
                     {
                         this.Dead = true;

@@ -65,6 +65,8 @@ Cog =
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,
+		string SpawnOnDeath = "",
+		int SpawnCount = 1,
 	},
 	Shoot = 
 	{

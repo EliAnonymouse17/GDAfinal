@@ -11,7 +11,7 @@ class TutorialProgression : ZilchComponent
         this.TextArray.Add("Left-click to cast a spell.");
         this.TextArray.Add("Try hitting that target over there.");
         this.TextArray.Add("Good job!\nBut no wizard worth their salt knows only one spell!");
-        this.TextArray.Add("Go pick up that scroll.\nIt contains the Bubble Trap Spell, which you may find useful.");
+        this.TextArray.Add("Go pick up that scroll.\nIt contains the Water Stream Spell, which you may find useful.");
         this.TextArray.Add("You can switch between spells using the scroll wheel,\nor Q and E.");
         this.TextArray.Add("You may have noticed that the spell you are currently using\nis displayed in the upper left-hand corner of your screen.");
         this.TextArray.Add("Above this display are your health bar and your fade bar.\nYour health bar displays your current health.");
