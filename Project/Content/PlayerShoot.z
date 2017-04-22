@@ -34,6 +34,9 @@ class PlayerShoot : ZilchComponent
         }
     }
     
+    [Property] var SpreadBullets : Integer = 3;
+    [Property] var RingCount : Integer = 10;
+    [Property] var BulletType : Archetype = Archetype.Bullet;
     [Property] var BulletDelay : Real = 1; // Time bewteen bursts
     [Property] var BulletSpeed : Real = 1000;
     [Property] var ShotPattern : ShotPatternID = ShotPatternID.SINGLE;
@@ -71,6 +74,9 @@ class PlayerShoot : ZilchComponent
         // Start a new burst
         if(Zero.Mouse.IsButtonDown(MouseButtons.Left) && this.TimeUntilNextShot <= 0 && this.IsBursting == false)
         {
+            this.Owner.Shoot.SpreadBullets = this.SpreadBullets;
+            this.Owner.Shoot.RingCount = this.RingCount;
+            this.Owner.Shoot.BulletType = this.BulletType;
             this.TimeUntilNextShot = this.BulletDelay;
             this.BurstTimer = 0;
             this.ShotsLeft = this.BurstCount;

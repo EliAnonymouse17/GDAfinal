@@ -97,6 +97,9 @@ Cog =
 	NullPlayerShoot = 
 	{
 		Enum SpellTypes = NULL,
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "5815eae6be2978a9:Bullet",
 		float BulletDelay = 1,
 		float BulletSpeed = 1000,
 		Enum ShotPattern = SINGLE,
@@ -108,6 +111,9 @@ Cog =
 	BasicPlayerShoot = 
 	{
 		Enum SpellTypes = BASIC,
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "5815eae6be2978a9:Bullet",
 		float BulletDelay = 1,
 		float BulletSpeed = 100,
 		Enum ShotPattern = SINGLE,
@@ -119,9 +125,12 @@ Cog =
 	BoneShotPlayerShoot = 
 	{
 		Enum SpellTypes = BONESHOT,
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "5815eae6be2978a9:Bullet",
 		float BulletDelay = 1,
-		float BulletSpeed = 1000,
-		Enum ShotPattern = SINGLE,
+		float BulletSpeed = 200,
+		Enum ShotPattern = SPREAD,
 		string ShootSound = "",
 		bool TimerFreeze = false,
 		float BurstDelay = 0,
@@ -130,6 +139,9 @@ Cog =
 	IceSpearPlayerShoot = 
 	{
 		Enum SpellTypes = ICESPEAR,
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "5815eae6be2978a9:Bullet",
 		float BulletDelay = 1,
 		float BulletSpeed = 1000,
 		Enum ShotPattern = SINGLE,
@@ -141,6 +153,9 @@ Cog =
 	BubbleTrapPlayerShoot = 
 	{
 		Enum SpellTypes = BUBBLETRAP,
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "5815eae6be2978a9:Bullet",
 		float BulletDelay = 1,
 		float BulletSpeed = 1000,
 		Enum ShotPattern = SINGLE,
@@ -152,17 +167,23 @@ Cog =
 	WaterStreamPlayerShoot = 
 	{
 		Enum SpellTypes = WATERSTREAM,
-		float BulletDelay = 1,
-		float BulletSpeed = 1000,
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "58737c72bcda6207:WaterBullet",
+		float BulletDelay = 1.2,
+		float BulletSpeed = 180,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
 		bool TimerFreeze = false,
-		float BurstDelay = 0,
-		int BurstCount = 1,
+		float BurstDelay = 0.02,
+		int BurstCount = 5,
 	},
 	SeekingArrowPlayerShoot = 
 	{
 		Enum SpellTypes = SEEKINGARROW,
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "5815eae6be2978a9:Bullet",
 		float BulletDelay = 1,
 		float BulletSpeed = 1000,
 		Enum ShotPattern = SINGLE,
@@ -174,6 +195,9 @@ Cog =
 	ExplodingBulletPlayerShoot = 
 	{
 		Enum SpellTypes = EXPLODINGBULLET,
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "5815eae6be2978a9:Bullet",
 		float BulletDelay = 1,
 		float BulletSpeed = 1000,
 		Enum ShotPattern = SINGLE,
