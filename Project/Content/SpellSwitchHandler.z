@@ -34,13 +34,57 @@ enum SpellTypes
     ICESPEAR, 
     SEEKINGARROW, 
     WATERSTREAM, 
-    BONESHOT
+    BONESHOT,
+    END
     }
     
     
     
 class SpellSwitchHandler : ZilchComponent
 {
+    var CurrentPlayerShoot : PlayerShoot
+    {
+        get
+        {
+            if(this.CurrentSpell == SpellTypes.NULL)
+            {
+                return this.Owner.NullPlayerShoot;
+            }
+            else if(this.CurrentSpell == SpellTypes.BASIC)
+            {
+                return this.Owner.BasicPlayerShoot;
+            }
+            else if(this.CurrentSpell == SpellTypes.BUBBLETRAP)
+            {
+                return this.Owner.BubbleTrapPlayerShoot;
+            }
+            else if(this.CurrentSpell == SpellTypes.EXPLODINGBULLET)
+            {
+                return this.Owner.ExplodingBulletPlayerShoot;
+            }
+            else if(this.CurrentSpell == SpellTypes.ICESPEAR)
+            {
+                return this.Owner.IceSpearPlayerShoot;
+            }
+            else if(this.CurrentSpell == SpellTypes.SEEKINGARROW)
+            {
+                return this.Owner.SeekingArrowPlayerShoot;
+            }
+            else if(this.CurrentSpell == SpellTypes.WATERSTREAM)
+            {
+                return this.Owner.WaterStreamPlayerShoot;
+            }
+            else
+            {
+                return this.Owner.BoneShotPlayerShoot;
+            }
+            
+        }
+        set
+        {
+            
+        }
+    }
     var SpellArray : Array[SpellTypes] = Array[SpellTypes]();
     var CurrentSpell : SpellTypes
     {
@@ -77,9 +121,13 @@ class SpellSwitchHandler : ZilchComponent
             }
         }
     }
+    [Property] 
+    var DebugUnlockAll : Boolean = false;
+    
+    
     
     // Sets all data for the Spell
-    function SetSpell(bulletSpeed : Real, bulletDelay : Real, spreadCount : Integer, ringCount : Integer,
+    /*function SetSpell(bulletSpeed : Real, bulletDelay : Real, spreadCount : Integer, ringCount : Integer,
      bulletType : Archetype, shotPattern : ShotPatternID, burstDelay : Real, burstCount : Integer)
     {
         this.Owner.PlayerShoot.BulletSpeed = bulletSpeed;
@@ -93,25 +141,24 @@ class SpellSwitchHandler : ZilchComponent
         this.Owner.Shoot.BulletType = bulletType;
         this.Owner.Shoot.RingCount = ringCount;
         this.Owner.Shoot.SpreadBullets = spreadCount;
-    }
+    }*/
     
     // Sets hud representation of spell
-    function SetSpellHUD(bulletSprite : SpriteSource, spellName : String, shootSound : SoundCue)
+    function RefreshSpellHUD()
     {
         var childCamera = this.Owner.FindChildByName("Camera");
         
         if(childCamera != null)
         {
-            childCamera.FindChildByName("SpellHUD").FindChildByName("SpellIcon").Sprite.SpriteSource = bulletSprite;
-            childCamera.FindChildByName("SpellHUD").FindChildByName("SpellName").SpriteText.Text = spellName;
+            childCamera.FindChildByName("SpellHUD").FindChildByName("SpellIcon").Sprite.SpriteSource = this.CurrentPlayerShoot.BulletSprite;
+            childCamera.FindChildByName("SpellHUD").FindChildByName("SpellName").SpriteText.Text = this.CurrentPlayerShoot.SpellName;
         }
-        this.Owner.PlayerShoot.ShootSound = shootSound;
         
     }
-    function ChangeSpell()
+    /*function ChangeSpell()
     {
         // Implementation of How spells work
-        /*this.CurrentSpell = this.SpellArray.Get(this.PrivateSpellIndex);
+        this.CurrentSpell = this.SpellArray.Get(this.PrivateSpellIndex);
         if(this.CurrentSpell == SpellTypes.BASIC)
         {
             this.SetSpell(120, 0.7, 1, 1, Archetype.Bullet, ShotPatternID.SINGLE, 0, 1);
@@ -146,21 +193,43 @@ class SpellSwitchHandler : ZilchComponent
         {
             this.SetSpell(1000, 6.5, 1, 1, Archetype.BoneShot, ShotPatternID.SINGLE, 0, 1);
             this.SetSpellHUD(SpriteSource.Texture_Bone, "Bone Shot", null);
-        }*/
+        }
+    }*/
+    
+    function UnlockSpell(spell : SpellTypes, changeTo : Boolean)
+    {
+        if(spell == SpellTypes.NULL)
+        {
+            return;
+        }
+        
+        if(this.SpellArray.FindFirstIndex(spell) < 0)
+        {
+            this.SpellArray.Add(spell);
+        }
+        if(changeTo)
+        {
+            this.CurrentSpell = spell;
+        }
+        
     }
     
     function Initialize(init : CogInitializer)
     {
-        //Starting Spells Go here
-        this.SpellArray.Add(SpellTypes.BASIC);
-        //this.SpellArray.Add(SpellTypes.BUBBLETRAP);
-        //this.SpellArray.Add(SpellTypes.ICESPEAR);
-        // this.SpellArray.Add(SpellTypes.SEEKINGARROW);
-        //this.SpellArray.Add(SpellTypes.EXPLODINGBULLET);
-        this.SpellArray.Add(SpellTypes.WATERSTREAM);
-        //this.SpellArray.Add(SpellTypes.BONESHOT);
+        if(this.DebugUnlockAll)
+        {
+            for(var i = 0; i < SpellTypes.END; ++i)
+            {
+                this.UnlockSpell(i as SpellTypes, false);
+            }
+        }
+        
+        this.UnlockSpell(SpellTypes.BASIC, true);
+        
         Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyUpdate);
         Zero.Connect(this.Space, Events.MouseScroll, this.OnMouseUpdate);
+        
+        this.RefreshSpellHUD();
     }
 
     function OnKeyUpdate(event : KeyboardEvent)
@@ -168,12 +237,12 @@ class SpellSwitchHandler : ZilchComponent
         if (event.Key == Keys.Q)
         {
             this.SpellIndex += 1;
-            this.ChangeSpell();
+            this.RefreshSpellHUD();
         }
         else if (event.Key == Keys.E)
         {
             this.SpellIndex -= 1;
-            this.ChangeSpell();
+            this.RefreshSpellHUD();
         }
         
     }
@@ -188,7 +257,7 @@ class SpellSwitchHandler : ZilchComponent
         {
             this.SpellIndex -= 1;
         }
-        this.ChangeSpell();
+        this.RefreshSpellHUD();
         
     }
 }

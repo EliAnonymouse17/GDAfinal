@@ -16,7 +16,7 @@ enum ShotPatternID {SINGLE, SPREAD, RING}
 class PlayerShoot : ZilchComponent
 {
     [Property]
-    var SpellTypes : SpellTypes = SpellTypes.NULL;
+    var SpellType : SpellTypes = SpellTypes.NULL;
     
     var Active : Boolean
     {
@@ -24,16 +24,18 @@ class PlayerShoot : ZilchComponent
         {
             if(this.Owner.SpellSwitchHandler == null) return false;
             
-            return this.Owner.SpellSwitchHandler.CurrentSpell == this.SpellTypes;
+            return this.Owner.SpellSwitchHandler.CurrentSpell == this.SpellType;
         }
         set
         {
             if(this.Owner.SpellSwitchHandler == null) return;
             
-            this.Owner.SpellSwitchHandler.CurrentSpell = this.SpellTypes;
+            this.Owner.SpellSwitchHandler.CurrentSpell = this.SpellType;
         }
     }
-    
+    [Property] var UnlockAtStart : Boolean = false;
+    [Property] var SpellName : String = "Magic Missile";
+    [Property] var BulletSprite : SpriteSource = SpriteSource.Texture_MagicMissle;
     [Property] var SpreadBullets : Integer = 3;
     [Property] var RingCount : Integer = 10;
     [Property] var BulletType : Archetype = Archetype.Bullet;
@@ -55,6 +57,11 @@ class PlayerShoot : ZilchComponent
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        
+        if(this.Owner.SpellSwitchHandler != null && this.UnlockAtStart)
+        {
+            this.Owner.SpellSwitchHandler.UnlockSpell(this.SpellType, false);
+        }
     }
 
     function OnLogicUpdate(event : UpdateEvent)

@@ -5,6 +5,7 @@ class SpellScrollScript : ZilchComponent
     [Property]
     var SpellIcon : SpriteSource = SpriteSource.Texture_BubbleBullet;
     
+    
     function Initialize(init : CogInitializer)
     {
         this.Owner.FindChildByName("SpellIcon").Sprite.SpriteSource = this.SpellIcon;
@@ -17,7 +18,7 @@ class SpellScrollScript : ZilchComponent
         {
             return;
         }
-        event.OtherObject.SpellSwitchHandler.SpellArray.Add(this.Spell);
+        event.OtherObject.SpellSwitchHandler.UnlockSpell(this.Spell, false);
         this.Owner.Destroy();
     }
 }

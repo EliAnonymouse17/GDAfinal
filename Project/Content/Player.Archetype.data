@@ -86,6 +86,7 @@ Cog =
 	},
 	SpellSwitchHandler = 
 	{
+		bool DebugUnlockAll = false,
 	},
 	PlayerAnimations = 
 	{
@@ -96,7 +97,10 @@ Cog =
 	},
 	NullPlayerShoot = 
 	{
-		Enum SpellTypes = NULL,
+		Enum SpellType = NULL,
+		bool UnlockAtStart = false,
+		string SpellName = "Magic Missile",
+		string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "5815eae6be2978a9:Bullet",
@@ -110,7 +114,10 @@ Cog =
 	},
 	BasicPlayerShoot = 
 	{
-		Enum SpellTypes = BASIC,
+		Enum SpellType = BASIC,
+		bool UnlockAtStart = false,
+		string SpellName = "Magic Missile",
+		string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "5815eae6be2978a9:Bullet",
@@ -124,7 +131,10 @@ Cog =
 	},
 	BoneShotPlayerShoot = 
 	{
-		Enum SpellTypes = BONESHOT,
+		Enum SpellType = BONESHOT,
+		bool UnlockAtStart = false,
+		string SpellName = "Magic Missile",
+		string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "5815eae6be2978a9:Bullet",
@@ -138,7 +148,10 @@ Cog =
 	},
 	IceSpearPlayerShoot = 
 	{
-		Enum SpellTypes = ICESPEAR,
+		Enum SpellType = ICESPEAR,
+		bool UnlockAtStart = false,
+		string SpellName = "Magic Missile",
+		string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "5815eae6be2978a9:Bullet",
@@ -152,12 +165,15 @@ Cog =
 	},
 	BubbleTrapPlayerShoot = 
 	{
-		Enum SpellTypes = BUBBLETRAP,
+		Enum SpellType = BUBBLETRAP,
+		bool UnlockAtStart = false,
+		string SpellName = "Bubble Trap",
+		string BulletSprite = "583a1b2cfe6b1569:Texture_BubbleBullet",
 		int SpreadBullets = 3,
 		int RingCount = 10,
-		string BulletType = "5815eae6be2978a9:Bullet",
-		float BulletDelay = 1,
-		float BulletSpeed = 1000,
+		string BulletType = "582a49e0d54b1b1a:BubbleBullet",
+		float BulletDelay = 1.2,
+		float BulletSpeed = 170,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
 		bool TimerFreeze = false,
@@ -166,7 +182,10 @@ Cog =
 	},
 	WaterStreamPlayerShoot = 
 	{
-		Enum SpellTypes = WATERSTREAM,
+		Enum SpellType = WATERSTREAM,
+		bool UnlockAtStart = false,
+		string SpellName = "Water Stream",
+		string BulletSprite = "587c2c7990aee772:Texture_Raindrop",
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "58737c72bcda6207:WaterBullet",
@@ -180,7 +199,10 @@ Cog =
 	},
 	SeekingArrowPlayerShoot = 
 	{
-		Enum SpellTypes = SEEKINGARROW,
+		Enum SpellType = SEEKINGARROW,
+		bool UnlockAtStart = false,
+		string SpellName = "Magic Missile",
+		string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "5815eae6be2978a9:Bullet",
@@ -194,7 +216,10 @@ Cog =
 	},
 	ExplodingBulletPlayerShoot = 
 	{
-		Enum SpellTypes = EXPLODINGBULLET,
+		Enum SpellType = EXPLODINGBULLET,
+		bool UnlockAtStart = false,
+		string SpellName = "Magic Missile",
+		string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "5815eae6be2978a9:Bullet",
