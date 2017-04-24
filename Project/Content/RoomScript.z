@@ -514,7 +514,7 @@ class RoomScript : ZilchComponent
         {
             item.Destroy();
         }
-        this.Space.FindObjectByName("Player").PlayerShoot.TimerFreeze = false;
+        this.Space.FindObjectByName("Player").SpellSwitchHandler.CurrentPlayerShoot.TimerFreeze = false;
         this.Space.FindObjectByName("TileMap").Destroy();
         if(direction == Directions.RIGHT)
             this.MapPosition += Integer2(1, 0);

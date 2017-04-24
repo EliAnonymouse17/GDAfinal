@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [40, 4.28432, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -31,7 +31,7 @@ Cog =
 	},
 	TileMap = 
 	{
-		string SourceName = "587360666772101a:NelsonSandbox_TileMap05",
+		string SourceName = "5882ea4a889ed515:Level_TileMap35",
 		string PaletteName = "5823179c8dceb415:StandardPalette",
 		float UnitsPerTile = 2,
 		float MeshThickness = 1.2,
@@ -147,7 +147,7 @@ Cog =
 				bool Asleep = false,
 				bool Kinematic = false,
 				bool RotationLocked = false,
-				bool Mode2D = false,
+				bool Mode2D = true,
 				bool AllowSleep = true,
 				bool Inherit2DMode = true,
 				Vec3 Velocity = [0, 0, 0],
@@ -208,7 +208,7 @@ Cog =
 				bool Asleep = false,
 				bool Kinematic = false,
 				bool RotationLocked = false,
-				bool Mode2D = false,
+				bool Mode2D = true,
 				bool AllowSleep = true,
 				bool Inherit2DMode = true,
 				Vec3 Velocity = [0, 0, 0],
@@ -269,7 +269,7 @@ Cog =
 				bool Asleep = false,
 				bool Kinematic = false,
 				bool RotationLocked = false,
-				bool Mode2D = false,
+				bool Mode2D = true,
 				bool AllowSleep = true,
 				bool Inherit2DMode = true,
 				Vec3 Velocity = [0, 0, 0],
@@ -330,7 +330,7 @@ Cog =
 				bool Asleep = false,
 				bool Kinematic = false,
 				bool RotationLocked = false,
-				bool Mode2D = false,
+				bool Mode2D = true,
 				bool AllowSleep = true,
 				bool Inherit2DMode = true,
 				Vec3 Velocity = [0, 0, 0],
