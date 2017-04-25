@@ -1,0 +1,39 @@
+class DeathLevelTransparency : ZilchComponent
+{
+    
+    
+    [Property]
+    var EndColor : Real4 = Real4(1, 1, 1, 1);
+    
+    var TransparencyTimer : Real = 2;
+    
+    var TimerBoolean : Boolean = false;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        
+        if(!this.TimerBoolean)
+        {
+            this.TransparencyTimer -= event.Dt;
+        }
+        
+        if(this.TransparencyTimer <= 0)
+        {
+            var seq = Action.Sequence(this.Owner.Actions);
+            
+            if(this.Owner.Sprite != null)
+            {
+                Action.Property(seq, @this.Owner.Sprite.Color, this.EndColor, 1, Ease.Linear);
+            }
+            else
+            {
+                Action.Property(seq, @this.Owner.SpriteText.Color, this.EndColor, 1, Ease.Linear);
+            }
+        }
+    }
+}

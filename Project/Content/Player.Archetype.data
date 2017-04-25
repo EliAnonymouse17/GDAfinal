@@ -231,6 +231,10 @@ Cog =
 		float BurstDelay = 0,
 		int BurstCount = 1,
 	},
+	ChangeLevelOnDeath = 
+	{
+		string LevelToLoad = "582bf69410c9f0c6:DeathLevel",
+	},
 	Hierarchy = 
 	{
 		Cog = 

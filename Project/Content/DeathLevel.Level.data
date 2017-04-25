@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 20,
+			float Size = 26.9972,
 		},
 		EditorCameraController = 
 		{
@@ -174,46 +174,12 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "QuitText",
+			string Name = "Background",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-1.25769, -3.14339, 0],
-			Vec3 Scale = [2, 2, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		SpriteText = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [0, 0, 0, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string FontName = "4e7bac697bec55c5:Verdana",
-			uint FontSize = 40,
-			string Text = "Quit",
-			TextAlign Align = Left,
-			float PixelsPerUnit = 64,
-			bool Smoothing = true,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 5,
-		},
-		Named = 
-		{
-			string Name = "QuitButton",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [0, -4.02059, 0],
-			Vec3 Scale = [4, 1.5, 1],
+			Vec3 Translation = [0, 0, 0],
+			Vec3 Scale = [40.883, 30.5201, 8.32744],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Sprite = 
@@ -222,7 +188,7 @@ Level =
 			bool VisibilityCulling = true,
 			bool VisibilityEvents = true,
 			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
+			Vec4 Color = [0.33, 0.04455, 0.04455, 0.3],
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -234,18 +200,40 @@ Level =
 			float AnimationSpeed = 1,
 			uint StartFrame = 0,
 		},
-		Reactive = 
+	},
+	Cog = 
+	{
+		LinkId = 
 		{
-			bool Active = true,
-			bool CaptureMouse = false,
+			uint Id = 5,
 		},
-		Area = 
+		Named = 
 		{
-			Vec2 Size = [1, 1],
-			Location Origin = Center,
+			string Name = "WandMan",
 		},
-		QuitGameScript = 
+		Transform = 
 		{
+			Vec3 Translation = [0, 0, 0],
+			Vec3 Scale = [4, 4, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "582bf1a3d92d5626:Animation_WandmanDeath0",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
 		},
 	},
 	Cog = 
@@ -256,46 +244,12 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "DieText",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-1.97674, 3.06202, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		SpriteText = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 0.04, 0.04, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string FontName = "4e7bac697bec55c5:Verdana",
-			uint FontSize = 150,
-			string Text = "U suck",
-			TextAlign Align = Left,
-			float PixelsPerUnit = 124,
-			bool Smoothing = true,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 7,
-		},
-		Named = 
-		{
 			string Name = "RestartButton",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, -2.05426, 0],
-			Vec3 Scale = [4, 1.5, 1],
+			Vec3 Translation = [0, -5, 0],
+			Vec3 Scale = [5, 1.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Sprite = 
@@ -304,7 +258,7 @@ Level =
 			bool VisibilityCulling = true,
 			bool VisibilityEvents = true,
 			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
+			Vec4 Color = [0.0748, 0.855844, 0.88, 0],
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -330,6 +284,51 @@ Level =
 			Vec2 Size = [1, 1],
 			Location Origin = Center,
 		},
+		DeathLevelTransparency = 
+		{
+			Vec4 EndColor = [0.0745098, 0.854902, 0.878431, 1],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 7,
+				},
+				Named = 
+				{
+					string Name = "RestartText",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.420785, 0.378206, 0],
+					Vec3 Scale = [0.5, 1.33333, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				SpriteText = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [0.11376, 0.36, 0.1008, 0],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string FontName = "4e7bac697bec55c5:Verdana",
+					uint FontSize = 40,
+					string Text = "Restart",
+					TextAlign Align = Left,
+					float PixelsPerUnit = 84,
+					bool Smoothing = true,
+				},
+				DeathLevelTransparency = 
+				{
+					Vec4 EndColor = [0.113725, 0.360784, 0.101961, 1],
+				},
+			},
+		},
 	},
 	Cog = 
 	{
@@ -339,12 +338,105 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "RestartText",
+			string Name = "QuitButton",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-1.68314, -1.48695, 0],
-			Vec3 Scale = [2, 2, 1],
+			Vec3 Translation = [5.5, -5, 0],
+			Vec3 Scale = [5, 1.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 0, 0, 0],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		Reactive = 
+		{
+			bool Active = true,
+			bool CaptureMouse = false,
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		QuitGameScript = 
+		{
+		},
+		DeathLevelTransparency = 
+		{
+			Vec4 EndColor = [1, 0, 0, 0.85],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 9,
+				},
+				Named = 
+				{
+					string Name = "QuitText",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.314422, 0.5848, 0],
+					Vec3 Scale = [0.5, 1.33333, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				SpriteText = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [0, 0, 0, 0],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string FontName = "4e7bac697bec55c5:Verdana",
+					uint FontSize = 40,
+					string Text = "Quit",
+					TextAlign Align = Left,
+					float PixelsPerUnit = 64,
+					bool Smoothing = true,
+				},
+				DeathLevelTransparency = 
+				{
+					Vec4 EndColor = [0, 0, 0, 1],
+				},
+			},
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 10,
+		},
+		Named = 
+		{
+			string Name = "DeathText",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-3.80919, 5.99116, 0],
+			Vec3 Scale = [12, 12, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		SpriteText = 
@@ -353,16 +445,114 @@ Level =
 			bool VisibilityCulling = true,
 			bool VisibilityEvents = true,
 			bool CastShadows = false,
-			Vec4 Color = [0.11376, 0.36, 0.1008, 1],
+			Vec4 Color = [0.795, 0, 0, 0],
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
 			string FontName = "4e7bac697bec55c5:Verdana",
-			uint FontSize = 40,
-			string Text = "Restart",
+			uint FontSize = 30,
+			string Text = "You Died...",
 			TextAlign Align = Left,
-			float PixelsPerUnit = 84,
+			float PixelsPerUnit = 256,
 			bool Smoothing = true,
+		},
+		DeathLevelTransparency = 
+		{
+			Vec4 EndColor = [0.796079, 0, 0, 1],
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 11,
+		},
+		Named = 
+		{
+			string Name = "MainMenuButton",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-5.5, -5, 0],
+			Vec3 Scale = [5, 1.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [0.945, 0.453836, 0.051975, 0],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		StartGameScript = 
+		{
+			string LevelToLoad = "584fddffe59ef27a:MainMenu",
+		},
+		Reactive = 
+		{
+			bool Active = true,
+			bool CaptureMouse = false,
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		DeathLevelTransparency = 
+		{
+			Vec4 EndColor = [0.945098, 0.454902, 0.0509804, 1],
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 12,
+				},
+				Named = 
+				{
+					string Name = "MainMenuText",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.435578, 0.328896, 0],
+					Vec3 Scale = [0.4, 1.33333, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				SpriteText = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [0.09975, 0.210283, 0.95, 0],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string FontName = "4e7bac697bec55c5:Verdana",
+					uint FontSize = 40,
+					string Text = "Main Menu",
+					TextAlign Align = Left,
+					float PixelsPerUnit = 100,
+					bool Smoothing = true,
+				},
+				DeathLevelTransparency = 
+				{
+					Vec4 EndColor = [0.0980392, 0.211765, 0.94902, 1],
+				},
+			},
 		},
 	},
 },

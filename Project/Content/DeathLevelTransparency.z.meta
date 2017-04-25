@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "DeathLevelTransparency",
+		uint64 ResourceId = 582bfd5f3177732c,
+	},
+},
