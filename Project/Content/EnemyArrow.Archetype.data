@@ -76,7 +76,7 @@ Cog =
 		Enum TrackedCog = PLAYER,
 		float Speed = 9,
 		float Radians = 0.1,
-		float DestroyTimer = 3,
+		float DestroyTimer = 4.5,
 	},
 	SpriteParticleSystem = 
 	{
