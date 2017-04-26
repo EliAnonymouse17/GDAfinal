@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-6.83752, -7.96733, 0],
+		Vec3 Translation = [-6.00148, 2.04131, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -61,9 +61,12 @@ Cog =
 	HitpointScript = 
 	{
 		int PrivateHP = 3,
-		string HurtSound = "",
-		string DeathSound = "",
+		int MaxHP = 5,
+		string HurtSound = "598b731d36a9f962:Audio_HurtGhost",
+		string DeathSound = "598b73e403027d5b:Audio_DeathGhost",
 		float HurtDuration = 0.1,
+		string SpawnOnDeath = "",
+		int SpawnCount = 1,
 	},
 	Shoot = 
 	{
@@ -84,7 +87,7 @@ Cog =
 		float BulletDelay = 0.3,
 		float BulletSpeed = 125,
 		Enum ShotPattern = SINGLE,
-		string ShootSound = "585fbf932318682e:MagicMissile",
+		string ShootSound = "598b7d3bf34203ab:EnemyMagicMissile",
 		string WalkAnimation = "",
 		string AttackAnimation = "",
 		float BurstDelay = 0,

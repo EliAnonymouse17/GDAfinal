@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-3.8728, 2.77211, 0],
+		Vec3 Translation = [-2, 6, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -61,17 +61,23 @@ Cog =
 	HitpointScript = 
 	{
 		int PrivateHP = 15,
+		int MaxHP = 5,
 		string HurtSound = "5854e6c788fe3abf:Audio_EnemyHurtLow",
-		string DeathSound = "",
+		string DeathSound = "598b7ca720fb3db0:Audio_DeathNecromancer",
+		float HurtDuration = 0.1,
+		string SpawnOnDeath = "",
+		int SpawnCount = 1,
 	},
 	EnemyShoot = 
 	{
 		float BulletDelay = 4,
 		float BulletSpeed = 150,
-		Enum ShotPattern = SPREAD,
+		Enum ShotPattern = SINGLE,
 		string ShootSound = "585fd19df8e88f11:TripleShot",
 		string WalkAnimation = "584fdb207bf8dc4b:NecroMoveAnimation",
 		string AttackAnimation = "584fced65555e419:NecroAttackAnimation",
+		float BurstDelay = 0,
+		int BurstCount = 1,
 	},
 	Shoot = 
 	{
@@ -92,6 +98,10 @@ Cog =
 		string SpawnSound = "584fc8fb746f1d3e:NecromancerAttackSummon",
 		float SpawnDelay = 5,
 		string EnemyToSpawn = "58e6b86cc88e7f69:Enemy",
+	},
+	Wanderer = 
+	{
+		float MoveSpeed = 1,
 	},
 	Hierarchy = 
 	{

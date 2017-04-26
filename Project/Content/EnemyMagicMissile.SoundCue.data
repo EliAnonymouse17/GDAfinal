@@ -1,9 +1,9 @@
 SoundCue = 
 {
 	SoundPlayMode PlayMode = Single,
-	float Volume = 0.1,
+	float Volume = 0.05,
 	float VolumeVariation = 0,
-	float Pitch = 0,
+	float Pitch = 0.1,
 	float PitchVariation = 0,
 	float MinDistance = 10,
 	float MaxDistance = 10000,
@@ -14,7 +14,7 @@ SoundCue =
 	Array Sounds = 
 	[
 		{
-			string SoundName = "5854e2bb0a59ddc5:Audio_EnemyBasicHurt",
+			string SoundName = "585fbc88d0a83d26:Magic Missile",
 			float Weight = 1,
 		},
 	],
