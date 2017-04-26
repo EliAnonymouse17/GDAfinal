@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [40, 4.28432, 0],
+		Vec3 Translation = [22.3851, 7.68543, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -31,7 +31,7 @@ Cog =
 	},
 	TileMap = 
 	{
-		string SourceName = "5882ea4a889ed515:Level_TileMap35",
+		string SourceName = "587360666772101a:NelsonSandbox_TileMap05",
 		string PaletteName = "5823179c8dceb415:StandardPalette",
 		float UnitsPerTile = 2,
 		float MeshThickness = 1.2,

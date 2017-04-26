@@ -7,6 +7,6 @@ BinaryContent =
 		string LoaderType = "TileMapSource",
 		uint Version = 0,
 		string FilterTag = "",
-		string ResourceOwner = "5866e5eb9a8931af:NelsonSandbox",
+		string ResourceOwner = "584fd2007ec97999:TMSquare22",
 	},
 },

@@ -112,7 +112,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0.984632, 3.13501, 50],
+			Vec3 Translation = [36.3849, 25.175, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -124,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 32.8892,
+			float Size = 100,
 		},
 		EditorCameraController = 
 		{
@@ -132,7 +132,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [0.984632, 3.13501, 3.71217e-007],
+			Vec3 LookTarget = [36.3849, 25.175, 8.89665e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -184,28 +184,10 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "584fd601d0478ca6:TMSquare23",
-		LinkId = 
-		{
-			uint Id = 6,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-0.426861, 2.09695, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "TileMap",
-		},
-	},
-	ArchetypeInstance = 
-	{
 		string Name = "582e55149cb1b9f5:Player",
 		LinkId = 
 		{
-			uint Id = 7,
+			uint Id = 6,
 		},
 		Transform = 
 		{
@@ -220,20 +202,20 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "584fefeabfc0ca66:AnimatedGolem",
+		string Name = "584fd601d0478ca6:TMSquare23",
 		LinkId = 
 		{
-			uint Id = 8,
+			uint Id = 7,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-10.1688, 9.55819, 0],
+			Vec3 Translation = [-1.14936, -3.18119, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Named = 
 		{
-			string Name = "Enemy",
+			string Name = "TileMap",
 		},
 	},
 },
