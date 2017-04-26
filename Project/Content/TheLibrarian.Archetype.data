@@ -50,7 +50,7 @@ Cog =
 	{
 		bool Static = false,
 		bool Asleep = false,
-		bool Kinematic = false,
+		bool Kinematic = true,
 		bool RotationLocked = true,
 		bool Mode2D = true,
 		bool AllowSleep = true,
@@ -127,7 +127,7 @@ Cog =
 		float ChallengeBulletSpeed1 = 1000,
 		Enum ChallengeShotPattern1 = SINGLE,
 		string ChallengeBulletType1 = "5866e54b88d72e10:BoomBook",
-		float BurstDelay4 = 1,
+		float BurstDelay4 = 1.5,
 		int BurstCount4 = 3,
 		Vec4 Space4 = [1, 1, 1, 1],
 		float ChallengeAttackDelay2 = 2,

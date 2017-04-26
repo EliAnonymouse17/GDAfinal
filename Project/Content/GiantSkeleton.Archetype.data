@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 70,
+		int PrivateHP = 90,
 		int MaxHP = 5,
 		string HurtSound = "",
 		string DeathSound = "",
@@ -139,7 +139,7 @@ Cog =
 		string ChallengeBulletType3 = "580e65c5299defb0:EnemyBullet",
 		float BurstDelay6 = 0,
 		int BurstCount6 = 1,
-		float StageSwitch = 30,
+		float StageSwitch = 45,
 		Vec4 ChallengeColor = [0.955, 0.042975, 0.042975, 1],
 	},
 	BossHealthBarScript = 
