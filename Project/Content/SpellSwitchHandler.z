@@ -74,6 +74,10 @@ class SpellSwitchHandler : ZilchComponent
             {
                 return this.Owner.WaterStreamPlayerShoot;
             }
+            else if (this.CurrentSpell == SpellTypes.BONESHOT)
+            {
+                return this.Owner.BoneShotPlayerShoot;
+            }
             else
             {
                 return this.Owner.BoneShotPlayerShoot;
