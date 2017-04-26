@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -61,7 +61,12 @@ Cog =
 	RockShockScript = 
 	{
 		string ImpactSound = "585fc00d67fa4059:ExplodingBulletImpact",
-		string SpawnArchetype = "58682493a60eed6d:LibrarianPound",
-		string SpawnArchetype2 = "584fefeabfc0ca66:AnimatedGolem",
+	},
+	DamageScript = 
+	{
+		int Damage = 0,
+		int PRVHitCount = 1,
+		string SpawnOnDeath = "58682493a60eed6d:LibrarianPound",
+		string SpawnOnDeath2 = "584fefeabfc0ca66:AnimatedGolem",
 	},
 },

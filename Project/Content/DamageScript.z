@@ -22,6 +22,9 @@ class DamageScript : ZilchComponent
     [Property]
     var SpawnOnDeath : Archetype = null;
     
+    [Property]
+    var SpawnOnDeath2 : Archetype = null;
+    
     var DidSpawn : Boolean = false;
     
     var HitCount : Integer
@@ -45,6 +48,17 @@ class DamageScript : ZilchComponent
                 {
                     this.Space.FindObjectByName("Player").PlayerShoot.TimerFreeze = false;
                 }
+                if(!this.DidSpawn && this.SpawnOnDeath != null)
+                {
+                    var position = this.Owner.Transform.WorldTranslation;
+                    
+                    this.DidSpawn = true;
+                    this.Space.CreateAtPosition(this.SpawnOnDeath, position);
+                    if (this.SpawnOnDeath2 != null)
+                    {
+                        this.Space.CreateAtPosition(this.SpawnOnDeath2, position);
+                    }
+                }
                 this.Owner.Destroy();
             }
         }
@@ -58,13 +72,6 @@ class DamageScript : ZilchComponent
     //Deals damage to other object if it has hitpoints and then destroys owner
     function OnCollisionStarted(event : CollisionEvent)
     {
-        if(!this.DidSpawn && this.SpawnOnDeath != null)
-        {
-            var position = this.Owner.Transform.WorldTranslation;
-            
-            this.DidSpawn = true;
-            this.Space.CreateAtPosition(this.SpawnOnDeath, position);
-        }
         
         if(event.OtherObject.HitpointScript == null)
         { 
