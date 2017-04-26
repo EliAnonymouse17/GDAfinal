@@ -3,11 +3,11 @@ ImageContent =
 	SpriteSourceBuilder = 
 	{
 		string Name = "Animation_WandmanDeath0",
-		uint64 ResourceId = 582bf1a3d92d5626,
+		uint64 ResourceId = 582bdb057f2af8fe,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 32,
 		uint FrameSizeY = 32,
-		uint FrameCount = 12,
+		uint FrameCount = 13,
 		float FrameDelay = 0.125,
 		float OriginX = 16,
 		float OriginY = 16,

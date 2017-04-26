@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.468242, -2.37777, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -115,7 +115,7 @@ Cog =
 	BasicPlayerShoot = 
 	{
 		Enum SpellType = BASIC,
-		bool UnlockAtStart = false,
+		bool UnlockAtStart = true,
 		string SpellName = "Magic Missile",
 		string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
 		int SpreadBullets = 3,
@@ -183,7 +183,7 @@ Cog =
 	WaterStreamPlayerShoot = 
 	{
 		Enum SpellType = WATERSTREAM,
-		bool UnlockAtStart = false,
+		bool UnlockAtStart = true,
 		string SpellName = "Water Stream",
 		string BulletSprite = "587c2c7990aee772:Texture_Raindrop",
 		int SpreadBullets = 3,

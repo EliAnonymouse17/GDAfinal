@@ -227,7 +227,7 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "582bf1a3d92d5626:Animation_WandmanDeath0",
+			string SpriteSource = "582bdb057f2af8fe:Animation_WandmanDeath0",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -272,7 +272,7 @@ Level =
 		},
 		StartGameScript = 
 		{
-			string LevelToLoad = "554cea0f94af672f:Level",
+			string LevelToLoad = "582db5f31b57da50:PlaytestTutorial",
 		},
 		Reactive = 
 		{
@@ -497,7 +497,7 @@ Level =
 		},
 		StartGameScript = 
 		{
-			string LevelToLoad = "584fddffe59ef27a:MainMenu",
+			string LevelToLoad = "582db5802eefae05:PlaytestMainMenu",
 		},
 		Reactive = 
 		{
