@@ -86,7 +86,7 @@ Cog =
 	},
 	SpellSwitchHandler = 
 	{
-		bool DebugUnlockAll = true,
+		bool DebugUnlockAll = false,
 	},
 	PlayerAnimations = 
 	{
@@ -132,7 +132,7 @@ Cog =
 	BoneShotPlayerShoot = 
 	{
 		Enum SpellType = BONESHOT,
-		bool UnlockAtStart = false,
+		bool UnlockAtStart = true,
 		string SpellName = "Bone Shot",
 		string BulletSprite = "5873871a4de249f8:Texture_Bone",
 		int SpreadBullets = 3,
@@ -149,7 +149,7 @@ Cog =
 	IceSpearPlayerShoot = 
 	{
 		Enum SpellType = ICESPEAR,
-		bool UnlockAtStart = false,
+		bool UnlockAtStart = true,
 		string SpellName = "Ice Spear",
 		string BulletSprite = "5858739c8bef319d:Texture_BigIce",
 		int SpreadBullets = 3,
@@ -183,7 +183,7 @@ Cog =
 	WaterStreamPlayerShoot = 
 	{
 		Enum SpellType = WATERSTREAM,
-		bool UnlockAtStart = true,
+		bool UnlockAtStart = false,
 		string SpellName = "Water Stream",
 		string BulletSprite = "587c2c7990aee772:Texture_Raindrop",
 		int SpreadBullets = 3,
