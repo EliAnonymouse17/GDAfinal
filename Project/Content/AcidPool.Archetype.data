@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [11.6014, -5.14384, 0],
+		Vec3 Translation = [11.6014, -5.14384, -0.1],
 		Vec3 Scale = [4, 4, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -48,7 +48,7 @@ Cog =
 	},
 	MeleeAttackScript = 
 	{
-		float AttackDelay = 0.5,
+		float AttackDelay = 0.4,
 		int Damage = 1,
 		int RecoilDamage = 0,
 		bool Friendly = true,

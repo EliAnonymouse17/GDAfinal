@@ -124,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 40.1709,
+			float Size = 44.3957,
 		},
 		EditorCameraController = 
 		{
@@ -238,86 +238,14 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "598b10d81748a9f8:FireElemental",
+		string Name = "587c1333d2cf95cb:FlamingTotem",
 		LinkId = 
 		{
 			uint Id = 9,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-11.5049, 2.34612, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "587c1333d2cf95cb:FlamingTotem",
-		LinkId = 
-		{
-			uint Id = 10,
-		},
-		Transform = 
-		{
 			Vec3 Translation = [9.62612, 3.88692, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "587c02da03a631fd:Fireling",
-		LinkId = 
-		{
-			uint Id = 11,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-15.0267, -13.9424, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "587c02da03a631fd:Fireling",
-		LinkId = 
-		{
-			uint Id = 12,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-10.5694, -13.8323, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "587c02da03a631fd:Fireling",
-		LinkId = 
-		{
-			uint Id = 13,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-5.1766, -13.9424, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},

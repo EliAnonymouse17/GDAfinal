@@ -1,9 +1,11 @@
 class MeleeAttackScript : ZilchComponent
 {
+    
+    
     [Property]
     var AttackDelay : Real = 0.5;
     
-    var AttackTimer : Real = 0;
+    var AttackTimer : Real = 0.1;
     
     [Property]
     var Damage : Integer = 1;
@@ -18,6 +20,26 @@ class MeleeAttackScript : ZilchComponent
     {
         Zero.Connect(this.Owner, Events.CollisionPersisted, this.OnCollisionPersist);
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+        Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+        Zero.Connect(this.Owner, Events.CollisionEnded, this.OnCollisionEnded);
+    }
+
+    function OnCollisionEnded(event : CollisionEvent)
+    {
+        Console.WriteLine("Z");
+        var otherObjectPos = event.OtherObject.Transform.WorldTranslation;
+        otherObjectPos.Z -= 0.1;
+        event.OtherObject.Transform.WorldTranslation = otherObjectPos;
+        Console.WriteLine(event.OtherObject.Transform.Translation.Z);
+    }
+
+    function OnCollisionStarted(event : CollisionEvent)
+    { 
+        Console.WriteLine("Z");
+        var otherObjectPos = event.OtherObject.Transform.WorldTranslation;
+        otherObjectPos.Z += 0.1;
+        event.OtherObject.Transform.WorldTranslation = otherObjectPos;
+        Console.WriteLine(event.OtherObject.Transform.Translation.Z);
     }
 
     function OnLogicUpdate(event : UpdateEvent)
@@ -31,12 +53,15 @@ class MeleeAttackScript : ZilchComponent
         {
             if (this.Friendly && event.OtherObject.Collider.CollisionGroup == CollisionGroup.Enemy)
             {
+                
                 event.OtherObject.HitpointScript.HP -= this.Damage;
                 if (this.Owner.HitpointScript != null)
                 {
                     this.Owner.HitpointScript.HP -= this.RecoilDamage;
                 }
+                Console.WriteLine(this.AttackTimer);
                 this.AttackTimer = this.AttackDelay;
+                Console.WriteLine(this.AttackTimer);
                 event.OtherObject.HitpointScript.HurtBool = true;
             }
             else if(event.OtherObject.Collider.CollisionGroup == CollisionGroup.Player)
