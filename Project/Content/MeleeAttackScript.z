@@ -10,6 +10,10 @@ class MeleeAttackScript : ZilchComponent
     
     [Property]
     var RecoilDamage : Integer = 0;
+    
+    [Property]
+    var Friendly : Boolean = false;
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Owner, Events.CollisionPersisted, this.OnCollisionPersist);
@@ -23,15 +27,28 @@ class MeleeAttackScript : ZilchComponent
     
     function OnCollisionPersist(event : CollisionEvent)
     {
-        if (event.OtherObject.HitpointScript != null && this.AttackTimer <= 0 && event.OtherObject.Name == "Player")
+        if (event.OtherObject.HitpointScript != null && this.AttackTimer <= 0)
         {
-            event.OtherObject.HitpointScript.HP -= this.Damage;
-            this.Owner.HitpointScript.HP -= this.RecoilDamage;
-            this.AttackTimer = this.AttackDelay;
-        if(event.OtherObject.HitpointScript != null)
-        {
-            event.OtherObject.HitpointScript.HurtBool = true;
-        }
+            if (this.Friendly && event.OtherObject.Collider.CollisionGroup == CollisionGroup.Enemy)
+            {
+                event.OtherObject.HitpointScript.HP -= this.Damage;
+                if (this.Owner.HitpointScript != null)
+                {
+                    this.Owner.HitpointScript.HP -= this.RecoilDamage;
+                }
+                this.AttackTimer = this.AttackDelay;
+                event.OtherObject.HitpointScript.HurtBool = true;
+            }
+            else if(event.OtherObject.Collider.CollisionGroup == CollisionGroup.Player)
+            {
+                event.OtherObject.HitpointScript.HP -= this.Damage;
+                if (this.Owner.HitpointScript != null)
+                {
+                    this.Owner.HitpointScript.HP -= this.RecoilDamage;
+                }
+                this.AttackTimer = this.AttackDelay;
+                event.OtherObject.HitpointScript.HurtBool = true;
+            }
         }
     }
 }

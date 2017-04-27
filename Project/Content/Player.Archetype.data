@@ -231,6 +231,23 @@ Cog =
 		float BurstDelay = 0,
 		int BurstCount = 1,
 	},
+	AcidPoolPlayerShoot = 
+	{
+		Enum SpellType = ACIDPOOL,
+		bool UnlockAtStart = false,
+		string SpellName = "Acid Pool",
+		string BulletSprite = "5274db4c2e7c11f9:Circle",
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "598b1a03909f1d61:AcidShot",
+		float BulletDelay = 3,
+		float BulletSpeed = 1000,
+		Enum ShotPattern = SINGLE,
+		string ShootSound = "",
+		bool TimerFreeze = false,
+		float BurstDelay = 0,
+		int BurstCount = 1,
+	},
 	ChangeLevelOnDeath = 
 	{
 		string LevelToLoad = "582bf69410c9f0c6:DeathLevel",

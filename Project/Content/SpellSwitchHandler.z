@@ -24,6 +24,7 @@ class IceSpearPlayerShoot : PlayerShoot{}
 class SeekingArrowPlayerShoot : PlayerShoot{}
 class WaterStreamPlayerShoot : PlayerShoot{}
 class BoneShotPlayerShoot : PlayerShoot{}
+class AcidPoolPlayerShoot : PlayerShoot{}
 
 enum SpellTypes 
     {
@@ -35,6 +36,7 @@ enum SpellTypes
     SEEKINGARROW, 
     WATERSTREAM, 
     BONESHOT,
+    ACIDPOOL,
     END
     }
     
@@ -77,6 +79,10 @@ class SpellSwitchHandler : ZilchComponent
             else if (this.CurrentSpell == SpellTypes.BONESHOT)
             {
                 return this.Owner.BoneShotPlayerShoot;
+            }
+            else if (this.CurrentSpell == SpellTypes.ACIDPOOL)
+            {
+                return this.Owner.AcidPoolPlayerShoot;
             }
             else
             {

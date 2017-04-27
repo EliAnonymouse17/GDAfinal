@@ -33,7 +33,8 @@ class DamageScript : ZilchComponent
         
         set
         {
-            this.PRVHitCount -= 1;
+            Console.WriteLine(this.PRVHitCount);
+            this.PRVHitCount = value;
             if (this.Owner.ArchetypeName == "IceSpear" && this.PRVHitCount == 2)
             {
                 this.Owner.Sprite.SpriteSource = SpriteSource.Texture_MediumIce;
@@ -72,14 +73,13 @@ class DamageScript : ZilchComponent
     //Deals damage to other object if it has hitpoints and then destroys owner
     function OnCollisionStarted(event : CollisionEvent)
     {
-        
         if(event.OtherObject.HitpointScript == null)
         { 
             if (this.Owner.ArchetypeName == "SeekingArrow")
             {
                 this.Space.FindObjectByName("Player").PlayerShoot.TimerFreeze = false;
             }
-            this.Owner.Destroy();
+            this.HitCount = 0;
             return;
         }
         
