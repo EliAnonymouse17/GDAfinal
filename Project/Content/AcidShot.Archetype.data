@@ -28,7 +28,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "5274db4c2e7c11f9:Circle",
+		string SpriteSource = "587c2c7990aee772:Texture_Raindrop",
 		bool RenderMask = false,
 		bool FlipX = true,
 		bool FlipY = false,
@@ -60,7 +60,7 @@ Cog =
 	},
 	DamageScript = 
 	{
-		int Damage = 0,
+		int Damage = 1,
 		int PRVHitCount = 1,
 		string SpawnOnDeath = "598b66cd0a20b263:AcidPool",
 		string SpawnOnDeath2 = "",
