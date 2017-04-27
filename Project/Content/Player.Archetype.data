@@ -86,7 +86,7 @@ Cog =
 	},
 	SpellSwitchHandler = 
 	{
-		bool DebugUnlockAll = false,
+		bool DebugUnlockAll = true,
 	},
 	PlayerAnimations = 
 	{
@@ -189,7 +189,7 @@ Cog =
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "58737c72bcda6207:WaterBullet",
-		float BulletDelay = 1.2,
+		float BulletDelay = 1.1,
 		float BulletSpeed = 180,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
