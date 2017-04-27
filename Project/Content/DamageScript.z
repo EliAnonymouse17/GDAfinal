@@ -33,7 +33,6 @@ class DamageScript : ZilchComponent
         
         set
         {
-            Console.WriteLine(this.PRVHitCount);
             this.PRVHitCount = value;
             if (this.Owner.ArchetypeName == "IceSpear" && this.PRVHitCount == 2)
             {

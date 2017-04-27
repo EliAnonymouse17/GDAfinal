@@ -1,0 +1,104 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "Enemy",
+	},
+	Archetyped = 
+	{
+		string Name = "598b10d81748a9f8:FireElemental",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [-3.91764, 0.947803, 0],
+		Vec3 Scale = [1, 1, 1],
+		Quat Rotation = [0, 0, 0, 1],
+	},
+	Sprite = 
+	{
+		bool Visible = true,
+		bool VisibilityCulling = true,
+		bool VisibilityEvents = true,
+		bool CastShadows = false,
+		Vec4 Color = [1, 0, 0, 1],
+		BlendMode BlendMode = Alpha,
+		SpriteGeometryMode GeometryMode = ZPlane,
+		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+		string SpriteSource = "586836b37ae47131:animation_GolemWalkforward",
+		bool RenderMask = false,
+		bool FlipX = false,
+		bool FlipY = false,
+		bool AnimationActive = true,
+		float AnimationSpeed = 1,
+		uint StartFrame = 0,
+	},
+	HitpointScript = 
+	{
+		int PrivateHP = 15,
+		int MaxHP = 15,
+		string HurtSound = "",
+		string DeathSound = "",
+		float HurtDuration = 0.1,
+		string SpawnOnDeath = "587c02da03a631fd:Fireling",
+		int SpawnCount = 2,
+	},
+	BoxCollider = 
+	{
+		bool Ghost = false,
+		bool SendsMessages = true,
+		bool Seamless = true,
+		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+		string SerializedGroupName = "580e65c5299dde20:Enemy",
+		Vec3 Offset = [0, -0.2, 0],
+		Vec3 Size = [0.875, 1, 0.5],
+	},
+	RigidBody = 
+	{
+		bool Static = false,
+		bool Asleep = false,
+		bool Kinematic = false,
+		bool RotationLocked = true,
+		bool Mode2D = true,
+		bool AllowSleep = true,
+		bool Inherit2DMode = true,
+		Vec3 Velocity = [0, 0, 0],
+		Vec3 AngularVelocity = [0, 0, 0],
+	},
+	Orientation = 
+	{
+		Vec3 GlobalUp = [0, 1, 0],
+		Vec3 UpVector = [0, 0, 1],
+		Vec3 ForwardVector = [0, 1, 0],
+		OrientationBases DefaultBases = ForwardYUpZ,
+	},
+	Shoot = 
+	{
+		string BulletType = "598b17756af535f8:LavaShot",
+		int RingCount = 10,
+		float RingOffset = 90,
+		int SpreadBullets = 3,
+	},
+	EnemyShoot = 
+	{
+		float BulletDelay = 2.5,
+		float BulletSpeed = 400,
+		Enum ShotPattern = SINGLE,
+		string ShootSound = "585fc1e7955bc872:ExplodingBulletLaunch",
+		string WalkAnimation = "",
+		string AttackAnimation = "",
+		float BurstDelay = 0,
+		int BurstCount = 1,
+	},
+	AIMoveFromPlayer = 
+	{
+		float MoveSpeed = 2,
+		bool MovesAwayFromPlayer = false,
+	},
+	Hierarchy = 
+	{
+	},
+},
