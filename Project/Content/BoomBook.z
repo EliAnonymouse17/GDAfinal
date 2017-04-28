@@ -7,7 +7,6 @@ class BoomBook : ZilchComponent
 
     function OnCollisionStarted(event : CollisionEvent)
     {
-        Console.WriteLine("WORK");
         if(event.OtherObject.Name == "Player")
         {
         this.Space.CreateAtPosition(Archetype.PoundArea, this.Owner.Transform.WorldTranslation);

@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [2.74145, 4.46899, 0],
 		Vec3 Scale = [0.5, 0.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -62,9 +62,11 @@ Cog =
 	{
 		int PrivateHP = 2,
 		int MaxHP = 5,
-		string HurtSound = "",
-		string DeathSound = "",
+		string HurtSound = "5854e373c41f5152:Audio_BasicHurtEnemy",
+		string DeathSound = "59889106e100041c:Audio_DeathBoomBook",
 		float HurtDuration = 0.1,
+		string SpawnOnDeath = "584ff2fc0e46547b:PoundArea",
+		int SpawnCount = 1,
 	},
 	Orientation = 
 	{
@@ -72,9 +74,6 @@ Cog =
 		Vec3 UpVector = [0, 0, 1],
 		Vec3 ForwardVector = [0, 1, 0],
 		OrientationBases DefaultBases = ForwardYUpZ,
-	},
-	BoomBook = 
-	{
 	},
 	EnemyAnimationHandler = 
 	{
@@ -85,6 +84,13 @@ Cog =
 	{
 		float MoveSpeed = 14,
 		bool MovesAwayFromPlayer = false,
+	},
+	MeleeAttackScript = 
+	{
+		float AttackDelay = 0,
+		int Damage = 0,
+		int RecoilDamage = 3,
+		bool Friendly = false,
 	},
 	Hierarchy = 
 	{

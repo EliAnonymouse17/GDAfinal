@@ -16,7 +16,7 @@ class DestroyTimer : ZilchComponent
         var maxRingSize = screenSize/this.Owner.Transform.Scale.X;
         if(warp != null)
         {
-            warp.Size += event.Dt * maxRingSize / this.Time;
+            warp.Size += event.Dt; //* maxRingSize / this.Time;
             warp.Intensity -= event.Dt *  warp.Intensity / this.Time;
         }
         this.Time -= event.Dt;

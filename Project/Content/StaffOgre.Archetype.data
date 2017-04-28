@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-9.59241, -6.47214, 0],
+		Vec3 Translation = [-3.21957, 5.73433, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -39,9 +39,12 @@ Cog =
 	HitpointScript = 
 	{
 		int PrivateHP = 3,
-		string HurtSound = "",
-		string DeathSound = "",
+		int MaxHP = 5,
+		string HurtSound = "59889057c357711f:Audio_HurtStaffOgre",
+		string DeathSound = "59889068c78cce99:Audio_DeathStaffOgre",
 		float HurtDuration = 0.25,
+		string SpawnOnDeath = "",
+		int SpawnCount = 1,
 	},
 	BoxCollider = 
 	{

@@ -124,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 44.3957,
+			float Size = 8.11037,
 		},
 		EditorCameraController = 
 		{
@@ -238,14 +238,14 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "587c1333d2cf95cb:FlamingTotem",
+		string Name = "584fefeabfc0ca66:AnimatedGolem",
 		LinkId = 
 		{
 			uint Id = 9,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [9.62612, 3.88692, 0],
+			Vec3 Translation = [-3.24179, 4.62332, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},

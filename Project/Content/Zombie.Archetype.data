@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-0.275395, 5.67878, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -62,9 +62,11 @@ Cog =
 	{
 		int PrivateHP = 3,
 		int MaxHP = 5,
-		string HurtSound = "",
-		string DeathSound = "",
+		string HurtSound = "5854e373c41f5152:Audio_BasicHurtEnemy",
+		string DeathSound = "59889181f69e4dac:Audio_DeathZombie",
 		float HurtDuration = 0.1,
+		string SpawnOnDeath = "",
+		int SpawnCount = 1,
 	},
 	Shoot = 
 	{
@@ -92,6 +94,10 @@ Cog =
 	},
 	MeleeAttackScript = 
 	{
+		float AttackDelay = 0.5,
+		int Damage = 1,
+		int RecoilDamage = 0,
+		bool Friendly = false,
 	},
 	Hierarchy = 
 	{
