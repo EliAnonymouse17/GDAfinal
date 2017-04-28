@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-9.16721, -2.97383, 0],
+		Vec3 Translation = [-3.24179, 4.62332, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -40,8 +40,8 @@ Cog =
 	{
 		int PrivateHP = 12,
 		int MaxHP = 5,
-		string HurtSound = "",
-		string DeathSound = "",
+		string HurtSound = "5988979502bb354e:Audio_HurtGolem",
+		string DeathSound = "598897d33bb43172:Audio_DeathGolem",
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "584ffadd5e943f48:MiniGolem",
 		int SpawnCount = 2,
