@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [6.46016, 12.9064, 50],
+			Vec3 Translation = [44.354, 7.48437, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 54.2251,
+			float Size = 54.8812,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [6.46016, 12.9064, 2.45391e-007],
+			Vec3 LookTarget = [44.354, 7.48437, 1.90178e-006],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -265,7 +265,7 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "584fd2007ec97999:TMSquare22",
+		string Name = "597b65f4bcfdc3f0:TMSquare22",
 		LinkId = 
 		{
 			uint Id = 11,

@@ -3,7 +3,7 @@ DataContent =
 	DataBuilder = 
 	{
 		string Name = "TMBulgeL",
-		uint64 ResourceId = 584fd4bdbcdabafe,
+		uint64 ResourceId = 597b6a683da866ad,
 		string LoaderType = "Cog",
 		uint Version = 0,
 		bool ShowInEditor = true,
