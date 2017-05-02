@@ -100,29 +100,11 @@ Level =
 			float GlowThreshold = 1,
 		},
 	},
-	ArchetypeInstance = 
-	{
-		string Name = "584e02809931b6fa:GolemRock",
-		LinkId = 
-		{
-			uint Id = 3,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [0, 0, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Bullet",
-		},
-	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 4,
+			uint Id = 3,
 		},
 		Named = 
 		{
@@ -142,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 24.3649,
+			float Size = 19.9483,
 		},
 		EditorCameraController = 
 		{
@@ -166,7 +148,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 5,
+			uint Id = 4,
 		},
 		Named = 
 		{
@@ -187,7 +169,7 @@ Level =
 		string Name = "584e01664b4e55af:HeartPickup",
 		LinkId = 
 		{
-			uint Id = 6,
+			uint Id = 5,
 		},
 		Transform = 
 		{
@@ -204,7 +186,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 7,
+			uint Id = 6,
 		},
 		Named = 
 		{
@@ -360,7 +342,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 8,
+					uint Id = 7,
 				},
 				Named = 
 				{
@@ -397,7 +379,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 9,
+			uint Id = 8,
 		},
 		Named = 
 		{
@@ -437,7 +419,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 10,
+			uint Id = 9,
 		},
 		Named = 
 		{
@@ -477,7 +459,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 11,
+			uint Id = 10,
 		},
 		Named = 
 		{
@@ -517,7 +499,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 12,
+			uint Id = 11,
 		},
 		Named = 
 		{
@@ -557,7 +539,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 13,
+			uint Id = 12,
 		},
 		Named = 
 		{
@@ -598,7 +580,7 @@ Level =
 		string Name = "584fd89208ba642f:TMSquare24",
 		LinkId = 
 		{
-			uint Id = 14,
+			uint Id = 13,
 		},
 		Transform = 
 		{
@@ -616,11 +598,11 @@ Level =
 		string Name = "582e55149cb1b9f5:Player",
 		LinkId = 
 		{
-			uint Id = 15,
+			uint Id = 14,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 0],
+			Vec3 Translation = [-0.0773191, 0, 0],
 			Vec3 Scale = [1.2, 1.2, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},

@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-1.1704, 7.5, 0],
 		Vec3 Scale = [2.5, 2.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -50,9 +50,9 @@ Cog =
 	{
 		bool Static = false,
 		bool Asleep = false,
-		bool Kinematic = true,
+		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -85,7 +85,7 @@ Cog =
 	SpellDrop = 
 	{
 		Enum SpellDrop1 = EXPLODINGBULLET,
-		Enum SpellDrop2 = BUBBLETRAP,
+		Enum SpellDrop2 = NULL,
 		Enum SpellDrop3 = SEEKINGARROW,
 		string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
 		string SpellDropSprite2 = "583a1b2cfe6b1569:Texture_BubbleBullet",
@@ -149,6 +149,10 @@ Cog =
 	ChangeLevelOnDeath = 
 	{
 		string LevelToLoad = "582db2ee1e39f96c:PlaytestLibrarian",
+	},
+	Wanderer = 
+	{
+		float MoveSpeed = 1,
 	},
 	Hierarchy = 
 	{

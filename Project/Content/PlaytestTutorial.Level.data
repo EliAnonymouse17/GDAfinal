@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 26.9274,
+			float Size = 44.3958,
 		},
 		EditorCameraController = 
 		{
@@ -457,7 +457,7 @@ Level =
 		BoneShotPlayerShoot = 
 		{
 			Enum SpellType = BONESHOT,
-			bool UnlockAtStart = true,
+			bool UnlockAtStart = false,
 			string SpellName = "Bone Shot",
 			string BulletSprite = "5873871a4de249f8:Texture_Bone",
 			int SpreadBullets = 3,
@@ -474,7 +474,7 @@ Level =
 		IceSpearPlayerShoot = 
 		{
 			Enum SpellType = ICESPEAR,
-			bool UnlockAtStart = true,
+			bool UnlockAtStart = false,
 			string SpellName = "Ice Spear",
 			string BulletSprite = "5858739c8bef319d:Texture_BigIce",
 			int SpreadBullets = 3,
@@ -488,33 +488,16 @@ Level =
 			float BurstDelay = 0,
 			int BurstCount = 1,
 		},
-		BubbleTrapPlayerShoot = 
-		{
-			Enum SpellType = BUBBLETRAP,
-			bool UnlockAtStart = false,
-			string SpellName = "Bubble Trap",
-			string BulletSprite = "583a1b2cfe6b1569:Texture_BubbleBullet",
-			int SpreadBullets = 3,
-			int RingCount = 10,
-			string BulletType = "582a49e0d54b1b1a:BubbleBullet",
-			float BulletDelay = 2,
-			float BulletSpeed = 170,
-			Enum ShotPattern = SINGLE,
-			string ShootSound = "5854f4cd860c332b:Audio_BubbleTrap",
-			bool TimerFreeze = false,
-			float BurstDelay = 0,
-			int BurstCount = 1,
-		},
 		WaterStreamPlayerShoot = 
 		{
 			Enum SpellType = WATERSTREAM,
-			bool UnlockAtStart = false,
+			bool UnlockAtStart = true,
 			string SpellName = "Water Stream",
 			string BulletSprite = "587c2c7990aee772:Texture_Raindrop",
 			int SpreadBullets = 3,
 			int RingCount = 10,
 			string BulletType = "58737c72bcda6207:WaterBullet",
-			float BulletDelay = 1.2,
+			float BulletDelay = 1.1,
 			float BulletSpeed = 180,
 			Enum ShotPattern = SINGLE,
 			string ShootSound = "",
@@ -573,6 +556,23 @@ Level =
 			float BurstDelay = 0,
 			int BurstCount = 1,
 		},
+		BubbleShotPlayerShoot = 
+		{
+			Enum SpellType = BUBBLESHOT,
+			bool UnlockAtStart = true,
+			string SpellName = "Bubble Shot",
+			string BulletSprite = "583a1b2cfe6b1569:Texture_BubbleBullet",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "582a49e0d54b1b1a:BubbleBullet",
+			float BulletDelay = 0.6,
+			float BulletSpeed = 100,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "5854f4cd860c332b:Audio_BubbleTrap",
+			bool TimerFreeze = false,
+			float BurstDelay = 1,
+			int BurstCount = 1,
+		},
 		ChangeLevelOnDeath = 
 		{
 			string LevelToLoad = "582bf69410c9f0c6:DeathLevel",
@@ -594,13 +594,30 @@ Level =
 			float BurstDelay = 0,
 			int BurstCount = 1,
 		},
+		RingOfFirePlayerShoot = 
+		{
+			Enum SpellType = RINGOFFIRE,
+			bool UnlockAtStart = true,
+			string SpellName = "Ring Of Fire",
+			string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
+			int SpreadBullets = 3,
+			int RingCount = 22,
+			string BulletType = "598dd55410ce6a8a:FlamingBullet",
+			float BulletDelay = 1.4,
+			float BulletSpeed = 120,
+			Enum ShotPattern = RING,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
 		Hierarchy = 
 		{
 			Cog = 
 			{
 				LinkId = 
 				{
-					uint Id = 2,
+					uint Id = 10,
 				},
 				Named = 
 				{
@@ -632,7 +649,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 10,
+							uint Id = 11,
 						},
 						Named = 
 						{
@@ -667,7 +684,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 11,
+							uint Id = 12,
 						},
 						Named = 
 						{
@@ -704,7 +721,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 12,
+							uint Id = 13,
 						},
 						Named = 
 						{
@@ -741,7 +758,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 13,
+							uint Id = 14,
 						},
 						Named = 
 						{
@@ -780,7 +797,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 14,
+									uint Id = 15,
 								},
 								Named = 
 								{
@@ -817,7 +834,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 15,
+							uint Id = 16,
 						},
 						Named = 
 						{
@@ -853,7 +870,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 16,
+									uint Id = 17,
 								},
 								Named = 
 								{
@@ -888,7 +905,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 17,
+									uint Id = 18,
 								},
 								Named = 
 								{
