@@ -1,0 +1,12 @@
+BinaryContent = 
+{
+	BinaryBuilder = 
+	{
+		string Name = "Ragnar_TileMap01",
+		uint64 ResourceId = 598df4baa5bf4703,
+		string LoaderType = "TileMapSource",
+		uint Version = 0,
+		string FilterTag = "",
+		string ResourceOwner = "598dea04281989a8:Ragnar",
+	},
+},

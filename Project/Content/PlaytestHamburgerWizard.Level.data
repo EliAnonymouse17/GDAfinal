@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 14.7781,
+			float Size = 36.3482,
 		},
 		EditorCameraController = 
 		{
@@ -193,7 +193,7 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "584fd601d0478ca6:TMSquare23",
+		string Name = "597b6bda6a019d3e:TMSquare23",
 		LinkId = 
 		{
 			uint Id = 7,
@@ -225,6 +225,24 @@ Level =
 		Named = 
 		{
 			string Name = "Player",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "597b65f4bcfdc3f0:TMSquare22",
+		LinkId = 
+		{
+			uint Id = 9,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-0.407895, 2.10573, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "TileMap",
 		},
 	},
 },

@@ -1,0 +1,12 @@
+BinaryContent = 
+{
+	BinaryBuilder = 
+	{
+		string Name = "PlaytestGiantSkeleton_TileMap00",
+		uint64 ResourceId = 598de2c6fe58039e,
+		string LoaderType = "TileMapSource",
+		uint Version = 0,
+		string FilterTag = "",
+		string ResourceOwner = "582db7dbc5334eae:PlaytestGiantSkeleton",
+	},
+},

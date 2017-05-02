@@ -8,10 +8,6 @@ Cog =
 	{
 		string Name = "Enemy",
 	},
-	Archetyped = 
-	{
-		string Name = "58040c758067a641:GiantSkeleton",
-	},
 	Transform = 
 	{
 		Vec3 Translation = [-1.1704, 7.5, 0],
@@ -24,7 +20,7 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [1, 1, 1, 1],
+		Vec4 Color = [0, 0, 0, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -50,7 +46,7 @@ Cog =
 	{
 		bool Static = false,
 		bool Asleep = false,
-		bool Kinematic = false,
+		bool Kinematic = true,
 		bool RotationLocked = true,
 		bool Mode2D = true,
 		bool AllowSleep = false,
@@ -149,10 +145,6 @@ Cog =
 	ChangeLevelOnDeath = 
 	{
 		string LevelToLoad = "582db2ee1e39f96c:PlaytestLibrarian",
-	},
-	Wanderer = 
-	{
-		float MoveSpeed = 1,
 	},
 	Hierarchy = 
 	{

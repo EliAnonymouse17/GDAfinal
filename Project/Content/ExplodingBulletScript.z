@@ -10,6 +10,9 @@ class ExplodingBulletScript : ZilchComponent
     var SpawnedBulletVelocity : Real = 25;
     
     [Property]
+    var NumBullets : Integer = 14;
+    
+    [Property]
     var BoomSound : SoundCue = SoundCue.ExplodingBulletImpact;
     
     var HasCollided : Boolean = false;
@@ -27,9 +30,9 @@ class ExplodingBulletScript : ZilchComponent
             return;
         }
         
-        for (var i = 0; i < 14; ++i)
+        for (var i = 0; i < this.NumBullets; ++i)
         {
-            this.Angle = Math.ATan2(0,0) - (i-1)*(Math.ToRadians(360 / 14));
+            this.Angle = Math.ATan2(0,0) - (i-1)*(Math.ToRadians(360 / this.NumBullets));
             var bullet = this.Space.CreateAtPosition(this.ArchetypeToSpawn, this.Owner.Transform.Translation);
             var newAngle = Real3(Math.Sin(this.Angle), Math.Cos(this.Angle), 0);
             newAngle = Math.Normalize(newAngle);
