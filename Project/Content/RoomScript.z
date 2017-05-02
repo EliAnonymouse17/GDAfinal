@@ -1,58 +1,34 @@
-enum EnemyTypeID {SKELETON, ZOMBIE, NECROMANCER}
-
 enum Directions {UP, DOWN, RIGHT, LEFT}
-
-enum ItemID {HEALTH, BLOCKADE}
 
 enum RoomType {BASIC, TREASURE, BOSS}
 
-class Enemy
+class RoomObject
 {
     var Position : Real3;
-    var Sprite : SpriteSource;
-    var ShotType : ShotPatternID;
-    var AIScript1 : String;
-    var AIScript2 : String;
-    constructor(enemyType : EnemyTypeID, position : Real3)
+    var Arch : Archetype;
+    constructor(arch : Archetype, pos : Real3)
     {
-        this.Position = position;
-        if(enemyType == EnemyTypeID.SKELETON)
-        {
-            this.Sprite = SpriteSource.Texture_SkeletonStill;
-            this.ShotType = ShotPatternID.SINGLE;
-            this.AIScript1 = "SideToSide";
-            this.AIScript2 = "Empty";
-        }
-    }
-}
-
-class Item
-{
-    var Position : Real3;
-    var ID : ItemID;
-    constructor(itemID : ItemID, position : Real3)
-    {
-        this.Position = position;
-        this.ID = itemID;
+        this.Position = pos;
+        this.Arch = arch;
     }
 }
 
 class Room
 {
-    var Enemies : Array[Enemy];
-    var Items : Array[Item];
+    var Enemies : Array[RoomObject];
+    var Items : Array[RoomObject];
     var TM : Archetype;
     var Rotation : Integer;
     var Type : RoomType;
-    constructor(enemies : Array[Enemy], items : Array[Item], tileMap : Archetype, rotation : Integer, roomType : RoomType)
+    constructor(enemies : Array[RoomObject], items : Array[RoomObject], tileMap : Archetype, rotation : Integer, roomType : RoomType)
     {
-        this.Enemies = new Array[Enemy](enemies.Count);
+        this.Enemies = new Array[RoomObject](enemies.Count);
         for(var i = 0; i < this.Enemies.Count; ++i)
         {
             this.Enemies[i] = enemies[i];
         }
         
-        this.Items = new Array[Item](items.Count);
+        this.Items = new Array[RoomObject](items.Count);
         for(var i = 0; i < this.Items.Count; ++i)
         {
             this.Items[i] = items[i];
@@ -70,19 +46,12 @@ class Room
         {
             for(var i = 0; i < this.Enemies.Count; ++i)
             {
-                var currentEnemy = space.CreateAtPosition(Archetype.Enemy, this.Enemies[i].Position);
-                currentEnemy.AddComponentByName(this.Enemies[i].AIScript1);
-                currentEnemy.AddComponentByName(this.Enemies[i].AIScript2);
-                currentEnemy.Sprite.SpriteSource = this.Enemies[i].Sprite;
-                currentEnemy.EnemyShoot.ShotPattern = this.Enemies[i].ShotType;
+                space.CreateAtPosition(this.Enemies[i].Arch, this.Enemies[i].Position);
             }
             
             for(var i = 0; i < this.Items.Count; ++i)
             {
-                if(this.Items[i].ID == ItemID.BLOCKADE)
-                    space.CreateAtPosition(Archetype.Blockade, this.Items[i].Position);
-                if(this.Items[i].ID == ItemID.HEALTH)
-                    space.CreateAtPosition(Archetype.HeartPickup, this.Items[i].Position);
+                space.CreateAtPosition(this.Items[i].Arch, this.Items[i].Position);
             }
             var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, 0));
             //tileMap.Transform.RotateAnglesLocal(Real3(0, 0, Math.ToRadians(this.Rotation)));
@@ -103,8 +72,8 @@ class Room
 
 class RoomScript : ZilchComponent
 {
-    var CurrentEnemyList : Array[Enemy];
-    var CurrentItemList : Array[Item];
+    var CurrentEnemyList : Array[RoomObject];
+    var CurrentItemList : Array[RoomObject];
     var CurrentRoom : Room;
     var Map : Array[Array[Room]];
     var MapPosition : Integer2;
@@ -113,16 +82,17 @@ class RoomScript : ZilchComponent
     var Timer : Real = 0;
     var LoadDirection : Directions;
     var CheckTimer : Real = 0;
+    [Property] var World : Integer = 1;
     
     function Initialize(init : CogInitializer)
     {
         this.Minimap = this.Space.FindObjectByName("Minimap").Minimap;
         this.Map = this.InitMap();
         this.MapPosition = Integer2(0, 0);
-        this.CurrentEnemyList = new Array[Enemy]();
-        this.CurrentEnemyList.Add(new Enemy(EnemyTypeID.SKELETON, Real3(-7, 7.5, 0)));
-        this.CurrentItemList = new Array[Item]();
-        this.CurrentItemList.Add(new Item(ItemID.BLOCKADE, Real3(7, 7.5, 0)));
+        this.CurrentEnemyList = new Array[RoomObject]();
+        this.CurrentEnemyList.Add(new RoomObject(Archetype.Skeleton, Real3(-7, 7.5, 0)));
+        this.CurrentItemList = new Array[RoomObject]();
+        this.CurrentItemList.Add(new RoomObject(Archetype.Blockade, Real3(7, 7.5, 0)));
         this.CurrentRoom = new Room(this.CurrentEnemyList, this.CurrentItemList, Archetype.TMSquare22, 0, RoomType.BASIC);
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
@@ -226,8 +196,8 @@ class RoomScript : ZilchComponent
         var roomSize = 0;
         var tileMap = Archetype.TMSquare22;
         var rotation = 0;
-        var enemies = new Array[Enemy]();
-        var items = new Array[Item]();
+        var enemies = new Array[RoomObject]();
+        var items = new Array[RoomObject]();
         var random = Random();
         //var seedGen = Random();
         var temp : Integer = 0;
@@ -289,28 +259,50 @@ class RoomScript : ZilchComponent
         
         rotation = (random.DieRoll(4) - 1) * 90;
         
-        var enemyNum = random.DieRoll(4) - 4 + roomSize;
+        var enemyNum = random.DieRoll(6) - 3 + Math.Ceil(roomSize/2);
         
         for(var i = 0; i < enemyNum; ++i)
         {
-            temp = random.DieRoll(10);
-            if(temp < 6)
-                enemies.Add(new Enemy(EnemyTypeID.SKELETON, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
-            else if(temp < 10)
-                enemies.Add(new Enemy(EnemyTypeID.ZOMBIE, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+            temp = random.DieRoll(20);
+            if(temp < 9)
+            {
+                if(this.World == 1)
+                    enemies.Add(new RoomObject(Archetype.Skeleton, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                if(this.World == 2)
+                    enemies.Add(new RoomObject(Archetype.BoomBook, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+            }
+            else if(temp < 15)
+            {
+                if(this.World == 1)
+                    enemies.Add(new RoomObject(Archetype.Zombie, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                if(this.World == 2)
+                    enemies.Add(new RoomObject(Archetype.Apprentice, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+            }
+            else if(temp < 19)
+            {
+                if(this.World == 1)
+                    enemies.Add(new RoomObject(Archetype.Ghost, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                if(this.World == 2)
+                    enemies.Add(new RoomObject(Archetype.StaffOgre, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+            }
             else
-                enemies.Add(new Enemy(EnemyTypeID.NECROMANCER, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+            {
+                if(this.World == 1)
+                    enemies.Add(new RoomObject(Archetype.Necromancer, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                if(this.World == 2)
+                    enemies.Add(new RoomObject(Archetype.AnimatedGolem, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+            }
         }
         
         var itemNum = random.DieRoll(4) - 2 + Math.Floor(roomSize/2.0);
         
         for(var i = 0; i < itemNum; ++i)
         {
-            temp = random.DieRoll(10);
-            if(temp < 8)
-                items.Add(new Item(ItemID.BLOCKADE, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+            temp = random.DieRoll(5);
+            if(temp < 5)
+                items.Add(new RoomObject(Archetype.Blockade, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
             else
-                items.Add(new Item(ItemID.HEALTH, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                items.Add(new RoomObject(Archetype.HeartPickup, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
         }
         
         return new Room(enemies, items, tileMap, rotation, RoomType.BASIC);
@@ -504,7 +496,7 @@ class RoomScript : ZilchComponent
     
     function NextRoom(direction : Directions)
     {
-        this.Map[this.MapPosition.X][this.MapPosition.Y] = new Room(new Array[Enemy](), new Array[Item](), this.CurrentRoom.TM, this.CurrentRoom.Rotation, this.CurrentRoom.Type);
+        this.Map[this.MapPosition.X][this.MapPosition.Y] = new Room(new Array[RoomObject](), new Array[RoomObject](), this.CurrentRoom.TM, this.CurrentRoom.Rotation, this.CurrentRoom.Type);
         this.Minimap.SetNodeState(this.MapPosition, MMNodeState.Complete);
         foreach (var bullet in this.Space.FindAllObjectsByName("Bullet"))
         {
