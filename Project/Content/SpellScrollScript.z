@@ -1,7 +1,7 @@
 class SpellScrollScript : ZilchComponent
 {
     [Property]
-    var Spell : SpellTypes = SpellTypes.BUBBLETRAP;
+    var Spell : SpellTypes = SpellTypes.BUBBLESHOT;
     [Property]
     var SpellIcon : SpriteSource = SpriteSource.Texture_BubbleBullet;
     

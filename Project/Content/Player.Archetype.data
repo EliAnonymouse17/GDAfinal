@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.468242, -2.37777, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -163,23 +163,6 @@ Cog =
 		float BurstDelay = 0,
 		int BurstCount = 1,
 	},
-	BubbleTrapPlayerShoot = 
-	{
-		Enum SpellType = BUBBLETRAP,
-		bool UnlockAtStart = false,
-		string SpellName = "Bubble Trap",
-		string BulletSprite = "583a1b2cfe6b1569:Texture_BubbleBullet",
-		int SpreadBullets = 3,
-		int RingCount = 10,
-		string BulletType = "582a49e0d54b1b1a:BubbleBullet",
-		float BulletDelay = 2,
-		float BulletSpeed = 170,
-		Enum ShotPattern = SINGLE,
-		string ShootSound = "5854f4cd860c332b:Audio_BubbleTrap",
-		bool TimerFreeze = false,
-		float BurstDelay = 0,
-		int BurstCount = 1,
-	},
 	WaterStreamPlayerShoot = 
 	{
 		Enum SpellType = WATERSTREAM,
@@ -247,6 +230,23 @@ Cog =
 		bool TimerFreeze = false,
 		float BurstDelay = 0,
 		int BurstCount = 1,
+	},
+	BubbleShotPlayerShoot = 
+	{
+		Enum SpellType = BUBBLESHOT,
+		bool UnlockAtStart = false,
+		string SpellName = "Bubble Shot",
+		string BulletSprite = "583a1b2cfe6b1569:Texture_BubbleBullet",
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "582a49e0d54b1b1a:BubbleBullet",
+		float BulletDelay = 1,
+		float BulletSpeed = 100,
+		Enum ShotPattern = SINGLE,
+		string ShootSound = "5854f4cd860c332b:Audio_BubbleTrap",
+		bool TimerFreeze = false,
+		float BurstDelay = 0.1,
+		int BurstCount = 5,
 	},
 	ChangeLevelOnDeath = 
 	{

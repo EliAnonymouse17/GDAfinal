@@ -18,7 +18,7 @@
 
 class NullPlayerShoot : PlayerShoot{}
 class BasicPlayerShoot : PlayerShoot{}
-class BubbleTrapPlayerShoot : PlayerShoot{}
+class BubbleShotPlayerShoot : PlayerShoot{}
 class ExplodingBulletPlayerShoot : PlayerShoot{}
 class IceSpearPlayerShoot : PlayerShoot{}
 class SeekingArrowPlayerShoot : PlayerShoot{}
@@ -30,7 +30,7 @@ enum SpellTypes
     {
     NULL, 
     BASIC, 
-    BUBBLETRAP, 
+    BUBBLESHOT, 
     EXPLODINGBULLET, 
     ICESPEAR, 
     SEEKINGARROW, 
@@ -56,9 +56,9 @@ class SpellSwitchHandler : ZilchComponent
             {
                 return this.Owner.BasicPlayerShoot;
             }
-            else if(this.CurrentSpell == SpellTypes.BUBBLETRAP)
+            else if(this.CurrentSpell == SpellTypes.BUBBLESHOT)
             {
-                return this.Owner.BubbleTrapPlayerShoot;
+                return this.Owner.BubbleShotPlayerShoot;
             }
             else if(this.CurrentSpell == SpellTypes.EXPLODINGBULLET)
             {
