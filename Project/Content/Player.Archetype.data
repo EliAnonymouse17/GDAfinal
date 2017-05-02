@@ -71,8 +71,8 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 10000,
-		int MaxHP = 10000,
+		int PrivateHP = 8,
+		int MaxHP = 8,
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,
@@ -86,7 +86,7 @@ Cog =
 	},
 	SpellSwitchHandler = 
 	{
-		bool DebugUnlockAll = false,
+		bool DebugUnlockAll = true,
 	},
 	PlayerAnimations = 
 	{
@@ -132,7 +132,7 @@ Cog =
 	BoneShotPlayerShoot = 
 	{
 		Enum SpellType = BONESHOT,
-		bool UnlockAtStart = false,
+		bool UnlockAtStart = true,
 		string SpellName = "Bone Shot",
 		string BulletSprite = "5873871a4de249f8:Texture_Bone",
 		int SpreadBullets = 3,
@@ -149,7 +149,7 @@ Cog =
 	IceSpearPlayerShoot = 
 	{
 		Enum SpellType = ICESPEAR,
-		bool UnlockAtStart = false,
+		bool UnlockAtStart = true,
 		string SpellName = "Ice Spear",
 		string BulletSprite = "5858739c8bef319d:Texture_BigIce",
 		int SpreadBullets = 3,
@@ -166,7 +166,7 @@ Cog =
 	WaterStreamPlayerShoot = 
 	{
 		Enum SpellType = WATERSTREAM,
-		bool UnlockAtStart = true,
+		bool UnlockAtStart = false,
 		string SpellName = "Water Stream",
 		string BulletSprite = "587c2c7990aee772:Texture_Raindrop",
 		int SpreadBullets = 3,
@@ -234,7 +234,7 @@ Cog =
 	BubbleShotPlayerShoot = 
 	{
 		Enum SpellType = BUBBLESHOT,
-		bool UnlockAtStart = true,
+		bool UnlockAtStart = false,
 		string SpellName = "Bubble Shot",
 		string BulletSprite = "583a1b2cfe6b1569:Texture_BubbleBullet",
 		int SpreadBullets = 3,
@@ -271,16 +271,16 @@ Cog =
 	},
 	RingOfFirePlayerShoot = 
 	{
-		Enum SpellType = RINGOFFIRE,
-		bool UnlockAtStart = true,
-		string SpellName = "Ring Of Fire",
+		Enum SpellType = NULL,
+		bool UnlockAtStart = false,
+		string SpellName = "Magic Missile",
 		string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
 		int SpreadBullets = 3,
-		int RingCount = 22,
-		string BulletType = "598dd55410ce6a8a:FlamingBullet",
-		float BulletDelay = 1.4,
-		float BulletSpeed = 120,
-		Enum ShotPattern = RING,
+		int RingCount = 10,
+		string BulletType = "5815eae6be2978a9:Bullet",
+		float BulletDelay = 1,
+		float BulletSpeed = 1000,
+		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
 		bool TimerFreeze = false,
 		float BurstDelay = 0,
