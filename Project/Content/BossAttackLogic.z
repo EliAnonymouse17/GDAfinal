@@ -85,13 +85,13 @@ class BossAttackLogic : ZilchComponent
     [Property] var ChallengeColor : Real4 = Real4(1, 1, 1, 1);
     
     var StageSwitchBool : Boolean = false;
-    var AttackTimer1 : Real = 4;
-    var AttackTimer2 : Real = 1;
-    var AttackTimer3 : Real = 2;
+    [Property] var AttackTimer1 : Real = 4;
+    [Property] var AttackTimer2 : Real = 1;
+    [Property] var AttackTimer3 : Real = 2;
     
-    var ChallengeAttackTimer1 : Real = 4;
-    var ChallengeAttackTimer2 : Real = 1;
-    var ChallengeAttackTimer3 : Real = 2;
+    [Property] var ChallengeAttackTimer1 : Real = 4;
+    [Property] var ChallengeAttackTimer2 : Real = 1;
+    [Property] var ChallengeAttackTimer3 : Real = 2;
     
     var FinishedAnimation : Boolean = false;
     
