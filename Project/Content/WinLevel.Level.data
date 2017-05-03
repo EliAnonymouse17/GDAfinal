@@ -12,7 +12,7 @@ Level =
 		},
 		GravityEffect = 
 		{
-			bool Active = false,
+			bool Active = true,
 			bool WakeUpOnChange = false,
 			bool LocalSpaceDirection = true,
 			float Strength = 10,
@@ -20,7 +20,7 @@ Level =
 		},
 		DragEffect = 
 		{
-			bool Active = false,
+			bool Active = true,
 			bool WakeUpOnChange = false,
 			float Drag = 0.7,
 		},
@@ -49,7 +49,7 @@ Level =
 			},
 			CogPath Camera = 
 			{
-				string Path = ":/Player/Camera",
+				string Path = ":/Camera",
 				bool ErrorOnResolveToNull = false,
 				bool ErrorOnPathCantCompute = false,
 				bool ErrorOnDirectLinkFail = false,
@@ -66,6 +66,15 @@ Level =
 			Vec2 Resolution = [1280, 720],
 			Vec4 MarginColor = [0, 0, 0, 1],
 		},
+		ForwardRenderer = 
+		{
+			Vec4 ClearColor = [0.155, 0.155, 0.155, 1],
+			bool DrawNonVisible = false,
+			bool DrawDebugObjects = true,
+			bool DrawEditorIcons = true,
+			bool EditorIconDepth = true,
+			bool Wireframe = false,
+		},
 		GridDraw = 
 		{
 			bool Active = true,
@@ -81,24 +90,6 @@ Level =
 			int HilightInterval = 10,
 			bool FollowEditorCamera = false,
 		},
-		DeferredRenderer = 
-		{
-			Vec4 ClearColor = [0, 0, 0, 1],
-			bool DrawNonVisible = false,
-			bool DrawDebugObjects = true,
-			bool DrawEditorIcons = true,
-			bool EditorIconDepth = true,
-			bool Hdr = true,
-			bool Shadows = true,
-			bool AntiAliasing = false,
-			bool Refraction = true,
-			bool Reflections = true,
-			string ReflectionEnvironmentName = "4fab71e8bcb7a8ce:DefaultTexture",
-			bool GodRays = true,
-			bool RenderMasks = false,
-			bool Glow = false,
-			float GlowThreshold = 1,
-		},
 	},
 	Cog = 
 	{
@@ -112,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-1.55263, 4.79137, 50],
+			Vec3 Translation = [0, 0, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -124,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 26.9274,
+			float Size = 20,
 		},
 		EditorCameraController = 
 		{
@@ -132,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-1.55263, 4.79137, 3.37935e-007],
+			Vec3 LookTarget = [0, 0, 0],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -148,57 +139,133 @@ Level =
 	{
 		LinkId = 
 		{
+			uint Id = 2,
+		},
+		Named = 
+		{
+			string Name = "Camera",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, 40],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Camera = 
+		{
+			ProjectionMode ProjectionMode = Orthographic,
+			Facing Facing = NegativeZ,
+			CameraTransparentSort TransparentSort = InheritFromSpace,
+			float FieldOfView = 45,
+			float NearPlane = 0.5,
+			float FarPlane = 200,
+			float Size = 20,
+		},
+		Microphone = 
+		{
+			bool Active = true,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
 			uint Id = 4,
 		},
 		Named = 
 		{
-			string Name = "Room",
+			string Name = "WinText",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 0],
+			Vec3 Translation = [-5.58904, 5.34247, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		RoomScript = 
+		SpriteText = 
 		{
-			int World = 1,
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string FontName = "4e7bac697bec55c5:Verdana",
+			uint FontSize = 128,
+			string Text = "YOU WON!!",
+			TextAlign Align = Left,
+			float PixelsPerUnit = 64,
+			bool Smoothing = true,
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "584e01664b4e55af:HeartPickup",
 		LinkId = 
 		{
 			uint Id = 5,
 		},
+		Named = 
+		{
+			string Name = "WinText2",
+		},
 		Transform = 
 		{
-			Vec3 Translation = [2.96051, -0.398743, 0],
+			Vec3 Translation = [-1.34246, 3.0411, 0],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		SpriteText = 
 		{
-			string Name = "Heart Pickup",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string FontName = "4e7bac697bec55c5:Verdana",
+			uint FontSize = 32,
+			string Text = "(good job!)",
+			TextAlign Align = Left,
+			float PixelsPerUnit = 64,
+			bool Smoothing = true,
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "58681d50bb219a4c:TheLibrarian",
 		LinkId = 
 		{
 			uint Id = 6,
 		},
-		Transform = 
-		{
-			Vec3 Translation = [-1, 13.5, 0.1],
-			Vec3 Scale = [1.5, 1.5, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
 		Named = 
 		{
-			string Name = "Enemy",
+			string Name = "RestartText",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-1.8248, -2.29602, 0],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		SpriteText = 
+		{
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 0, 0, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string FontName = "4e7bac697bec55c5:Verdana",
+			uint FontSize = 32,
+			string Text = "Restart",
+			TextAlign Align = Left,
+			float PixelsPerUnit = 64,
+			bool Smoothing = true,
 		},
 	},
 	Cog = 
@@ -209,12 +276,12 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "TeleportRune",
+			string Name = "RestartButton",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-20.5, 13.5, 0],
-			Vec3 Scale = [2, 2, 1],
+			Vec3 Translation = [0, -2.93151, 0],
+			Vec3 Scale = [4, 1.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Sprite = 
@@ -227,7 +294,7 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "582117b7e380f555:texture_Rune1",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -235,10 +302,19 @@ Level =
 			float AnimationSpeed = 1,
 			uint StartFrame = 0,
 		},
-		TeleportRuneAnimations = 
+		StartGameScript = 
 		{
-			string StillTexture = "582117b7e380f555:texture_Rune1",
-			string RuneAnimation = "5823824b8605fb40:Animation_Rune1",
+			string LevelToLoad = "582db5f31b57da50:PlaytestTutorial",
+		},
+		Reactive = 
+		{
+			bool Active = true,
+			bool CaptureMouse = false,
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
 		},
 	},
 	Cog = 
@@ -249,12 +325,12 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "TeleportRune",
+			string Name = "QuitButton",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-10.5, 13.5, 0],
-			Vec3 Scale = [2, 2, 1],
+			Vec3 Translation = [0, -4.79452, 0],
+			Vec3 Scale = [4, 1.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Sprite = 
@@ -267,7 +343,7 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5821176b4a96cb09:texture_Rune2",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -275,10 +351,18 @@ Level =
 			float AnimationSpeed = 1,
 			uint StartFrame = 0,
 		},
-		TeleportRuneAnimations = 
+		Reactive = 
 		{
-			string StillTexture = "5821176b4a96cb09:texture_Rune2",
-			string RuneAnimation = "58238da9e312d1a5:Animation_Rune2",
+			bool Active = true,
+			bool CaptureMouse = false,
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
+		},
+		QuitGameScript = 
+		{
 		},
 	},
 	Cog = 
@@ -289,36 +373,30 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "TeleportRune",
+			string Name = "QuitText",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-1, 13.5, 0],
+			Vec3 Translation = [-1.13987, -4.15903, 0],
 			Vec3 Scale = [2, 2, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
+		SpriteText = 
 		{
 			bool Visible = true,
 			bool VisibilityCulling = true,
 			bool VisibilityEvents = true,
 			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
+			Vec4 Color = [0, 0, 0, 1],
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "58211757a28a8a34:texture_Rune3",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		TeleportRuneAnimations = 
-		{
-			string StillTexture = "58211757a28a8a34:texture_Rune3",
-			string RuneAnimation = "58238d8cc1641e86:Animation_Rune3",
+			string FontName = "4e7bac697bec55c5:Verdana",
+			uint FontSize = 32,
+			string Text = "Quit",
+			TextAlign Align = Left,
+			float PixelsPerUnit = 64,
+			bool Smoothing = true,
 		},
 	},
 	Cog = 
@@ -329,12 +407,12 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "TeleportRune",
+			string Name = "EasterEggButton",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [9, 13.5, 0],
-			Vec3 Scale = [2, 2, 1],
+			Vec3 Translation = [15.1781, 8.16438, 0],
+			Vec3 Scale = [4, 1.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Sprite = 
@@ -347,7 +425,7 @@ Level =
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "582116e5c3fcaaaf:texture_Rune4",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
 			bool RenderMask = false,
 			bool FlipX = false,
 			bool FlipY = false,
@@ -355,10 +433,19 @@ Level =
 			float AnimationSpeed = 1,
 			uint StartFrame = 0,
 		},
-		TeleportRuneAnimations = 
+		StartGameScript = 
 		{
-			string StillTexture = "582116e5c3fcaaaf:texture_Rune4",
-			string RuneAnimation = "58238ddd2ab6c774:Animation_Rune4",
+			string LevelToLoad = "554cea0f94af672f:Level",
+		},
+		Reactive = 
+		{
+			bool Active = true,
+			bool CaptureMouse = false,
+		},
+		Area = 
+		{
+			Vec2 Size = [1, 1],
+			Location Origin = Center,
 		},
 	},
 	Cog = 
@@ -369,72 +456,64 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "TeleportRune",
+			string Name = "EasterEggText",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [18.5, 13.5, 0],
+			Vec3 Translation = [13.5177, 8.71768, 0],
 			Vec3 Scale = [2, 2, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
+		SpriteText = 
 		{
 			bool Visible = true,
 			bool VisibilityCulling = true,
 			bool VisibilityEvents = true,
 			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
+			Vec4 Color = [1, 0, 0, 1],
 			BlendMode BlendMode = Alpha,
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "582116c03b9e4e94:texture_Rune5",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		TeleportRuneAnimations = 
-		{
-			string StillTexture = "582116c03b9e4e94:texture_Rune5",
-			string RuneAnimation = "58238d330821d465:Animation_Rune5",
+			string FontName = "4e7bac697bec55c5:Verdana",
+			uint FontSize = 16,
+			string Text = "Super Secret",
+			TextAlign Align = Left,
+			float PixelsPerUnit = 64,
+			bool Smoothing = true,
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "584fd89208ba642f:TMSquare24",
 		LinkId = 
 		{
 			uint Id = 12,
 		},
-		Transform = 
-		{
-			Vec3 Translation = [-1.06941, 5.28007, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
 		Named = 
 		{
-			string Name = "TileMap",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "582e55149cb1b9f5:Player",
-		LinkId = 
-		{
-			uint Id = 13,
+			string Name = "EasterEggText",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 0],
-			Vec3 Scale = [1.2, 1.2, 1],
+			Vec3 Translation = [13.682, 8.25193, 0],
+			Vec3 Scale = [2, 2, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		SpriteText = 
 		{
-			string Name = "Player",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 0, 0, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string FontName = "4e7bac697bec55c5:Verdana",
+			uint FontSize = 16,
+			string Text = "Easter Egg",
+			TextAlign Align = Left,
+			float PixelsPerUnit = 64,
+			bool Smoothing = true,
 		},
 	},
 },

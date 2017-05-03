@@ -43,8 +43,8 @@ Cog =
 		bool Seamless = true,
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "580e65c5299dfb9d:EnemyBullet",
-		Vec3 Offset = [0.01, -0.005, 0],
-		float Radius = 0.5,
+		Vec3 Offset = [-0.01, -0.005, 0],
+		float Radius = 0.3,
 	},
 	RigidBody = 
 	{
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -62,7 +62,7 @@ Cog =
 	{
 		int Damage = 1,
 		int PRVHitCount = 1,
-		string SpawnOnDeath = "587c02da03a631fd:Fireling",
+		string SpawnOnDeath = "",
 		string SpawnOnDeath2 = "",
 	},
 },

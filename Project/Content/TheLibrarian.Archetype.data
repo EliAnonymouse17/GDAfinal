@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-1, 13.5, 0.1],
 		Vec3 Scale = [1.5, 1.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -52,8 +52,8 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = true,
 		bool RotationLocked = true,
-		bool Mode2D = false,
-		bool AllowSleep = false,
+		bool Mode2D = true,
+		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
 		Vec3 AngularVelocity = [0, 0, 0],
@@ -145,12 +145,22 @@ Cog =
 		int BurstCount6 = 4,
 		float StageSwitch = 20,
 		Vec4 ChallengeColor = [0, 0, 1, 1],
+		float AttackTimer1 = 4,
+		float AttackTimer2 = 1,
+		float AttackTimer3 = 2,
+		float ChallengeAttackTimer1 = 4,
+		float ChallengeAttackTimer2 = 1,
+		float ChallengeAttackTimer3 = 2,
 	},
 	LibrarianTeleport = 
 	{
 		string TeleportAnimation = "584fdb207bf8dc4b:NecroMoveAnimation",
 		string OriginalTexture = "584fced65555e419:NecroAttackAnimation",
 		float TeleportDelay = 5.5,
+	},
+	ChangeLevelOnDeath = 
+	{
+		string LevelToLoad = "598dea04281989a8:Ragnar",
 	},
 	Hierarchy = 
 	{

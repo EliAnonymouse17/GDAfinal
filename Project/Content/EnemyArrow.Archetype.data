@@ -42,7 +42,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -75,7 +75,7 @@ Cog =
 	PointTowards = 
 	{
 		Enum TrackedCog = PLAYER,
-		float Speed = 5,
+		float Speed = 9,
 		float Radians = 0.1,
 		float DestroyTimer = 4.5,
 	},

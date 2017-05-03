@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.495258, -4.23722, 0],
+		Vec3 Translation = [-0.468242, -2.37777, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -86,7 +86,7 @@ Cog =
 	},
 	SpellSwitchHandler = 
 	{
-		bool DebugUnlockAll = true,
+		bool DebugUnlockAll = false,
 	},
 	PlayerAnimations = 
 	{
@@ -132,7 +132,7 @@ Cog =
 	BoneShotPlayerShoot = 
 	{
 		Enum SpellType = BONESHOT,
-		bool UnlockAtStart = true,
+		bool UnlockAtStart = false,
 		string SpellName = "Bone Shot",
 		string BulletSprite = "5873871a4de249f8:Texture_Bone",
 		int SpreadBullets = 3,
@@ -166,7 +166,7 @@ Cog =
 	WaterStreamPlayerShoot = 
 	{
 		Enum SpellType = WATERSTREAM,
-		bool UnlockAtStart = false,
+		bool UnlockAtStart = true,
 		string SpellName = "Water Stream",
 		string BulletSprite = "587c2c7990aee772:Texture_Raindrop",
 		int SpreadBullets = 3,
@@ -234,7 +234,7 @@ Cog =
 	BubbleShotPlayerShoot = 
 	{
 		Enum SpellType = BUBBLESHOT,
-		bool UnlockAtStart = false,
+		bool UnlockAtStart = true,
 		string SpellName = "Bubble Shot",
 		string BulletSprite = "583a1b2cfe6b1569:Texture_BubbleBullet",
 		int SpreadBullets = 3,
@@ -271,16 +271,16 @@ Cog =
 	},
 	RingOfFirePlayerShoot = 
 	{
-		Enum SpellType = NULL,
-		bool UnlockAtStart = false,
-		string SpellName = "Magic Missile",
+		Enum SpellType = RINGOFFIRE,
+		bool UnlockAtStart = true,
+		string SpellName = "Ring Of Fire",
 		string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
 		int SpreadBullets = 3,
-		int RingCount = 10,
-		string BulletType = "5815eae6be2978a9:Bullet",
-		float BulletDelay = 1,
-		float BulletSpeed = 1000,
-		Enum ShotPattern = SINGLE,
+		int RingCount = 26,
+		string BulletType = "598dd55410ce6a8a:FlamingBullet",
+		float BulletDelay = 1.8,
+		float BulletSpeed = 160,
+		Enum ShotPattern = RING,
 		string ShootSound = "",
 		bool TimerFreeze = false,
 		float BurstDelay = 0,

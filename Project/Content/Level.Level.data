@@ -91,11 +91,29 @@ Level =
 			bool FollowEditorCamera = false,
 		},
 	},
+	ArchetypeInstance = 
+	{
+		string Name = "582e55149cb1b9f5:Player",
+		LinkId = 
+		{
+			uint Id = 3,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, 0],
+			Vec3 Scale = [1.2, 1.2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Player",
+		},
+	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 3,
+			uint Id = 4,
 		},
 		Named = 
 		{
@@ -140,7 +158,7 @@ Level =
 		string Name = "584d38bbc0e476d3:Skeleton",
 		LinkId = 
 		{
-			uint Id = 4,
+			uint Id = 5,
 		},
 		Transform = 
 		{
@@ -157,7 +175,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 5,
+			uint Id = 6,
 		},
 		Named = 
 		{
@@ -171,6 +189,7 @@ Level =
 		},
 		RoomScript = 
 		{
+			int World = 1,
 		},
 	},
 	ArchetypeInstance = 
@@ -178,7 +197,7 @@ Level =
 		string Name = "5812cd3d46ba25e2:Necromancer",
 		LinkId = 
 		{
-			uint Id = 6,
+			uint Id = 7,
 		},
 		Transform = 
 		{
@@ -196,7 +215,7 @@ Level =
 		string Name = "584d30a5b4310262:Zombie",
 		LinkId = 
 		{
-			uint Id = 7,
+			uint Id = 8,
 		},
 		Transform = 
 		{
@@ -214,7 +233,7 @@ Level =
 		string Name = "58637710f6c80a11:Treasure",
 		LinkId = 
 		{
-			uint Id = 8,
+			uint Id = 9,
 		},
 		Transform = 
 		{
@@ -232,7 +251,7 @@ Level =
 		string Name = "584e01664b4e55af:HeartPickup",
 		LinkId = 
 		{
-			uint Id = 9,
+			uint Id = 10,
 		},
 		Transform = 
 		{
@@ -243,24 +262,6 @@ Level =
 		Named = 
 		{
 			string Name = "Heart Pickup",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "582e55149cb1b9f5:Player",
-		LinkId = 
-		{
-			uint Id = 10,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [0, 0, 0],
-			Vec3 Scale = [1.2, 1.2, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Player",
 		},
 	},
 	ArchetypeInstance = 
