@@ -91,6 +91,7 @@ class HitpointScript : ZilchComponent
                 //Special cases that trigger events on destruction
                 if(this.Owner.ChangeLevelOnDeath != null)
                 {
+                    this.Space.DestroyAllFromLevel();
                     this.Space.LoadLevel(this.Owner.ChangeLevelOnDeath.LevelToLoad);
                 }
                 this.Space.SoundSpace.PlayCue(this.DeathSound);
