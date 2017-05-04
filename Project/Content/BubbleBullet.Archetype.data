@@ -44,7 +44,7 @@ Cog =
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "580e65c5299c3bbe:PlayerBullet",
 		Vec3 Offset = [0, 0, 0],
-		float Radius = 0.34,
+		float Radius = 0.3,
 	},
 	RigidBody = 
 	{
@@ -64,7 +64,7 @@ Cog =
 	},
 	DamageScript = 
 	{
-		int Damage = 4,
+		int Damage = 3,
 		int PRVHitCount = 1,
 		string SpawnOnDeath = "",
 		string SpawnOnDeath2 = "",

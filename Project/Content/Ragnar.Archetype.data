@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-1.1704, 7.5, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [2.5, 2.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = true,
 		bool RotationLocked = true,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -130,7 +130,7 @@ Cog =
 		float ChallengeAttackDelay1 = 6.5,
 		float ChallengeBulletSpeed1 = 120,
 		Enum ChallengeShotPattern1 = SPREAD,
-		string ChallengeBulletType1 = "580e65c5299defb0:EnemyBullet",
+		string ChallengeBulletType1 = "598e5f6fd050673b:EnemyFlamingBullet",
 		float BurstDelay4 = 0.1,
 		int BurstCount4 = 25,
 		Vec4 Space4 = [1, 1, 1, 1],
