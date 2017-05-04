@@ -506,7 +506,7 @@ Level =
 		},
 		StartGameScript = 
 		{
-			string LevelToLoad = "59df84c1f2e0c939:PlaytestLevelSelect",
+			string LevelToLoad = "59dd48ab22f0a119:PlaytestLevelSelect",
 		},
 		Reactive = 
 		{

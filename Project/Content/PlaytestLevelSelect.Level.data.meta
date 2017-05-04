@@ -2,7 +2,7 @@ DataContent =
 {
 	DataBuilder = 
 	{
-		string Name = "PlaytestLevelSelect",
+		string Name = "WinLevel",
 		uint64 ResourceId = 59df84c1f2e0c939,
 		string LoaderType = "Level",
 		uint Version = 0,
