@@ -9,7 +9,7 @@ class TutorialProgression : ZilchComponent
         this.TextArray.Add("I, the acclaimed Hamburger Wizard, \nwill be your guide in this dungeon.");
         this.TextArray.Add("We will start with the basics.\nUse the WASD keys to move.");
         this.TextArray.Add("Left-click to cast a spell.");
-        this.TextArray.Add("Try hitting that target over there.");
+        this.TextArray.Add("Try hitting that pile of bones over there.");
         this.TextArray.Add("Good job!\nBut no wizard worth their salt knows only one spell!");
         this.TextArray.Add("Go pick up that scroll.\nIt contains the Water Stream Spell, which you may find useful.");
         this.TextArray.Add("You can switch between spells using the scroll wheel,\nor Q and E.");
