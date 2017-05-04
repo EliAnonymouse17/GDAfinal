@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.468242, -2.37777, 0],
+		Vec3 Translation = [-0.495258, -4.23722, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -240,7 +240,7 @@ Cog =
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "582a49e0d54b1b1a:BubbleBullet",
-		float BulletDelay = 0.6,
+		float BulletDelay = 0.4,
 		float BulletSpeed = 100,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "5854f4cd860c332b:Audio_BubbleTrap",
