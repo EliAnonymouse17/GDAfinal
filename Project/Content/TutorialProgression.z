@@ -23,7 +23,26 @@ class TutorialProgression : ZilchComponent
         this.TextArray.Add("Enter the door at the far side of this room to continue.\nIf you wish to restart the tutorial, press F");
         this.TextArray.Add("");
         Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyDown);
+        Zero.Connect(this.Space, Events.LeftMouseDown, this.OnLeftMouseDown);
+        Zero.Connect(this.Space, Events.MouseScroll, this.OnMouseScroll);
     }
+
+    function OnMouseScroll(event : ViewportMouseEvent)
+    {
+        if (this.TextIndex == 8)
+        {
+            this.IncrementProgression();
+        }
+    }
+
+    function OnLeftMouseDown(event : ViewportMouseEvent)
+    {
+        if (this.TextIndex == 4)
+        {
+            this.IncrementProgression();
+        }
+    }
+
     
     function IncrementProgression()
     {
@@ -63,6 +82,18 @@ class TutorialProgression : ZilchComponent
     function OnKeyDown(event : KeyboardEvent)
     {
         if (event.Key == Keys.F && this.FLock == false)
+        {
+            this.IncrementProgression();
+        }
+        if ((event.Key == Keys.W || event.Key == Keys.S || event.Key == Keys.A || event.Key == Keys.D) && this.TextIndex == 3)
+        {
+            this.IncrementProgression();
+        }
+        if ((event.Key == Keys.Q|| event.Key == Keys.E) && this.TextIndex == 8)
+        {
+            this.IncrementProgression();
+        }
+        if ((event.Key == Keys.Space) && this.TextIndex == 12)
         {
             this.IncrementProgression();
         }
