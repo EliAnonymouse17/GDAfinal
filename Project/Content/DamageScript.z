@@ -76,7 +76,7 @@ class DamageScript : ZilchComponent
         { 
             if (this.Owner.ArchetypeName == "SeekingArrow")
             {
-                this.Space.FindObjectByName("Player").PlayerShoot.TimerFreeze = false;
+                this.Space.FindObjectByName("Player").SpellSwitchHandler.CurrentPlayerShoot.TimerFreeze = false;
             }
             this.HitCount = 0;
             return;

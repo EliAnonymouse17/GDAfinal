@@ -44,6 +44,8 @@ class PlayerShoot : ZilchComponent
     [Property] var ShotPattern : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var ShootSound : SoundCue = null;
     [Property] var TimerFreeze : Boolean = false;
+    
+    
     // A burst is a series of consecutive shots
     [Property] var BurstDelay : Real = 0; // Time between shots within a burst
     var BurstTimer : Real = 0;
@@ -68,6 +70,7 @@ class PlayerShoot : ZilchComponent
     {
         if(!this.Active) return;
         
+
         // Tick down time until next burst
         if (this.TimerFreeze == false && this.IsBursting == false)
         {
@@ -77,6 +80,8 @@ class PlayerShoot : ZilchComponent
         var mouseScreenPosition = Zero.Mouse.ScreenPosition;
         var mouseWorldPosition = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(mouseScreenPosition, 0);
         var shotAngle = Math.Normalize(mouseWorldPosition - this.Owner.Transform.Translation);
+        
+        
         
         // Start a new burst
         if(Zero.Mouse.IsButtonDown(MouseButtons.Left) && this.TimeUntilNextShot <= 0 && this.IsBursting == false)

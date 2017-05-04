@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-1.01953, -3.19448, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -83,10 +83,11 @@ Cog =
 	{
 		float Cooldown = 2,
 		float FadeDuration = 1,
+		string FadeEnterSound = "598e6ab0a9febc2a:Audio_FadeEnter",
 	},
 	SpellSwitchHandler = 
 	{
-		bool DebugUnlockAll = false,
+		bool DebugUnlockAll = true,
 	},
 	PlayerAnimations = 
 	{
@@ -149,7 +150,7 @@ Cog =
 	IceSpearPlayerShoot = 
 	{
 		Enum SpellType = ICESPEAR,
-		bool UnlockAtStart = true,
+		bool UnlockAtStart = false,
 		string SpellName = "Ice Spear",
 		string BulletSprite = "5858739c8bef319d:Texture_BigIce",
 		int SpreadBullets = 3,
@@ -189,7 +190,7 @@ Cog =
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "5852c445964b36c9:SeekingArrow",
-		float BulletDelay = 1,
+		float BulletDelay = 0.1,
 		float BulletSpeed = 250,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "5854e8fb63ec9806:Audio_SeekingArrow",
@@ -240,7 +241,7 @@ Cog =
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "582a49e0d54b1b1a:BubbleBullet",
-		float BulletDelay = 0.5,
+		float BulletDelay = 0.6,
 		float BulletSpeed = 100,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "5854f4cd860c332b:Audio_BubbleTrap",
@@ -276,10 +277,10 @@ Cog =
 		string SpellName = "Ring Of Fire",
 		string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
 		int SpreadBullets = 3,
-		int RingCount = 26,
+		int RingCount = 22,
 		string BulletType = "598dd55410ce6a8a:FlamingBullet",
-		float BulletDelay = 1.8,
-		float BulletSpeed = 160,
+		float BulletDelay = 1.4,
+		float BulletSpeed = 120,
 		Enum ShotPattern = RING,
 		string ShootSound = "",
 		bool TimerFreeze = false,
@@ -610,44 +611,6 @@ Cog =
 								bool Smoothing = true,
 							},
 						},
-					},
-				},
-				Cog = 
-				{
-					LinkId = 
-					{
-						uint Id = 11,
-					},
-					Named = 
-					{
-						string Name = "Minimap",
-					},
-					Transform = 
-					{
-						Vec3 Translation = [15, -5, -10],
-						Vec3 Scale = [7, 7, 1],
-						Quat Rotation = [0, 0, 0, 1],
-					},
-					Sprite = 
-					{
-						bool Visible = true,
-						bool VisibilityCulling = true,
-						bool VisibilityEvents = true,
-						bool CastShadows = false,
-						Vec4 Color = [1, 1, 1, 0.9999],
-						BlendMode BlendMode = Alpha,
-						SpriteGeometryMode GeometryMode = ZPlane,
-						string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-						string SpriteSource = "5275aa4d802dd6dc:Square",
-						bool RenderMask = false,
-						bool FlipX = false,
-						bool FlipY = false,
-						bool AnimationActive = true,
-						float AnimationSpeed = 1,
-						uint StartFrame = 0,
-					},
-					Minimap = 
-					{
 					},
 				},
 			},

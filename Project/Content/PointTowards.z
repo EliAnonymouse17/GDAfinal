@@ -49,7 +49,6 @@ class PointTowards : ZilchComponent
             this.Rotation = this.Owner.Orientation.GetLookAtPointWithUpRotation(player, Real3(0, 0, 1));
             
             this.Owner.Transform.Rotation = Math.RotateTowards(this.Owner.Transform.Rotation, this.Rotation, this.Radians);
-            this.Space.FindObjectByName("Player").SpellSwitchHandler.CurrentPlayerShoot.TimerFreeze = false;
         }
         
         if (this.TrackedCog == TrackCogs.MOUSE)
