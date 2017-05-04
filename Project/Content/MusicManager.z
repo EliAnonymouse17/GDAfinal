@@ -4,6 +4,8 @@ class MusicManager : ZilchComponent
     
     var CurrentEmitter : SoundEmitter = null;
     [Property]
+    var PlayOnInitialize : Boolean = true;
+    [Property]
     var NextCue : SoundCue = null;
     
     var CurrentEmitterIsPlaying : Boolean = false;
@@ -21,15 +23,20 @@ class MusicManager : ZilchComponent
         this.MusicSpace = this.GameSession.CreateNamedSpace("MusicSpace", Archetype.Space);
         this.MusicSpace.LoadLevel(Level.MusicLevel);
         Zero.Connect(this.MusicSpace, Events.LogicUpdate, this.OnLogicUpdate);
-        var current = this.MusicSpace.Create(Archetype.Transform);
-        
-        current.AddComponentByName("SoundEmitter");
         
         this.CurrentEmitter = this.MusicSpace.FindObjectByName("Camera").SoundEmitter;
         
-        this.SwitchTracks(this.NextCue);
+        if (this.PlayOnInitialize)
+        {
+            this.SwitchTracks(this.NextCue);
+        }
+        else
+        {
+            this.NextCue = null;
+        }
     }
 
+    
     function OnLogicUpdate(event : UpdateEvent)
     {
         // Are we trying to fade?
