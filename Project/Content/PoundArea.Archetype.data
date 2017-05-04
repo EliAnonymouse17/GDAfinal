@@ -15,7 +15,7 @@ Cog =
 	Transform = 
 	{
 		Vec3 Translation = [0, 0, 0],
-		Vec3 Scale = [4, 4, 1],
+		Vec3 Scale = [2, 2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -63,11 +63,11 @@ Cog =
 		int Damage = 2,
 		int PRVHitCount = 2,
 		string SpawnOnDeath = "",
+		string SpawnOnDeath2 = "",
 	},
 	DestroyTimer = 
 	{
 		float Time = 0.2,
-		float WarpScale = 0.3,
 	},
 	ScreenWarpRing = 
 	{

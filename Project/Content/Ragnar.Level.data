@@ -171,6 +171,7 @@ Level =
 		},
 		RoomScript = 
 		{
+			int World = 1,
 		},
 	},
 	ArchetypeInstance = 
@@ -334,6 +335,12 @@ Level =
 			int BurstCount6 = 1,
 			float StageSwitch = 45,
 			Vec4 ChallengeColor = [0.955, 0.042975, 0.042975, 1],
+			float AttackTimer1 = 4,
+			float AttackTimer2 = 1,
+			float AttackTimer3 = 2,
+			float ChallengeAttackTimer1 = 4,
+			float ChallengeAttackTimer2 = 1,
+			float ChallengeAttackTimer3 = 2,
 		},
 		BossHealthBarScript = 
 		{
