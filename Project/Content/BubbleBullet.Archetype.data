@@ -60,7 +60,7 @@ Cog =
 	},
 	Wanderer = 
 	{
-		float MoveSpeed = 6,
+		float MoveSpeed = 9,
 	},
 	DamageScript = 
 	{

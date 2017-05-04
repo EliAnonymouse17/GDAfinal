@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-0.495258, -4.23722, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -81,8 +81,8 @@ Cog =
 	},
 	PlayerFade = 
 	{
-		float Cooldown = 1,
-		float FadeDuration = 1.2,
+		float Cooldown = 1.4,
+		float FadeDuration = 1,
 		string FadeEnterSound = "598e6ab0a9febc2a:Audio_FadeEnter",
 	},
 	SpellSwitchHandler = 
@@ -241,7 +241,7 @@ Cog =
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "582a49e0d54b1b1a:BubbleBullet",
-		float BulletDelay = 0.5,
+		float BulletDelay = 0.7,
 		float BulletSpeed = 100,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "5854f4cd860c332b:Audio_BubbleTrap",
