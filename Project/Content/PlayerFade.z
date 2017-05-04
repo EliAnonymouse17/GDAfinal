@@ -28,6 +28,9 @@ class PlayerFade : ZilchComponent
     [Property]
     var FadeDuration : Real = 1;
     
+    [Property]
+    var FadeEnterSound : SoundCue = SoundCue.Audio_FadeEnter;
+    
     var FadeIsActive : Boolean = false;
     var Duration : Real = 0;
     function Initialize(init : CogInitializer)
@@ -51,6 +54,7 @@ class PlayerFade : ZilchComponent
         {
             
             this.Owner.BoxCollider.CollisionGroup = CollisionGroup.Find("PlayerFaded");
+            this.Space.SoundSpace.PlayCue(SoundCue.Audio_FadeEnter);
             this.Duration = this.FadeDuration;
             this.FadeIsActive = true;
             this.TimeLeft = this.Cooldown;

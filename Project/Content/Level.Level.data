@@ -189,43 +189,7 @@ Level =
 		},
 		RoomScript = 
 		{
-			int World = 1,
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "5812cd3d46ba25e2:Necromancer",
-		LinkId = 
-		{
-			uint Id = 7,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-2.14505, 7.5, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "584d30a5b4310262:Zombie",
-		LinkId = 
-		{
-			uint Id = 8,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-5.4069, -4.83154, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
+			int World = 2,
 		},
 	},
 	ArchetypeInstance = 
@@ -233,7 +197,7 @@ Level =
 		string Name = "58637710f6c80a11:Treasure",
 		LinkId = 
 		{
-			uint Id = 9,
+			uint Id = 7,
 		},
 		Transform = 
 		{
@@ -251,7 +215,7 @@ Level =
 		string Name = "584e01664b4e55af:HeartPickup",
 		LinkId = 
 		{
-			uint Id = 10,
+			uint Id = 8,
 		},
 		Transform = 
 		{
@@ -269,7 +233,7 @@ Level =
 		string Name = "597b65f4bcfdc3f0:TMSquare22",
 		LinkId = 
 		{
-			uint Id = 11,
+			uint Id = 9,
 		},
 		Transform = 
 		{
