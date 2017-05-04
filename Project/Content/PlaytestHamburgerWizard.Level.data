@@ -174,12 +174,19 @@ Level =
 			string Name = "Heart Pickup",
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "585ef838d9e4b2d5:HamburgerWizard",
 		LinkId = 
 		{
 			uint Id = 6,
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+		Archetyped = 
+		{
+			string Name = "585ef838d9e4b2d5:HamburgerWizard",
 		},
 		Transform = 
 		{
@@ -187,9 +194,171 @@ Level =
 			Vec3 Scale = [2.5, 2.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		Sprite = 
 		{
-			string Name = "Enemy",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "58472d641bdb8518:Texture_HamburgerWizard",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
+			Vec3 Offset = [-0.05, -0.05, 0],
+			Vec3 Size = [0.325, 0.55, 0.5],
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = false,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		HitpointScript = 
+		{
+			int PrivateHP = 30,
+			int MaxHP = 5,
+			string HurtSound = "",
+			string DeathSound = "",
+			float HurtDuration = 0.1,
+			string SpawnOnDeath = "",
+			int SpawnCount = 1,
+		},
+		Shoot = 
+		{
+			string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
+			int RingCount = 20,
+			float RingOffset = 34,
+			int SpreadBullets = 4,
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 1, 0],
+			Vec3 UpVector = [0, 0, 1],
+			Vec3 ForwardVector = [0, 1, 0],
+			OrientationBases DefaultBases = ForwardYUpZ,
+		},
+		BossHealthBarScript = 
+		{
+			float HealthBarSize = 10,
+		},
+		BossAttackLogic = 
+		{
+			string StandTexture = "",
+			float AttackDelay1 = 3,
+			float BulletSpeed1 = 1000,
+			Enum ShotPattern1 = SINGLE,
+			string BulletType1 = "",
+			string AttackAnimation1 = "",
+			float BurstDelay1 = 0,
+			int BurstCount1 = 1,
+			Vec4 Space1 = [1, 1, 1, 1],
+			float AttackDelay2 = 3,
+			float BulletSpeed2 = 2000,
+			Enum ShotPattern2 = SINGLE,
+			string BulletType2 = "585ef2a2cbb10556:BigBurger",
+			string AttackAnimation2 = "",
+			float BurstDelay2 = 0,
+			int BurstCount2 = 1,
+			Vec4 Space2 = [1, 1, 1, 1],
+			float AttackDelay3 = 5,
+			float BulletSpeed3 = 200,
+			Enum ShotPattern3 = SPREAD,
+			string BulletType3 = "580e65c5299defb0:EnemyBullet",
+			string AttackAnimation3 = "",
+			float BurstDelay3 = 0,
+			int BurstCount3 = 1,
+			Vec4 Space3 = [1, 1, 1, 1],
+			float ChallengeAttackDelay1 = 2.5,
+			float ChallengeBulletSpeed1 = 3500,
+			Enum ChallengeShotPattern1 = SINGLE,
+			string ChallengeBulletType1 = "585ef2a2cbb10556:BigBurger",
+			float BurstDelay4 = 0,
+			int BurstCount4 = 1,
+			Vec4 Space4 = [1, 1, 1, 1],
+			float ChallengeAttackDelay2 = 3.5,
+			float ChallengeBulletSpeed2 = 200,
+			Enum ChallengeShotPattern2 = RING,
+			string ChallengeBulletType2 = "580e65c5299defb0:EnemyBullet",
+			float BurstDelay5 = 0,
+			int BurstCount5 = 1,
+			Vec4 Space5 = [1, 1, 1, 1],
+			float ChallengeAttackDelay3 = 3,
+			float ChallengeBulletSpeed3 = 1000,
+			Enum ChallengeShotPattern3 = SINGLE,
+			string ChallengeBulletType3 = "",
+			float BurstDelay6 = 0,
+			int BurstCount6 = 1,
+			float StageSwitch = 15,
+			Vec4 ChallengeColor = [1, 0.96, 0, 1],
+			float AttackTimer1 = 4,
+			float AttackTimer2 = 1,
+			float AttackTimer3 = 2,
+			float ChallengeAttackTimer1 = 4,
+			float ChallengeAttackTimer2 = 1,
+			float ChallengeAttackTimer3 = 2,
+		},
+		ChangeLevelOnDeath = 
+		{
+			string LevelToLoad = "598ddf8e975e3c28:PlaytestGiantSkeleton",
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 7,
+				},
+				Named = 
+				{
+					string Name = "BossHealthBar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.0665616, -0.752918, 8],
+					Vec3 Scale = [0.16, 0.08, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 0, 0, 0.5],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+			},
 		},
 	},
 	ArchetypeInstance = 
@@ -197,7 +366,7 @@ Level =
 		string Name = "597b6bda6a019d3e:TMSquare23",
 		LinkId = 
 		{
-			uint Id = 7,
+			uint Id = 8,
 		},
 		Transform = 
 		{
@@ -215,7 +384,7 @@ Level =
 		string Name = "582e55149cb1b9f5:Player",
 		LinkId = 
 		{
-			uint Id = 8,
+			uint Id = 9,
 		},
 		Transform = 
 		{
@@ -233,7 +402,7 @@ Level =
 		string Name = "597b65f4bcfdc3f0:TMSquare22",
 		LinkId = 
 		{
-			uint Id = 9,
+			uint Id = 10,
 		},
 		Transform = 
 		{

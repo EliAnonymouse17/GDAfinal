@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [16.7444, 1.79083, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [2, 2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -50,9 +50,10 @@ Cog =
 	},
 	DamageScript = 
 	{
-		int Damage = 6,
+		int Damage = 4,
 		int PRVHitCount = 1,
 		string SpawnOnDeath = "",
+		string SpawnOnDeath2 = "",
 	},
 	BoxCollider = 
 	{
@@ -75,7 +76,8 @@ Cog =
 	{
 		Enum TrackedCog = MOUSE,
 		float Speed = 20,
-		float Radians = 0.2,
+		float Radians = 0.15,
+		float DestroyTimer = 0,
 	},
 	SpriteParticleSystem = 
 	{

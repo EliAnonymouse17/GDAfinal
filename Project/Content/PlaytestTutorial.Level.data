@@ -406,8 +406,8 @@ Level =
 		},
 		PlayerFade = 
 		{
-			float Cooldown = 2,
-			float FadeDuration = 1,
+			float Cooldown = 1,
+			float FadeDuration = 1.2,
 			string FadeEnterSound = "598e6ab0a9febc2a:Audio_FadeEnter",
 		},
 		SpellSwitchHandler = 
@@ -475,7 +475,7 @@ Level =
 		IceSpearPlayerShoot = 
 		{
 			Enum SpellType = ICESPEAR,
-			bool UnlockAtStart = true,
+			bool UnlockAtStart = false,
 			string SpellName = "Ice Spear",
 			string BulletSprite = "5858739c8bef319d:Texture_BigIce",
 			int SpreadBullets = 3,
@@ -492,7 +492,7 @@ Level =
 		WaterStreamPlayerShoot = 
 		{
 			Enum SpellType = WATERSTREAM,
-			bool UnlockAtStart = true,
+			bool UnlockAtStart = false,
 			string SpellName = "Water Stream",
 			string BulletSprite = "587c2c7990aee772:Texture_Raindrop",
 			int SpreadBullets = 3,
@@ -509,13 +509,13 @@ Level =
 		SeekingArrowPlayerShoot = 
 		{
 			Enum SpellType = SEEKINGARROW,
-			bool UnlockAtStart = false,
+			bool UnlockAtStart = true,
 			string SpellName = "Seeking Arrow",
 			string BulletSprite = "5852c59e8c1f9264:Texture_SeekingArrow",
 			int SpreadBullets = 3,
 			int RingCount = 10,
 			string BulletType = "5852c445964b36c9:SeekingArrow",
-			float BulletDelay = 1,
+			float BulletDelay = 0.3,
 			float BulletSpeed = 250,
 			Enum ShotPattern = SINGLE,
 			string ShootSound = "5854e8fb63ec9806:Audio_SeekingArrow",
@@ -543,7 +543,7 @@ Level =
 		AcidPoolPlayerShoot = 
 		{
 			Enum SpellType = ACIDPOOL,
-			bool UnlockAtStart = true,
+			bool UnlockAtStart = false,
 			string SpellName = "Acid Pool",
 			string BulletSprite = "5274db4c2e7c11f9:Circle",
 			int SpreadBullets = 3,
@@ -598,7 +598,7 @@ Level =
 		RingOfFirePlayerShoot = 
 		{
 			Enum SpellType = RINGOFFIRE,
-			bool UnlockAtStart = true,
+			bool UnlockAtStart = false,
 			string SpellName = "Ring Of Fire",
 			string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
 			int SpreadBullets = 3,
@@ -618,7 +618,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 2,
+					uint Id = 10,
 				},
 				Named = 
 				{
@@ -650,7 +650,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 10,
+							uint Id = 11,
 						},
 						Named = 
 						{
@@ -694,7 +694,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 11,
+									uint Id = 12,
 								},
 								Named = 
 								{
@@ -736,7 +736,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 12,
+							uint Id = 13,
 						},
 						Named = 
 						{
@@ -773,7 +773,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 13,
+							uint Id = 14,
 						},
 						Named = 
 						{
@@ -812,7 +812,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 14,
+									uint Id = 15,
 								},
 								Named = 
 								{
@@ -849,7 +849,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 15,
+							uint Id = 16,
 						},
 						Named = 
 						{
@@ -885,7 +885,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 16,
+									uint Id = 17,
 								},
 								Named = 
 								{
@@ -920,7 +920,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 17,
+									uint Id = 18,
 								},
 								Named = 
 								{
