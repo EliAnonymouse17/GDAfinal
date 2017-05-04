@@ -104,9 +104,9 @@ Cog =
 	{
 		string StandTexture = "",
 		float AttackDelay1 = 8,
-		float BulletSpeed1 = 120,
+		float BulletSpeed1 = 100,
 		Enum ShotPattern1 = SPREAD,
-		string BulletType1 = "580e65c5299defb0:EnemyBullet",
+		string BulletType1 = "598e5f6fd050673b:EnemyFlamingBullet",
 		string AttackAnimation1 = "",
 		float BurstDelay1 = 0.1,
 		int BurstCount1 = 20,

@@ -147,13 +147,15 @@ class BossAttackLogic : ZilchComponent
         if(!this.StageSwitchBool)
         {
             // attack 1
+            if(this.Owner.Sprite.SpriteSource == this.StandTexture && this.AttackTimer1 <= 0.6)
+            {
+                if(this.AttackAnimation1 != null)
+                    this.Owner.Sprite.SpriteSource = this.AttackAnimation1;
+            }
+            
             if(this.AttackTimer1 <= 0 && this.IsBursting1 == false)
             {
-                if(this.Owner.Sprite.SpriteSource == this.StandTexture)
-                {
-                    if(this.AttackAnimation1 != null)
-                        this.Owner.Sprite.SpriteSource = this.AttackAnimation1;
-                }
+                
                 
                 this.AttackTimer1 = this.AttackDelay1;
                 this.BurstTimer1 = 0;
@@ -185,16 +187,18 @@ class BossAttackLogic : ZilchComponent
         else
         {
             // stage 2 attack 1
+            if(this.Owner.Sprite.SpriteSource == this.StandTexture && this.ChallengeAttackTimer1 <= 0.6)
+            {
+                if(this.AttackAnimation1 != null)
+                this.Owner.Sprite.SpriteSource = this.AttackAnimation1;
+            }
+            
             if(this.ChallengeAttackTimer1 <= 0 && this.IsBursting4 == false)
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType1;
                 
                 
-                if(this.Owner.Sprite.SpriteSource == this.StandTexture)
-                {
-                    if(this.AttackAnimation1 != null)
-                        this.Owner.Sprite.SpriteSource = this.AttackAnimation1;
-                }               
+                               
                 
                 this.ChallengeAttackTimer1 = this.ChallengeAttackDelay1;
                 this.BurstTimer4 = 0;
@@ -223,6 +227,11 @@ class BossAttackLogic : ZilchComponent
             }
         }
         
+        if(this.Owner.Sprite.SpriteSource == this.StandTexture && this.AttackTimer2 <= 0.6)
+        {
+            if(this.AttackAnimation2 != null)
+            this.Owner.Sprite.SpriteSource = this.AttackAnimation2;
+        }
         if(!this.StageSwitchBool)
         {
             // attack 2 stage 1
@@ -230,11 +239,7 @@ class BossAttackLogic : ZilchComponent
             {
                 this.Owner.Shoot.BulletType = this.BulletType2;
                 
-                if(this.Owner.Sprite.SpriteSource == this.StandTexture)
-                {
-                    if(this.AttackAnimation2 != null)
-                        this.Owner.Sprite.SpriteSource = this.AttackAnimation2;
-                }
+                
                 
                 this.AttackTimer2 = this.AttackDelay2;
                 this.BurstTimer2 = 0;
@@ -265,15 +270,16 @@ class BossAttackLogic : ZilchComponent
         else
         {
             // attack 2 stage 2
+            if(this.Owner.Sprite.SpriteSource == this.StandTexture && this.ChallengeAttackTimer2 <= 0.6)
+            {
+                if(this.AttackAnimation2 != null)
+                this.Owner.Sprite.SpriteSource = this.AttackAnimation2;
+            }
             if(this.ChallengeAttackTimer2 <= 0 && this.IsBursting5 == false)
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType2;
                 
-                if(this.Owner.Sprite.SpriteSource == this.StandTexture)
-                {
-                    if(this.AttackAnimation2 != null)
-                        this.Owner.Sprite.SpriteSource = this.AttackAnimation2;
-                }
+                
                 
                 this.ChallengeAttackTimer2 = this.ChallengeAttackDelay2;
                 this.BurstTimer5 = 0;
@@ -305,15 +311,16 @@ class BossAttackLogic : ZilchComponent
         if(!this.StageSwitchBool)
         {
             // attack 3 stage 1
+            if(this.Owner.Sprite.SpriteSource == this.StandTexture && this.AttackTimer3 <= 0.6)
+            {
+                if(this.AttackAnimation3 != null)
+                this.Owner.Sprite.SpriteSource = this.AttackAnimation3;
+            }
             if(this.AttackTimer3 <= 0 && this.IsBursting3 == false)
             {
                 this.Owner.Shoot.BulletType = this.BulletType3;
 
-                if(this.Owner.Sprite.SpriteSource == this.StandTexture)
-                {
-                    if(this.AttackAnimation3 != null)
-                        this.Owner.Sprite.SpriteSource = this.AttackAnimation3;
-                }
+                
                 
                 this.AttackTimer3 = this.AttackDelay3;
                 this.BurstTimer3 = 0;
@@ -344,15 +351,16 @@ class BossAttackLogic : ZilchComponent
         else
         {
             // attack 3 stage 2
+            if(this.Owner.Sprite.SpriteSource == this.StandTexture && this.ChallengeAttackTimer3 <= 0.6)
+            {
+                if(this.AttackAnimation3 != null)
+                this.Owner.Sprite.SpriteSource = this.AttackAnimation3;
+            }
             if(this.ChallengeAttackTimer3 <= 0 && this.IsBursting6 == false)
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType3;
                 
-                if(this.Owner.Sprite.SpriteSource == this.StandTexture)
-                {
-                    if(this.AttackAnimation3 != null)
-                        this.Owner.Sprite.SpriteSource = this.AttackAnimation3;
-                }
+                
                 
                 this.ChallengeAttackTimer3 = this.ChallengeAttackDelay3;
                 this.BurstTimer6 = 0;
