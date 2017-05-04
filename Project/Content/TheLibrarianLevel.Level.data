@@ -66,15 +66,6 @@ Level =
 			Vec2 Resolution = [1280, 720],
 			Vec4 MarginColor = [0, 0, 0, 1],
 		},
-		ForwardRenderer = 
-		{
-			Vec4 ClearColor = [0.155, 0.155, 0.155, 1],
-			bool DrawNonVisible = false,
-			bool DrawDebugObjects = true,
-			bool DrawEditorIcons = true,
-			bool EditorIconDepth = true,
-			bool Wireframe = false,
-		},
 		GridDraw = 
 		{
 			bool Active = true,
@@ -90,6 +81,24 @@ Level =
 			int HilightInterval = 10,
 			bool FollowEditorCamera = false,
 		},
+		DeferredRenderer = 
+		{
+			Vec4 ClearColor = [0, 0, 0, 1],
+			bool DrawNonVisible = false,
+			bool DrawDebugObjects = true,
+			bool DrawEditorIcons = true,
+			bool EditorIconDepth = true,
+			bool Hdr = true,
+			bool Shadows = true,
+			bool AntiAliasing = false,
+			bool Refraction = true,
+			bool Reflections = true,
+			string ReflectionEnvironmentName = "4fab71e8bcb7a8ce:DefaultTexture",
+			bool GodRays = true,
+			bool RenderMasks = false,
+			bool Glow = false,
+			float GlowThreshold = 1,
+		},
 	},
 	Cog = 
 	{
@@ -103,7 +112,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.611871, 6.3856, 50],
+			Vec3 Translation = [-0.611871, 0.13493, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 29.7594,
+			float Size = 14.7781,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +132,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-0.611871, 6.3856, 3.37935e-007],
+			Vec3 LookTarget = [-0.611871, 0.13493, 3.37935e-007],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -153,6 +162,7 @@ Level =
 		},
 		RoomScript = 
 		{
+			int World = 1,
 		},
 	},
 	ArchetypeInstance = 
@@ -173,19 +183,12 @@ Level =
 			string Name = "Heart Pickup",
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "58681d50bb219a4c:TheLibrarian",
 		LinkId = 
 		{
 			uint Id = 6,
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-		Archetyped = 
-		{
-			string Name = "58681d50bb219a4c:TheLibrarian",
 		},
 		Transform = 
 		{
@@ -193,184 +196,16 @@ Level =
 			Vec3 Scale = [1.5, 1.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Sprite = 
+		Named = 
 		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "584fced65555e419:NecroAttackAnimation",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		BoxCollider = 
-		{
-			bool Ghost = false,
-			bool SendsMessages = true,
-			bool Seamless = true,
-			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-			string SerializedGroupName = "580e65c5299dde20:Enemy",
-			Vec3 Offset = [-0.05, 0, 0],
-			Vec3 Size = [0.325, 1, 0.5],
-		},
-		RigidBody = 
-		{
-			bool Static = false,
-			bool Asleep = false,
-			bool Kinematic = false,
-			bool RotationLocked = true,
-			bool Mode2D = true,
-			bool AllowSleep = true,
-			bool Inherit2DMode = true,
-			Vec3 Velocity = [0, 0, 0],
-			Vec3 AngularVelocity = [0, 0, 0],
-		},
-		HitpointScript = 
-		{
-			int PrivateHP = 60,
-			int MaxHP = 5,
-			string HurtSound = "",
-			string DeathSound = "",
-			float HurtDuration = 0.1,
-			string SpawnOnDeath = "",
-			int SpawnCount = 1,
-		},
-		Shoot = 
-		{
-			string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
-			int RingCount = 100,
-			float RingOffset = 90,
-			int SpreadBullets = 5,
-		},
-		Orientation = 
-		{
-			Vec3 GlobalUp = [0, 1, 0],
-			Vec3 UpVector = [0, 0, 1],
-			Vec3 ForwardVector = [0, 1, 0],
-			OrientationBases DefaultBases = ForwardYUpZ,
-		},
-		SpellDrop = 
-		{
-			Enum SpellDrop1 = EXPLODINGBULLET,
-			Enum SpellDrop2 = SEEKINGARROW,
-			Enum SpellDrop3 = ICESPEAR,
-			string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
-			string SpellDropSprite2 = "5852c59e8c1f9264:Texture_SeekingArrow",
-			string SpellDropSprite3 = "5858739c8bef319d:Texture_BigIce",
-			bool TreasureDropBool = false,
-		},
-		BossHealthBarScript = 
-		{
-			float HealthBarSize = 15,
-		},
-		BossAttackLogic = 
-		{
-			string StandTexture = "584fced65555e419:NecroAttackAnimation",
-			float AttackDelay1 = 4,
-			float BulletSpeed1 = 125,
-			Enum ShotPattern1 = SPREAD,
-			string BulletType1 = "580e65c5299defb0:EnemyBullet",
-			string AttackAnimation1 = "",
-			float BurstDelay1 = 0.03,
-			int BurstCount1 = 6,
-			Vec4 Space1 = [1, 1, 1, 1],
-			float AttackDelay2 = 2,
-			float BulletSpeed2 = 1000,
-			Enum ShotPattern2 = SINGLE,
-			string BulletType2 = "5866d949db695a28:EnemyArrow",
-			string AttackAnimation2 = "",
-			float BurstDelay2 = 0,
-			int BurstCount2 = 1,
-			Vec4 Space2 = [1, 1, 1, 1],
-			float AttackDelay3 = 22,
-			float BulletSpeed3 = 1000,
-			Enum ShotPattern3 = SINGLE,
-			string BulletType3 = "5868238f9aba4218:LibrarianRock",
-			string AttackAnimation3 = "",
-			float BurstDelay3 = 0,
-			int BurstCount3 = 1,
-			Vec4 Space3 = [1, 1, 1, 1],
-			float ChallengeAttackDelay1 = 7,
-			float ChallengeBulletSpeed1 = 1000,
-			Enum ChallengeShotPattern1 = SINGLE,
-			string ChallengeBulletType1 = "5866e54b88d72e10:BoomBook",
-			float BurstDelay4 = 1,
-			int BurstCount4 = 3,
-			Vec4 Space4 = [1, 1, 1, 1],
-			float ChallengeAttackDelay2 = 2,
-			float ChallengeBulletSpeed2 = 210,
-			Enum ChallengeShotPattern2 = SINGLE,
-			string ChallengeBulletType2 = "5866d949db695a28:EnemyArrow",
-			float BurstDelay5 = 0.3,
-			int BurstCount5 = 3,
-			Vec4 Space5 = [1, 1, 1, 1],
-			float ChallengeAttackDelay3 = 0.2,
-			float ChallengeBulletSpeed3 = 150,
-			Enum ChallengeShotPattern3 = SINGLE,
-			string ChallengeBulletType3 = "580e65c5299defb0:EnemyBullet",
-			float BurstDelay6 = 0.02,
-			int BurstCount6 = 4,
-			float StageSwitch = 20,
-			Vec4 ChallengeColor = [0, 0, 1, 1],
-		},
-		LibrarianTeleport = 
-		{
-			string TeleportAnimation = "584fdb207bf8dc4b:NecroMoveAnimation",
-			string OriginalTexture = "584fced65555e419:NecroAttackAnimation",
-			float TeleportDelay = 5.5,
-		},
-		Hierarchy = 
-		{
-			Cog = 
-			{
-				LinkId = 
-				{
-					uint Id = 7,
-				},
-				Named = 
-				{
-					string Name = "BossHealthBar",
-				},
-				Transform = 
-				{
-					Vec3 Translation = [0.00219029, -1.13192, 8],
-					Vec3 Scale = [0.4, 0.4, 1],
-					Quat Rotation = [0, 0, 0, 1],
-				},
-				Sprite = 
-				{
-					bool Visible = true,
-					bool VisibilityCulling = true,
-					bool VisibilityEvents = true,
-					bool CastShadows = false,
-					Vec4 Color = [1, 0, 0, 0.5],
-					BlendMode BlendMode = Alpha,
-					SpriteGeometryMode GeometryMode = ZPlane,
-					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-					string SpriteSource = "5275aa4d802dd6dc:Square",
-					bool RenderMask = false,
-					bool FlipX = false,
-					bool FlipY = false,
-					bool AnimationActive = true,
-					float AnimationSpeed = 1,
-					uint StartFrame = 0,
-				},
-			},
+			string Name = "Enemy",
 		},
 	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 8,
+			uint Id = 7,
 		},
 		Named = 
 		{
@@ -410,7 +245,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 9,
+			uint Id = 8,
 		},
 		Named = 
 		{
@@ -450,7 +285,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 10,
+			uint Id = 9,
 		},
 		Named = 
 		{
@@ -490,7 +325,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 11,
+			uint Id = 10,
 		},
 		Named = 
 		{
@@ -530,7 +365,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 12,
+			uint Id = 11,
 		},
 		Named = 
 		{
@@ -571,7 +406,7 @@ Level =
 		string Name = "584fd89208ba642f:TMSquare24",
 		LinkId = 
 		{
-			uint Id = 13,
+			uint Id = 12,
 		},
 		Transform = 
 		{
@@ -589,7 +424,7 @@ Level =
 		string Name = "582e55149cb1b9f5:Player",
 		LinkId = 
 		{
-			uint Id = 14,
+			uint Id = 13,
 		},
 		Transform = 
 		{
