@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 13.3718,
+			float Size = 18.05,
 		},
 		EditorCameraController = 
 		{
@@ -495,6 +495,7 @@ Level =
 		{
 			float Cooldown = 2,
 			float FadeDuration = 1,
+			string FadeEnterSound = "598e6ab0a9febc2a:Audio_FadeEnter",
 		},
 		SpellSwitchHandler = 
 		{
@@ -744,7 +745,7 @@ Level =
 						},
 						Transform = 
 						{
-							Vec3 Translation = [-15.7019, 8.64901, -40],
+							Vec3 Translation = [-18.6753, 8.64901, -40],
 							Vec3 Scale = [1, 1, 1],
 							Quat Rotation = [0, 0, 0, 1],
 						},
@@ -769,7 +770,10 @@ Level =
 						Area = 
 						{
 							Vec2 Size = [6, 1],
-							Location Origin = Center,
+							Location Origin = CenterLeft,
+						},
+						HUDHP = 
+						{
 						},
 						Hierarchy = 
 						{
@@ -810,7 +814,7 @@ Level =
 								Area = 
 								{
 									Vec2 Size = [6, 1],
-									Location Origin = Center,
+									Location Origin = CenterLeft,
 								},
 							},
 						},
@@ -820,43 +824,6 @@ Level =
 						LinkId = 
 						{
 							uint Id = 16,
-						},
-						Named = 
-						{
-							string Name = "HealthText",
-						},
-						Transform = 
-						{
-							Vec3 Translation = [-15.9524, 9.1349, -20],
-							Vec3 Scale = [1, 1, 1],
-							Quat Rotation = [0, 0, 0, 1],
-						},
-						SpriteText = 
-						{
-							bool Visible = true,
-							bool VisibilityCulling = true,
-							bool VisibilityEvents = true,
-							bool CastShadows = false,
-							Vec4 Color = [1, 1, 1, 1],
-							BlendMode BlendMode = Alpha,
-							SpriteGeometryMode GeometryMode = ZPlane,
-							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-							string FontName = "4e7bac697bec55c5:Verdana",
-							uint FontSize = 72,
-							string Text = "6",
-							TextAlign Align = Left,
-							float PixelsPerUnit = 100,
-							bool Smoothing = true,
-						},
-						HUDHP = 
-						{
-						},
-					},
-					Cog = 
-					{
-						LinkId = 
-						{
-							uint Id = 17,
 						},
 						Named = 
 						{
@@ -893,7 +860,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 18,
+							uint Id = 17,
 						},
 						Named = 
 						{
@@ -932,7 +899,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 19,
+									uint Id = 18,
 								},
 								Named = 
 								{
@@ -969,7 +936,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 20,
+							uint Id = 19,
 						},
 						Named = 
 						{
@@ -1005,7 +972,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 21,
+									uint Id = 20,
 								},
 								Named = 
 								{
@@ -1040,7 +1007,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 22,
+									uint Id = 21,
 								},
 								Named = 
 								{
@@ -1076,7 +1043,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 23,
+							uint Id = 22,
 						},
 						Named = 
 						{

@@ -30,8 +30,10 @@ class HUDHP : ZilchComponent
         }
         
         var playerHP = player.HitpointScript.PrivateHP;
+        var playerMaxHP = player.HitpointScript.MaxHP;
         
-        this.Owner.SpriteText.Text = "`playerHP`";
+        this.Owner.Area.Size = Real2(playerMaxHP / 2, 1);
+        this.Owner.FindChildByName("HUDhp").Area.Size = Real2(playerHP / 2, 1);
         
     }
 }
