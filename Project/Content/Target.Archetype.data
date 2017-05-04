@@ -28,7 +28,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "5844b750a09352f8:Texture_Target",
+		string SpriteSource = "585fa9b4d9ed16a3:Texture_PileOfBones000",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -39,6 +39,12 @@ Cog =
 	HitpointScript = 
 	{
 		int PrivateHP = 1,
+		int MaxHP = 5,
+		string HurtSound = "",
+		string DeathSound = "",
+		float HurtDuration = 0.1,
+		string SpawnOnDeath = "",
+		int SpawnCount = 1,
 	},
 	BoxCollider = 
 	{
