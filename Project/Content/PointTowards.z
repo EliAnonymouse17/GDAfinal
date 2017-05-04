@@ -30,7 +30,10 @@ class PointTowards : ZilchComponent
     
     function Initialize(init : CogInitializer)
     {
-        this.Space.FindObjectByName("Player").SpellSwitchHandler.CurrentPlayerShoot.TimerFreeze = true;
+        if (this.TrackedCog == TrackCogs.MOUSE)
+        {
+            this.Space.FindObjectByName("Player").SpellSwitchHandler.CurrentPlayerShoot.TimerFreeze = true;
+        }
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
 
