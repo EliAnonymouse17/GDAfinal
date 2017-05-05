@@ -21,8 +21,8 @@ GameSession =
 	},
 	MusicManager = 
 	{
-		bool PlayOnInitialize = false,
-		string NextCue = "5863773ce572775b:graveyard",
+		bool PlayOnInitialize = true,
+		string NextCue = "58637728e647bc90:TheLibrarianTheme",
 		float FadeTime = 2,
 		float MusicVolume = 1,
 	},
