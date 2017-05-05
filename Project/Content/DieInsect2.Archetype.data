@@ -69,7 +69,7 @@ Cog =
 	{
 		float AngleOffset = 90,
 		string ArchetypeToSpawn = "598de9600711a524:FirelingShot",
-		float SpawnedBulletVelocity = 150,
+		float SpawnedBulletVelocity = 100,
 		int NumBullets = 24,
 		string BoomSound = "585fc00d67fa4059:ExplodingBulletImpact",
 	},
