@@ -65,13 +65,14 @@ class PlayerFade : ZilchComponent
         
         if (this.Duration <= 0.3)
         {
+            this.Owner.Actions.Cancel();
             var seq = Action.Sequence(this.Owner.Actions);
             Action.Property(seq, @this.Owner.Sprite.Color, Real4(1, 1, 1, 1), 0.25, Ease.Linear);
         }
         
         if (this.Duration <= 0)
         {
-            this.Owner.Actions.Cancel();
+            
             this.Owner.BoxCollider.CollisionGroup = CollisionGroup.Find("Player");
             this.FadeIsActive = false;
             
