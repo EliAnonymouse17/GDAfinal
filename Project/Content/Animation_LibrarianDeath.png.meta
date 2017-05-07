@@ -1,0 +1,20 @@
+ImageContent = 
+{
+	SpriteSourceBuilder = 
+	{
+		string Name = "Animation_LibrarianDeath",
+		uint64 ResourceId = 59dae8bc6baef9fb,
+		uint64 AtlasId = 5274cf95e4a661fd,
+		uint FrameSizeX = 64,
+		uint FrameSizeY = 64,
+		uint FrameCount = 14,
+		float FrameDelay = 0.0625,
+		float OriginX = 32,
+		float OriginY = 32,
+		float PixelsPerUnit = 32,
+		bool Smoothing = false,
+		bool Looping = false,
+		Vec4 Slices = [0, 0, 0, 0],
+		SpriteFill Fill = Stretch,
+	},
+},

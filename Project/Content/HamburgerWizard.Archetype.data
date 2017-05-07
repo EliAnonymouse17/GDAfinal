@@ -44,7 +44,7 @@ Cog =
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "580e65c5299dde20:Enemy",
 		Vec3 Offset = [-0.05, -0.05, 0],
-		Vec3 Size = [0.325, 0.55, 0.5],
+		Vec3 Size = [0.325, 0.5, 0.5],
 	},
 	RigidBody = 
 	{
@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 30,
+		int PrivateHP = 40,
 		int MaxHP = 5,
 		string HurtSound = "",
 		string DeathSound = "",
@@ -106,7 +106,7 @@ Cog =
 		int BurstCount2 = 1,
 		Vec4 Space2 = [1, 1, 1, 1],
 		float AttackDelay3 = 5,
-		float BulletSpeed3 = 200,
+		float BulletSpeed3 = 125,
 		Enum ShotPattern3 = SPREAD,
 		string BulletType3 = "580e65c5299defb0:EnemyBullet",
 		string AttackAnimation3 = "",
@@ -121,7 +121,7 @@ Cog =
 		int BurstCount4 = 1,
 		Vec4 Space4 = [1, 1, 1, 1],
 		float ChallengeAttackDelay2 = 3.5,
-		float ChallengeBulletSpeed2 = 200,
+		float ChallengeBulletSpeed2 = 125,
 		Enum ChallengeShotPattern2 = RING,
 		string ChallengeBulletType2 = "580e65c5299defb0:EnemyBullet",
 		float BurstDelay5 = 0,
@@ -133,7 +133,7 @@ Cog =
 		string ChallengeBulletType3 = "",
 		float BurstDelay6 = 0,
 		int BurstCount6 = 1,
-		float StageSwitch = 15,
+		float StageSwitch = 18,
 		Vec4 ChallengeColor = [1, 0.96, 0, 1],
 		float AttackTimer1 = 4,
 		float AttackTimer2 = 1,

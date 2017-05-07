@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-1.1704, 7.5, 0],
+		Vec3 Translation = [-1, 6.5, 0],
 		Vec3 Scale = [2.5, 2.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,11 +24,11 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [1, 0, 0, 1],
+		Vec4 Color = [1, 1, 1, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "586836b37ae47131:animation_GolemWalkforward",
+		string SpriteSource = "59dad58c23978aa2:Texture_RagnarIdle0",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -44,7 +44,7 @@ Cog =
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "580e65c5299dde20:Enemy",
 		Vec3 Offset = [0, -0.3, 0],
-		Vec3 Size = [0.85, 1.15, 0.5],
+		Vec3 Size = [0.8, 1, 0.5],
 	},
 	RigidBody = 
 	{
@@ -147,7 +147,7 @@ Cog =
 		string ChallengeBulletType3 = "598de812fb7af5cf:DIEINSECT",
 		float BurstDelay6 = 5,
 		int BurstCount6 = 2,
-		float StageSwitch = 40,
+		float StageSwitch = 45,
 		Vec4 ChallengeColor = [1, 0.33, 0, 1],
 		float AttackTimer1 = 3,
 		float AttackTimer2 = 6,
