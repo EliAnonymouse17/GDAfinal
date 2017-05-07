@@ -24,11 +24,11 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [0.26, 0, 0, 1],
+		Vec4 Color = [1, 1, 1, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "584558c2c978f519:Texture_PlayerBasicProjectile",
+		string SpriteSource = "59dad6a9b5327eb9:Animation_DieInsect",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -44,7 +44,7 @@ Cog =
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "580e65c5299dfb9d:EnemyBullet",
 		Vec3 Offset = [0.01, -0.005, 0],
-		float Radius = 0.3,
+		float Radius = 0.5,
 	},
 	RigidBody = 
 	{
@@ -69,7 +69,7 @@ Cog =
 	{
 		float AngleOffset = 90,
 		string ArchetypeToSpawn = "598de95c1e9bd871:DieInsect2",
-		float SpawnedBulletVelocity = 300,
+		float SpawnedBulletVelocity = 700,
 		int NumBullets = 5,
 		string BoomSound = "585fc00d67fa4059:ExplodingBulletImpact",
 	},
