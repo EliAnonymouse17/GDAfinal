@@ -10,11 +10,11 @@ Cog =
 	},
 	Archetyped = 
 	{
-		string Name = "598b10d81748a9f8:FireElemental",
+		string Name = "5997098f62914e72:Pyromaniac",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-15.0339, 4.1269, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -28,23 +28,13 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "586836b37ae47131:animation_GolemWalkforward",
+		string SpriteSource = "58230430c7b3754c:Texture_SkeletonStill",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
 		bool AnimationActive = true,
 		float AnimationSpeed = 1,
 		uint StartFrame = 0,
-	},
-	HitpointScript = 
-	{
-		int PrivateHP = 18,
-		int MaxHP = 15,
-		string HurtSound = "",
-		string DeathSound = "",
-		float HurtDuration = 0.1,
-		string SpawnOnDeath = "598b172e72a8d5ef:LavaPool",
-		int SpawnCount = 1,
 	},
 	BoxCollider = 
 	{
@@ -53,8 +43,8 @@ Cog =
 		bool Seamless = true,
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "580e65c5299dde20:Enemy",
-		Vec3 Offset = [0, -0.2, 0],
-		Vec3 Size = [0.875, 1, 0.5],
+		Vec3 Offset = [-0.05, 0, 0],
+		Vec3 Size = [0.375, 1, 0.5],
 	},
 	RigidBody = 
 	{
@@ -62,11 +52,21 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
 		Vec3 AngularVelocity = [0, 0, 0],
+	},
+	HitpointScript = 
+	{
+		int PrivateHP = 7,
+		int MaxHP = 5,
+		string HurtSound = "598890d4d0097560:HurtEnemyHigh",
+		string DeathSound = "598897092d946c1a:DeathApprentice",
+		float HurtDuration = 0.1,
+		string SpawnOnDeath = "",
+		int SpawnCount = 1,
 	},
 	Orientation = 
 	{
@@ -75,30 +75,30 @@ Cog =
 		Vec3 ForwardVector = [0, 1, 0],
 		OrientationBases DefaultBases = ForwardYUpZ,
 	},
-	Shoot = 
-	{
-		string BulletType = "598b17756af535f8:LavaShot",
-		int RingCount = 10,
-		float RingOffset = 90,
-		int SpreadBullets = 3,
-	},
-	EnemyShoot = 
-	{
-		float BulletDelay = 2.5,
-		float BulletSpeed = 400,
-		Enum ShotPattern = SINGLE,
-		string ShootSound = "585fc1e7955bc872:ExplodingBulletLaunch",
-		string WalkAnimation = "",
-		string AttackAnimation = "",
-		float BurstDelay = 0,
-		int BurstCount = 1,
-	},
 	AIMoveFromPlayer = 
 	{
-		float MoveSpeed = 2,
+		float MoveSpeed = 4,
 		bool MovesAwayFromPlayer = false,
 	},
 	Hierarchy = 
 	{
+		ArchetypeInstance = 
+		{
+			string Name = "59970b9cd7361077:FlameThrower",
+			LinkId = 
+			{
+				uint Id = 2,
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 0, 0],
+				Vec3 Scale = [1, 1, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Named = 
+			{
+				string Name = "Bullet",
+			},
+		},
 	},
 },

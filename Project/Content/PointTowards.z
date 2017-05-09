@@ -24,8 +24,6 @@ class PointTowards : ZilchComponent
     [Property]
     var Radians : Real = 0.1;
     
-    [Property]
-    var DestroyTimer : Real = 0;
     
     
     function Initialize(init : CogInitializer)
@@ -41,11 +39,6 @@ class PointTowards : ZilchComponent
     {
         if (this.TrackedCog == TrackCogs.PLAYER)
         {
-            this.DestroyTimer -= event.Dt;
-            if (this.DestroyTimer <= 0)
-            {
-                this.Owner.DamageScript.HitCount = 0;
-            }
             if(this.Space.FindObjectByName("Player") == null) return;
             
             var player = this.Space.FindObjectByName("Player").Transform.Translation;

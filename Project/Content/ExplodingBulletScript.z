@@ -15,6 +15,9 @@ class ExplodingBulletScript : ZilchComponent
     [Property]
     var BoomSound : SoundCue = SoundCue.ExplodingBulletImpact;
     
+    [Property]
+    var DestroyOwner : Boolean = true;
+    
     var HasCollided : Boolean = false;
     
     var Angle : Real = 0;
@@ -22,14 +25,8 @@ class ExplodingBulletScript : ZilchComponent
     {
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
     }
-
-    function OnCollisionStarted(event : CollisionEvent)
+    function SpawnBullets()
     {
-        if(this.HasCollided)
-        {
-            return;
-        }
-        
         for (var i = 0; i < this.NumBullets; ++i)
         {
             this.Angle = Math.ATan2(0,0) - (i-1)*(Math.ToRadians(360 / this.NumBullets));
@@ -54,6 +51,20 @@ class ExplodingBulletScript : ZilchComponent
         {
             this.Space.SoundSpace.PlayCue(this.BoomSound);
         }
-        this.Owner.Destroy();
+        if(this.DestroyOwner)
+        {
+            this.Owner.Destroy();
+        }
+    }
+
+    function OnCollisionStarted(event : CollisionEvent)
+    {
+        if(this.HasCollided)
+        {
+            return;
+        }
+        
+        this.SpawnBullets();
+        
     }
 }

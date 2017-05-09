@@ -49,11 +49,17 @@ class StatUpgradeScript : ZilchComponent
         {
             event.OtherObject.HitpointScript.MaxHP += this.HealthIncrease;
             
-            event.OtherObject.HitpointScript.PrivateHP = event.OtherObject.HitpointScript.PrivateHP;
+            event.OtherObject.HitpointScript.PrivateHP = event.OtherObject.HitpointScript.MaxHP;
+            
+            this.Owner.Destroy();
         }
         else
         {
             event.OtherObject.PlayerMove.MoveSpeed += this.SpeedIncrease;
+            
+            this.Owner.Destroy();
         }
+        
+        
     }
 }

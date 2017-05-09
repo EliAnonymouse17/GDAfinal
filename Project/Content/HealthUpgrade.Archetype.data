@@ -6,16 +6,16 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "Enemy",
+		string Name = "Pickup",
 	},
 	Archetyped = 
 	{
-		string Name = "584ffadd5e943f48:MiniGolem",
+		string Name = "599724735c6b0b98:HealthUpgrade",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
-		Vec3 Scale = [1, 1, 1],
+		Vec3 Translation = [11.4897, 8.46383, 0],
+		Vec3 Scale = [2, 2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -28,7 +28,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "586836b37ae47131:animation_GolemWalkforward",
+		string SpriteSource = "5275aa4d802dd6dc:Square",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -42,9 +42,9 @@ Cog =
 		bool SendsMessages = true,
 		bool Seamless = true,
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-		string SerializedGroupName = "587c10e02c261d51:FollowerEnemy",
-		Vec3 Offset = [0, -0.2, 0],
-		Vec3 Size = [0.85, 1, 0.5],
+		string SerializedGroupName = "5866e29d08148bd7:Pickup",
+		Vec3 Offset = [0, 0, 0],
+		Vec3 Size = [0.5, 0.5, 0.5],
 	},
 	RigidBody = 
 	{
@@ -52,44 +52,18 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
 		Vec3 AngularVelocity = [0, 0, 0],
 	},
-	HitpointScript = 
+	StatUpgradeScript = 
 	{
-		int PrivateHP = 4,
-		int MaxHP = 5,
-		string HurtSound = "",
-		string DeathSound = "",
-		float HurtDuration = 0.1,
-		string SpawnOnDeath = "",
-		int SpawnCount = 1,
-	},
-	Orientation = 
-	{
-		Vec3 GlobalUp = [0, 1, 0],
-		Vec3 UpVector = [0, 0, 1],
-		Vec3 ForwardVector = [0, 1, 0],
-		OrientationBases DefaultBases = ForwardYUpZ,
-	},
-	GolemPound = 
-	{
-		float DetonationRange = 4,
-	},
-	AIMoveFromPlayer = 
-	{
-		float MoveSpeed = 4,
-		bool MovesAwayFromPlayer = false,
-	},
-	EnemyAnimationHandler = 
-	{
-		string EnemyStand = "",
-		string EnemyWalk = "586425913fa27459:animation_GolemiteWalkForward",
-	},
-	Hierarchy = 
-	{
+		Enum StatToUpgrade = HEALTHUP,
+		string SpeedUpTexture = "",
+		string HealthUpTexture = "599724c2b262ad1f:Texture_HeartUpgrade0",
+		int HealthIncrease = 2,
+		int SpeedIncrease = 100,
 	},
 },

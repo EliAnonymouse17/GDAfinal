@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 3,
+		int PrivateHP = 5,
 		int MaxHP = 5,
 		string HurtSound = "5854e373c41f5152:Audio_BasicHurtEnemy",
 		string DeathSound = "59889181f69e4dac:Audio_DeathZombie",

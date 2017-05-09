@@ -6,11 +6,11 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "Enemy",
+		string Name = "Bullet",
 	},
 	Archetyped = 
 	{
-		string Name = "584ffadd5e943f48:MiniGolem",
+		string Name = "599723b97c60dd90:ShadowWarp",
 	},
 	Transform = 
 	{
@@ -24,11 +24,11 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [1, 1, 1, 1],
+		Vec4 Color = [0, 0, 0, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "586836b37ae47131:animation_GolemWalkforward",
+		string SpriteSource = "584558c2c978f519:Texture_PlayerBasicProjectile",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -36,60 +36,44 @@ Cog =
 		float AnimationSpeed = 1,
 		uint StartFrame = 0,
 	},
-	BoxCollider = 
+	SphereCollider = 
 	{
 		bool Ghost = false,
 		bool SendsMessages = true,
 		bool Seamless = true,
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-		string SerializedGroupName = "587c10e02c261d51:FollowerEnemy",
-		Vec3 Offset = [0, -0.2, 0],
-		Vec3 Size = [0.85, 1, 0.5],
+		string SerializedGroupName = "580e65c5299dfb9d:EnemyBullet",
+		Vec3 Offset = [0.01, -0.005, 0],
+		float Radius = 0.3,
 	},
 	RigidBody = 
 	{
 		bool Static = false,
 		bool Asleep = false,
 		bool Kinematic = false,
-		bool RotationLocked = true,
-		bool Mode2D = false,
-		bool AllowSleep = false,
+		bool RotationLocked = false,
+		bool Mode2D = true,
+		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
 		Vec3 AngularVelocity = [0, 0, 0],
 	},
-	HitpointScript = 
+	DamageScript = 
 	{
-		int PrivateHP = 4,
-		int MaxHP = 5,
-		string HurtSound = "",
-		string DeathSound = "",
-		float HurtDuration = 0.1,
+		int Damage = 1,
+		int PRVHitCount = 1,
 		string SpawnOnDeath = "",
-		int SpawnCount = 1,
+		string SpawnOnDeath2 = "",
+		bool Flaming = false,
 	},
-	Orientation = 
+	ScreenWarpRing = 
 	{
-		Vec3 GlobalUp = [0, 1, 0],
-		Vec3 UpVector = [0, 0, 1],
-		Vec3 ForwardVector = [0, 1, 0],
-		OrientationBases DefaultBases = ForwardYUpZ,
+		float Size = 0.2,
+		float Thickness = 0.3,
+		float Intensity = 0.2,
 	},
-	GolemPound = 
+	DestroyTimer = 
 	{
-		float DetonationRange = 4,
-	},
-	AIMoveFromPlayer = 
-	{
-		float MoveSpeed = 4,
-		bool MovesAwayFromPlayer = false,
-	},
-	EnemyAnimationHandler = 
-	{
-		string EnemyStand = "",
-		string EnemyWalk = "586425913fa27459:animation_GolemiteWalkForward",
-	},
-	Hierarchy = 
-	{
+		float Time = 1,
 	},
 },

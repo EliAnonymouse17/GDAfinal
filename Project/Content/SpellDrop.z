@@ -80,27 +80,27 @@ class SpellDrop : ZilchComponent
         {
             var randomDrop = randomGenerator.DieRoll(140);
             
-            if(randomDrop >= 1 && randomDrop <= 15)
+            if(randomDrop >= 1 && randomDrop <= 30)
             {
-                // speed drop
+                this.Space.CreateAtPosition(Archetype.HealthUpgrade, position);
             }
-            else if(randomDrop >= 16 && randomDrop <= 40)
+            else if(randomDrop >= 31 && randomDrop <= 50)
             {
-                // health drop
+                this.Space.CreateAtPosition(Archetype.HealthUpgrade, position);
             }
-            else if(randomDrop >= 41 && randomDrop <= 50)
+            else if(randomDrop >= 51 && randomDrop <= 60)
             {
                 var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
                 spell.SpellScrollScript.Spell = this.SpellDrop1;
                 spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite1;
             }
-            else if(randomDrop >= 51 && randomDrop <= 85)
+            else if(randomDrop >= 61 && randomDrop <= 95)
             {
                 var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
                 spell.SpellScrollScript.Spell = this.SpellDrop2;
                 spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite2;
             }
-            else if(randomDrop >= 86 && randomDrop <= 140)
+            else if(randomDrop >= 96 && randomDrop <= 140)
             {
                 var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
                 spell.SpellScrollScript.Spell = this.SpellDrop3;

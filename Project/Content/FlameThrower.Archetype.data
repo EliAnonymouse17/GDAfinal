@@ -10,17 +10,17 @@ Cog =
 	},
 	Archetyped = 
 	{
-		string Name = "5866d949db695a28:EnemyArrow",
+		string Name = "59970b9cd7361077:FlameThrower",
 	},
 	Transform = 
 	{
 		Vec3 Translation = [0, 0, 0],
-		Vec3 Scale = [2, 2, 1],
+		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
 	{
-		bool Visible = true,
+		bool Visible = false,
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
@@ -28,7 +28,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "5852c59e8c1f9264:Texture_SeekingArrow",
+		string SpriteSource = "584558c2c978f519:Texture_PlayerBasicProjectile",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -42,41 +42,30 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = false,
-		bool AllowSleep = true,
+		bool Mode2D = true,
+		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
 		Vec3 AngularVelocity = [0, 0, 0],
 	},
-	DamageScript = 
-	{
-		int Damage = 2,
-		int PRVHitCount = 1,
-		string SpawnOnDeath = "",
-		string SpawnOnDeath2 = "",
-	},
-	BoxCollider = 
+	CapsuleCollider = 
 	{
 		bool Ghost = false,
 		bool SendsMessages = true,
 		bool Seamless = true,
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "580e65c5299dfb9d:EnemyBullet",
-		Vec3 Offset = [-0.01, 0.04, 0],
-		Vec3 Size = [0.1, 0.275, 0.5],
+		Vec3 Offset = [0, 1.5, 0],
+		float Radius = 1.3,
+		float Height = 1,
+		uint Direction = 1,
 	},
-	Orientation = 
+	MeleeAttackScript = 
 	{
-		Vec3 GlobalUp = [0, 1, 0],
-		Vec3 UpVector = [0, 0, 1],
-		Vec3 ForwardVector = [0, 1, 0],
-		OrientationBases DefaultBases = ForwardYUpZ,
-	},
-	PointTowards = 
-	{
-		Enum TrackedCog = PLAYER,
-		float Speed = 9,
-		float Radians = 0.1,
+		float AttackDelay = 0.3,
+		int Damage = 1,
+		int RecoilDamage = 0,
+		bool Friendly = false,
 	},
 	SpriteParticleSystem = 
 	{
@@ -92,53 +81,57 @@ Cog =
 		ParticleRenderMode RenderMode = Additive,
 		ParticleSortMode SortMode = Youngest,
 		ParticleAnimation ParticleAnimation = Single,
-		string Texture = "5310e87946ed955b:Twinkle",
-		Vec4 Tint = [0.260475, 0.339599, 0.755, 1],
+		string Texture = "5310e87a46f22c48:FireParticle02",
+		Vec4 Tint = [1, 0, 0, 1],
 		float VelocityScale = 1,
 		float LengthScale = 1,
 		float MaxParticleSize = 100,
-		Vec3 SystemSize = [1, 1, 4],
-	},
-	SphericalParticleEmitter = 
-	{
-		bool Active = true,
-		uint EmitCount = 0,
-		float EmitRate = 10,
-		float EmitVariance = 0,
-		float Size = 0.5,
-		float SizeVariance = 0.2,
-		float Lifetime = 0.5,
-		float LifetimeVariance = 0.2,
-		float Spin = 0,
-		float SpinVariance = 50,
-		bool RandomSpin = true,
-		float Fill = 1,
-		float EmitterVelocityPercent = 0,
-		Vec3 StartVelocity = [0, 0, 0],
-		Vec3 RandomVelocity = [2, 2, 2],
-		Vec3 TangentVelocity = [0, 0, 0],
-		Vec3 EmitterSize = [0, 0, 0],
-		bool FastMovingEmitter = false,
+		Vec3 SystemSize = [4, 4, 4],
 	},
 	LinearParticleAnimator = 
 	{
-		Vec3 Force = [0, -30, 0],
+		Vec3 Force = [0, 0, 0],
 		Vec3 RandomForce = [0, 0, 0],
 		float Torque = 0,
 		float Growth = 0,
 		float Dampening = 0,
 		Vec3 Twist = [0, 0, 0],
 	},
-	ParticleColorAnimator = 
+	SphericalParticleEmitter = 
 	{
-		Vec4 Color0 = [1, 1, 1, 0],
-		Vec4 Color1 = [1, 1, 1, 1],
-		Vec4 Color2 = [1, 1, 1, 1],
-		Vec4 Color3 = [1, 1, 1, 1],
-		Vec4 Color4 = [1, 1, 1, 0],
+		bool Active = true,
+		uint EmitCount = 0,
+		float EmitRate = 5000,
+		float EmitVariance = 0,
+		float Size = 0.1,
+		float SizeVariance = 0.05,
+		float Lifetime = 0.65,
+		float LifetimeVariance = 0,
+		float Spin = 0,
+		float SpinVariance = 50,
+		bool RandomSpin = true,
+		float Fill = 1,
+		float EmitterVelocityPercent = 0,
+		Vec3 StartVelocity = [0, 8, 0],
+		Vec3 RandomVelocity = [2.5, 2, 2],
+		Vec3 TangentVelocity = [0, 0, 0],
+		Vec3 EmitterSize = [0, 0, 0],
+		bool FastMovingEmitter = false,
 	},
-	DestroyTimer = 
+	Orientation = 
 	{
-		float Time = 2.9,
+		Vec3 GlobalUp = [0, 1, 0],
+		Vec3 UpVector = [0, 0, 1],
+		Vec3 ForwardVector = [0, 1, 0],
+		OrientationBases DefaultBases = ForwardYUpZ,
+	},
+	PointTowards = 
+	{
+		Enum TrackedCog = PLAYER,
+		float Speed = 0,
+		float Radians = 10,
+	},
+	StayAt0 = 
+	{
 	},
 },

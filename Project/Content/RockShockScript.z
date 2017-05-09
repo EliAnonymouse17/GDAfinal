@@ -4,6 +4,9 @@ class RockShockScript : ZilchComponent
     var DistFromImpact : Real = 900;
     [Property]
     var ImpactSound : SoundCue = SoundCue.ExplodingBulletImpact;
+    [Property]
+    var SpawnBullets : Boolean = false;
+    
     function Initialize(init : CogInitializer)
     {
         this.PlayerPos = this.Space.FindObjectByName("Player").Transform.WorldTranslation;
@@ -15,7 +18,12 @@ class RockShockScript : ZilchComponent
         this.DistFromImpact = Math.Distance(this.PlayerPos, this.Owner.Transform.WorldTranslation);
         if (this.DistFromImpact <= 1.0)
         {
+            if (this.SpawnBullets)
+            {
+                this.Owner.ExplodingBulletScript.SpawnBullets();
+            }
             this.Owner.DamageScript.HitCount -= 1;
         }
+        
     }
 }
