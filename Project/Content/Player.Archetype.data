@@ -298,7 +298,7 @@ Cog =
 		int RingCount = 10,
 		string BulletType = "5994fe0b31a41d83:RainbowShot",
 		float BulletDelay = 1,
-		float BulletSpeed = 400,
+		float BulletSpeed = 600,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
 		bool TimerFreeze = false,
@@ -643,44 +643,6 @@ Cog =
 								bool Smoothing = true,
 							},
 						},
-					},
-				},
-				Cog = 
-				{
-					LinkId = 
-					{
-						uint Id = 11,
-					},
-					Named = 
-					{
-						string Name = "Minimap",
-					},
-					Transform = 
-					{
-						Vec3 Translation = [15, -5, -10],
-						Vec3 Scale = [7, 7, 1],
-						Quat Rotation = [0, 0, 0, 1],
-					},
-					Sprite = 
-					{
-						bool Visible = true,
-						bool VisibilityCulling = true,
-						bool VisibilityEvents = true,
-						bool CastShadows = false,
-						Vec4 Color = [1, 1, 1, 0.9999],
-						BlendMode BlendMode = Alpha,
-						SpriteGeometryMode GeometryMode = ZPlane,
-						string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-						string SpriteSource = "5275aa4d802dd6dc:Square",
-						bool RenderMask = false,
-						bool FlipX = false,
-						bool FlipY = false,
-						bool AnimationActive = true,
-						float AnimationSpeed = 1,
-						uint StartFrame = 0,
-					},
-					Minimap = 
-					{
 					},
 				},
 			},
