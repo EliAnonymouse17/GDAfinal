@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.495258, -4.23722, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -282,6 +282,23 @@ Cog =
 		float BulletDelay = 1.8,
 		float BulletSpeed = 160,
 		Enum ShotPattern = RING,
+		string ShootSound = "",
+		bool TimerFreeze = false,
+		float BurstDelay = 0,
+		int BurstCount = 1,
+	},
+	RainbowShotPlayerShoot = 
+	{
+		Enum SpellType = RAINBOWSHOT,
+		bool UnlockAtStart = true,
+		string SpellName = "Rainbow Shot",
+		string BulletSprite = "5994fe9ddb2a7944:bubblesheep",
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "5994fe0b31a41d83:RainbowShot",
+		float BulletDelay = 1,
+		float BulletSpeed = 100,
+		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
 		bool TimerFreeze = false,
 		float BurstDelay = 0,

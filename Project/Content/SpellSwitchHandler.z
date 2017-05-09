@@ -26,6 +26,7 @@ class WaterStreamPlayerShoot : PlayerShoot{}
 class BoneShotPlayerShoot : PlayerShoot{}
 class AcidPoolPlayerShoot : PlayerShoot{}
 class RingOfFirePlayerShoot : PlayerShoot{}
+class RainbowShotPlayerShoot : PlayerShoot{}
 
 enum SpellTypes 
     {
@@ -39,6 +40,7 @@ enum SpellTypes
     BONESHOT,
     ACIDPOOL,
     RINGOFFIRE,
+    RAINBOWSHOT,
     END
     }
     
@@ -89,6 +91,10 @@ class SpellSwitchHandler : ZilchComponent
             else if (this.CurrentSpell == SpellTypes.RINGOFFIRE)
             {
                 return this.Owner.RingOfFirePlayerShoot;
+            }
+            else if (this.CurrentSpell == SpellTypes.RAINBOWSHOT)
+            {
+                return this.Owner.RainbowShotPlayerShoot;
             }
             else
             {
