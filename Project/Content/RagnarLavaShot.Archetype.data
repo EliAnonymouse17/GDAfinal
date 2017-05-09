@@ -10,12 +10,12 @@ Cog =
 	},
 	Archetyped = 
 	{
-		string Name = "598de95c1e9bd871:DieInsect2",
+		string Name = "5997083aad1f9206:RagnarLavaShot",
 	},
 	Transform = 
 	{
 		Vec3 Translation = [0, 0, 0],
-		Vec3 Scale = [1.5, 1.5, 1],
+		Vec3 Scale = [2, 2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -24,13 +24,13 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [1, 1, 1, 1],
+		Vec4 Color = [1, 0.0400002, 0, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "59dad6a9b5327eb9:Animation_DieInsect",
+		string SpriteSource = "584558c2c978f519:Texture_PlayerBasicProjectile",
 		bool RenderMask = false,
-		bool FlipX = false,
+		bool FlipX = true,
 		bool FlipY = false,
 		bool AnimationActive = true,
 		float AnimationSpeed = 1,
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -60,17 +60,13 @@ Cog =
 	},
 	DamageScript = 
 	{
-		int Damage = 2,
+		int Damage = 1,
 		int PRVHitCount = 1,
-		string SpawnOnDeath = "",
+		string SpawnOnDeath = "599709dca9716d27:RagnarLavaPool",
 		string SpawnOnDeath2 = "",
 	},
-	ExplodingBulletScript = 
+	RockShockScript = 
 	{
-		float AngleOffset = 90,
-		string ArchetypeToSpawn = "598de9600711a524:FirelingShot",
-		float SpawnedBulletVelocity = 90,
-		int NumBullets = 24,
-		string BoomSound = "585fc00d67fa4059:ExplodingBulletImpact",
+		string ImpactSound = "585fc00d67fa4059:ExplodingBulletImpact",
 	},
 },

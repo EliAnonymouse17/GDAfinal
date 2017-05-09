@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 110,
+		int PrivateHP = 30,
 		int MaxHP = 5,
 		string HurtSound = "",
 		string DeathSound = "",
@@ -71,7 +71,7 @@ Cog =
 	Shoot = 
 	{
 		string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
-		int RingCount = 6,
+		int RingCount = 8,
 		float RingOffset = 90,
 		int SpreadBullets = 16,
 	},
@@ -135,9 +135,9 @@ Cog =
 		int BurstCount4 = 25,
 		Vec4 Space4 = [1, 1, 1, 1],
 		float ChallengeAttackDelay2 = 10,
-		float ChallengeBulletSpeed2 = 1400,
+		float ChallengeBulletSpeed2 = 1000,
 		Enum ChallengeShotPattern2 = RING,
-		string ChallengeBulletType2 = "598de625b28f596b:LavaRock",
+		string ChallengeBulletType2 = "5997083aad1f9206:RagnarLavaShot",
 		float BurstDelay5 = 0,
 		int BurstCount5 = 1,
 		Vec4 Space5 = [1, 1, 1, 1],
