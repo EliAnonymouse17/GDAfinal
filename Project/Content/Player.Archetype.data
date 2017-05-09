@@ -167,7 +167,7 @@ Cog =
 	WaterStreamPlayerShoot = 
 	{
 		Enum SpellType = WATERSTREAM,
-		bool UnlockAtStart = false,
+		bool UnlockAtStart = true,
 		string SpellName = "Water Stream",
 		string BulletSprite = "587c2c7990aee772:Texture_Raindrop",
 		int SpreadBullets = 3,
@@ -184,7 +184,7 @@ Cog =
 	SeekingArrowPlayerShoot = 
 	{
 		Enum SpellType = SEEKINGARROW,
-		bool UnlockAtStart = true,
+		bool UnlockAtStart = false,
 		string SpellName = "Seeking Arrow",
 		string BulletSprite = "5852c59e8c1f9264:Texture_SeekingArrow",
 		int SpreadBullets = 3,
@@ -218,7 +218,7 @@ Cog =
 	AcidPoolPlayerShoot = 
 	{
 		Enum SpellType = ACIDPOOL,
-		bool UnlockAtStart = false,
+		bool UnlockAtStart = true,
 		string SpellName = "Acid Pool",
 		string BulletSprite = "5274db4c2e7c11f9:Circle",
 		int SpreadBullets = 3,
@@ -235,7 +235,7 @@ Cog =
 	BubbleShotPlayerShoot = 
 	{
 		Enum SpellType = BUBBLESHOT,
-		bool UnlockAtStart = true,
+		bool UnlockAtStart = false,
 		string SpellName = "Bubble Shot",
 		string BulletSprite = "583a1b2cfe6b1569:Texture_BubbleBullet",
 		int SpreadBullets = 3,
