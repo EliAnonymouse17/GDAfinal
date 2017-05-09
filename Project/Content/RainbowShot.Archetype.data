@@ -63,7 +63,7 @@ Cog =
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "580e65c5299c3bbe:PlayerBullet",
 		Vec3 Offset = [0, 0, 0],
-		float Radius = 0.25,
+		float Radius = 0.5,
 	},
 	SpriteParticleSystem = 
 	{
@@ -123,5 +123,8 @@ Cog =
 		Vec4 Color2 = [0, 1, 0, 1],
 		Vec4 Color3 = [0, 1, 1, 1],
 		Vec4 Color4 = [0, 0, 1, 1],
+	},
+	RainbowShotScript = 
+	{
 	},
 },

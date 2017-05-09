@@ -45,6 +45,12 @@ class HitpointScript : ZilchComponent
     
     var DidSpawn : Boolean = false;
     
+    var FlamingTimer : Real = 0;
+    
+    var TimeUntilFlameDamage : Real = 0;
+    
+    [Property]
+    var FlameImmune : Boolean = false;
     
     //Manipulates HP by accessing through other scripts
     var HP : Integer
@@ -125,6 +131,21 @@ class HitpointScript : ZilchComponent
             this.HurtTimer = this.HurtDuration;
             
             this.HurtBool = false;
+        }
+        if(this.FlamingTimer != 0)
+        {
+            if(this.FlameImmune)
+                this.FlamingTimer = 0;
+            else
+            {
+                this.TimeUntilFlameDamage -= event.Dt;
+                if(this.TimeUntilFlameDamage <= 0)
+                {
+                    this.HP -= 1;
+                    this.TimeUntilFlameDamage = 1;
+                    this.FlamingTimer -= 1;
+                }
+            }
         }
     }
 }
