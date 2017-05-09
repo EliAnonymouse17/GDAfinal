@@ -78,6 +78,7 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
+		bool FlameImmune = false,
 	},
 	PlayerFade = 
 	{
@@ -297,7 +298,7 @@ Cog =
 		int RingCount = 10,
 		string BulletType = "5994fe0b31a41d83:RainbowShot",
 		float BulletDelay = 1,
-		float BulletSpeed = 200,
+		float BulletSpeed = 400,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
 		bool TimerFreeze = false,

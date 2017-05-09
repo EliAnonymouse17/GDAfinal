@@ -92,6 +92,12 @@ class DamageScript : ZilchComponent
         
         if(this.Flaming)
             event.OtherObject.HitpointScript.FlamingTimer = 3;
+            
+        if(this.Owner.ArchetypeName == "RainbowShot")
+        {
+            var particle = this.Space.CreateAtPosition(Archetype.RSParticle, this.Owner.Transform.Translation + Real3(0, 0, 1));
+            particle.SpriteParticleSystem.Tint = this.Owner.RainbowShotScript.ParticleColor;
+        }
         
         event.OtherObject.HitpointScript.HP -= this.Damage;
         
