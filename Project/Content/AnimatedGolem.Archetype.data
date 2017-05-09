@@ -39,12 +39,13 @@ Cog =
 	HitpointScript = 
 	{
 		int PrivateHP = 15,
-		int MaxHP = 5,
+		int MaxHP = 15,
 		string HurtSound = "5988979502bb354e:Audio_HurtGolem",
 		string DeathSound = "598897d33bb43172:Audio_DeathGolem",
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "584ffadd5e943f48:MiniGolem",
 		int SpawnCount = 2,
+		bool FlameImmune = false,
 	},
 	BoxCollider = 
 	{
