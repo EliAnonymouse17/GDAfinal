@@ -7,15 +7,16 @@ class RainbowShotScript : ZilchComponent
         var fxNum = rand.DieRoll(15);
         if(fxNum == 1)
         {
-            this.Owner.DamageScript.SpawnOnDeath = Archetype.AcidPool;
-            this.ParticleColor = Real4(0, 1, 0, 1);
-        }
-        else if(fxNum == 2)
-        {
             this.Owner.DamageScript.SpawnOnDeath = Archetype.BoneShot;
             this.ParticleColor = Real4(0, 1, 0, 1);
         }
-        else if(fxNum >= 3 || fxNum <= 8)
+        else if(fxNum == 2 || fxNum == 3)
+        {
+            
+            this.Owner.DamageScript.SpawnOnDeath = Archetype.AcidPool;
+            this.ParticleColor = Real4(0, 1, 0, 1);
+        }
+        else if(fxNum >= 5 || fxNum <= 8)
         {
             this.Owner.DamageScript.Damage = 4;
             this.ParticleColor = Real4(0, 0, 1, 1);
