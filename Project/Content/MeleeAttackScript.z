@@ -51,7 +51,8 @@ class MeleeAttackScript : ZilchComponent
     {
         if (event.OtherObject.HitpointScript != null && this.AttackTimer <= 0)
         {
-            if (this.Friendly && event.OtherObject.Collider.CollisionGroup == CollisionGroup.Enemy)
+            if (this.Friendly && (event.OtherObject.Collider.CollisionGroup == CollisionGroup.Enemy || event.OtherObject.Collider.CollisionGroup == CollisionGroup.FollowerEnemy
+            ))
             {
                 
                 event.OtherObject.HitpointScript.HP -= this.Damage;
