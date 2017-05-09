@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-1, 6.5, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [2.5, 2.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = true,
 		bool RotationLocked = true,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 100,
+		int PrivateHP = 110,
 		int MaxHP = 5,
 		string HurtSound = "",
 		string DeathSound = "",
@@ -151,6 +151,10 @@ Cog =
 		float ChallengeAttackTimer1 = 2,
 		float ChallengeAttackTimer2 = 5,
 		float ChallengeAttackTimer3 = 4,
+	},
+	ChangeLevelOnDeath = 
+	{
+		string LevelToLoad = "59df84c1f2e0c939:WinLevel",
 	},
 	Hierarchy = 
 	{
