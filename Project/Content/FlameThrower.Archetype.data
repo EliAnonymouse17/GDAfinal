@@ -74,7 +74,7 @@ Cog =
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
 		SystemChildMode ChildMode = Independent,
-		SystemSpace SystemSpace = WorldSpace,
+		SystemSpace SystemSpace = LocalSpace,
 		uint DrawOrder = 0,
 		float WarmUpTime = 0,
 		ParticleGeometry GeometryMode = Billboarded,
@@ -99,21 +99,21 @@ Cog =
 	},
 	SphericalParticleEmitter = 
 	{
-		bool Active = true,
+		bool Active = false,
 		uint EmitCount = 0,
 		float EmitRate = 5000,
 		float EmitVariance = 0,
 		float Size = 0.1,
 		float SizeVariance = 0.05,
 		float Lifetime = 0.65,
-		float LifetimeVariance = 0,
+		float LifetimeVariance = 0.1,
 		float Spin = 0,
 		float SpinVariance = 50,
 		bool RandomSpin = true,
 		float Fill = 1,
 		float EmitterVelocityPercent = 0,
-		Vec3 StartVelocity = [0, 8, 0],
-		Vec3 RandomVelocity = [2.5, 2, 2],
+		Vec3 StartVelocity = [0, 4, 0],
+		Vec3 RandomVelocity = [2, 2, 2],
 		Vec3 TangentVelocity = [0, 0, 0],
 		Vec3 EmitterSize = [0, 0, 0],
 		bool FastMovingEmitter = false,
@@ -129,9 +129,9 @@ Cog =
 	{
 		Enum TrackedCog = PLAYER,
 		float Speed = 0,
-		float Radians = 10,
+		float Radians = 0.08,
 	},
-	StayAt0 = 
+	FlamethrowerScript = 
 	{
 	},
 },

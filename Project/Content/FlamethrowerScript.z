@@ -1,0 +1,23 @@
+class FlamethrowerScript : ZilchComponent
+{
+    var DistFromPlayer : Real = 5;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.DistFromPlayer = Math.Distance(this.Space.FindObjectByName("Player").Transform.WorldTranslation, this.Owner.Transform.WorldTranslation);
+        Console.WriteLine(this.DistFromPlayer);
+        if (this.DistFromPlayer < 6)
+        {
+            this.Owner.SphericalParticleEmitter.Active = true;
+        }
+        else
+        {
+            this.Owner.SphericalParticleEmitter.Active = false;
+        }
+        this.Owner.Transform.Translation = Real3(0,0,0);
+    }
+}

@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "FlamethrowerScript",
+		uint64 ResourceId = 59972f2358b89260,
+	},
+},
