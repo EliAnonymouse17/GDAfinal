@@ -64,6 +64,7 @@ Cog =
 		int PRVHitCount = 1,
 		string SpawnOnDeath = "",
 		string SpawnOnDeath2 = "",
+		bool Flaming = true,
 	},
 	SpriteParticleSystem = 
 	{

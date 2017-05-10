@@ -28,6 +28,9 @@ class DamageScript : ZilchComponent
     [Property]
     var Flaming : Boolean = false;
     
+    [Property]
+    var FlamingTime : Real = 1;
+    
     var DidSpawn : Boolean = false;
     
     var HitCount : Integer
@@ -91,7 +94,7 @@ class DamageScript : ZilchComponent
         }
         
         if(this.Flaming)
-            event.OtherObject.HitpointScript.FlamingTimer = 3;
+            event.OtherObject.HitpointScript.FlamingTimer = this.FlamingTime;
             
         if(this.Owner.ArchetypeName == "RainbowShot")
         {

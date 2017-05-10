@@ -1,26 +1,37 @@
 class RainbowShotScript : ZilchComponent
 {
+    [Property]
+    var DamageBoost1 : Integer = 2;
+    
+    [Property]
+    var DamageBoost2 : Integer = 1;
+    
     var ParticleColor : Real4;
     function Initialize(init : CogInitializer)
     {
         var rand = Random();
-        var fxNum = rand.DieRoll(4);
-        if(fxNum == 1)
+        var fxNum = rand.DieRoll(24);
+        if(fxNum >= 1 && fxNum <= 3)
         {
             this.Owner.DamageScript.SpawnOnDeath = Archetype.AcidPool;
             this.ParticleColor = Real4(0, 1, 0, 1);
         }
-        if(fxNum == 2)
+        if(fxNum >= 4 && fxNum <= 8)
         {
-            this.Owner.DamageScript.SpawnOnDeath = Archetype.BoneShot;
+            this.Owner.ExplodingBulletScript.RainbowShotBoolean = true;
             this.ParticleColor = Real4(0, 1, 0, 1);
         }
-        if(fxNum == 3)
+        if(fxNum >= 9 && fxNum <= 13)
         {
-            this.Owner.DamageScript.Damage = 4;
+            this.Owner.DamageScript.Damage += this.DamageBoost1;
+            this.ParticleColor = Real4(0.5, 0, 1, 1);
+        }
+        if(fxNum >= 14 && fxNum <= 18)
+        {
+            this.Owner.DamageScript.Damage += this.DamageBoost2;
             this.ParticleColor = Real4(0, 0, 1, 1);
         }
-        if(fxNum == 4)
+        if(fxNum >= 19 && fxNum <= 24)
         {
             this.Owner.DamageScript.Flaming = true;
             this.ParticleColor = Real4(1, 0.5, 0, 1);

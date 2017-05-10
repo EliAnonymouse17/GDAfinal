@@ -54,6 +54,8 @@ Cog =
 		int PRVHitCount = 1,
 		string SpawnOnDeath = "",
 		string SpawnOnDeath2 = "",
+		bool Flaming = false,
+		float FlamingTime = 1,
 	},
 	SphereCollider = 
 	{
@@ -126,5 +128,16 @@ Cog =
 	},
 	RainbowShotScript = 
 	{
+		int DamageBoost1 = 2,
+		int DamageBoost2 = 1,
+	},
+	ExplodingBulletScript = 
+	{
+		float AngleOffset = 90,
+		string ArchetypeToSpawn = "5815eae6be2978a9:Bullet",
+		float SpawnedBulletVelocity = 50,
+		int NumBullets = 4,
+		string BoomSound = "585fc00d67fa4059:ExplodingBulletImpact",
+		bool DestroyOwner = true,
 	},
 },

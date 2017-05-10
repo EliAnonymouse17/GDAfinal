@@ -1,5 +1,8 @@
 class ExplodingBulletScript : ZilchComponent
 {
+    
+    var RainbowShotBoolean : Boolean = false;
+    
     [Property] 
     var AngleOffset : Real = 90;
     
@@ -27,6 +30,15 @@ class ExplodingBulletScript : ZilchComponent
     }
     function SpawnBullets()
     {
+        
+        if(this.Owner.ArchetypeName == "RainbowShot")
+        {
+            if(this.RainbowShotBoolean == false)
+            {
+                return;
+            }
+        }
+        
         for (var i = 0; i < this.NumBullets; ++i)
         {
             this.Angle = Math.ATan2(0,0) - (i-1)*(Math.ToRadians(360 / this.NumBullets));
