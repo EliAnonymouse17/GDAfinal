@@ -67,7 +67,7 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
-		bool FlameImmune = false,
+		bool FlameImmune = true,
 	},
 	Shoot = 
 	{
