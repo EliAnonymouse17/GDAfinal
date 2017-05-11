@@ -1,0 +1,33 @@
+Cog = 
+{
+	LinkId = 
+	{
+		uint Id = 1,
+	},
+	Named = 
+	{
+		string Name = "Treasure",
+	},
+	Transform = 
+	{
+		Vec3 Translation = [6.03051, 5.71083, -3.8147e-006],
+		Vec3 Scale = [1, 1, 1],
+		Quat Rotation = [0, 0, 0, 1],
+	},
+	SpellDrop = 
+	{
+		Enum SpellDrop1 = SEEKINGARROW,
+		Enum SpellDrop2 = ACIDPOOL,
+		Enum SpellDrop3 = ICESPEAR,
+		string SpellDropSprite1 = "5852c59e8c1f9264:Texture_SeekingArrow",
+		string SpellDropSprite2 = "5274db4c2e7c11f9:Circle",
+		string SpellDropSprite3 = "5858739c8bef319d:Texture_BigIce",
+		bool TreasureDropBool = true,
+	},
+	Treasure = 
+	{
+	},
+	Hierarchy = 
+	{
+	},
+},

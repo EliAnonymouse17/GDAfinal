@@ -10,19 +10,19 @@ Cog =
 	},
 	Archetyped = 
 	{
-		string Name = "58637710f6c80a11:Treasure",
+		string Name = "5991aaa3cf94a992:Area1Treasure",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [6.03051, 5.71083, -3.8147e-006],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	SpellDrop = 
 	{
 		Enum SpellDrop1 = WATERSTREAM,
-		Enum SpellDrop2 = VAMPIREBAT,
-		Enum SpellDrop3 = BUBBLESHOT,
+		Enum SpellDrop2 = BUBBLESHOT,
+		Enum SpellDrop3 = VAMPIREBAT,
 		string SpellDropSprite1 = "587c2c7990aee772:Texture_Raindrop",
 		string SpellDropSprite2 = "583a1b2cfe6b1569:Texture_BubbleBullet",
 		string SpellDropSprite3 = "5991a8d66cbccab3:Animation_VampireBat",
