@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.495258, -4.23722, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -123,7 +123,7 @@ Cog =
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "5815eae6be2978a9:Bullet",
-		float BulletDelay = 0.7,
+		float BulletDelay = 0.6,
 		float BulletSpeed = 120,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "585fbf932318682e:MagicMissile",
@@ -299,6 +299,23 @@ Cog =
 		string BulletType = "5994fe0b31a41d83:RainbowShot",
 		float BulletDelay = 0.8,
 		float BulletSpeed = 700,
+		Enum ShotPattern = SINGLE,
+		string ShootSound = "",
+		bool TimerFreeze = false,
+		float BurstDelay = 0,
+		int BurstCount = 1,
+	},
+	VampireBatPlayerShoot = 
+	{
+		Enum SpellType = VAMPIREBAT,
+		bool UnlockAtStart = true,
+		string SpellName = "Vampire Bat",
+		string BulletSprite = "5991a8d66cbccab3:Animation_VampireBat",
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "59919c7e2295febb:VampireBat",
+		float BulletDelay = 0.8,
+		float BulletSpeed = 100,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
 		bool TimerFreeze = false,
@@ -556,7 +573,7 @@ Cog =
 					},
 					Sprite = 
 					{
-						bool Visible = true,
+						bool Visible = false,
 						bool VisibilityCulling = true,
 						bool VisibilityEvents = true,
 						bool CastShadows = false,

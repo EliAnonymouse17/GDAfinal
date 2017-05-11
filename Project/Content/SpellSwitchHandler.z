@@ -27,6 +27,7 @@ class BoneShotPlayerShoot : PlayerShoot{}
 class AcidPoolPlayerShoot : PlayerShoot{}
 class RingOfFirePlayerShoot : PlayerShoot{}
 class RainbowShotPlayerShoot : PlayerShoot{}
+class VampireBatPlayerShoot : PlayerShoot{}
 
 enum SpellTypes 
     {
@@ -41,6 +42,7 @@ enum SpellTypes
     ACIDPOOL,
     RINGOFFIRE,
     RAINBOWSHOT,
+    VAMPIREBAT,
     END
     }
     
@@ -98,7 +100,7 @@ class SpellSwitchHandler : ZilchComponent
             }
             else
             {
-                return this.Owner.BoneShotPlayerShoot;
+                return this.Owner.VampireBatPlayerShoot;
             }
             
         }
