@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 24.365,
+			float Size = 19.9484,
 		},
 		EditorCameraController = 
 		{
@@ -955,6 +955,42 @@ Level =
 					},
 				},
 			},
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "599725dd6ea0a690:SpeedUpgrade",
+		LinkId = 
+		{
+			uint Id = 18,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [6.20511, 1.0244, -0.000999451],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Pickup",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "599724735c6b0b98:HealthUpgrade",
+		LinkId = 
+		{
+			uint Id = 19,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [8.75665, 0.985736, -0.000999451],
+			Vec3 Scale = [2, 2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Pickup",
 		},
 	},
 },
