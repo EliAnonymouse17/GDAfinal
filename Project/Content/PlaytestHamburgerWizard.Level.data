@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 10.9479,
+			float Size = 49.065,
 		},
 		EditorCameraController = 
 		{
@@ -194,14 +194,14 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "597b6bda6a019d3e:TMSquare23",
+		string Name = "59971cbcaf543cd2:TMSquare23",
 		LinkId = 
 		{
 			uint Id = 7,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.426861, 2.09695, 0],
+			Vec3 Translation = [-0.426861, 2.09695, -0.01],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -290,6 +290,7 @@ Level =
 			float HurtDuration = 0.1,
 			string SpawnOnDeath = "",
 			int SpawnCount = 1,
+			bool FlameImmune = false,
 		},
 		PlayerFade = 
 		{
@@ -522,7 +523,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 9,
+					uint Id = 2,
 				},
 				Named = 
 				{
@@ -554,7 +555,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 10,
+							uint Id = 9,
 						},
 						Named = 
 						{
@@ -598,7 +599,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 11,
+									uint Id = 10,
 								},
 								Named = 
 								{
@@ -640,7 +641,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 12,
+							uint Id = 11,
 						},
 						Named = 
 						{
@@ -677,7 +678,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 13,
+							uint Id = 12,
 						},
 						Named = 
 						{
@@ -716,7 +717,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 14,
+									uint Id = 13,
 								},
 								Named = 
 								{
@@ -753,7 +754,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 15,
+							uint Id = 14,
 						},
 						Named = 
 						{
@@ -789,7 +790,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 16,
+									uint Id = 15,
 								},
 								Named = 
 								{
@@ -824,7 +825,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 17,
+									uint Id = 16,
 								},
 								Named = 
 								{
@@ -860,7 +861,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 18,
+							uint Id = 17,
 						},
 						Named = 
 						{
@@ -900,28 +901,10 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "597b65f4bcfdc3f0:TMSquare22",
-		LinkId = 
-		{
-			uint Id = 19,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-0.407895, 2.10573, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "TileMap",
-		},
-	},
-	ArchetypeInstance = 
-	{
 		string Name = "58637710f6c80a11:Treasure",
 		LinkId = 
 		{
-			uint Id = 20,
+			uint Id = 18,
 		},
 		Transform = 
 		{

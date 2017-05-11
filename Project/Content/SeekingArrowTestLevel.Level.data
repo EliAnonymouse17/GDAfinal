@@ -175,10 +175,20 @@ Level =
 		},
 		PlayerShoot = 
 		{
+			Enum SpellType = NULL,
+			bool UnlockAtStart = false,
+			string SpellName = "Magic Missile",
+			string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "5815eae6be2978a9:Bullet",
 			float BulletDelay = 1,
 			float BulletSpeed = 150,
 			Enum ShotPattern = SPREAD,
+			string ShootSound = "",
 			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
 		},
 		BoxCollider = 
 		{
@@ -212,12 +222,23 @@ Level =
 		HitpointScript = 
 		{
 			int PrivateHP = 6,
+			int MaxHP = 5,
+			string HurtSound = "",
+			string DeathSound = "",
+			float HurtDuration = 0.1,
+			string SpawnOnDeath = "",
+			int SpawnCount = 1,
+			bool FlameImmune = false,
 		},
 		PlayerFade = 
 		{
+			float Cooldown = 2,
+			float FadeDuration = 1,
+			string FadeEnterSound = "598e6ab0a9febc2a:Audio_FadeEnter",
 		},
 		SpellSwitchHandler = 
 		{
+			bool DebugUnlockAll = false,
 		},
 		Hierarchy = 
 		{
@@ -623,6 +644,7 @@ Level =
 		},
 		RoomScript = 
 		{
+			int World = 1,
 		},
 	},
 	Cog = 
@@ -665,6 +687,7 @@ Level =
 		},
 		HeartPickupScript = 
 		{
+			int HealthToHeal = 2,
 		},
 		BoxCollider = 
 		{
@@ -727,14 +750,14 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "584fd2007ec97999:TMSquare22",
+		string Name = "597b65f4bcfdc3f0:TMSquare22",
 		LinkId = 
 		{
 			uint Id = 19,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 0],
+			Vec3 Translation = [0, 0, -0.01],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},

@@ -144,7 +144,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [13.2894, 0.0498519, 0],
+			Vec3 Translation = [13.2894, 0.0498519, -0.01],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -403,6 +403,7 @@ Level =
 			float HurtDuration = 0.1,
 			string SpawnOnDeath = "",
 			int SpawnCount = 1,
+			bool FlameImmune = false,
 		},
 		PlayerFade = 
 		{
@@ -618,7 +619,7 @@ Level =
 			{
 				LinkId = 
 				{
-					uint Id = 10,
+					uint Id = 2,
 				},
 				Named = 
 				{
@@ -650,7 +651,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 11,
+							uint Id = 10,
 						},
 						Named = 
 						{
@@ -694,7 +695,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 12,
+									uint Id = 11,
 								},
 								Named = 
 								{
@@ -736,7 +737,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 13,
+							uint Id = 12,
 						},
 						Named = 
 						{
@@ -773,7 +774,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 14,
+							uint Id = 13,
 						},
 						Named = 
 						{
@@ -812,7 +813,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 15,
+									uint Id = 14,
 								},
 								Named = 
 								{
@@ -849,7 +850,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 16,
+							uint Id = 15,
 						},
 						Named = 
 						{
@@ -885,7 +886,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 17,
+									uint Id = 16,
 								},
 								Named = 
 								{
@@ -920,7 +921,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 18,
+									uint Id = 17,
 								},
 								Named = 
 								{

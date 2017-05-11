@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 18.05,
+			float Size = 36.3482,
 		},
 		EditorCameraController = 
 		{
@@ -401,7 +401,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-1.06941, 5.28007, 0],
+			Vec3 Translation = [-1.06941, 5.28007, -0.01],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -490,6 +490,7 @@ Level =
 			float HurtDuration = 0.1,
 			string SpawnOnDeath = "",
 			int SpawnCount = 1,
+			bool FlameImmune = false,
 		},
 		PlayerFade = 
 		{

@@ -212,32 +212,14 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "597b6bda6a019d3e:TMSquare23",
+		string Name = "59971cbcaf543cd2:TMSquare23",
 		LinkId = 
 		{
 			uint Id = 8,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.843406, 2.38479, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "TileMap",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "597b65f4bcfdc3f0:TMSquare22",
-		LinkId = 
-		{
-			uint Id = 9,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-0.799006, 2.34617, 0],
+			Vec3 Translation = [-0.843406, 2.38479, -0.01],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},

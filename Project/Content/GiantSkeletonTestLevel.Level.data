@@ -153,6 +153,7 @@ Level =
 		},
 		RoomScript = 
 		{
+			int World = 1,
 		},
 	},
 	ArchetypeInstance = 
@@ -175,14 +176,14 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "584fd2007ec97999:TMSquare22",
+		string Name = "597b65f4bcfdc3f0:TMSquare22",
 		LinkId = 
 		{
 			uint Id = 6,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 0],
+			Vec3 Translation = [0, 0, -0.01],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
