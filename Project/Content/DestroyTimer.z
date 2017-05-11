@@ -2,6 +2,15 @@ class DestroyTimer : ZilchComponent
 {
     [Property]
     var Time : Real = 0.2;
+    
+    [Property]
+    var Time2 : Real = 0.4;
+    
+    [Property]
+    var Random : Boolean = false;
+    
+    var RandomTime : Real = 0;
+    
     //[Property]
     //var WarpScale : Real = 2;
     function Initialize(init : CogInitializer)
@@ -19,8 +28,21 @@ class DestroyTimer : ZilchComponent
             warp.Size += event.Dt; //* maxRingSize / this.Time;
             warp.Intensity -= event.Dt *  warp.Intensity / this.Time;
         }
+        
+        var randomGenerator = Random();
+        
+        
+        this.RandomTime = randomGenerator.Range(this.Time, this.Time2);
+        
         this.Time -= event.Dt;
-        if (this.Time <= 0)
+        
+        this.RandomTime -= event.Dt;
+        if (this.Time <= 0 && !this.Random)
+        {
+            this.Owner.Destroy();
+        }
+        
+        if (this.RandomTime <= 0 && this.Random)
         {
             this.Owner.Destroy();
         }

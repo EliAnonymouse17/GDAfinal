@@ -1,5 +1,7 @@
 class Wanderer : ZilchComponent
 {
+    
+    [Property]
     var Timer : Real = 0;
     
     [Property]

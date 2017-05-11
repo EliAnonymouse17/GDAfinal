@@ -60,13 +60,22 @@ Cog =
 	},
 	Wanderer = 
 	{
-		float MoveSpeed = 9,
+		float Timer = 0.5,
+		float MoveSpeed = 5,
 	},
 	DamageScript = 
 	{
-		int Damage = 3,
+		int Damage = 2,
 		int PRVHitCount = 1,
 		string SpawnOnDeath = "",
 		string SpawnOnDeath2 = "",
+		bool Flaming = false,
+		float FlamingTime = 1,
+	},
+	DestroyTimer = 
+	{
+		float Time = 0.25,
+		float Time2 = 0.4,
+		bool Random = true,
 	},
 },

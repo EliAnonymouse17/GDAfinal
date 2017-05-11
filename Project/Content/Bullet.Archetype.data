@@ -15,7 +15,7 @@ Cog =
 	Transform = 
 	{
 		Vec3 Translation = [0, 0, 0],
-		Vec3 Scale = [1, 1, 1],
+		Vec3 Scale = [1.3, 1.3, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -44,7 +44,7 @@ Cog =
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "580e65c5299c3bbe:PlayerBullet",
 		Vec3 Offset = [-0.03, 0.1, 0],
-		float Radius = 0.25,
+		float Radius = 0.4,
 	},
 	RigidBody = 
 	{
@@ -60,10 +60,12 @@ Cog =
 	},
 	DamageScript = 
 	{
-		int Damage = 2,
+		int Damage = 1,
 		int PRVHitCount = 1,
 		string SpawnOnDeath = "",
 		string SpawnOnDeath2 = "",
+		bool Flaming = false,
+		float FlamingTime = 1,
 	},
 	SpriteParticleSystem = 
 	{
