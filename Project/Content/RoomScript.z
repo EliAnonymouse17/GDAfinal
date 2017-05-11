@@ -68,7 +68,10 @@ class Room
             if(this.World == 1)
                 space.CreateAtPosition(Archetype.GiantSkeleton, Real3(0, 0, 0));
             else if(this.World == 2)
-                space.CreateAtPosition(Archetype.TheLibrarian, Real3(0, 0, 0));
+            {
+                space.CreateAtPosition(Archetype.TheLibrarian, Real3(0, 10, 0));
+                space.CreateAtPosition(Archetype.LibrarianRunes, Real3(0, 10, 0));
+            }
             space.CreateAtPosition(Archetype.TMSquare24, Real3(0, 0, -0.01));
         }
     }
@@ -529,6 +532,8 @@ class RoomScript : ZilchComponent
                     this.Minimap.SetNodeState(Integer2(i, j), MMNodeState.Unknown);
                 }
             }
+            if(this.World == 3)
+                this.Space.FindObjectByName("LibrarianDeath").Destroy();
         }
         else
             this.CurrentRoom = this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer];

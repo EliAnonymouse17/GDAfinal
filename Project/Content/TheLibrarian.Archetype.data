@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = true,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -67,6 +67,7 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "59dae885bc5f2307:LibrarianDeath",
 		int SpawnCount = 1,
+		bool FlameImmune = false,
 	},
 	Shoot = 
 	{
@@ -157,10 +158,6 @@ Cog =
 		string TeleportAnimation = "59dae9bdb21f25c2:Librarian",
 		string OriginalTexture = "59dae9bdb21f25c2:Librarian",
 		float TeleportDelay = 5.5,
-	},
-	ChangeLevelOnDeath = 
-	{
-		string LevelToLoad = "598dea04281989a8:Ragnar",
 	},
 	Hierarchy = 
 	{

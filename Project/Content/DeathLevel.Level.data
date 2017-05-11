@@ -272,7 +272,7 @@ Level =
 		},
 		StartGameScript = 
 		{
-			string LevelToLoad = "582db66f021b067c:PlaytestHamburgerWizard",
+			string LevelToLoad = "554cea0f94af672f:Level",
 		},
 		Reactive = 
 		{
