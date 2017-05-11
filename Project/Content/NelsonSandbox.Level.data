@@ -112,7 +112,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-13.4311, 5.79187, 50],
+			Vec3 Translation = [-8.59101, -13.7714, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -124,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 44.3958,
+			float Size = 40.657,
 		},
 		EditorCameraController = 
 		{
@@ -132,7 +132,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-13.4311, 5.79187, -5.50342e-007],
+			Vec3 LookTarget = [-8.59101, -13.7714, 1.32642e-006],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -857,46 +857,10 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "598b66cd0a20b263:AcidPool",
-		LinkId = 
-		{
-			uint Id = 16,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [11.6014, -5.14384, -0.1],
-			Vec3 Scale = [4, 4, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Sprite",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "584fd89208ba642f:TMSquare24",
-		LinkId = 
-		{
-			uint Id = 17,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [0.249592, -1.32874, -0.01],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "TileMap",
-		},
-	},
-	ArchetypeInstance = 
-	{
 		string Name = "5997098f62914e72:Pyromaniac",
 		LinkId = 
 		{
-			uint Id = 18,
+			uint Id = 16,
 		},
 		Transform = 
 		{
@@ -907,6 +871,24 @@ Level =
 		Named = 
 		{
 			string Name = "Enemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584fd3545388b89f:TMTriL",
+		LinkId = 
+		{
+			uint Id = 17,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-4.02105, 0.72648, -0.1],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "TileMap",
 		},
 	},
 },
