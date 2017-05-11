@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-15.0339, 4.1269, 0],
+		Vec3 Translation = [-9.40212, 3.02957, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -62,8 +62,8 @@ Cog =
 	{
 		int PrivateHP = 9,
 		int MaxHP = 9,
-		string HurtSound = "598890d4d0097560:HurtEnemyHigh",
-		string DeathSound = "598897092d946c1a:DeathApprentice",
+		string HurtSound = "5854e6c788fe3abf:Audio_EnemyHurtLow",
+		string DeathSound = "5991b37b781a205f:Audio_DeathPyromaniac",
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,

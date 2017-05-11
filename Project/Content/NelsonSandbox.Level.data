@@ -112,7 +112,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-8.59101, -13.7714, 50],
+			Vec3 Translation = [-8.75791, 1.48347, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -124,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 40.657,
+			float Size = 11.0803,
 		},
 		EditorCameraController = 
 		{
@@ -132,7 +132,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-8.59101, -13.7714, 1.32642e-006],
+			Vec3 LookTarget = [-8.75791, 1.48347, 1.31912e-006],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -857,28 +857,10 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "5997098f62914e72:Pyromaniac",
-		LinkId = 
-		{
-			uint Id = 16,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-15.0339, 4.1269, 0],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
 		string Name = "584fd3545388b89f:TMTriL",
 		LinkId = 
 		{
-			uint Id = 17,
+			uint Id = 16,
 		},
 		Transform = 
 		{
@@ -889,6 +871,24 @@ Level =
 		Named = 
 		{
 			string Name = "TileMap",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "587c1333d2cf95cb:FlamingTotem",
+		LinkId = 
+		{
+			uint Id = 17,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-11.5924, 3.11546, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
 		},
 	},
 },
