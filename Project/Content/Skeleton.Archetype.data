@@ -62,11 +62,12 @@ Cog =
 	{
 		int PrivateHP = 4,
 		int MaxHP = 5,
-		string HurtSound = "",
-		string DeathSound = "",
+		string HurtSound = "5854e373c41f5152:Audio_BasicHurtEnemy",
+		string DeathSound = "5854e0e94b4d9613:Audio_SkeletonDeath",
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
+		bool FlameImmune = false,
 	},
 	Shoot = 
 	{
@@ -87,7 +88,7 @@ Cog =
 		float BulletDelay = 1,
 		float BulletSpeed = 150,
 		Enum ShotPattern = SINGLE,
-		string ShootSound = "",
+		string ShootSound = "598b7d3bf34203ab:EnemyMagicMissile",
 		string WalkAnimation = "",
 		string AttackAnimation = "",
 		float BurstDelay = 0,
