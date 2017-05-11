@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-1.1704, 7.5, 0],
 		Vec3 Scale = [2.5, 2.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -67,6 +67,7 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
+		bool FlameImmune = false,
 	},
 	Shoot = 
 	{
@@ -144,7 +145,7 @@ Cog =
 	},
 	ChangeLevelOnDeath = 
 	{
-		string LevelToLoad = "554cea0f94af672f:Level",
+		string LevelToLoad = "582db5802eefae05:PlaytestMainMenu",
 	},
 	Hierarchy = 
 	{

@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 24.3649,
+			float Size = 16.3323,
 		},
 		EditorCameraController = 
 		{
@@ -202,7 +202,7 @@ Level =
 		},
 		StartGameScript = 
 		{
-			string LevelToLoad = "582db5f31b57da50:PlaytestTutorial",
+			string LevelToLoad = "554cea0f94af672f:Level",
 		},
 		Reactive = 
 		{
@@ -409,45 +409,11 @@ Level =
 		},
 		Named = 
 		{
-			string Name = "LevelSelectText1",
+			string Name = "TutorialButton",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-1.00161, -0.951749, 0],
-			Vec3 Scale = [2, 2, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		SpriteText = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 0, 0, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string FontName = "4e7bac697bec55c5:Verdana",
-			uint FontSize = 25,
-			string Text = "Level",
-			TextAlign Align = Left,
-			float PixelsPerUnit = 64,
-			bool Smoothing = true,
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 11,
-		},
-		Named = 
-		{
-			string Name = "LevelSelectButton",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [0, -1.69122, 0],
+			Vec3 Translation = [0, -1.80415, 0],
 			Vec3 Scale = [4, 1.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -471,7 +437,7 @@ Level =
 		},
 		StartGameScript = 
 		{
-			string LevelToLoad = "59dd48ab22f0a119:PlaytestLevelSelect",
+			string LevelToLoad = "584fe7189e6f2723:Tutorial",
 		},
 		Reactive = 
 		{
@@ -488,15 +454,15 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 12,
+			uint Id = 11,
 		},
 		Named = 
 		{
-			string Name = "LevelSelectText2",
+			string Name = "TutorialText",
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-1.27341, -1.55576, 0],
+			Vec3 Translation = [-1.70057, -1.28914, 0],
 			Vec3 Scale = [2, 2, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -511,8 +477,8 @@ Level =
 			SpriteGeometryMode GeometryMode = ZPlane,
 			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
 			string FontName = "4e7bac697bec55c5:Verdana",
-			uint FontSize = 25,
-			string Text = "Select",
+			uint FontSize = 28,
+			string Text = "Tutorial",
 			TextAlign Align = Left,
 			float PixelsPerUnit = 64,
 			bool Smoothing = true,
