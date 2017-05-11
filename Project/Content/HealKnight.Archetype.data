@@ -15,7 +15,7 @@ Cog =
 	Transform = 
 	{
 		Vec3 Translation = [5.78906, 7.5, 0],
-		Vec3 Scale = [2.5, 2.5, 1],
+		Vec3 Scale = [1.5, 1.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 95,
+		int PrivateHP = 30,
 		int MaxHP = 5,
 		string HurtSound = "",
 		string DeathSound = "",
@@ -72,7 +72,7 @@ Cog =
 	Shoot = 
 	{
 		string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
-		int RingCount = 22,
+		int RingCount = 24,
 		float RingOffset = 90,
 		int SpreadBullets = 2,
 	},
@@ -100,10 +100,10 @@ Cog =
 	BossAttackLogic = 
 	{
 		string StandTexture = "",
-		float AttackDelay1 = 3,
-		float BulletSpeed1 = 1000,
-		Enum ShotPattern1 = SINGLE,
-		string BulletType1 = "",
+		float AttackDelay1 = 1,
+		float BulletSpeed1 = 500,
+		Enum ShotPattern1 = RING,
+		string BulletType1 = "5991a973fc954485:KnightHeal",
 		string AttackAnimation1 = "",
 		float BurstDelay1 = 0,
 		int BurstCount1 = 1,

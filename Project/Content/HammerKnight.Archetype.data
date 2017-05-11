@@ -15,7 +15,7 @@ Cog =
 	Transform = 
 	{
 		Vec3 Translation = [-1.1704, 7.5, 0],
-		Vec3 Scale = [2.5, 2.5, 1],
+		Vec3 Scale = [1.5, 1.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 95,
+		int PrivateHP = 50,
 		int MaxHP = 5,
 		string HurtSound = "",
 		string DeathSound = "",
@@ -74,7 +74,7 @@ Cog =
 		string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
 		int RingCount = 22,
 		float RingOffset = 90,
-		int SpreadBullets = 2,
+		int SpreadBullets = 5,
 	},
 	Orientation = 
 	{
@@ -101,9 +101,9 @@ Cog =
 	{
 		string StandTexture = "",
 		float AttackDelay1 = 3,
-		float BulletSpeed1 = 1000,
-		Enum ShotPattern1 = SINGLE,
-		string BulletType1 = "",
+		float BulletSpeed1 = 150,
+		Enum ShotPattern1 = SPREAD,
+		string BulletType1 = "580e65c5299defb0:EnemyBullet",
 		string AttackAnimation1 = "",
 		float BurstDelay1 = 0,
 		int BurstCount1 = 1,
