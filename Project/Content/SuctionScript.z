@@ -1,0 +1,43 @@
+class SuctionScript : ZilchComponent
+{
+    [Property]
+    var SuctionSpeed : Real = 20;
+    
+    [Property]
+    var Range : Real = 4;
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+}
+
+    function OnLogicUpdate(event : Event)
+    {
+        var enemyList = this.Space.FindAllObjectsByName("Enemy");
+        var bullets = this.Space.FindAllObjectsByName("Bullet");
+        var array : Array[Cog] = Array[Cog]();
+        
+        foreach(var bullet in bullets)
+        {
+            array.Add(bullet);
+        }
+        foreach(var enemy in enemyList)
+        {
+            array.Add(enemy);
+        }
+        
+        foreach(var enemy in array)
+        {
+            var distance = Math.Distance(this.Owner.Transform.Translation, enemy.Transform.Translation);
+            if (distance <= this.Range)
+            {
+                if (enemy.AIMoveFromPlayer != null)
+                {
+                    enemy.AIMoveFromPlayer.MoveFreeze = true;
+                    enemy.AIMoveFromPlayer.FreezeTimer = 1.0;
+                }
+                var angle = Math.Normalize(this.Owner.Transform.Translation - enemy.Transform.Translation);
+                enemy.RigidBody.ApplyForce(angle*this.SuctionSpeed);
+            }
+        }
+    }
+}

@@ -112,7 +112,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-8.75791, 1.48347, 50],
+			Vec3 Translation = [-8.54731, 1.28687, 50],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -124,7 +124,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 24.6596,
+			float Size = 18.2683,
 		},
 		EditorCameraController = 
 		{
@@ -132,7 +132,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-8.75791, 1.48347, 1.31912e-006],
+			Vec3 LookTarget = [-8.54731, 1.28687, 1.31912e-006],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -203,20 +203,74 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "584fd3545388b89f:TMTriL",
+		string Name = "5991c5fd056dd4de:BlackHole",
 		LinkId = 
 		{
 			uint Id = 7,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-4.02105, 0.72648, -0.1],
+			Vec3 Translation = [-10.9562, -1.14498, 0],
+			Vec3 Scale = [3, 3, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Bullet",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "584d30a5b4310262:Zombie",
+		LinkId = 
+		{
+			uint Id = 8,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-12.7793, 3.51676, 0],
+			Vec3 Scale = [1.2, 1.2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "59971cbcaf543cd2:TMSquare23",
+		LinkId = 
+		{
+			uint Id = 9,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-10.8287, -1.42707, -0.1],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Named = 
 		{
 			string Name = "TileMap",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58639e0fc7f7898f:Apprentice",
+		LinkId = 
+		{
+			uint Id = 10,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-9.57402, 2.88003, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
 		},
 	},
 },

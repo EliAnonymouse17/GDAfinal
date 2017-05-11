@@ -10,12 +10,12 @@ Cog =
 	},
 	Archetyped = 
 	{
-		string Name = "59972611ff592285:ShadowBullet",
+		string Name = "5991c5fd056dd4de:BlackHole",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
-		Vec3 Scale = [1, 1, 1],
+		Vec3 Translation = [-10.9562, -1.14498, 0],
+		Vec3 Scale = [3, 3, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
 	Sprite = 
@@ -28,7 +28,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "587c2cc17b80f766:Texture_GiantRock",
+		string SpriteSource = "584558c2c978f519:Texture_PlayerBasicProjectile",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -42,7 +42,7 @@ Cog =
 		bool SendsMessages = true,
 		bool Seamless = true,
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-		string SerializedGroupName = "580e65c5299dfb9d:EnemyBullet",
+		string SerializedGroupName = "580e65c5299c3bbe:PlayerBullet",
 		Vec3 Offset = [0.01, -0.005, 0],
 		float Radius = 0.3,
 	},
@@ -53,31 +53,35 @@ Cog =
 		bool Kinematic = false,
 		bool RotationLocked = false,
 		bool Mode2D = true,
-		bool AllowSleep = true,
+		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
 		Vec3 AngularVelocity = [0, 0, 0],
 	},
-	RockShockScript = 
+	ScreenWarpRing = 
 	{
-		string ImpactSound = "585fc00d67fa4059:ExplodingBulletImpact",
-		bool SpawnBullets = true,
+		float Size = 0.1,
+		float Thickness = 0.05,
+		float Intensity = 0.05,
 	},
-	DamageScript = 
+	MeleeAttackScript = 
 	{
-		int Damage = 0,
-		int PRVHitCount = 1,
-		string SpawnOnDeath = "599723b97c60dd90:ShadowWarp",
-		string SpawnOnDeath2 = "",
-		bool Flaming = false,
+		float AttackDelay = 1,
+		int Damage = 1,
+		int RecoilDamage = 0,
+		bool Friendly = true,
 	},
-	ExplodingBulletScript = 
+	SuctionScript = 
 	{
-		float AngleOffset = 0,
-		string ArchetypeToSpawn = "580e65c5299defb0:EnemyBullet",
-		float SpawnedBulletVelocity = 40,
-		int NumBullets = 100,
-		string BoomSound = "585fc00d67fa4059:ExplodingBulletImpact",
-		bool DestroyOwner = false,
+		float SuctionSpeed = 50,
+		float Range = 8,
+	},
+	DestroyTimer = 
+	{
+		float Time = 4,
+		bool Warp = false,
+	},
+	Hierarchy = 
+	{
 	},
 },
