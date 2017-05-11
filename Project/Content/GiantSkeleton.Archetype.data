@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -67,6 +67,7 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
+		bool FlameImmune = false,
 	},
 	Shoot = 
 	{
@@ -151,10 +152,6 @@ Cog =
 	BossHealthBarScript = 
 	{
 		float HealthBarSize = 15,
-	},
-	ChangeLevelOnDeath = 
-	{
-		string LevelToLoad = "582db2ee1e39f96c:PlaytestLibrarian",
 	},
 	Hierarchy = 
 	{
