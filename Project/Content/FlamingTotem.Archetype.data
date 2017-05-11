@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-11.5924, 3.11546, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -66,10 +66,11 @@ Cog =
 		int PrivateHP = 18,
 		int MaxHP = 15,
 		string HurtSound = "",
-		string DeathSound = "",
+		string DeathSound = "5991b45b9bd46cca:Audio_DeathTotem",
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "587c02da03a631fd:Fireling",
 		int SpawnCount = 4,
+		bool FlameImmune = false,
 	},
 	BoxCollider = 
 	{
@@ -87,7 +88,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],

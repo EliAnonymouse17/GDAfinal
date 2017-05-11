@@ -1,7 +1,7 @@
 SoundCue = 
 {
-	SoundPlayMode PlayMode = Looping,
-	float Volume = 0.05,
+	SoundPlayMode PlayMode = Single,
+	float Volume = 0.29,
 	float VolumeVariation = 0,
 	float Pitch = 0,
 	float PitchVariation = 0,
@@ -14,7 +14,7 @@ SoundCue =
 	Array Sounds = 
 	[
 		{
-			string SoundName = "58637733e51e9d9b:graveyard",
+			string SoundName = "5991b4f36a708c8b:Audio_DeathFireling",
 			float Weight = 1,
 		},
 	],

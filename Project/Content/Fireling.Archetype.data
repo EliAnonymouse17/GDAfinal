@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-9.50139, 0.775397, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -62,11 +62,12 @@ Cog =
 	{
 		int PrivateHP = 1,
 		int MaxHP = 1,
-		string HurtSound = "",
-		string DeathSound = "",
+		string HurtSound = "598890d4d0097560:HurtEnemyHigh",
+		string DeathSound = "5991b4f36a75fa48:Audio_DeathFireling",
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
+		bool FlameImmune = false,
 	},
 	Orientation = 
 	{
