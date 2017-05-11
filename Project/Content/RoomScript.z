@@ -53,19 +53,19 @@ class Room
             {
                 space.CreateAtPosition(this.Items[i].Arch, this.Items[i].Position);
             }
-            var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, 0));
+            var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, -0.01));
             //tileMap.Transform.RotateAnglesLocal(Real3(0, 0, Math.ToRadians(this.Rotation)));
         }
         else if(this.Type == RoomType.TREASURE)
         {
             space.CreateAtPosition(Archetype.Treasure, Real3(0, 0, 0));
-            var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, 0));
+            var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, -0.01));
             //tileMap.Transform.RotateAnglesLocal(Real3(0, 0, Math.ToRadians(this.Rotation)));
         }
         else if(this.Type == RoomType.BOSS)
         {
             space.CreateAtPosition(Archetype.GiantSkeleton, Real3(0, 0, 0));
-            space.CreateAtPosition(Archetype.TMSquare22, Real3(0, 0, 0));
+            space.CreateAtPosition(Archetype.TMSquare22, Real3(0, 0, -0.01));
         }
     }
 }
