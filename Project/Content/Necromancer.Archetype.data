@@ -60,13 +60,14 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 18,
+		int PrivateHP = 14,
 		int MaxHP = 5,
 		string HurtSound = "5854e6c788fe3abf:Audio_EnemyHurtLow",
 		string DeathSound = "598b7ca720fb3db0:Audio_DeathNecromancer",
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
+		bool FlameImmune = false,
 	},
 	EnemyShoot = 
 	{
@@ -96,7 +97,7 @@ Cog =
 	NecromancerSpawn = 
 	{
 		string SpawnSound = "584fc8fb746f1d3e:NecromancerAttackSummon",
-		float SpawnDelay = 5,
+		float SpawnDelay = 8,
 		string EnemyToSpawn = "58e6b86cc88e7f69:Enemy",
 	},
 	Wanderer = 

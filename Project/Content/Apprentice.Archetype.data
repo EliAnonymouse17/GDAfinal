@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 9,
+		int PrivateHP = 7,
 		int MaxHP = 9,
 		string HurtSound = "598890d4d0097560:HurtEnemyHigh",
 		string DeathSound = "598897092d946c1a:DeathApprentice",
@@ -85,7 +85,7 @@ Cog =
 	},
 	EnemyShoot = 
 	{
-		float BulletDelay = 1.4,
+		float BulletDelay = 2,
 		float BulletSpeed = 150,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "598b7d3bf34203ab:EnemyMagicMissile",

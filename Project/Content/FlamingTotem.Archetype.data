@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-11.5924, 3.11546, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -56,7 +56,7 @@ Cog =
 	},
 	Shoot = 
 	{
-		string BulletType = "580e65c5299defb0:EnemyBullet",
+		string BulletType = "598e5f6fd050673b:EnemyFlamingBullet",
 		int RingCount = 18,
 		float RingOffset = 90,
 		int SpreadBullets = 3,
@@ -88,7 +88,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],

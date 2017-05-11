@@ -60,13 +60,14 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 5,
+		int PrivateHP = 6,
 		int MaxHP = 5,
 		string HurtSound = "5854e373c41f5152:Audio_BasicHurtEnemy",
 		string DeathSound = "59889181f69e4dac:Audio_DeathZombie",
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
+		bool FlameImmune = false,
 	},
 	Shoot = 
 	{

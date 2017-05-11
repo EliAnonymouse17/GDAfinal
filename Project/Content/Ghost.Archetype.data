@@ -67,6 +67,7 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
+		bool FlameImmune = false,
 	},
 	Shoot = 
 	{
@@ -84,14 +85,14 @@ Cog =
 	},
 	EnemyShoot = 
 	{
-		float BulletDelay = 0.3,
+		float BulletDelay = 3,
 		float BulletSpeed = 125,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "598b7d3bf34203ab:EnemyMagicMissile",
 		string WalkAnimation = "",
 		string AttackAnimation = "",
-		float BurstDelay = 0,
-		int BurstCount = 1,
+		float BurstDelay = 0.3,
+		int BurstCount = 8,
 	},
 	AIMoveFromPlayer = 
 	{
