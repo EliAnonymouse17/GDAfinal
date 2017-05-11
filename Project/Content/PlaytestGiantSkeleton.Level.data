@@ -103,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-7.6973, 9.53994, 64.75],
+			Vec3 Translation = [-0.452966, 0.327601, 64.75],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 14.7781,
+			float Size = 24.365,
 		},
 		EditorCameraController = 
 		{
@@ -123,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [-7.6973, 9.53994, 14.75],
+			Vec3 LookTarget = [-0.452966, 0.327601, 14.75],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -135,29 +135,11 @@ Level =
 			bool Wireframe = false,
 		},
 	},
-	ArchetypeInstance = 
-	{
-		string Name = "582e55149cb1b9f5:Player",
-		LinkId = 
-		{
-			uint Id = 4,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-0.495258, -4.23722, 0],
-			Vec3 Scale = [1.2, 1.2, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Player",
-		},
-	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 5,
+			uint Id = 4,
 		},
 		Named = 
 		{
@@ -179,7 +161,7 @@ Level =
 		string Name = "584e01664b4e55af:HeartPickup",
 		LinkId = 
 		{
-			uint Id = 6,
+			uint Id = 5,
 		},
 		Transform = 
 		{
@@ -194,7 +176,25 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "59919e6657ae76aa:HammerKnight",
+		string Name = "597b65f4bcfdc3f0:TMSquare22",
+		LinkId = 
+		{
+			uint Id = 6,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 0, -0.01],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "TileMap",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58040c758067a641:GiantSkeleton",
 		LinkId = 
 		{
 			uint Id = 7,
@@ -212,56 +212,20 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "59971cbcaf543cd2:TMSquare23",
+		string Name = "582e55149cb1b9f5:Player",
 		LinkId = 
 		{
 			uint Id = 8,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.843406, 2.38479, -0.01],
-			Vec3 Scale = [1, 1, 1],
+			Vec3 Translation = [0.0810625, -0.0395423, 0],
+			Vec3 Scale = [1.2, 1.2, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Named = 
 		{
-			string Name = "TileMap",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "59919e7055a3f02e:SwordKnight",
-		LinkId = 
-		{
-			uint Id = 9,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-9.36137, 7.5, 0],
-			Vec3 Scale = [2.5, 2.5, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "59919e105071743c:HealKnight",
-		LinkId = 
-		{
-			uint Id = 10,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [5.78906, 7.5, 0],
-			Vec3 Scale = [2.5, 2.5, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
+			string Name = "Player",
 		},
 	},
 },
