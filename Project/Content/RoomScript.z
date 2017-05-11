@@ -91,6 +91,7 @@ class RoomScript : ZilchComponent
     var Timer : Real = 0;
     var LoadDirection : Directions;
     var CheckTimer : Real = 0;
+    var AttackDelay : Real = 0;
     [Property] var World : Integer = 1;
     
     function Initialize(init : CogInitializer)
@@ -117,6 +118,8 @@ class RoomScript : ZilchComponent
                     this.GetDoorPosition(this.OppositeDirection(this.LoadDirection));
             }
         }
+        if(this.AttackDelay > 0)
+            this.AttackDelay -= event.Dt;
         this.CheckTimer -= event.Dt;
         if(this.CheckTimer <= 0)
         {
@@ -556,5 +559,6 @@ class RoomScript : ZilchComponent
         }
         this.Timer = 0.1;
         this.LoadDirection = direction;
+        this.AttackDelay = 1;
     }
 }

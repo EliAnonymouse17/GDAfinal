@@ -859,7 +859,7 @@ Level =
 		},
 		RoomScript = 
 		{
-			int World = 3,
+			int World = 1,
 		},
 	},
 	ArchetypeInstance = 

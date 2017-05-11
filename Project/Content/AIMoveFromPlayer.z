@@ -17,6 +17,8 @@ class AIMoveFromPlayer : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
+        if(this.Space.FindObjectByName("Room").RoomScript.AttackDelay > 0)
+            return;
         var playerPos : Real3 = Real3(0,0,0);
         var randGen : Random = Random();
         var randomAngle = Real3(randGen.Range(-0.2, 0.2), randGen.Range(-0.2, 0.2), 0);
