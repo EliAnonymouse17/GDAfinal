@@ -68,7 +68,7 @@ class PlayerShoot : ZilchComponent
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        if(!this.Active) return;
+        
         
 
         // Tick down time until next burst
@@ -76,6 +76,9 @@ class PlayerShoot : ZilchComponent
         {
             this.TimeUntilNextShot -= event.Dt;
         }
+        
+        if(!this.Active) return;
+        
         // Calculate shot angle
         var mouseScreenPosition = Zero.Mouse.ScreenPosition;
         var mouseWorldPosition = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(mouseScreenPosition, 0);
