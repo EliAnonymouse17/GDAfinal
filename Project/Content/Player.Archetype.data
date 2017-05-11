@@ -141,7 +141,7 @@ Cog =
 		int RingCount = 10,
 		string BulletType = "5873834ea3abcd96:BoneShot",
 		float BulletDelay = 6.5,
-		float BulletSpeed = 1000,
+		float BulletSpeed = 1400,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
 		bool TimerFreeze = false,
@@ -179,7 +179,7 @@ Cog =
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
 		bool TimerFreeze = false,
-		float BurstDelay = 0.01,
+		float BurstDelay = 0.02,
 		int BurstCount = 3,
 	},
 	SeekingArrowPlayerShoot = 
