@@ -2,8 +2,8 @@ DataContent =
 {
 	DataBuilder = 
 	{
-		string Name = "GiantSkeletonTestLevelCopy1",
-		uint64 ResourceId = 59971e6aa14ad7ed,
+		string Name = "ThreeKnights",
+		uint64 ResourceId = 59919d0f3735dfd7,
 		string LoaderType = "Level",
 		uint Version = 0,
 		bool ShowInEditor = true,

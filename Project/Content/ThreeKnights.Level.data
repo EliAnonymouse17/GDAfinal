@@ -66,6 +66,15 @@ Level =
 			Vec2 Resolution = [1280, 720],
 			Vec4 MarginColor = [0, 0, 0, 1],
 		},
+		ForwardRenderer = 
+		{
+			Vec4 ClearColor = [0.155, 0.155, 0.155, 1],
+			bool DrawNonVisible = false,
+			bool DrawDebugObjects = true,
+			bool DrawEditorIcons = true,
+			bool EditorIconDepth = true,
+			bool Wireframe = false,
+		},
 		GridDraw = 
 		{
 			bool Active = true,
@@ -81,24 +90,6 @@ Level =
 			int HilightInterval = 10,
 			bool FollowEditorCamera = false,
 		},
-		DeferredRenderer = 
-		{
-			Vec4 ClearColor = [0, 0, 0, 1],
-			bool DrawNonVisible = false,
-			bool DrawDebugObjects = true,
-			bool DrawEditorIcons = true,
-			bool EditorIconDepth = true,
-			bool Hdr = true,
-			bool Shadows = true,
-			bool AntiAliasing = false,
-			bool Refraction = true,
-			bool Reflections = true,
-			string ReflectionEnvironmentName = "4fab71e8bcb7a8ce:DefaultTexture",
-			bool GodRays = true,
-			bool RenderMasks = false,
-			bool Glow = false,
-			float GlowThreshold = 1,
-		},
 	},
 	Cog = 
 	{
@@ -112,7 +103,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [1.58658, -4.89262, 64.75],
+			Vec3 Translation = [-0.452966, 0.327601, 64.75],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [-0, -1.09278e-008, 0, 1],
 		},
@@ -124,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 24.3649,
+			float Size = 24.365,
 		},
 		EditorCameraController = 
 		{
@@ -132,7 +123,7 @@ Level =
 			float LookDistance = 50,
 			float VerticalAngle = 0,
 			float HorizontalAngle = 0,
-			Vec3 LookTarget = [1.58658, -4.89262, 14.75],
+			Vec3 LookTarget = [-0.452966, 0.327601, 14.75],
 			float MoveSensitivity = 1,
 		},
 		EditorRenderer = 
@@ -192,7 +183,7 @@ Level =
 		},
 		Transform = 
 		{
-			Vec3 Translation = [0, 0, 0],
+			Vec3 Translation = [0, 0, -0.01],
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
@@ -203,38 +194,38 @@ Level =
 	},
 	ArchetypeInstance = 
 	{
-		string Name = "582e55149cb1b9f5:Player",
+		string Name = "58040c758067a641:GiantSkeleton",
 		LinkId = 
 		{
 			uint Id = 7,
 		},
 		Transform = 
 		{
-			Vec3 Translation = [-0.77993, -3.61871, 0],
-			Vec3 Scale = [1.2, 1.2, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Player",
-		},
-	},
-	ArchetypeInstance = 
-	{
-		string Name = "598ddf4d9eccbe1e:Rix",
-		LinkId = 
-		{
-			uint Id = 8,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-0.0921507, 6.5341, 0],
+			Vec3 Translation = [-1.1704, 7.5, 0],
 			Vec3 Scale = [2.5, 2.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
 		Named = 
 		{
 			string Name = "Enemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "582e55149cb1b9f5:Player",
+		LinkId = 
+		{
+			uint Id = 8,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0.0810625, -0.0395423, 14.75],
+			Vec3 Scale = [1.2, 1.2, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Player",
 		},
 	},
 },

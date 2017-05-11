@@ -10,11 +10,11 @@ Cog =
 	},
 	Archetyped = 
 	{
-		string Name = "598ddf4d9eccbe1e:Rix",
+		string Name = "59919e105071743c:HealKnight",
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.0921507, 6.5341, 0],
+		Vec3 Translation = [5.78906, 7.5, 0],
 		Vec3 Scale = [2.5, 2.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,7 +24,7 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [0, 0, 0, 1],
+		Vec4 Color = [1, 1, 1, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -50,7 +50,7 @@ Cog =
 	{
 		bool Static = false,
 		bool Asleep = false,
-		bool Kinematic = true,
+		bool Kinematic = false,
 		bool RotationLocked = true,
 		bool Mode2D = true,
 		bool AllowSleep = false,
@@ -60,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 50,
+		int PrivateHP = 95,
 		int MaxHP = 5,
 		string HurtSound = "",
 		string DeathSound = "",
@@ -72,9 +72,9 @@ Cog =
 	Shoot = 
 	{
 		string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
-		int RingCount = 50,
+		int RingCount = 22,
 		float RingOffset = 90,
-		int SpreadBullets = 9,
+		int SpreadBullets = 2,
 	},
 	Orientation = 
 	{
@@ -97,33 +97,29 @@ Cog =
 	{
 		float HealthBarSize = 15,
 	},
-	ChangeLevelOnDeath = 
-	{
-		string LevelToLoad = "582db2ee1e39f96c:PlaytestLibrarian",
-	},
 	BossAttackLogic = 
 	{
 		string StandTexture = "",
-		float AttackDelay1 = 4,
-		float BulletSpeed1 = 70,
-		Enum ShotPattern1 = SPREAD,
-		string BulletType1 = "580e65c5299defb0:EnemyBullet",
+		float AttackDelay1 = 3,
+		float BulletSpeed1 = 1000,
+		Enum ShotPattern1 = SINGLE,
+		string BulletType1 = "",
 		string AttackAnimation1 = "",
-		float BurstDelay1 = 1,
-		int BurstCount1 = 4,
+		float BurstDelay1 = 0,
+		int BurstCount1 = 1,
 		Vec4 Space1 = [1, 1, 1, 1],
-		float AttackDelay2 = 5,
-		float BulletSpeed2 = 80,
+		float AttackDelay2 = 3,
+		float BulletSpeed2 = 1000,
 		Enum ShotPattern2 = SINGLE,
-		string BulletType2 = "59972611ff592285:ShadowBullet",
+		string BulletType2 = "",
 		string AttackAnimation2 = "",
 		float BurstDelay2 = 0,
 		int BurstCount2 = 1,
 		Vec4 Space2 = [1, 1, 1, 1],
-		float AttackDelay3 = 0,
-		float BulletSpeed3 = 100,
+		float AttackDelay3 = 3,
+		float BulletSpeed3 = 1000,
 		Enum ShotPattern3 = SINGLE,
-		string BulletType3 = "580e65c5299defb0:EnemyBullet",
+		string BulletType3 = "",
 		string AttackAnimation3 = "",
 		float BurstDelay3 = 0,
 		int BurstCount3 = 1,
@@ -156,6 +152,11 @@ Cog =
 		float ChallengeAttackTimer1 = 4,
 		float ChallengeAttackTimer2 = 1,
 		float ChallengeAttackTimer3 = 2,
+	},
+	AIMoveFromPlayer = 
+	{
+		float MoveSpeed = 4,
+		bool MovesAwayFromPlayer = true,
 	},
 	Hierarchy = 
 	{
