@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.468242, -2.37777, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -88,7 +88,7 @@ Cog =
 	},
 	SpellSwitchHandler = 
 	{
-		bool DebugUnlockAll = false,
+		bool DebugUnlockAll = true,
 	},
 	PlayerAnimations = 
 	{
@@ -123,8 +123,8 @@ Cog =
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "5815eae6be2978a9:Bullet",
-		float BulletDelay = 0.6,
-		float BulletSpeed = 120,
+		float BulletDelay = 0.3,
+		float BulletSpeed = 1000,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "585fbf932318682e:MagicMissile",
 		bool TimerFreeze = false,
@@ -157,8 +157,8 @@ Cog =
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "584d4ddb6f528990:IceSpear",
-		float BulletDelay = 2,
-		float BulletSpeed = 275,
+		float BulletDelay = 1.4,
+		float BulletSpeed = 10000,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "585fcd0c7dc8a4ee:IceSpear",
 		bool TimerFreeze = false,
@@ -174,13 +174,13 @@ Cog =
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "58737c72bcda6207:WaterBullet",
-		float BulletDelay = 1.1,
-		float BulletSpeed = 180,
+		float BulletDelay = 0.9,
+		float BulletSpeed = 220,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
 		bool TimerFreeze = false,
-		float BurstDelay = 0.02,
-		int BurstCount = 5,
+		float BurstDelay = 0.01,
+		int BurstCount = 3,
 	},
 	SeekingArrowPlayerShoot = 
 	{
@@ -242,7 +242,7 @@ Cog =
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "582a49e0d54b1b1a:BubbleBullet",
-		float BulletDelay = 0.7,
+		float BulletDelay = 0.2,
 		float BulletSpeed = 100,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "5854f4cd860c332b:Audio_BubbleTrap",

@@ -54,6 +54,8 @@ Cog =
 		int PRVHitCount = 1,
 		string SpawnOnDeath = "",
 		string SpawnOnDeath2 = "",
+		bool Flaming = false,
+		float FlamingTime = 1,
 	},
 	BoxCollider = 
 	{
@@ -75,9 +77,8 @@ Cog =
 	PointTowards = 
 	{
 		Enum TrackedCog = MOUSE,
-		float Speed = 20,
-		float Radians = 0.15,
-		float DestroyTimer = 0,
+		float Speed = 25,
+		float Radians = 0.18,
 	},
 	SpriteParticleSystem = 
 	{

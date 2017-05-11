@@ -68,7 +68,12 @@ class Room
             if(this.World == 1)
                 space.CreateAtPosition(Archetype.GiantSkeleton, Real3(0, 0, 0));
             else if(this.World == 2)
-                space.CreateAtPosition(Archetype.TheLibrarian, Real3(0, 0, 0));
+            {
+                space.CreateAtPosition(Archetype.TheLibrarian, Real3(0, 10, 0));
+                space.CreateAtPosition(Archetype.LibrarianRunes, Real3(0, 10, 0));
+            }
+            else if(this.World == 3)
+                space.CreateAtPosition(Archetype.Ragnar, Real3(0, 0, 0));
             space.CreateAtPosition(Archetype.TMSquare24, Real3(0, 0, -0.01));
         }
     }
@@ -86,6 +91,7 @@ class RoomScript : ZilchComponent
     var Timer : Real = 0;
     var LoadDirection : Directions;
     var CheckTimer : Real = 0;
+    var AttackDelay : Real = 0;
     [Property] var World : Integer = 1;
     
     function Initialize(init : CogInitializer)
@@ -112,6 +118,8 @@ class RoomScript : ZilchComponent
                     this.GetDoorPosition(this.OppositeDirection(this.LoadDirection));
             }
         }
+        if(this.AttackDelay > 0)
+            this.AttackDelay -= event.Dt;
         this.CheckTimer -= event.Dt;
         if(this.CheckTimer <= 0)
         {
@@ -270,6 +278,8 @@ class RoomScript : ZilchComponent
                     enemies.Add(new RoomObject(Archetype.Skeleton, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
                 if(this.World == 2)
                     enemies.Add(new RoomObject(Archetype.BoomBook, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                if(this.World == 3)
+                    enemies.Add(new RoomObject(Archetype.Fireling, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
             }
             else if(temp < 16)
             {
@@ -277,6 +287,8 @@ class RoomScript : ZilchComponent
                     enemies.Add(new RoomObject(Archetype.Zombie, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
                 if(this.World == 2)
                     enemies.Add(new RoomObject(Archetype.Apprentice, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                if(this.World == 3)
+                    enemies.Add(new RoomObject(Archetype.FlamingTotem, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
             }
             else if(temp < 20)
             {
@@ -284,6 +296,8 @@ class RoomScript : ZilchComponent
                     enemies.Add(new RoomObject(Archetype.Ghost, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
                 if(this.World == 2)
                     enemies.Add(new RoomObject(Archetype.StaffOgre, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                if(this.World == 3)
+                    enemies.Add(new RoomObject(Archetype.FireElemental, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
             }
             else
             {
@@ -291,6 +305,8 @@ class RoomScript : ZilchComponent
                     enemies.Add(new RoomObject(Archetype.Necromancer, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
                 if(this.World == 2)
                     enemies.Add(new RoomObject(Archetype.AnimatedGolem, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                if(this.World == 3)
+                    enemies.Add(new RoomObject(Archetype.Pyromaniac, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
             }
         }
         
@@ -529,6 +545,8 @@ class RoomScript : ZilchComponent
                     this.Minimap.SetNodeState(Integer2(i, j), MMNodeState.Unknown);
                 }
             }
+            if(this.World == 3)
+                this.Space.FindObjectByName("LibrarianDeath").Destroy();
         }
         else
             this.CurrentRoom = this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer];
@@ -541,5 +559,6 @@ class RoomScript : ZilchComponent
         }
         this.Timer = 0.1;
         this.LoadDirection = direction;
+        this.AttackDelay = 1;
     }
 }

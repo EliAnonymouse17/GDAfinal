@@ -115,7 +115,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 19.9484,
+			float Size = 16.3324,
 		},
 		EditorCameraController = 
 		{
@@ -407,13 +407,13 @@ Level =
 		},
 		PlayerFade = 
 		{
-			float Cooldown = 1,
-			float FadeDuration = 1.2,
+			float Cooldown = 1.4,
+			float FadeDuration = 1,
 			string FadeEnterSound = "598e6ab0a9febc2a:Audio_FadeEnter",
 		},
 		SpellSwitchHandler = 
 		{
-			bool DebugUnlockAll = false,
+			bool DebugUnlockAll = true,
 		},
 		PlayerAnimations = 
 		{
@@ -448,8 +448,8 @@ Level =
 			int SpreadBullets = 3,
 			int RingCount = 10,
 			string BulletType = "5815eae6be2978a9:Bullet",
-			float BulletDelay = 0.7,
-			float BulletSpeed = 120,
+			float BulletDelay = 0.25,
+			float BulletSpeed = 180,
 			Enum ShotPattern = SINGLE,
 			string ShootSound = "585fbf932318682e:MagicMissile",
 			bool TimerFreeze = false,
@@ -510,7 +510,7 @@ Level =
 		SeekingArrowPlayerShoot = 
 		{
 			Enum SpellType = SEEKINGARROW,
-			bool UnlockAtStart = true,
+			bool UnlockAtStart = false,
 			string SpellName = "Seeking Arrow",
 			string BulletSprite = "5852c59e8c1f9264:Texture_SeekingArrow",
 			int SpreadBullets = 3,
@@ -561,13 +561,13 @@ Level =
 		BubbleShotPlayerShoot = 
 		{
 			Enum SpellType = BUBBLESHOT,
-			bool UnlockAtStart = true,
+			bool UnlockAtStart = false,
 			string SpellName = "Bubble Shot",
 			string BulletSprite = "583a1b2cfe6b1569:Texture_BubbleBullet",
 			int SpreadBullets = 3,
 			int RingCount = 10,
 			string BulletType = "582a49e0d54b1b1a:BubbleBullet",
-			float BulletDelay = 0.5,
+			float BulletDelay = 0.2,
 			float BulletSpeed = 100,
 			Enum ShotPattern = SINGLE,
 			string ShootSound = "5854f4cd860c332b:Audio_BubbleTrap",
@@ -585,7 +585,7 @@ Level =
 			bool UnlockAtStart = false,
 			string SpellName = "Magic Missile",
 			string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
-			int SpreadBullets = 3,
+			int SpreadBullets = 12,
 			int RingCount = 10,
 			string BulletType = "5844b1f4b9428374:ExplodingBullet",
 			float BulletDelay = 4.5,
@@ -608,6 +608,57 @@ Level =
 			float BulletDelay = 1.8,
 			float BulletSpeed = 160,
 			Enum ShotPattern = RING,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		RainbowShotPlayerShoot = 
+		{
+			Enum SpellType = RAINBOWSHOT,
+			bool UnlockAtStart = false,
+			string SpellName = "Rainbow Shot",
+			string BulletSprite = "5994fe9ddb2a7944:bubblesheep",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "5994fe0b31a41d83:RainbowShot",
+			float BulletDelay = 0.8,
+			float BulletSpeed = 700,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		VampireBatPlayerShoot = 
+		{
+			Enum SpellType = VAMPIREBAT,
+			bool UnlockAtStart = false,
+			string SpellName = "Vampire Bat",
+			string BulletSprite = "5991a8d66cbccab3:Animation_VampireBat",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "59919c7e2295febb:VampireBat",
+			float BulletDelay = 0.8,
+			float BulletSpeed = 100,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		DevShotPlayerShoot = 
+		{
+			Enum SpellType = DEVSHOT,
+			bool UnlockAtStart = true,
+			string SpellName = "Dev Shot",
+			string BulletSprite = "5844c21540463a97:Texture_SpikeBall",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "5844b1f4b9428374:ExplodingBullet",
+			float BulletDelay = 0,
+			float BulletSpeed = 1000,
+			Enum ShotPattern = SPREAD,
 			string ShootSound = "",
 			bool TimerFreeze = false,
 			float BurstDelay = 0,
@@ -864,7 +915,7 @@ Level =
 						},
 						Sprite = 
 						{
-							bool Visible = true,
+							bool Visible = false,
 							bool VisibilityCulling = true,
 							bool VisibilityEvents = true,
 							bool CastShadows = false,

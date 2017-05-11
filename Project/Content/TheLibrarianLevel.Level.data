@@ -192,204 +192,22 @@ Level =
 			string Name = "Enemy",
 		},
 	},
-	Cog = 
+	ArchetypeInstance = 
 	{
+		string Name = "5991c7cfae23c0c6:LibrarianRunes",
 		LinkId = 
 		{
 			uint Id = 7,
 		},
-		Named = 
-		{
-			string Name = "TeleportRune",
-		},
 		Transform = 
 		{
-			Vec3 Translation = [-20.5, 13.5, 0],
-			Vec3 Scale = [2, 2, 1],
+			Vec3 Translation = [-10.4062, 6.97635, 3.37935e-007],
+			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "582117b7e380f555:texture_Rune1",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		TeleportRuneAnimations = 
-		{
-			string StillTexture = "582117b7e380f555:texture_Rune1",
-			string RuneAnimation = "5823824b8605fb40:Animation_Rune1",
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 8,
 		},
 		Named = 
 		{
-			string Name = "TeleportRune",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-10.5, 13.5, 0],
-			Vec3 Scale = [2, 2, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "5821176b4a96cb09:texture_Rune2",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		TeleportRuneAnimations = 
-		{
-			string StillTexture = "5821176b4a96cb09:texture_Rune2",
-			string RuneAnimation = "58238da9e312d1a5:Animation_Rune2",
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 9,
-		},
-		Named = 
-		{
-			string Name = "TeleportRune",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-1, 13.5, 0],
-			Vec3 Scale = [2, 2, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "58211757a28a8a34:texture_Rune3",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		TeleportRuneAnimations = 
-		{
-			string StillTexture = "58211757a28a8a34:texture_Rune3",
-			string RuneAnimation = "58238d8cc1641e86:Animation_Rune3",
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 10,
-		},
-		Named = 
-		{
-			string Name = "TeleportRune",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [9, 13.5, 0],
-			Vec3 Scale = [2, 2, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "582116e5c3fcaaaf:texture_Rune4",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		TeleportRuneAnimations = 
-		{
-			string StillTexture = "582116e5c3fcaaaf:texture_Rune4",
-			string RuneAnimation = "58238ddd2ab6c774:Animation_Rune4",
-		},
-	},
-	Cog = 
-	{
-		LinkId = 
-		{
-			uint Id = 11,
-		},
-		Named = 
-		{
-			string Name = "TeleportRune",
-		},
-		Transform = 
-		{
-			Vec3 Translation = [18.5, 13.5, 0],
-			Vec3 Scale = [2, 2, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Sprite = 
-		{
-			bool Visible = true,
-			bool VisibilityCulling = true,
-			bool VisibilityEvents = true,
-			bool CastShadows = false,
-			Vec4 Color = [1, 1, 1, 1],
-			BlendMode BlendMode = Alpha,
-			SpriteGeometryMode GeometryMode = ZPlane,
-			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-			string SpriteSource = "582116c03b9e4e94:texture_Rune5",
-			bool RenderMask = false,
-			bool FlipX = false,
-			bool FlipY = false,
-			bool AnimationActive = true,
-			float AnimationSpeed = 1,
-			uint StartFrame = 0,
-		},
-		TeleportRuneAnimations = 
-		{
-			string StillTexture = "582116c03b9e4e94:texture_Rune5",
-			string RuneAnimation = "58238d330821d465:Animation_Rune5",
+			string Name = "Runes",
 		},
 	},
 	ArchetypeInstance = 
@@ -397,7 +215,7 @@ Level =
 		string Name = "584fd89208ba642f:TMSquare24",
 		LinkId = 
 		{
-			uint Id = 12,
+			uint Id = 8,
 		},
 		Transform = 
 		{
@@ -414,7 +232,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 13,
+			uint Id = 9,
 		},
 		Named = 
 		{
@@ -738,7 +556,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 14,
+							uint Id = 10,
 						},
 						Named = 
 						{
@@ -782,7 +600,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 15,
+									uint Id = 11,
 								},
 								Named = 
 								{
@@ -824,7 +642,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 16,
+							uint Id = 12,
 						},
 						Named = 
 						{
@@ -861,7 +679,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 17,
+							uint Id = 13,
 						},
 						Named = 
 						{
@@ -900,7 +718,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 18,
+									uint Id = 14,
 								},
 								Named = 
 								{
@@ -937,7 +755,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 19,
+							uint Id = 15,
 						},
 						Named = 
 						{
@@ -973,7 +791,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 20,
+									uint Id = 16,
 								},
 								Named = 
 								{
@@ -1008,7 +826,7 @@ Level =
 							{
 								LinkId = 
 								{
-									uint Id = 21,
+									uint Id = 17,
 								},
 								Named = 
 								{
@@ -1044,7 +862,7 @@ Level =
 					{
 						LinkId = 
 						{
-							uint Id = 22,
+							uint Id = 18,
 						},
 						Named = 
 						{

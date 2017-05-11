@@ -27,6 +27,8 @@ class Shoot : ZilchComponent
     
     function Shoot(bulletSpeed : Real, angle : Real3, shotPattern : ShotPatternID)
     {
+        if(this.Space.FindObjectByName("Room").RoomScript.AttackDelay > 0)
+            return;
         if(shotPattern == ShotPatternID.SINGLE)
         {
             var bulletPos = this.Owner.Transform.Translation + angle;
