@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-1, 6.5, 0],
 		Vec3 Scale = [2.5, 2.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -103,12 +103,12 @@ Cog =
 	},
 	BossAttackLogic = 
 	{
-		string StandTexture = "",
+		string StandTexture = "59dad58c23978aa2:Texture_RagnarIdle0",
 		float AttackDelay1 = 8,
 		float BulletSpeed1 = 100,
 		Enum ShotPattern1 = SPREAD,
 		string BulletType1 = "598e5f6fd050673b:EnemyFlamingBullet",
-		string AttackAnimation1 = "",
+		string AttackAnimation1 = "59c113476b4bb410:Animation_RagnarFireAttack",
 		float BurstDelay1 = 0.1,
 		int BurstCount1 = 20,
 		Vec4 Space1 = [1, 1, 1, 1],
@@ -124,7 +124,7 @@ Cog =
 		float BulletSpeed3 = 2800,
 		Enum ShotPattern3 = SINGLE,
 		string BulletType3 = "598de812fb7af5cf:DIEINSECT",
-		string AttackAnimation3 = "",
+		string AttackAnimation3 = "59c11d9a63bab515:Animation_RagnarDIEINSECT",
 		float BurstDelay3 = 0,
 		int BurstCount3 = 1,
 		Vec4 Space3 = [1, 1, 1, 1],
