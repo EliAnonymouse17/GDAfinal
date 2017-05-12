@@ -1,8 +1,22 @@
 class Treasure : ZilchComponent
 {
+    
+    var TreasureTimer : Real = 0.2;
+    
     function Initialize(init : CogInitializer)
     {
-        this.Owner.SpellDrop.SpellDrop();
-        Console.Write("hi");
+        
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.TreasureTimer -= event.Dt;
+        
+        if(this.TreasureTimer <= 0)
+        {
+            this.Owner.SpellDrop.SpellDrop();
+            this.Owner.Destroy();
+        }
     }
 }

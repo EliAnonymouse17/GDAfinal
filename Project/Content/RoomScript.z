@@ -60,7 +60,7 @@ class Room
         else if(this.Type == RoomType.TREASURE)
         {
             space.CreateAtPosition(Archetype.Treasure, Real3(0, 0, 0));
-            var tileMap = space.CreateAtPosition(this.TM, Real3(0, 0, -0.01));
+            var tileMap = space.CreateAtPosition(Archetype.TMSquare22, Real3(0, 0, -0.01));
             //tileMap.Transform.RotateAnglesLocal(Real3(0, 0, Math.ToRadians(this.Rotation)));
         }
         else if(this.Type == RoomType.BOSS)

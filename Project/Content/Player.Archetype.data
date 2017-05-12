@@ -325,7 +325,7 @@ Cog =
 	DevShotPlayerShoot = 
 	{
 		Enum SpellType = DEVSHOT,
-		bool UnlockAtStart = false,
+		bool UnlockAtStart = true,
 		string SpellName = "Dev Shot",
 		string BulletSprite = "5844c21540463a97:Texture_SpikeBall",
 		int SpreadBullets = 3,
