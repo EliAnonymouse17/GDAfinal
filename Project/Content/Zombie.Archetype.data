@@ -87,10 +87,11 @@ Cog =
 	{
 		float MoveSpeed = 4,
 		bool MovesAwayFromPlayer = false,
+		float ActiveTimer = 0,
 	},
 	EnemyAnimationHandler = 
 	{
-		string EnemyStand = "5275aa4d802dd6dc:Square",
+		string EnemyStand = "586826eeeb5a0c42:animation_ZombieWalkForward",
 		string EnemyWalk = "586826eeeb5a0c42:animation_ZombieWalkForward",
 	},
 	MeleeAttackScript = 

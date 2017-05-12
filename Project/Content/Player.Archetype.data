@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.468242, -2.37777, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -342,7 +342,7 @@ Cog =
 	BlackHolePlayerShoot = 
 	{
 		Enum SpellType = BLACKHOLE,
-		bool UnlockAtStart = true,
+		bool UnlockAtStart = false,
 		string SpellName = "Black Hole",
 		string BulletSprite = "585ef2ebc3ca2337:Texture_Burger",
 		int SpreadBullets = 3,
