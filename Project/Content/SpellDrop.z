@@ -111,7 +111,7 @@ class SpellDrop : ZilchComponent
             }
             else if(randomDrop >= 31 && randomDrop <= 50)
             {
-                this.Space.CreateAtPosition(Archetype.HealthUpgrade, position);
+                this.Space.CreateAtPosition(Archetype.SpeedUpgrade, position);
             }
             else if(randomDrop >= 51 && randomDrop <= 60)
             {
