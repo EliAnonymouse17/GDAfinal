@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [24.748, 3.24042, -0.000999451],
+		Vec3 Translation = [3.09118, 0.963129, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,11 +24,11 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [0, 0, 1, 1],
+		Vec4 Color = [1, 1, 1, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "58230430c7b3754c:Texture_SkeletonStill",
+		string SpriteSource = "59c210c9b5b1a1e2:Texture_StaffOgre",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -54,8 +54,8 @@ Cog =
 		bool Seamless = true,
 		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
 		string SerializedGroupName = "580e65c5299dde20:Enemy",
-		Vec3 Offset = [-0.05, 0, 0],
-		Vec3 Size = [0.375, 1, 0.5],
+		Vec3 Offset = [-0.1, 0, 0],
+		Vec3 Size = [0.45, 1, 0.5],
 	},
 	RigidBody = 
 	{

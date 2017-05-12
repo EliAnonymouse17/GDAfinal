@@ -60,11 +60,12 @@ Cog =
 	},
 	DamageScript = 
 	{
-		int Damage = 1,
+		int Damage = 0,
 		int PRVHitCount = 1,
 		string SpawnOnDeath = "",
 		string SpawnOnDeath2 = "",
 		bool Flaming = true,
+		float FlamingTime = 2,
 	},
 	SpriteParticleSystem = 
 	{

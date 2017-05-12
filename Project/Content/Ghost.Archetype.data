@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [5.98958, 2.41233, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,11 +24,11 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [0.605, 0.605, 0.605, 1],
+		Vec4 Color = [1, 1, 1, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "58230430c7b3754c:Texture_SkeletonStill",
+		string SpriteSource = "59c2118e451170bf:Texture_Ghost",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -89,8 +89,8 @@ Cog =
 		float BulletSpeed = 125,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "598b7d3bf34203ab:EnemyMagicMissile",
-		string WalkAnimation = "",
-		string AttackAnimation = "",
+		string WalkAnimation = "59c2118e451170bf:Texture_Ghost",
+		string AttackAnimation = "59c211c29f8bb0ac:Animation_GhostAttack0",
 		float BurstDelay = 0.3,
 		int BurstCount = 8,
 	},
@@ -98,6 +98,7 @@ Cog =
 	{
 		float MoveSpeed = 4,
 		bool MovesAwayFromPlayer = true,
+		float ActiveTimer = 0,
 	},
 	Hierarchy = 
 	{

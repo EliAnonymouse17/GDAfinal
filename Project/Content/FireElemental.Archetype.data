@@ -24,11 +24,11 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [1, 0, 0, 1],
+		Vec4 Color = [1, 1, 1, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "586836b37ae47131:animation_GolemWalkforward",
+		string SpriteSource = "59c216d0f95f883b:Animation_FireElementalFront",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -45,6 +45,7 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "598b172e72a8d5ef:LavaPool",
 		int SpawnCount = 1,
+		bool FlameImmune = false,
 	},
 	BoxCollider = 
 	{
@@ -97,6 +98,7 @@ Cog =
 	{
 		float MoveSpeed = 2,
 		bool MovesAwayFromPlayer = false,
+		float ActiveTimer = 0,
 	},
 	Hierarchy = 
 	{
