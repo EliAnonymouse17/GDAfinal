@@ -312,13 +312,18 @@ class RoomScript : ZilchComponent
         
         var itemNum = random.DieRoll(4) - 2 + Math.Floor(roomSize/2.0);
         
+        var heartSpawned : Boolean = false;
+        
         for(var i = 0; i < itemNum; ++i)
         {
-            temp = random.DieRoll(5);
-            if(temp < 5)
+            temp = random.DieRoll(8);
+            if(temp < 8 || heartSpawned)
                 items.Add(new RoomObject(Archetype.Blockade, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
             else
+            {
                 items.Add(new RoomObject(Archetype.HeartPickup, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                heartSpawned = true;
+            }
         }
         
         return new Room(enemies, items, tileMap, rotation, RoomType.BASIC, this.World);
