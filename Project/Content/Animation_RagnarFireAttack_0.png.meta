@@ -3,11 +3,11 @@ ImageContent =
 	SpriteSourceBuilder = 
 	{
 		string Name = "Animation_RagnarFireAttack",
-		uint64 ResourceId = 59c113476b4bb410,
+		uint64 ResourceId = 59c1dd27aad3a4bf,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 64,
 		uint FrameSizeY = 64,
-		uint FrameCount = 16,
+		uint FrameCount = 26,
 		float FrameDelay = 0.111111,
 		float OriginX = 32,
 		float OriginY = 32,
