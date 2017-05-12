@@ -107,10 +107,7 @@ class HitpointScript : ZilchComponent
                 this.Space.SoundSpace.PlayCue(this.DeathSound);
                 this.Owner.Destroy();
             }
-            if(this.Owner.Name == "Player" && this.PrivateHP > this.MaxHP)
-            {
-                this.PrivateHP = this.MaxHP;
-            }
+            
         }
     }
     function Initialize(init : CogInitializer)
@@ -121,6 +118,10 @@ class HitpointScript : ZilchComponent
     function OnLogicUpdate(event : UpdateEvent)
     {
         
+        if(this.Owner.Name == "Player" && this.PrivateHP > this.MaxHP)
+        {
+            this.PrivateHP = this.MaxHP;
+        }
         if(this.HurtTimer >= 0 && this.HurtBool == true)
         {
             this.Owner.Sprite.Color = Real4(1,0,0,0.9);

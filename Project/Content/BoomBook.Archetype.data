@@ -67,6 +67,7 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "584ff2fc0e46547b:PoundArea",
 		int SpawnCount = 1,
+		bool FlameImmune = false,
 	},
 	Orientation = 
 	{
@@ -84,6 +85,7 @@ Cog =
 	{
 		float MoveSpeed = 14,
 		bool MovesAwayFromPlayer = false,
+		float ActiveTimer = 1,
 	},
 	MeleeAttackScript = 
 	{
