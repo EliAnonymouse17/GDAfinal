@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -74,8 +74,9 @@ Cog =
 	},
 	DestroyTimer = 
 	{
-		float Time = 0.25,
-		float Time2 = 0.4,
+		float Time = 0.3,
+		float Time2 = 0.6,
 		bool Random = true,
+		bool Warp = true,
 	},
 },

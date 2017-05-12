@@ -59,21 +59,46 @@ class SpellDrop : ZilchComponent
             
             if(randomDrop >= 1 && randomDrop <= 10)
             {
-                var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
-                spell.SpellScrollScript.Spell = this.SpellDrop1;
-                spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite1;
+                
+                var player = this.Space.FindObjectByName("Player");
+                if(player.SpellSwitchHandler.SpellArray.FindFirstIndex(this.SpellDrop1) < 0)
+                {
+                    var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
+                    spell.SpellScrollScript.Spell = this.SpellDrop1;
+                    spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite1;
+                }
+                else
+                {
+                    this.Space.CreateAtPosition(Archetype.HealthUpgrade, position);
+                }
             }
             else if(randomDrop >= 11 && randomDrop <= 45)
             {
-                var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
-                spell.SpellScrollScript.Spell = this.SpellDrop2;
-                spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite2;
+                var player = this.Space.FindObjectByName("Player");
+                if(player.SpellSwitchHandler.SpellArray.FindFirstIndex(this.SpellDrop2) < 0)
+                {
+                    var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
+                    spell.SpellScrollScript.Spell = this.SpellDrop2;
+                    spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite2;
+                }
+                else
+                {
+                    this.Space.CreateAtPosition(Archetype.HealthUpgrade, position);
+                }
             }
             else if(randomDrop >= 46 && randomDrop <= 100)
             {
-                var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
-                spell.SpellScrollScript.Spell = this.SpellDrop3;
-                spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite3;
+                var player = this.Space.FindObjectByName("Player");
+                if(player.SpellSwitchHandler.SpellArray.FindFirstIndex(this.SpellDrop3) < 0)
+                {
+                    var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
+                    spell.SpellScrollScript.Spell = this.SpellDrop3;
+                    spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite3;
+                }
+                else
+                {
+                    this.Space.CreateAtPosition(Archetype.HealthUpgrade, position);
+                }
             }
         }
         else
@@ -90,21 +115,45 @@ class SpellDrop : ZilchComponent
             }
             else if(randomDrop >= 51 && randomDrop <= 60)
             {
-                var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
-                spell.SpellScrollScript.Spell = this.SpellDrop1;
-                spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite1;
+                var player = this.Space.FindObjectByName("Player");
+                if(player.SpellSwitchHandler.SpellArray.FindFirstIndex(this.SpellDrop1) < 0)
+                {
+                    var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
+                    spell.SpellScrollScript.Spell = this.SpellDrop1;
+                    spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite1;
+                }
+                else
+                {
+                    this.Space.CreateAtPosition(Archetype.HealthUpgrade, position);
+                }
             }
             else if(randomDrop >= 61 && randomDrop <= 95)
             {
-                var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
-                spell.SpellScrollScript.Spell = this.SpellDrop2;
-                spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite2;
+                var player = this.Space.FindObjectByName("Player");
+                if(player.SpellSwitchHandler.SpellArray.FindFirstIndex(this.SpellDrop2) < 0)
+                {
+                    var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
+                    spell.SpellScrollScript.Spell = this.SpellDrop2;
+                    spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite2;
+                }
+                else
+                {
+                    this.Space.CreateAtPosition(Archetype.HealthUpgrade, position);
+                }
             }
             else if(randomDrop >= 96 && randomDrop <= 140)
             {
-                var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
-                spell.SpellScrollScript.Spell = this.SpellDrop3;
-                spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite3;
+                var player = this.Space.FindObjectByName("Player");
+                if(player.SpellSwitchHandler.SpellArray.FindFirstIndex(this.SpellDrop3) < 0)
+                {
+                    var spell = this.Space.CreateAtPosition(Archetype.SpellScroll, position);
+                    spell.SpellScrollScript.Spell = this.SpellDrop3;
+                    spell.Children.Current.Sprite.SpriteSource = this.SpellDropSprite3;
+                }
+                else
+                {
+                    this.Space.CreateAtPosition(Archetype.HealthUpgrade, position);
+                }
             }
         }
         
