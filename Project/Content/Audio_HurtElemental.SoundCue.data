@@ -1,7 +1,7 @@
 SoundCue = 
 {
-	SoundPlayMode PlayMode = Looping,
-	float Volume = 0.05,
+	SoundPlayMode PlayMode = Single,
+	float Volume = 0.15,
 	float VolumeVariation = 0,
 	float Pitch = 0,
 	float PitchVariation = 0,
@@ -10,11 +10,11 @@ SoundCue =
 	float PositionRandomization = 0,
 	uint MaxPlaybacks = 10,
 	int Priority = 128,
-	bool LinearRollOff = false,
+	bool LinearRollOff = true,
 	Array Sounds = 
 	[
 		{
-			string SoundName = "58637733e51e9d9b:graveyard",
+			string SoundName = "599c6b75040be64e:Audio_HurtElemental",
 			float Weight = 1,
 		},
 	],

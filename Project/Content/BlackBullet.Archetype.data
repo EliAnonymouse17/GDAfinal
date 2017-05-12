@@ -8,9 +8,13 @@ Cog =
 	{
 		string Name = "Bullet",
 	},
+	Archetyped = 
+	{
+		string Name = "5991c5d81ec16f61:BlackBullet",
+	},
 	Transform = 
 	{
-		Vec3 Translation = [-4.92032, -4.75303, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -48,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -58,7 +62,7 @@ Cog =
 	{
 		int Damage = 0,
 		int PRVHitCount = 1,
-		string SpawnOnDeath = "599723b97c60dd90:ShadowWarp",
+		string SpawnOnDeath = "5991c5fd056dd4de:BlackHole",
 		string SpawnOnDeath2 = "",
 		bool Flaming = false,
 		float FlamingTime = 1,

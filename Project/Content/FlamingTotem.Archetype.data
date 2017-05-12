@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [3.60367, 1.83426, 0],
+		Vec3 Translation = [-14.1779, 2.76335, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -48,7 +48,7 @@ Cog =
 		float BulletDelay = 2,
 		float BulletSpeed = 75,
 		Enum ShotPattern = RING,
-		string ShootSound = "",
+		string ShootSound = "599c77bc8c3e34c6:Audio_AttackTotem",
 		string WalkAnimation = "",
 		string AttackAnimation = "",
 		float BurstDelay = 0,
@@ -65,7 +65,7 @@ Cog =
 	{
 		int PrivateHP = 22,
 		int MaxHP = 15,
-		string HurtSound = "",
+		string HurtSound = "599c7680efcf7104:Audio_HurtTotem",
 		string DeathSound = "5991b45b9bd46cca:Audio_DeathTotem",
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "587c02da03a631fd:Fireling",

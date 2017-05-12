@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-10.9562, -1.14498, 0],
+		Vec3 Translation = [-10.6244, 5.74133, 0],
 		Vec3 Scale = [3, 3, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -46,18 +46,6 @@ Cog =
 		Vec3 Offset = [0.01, -0.005, 0],
 		float Radius = 0.3,
 	},
-	RigidBody = 
-	{
-		bool Static = false,
-		bool Asleep = false,
-		bool Kinematic = false,
-		bool RotationLocked = false,
-		bool Mode2D = true,
-		bool AllowSleep = false,
-		bool Inherit2DMode = true,
-		Vec3 Velocity = [0, 0, 0],
-		Vec3 AngularVelocity = [0, 0, 0],
-	},
 	ScreenWarpRing = 
 	{
 		float Size = 0.1,
@@ -79,7 +67,21 @@ Cog =
 	DestroyTimer = 
 	{
 		float Time = 4,
+		float Time2 = 0.4,
+		bool Random = false,
 		bool Warp = false,
+	},
+	RigidBody = 
+	{
+		bool Static = true,
+		bool Asleep = false,
+		bool Kinematic = false,
+		bool RotationLocked = false,
+		bool Mode2D = true,
+		bool AllowSleep = true,
+		bool Inherit2DMode = true,
+		Vec3 Velocity = [0, 0, 0],
+		Vec3 AngularVelocity = [0, 0, 0],
 	},
 	Hierarchy = 
 	{

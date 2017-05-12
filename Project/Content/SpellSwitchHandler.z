@@ -28,6 +28,7 @@ class AcidPoolPlayerShoot : PlayerShoot{}
 class RingOfFirePlayerShoot : PlayerShoot{}
 class RainbowShotPlayerShoot : PlayerShoot{}
 class VampireBatPlayerShoot : PlayerShoot{}
+class BlackHolePlayerShoot : PlayerShoot{}
 class DevShotPlayerShoot : PlayerShoot{}
 
 enum SpellTypes 
@@ -44,6 +45,7 @@ enum SpellTypes
     RINGOFFIRE,
     RAINBOWSHOT,
     VAMPIREBAT,
+    BLACKHOLE,
     DEVSHOT,
     END
     }
@@ -103,6 +105,10 @@ class SpellSwitchHandler : ZilchComponent
             else if (this.CurrentSpell == SpellTypes.DEVSHOT)
             {
                 return this.Owner.DevShotPlayerShoot;
+            }
+            else if (this.CurrentSpell == SpellTypes.BLACKHOLE)
+            {
+                return this.Owner.BlackHolePlayerShoot;
             }
             else
             {

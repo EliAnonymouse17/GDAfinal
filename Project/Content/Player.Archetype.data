@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-0.468242, -2.37777, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -334,6 +334,23 @@ Cog =
 		float BulletDelay = 0,
 		float BulletSpeed = 1000,
 		Enum ShotPattern = SPREAD,
+		string ShootSound = "",
+		bool TimerFreeze = false,
+		float BurstDelay = 0,
+		int BurstCount = 1,
+	},
+	BlackHolePlayerShoot = 
+	{
+		Enum SpellType = BLACKHOLE,
+		bool UnlockAtStart = true,
+		string SpellName = "Black Hole",
+		string BulletSprite = "585ef2ebc3ca2337:Texture_Burger",
+		int SpreadBullets = 3,
+		int RingCount = 10,
+		string BulletType = "5991c5d81ec16f61:BlackBullet",
+		float BulletDelay = 5,
+		float BulletSpeed = 200,
+		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
 		bool TimerFreeze = false,
 		float BurstDelay = 0,

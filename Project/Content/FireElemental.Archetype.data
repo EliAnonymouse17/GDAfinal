@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-14.2759, 3.65987, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -40,12 +40,12 @@ Cog =
 	{
 		int PrivateHP = 18,
 		int MaxHP = 15,
-		string HurtSound = "",
-		string DeathSound = "",
+		string HurtSound = "599c6b75040e8de8:Audio_HurtElemental",
+		string DeathSound = "599c6b5800eed53d:Audio_DeathElemental",
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "598b172e72a8d5ef:LavaPool",
 		int SpawnCount = 1,
-		bool FlameImmune = false,
+		bool FlameImmune = true,
 	},
 	BoxCollider = 
 	{
@@ -63,7 +63,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
