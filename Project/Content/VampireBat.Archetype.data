@@ -36,16 +36,6 @@ Cog =
 		float AnimationSpeed = 1,
 		uint StartFrame = 0,
 	},
-	SphereCollider = 
-	{
-		bool Ghost = false,
-		bool SendsMessages = true,
-		bool Seamless = true,
-		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-		string SerializedGroupName = "580e65c5299c3bbe:PlayerBullet",
-		Vec3 Offset = [-0.03, 0.1, 0],
-		float Radius = 0.25,
-	},
 	RigidBody = 
 	{
 		bool Static = false,
@@ -121,5 +111,15 @@ Cog =
 	VampireBatScript = 
 	{
 		int HealthToRestore = 1,
+	},
+	BoxCollider = 
+	{
+		bool Ghost = false,
+		bool SendsMessages = true,
+		bool Seamless = true,
+		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+		string SerializedGroupName = "580e65c5299c3bbe:PlayerBullet",
+		Vec3 Offset = [0, 0.1, 0],
+		Vec3 Size = [0.6, 0.225, 0.5],
 	},
 },

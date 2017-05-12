@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -86,7 +86,7 @@ Cog =
 	SpellDrop = 
 	{
 		Enum SpellDrop1 = EXPLODINGBULLET,
-		Enum SpellDrop2 = NULL,
+		Enum SpellDrop2 = BUBBLESHOT,
 		Enum SpellDrop3 = SEEKINGARROW,
 		string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
 		string SpellDropSprite2 = "583a1b2cfe6b1569:Texture_BubbleBullet",
