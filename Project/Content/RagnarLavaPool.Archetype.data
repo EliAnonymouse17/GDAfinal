@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-1.24853, -6.57812, -3.8147e-006],
 		Vec3 Scale = [8, 8, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -24,11 +24,11 @@ Cog =
 		bool VisibilityCulling = true,
 		bool VisibilityEvents = true,
 		bool CastShadows = false,
-		Vec4 Color = [1, 0, 0, 1],
+		Vec4 Color = [1, 1, 1, 1],
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "5274db4c2e7c11f9:Circle",
+		string SpriteSource = "59c395ffe1c5c295:Animation_LavaPool",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -56,5 +56,8 @@ Cog =
 	DestroyTimer = 
 	{
 		float Time = 3,
+		float Time2 = 0.4,
+		bool Random = false,
+		bool Warp = true,
 	},
 },

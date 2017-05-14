@@ -90,7 +90,7 @@ Cog =
 		Enum SpellDrop3 = ACIDPOOL,
 		string SpellDropSprite1 = "59c2141e75598fe0:Animation_RainbowSpell0",
 		string SpellDropSprite2 = "5852c59e8c1f9264:Texture_SeekingArrow",
-		string SpellDropSprite3 = "5274db4c2e7c11f9:Circle",
+		string SpellDropSprite3 = "59c395ad9a232790:Animation_AcidPool",
 		bool TreasureDropBool = false,
 	},
 	BossHealthBarScript = 
