@@ -4,6 +4,7 @@ class TutorialObjectScript : ZilchComponent
     {
         Zero.Connect(this.Space, Events.EnemyDeathEvent, this.OnDeath);
         Zero.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+        this.Space.FindObjectByName("Tutorial NPC").TutorialProgression.FLock = true;
     }
 
     function OnCollisionStarted(event : CollisionEvent)

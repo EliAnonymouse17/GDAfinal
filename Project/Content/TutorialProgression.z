@@ -19,6 +19,7 @@ class TutorialProgression : ZilchComponent
         this.TextArray.Add("Press space to use your fade ability.\nWhile active, your fade ability allows you to avoid spells cast by enemies.\nTry it now!");
         this.TextArray.Add("Great! You are now ready to face your first enemy!\nPress F to begin the fight!");
         this.TextArray.Add(" ");
+        this.TextArray.Add("Good Job!");
         this.TextArray.Add("This is a health up. It will increase your maximum health.");
         this.TextArray.Add("This is a speed up. It will increase your movement speed.");
         this.TextArray.Add("Now you will face your final challenge!");
@@ -57,35 +58,31 @@ class TutorialProgression : ZilchComponent
         if (this.TextIndex == 4)
         {
             this.Space.CreateAtPosition(Archetype.Target, Real3(12,1,0));
-            this.FLock = true;
         }
         if (this.TextIndex == 6)
         {
             this.Space.CreateAtPosition(Archetype.TutorialSpellScroll, Real3(8,1,0));
-            this.FLock = true;
         }
         if (this.TextIndex == 13)
         {
             this.Space.CreateAtPosition(Archetype.TutorialSkeleton, Real3(12,4,0));
             this.FLock = true;
         }
-        if (this.TextIndex == 14)
-        {
-            this.Space.CreateAtPosition(Archetype.HealthUpgradeTutorial, Real3(0,0,0));
-            this.FLock = true;
-            Console.WriteLine(this.FLock);
-        }
         if (this.TextIndex == 15)
         {
-            this.Space.CreateAtPosition(Archetype.SpeedUpgradeTutorial, Real3(2,1,0));
-            this.FLock = true;
+            this.Space.CreateAtPosition(Archetype.HealthUpgradeTutorial, Real3(8,1,0));
+            Console.WriteLine(this.FLock);
         }
-        if (this.TextIndex == 17)
+        if (this.TextIndex == 16)
+        {
+            this.Space.CreateAtPosition(Archetype.SpeedUpgradeTutorial, Real3(8,1,0));
+        }
+        if (this.TextIndex == 18)
         {
             this.Space.FindObjectByName("TutorialDoor").Sprite.Visible = true;
             this.Space.FindObjectByName("TutorialDoor").Collider.Ghost = true;
         }
-        if (this.TextIndex == 17)
+        if (this.TextIndex == 18)
         {
             this.TextIndex = 0;
         }
@@ -97,6 +94,7 @@ class TutorialProgression : ZilchComponent
         if (event.Key == Keys.N)
         {
             Console.WriteLine("THIS SHOULD NO BE HAPPEN CAUSE FLOCK IS", this.FLock);
+            Console.WriteLine(this.TextIndex);
         }
         if (event.Key == Keys.F && this.FLock == false)
         {
