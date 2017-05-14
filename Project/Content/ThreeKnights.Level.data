@@ -192,12 +192,54 @@ Level =
 			string Name = "Heart Pickup",
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "59919e6657ae76aa:HammerKnight",
 		LinkId = 
 		{
 			uint Id = 7,
+		},
+		Named = 
+		{
+			string Name = "Tether",
+		},
+		Transform = 
+		{
+			Vec3 Translation = [0, 3, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Sprite = 
+		{
+			bool Visible = false,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "5275aa4d802dd6dc:Square",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+	},
+	Cog = 
+	{
+		LinkId = 
+		{
+			uint Id = 8,
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+		Archetyped = 
+		{
+			string Name = "59919e6657ae76aa:HammerKnight",
 		},
 		Transform = 
 		{
@@ -205,9 +247,194 @@ Level =
 			Vec3 Scale = [1.5, 1.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		Sprite = 
 		{
-			string Name = "Enemy",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "585125feabef951a:GiantSkeletonFront000",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "587c10e02c261d51:FollowerEnemy",
+			Vec3 Offset = [-0.05, 0, 0],
+			Vec3 Size = [0.325, 1, 0.5],
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = false,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		HitpointScript = 
+		{
+			int PrivateHP = 50,
+			int MaxHP = 50,
+			bool MaxHPBoolean = true,
+			string HurtSound = "",
+			string DeathSound = "",
+			float HurtDuration = 0.1,
+			string SpawnOnDeath = "",
+			int SpawnCount = 1,
+			bool FlameImmune = true,
+		},
+		Shoot = 
+		{
+			string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
+			int RingCount = 12,
+			float RingOffset = 90,
+			int SpreadBullets = 5,
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 1, 0],
+			Vec3 UpVector = [0, 0, 1],
+			Vec3 ForwardVector = [0, 1, 0],
+			OrientationBases DefaultBases = ForwardYUpZ,
+		},
+		SpellDrop = 
+		{
+			Enum SpellDrop1 = EXPLODINGBULLET,
+			Enum SpellDrop2 = NULL,
+			Enum SpellDrop3 = SEEKINGARROW,
+			string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
+			string SpellDropSprite2 = "583a1b2cfe6b1569:Texture_BubbleBullet",
+			string SpellDropSprite3 = "5852c59e8c1f9264:Texture_SeekingArrow",
+			bool TreasureDropBool = false,
+		},
+		BossHealthBarScript = 
+		{
+			float HealthBarSize = 15,
+		},
+		BossAttackLogic = 
+		{
+			string StandTexture = "",
+			float AttackDelay1 = 3,
+			float BulletSpeed1 = 100,
+			Enum ShotPattern1 = SPREAD,
+			string BulletType1 = "580e65c5299defb0:EnemyBullet",
+			string AttackAnimation1 = "",
+			float BurstDelay1 = 0.3,
+			int BurstCount1 = 3,
+			Vec4 Space1 = [1, 1, 1, 1],
+			float AttackDelay2 = 16,
+			float BulletSpeed2 = 115,
+			Enum ShotPattern2 = RING,
+			string BulletType2 = "580e65c5299defb0:EnemyBullet",
+			string AttackAnimation2 = "",
+			float BurstDelay2 = 0.05,
+			int BurstCount2 = 8,
+			Vec4 Space2 = [1, 1, 1, 1],
+			float AttackDelay3 = 3,
+			float BulletSpeed3 = 1000,
+			Enum ShotPattern3 = SINGLE,
+			string BulletType3 = "",
+			string AttackAnimation3 = "",
+			float BurstDelay3 = 0,
+			int BurstCount3 = 1,
+			Vec4 Space3 = [1, 1, 1, 1],
+			float ChallengeAttackDelay1 = 3,
+			float ChallengeBulletSpeed1 = 1000,
+			Enum ChallengeShotPattern1 = SINGLE,
+			string ChallengeBulletType1 = "",
+			float BurstDelay4 = 0,
+			int BurstCount4 = 1,
+			Vec4 Space4 = [1, 1, 1, 1],
+			float ChallengeAttackDelay2 = 3,
+			float ChallengeBulletSpeed2 = 1000,
+			Enum ChallengeShotPattern2 = SINGLE,
+			string ChallengeBulletType2 = "",
+			float BurstDelay5 = 0,
+			int BurstCount5 = 1,
+			Vec4 Space5 = [1, 1, 1, 1],
+			float ChallengeAttackDelay3 = 3,
+			float ChallengeBulletSpeed3 = 1000,
+			Enum ChallengeShotPattern3 = SINGLE,
+			string ChallengeBulletType3 = "",
+			float BurstDelay6 = 0,
+			int BurstCount6 = 1,
+			float StageSwitch = 0,
+			Vec4 ChallengeColor = [1, 1, 1, 1],
+			float AttackTimer1 = 4,
+			float AttackTimer2 = 1,
+			float AttackTimer3 = 2,
+			float ChallengeAttackTimer1 = 4,
+			float ChallengeAttackTimer2 = 1,
+			float ChallengeAttackTimer3 = 2,
+		},
+		AIMoveFromPlayer = 
+		{
+			float MoveSpeed = 3,
+			bool MovesAwayFromPlayer = false,
+			float ActiveTimer = 0,
+			bool TetherObjectBool = false,
+			float MaxTetherDistance = 10,
+		},
+		MeleeAttackScript = 
+		{
+			float AttackDelay = 2,
+			int Damage = 2,
+			int RecoilDamage = 0,
+			bool Friendly = false,
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 9,
+				},
+				Named = 
+				{
+					string Name = "BossHealthBar",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [0.00219029, -1.13192, 8],
+					Vec3 Scale = [0.4, 0.2, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Sprite = 
+				{
+					bool Visible = true,
+					bool VisibilityCulling = true,
+					bool VisibilityEvents = true,
+					bool CastShadows = false,
+					Vec4 Color = [1, 0, 0, 0.5],
+					BlendMode BlendMode = Alpha,
+					SpriteGeometryMode GeometryMode = ZPlane,
+					string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+					string SpriteSource = "5275aa4d802dd6dc:Square",
+					bool RenderMask = false,
+					bool FlipX = false,
+					bool FlipY = false,
+					bool AnimationActive = true,
+					float AnimationSpeed = 1,
+					uint StartFrame = 0,
+				},
+			},
 		},
 	},
 	ArchetypeInstance = 
@@ -215,7 +442,7 @@ Level =
 		string Name = "59971cbcaf543cd2:TMSquare23",
 		LinkId = 
 		{
-			uint Id = 8,
+			uint Id = 10,
 		},
 		Transform = 
 		{
@@ -233,7 +460,7 @@ Level =
 		string Name = "59919e7055a3f02e:SwordKnight",
 		LinkId = 
 		{
-			uint Id = 9,
+			uint Id = 11,
 		},
 		Transform = 
 		{
@@ -251,7 +478,7 @@ Level =
 		string Name = "59919e105071743c:HealKnight",
 		LinkId = 
 		{
-			uint Id = 10,
+			uint Id = 12,
 		},
 		Transform = 
 		{

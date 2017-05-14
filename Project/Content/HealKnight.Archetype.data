@@ -159,6 +159,8 @@ Cog =
 		float MoveSpeed = 4,
 		bool MovesAwayFromPlayer = true,
 		float ActiveTimer = 0,
+		bool TetherObjectBool = true,
+		float MaxTetherDistance = 10,
 	},
 	Hierarchy = 
 	{

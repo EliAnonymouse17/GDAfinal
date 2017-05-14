@@ -9,7 +9,16 @@ class AIMoveFromPlayer : ZilchComponent
     [Property]
     var ActiveTimer : Real = 0;
     
+    var TetherObject : Cog = null;
+    
+    [Property]
+    var TetherObjectBool : Boolean = false;
+    
+    [Property]
+    var MaxTetherDistance : Real = 10;
+    
     var Active : Boolean = false;
+    var TetherBool : Boolean = false;
     
     var Player : Cog;
     var MoveFreeze : Boolean = false;
@@ -18,6 +27,10 @@ class AIMoveFromPlayer : ZilchComponent
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
         this.Player = this.Space.FindObjectByName("Player");
+        if(this.TetherObjectBool)
+        {
+            this.TetherObject = this.Space.FindObjectByName("Tether");
+        }
     }
 
     function OnLogicUpdate(event : UpdateEvent)
@@ -37,6 +50,28 @@ class AIMoveFromPlayer : ZilchComponent
             this.Active = true;
         }
         
+        
+        Console.WriteLine(this.TetherObject);
+        
+        
+        
+        if(this.TetherObject != null)
+        {
+            var dir = this.TetherObject.Transform.Translation - this.Owner.Transform.Translation;
+            var currDistance = Math.Length(dir);
+            dir = Math.Normalize(dir);
+            
+            if(currDistance > this.MaxTetherDistance)
+            {
+                this.TetherBool = true;
+            }
+            else
+            {
+                this.TetherBool = false;
+            }
+        }
+        
+        
         if(!this.Active)
         {
             return;
@@ -50,13 +85,17 @@ class AIMoveFromPlayer : ZilchComponent
         {
             playerPos = this.Player.Transform.Translation;
         }
-        if (this.MovesAwayFromPlayer)
+        if (this.MovesAwayFromPlayer && !this.TetherBool)
         {
             angle = Math.Normalize(this.Owner.Transform.Translation - playerPos);
         }
-        else
+        else if (!this.MovesAwayFromPlayer && !this.TetherBool)
         {
             angle = Math.Normalize(playerPos - this.Owner.Transform.Translation);
+        }
+        else
+        {
+            angle = Math.Normalize(this.TetherObject.Transform.Translation - this.Owner.Transform.Translation);
         }
         if (this.MoveFreeze == false)
         {
