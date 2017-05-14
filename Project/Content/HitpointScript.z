@@ -21,6 +21,9 @@ class HitpointScript : ZilchComponent
     var MaxHP : Integer = 5;
     
     [Property]
+    var MaxHPBoolean : Boolean = false;
+    
+    [Property]
     var HurtSound : SoundCue = null;
     
     [Property]
@@ -119,6 +122,10 @@ class HitpointScript : ZilchComponent
     {
         
         if(this.Owner.Name == "Player" && this.PrivateHP > this.MaxHP)
+        {
+            this.PrivateHP = this.MaxHP;
+        }
+        if(this.MaxHPBoolean && this.PrivateHP > this.MaxHP)
         {
             this.PrivateHP = this.MaxHP;
         }

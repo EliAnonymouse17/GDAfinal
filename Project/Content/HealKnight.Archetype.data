@@ -61,7 +61,8 @@ Cog =
 	HitpointScript = 
 	{
 		int PrivateHP = 30,
-		int MaxHP = 5,
+		int MaxHP = 30,
+		bool MaxHPBoolean = true,
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,
@@ -72,7 +73,7 @@ Cog =
 	Shoot = 
 	{
 		string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
-		int RingCount = 24,
+		int RingCount = 36,
 		float RingOffset = 90,
 		int SpreadBullets = 2,
 	},
@@ -100,29 +101,29 @@ Cog =
 	BossAttackLogic = 
 	{
 		string StandTexture = "",
-		float AttackDelay1 = 1,
-		float BulletSpeed1 = 500,
+		float AttackDelay1 = 12,
+		float BulletSpeed1 = 125,
 		Enum ShotPattern1 = RING,
 		string BulletType1 = "5991a973fc954485:KnightHeal",
 		string AttackAnimation1 = "",
-		float BurstDelay1 = 0,
-		int BurstCount1 = 1,
+		float BurstDelay1 = 2,
+		int BurstCount1 = 2,
 		Vec4 Space1 = [1, 1, 1, 1],
-		float AttackDelay2 = 3,
+		float AttackDelay2 = 6,
 		float BulletSpeed2 = 1000,
 		Enum ShotPattern2 = SINGLE,
-		string BulletType2 = "",
+		string BulletType2 = "58512f553b58e4ef:GiantEnemyBullet",
 		string AttackAnimation2 = "",
 		float BurstDelay2 = 0,
 		int BurstCount2 = 1,
 		Vec4 Space2 = [1, 1, 1, 1],
-		float AttackDelay3 = 3,
-		float BulletSpeed3 = 1000,
+		float AttackDelay3 = 9,
+		float BulletSpeed3 = 1300,
 		Enum ShotPattern3 = SINGLE,
-		string BulletType3 = "",
+		string BulletType3 = "5997083aad1f9206:RagnarLavaShot",
 		string AttackAnimation3 = "",
-		float BurstDelay3 = 0,
-		int BurstCount3 = 1,
+		float BurstDelay3 = 3,
+		int BurstCount3 = 4,
 		Vec4 Space3 = [1, 1, 1, 1],
 		float ChallengeAttackDelay1 = 3,
 		float ChallengeBulletSpeed1 = 1000,
@@ -157,6 +158,7 @@ Cog =
 	{
 		float MoveSpeed = 4,
 		bool MovesAwayFromPlayer = true,
+		float ActiveTimer = 0,
 	},
 	Hierarchy = 
 	{

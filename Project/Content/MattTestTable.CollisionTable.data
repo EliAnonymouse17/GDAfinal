@@ -15,6 +15,7 @@ CollisionTable =
 		"587c10e02c261d51:FollowerEnemy",
 		"58e6c97efdcaf1f5:Wall",
 		"598de6d391600c94:Piercing",
+		"59c390baeaf60c38:EnemyHealingBullet",
 		"5812cf391818e72b:Necromancer",
 	],
 	Array CollisionFilters = 
