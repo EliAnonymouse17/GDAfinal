@@ -102,7 +102,7 @@ Cog =
 	{
 		string StandTexture = "",
 		float AttackDelay1 = 3,
-		float BulletSpeed1 = 100,
+		float BulletSpeed1 = 80,
 		Enum ShotPattern1 = SPREAD,
 		string BulletType1 = "580e65c5299defb0:EnemyBullet",
 		string AttackAnimation1 = "",
@@ -110,7 +110,7 @@ Cog =
 		int BurstCount1 = 3,
 		Vec4 Space1 = [1, 1, 1, 1],
 		float AttackDelay2 = 16,
-		float BulletSpeed2 = 115,
+		float BulletSpeed2 = 90,
 		Enum ShotPattern2 = RING,
 		string BulletType2 = "580e65c5299defb0:EnemyBullet",
 		string AttackAnimation2 = "",
@@ -159,21 +159,8 @@ Cog =
 		float MoveSpeed = 3,
 		bool MovesAwayFromPlayer = false,
 		float ActiveTimer = 0,
-		CogPath TetherObject = 
-		{
-			string Path = "",
-			bool ErrorOnResolveToNull = false,
-			bool ErrorOnPathCantCompute = false,
-			bool ErrorOnDirectLinkFail = false,
-			bool UpdateCogOnPathChange = true,
-			bool UpdatePathOnCogChange = true,
-			bool UpdateCogOnInitialize = true,
-			bool ResolvedNullErrorOccurred = false,
-			uint ResolvedCog = 4294967293,
-			CogPathPreference PathPreference0 = CogRelative,
-			CogPathPreference PathPreference1 = SpaceRelative,
-			CogPathPreference PathPreference2 = Absolute,
-		},
+		bool TetherObjectBool = false,
+		float MaxTetherDistance = 10,
 	},
 	MeleeAttackScript = 
 	{
@@ -207,41 +194,6 @@ Cog =
 				bool VisibilityEvents = true,
 				bool CastShadows = false,
 				Vec4 Color = [1, 0, 0, 0.5],
-				BlendMode BlendMode = Alpha,
-				SpriteGeometryMode GeometryMode = ZPlane,
-				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-				string SpriteSource = "5275aa4d802dd6dc:Square",
-				bool RenderMask = false,
-				bool FlipX = false,
-				bool FlipY = false,
-				bool AnimationActive = true,
-				float AnimationSpeed = 1,
-				uint StartFrame = 0,
-			},
-		},
-		Cog = 
-		{
-			LinkId = 
-			{
-				uint Id = 3,
-			},
-			Named = 
-			{
-				string Name = "Tether",
-			},
-			Transform = 
-			{
-				Vec3 Translation = [0, 0, 0],
-				Vec3 Scale = [0.666667, 0.666667, 1],
-				Quat Rotation = [0, 0, 0, 1],
-			},
-			Sprite = 
-			{
-				bool Visible = false,
-				bool VisibilityCulling = true,
-				bool VisibilityEvents = true,
-				bool CastShadows = false,
-				Vec4 Color = [1, 1, 1, 1],
 				BlendMode BlendMode = Alpha,
 				SpriteGeometryMode GeometryMode = ZPlane,
 				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",

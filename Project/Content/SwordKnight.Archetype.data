@@ -159,6 +159,8 @@ Cog =
 		float MoveSpeed = 5,
 		bool MovesAwayFromPlayer = false,
 		float ActiveTimer = 0,
+		bool TetherObjectBool = false,
+		float MaxTetherDistance = 10,
 	},
 	MeleeAttackScript = 
 	{
