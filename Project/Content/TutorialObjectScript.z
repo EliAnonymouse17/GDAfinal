@@ -8,7 +8,7 @@ class TutorialObjectScript : ZilchComponent
 
     function OnCollisionStarted(event : CollisionEvent)
     {
-        if (this.Owner.ArchetypeName == "TutorialSpellScroll")
+        if (this.Owner.ArchetypeName == "TutorialSpellScroll" || this.Owner.ArchetypeName == "HealthUpgradeTutorial" || this.Owner.ArchetypeName == "SpeedUpgradeTutorial")
         {
         this.Space.FindObjectByName("Tutorial NPC").TutorialProgression.IncrementProgression();
         this.Space.FindObjectByName("Tutorial NPC").TutorialProgression.FLock = false;
