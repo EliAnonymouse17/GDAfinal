@@ -19,6 +19,7 @@ class AIMoveFromPlayer : ZilchComponent
     
     var Active : Boolean = false;
     var TetherBool : Boolean = false;
+    var TetherTimer : Real = 1;
     
     var Player : Cog;
     var MoveFreeze : Boolean = false;
@@ -51,6 +52,17 @@ class AIMoveFromPlayer : ZilchComponent
         }
         
         
+        if(this.TetherBool)
+        {
+            this.TetherTimer -= event.Dt;
+        }
+        
+        if(this.TetherTimer <= 0)
+        {
+            this.TetherTimer = 1;
+            this.TetherBool = false;
+        }
+        
         Console.WriteLine(this.TetherObject);
         
         
@@ -64,10 +76,6 @@ class AIMoveFromPlayer : ZilchComponent
             if(currDistance > this.MaxTetherDistance)
             {
                 this.TetherBool = true;
-            }
-            else
-            {
-                this.TetherBool = false;
             }
         }
         
