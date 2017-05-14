@@ -8,6 +8,10 @@ Cog =
 	{
 		string Name = "Treasure",
 	},
+	Archetyped = 
+	{
+		string Name = "5991ababe7d1a8e7:Area3Treasure",
+	},
 	Transform = 
 	{
 		Vec3 Translation = [0, 0, 0],
@@ -16,12 +20,12 @@ Cog =
 	},
 	SpellDrop = 
 	{
-		Enum SpellDrop1 = RINGOFFIRE,
-		Enum SpellDrop2 = VAMPIREBAT,
-		Enum SpellDrop3 = WATERSTREAM,
-		string SpellDropSprite1 = "587c2b12779d37c6:Texture_MagicMissle",
-		string SpellDropSprite2 = "5991a8d66cbccab3:Animation_VampireBat",
-		string SpellDropSprite3 = "587c2c7990aee772:Texture_Raindrop",
+		Enum SpellDrop1 = BLACKHOLE,
+		Enum SpellDrop2 = RINGOFFIRE,
+		Enum SpellDrop3 = VAMPIREBAT,
+		string SpellDropSprite1 = "5274db4c2e7c11f9:Circle",
+		string SpellDropSprite2 = "587c2b12779d37c6:Texture_MagicMissle",
+		string SpellDropSprite3 = "5991a8d66cbccab3:Animation_VampireBat",
 		bool TreasureDropBool = true,
 	},
 	Treasure = 

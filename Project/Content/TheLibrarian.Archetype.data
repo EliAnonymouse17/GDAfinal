@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = true,
 		bool RotationLocked = true,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -85,10 +85,10 @@ Cog =
 	},
 	SpellDrop = 
 	{
-		Enum SpellDrop1 = EXPLODINGBULLET,
+		Enum SpellDrop1 = RAINBOWSHOT,
 		Enum SpellDrop2 = SEEKINGARROW,
 		Enum SpellDrop3 = ACIDPOOL,
-		string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
+		string SpellDropSprite1 = "59c2141e75598fe0:Animation_RainbowSpell0",
 		string SpellDropSprite2 = "5852c59e8c1f9264:Texture_SeekingArrow",
 		string SpellDropSprite3 = "5274db4c2e7c11f9:Circle",
 		bool TreasureDropBool = false,

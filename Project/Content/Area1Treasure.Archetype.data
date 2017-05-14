@@ -21,11 +21,11 @@ Cog =
 	SpellDrop = 
 	{
 		Enum SpellDrop1 = WATERSTREAM,
-		Enum SpellDrop2 = BUBBLESHOT,
-		Enum SpellDrop3 = VAMPIREBAT,
+		Enum SpellDrop2 = VAMPIREBAT,
+		Enum SpellDrop3 = BUBBLESHOT,
 		string SpellDropSprite1 = "587c2c7990aee772:Texture_Raindrop",
-		string SpellDropSprite2 = "583a1b2cfe6b1569:Texture_BubbleBullet",
-		string SpellDropSprite3 = "5991a8d66cbccab3:Animation_VampireBat",
+		string SpellDropSprite2 = "5991a8d66cbccab3:Animation_VampireBat",
+		string SpellDropSprite3 = "583a1b2cfe6b1569:Texture_BubbleBullet",
 		bool TreasureDropBool = true,
 	},
 	Treasure = 

@@ -342,7 +342,7 @@ Cog =
 	BlackHolePlayerShoot = 
 	{
 		Enum SpellType = BLACKHOLE,
-		bool UnlockAtStart = false,
+		bool UnlockAtStart = true,
 		string SpellName = "Black Hole",
 		string BulletSprite = "585ef2ebc3ca2337:Texture_Burger",
 		int SpreadBullets = 3,
