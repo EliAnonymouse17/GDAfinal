@@ -1,8 +1,0 @@
-TextContent = 
-{
-	ZilchScriptBuilder = 
-	{
-		string Name = "MinimapVisibility",
-		uint64 ResourceId = 59cccd927da086ce,
-	},
-},
