@@ -17,6 +17,7 @@ class TutorialProgression : ZilchComponent
         this.TextArray.Add("Above this display are your health bar and your fade bar.\nYour health bar displays your current health.");
         this.TextArray.Add("Your fade bar displays the remaining time on your fade ability\nand the remaining cooldown of your fade ability. ");
         this.TextArray.Add("Press space to use your fade ability.\nWhile active, your fade ability allows you to avoid spells cast by enemies.\nTry it now!");
+        this.TextArray.Add("Press M to hide or show your Minimap! \nTry doing this now!");
         this.TextArray.Add("Great! You are now ready to face your first enemy!\nPress F to begin the fight!");
         this.TextArray.Add(" ");
         this.TextArray.Add("Good Job!");
@@ -63,26 +64,30 @@ class TutorialProgression : ZilchComponent
         {
             this.Space.CreateAtPosition(Archetype.TutorialSpellScroll, Real3(8,1,0));
         }
-        if (this.TextIndex == 13)
+        if(this.TextIndex == 12)
+        {
+            this.FLock = true;
+        }
+        if (this.TextIndex == 14)
         {
             this.Space.CreateAtPosition(Archetype.TutorialSkeleton, Real3(12,4,0));
             this.FLock = true;
         }
-        if (this.TextIndex == 15)
+        if (this.TextIndex == 16)
         {
             this.Space.CreateAtPosition(Archetype.HealthUpgradeTutorial, Real3(8,1,0));
             Console.WriteLine(this.FLock);
         }
-        if (this.TextIndex == 16)
+        if (this.TextIndex == 17)
         {
             this.Space.CreateAtPosition(Archetype.SpeedUpgradeTutorial, Real3(8,1,0));
         }
-        if (this.TextIndex == 18)
+        if (this.TextIndex == 19)
         {
             this.Space.FindObjectByName("TutorialDoor").Sprite.Visible = true;
             this.Space.FindObjectByName("TutorialDoor").Collider.Ghost = true;
         }
-        if (this.TextIndex == 18)
+        if (this.TextIndex == 19)
         {
             this.TextIndex = 0;
         }
@@ -110,6 +115,11 @@ class TutorialProgression : ZilchComponent
         }
         if ((event.Key == Keys.Space) && this.TextIndex == 12)
         {
+            this.IncrementProgression();
+        }
+        if ((event.Key == Keys.M) && this.TextIndex == 13)
+        {
+            this.FLock == false;
             this.IncrementProgression();
         }
     }
