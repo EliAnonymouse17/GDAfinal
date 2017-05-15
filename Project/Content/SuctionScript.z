@@ -35,8 +35,11 @@ class SuctionScript : ZilchComponent
                     enemy.AIMoveFromPlayer.MoveFreeze = true;
                     enemy.AIMoveFromPlayer.FreezeTimer = 1.0;
                 }
-                var angle = Math.Normalize(this.Owner.Transform.Translation - enemy.Transform.Translation);
-                enemy.RigidBody.ApplyForce(angle*this.SuctionSpeed);
+                if(enemy.RigidBody != null)
+                {
+                    var angle = Math.Normalize(this.Owner.Transform.Translation - enemy.Transform.Translation);
+                    enemy.RigidBody.ApplyForce(angle*this.SuctionSpeed);
+                }
             }
         }
     }

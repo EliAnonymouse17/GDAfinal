@@ -7280,7 +7280,7 @@ Level =
 		BoneShotPlayerShoot = 
 		{
 			Enum SpellType = BONESHOT,
-			bool UnlockAtStart = false,
+			bool UnlockAtStart = true,
 			string SpellName = "Bone Shot",
 			string BulletSprite = "5873871a4de249f8:Texture_Bone",
 			int SpreadBullets = 3,
@@ -7365,7 +7365,7 @@ Level =
 		AcidPoolPlayerShoot = 
 		{
 			Enum SpellType = ACIDPOOL,
-			bool UnlockAtStart = false,
+			bool UnlockAtStart = true,
 			string SpellName = "Acid Pool",
 			string BulletSprite = "5274db4c2e7c11f9:Circle",
 			int SpreadBullets = 3,
