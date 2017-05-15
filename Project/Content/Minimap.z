@@ -16,11 +16,52 @@ class Minimap : ZilchComponent
 {
     var MMArray : Array[Array[MMNode]] = new Array[Array[MMNode]]();
     var Domensions : Integer = 3;
+    var CurrentlyVisible : Boolean = true;
+
     
     function Initialize(init : CogInitializer)
     {
         this.MMArray = this.InitMinimap(this.Space.FindObjectByName("Room").RoomScript.MapDimensions);
         this.SetNodeState(Integer2(0, 0), MMNodeState.Current);
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var nodeCount = this.MMArray.Count;
+        
+        if(Zero.Keyboard.KeyIsPressed(Keys.M))
+        {
+            // if the minimap & nodes are currently visible
+            if(this.CurrentlyVisible)
+            {
+                // set owner to invisible
+                this.Owner.Sprite.Visible = false;
+                for(var i = 0; i < nodeCount; ++i)
+                {
+                    for(var o = 0; o < nodeCount; ++o)
+                    {
+                        // set nodes to invisible
+                        this.MMArray[i][o].Object.Sprite.Visible = false;
+                    }
+                }
+                this.CurrentlyVisible = false;
+            }
+            else // if the minimap & nodes are currently not visible
+            {
+                // set owner to visible
+                this.Owner.Sprite.Visible = true;
+                for(var i = 0; i < nodeCount; ++i)
+                {
+                    for(var o = 0; o < nodeCount; ++o)
+                    {
+                        // set nodes to visible
+                        this.MMArray[i][o].Object.Sprite.Visible = true;
+                    }
+                }
+                this.CurrentlyVisible = true;
+            }
+        }
     }
     
     function SetNodeState(nodePos : Integer2, newState : MMNodeState)
