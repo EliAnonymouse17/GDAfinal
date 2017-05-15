@@ -1,6 +1,10 @@
 class RockShockScript : ZilchComponent
 {
-    var PlayerPos : Real3 = Real3(0,0,0);
+    var TargetPos : Real3 = Real3(0,0,0);
+    [Property]
+    var PlayerControlled : Boolean = false;
+    [Property]
+    var DetonationDistance : Real = 1;
     var DistFromImpact : Real = 900;
     [Property]
     var ImpactSound : SoundCue = SoundCue.ExplodingBulletImpact;
@@ -9,14 +13,26 @@ class RockShockScript : ZilchComponent
     
     function Initialize(init : CogInitializer)
     {
-        this.PlayerPos = this.Space.FindObjectByName("Player").Transform.WorldTranslation;
+        if (this.PlayerControlled)
+        {
+            var mouseScreenPosition = Zero.Mouse.ScreenPosition;
+            this.TargetPos = this.LevelSettings.CameraViewport.ScreenToWorldZPlane(mouseScreenPosition, 0);
+        }
+        else
+        {
+            this.TargetPos = this.Space.FindObjectByName("Player").Transform.WorldTranslation;
+        }
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        this.DistFromImpact = Math.Distance(this.PlayerPos, this.Owner.Transform.WorldTranslation);
-        if (this.DistFromImpact <= 1.0)
+        if (this.PlayerControlled)
+        {
+            this.DistFromImpact = Math.Distance(this.TargetPos, this.Owner.Transform.Translation);
+        }
+        this.DistFromImpact = Math.Distance(this.TargetPos, this.Owner.Transform.WorldTranslation);
+        if (this.DistFromImpact <= this.DetonationDistance)
         {
             if (this.SpawnBullets)
             {

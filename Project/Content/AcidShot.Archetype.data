@@ -64,5 +64,14 @@ Cog =
 		int PRVHitCount = 1,
 		string SpawnOnDeath = "598b66cd0a20b263:AcidPool",
 		string SpawnOnDeath2 = "",
+		bool Flaming = false,
+		float FlamingTime = 1,
+	},
+	RockShockScript = 
+	{
+		bool PlayerControlled = true,
+		float DetonationDistance = 1,
+		string ImpactSound = "585fc00d67fa4059:ExplodingBulletImpact",
+		bool SpawnBullets = false,
 	},
 },
