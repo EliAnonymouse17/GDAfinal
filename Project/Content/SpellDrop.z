@@ -55,6 +55,25 @@ class SpellDrop : ZilchComponent
             var randomDrop = randomGenerator.DieRoll(100);
             
             
+            var healthCount = randomGenerator.DieRoll(3);
+            
+            for(var i = 1; i <= healthCount; ++i)
+            {
+                var positionRoll = randomGenerator.DieRoll(2);
+                if(positionRoll == 1)
+                {
+                    position.X += i;
+                    this.Space.CreateAtPosition(Archetype.HeartPickup, position);
+                    position = this.Owner.Transform.Translation;
+                }
+                else
+                {
+                    position.Y += i;
+                    this.Space.CreateAtPosition(Archetype.HeartPickup, position);
+                    position = this.Owner.Transform.Translation;
+                }
+            }
+            
             Console.WriteLine(randomDrop);
             
             if(randomDrop >= 1 && randomDrop <= 10)
@@ -99,6 +118,8 @@ class SpellDrop : ZilchComponent
                 {
                     this.Space.CreateAtPosition(Archetype.HealthUpgrade, position);
                 }
+                
+                
             }
         }
         else
