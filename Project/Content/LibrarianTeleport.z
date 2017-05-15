@@ -38,7 +38,6 @@ class LibrarianTeleport : ZilchComponent
             foreach (var rune in teleportRunes)
             {
                 this.TeleportRuneArray.Add(rune);
-                
             }
         }
         this.TeleportTimer -= event.Dt;
