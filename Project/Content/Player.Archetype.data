@@ -432,6 +432,10 @@ Cog =
 					},
 					HUDHP = 
 					{
+						float FlashDuration = 0.2,
+						float FlashingHealthDelay = 0.3,
+						Vec4 FlashingHealthColor = [1, 1, 1, 1],
+						Vec4 OriginalHealthColor = [1, 1, 1, 0.6],
 					},
 					Hierarchy = 
 					{
@@ -457,7 +461,7 @@ Cog =
 								bool VisibilityCulling = true,
 								bool VisibilityEvents = true,
 								bool CastShadows = false,
-								Vec4 Color = [1, 0, 0, 0.6],
+								Vec4 Color = [1, 1, 1, 0.6],
 								BlendMode BlendMode = Alpha,
 								SpriteGeometryMode GeometryMode = ZPlane,
 								string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",

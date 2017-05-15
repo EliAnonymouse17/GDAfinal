@@ -14,6 +14,20 @@
 
 class HUDHP : ZilchComponent
 {
+    
+    [Property]
+    var FlashDuration : Real = 0.05;
+    [Property]
+    var FlashingHealthDelay : Real = 0.2;
+    [Property]
+    var FlashingHealthColor : Real4 = Real4(0, 0, 0, 0);
+    [Property]
+    var OriginalHealthColor : Real4 = Real4(255, 0, 0, 0.6);
+    
+    var FlashingHealthBoolean : Boolean = false;
+    var FlashingHealthTimer : Real = 0.2;
+    var FlashDurationTimer : Real = 0.05;
+    
     function Initialize(init : CogInitializer)
     {
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -31,9 +45,33 @@ class HUDHP : ZilchComponent
         
         var playerHP = player.HitpointScript.PrivateHP;
         var playerMaxHP = player.HitpointScript.MaxHP;
+        var childHP = this.Owner.FindChildByName("HUDhp");
         
         this.Owner.Area.Size = Real2(playerMaxHP / 2.0, 1);
-        this.Owner.FindChildByName("HUDhp").Area.Size = Real2(playerHP / 2.0, 1);
+        childHP.Area.Size = Real2(playerHP / 2.0, 1);
+        
+        if(playerHP <= 2)
+        {
+            this.FlashingHealthTimer -= event.Dt;
+            if(this.FlashingHealthBoolean)
+            {
+                this.FlashDurationTimer -= event.Dt;
+                childHP.Sprite.Color = this.FlashingHealthColor;
+            }
+            
+            if(this.FlashingHealthTimer <= 0)
+            {
+                this.FlashingHealthBoolean = true;
+            }
+            
+            if(this.FlashDurationTimer <= 0)
+            {
+                this.FlashingHealthBoolean = false;
+                this.FlashDurationTimer = this.FlashDuration;
+                this.FlashingHealthTimer = this.FlashingHealthDelay;
+                childHP.Sprite.Color = this.OriginalHealthColor;
+            }
+        }
         
     }
 }
