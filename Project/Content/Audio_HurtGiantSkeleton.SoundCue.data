@@ -1,7 +1,7 @@
 SoundCue = 
 {
 	SoundPlayMode PlayMode = Single,
-	float Volume = 1,
+	float Volume = 0.02,
 	float VolumeVariation = 0,
 	float Pitch = 0,
 	float PitchVariation = 0,
@@ -14,7 +14,7 @@ SoundCue =
 	Array Sounds = 
 	[
 		{
-			string SoundName = "586ac9bb1f884c13:audio_GiantSkeletonDeath",
+			string SoundName = "599e626aaf4e3f5d:Audio_HurtGiantSkeleton",
 			float Weight = 1,
 		},
 	],
