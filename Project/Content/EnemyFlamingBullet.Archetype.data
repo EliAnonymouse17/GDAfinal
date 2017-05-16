@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -60,12 +60,12 @@ Cog =
 	},
 	DamageScript = 
 	{
-		int Damage = 0,
+		int Damage = 1,
 		int PRVHitCount = 1,
 		string SpawnOnDeath = "",
 		string SpawnOnDeath2 = "",
 		bool Flaming = true,
-		float FlamingTime = 2,
+		float FlamingTime = 0,
 	},
 	SpriteParticleSystem = 
 	{
