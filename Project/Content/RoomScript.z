@@ -165,11 +165,13 @@ class RoomScript : ZilchComponent
                         return;
                     }
                 }
-                if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1 && this.MapPosition != Integer2(2, 2))
+                if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1)
                 {
                     door.Door.SetActive(true);
                     if(this.Minimap.GetNodeState(posCheck) == MMNodeState.Unknown)
                         this.Minimap.SetNodeState(posCheck, MMNodeState.Unexplored);
+                    if(this.Map[posCheck.X][posCheck.Y].Type == RoomType.BOSS)
+                        this.Minimap.MMArray[posCheck.X][posCheck.Y].Object.Sprite.Color = Real4(1, 0, 0, 1);
                 }
             }
         }
