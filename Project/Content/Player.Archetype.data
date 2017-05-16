@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0.15849, -0.0120174, 0],
+		Vec3 Translation = [-0.495258, -4.23722, 0],
 		Vec3 Scale = [1.2, 1.2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -169,7 +169,7 @@ Cog =
 	WaterStreamPlayerShoot = 
 	{
 		Enum SpellType = WATERSTREAM,
-		bool UnlockAtStart = true,
+		bool UnlockAtStart = false,
 		string SpellName = "Water Stream",
 		string BulletSprite = "587c2c7990aee772:Texture_Raindrop",
 		int SpreadBullets = 3,
@@ -315,7 +315,7 @@ Cog =
 		int SpreadBullets = 3,
 		int RingCount = 10,
 		string BulletType = "59919c7e2295febb:VampireBat",
-		float BulletDelay = 0.8,
+		float BulletDelay = 0.6,
 		float BulletSpeed = 900,
 		Enum ShotPattern = SINGLE,
 		string ShootSound = "",
