@@ -119,8 +119,8 @@ class TutorialProgression : ZilchComponent
         }
         if ((event.Key == Keys.M) && this.TextIndex == 13)
         {
-            this.FLock == false;
             this.IncrementProgression();
+            this.FLock = false;
         }
     }
 }
