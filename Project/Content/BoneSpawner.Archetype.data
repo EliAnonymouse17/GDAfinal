@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-0.0326358, 0, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -42,7 +42,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = true,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -52,6 +52,7 @@ Cog =
 	{
 		int PrivateHP = 1,
 		int MaxHP = 5,
+		bool MaxHPBoolean = false,
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,
@@ -80,5 +81,47 @@ Cog =
 	{
 		float SpawnTimer = 4,
 		string EnemyToSpawn = "584d38bbc0e476d3:Skeleton",
+	},
+	EnemyHealthbarScript = 
+	{
+		float HealthBarSize = 1,
+	},
+	Hierarchy = 
+	{
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 2,
+			},
+			Named = 
+			{
+				string Name = "HealthBar",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 1, 8],
+				Vec3 Scale = [0.4, 0.2, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [1, 0, 0, 0.5],
+				BlendMode BlendMode = Alpha,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "5275aa4d802dd6dc:Square",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+		},
 	},
 },

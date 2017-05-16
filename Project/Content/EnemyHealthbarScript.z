@@ -1,0 +1,19 @@
+class EnemyHealthbarScript : ZilchComponent
+{
+    [Property]
+    var HealthBarSize : Real = 10;
+    
+    function Initialize(init : CogInitializer)
+    {
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        var healthBar = this.Owner.FindChildByName("HealthBar");
+        
+        var currHealth = Real3(this.Owner.HitpointScript.PrivateHP, 0.2 * this.HealthBarSize, 1);
+        
+        healthBar.Transform.Scale = currHealth / this.HealthBarSize;
+    }
+}

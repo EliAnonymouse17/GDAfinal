@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "EnemyHealthbarScript",
+		uint64 ResourceId = 599e5ddb7855227d,
+	},
+},

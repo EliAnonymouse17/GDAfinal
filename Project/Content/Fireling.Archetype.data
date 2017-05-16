@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-9.50139, 0.775397, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1, 1, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -62,6 +62,7 @@ Cog =
 	{
 		int PrivateHP = 1,
 		int MaxHP = 1,
+		bool MaxHPBoolean = false,
 		string HurtSound = "598890d4d0097560:HurtEnemyHigh",
 		string DeathSound = "5991b4f36a75fa48:Audio_DeathFireling",
 		float HurtDuration = 0.1,
@@ -85,6 +86,9 @@ Cog =
 	{
 		float MoveSpeed = 10,
 		bool MovesAwayFromPlayer = false,
+		float ActiveTimer = 0,
+		bool TetherObjectBool = false,
+		float MaxTetherDistance = 10,
 	},
 	MeleeAttackScript = 
 	{
@@ -93,7 +97,46 @@ Cog =
 		int RecoilDamage = 2,
 		bool Friendly = false,
 	},
+	EnemyHealthbarScript = 
+	{
+		float HealthBarSize = 1,
+	},
 	Hierarchy = 
 	{
+		Cog = 
+		{
+			LinkId = 
+			{
+				uint Id = 2,
+			},
+			Named = 
+			{
+				string Name = "HealthBar",
+			},
+			Transform = 
+			{
+				Vec3 Translation = [0, 1, 8],
+				Vec3 Scale = [0.4, 0.2, 1],
+				Quat Rotation = [0, 0, 0, 1],
+			},
+			Sprite = 
+			{
+				bool Visible = true,
+				bool VisibilityCulling = true,
+				bool VisibilityEvents = true,
+				bool CastShadows = false,
+				Vec4 Color = [1, 0, 0, 0.5],
+				BlendMode BlendMode = Alpha,
+				SpriteGeometryMode GeometryMode = ZPlane,
+				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+				string SpriteSource = "5275aa4d802dd6dc:Square",
+				bool RenderMask = false,
+				bool FlipX = false,
+				bool FlipY = false,
+				bool AnimationActive = true,
+				float AnimationSpeed = 1,
+				uint StartFrame = 0,
+			},
+		},
 	},
 },
