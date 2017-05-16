@@ -63,7 +63,7 @@ class AIMoveFromPlayer : ZilchComponent
             this.TetherBool = false;
         }
         
-        Console.WriteLine(this.TetherObject);
+        
         
         
         
