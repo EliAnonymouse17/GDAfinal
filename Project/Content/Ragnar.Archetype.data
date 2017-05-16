@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-1, 6.5, 0],
 		Vec3 Scale = [2.5, 2.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = true,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -60,8 +60,9 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 110,
+		int PrivateHP = 30,
 		int MaxHP = 5,
+		bool MaxHPBoolean = false,
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,
@@ -72,7 +73,7 @@ Cog =
 	Shoot = 
 	{
 		string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
-		int RingCount = 8,
+		int RingCount = 3,
 		float RingOffset = 90,
 		int SpreadBullets = 16,
 	},
@@ -135,7 +136,7 @@ Cog =
 		float BurstDelay4 = 0.1,
 		int BurstCount4 = 25,
 		Vec4 Space4 = [1, 1, 1, 1],
-		float ChallengeAttackDelay2 = 10,
+		float ChallengeAttackDelay2 = 18,
 		float ChallengeBulletSpeed2 = 1000,
 		Enum ChallengeShotPattern2 = RING,
 		string ChallengeBulletType2 = "5997083aad1f9206:RagnarLavaShot",
@@ -203,7 +204,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [5, 1, 0],
+				Vec3 Translation = [5.64084, 1.70759, 0],
 				Vec3 Scale = [1.2, 0.8, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
@@ -221,7 +222,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [-2, -3, 0],
+				Vec3 Translation = [-2.44057, -3.53403, 0],
 				Vec3 Scale = [1.2, 0.8, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
@@ -239,7 +240,7 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [-5, 1, 0],
+				Vec3 Translation = [-5.12016, 1.56073, 0],
 				Vec3 Scale = [0.8, 1.2, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
@@ -257,8 +258,8 @@ Cog =
 			},
 			Transform = 
 			{
-				Vec3 Translation = [4, -3, 0],
-				Vec3 Scale = [0.8, 0.8, 1],
+				Vec3 Translation = [4.52068, -3.40052, 0],
+				Vec3 Scale = [1, 1.2, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
 			Named = 

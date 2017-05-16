@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [0, 0, 0],
+		Vec3 Translation = [-1, 13.5, 0.1],
 		Vec3 Scale = [1.5, 1.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = true,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -62,6 +62,7 @@ Cog =
 	{
 		int PrivateHP = 70,
 		int MaxHP = 5,
+		bool MaxHPBoolean = false,
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,
@@ -74,7 +75,7 @@ Cog =
 		string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
 		int RingCount = 100,
 		float RingOffset = 90,
-		int SpreadBullets = 5,
+		int SpreadBullets = 6,
 	},
 	Orientation = 
 	{

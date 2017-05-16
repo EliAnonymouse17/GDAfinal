@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -62,11 +62,16 @@ Cog =
 	{
 		int Damage = 1,
 		int PRVHitCount = 1,
-		string SpawnOnDeath = "599709dca9716d27:RagnarLavaPool",
+		string SpawnOnDeath = "59ce6189655e6465:RagnarFireElemental",
 		string SpawnOnDeath2 = "",
+		bool Flaming = false,
+		float FlamingTime = 1,
 	},
 	RockShockScript = 
 	{
+		bool PlayerControlled = false,
+		float DetonationDistance = 1,
 		string ImpactSound = "585fc00d67fa4059:ExplodingBulletImpact",
+		bool SpawnBullets = false,
 	},
 },
