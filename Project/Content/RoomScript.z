@@ -170,6 +170,8 @@ class RoomScript : ZilchComponent
                     door.Door.SetActive(true);
                     if(this.Minimap.GetNodeState(posCheck) == MMNodeState.Unknown)
                         this.Minimap.SetNodeState(posCheck, MMNodeState.Unexplored);
+                    if(posCheck.X + posCheck.Y == 4)
+                        door.Sprite.Color = Real4(1, 0, 0, 1);
                 }
             }
         }
@@ -280,62 +282,81 @@ class RoomScript : ZilchComponent
         rotation = (random.DieRoll(4) - 1) * 90;
         
         var enemyNum = random.DieRoll(4) + Math.Ceil(roomSize/4);
-        
+        var inArray = false;
+        var posArray = new Array[Real3]();
+        var position = Real3(0, 0, 0);
         for(var i = 0; i < enemyNum; ++i)
         {
             temp = random.DieRoll(20);
+            while(inArray)
+            {
+                inArray = false;
+                for(var j = 0; j < posArray.Count; j += 1)
+                {
+                    if (posArray[j] == position) inArray = true;
+                }
+                position = this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation);
+            }
+            inArray = true;
             if(temp < 9)
             {
                 if(this.World == 1)
-                    enemies.Add(new RoomObject(Archetype.Skeleton, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                    enemies.Add(new RoomObject(Archetype.Skeleton, position));
                 if(this.World == 2)
-                    enemies.Add(new RoomObject(Archetype.BoomBook, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                    enemies.Add(new RoomObject(Archetype.BoomBook, position));
                 if(this.World == 3)
-                    enemies.Add(new RoomObject(Archetype.Fireling, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                    enemies.Add(new RoomObject(Archetype.Fireling, position));
             }
             else if(temp < 16)
             {
                 if(this.World == 1)
-                    enemies.Add(new RoomObject(Archetype.Zombie, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                    enemies.Add(new RoomObject(Archetype.Zombie, position));
                 if(this.World == 2)
-                    enemies.Add(new RoomObject(Archetype.Apprentice, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                    enemies.Add(new RoomObject(Archetype.Apprentice, position));
                 if(this.World == 3)
-                    enemies.Add(new RoomObject(Archetype.FlamingTotem, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                    enemies.Add(new RoomObject(Archetype.FlamingTotem, position));
             }
             else if(temp < 20)
             {
                 if(this.World == 1)
-                    enemies.Add(new RoomObject(Archetype.Ghost, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                    enemies.Add(new RoomObject(Archetype.Ghost, position));
                 if(this.World == 2)
-                    enemies.Add(new RoomObject(Archetype.StaffOgre, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                    enemies.Add(new RoomObject(Archetype.StaffOgre, position));
                 if(this.World == 3)
-                    enemies.Add(new RoomObject(Archetype.FireElemental, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                    enemies.Add(new RoomObject(Archetype.FireElemental, position));
             }
             else
             {
                 if(this.World == 1)
-                    enemies.Add(new RoomObject(Archetype.Necromancer, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                    enemies.Add(new RoomObject(Archetype.Necromancer, position));
                 if(this.World == 2)
-                    enemies.Add(new RoomObject(Archetype.AnimatedGolem, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                    enemies.Add(new RoomObject(Archetype.AnimatedGolem, position));
                 if(this.World == 3)
-                    enemies.Add(new RoomObject(Archetype.Pyromaniac, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
+                    enemies.Add(new RoomObject(Archetype.Pyromaniac, position));
             }
         }
         
         var itemNum = random.DieRoll(4) - 2 + Math.Floor(roomSize/2.0);
         
-        var heartSpawned : Boolean = false;
-        
         for(var i = 0; i < itemNum; ++i)
         {
             temp = random.DieRoll(7);
-            if(temp < 7 || heartSpawned)
-                items.Add(new RoomObject(Archetype.Blockade, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
-            else
+            while(inArray)
             {
-                items.Add(new RoomObject(Archetype.HeartPickup, this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation)));
-                heartSpawned = true;
+                inArray = false;
+                for(var j = 0; j < posArray.Count; j += 1)
+                {
+                    if (Math.Length(posArray[j] - position) < 3) inArray = true;
+                }
+                position = this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation);
             }
+            inArray = true;
+            if(temp < 7)
+            {
+                items.Add(new RoomObject(Archetype.Blockade, position));
+            }
+            else
+                items.Add(new RoomObject(Archetype.HeartPickup, position));
         }
         
         return new Room(enemies, items, tileMap, rotation, RoomType.BASIC, this.World);
@@ -482,11 +503,11 @@ class RoomScript : ZilchComponent
         position += Real3(xIncrease, 0-yIncrease, 0);
         /*
         if(rotation == 90)
-            position = Real3(position.Y, position.X, 0);
+             = Real3(.Y, .X, 0);
         if(rotation == 180)
-            position *= -1;
+             *= -1;
         if(rotation == 270)
-            position = Real3(0-position.Y, 0-position.X, 0);*/
+             = Real3(0-.Y, 0-.X, 0);*/
         return position;
     }
     
