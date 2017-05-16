@@ -77,7 +77,7 @@ Cog =
 	PointTowards = 
 	{
 		Enum TrackedCog = MOUSE,
-		float Speed = 25,
+		float Speed = 20,
 		float Radians = 0.18,
 	},
 	SpriteParticleSystem = 

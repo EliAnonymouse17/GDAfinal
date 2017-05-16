@@ -7,6 +7,7 @@ class BossAttackLogic : ZilchComponent
     [Property] var ShotPattern1 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var BulletType1 : Archetype = null;
     [Property] var AttackAnimation1 : SpriteSource = null;
+    [Property] var ShootSound1 : SoundCue = null;
     // Bursting stuff
     [Property] var BurstDelay1 : Real = 0;
     var BurstTimer1 : Real = 0;
@@ -21,6 +22,7 @@ class BossAttackLogic : ZilchComponent
     [Property] var ShotPattern2 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var BulletType2 : Archetype = null;
     [Property] var AttackAnimation2 : SpriteSource = null;
+    [Property] var ShootSound2 : SoundCue = null;
     // Bursting stuff
     [Property] var BurstDelay2 : Real = 0;
     var BurstTimer2 : Real = 0;
@@ -35,6 +37,7 @@ class BossAttackLogic : ZilchComponent
     [Property] var ShotPattern3 : ShotPatternID = ShotPatternID.SINGLE;
     [Property] var BulletType3 : Archetype = null;
     [Property] var AttackAnimation3 : SpriteSource = null;
+    [Property] var ShootSound3 : SoundCue = null;
     // Bursting stuff
     [Property] var BurstDelay3 : Real = 0;
     var BurstTimer3 : Real = 0;
@@ -173,6 +176,10 @@ class BossAttackLogic : ZilchComponent
             {
                 this.Owner.Shoot.BulletType = this.BulletType1;
                 this.Owner.Shoot.Shoot(this.BulletSpeed1, shotAngle, this.ShotPattern1);
+                if (this.ShootSound1 != null)
+                {
+                    this.Space.SoundSpace.PlayCue(this.ShootSound1);
+                }
                 this.BurstTimer1 = this.BurstDelay1;
                 this.ShotsLeft1 -= 1;
             }
@@ -216,6 +223,10 @@ class BossAttackLogic : ZilchComponent
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType1;
                 this.Owner.Shoot.Shoot(this.ChallengeBulletSpeed1, shotAngle, this.ChallengeShotPattern1);
+                if (this.ShootSound1 != null)
+                {
+                    this.Space.SoundSpace.PlayCue(this.ShootSound1);
+                }
                 this.BurstTimer4 = this.BurstDelay4;
                 this.ShotsLeft4 -= 1;
             }
@@ -257,6 +268,10 @@ class BossAttackLogic : ZilchComponent
             {
                 this.Owner.Shoot.BulletType = this.BulletType2;
                 this.Owner.Shoot.Shoot(this.BulletSpeed2, shotAngle, this.ShotPattern2);
+                if (this.ShootSound2 != null)
+                {
+                    this.Space.SoundSpace.PlayCue(this.ShootSound2);
+                }
                 this.BurstTimer2 = this.BurstDelay2;
                 this.ShotsLeft2 -= 1;
             }
@@ -297,6 +312,10 @@ class BossAttackLogic : ZilchComponent
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType2;
                 this.Owner.Shoot.Shoot(this.ChallengeBulletSpeed2, shotAngle, this.ChallengeShotPattern2);
+                if (this.ShootSound2 != null)
+                {
+                    this.Space.SoundSpace.PlayCue(this.ShootSound2);
+                }
                 this.BurstTimer5 = this.BurstDelay5;
                 this.ShotsLeft5 -= 1;
             }
@@ -338,6 +357,10 @@ class BossAttackLogic : ZilchComponent
             {
                 this.Owner.Shoot.BulletType = this.BulletType3;
                 this.Owner.Shoot.Shoot(this.BulletSpeed3, shotAngle, this.ShotPattern3);
+                if (this.ShootSound3 != null)
+                {
+                    this.Space.SoundSpace.PlayCue(this.ShootSound3);
+                }
                 this.BurstTimer3 = this.BurstDelay3;
                 this.ShotsLeft3 -= 1;
             }
@@ -378,6 +401,10 @@ class BossAttackLogic : ZilchComponent
             {
                 this.Owner.Shoot.BulletType = this.ChallengeBulletType3;
                 this.Owner.Shoot.Shoot(this.ChallengeBulletSpeed3, shotAngle, this.ChallengeShotPattern3);
+                if (this.ShootSound3 != null)
+                {
+                    this.Space.SoundSpace.PlayCue(this.ShootSound3);
+                }
                 this.BurstTimer6 = this.BurstDelay6;
                 this.ShotsLeft6 -= 1;
             }
