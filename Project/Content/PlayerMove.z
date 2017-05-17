@@ -24,7 +24,18 @@ class PlayerMove : ZilchComponent
     function OnLogicUpdate(event : UpdateEvent)
     {
         if(this.Owner.Transform.Translation.Z != 0.1)
-            this.Owner.Transform.Translation.Z = 0.1;
+        {
+            
+            var currPos = this.Owner.Transform.WorldTranslation;
+            Console.WriteLine(currPos);
+            var targetPos = Real3(currPos.X, currPos.Y, 0.1);
+            if(this.Owner.Transform != null)
+            {
+                this.Owner.Transform.WorldTranslation = targetPos;
+                Console.WriteLine(this.Owner.Transform.Translation);
+            }
+            
+        }
         var toAdd = Real3(0, 0, 0);
         if(Zero.Keyboard.KeyIsDown(Keys.Right) || Zero.Keyboard.KeyIsDown(Keys.D))
         { //if we press up, we should go up
