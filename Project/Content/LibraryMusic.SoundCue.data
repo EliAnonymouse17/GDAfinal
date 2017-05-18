@@ -1,6 +1,6 @@
 SoundCue = 
 {
-	SoundPlayMode PlayMode = Single,
+	SoundPlayMode PlayMode = Looping,
 	float Volume = 1,
 	float VolumeVariation = 0,
 	float Pitch = 0,
@@ -13,6 +13,10 @@ SoundCue =
 	bool LinearRollOff = false,
 	Array Sounds = 
 	[
+		{
+			string SoundName = "5998e9de6dd1f54f:Audio_LibraryLevel",
+			float Weight = 1,
+		},
 	],
 	string RolloffCurveName = "",
 },
