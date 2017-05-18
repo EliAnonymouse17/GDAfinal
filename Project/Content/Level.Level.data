@@ -100,12 +100,19 @@ Level =
 			float GlowThreshold = 1,
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "582e55149cb1b9f5:Player",
 		LinkId = 
 		{
 			uint Id = 3,
+		},
+		Named = 
+		{
+			string Name = "Player",
+		},
+		Archetyped = 
+		{
+			string Name = "582e55149cb1b9f5:Player",
 		},
 		Transform = 
 		{
@@ -113,16 +120,736 @@ Level =
 			Vec3 Scale = [1.2, 1.2, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		Sprite = 
 		{
-			string Name = "Player",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "585fc298140f20a7:Texture_WandmanFront000",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		PlayerMove = 
+		{
+			float MoveSpeed = 700,
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "580e65c5299c6b69:Player",
+			Vec3 Offset = [0, 0, 0],
+			Vec3 Size = [0.35, 0.55, 0.5],
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = false,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = true,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		Shoot = 
+		{
+			string BulletType = "5815eae6be2978a9:Bullet",
+			int RingCount = 10,
+			float RingOffset = 90,
+			int SpreadBullets = 200,
+		},
+		HitpointScript = 
+		{
+			int PrivateHP = 8,
+			int MaxHP = 8,
+			bool MaxHPBoolean = false,
+			string HurtSound = "",
+			string DeathSound = "",
+			float HurtDuration = 0.1,
+			string SpawnOnDeath = "",
+			int SpawnCount = 1,
+			bool FlameImmune = false,
+		},
+		PlayerFade = 
+		{
+			float Cooldown = 1.4,
+			float FadeDuration = 1,
+			string FadeEnterSound = "598e6ab0a9febc2a:Audio_FadeEnter",
+		},
+		SpellSwitchHandler = 
+		{
+			bool DebugUnlockAll = false,
+		},
+		PlayerAnimations = 
+		{
+			string PlayerStand = "585fc298140f20a7:Texture_WandmanFront000",
+			string PlayerWalkSide = "58586c83879fbdf0:animation_WandmanWalkRight",
+			string PlayerWalkUp = "58586c25bcd98f54:animation_WandmanWalkBack",
+			string PlayerWalkDown = "58586dcfa50649dc:animation_WandmanWalkForward",
+		},
+		NullPlayerShoot = 
+		{
+			Enum SpellType = NULL,
+			bool UnlockAtStart = false,
+			string SpellName = "None",
+			string BulletSprite = "5274db4c2e7c11f9:Circle",
+			int SpreadBullets = 0,
+			int RingCount = 0,
+			string BulletType = "5815eae6be2978a9:Bullet",
+			float BulletDelay = 1000,
+			float BulletSpeed = 100000,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		BasicPlayerShoot = 
+		{
+			Enum SpellType = BASIC,
+			bool UnlockAtStart = true,
+			string SpellName = "Magic Missile",
+			string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "5815eae6be2978a9:Bullet",
+			float BulletDelay = 0.3,
+			float BulletSpeed = 1000,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "585fbf932318682e:MagicMissile",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		BoneShotPlayerShoot = 
+		{
+			Enum SpellType = BONESHOT,
+			bool UnlockAtStart = false,
+			string SpellName = "Bone Shot",
+			string BulletSprite = "5873871a4de249f8:Texture_Bone",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "5873834ea3abcd96:BoneShot",
+			float BulletDelay = 6.5,
+			float BulletSpeed = 1400,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		IceSpearPlayerShoot = 
+		{
+			Enum SpellType = ICESPEAR,
+			bool UnlockAtStart = true,
+			string SpellName = "Ice Spear",
+			string BulletSprite = "5858739c8bef319d:Texture_BigIce",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "584d4ddb6f528990:IceSpear",
+			float BulletDelay = 0.9,
+			float BulletSpeed = 10000,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "585fcd0c7dc8a4ee:IceSpear",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		WaterStreamPlayerShoot = 
+		{
+			Enum SpellType = WATERSTREAM,
+			bool UnlockAtStart = false,
+			string SpellName = "Water Stream",
+			string BulletSprite = "587c2c7990aee772:Texture_Raindrop",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "58737c72bcda6207:WaterBullet",
+			float BulletDelay = 0.9,
+			float BulletSpeed = 340,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0.02,
+			int BurstCount = 3,
+		},
+		SeekingArrowPlayerShoot = 
+		{
+			Enum SpellType = SEEKINGARROW,
+			bool UnlockAtStart = false,
+			string SpellName = "Seeking Arrow",
+			string BulletSprite = "5852c59e8c1f9264:Texture_SeekingArrow",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "5852c445964b36c9:SeekingArrow",
+			float BulletDelay = 0.3,
+			float BulletSpeed = 250,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "5854e8fb63ec9806:Audio_SeekingArrow",
+			bool TimerFreeze = true,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		ExplodingBulletPlayerShoot = 
+		{
+			Enum SpellType = EXPLODINGBULLET,
+			bool UnlockAtStart = false,
+			string SpellName = "Shrapnel Ball",
+			string BulletSprite = "5844c21540463a97:Texture_SpikeBall",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "5844b1f4b9428374:ExplodingBullet",
+			float BulletDelay = 2.8,
+			float BulletSpeed = 1200,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "585fc1e7955bc872:ExplodingBulletLaunch",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		AcidPoolPlayerShoot = 
+		{
+			Enum SpellType = ACIDPOOL,
+			bool UnlockAtStart = false,
+			string SpellName = "Acid Pool",
+			string BulletSprite = "5274db4c2e7c11f9:Circle",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "598b1a03909f1d61:AcidShot",
+			float BulletDelay = 3,
+			float BulletSpeed = 1000,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		BubbleShotPlayerShoot = 
+		{
+			Enum SpellType = BUBBLESHOT,
+			bool UnlockAtStart = false,
+			string SpellName = "Bubble Shot",
+			string BulletSprite = "583a1b2cfe6b1569:Texture_BubbleBullet",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "582a49e0d54b1b1a:BubbleBullet",
+			float BulletDelay = 0.2,
+			float BulletSpeed = 100,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "5854f4cd860c332b:Audio_BubbleTrap",
+			bool TimerFreeze = false,
+			float BurstDelay = 1,
+			int BurstCount = 1,
+		},
+		ChangeLevelOnDeath = 
+		{
+			string LevelToLoad = "582bf69410c9f0c6:DeathLevel",
+		},
+		PlayerShoot = 
+		{
+			Enum SpellType = NULL,
+			bool UnlockAtStart = false,
+			string SpellName = "Magic Missile",
+			string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
+			int SpreadBullets = 12,
+			int RingCount = 10,
+			string BulletType = "5844b1f4b9428374:ExplodingBullet",
+			float BulletDelay = 4.5,
+			float BulletSpeed = 1000,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "585fc1e7955bc872:ExplodingBulletLaunch",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		RingOfFirePlayerShoot = 
+		{
+			Enum SpellType = RINGOFFIRE,
+			bool UnlockAtStart = false,
+			string SpellName = "Ring Of Fire",
+			string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
+			int SpreadBullets = 3,
+			int RingCount = 26,
+			string BulletType = "598dd55410ce6a8a:FlamingBullet",
+			float BulletDelay = 1.1,
+			float BulletSpeed = 160,
+			Enum ShotPattern = RING,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		RainbowShotPlayerShoot = 
+		{
+			Enum SpellType = RAINBOWSHOT,
+			bool UnlockAtStart = false,
+			string SpellName = "Rainbow Shot",
+			string BulletSprite = "59c2141e75598fe0:Animation_RainbowSpell0",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "5994fe0b31a41d83:RainbowShot",
+			float BulletDelay = 0.7,
+			float BulletSpeed = 500,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		VampireBatPlayerShoot = 
+		{
+			Enum SpellType = VAMPIREBAT,
+			bool UnlockAtStart = false,
+			string SpellName = "Vampire Bat",
+			string BulletSprite = "5991a8d66cbccab3:Animation_VampireBat",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "59919c7e2295febb:VampireBat",
+			float BulletDelay = 0.5,
+			float BulletSpeed = 900,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		DevShotPlayerShoot = 
+		{
+			Enum SpellType = DEVSHOT,
+			bool UnlockAtStart = false,
+			string SpellName = "Dev Shot",
+			string BulletSprite = "5844c21540463a97:Texture_SpikeBall",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "5844b1f4b9428374:ExplodingBullet",
+			float BulletDelay = 0,
+			float BulletSpeed = 1000,
+			Enum ShotPattern = SPREAD,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		BlackHolePlayerShoot = 
+		{
+			Enum SpellType = BLACKHOLE,
+			bool UnlockAtStart = true,
+			string SpellName = "Black Hole",
+			string BulletSprite = "585ef2ebc3ca2337:Texture_Burger",
+			int SpreadBullets = 3,
+			int RingCount = 10,
+			string BulletType = "5991c5d81ec16f61:BlackBullet",
+			float BulletDelay = 3,
+			float BulletSpeed = 200,
+			Enum ShotPattern = SINGLE,
+			string ShootSound = "",
+			bool TimerFreeze = false,
+			float BurstDelay = 0,
+			int BurstCount = 1,
+		},
+		Hierarchy = 
+		{
+			Cog = 
+			{
+				LinkId = 
+				{
+					uint Id = 2,
+				},
+				Named = 
+				{
+					string Name = "Camera",
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-0.0133206, -0.0444493, 40],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Camera = 
+				{
+					ProjectionMode ProjectionMode = Orthographic,
+					Facing Facing = NegativeZ,
+					CameraTransparentSort TransparentSort = InheritFromSpace,
+					float FieldOfView = 45,
+					float NearPlane = 0.5,
+					float FarPlane = 200,
+					float Size = 25,
+				},
+				Microphone = 
+				{
+					bool Active = true,
+				},
+				Hierarchy = 
+				{
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 4,
+						},
+						Named = 
+						{
+							string Name = "HUDEmptyHP",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [-18.6753, 8.64901, -40],
+							Vec3 Scale = [1, 1, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						Sprite = 
+						{
+							bool Visible = true,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [1, 1, 1, 1],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string SpriteSource = "598e78ee1e0ef092:Texture_HeathBarEmpty",
+							bool RenderMask = false,
+							bool FlipX = false,
+							bool FlipY = false,
+							bool AnimationActive = true,
+							float AnimationSpeed = 1,
+							uint StartFrame = 0,
+						},
+						Area = 
+						{
+							Vec2 Size = [6, 1],
+							Location Origin = CenterLeft,
+						},
+						HUDHP = 
+						{
+							float FlashDuration = 0.2,
+							float FlashingHealthDelay = 0.3,
+							Vec4 FlashingHealthColor = [1, 1, 1, 1],
+							Vec4 OriginalHealthColor = [1, 1, 1, 0.6],
+						},
+						Hierarchy = 
+						{
+							Cog = 
+							{
+								LinkId = 
+								{
+									uint Id = 5,
+								},
+								Named = 
+								{
+									string Name = "HUDhp",
+								},
+								Transform = 
+								{
+									Vec3 Translation = [0, 0, 20],
+									Vec3 Scale = [1, 1, 1],
+									Quat Rotation = [0, 0, 0, 1],
+								},
+								Sprite = 
+								{
+									bool Visible = true,
+									bool VisibilityCulling = true,
+									bool VisibilityEvents = true,
+									bool CastShadows = false,
+									Vec4 Color = [1, 1, 1, 0.6],
+									BlendMode BlendMode = Alpha,
+									SpriteGeometryMode GeometryMode = ZPlane,
+									string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+									string SpriteSource = "598e78df07571e57:Texture_HealthBar",
+									bool RenderMask = false,
+									bool FlipX = false,
+									bool FlipY = false,
+									bool AnimationActive = true,
+									float AnimationSpeed = 1,
+									uint StartFrame = 0,
+								},
+								Area = 
+								{
+									Vec2 Size = [6, 1],
+									Location Origin = CenterLeft,
+								},
+							},
+						},
+					},
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 6,
+						},
+						Named = 
+						{
+							string Name = "Score",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [-12.2024, 9.1349, -20],
+							Vec3 Scale = [1, 1, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						SpriteText = 
+						{
+							bool Visible = true,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [1, 1, 1, 1],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string FontName = "4e7bac697bec55c5:Verdana",
+							uint FontSize = 72,
+							string Text = "0",
+							TextAlign Align = Left,
+							float PixelsPerUnit = 100,
+							bool Smoothing = true,
+						},
+						Score = 
+						{
+						},
+					},
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 7,
+						},
+						Named = 
+						{
+							string Name = "FadeCooldownParent",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [-18.7283, 7.0545, -20],
+							Vec3 Scale = [1, 1, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						Sprite = 
+						{
+							bool Visible = false,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [1, 1, 1, 1],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string SpriteSource = "5275aa4d802dd6dc:Square",
+							bool RenderMask = false,
+							bool FlipX = false,
+							bool FlipY = false,
+							bool AnimationActive = true,
+							float AnimationSpeed = 1,
+							uint StartFrame = 0,
+						},
+						HUDFadeCooldown = 
+						{
+						},
+						Hierarchy = 
+						{
+							Cog = 
+							{
+								LinkId = 
+								{
+									uint Id = 8,
+								},
+								Named = 
+								{
+									string Name = "FadeCooldown",
+								},
+								Transform = 
+								{
+									Vec3 Translation = [1.5, 0, 0],
+									Vec3 Scale = [3, 1, 1],
+									Quat Rotation = [0, 0, 0, 1],
+								},
+								Sprite = 
+								{
+									bool Visible = true,
+									bool VisibilityCulling = true,
+									bool VisibilityEvents = true,
+									bool CastShadows = false,
+									Vec4 Color = [0, 0, 1, 0.6],
+									BlendMode BlendMode = Alpha,
+									SpriteGeometryMode GeometryMode = ZPlane,
+									string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+									string SpriteSource = "5275aa4d802dd6dc:Square",
+									bool RenderMask = false,
+									bool FlipX = false,
+									bool FlipY = false,
+									bool AnimationActive = true,
+									float AnimationSpeed = 1,
+									uint StartFrame = 0,
+								},
+							},
+						},
+					},
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 9,
+						},
+						Named = 
+						{
+							string Name = "SpellHUD",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [-17.1652, 5.64809, -20],
+							Vec3 Scale = [1, 1, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						Sprite = 
+						{
+							bool Visible = false,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [0, 0, 0, 1],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string SpriteSource = "5275aa4d802dd6dc:Square",
+							bool RenderMask = false,
+							bool FlipX = false,
+							bool FlipY = false,
+							bool AnimationActive = true,
+							float AnimationSpeed = 1,
+							uint StartFrame = 0,
+						},
+						Hierarchy = 
+						{
+							Cog = 
+							{
+								LinkId = 
+								{
+									uint Id = 10,
+								},
+								Named = 
+								{
+									string Name = "SpellIcon",
+								},
+								Transform = 
+								{
+									Vec3 Translation = [-0.0302734, 0, 1],
+									Vec3 Scale = [2, 2, 1],
+									Quat Rotation = [0, 0, 0, 1],
+								},
+								Sprite = 
+								{
+									bool Visible = true,
+									bool VisibilityCulling = true,
+									bool VisibilityEvents = true,
+									bool CastShadows = false,
+									Vec4 Color = [1, 1, 1, 1],
+									BlendMode BlendMode = Alpha,
+									SpriteGeometryMode GeometryMode = ZPlane,
+									string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+									string SpriteSource = "584558c2c978f519:Texture_PlayerBasicProjectile",
+									bool RenderMask = false,
+									bool FlipX = false,
+									bool FlipY = false,
+									bool AnimationActive = true,
+									float AnimationSpeed = 1,
+									uint StartFrame = 0,
+								},
+							},
+							Cog = 
+							{
+								LinkId = 
+								{
+									uint Id = 11,
+								},
+								Named = 
+								{
+									string Name = "SpellName",
+								},
+								Transform = 
+								{
+									Vec3 Translation = [-1.20519, -0.616958, -0.000999546],
+									Vec3 Scale = [1, 1, 1],
+									Quat Rotation = [0, 0, 0, 1],
+								},
+								SpriteText = 
+								{
+									bool Visible = true,
+									bool VisibilityCulling = true,
+									bool VisibilityEvents = true,
+									bool CastShadows = false,
+									Vec4 Color = [1, 1, 1, 1],
+									BlendMode BlendMode = Alpha,
+									SpriteGeometryMode GeometryMode = ZPlane,
+									string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+									string FontName = "4e7bac697bec55c5:Verdana",
+									uint FontSize = 30,
+									string Text = "Magic Missile",
+									TextAlign Align = Left,
+									float PixelsPerUnit = 64,
+									bool Smoothing = true,
+								},
+							},
+						},
+					},
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 12,
+						},
+						Named = 
+						{
+							string Name = "Minimap",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [15, -5, -10],
+							Vec3 Scale = [7, 7, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						Sprite = 
+						{
+							bool Visible = true,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [1, 1, 1, 0.9999],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string SpriteSource = "5275aa4d802dd6dc:Square",
+							bool RenderMask = false,
+							bool FlipX = false,
+							bool FlipY = false,
+							bool AnimationActive = true,
+							float AnimationSpeed = 1,
+							uint StartFrame = 0,
+						},
+						Minimap = 
+						{
+						},
+					},
+				},
+			},
 		},
 	},
 	Cog = 
 	{
 		LinkId = 
 		{
-			uint Id = 4,
+			uint Id = 13,
 		},
 		Named = 
 		{
@@ -166,7 +893,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 5,
+			uint Id = 14,
 		},
 		Named = 
 		{
@@ -188,7 +915,7 @@ Level =
 		string Name = "597b65f4bcfdc3f0:TMSquare22",
 		LinkId = 
 		{
-			uint Id = 6,
+			uint Id = 15,
 		},
 		Transform = 
 		{

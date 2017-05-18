@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-10.6244, 5.74133, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [3, 3, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -54,7 +54,7 @@ Cog =
 	},
 	MeleeAttackScript = 
 	{
-		float AttackDelay = 1,
+		float AttackDelay = 0.5,
 		int Damage = 1,
 		int RecoilDamage = 0,
 		bool Friendly = true,
@@ -66,9 +66,9 @@ Cog =
 	},
 	DestroyTimer = 
 	{
-		float Time = 4,
-		float Time2 = 0.4,
-		bool Random = false,
+		float Time = 1.6,
+		float Time2 = 2,
+		bool Random = true,
 		bool Warp = false,
 	},
 	RigidBody = 
@@ -77,7 +77,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
