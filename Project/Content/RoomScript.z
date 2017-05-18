@@ -341,6 +341,7 @@ class RoomScript : ZilchComponent
         for(var i = 0; i < itemNum; ++i)
         {
             temp = random.DieRoll(7);
+            var heartSpawned : Boolean = false;
             while(inArray)
             {
                 inArray = false;
@@ -351,12 +352,15 @@ class RoomScript : ZilchComponent
                 position = this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation);
             }
             inArray = true;
-            if(temp < 7)
+            if(temp < 4 || heartSpawned)
             {
                 items.Add(new RoomObject(Archetype.Blockade, position));
             }
             else
+            {
                 items.Add(new RoomObject(Archetype.HeartPickup, position));
+                heartSpawned = true;
+            }
         }
         
         return new Room(enemies, items, tileMap, rotation, RoomType.BASIC, this.World);
