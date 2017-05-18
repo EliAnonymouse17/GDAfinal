@@ -1,10 +1,18 @@
 class TutorialProgression : ZilchComponent
 {
+    [Property]
+    var TutorialSong : SoundCue = null;
     var TextArray : Array[String] = Array[String]();
     var TextIndex : Integer = 0;
     var FLock : Boolean = false;
     function Initialize(init : CogInitializer)
     {
+        var manager = this.GameSession.MusicManager;
+        if(manager != null && this.TutorialSong != null)
+        {
+            manager.SwitchTracks(this.TutorialSong);
+        }
+        
         this.TextArray.Add("Greetings, Wand Man!");
         this.TextArray.Add("I, the acclaimed Hamburger Wizard, \nwill be your guide in this dungeon.");
         this.TextArray.Add("We will start with the basics.\nUse the WASD keys to move.");
