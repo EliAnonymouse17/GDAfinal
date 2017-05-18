@@ -340,7 +340,7 @@ class RoomScript : ZilchComponent
         
         for(var i = 0; i < itemNum; ++i)
         {
-            temp = random.DieRoll(7);
+            temp = random.DieRoll(4);
             var heartSpawned : Boolean = false;
             while(inArray)
             {
