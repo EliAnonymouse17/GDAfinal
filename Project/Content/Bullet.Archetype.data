@@ -101,11 +101,11 @@ Cog =
 	{
 		bool Active = true,
 		uint EmitCount = 0,
-		float EmitRate = 10,
+		float EmitRate = 60,
 		float EmitVariance = 0,
 		float Size = 0.6,
 		float SizeVariance = 0.2,
-		float Lifetime = 0.5,
+		float Lifetime = 0.2,
 		float LifetimeVariance = 0.1,
 		float Spin = 0,
 		float SpinVariance = 50,
