@@ -80,7 +80,7 @@ class TutorialProgression : ZilchComponent
         }
         if (this.TextIndex == 17)
         {
-            this.Space.CreateAtPosition(Archetype.SpeedUpgradeTutorial, Real3(8,1,0));
+            this.Space.CreateAtPosition(Archetype.SpeedUpgradeTutorial, Real3(12,1,0));
         }
         if (this.TextIndex == 19)
         {
