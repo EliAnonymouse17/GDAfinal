@@ -165,7 +165,7 @@ class RoomScript : ZilchComponent
                         return;
                     }
                 }
-                if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1 && this.MapPosition != Integer2(2, 2))
+                if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1)
                 {
                     door.Door.SetActive(true);
                     if(this.Minimap.GetNodeState(posCheck) == MMNodeState.Unknown)
@@ -602,5 +602,24 @@ class RoomScript : ZilchComponent
         this.Timer = 0.1;
         this.LoadDirection = direction;
         this.AttackDelay = 1;
+        if(this.MapPosition == Integer2(2, 2))
+        {
+            var manager = this.GameSession.MusicManager;
+            if (manager != null)
+                manager.SwitchTracks(SoundCue.TheLibrarianTheme);
+        }
+        if(this.MapPosition == Integer2(0, 0))
+        {
+            var manager = this.GameSession.MusicManager;
+            if (manager != null)
+            {
+                if (this.World == 1)
+                    manager.SwitchTracks(SoundCue.Graveyard);
+                if (this.World == 2)
+                    manager.SwitchTracks(SoundCue.Graveyard);
+                if (this.World == 3)
+                    manager.SwitchTracks(SoundCue.Graveyard);
+            }
+        }
     }
 }
