@@ -172,6 +172,10 @@ class RoomScript : ZilchComponent
                         this.Minimap.SetNodeState(posCheck, MMNodeState.Unexplored);
                     if(posCheck.X + posCheck.Y == 4)
                         door.Sprite.Color = Real4(1, 0, 0, 1);
+                    if(posCheck.X + posCheck.Y == 5)
+                        door.Sprite.Color = Real4(0, 1, 0, 1);
+                    else
+                        door.Sprite.Color = Real4(0, 0, 1, 1);
                 }
             }
         }

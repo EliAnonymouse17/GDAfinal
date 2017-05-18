@@ -99,6 +99,10 @@ Level =
 			bool Glow = false,
 			float GlowThreshold = 1,
 		},
+		ChangeMusicOnStart = 
+		{
+			string Song = "5863773ce572775b:Graveyard",
+		},
 	},
 	ArchetypeInstance = 
 	{

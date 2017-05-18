@@ -90,6 +90,10 @@ Level =
 			int HilightInterval = 10,
 			bool FollowEditorCamera = false,
 		},
+		ChangeMusicOnStart = 
+		{
+			string Song = "599e6349c93fc751:Audio_DeathGiantSkeleton",
+		},
 	},
 	Cog = 
 	{

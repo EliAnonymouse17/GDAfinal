@@ -99,6 +99,10 @@ Level =
 			bool Glow = false,
 			float GlowThreshold = 1,
 		},
+		ChangeMusicOnStart = 
+		{
+			string Song = "5998dd0eb23873b2:TutorialMusic",
+		},
 	},
 	Cog = 
 	{

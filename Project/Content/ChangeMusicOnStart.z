@@ -1,0 +1,12 @@
+class ChangeMusicOnStart : ZilchComponent
+{
+    [Property] var Song : SoundCue = SoundCue.DefaultCue;
+    function Initialize(init : CogInitializer)
+    {
+        var manager = this.GameSession.MusicManager;
+        if(manager != null)
+        {
+            manager.SwitchTracks(this.Song);
+        }
+    }
+}

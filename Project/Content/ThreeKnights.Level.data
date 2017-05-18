@@ -90,6 +90,10 @@ Level =
 			int HilightInterval = 10,
 			bool FollowEditorCamera = false,
 		},
+		ChangeMusicOnStart = 
+		{
+			string Song = "58637728e647bc90:TheLibrarianTheme",
+		},
 	},
 	Cog = 
 	{
@@ -389,6 +393,7 @@ Level =
 			Enum ShotPattern1 = RING,
 			string BulletType1 = "5991a973fc954485:KnightHeal",
 			string AttackAnimation1 = "",
+			string ShootSound1 = "",
 			float BurstDelay1 = 2,
 			int BurstCount1 = 2,
 			Vec4 Space1 = [1, 1, 1, 1],
@@ -397,6 +402,7 @@ Level =
 			Enum ShotPattern2 = SINGLE,
 			string BulletType2 = "58512f553b58e4ef:GiantEnemyBullet",
 			string AttackAnimation2 = "",
+			string ShootSound2 = "",
 			float BurstDelay2 = 0,
 			int BurstCount2 = 1,
 			Vec4 Space2 = [1, 1, 1, 1],
@@ -405,6 +411,7 @@ Level =
 			Enum ShotPattern3 = SINGLE,
 			string BulletType3 = "599e3b7464f1234c:HealKnightLavaShot",
 			string AttackAnimation3 = "",
+			string ShootSound3 = "",
 			float BurstDelay3 = 3,
 			int BurstCount3 = 4,
 			Vec4 Space3 = [1, 1, 1, 1],

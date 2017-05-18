@@ -90,6 +90,10 @@ Level =
 			int HilightInterval = 10,
 			bool FollowEditorCamera = false,
 		},
+		ChangeMusicOnStart = 
+		{
+			string Song = "5863773ce572775b:Graveyard",
+		},
 	},
 	Cog = 
 	{
