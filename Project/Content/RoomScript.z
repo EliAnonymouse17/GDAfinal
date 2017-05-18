@@ -620,9 +620,9 @@ class RoomScript : ZilchComponent
                 if (this.World == 1)
                     manager.SwitchTracks(SoundCue.Graveyard);
                 if (this.World == 2)
-                    manager.SwitchTracks(SoundCue.Graveyard);
+                    manager.SwitchTracks(SoundCue.LibraryMusic);
                 if (this.World == 3)
-                    manager.SwitchTracks(SoundCue.Graveyard);
+                    manager.SwitchTracks(SoundCue.Audio_VolcanicSong);
             }
         }
     }
