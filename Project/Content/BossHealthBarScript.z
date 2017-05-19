@@ -3,17 +3,26 @@ class BossHealthBarScript : ZilchComponent
     [Property]
     var HealthBarSize : Real = 10;
     
+    [Property]
+    var HealthBarName : String = null;
+    
+    var HealthBar : Cog = null;
+    
     function Initialize(init : CogInitializer)
     {
+        this.HealthBar = this.Space.FindObjectByName(this.HealthBarName); 
+        
+        
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
 
     function OnLogicUpdate(event : UpdateEvent)
     {
-        var healthBar = this.Owner.FindChildByName("BossHealthBar");
-        
-        var currHealth = Real3(this.Owner.HitpointScript.PrivateHP, 1, 1);
-        
-        healthBar.Transform.Scale = currHealth / this.HealthBarSize;
+        if(this.HealthBarName != null)
+        {
+            var currHealth = Real2(this.Owner.HitpointScript.PrivateHP / this.HealthBarSize, 1);
+            
+            this.HealthBar.Area.Size = currHealth;
+        }
     }
 }
