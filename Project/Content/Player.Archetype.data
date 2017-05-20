@@ -723,7 +723,7 @@ Cog =
 						bool VisibilityCulling = true,
 						bool VisibilityEvents = true,
 						bool CastShadows = false,
-						Vec4 Color = [1, 1, 1, 0.9999],
+						Vec4 Color = [1, 1, 1, 0.8],
 						BlendMode BlendMode = Alpha,
 						SpriteGeometryMode GeometryMode = ZPlane,
 						string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
@@ -747,25 +747,25 @@ Cog =
 					},
 					Named = 
 					{
-						string Name = "BossHealthBar",
+						string Name = "BossHealthBarEmpty",
 					},
 					Transform = 
 					{
-						Vec3 Translation = [-15, -9, -20],
-						Vec3 Scale = [0.833333, 0.833333, 1],
+						Vec3 Translation = [-14.1757, -8.83273, -20],
+						Vec3 Scale = [16.6667, 5.83333, 1],
 						Quat Rotation = [0, 0, 0, 1],
 					},
 					Sprite = 
 					{
-						bool Visible = true,
+						bool Visible = false,
 						bool VisibilityCulling = true,
 						bool VisibilityEvents = true,
 						bool CastShadows = false,
-						Vec4 Color = [1, 0, 0, 1],
+						Vec4 Color = [1, 1, 1, 1],
 						BlendMode BlendMode = Alpha,
 						SpriteGeometryMode GeometryMode = ZPlane,
 						string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-						string SpriteSource = "5275aa4d802dd6dc:Square",
+						string SpriteSource = "59f4a515e2426e2b:Texture_BossHealth0",
 						bool RenderMask = false,
 						bool FlipX = false,
 						bool FlipY = false,
@@ -775,8 +775,51 @@ Cog =
 					},
 					Area = 
 					{
-						Vec2 Size = [1, 1],
+						Vec2 Size = [1.65, 2.9],
 						Location Origin = CenterLeft,
+					},
+					Hierarchy = 
+					{
+						Cog = 
+						{
+							LinkId = 
+							{
+								uint Id = 13,
+							},
+							Named = 
+							{
+								string Name = "BossHealthBar",
+							},
+							Transform = 
+							{
+								Vec3 Translation = [0.0756335, -0.020578, 0.1],
+								Vec3 Scale = [0.05, 0.15, 1],
+								Quat Rotation = [0, 0, 0, 1],
+							},
+							Sprite = 
+							{
+								bool Visible = false,
+								bool VisibilityCulling = true,
+								bool VisibilityEvents = true,
+								bool CastShadows = false,
+								Vec4 Color = [1, 0, 0, 0.6],
+								BlendMode BlendMode = Alpha,
+								SpriteGeometryMode GeometryMode = ZPlane,
+								string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+								string SpriteSource = "5275aa4d802dd6dc:Square",
+								bool RenderMask = false,
+								bool FlipX = false,
+								bool FlipY = false,
+								bool AnimationActive = true,
+								float AnimationSpeed = 1,
+								uint StartFrame = 0,
+							},
+							Area = 
+							{
+								Vec2 Size = [30, 1],
+								Location Origin = CenterLeft,
+							},
+						},
 					},
 				},
 			},

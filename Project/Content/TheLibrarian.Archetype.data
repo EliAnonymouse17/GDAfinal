@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-1, 13.5, 0.1],
+		Vec3 Translation = [0.160105, 7.16147, 0],
 		Vec3 Scale = [1.5, 1.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -97,6 +97,7 @@ Cog =
 	BossHealthBarScript = 
 	{
 		float HealthBarSize = 15,
+		string HealthBarName = "BossHealthBar",
 	},
 	BossAttackLogic = 
 	{
@@ -106,6 +107,7 @@ Cog =
 		Enum ShotPattern1 = SPREAD,
 		string BulletType1 = "580e65c5299defb0:EnemyBullet",
 		string AttackAnimation1 = "59daeba37605aa70:Animation_LibrarianAttack2",
+		string ShootSound1 = "",
 		float BurstDelay1 = 0.03,
 		int BurstCount1 = 6,
 		Vec4 Space1 = [1, 1, 1, 1],
@@ -114,6 +116,7 @@ Cog =
 		Enum ShotPattern2 = SINGLE,
 		string BulletType2 = "5866d949db695a28:EnemyArrow",
 		string AttackAnimation2 = "59daeba37605aa70:Animation_LibrarianAttack2",
+		string ShootSound2 = "",
 		float BurstDelay2 = 0,
 		int BurstCount2 = 1,
 		Vec4 Space2 = [1, 1, 1, 1],
@@ -122,6 +125,7 @@ Cog =
 		Enum ShotPattern3 = SINGLE,
 		string BulletType3 = "5868238f9aba4218:LibrarianRock",
 		string AttackAnimation3 = "59daeba37605aa70:Animation_LibrarianAttack2",
+		string ShootSound3 = "",
 		float BurstDelay3 = 0,
 		int BurstCount3 = 1,
 		Vec4 Space3 = [1, 1, 1, 1],
@@ -162,40 +166,5 @@ Cog =
 	},
 	Hierarchy = 
 	{
-		Cog = 
-		{
-			LinkId = 
-			{
-				uint Id = 2,
-			},
-			Named = 
-			{
-				string Name = "BossHealthBar",
-			},
-			Transform = 
-			{
-				Vec3 Translation = [0.00219029, -1.13192, 8],
-				Vec3 Scale = [0.4, 0.4, 1],
-				Quat Rotation = [0, 0, 0, 1],
-			},
-			Sprite = 
-			{
-				bool Visible = true,
-				bool VisibilityCulling = true,
-				bool VisibilityEvents = true,
-				bool CastShadows = false,
-				Vec4 Color = [1, 0, 0, 0.5],
-				BlendMode BlendMode = Alpha,
-				SpriteGeometryMode GeometryMode = ZPlane,
-				string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-				string SpriteSource = "5275aa4d802dd6dc:Square",
-				bool RenderMask = false,
-				bool FlipX = false,
-				bool FlipY = false,
-				bool AnimationActive = true,
-				float AnimationSpeed = 1,
-				uint StartFrame = 0,
-			},
-		},
 	},
 },

@@ -12,6 +12,11 @@ class BossHealthBarScript : ZilchComponent
     {
         this.HealthBar = this.Space.FindObjectByName(this.HealthBarName); 
         
+        this.Space.FindObjectByName("BossHealthBarEmpty").Sprite.Visible = true;
+        
+        this.HealthBar.Sprite.Visible = true;
+        
+        this.HealthBarSize = this.Owner.HitpointScript.PrivateHP as Real / 30;
         
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
