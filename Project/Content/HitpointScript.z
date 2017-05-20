@@ -86,6 +86,10 @@ class HitpointScript : ZilchComponent
                             this.Space.FindObjectByName("Runes").Destroy();
                         }
                     }
+                    if(this.Owner.BossHealthBarScript != null)
+                    {
+                        this.Space.FindObjectByName("BossHealthBarEmpty").Sprite.Visible = false;
+                    }
                     if(!this.Dead)
                     {
                         this.Dead = true;
