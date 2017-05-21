@@ -163,6 +163,10 @@ class BossAttackLogic : ZilchComponent
                 this.AttackTimer1 = this.AttackDelay1;
                 this.BurstTimer1 = 0;
                 this.ShotsLeft1 = this.BurstCount1;
+                if (this.ShootSound1 != null)
+                {
+                    this.Space.SoundSpace.PlayCue(this.ShootSound1);
+                }
                 this.IsBursting1 = true;
             }
             // Tick down time left bewtween shots
@@ -176,10 +180,6 @@ class BossAttackLogic : ZilchComponent
             {
                 this.Owner.Shoot.BulletType = this.BulletType1;
                 this.Owner.Shoot.Shoot(this.BulletSpeed1, shotAngle, this.ShotPattern1);
-                if (this.ShootSound1 != null)
-                {
-                    this.Space.SoundSpace.PlayCue(this.ShootSound1);
-                }
                 this.BurstTimer1 = this.BurstDelay1;
                 this.ShotsLeft1 -= 1;
             }

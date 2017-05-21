@@ -1,7 +1,7 @@
 SoundCue = 
 {
-	SoundPlayMode PlayMode = Looping,
-	float Volume = 0.07,
+	SoundPlayMode PlayMode = Single,
+	float Volume = 0.04,
 	float VolumeVariation = 0,
 	float Pitch = 0,
 	float PitchVariation = 0,
@@ -14,7 +14,7 @@ SoundCue =
 	Array Sounds = 
 	[
 		{
-			string SoundName = "5998e9de6dd1f54f:Audio_LibraryLevel",
+			string SoundName = "59aaabcbf83e393a:Audio_HurtLibrarian",
 			float Weight = 1,
 		},
 	],

@@ -83,7 +83,10 @@ class HitpointScript : ZilchComponent
                         this.SpellDropBool = true;
                         if(this.Owner.ArchetypeName == "TheLibrarian")
                         {
-                            this.Space.FindObjectByName("Runes").Destroy();
+                            if (this.Space.FindObjectByName("Runes") != null)
+                            {
+                                this.Space.FindObjectByName("Runes").Destroy();
+                            }
                         }
                     }
                     if(this.Owner.BossHealthBarScript != null)
