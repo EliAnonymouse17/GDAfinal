@@ -25,7 +25,7 @@ class TutorialProgression : ZilchComponent
         this.TextArray.Add("This is a health up. It will increase your maximum health.");
         this.TextArray.Add("This is a speed up. It will increase your movement speed.");
         this.TextArray.Add("Now you will face your final challenge!");
-        this.TextArray.Add("Enter the door at the far side of this room to continue.\nIf you wish to restart the tutorial, press F");
+        this.TextArray.Add("Enter the door at the far side of this room to continue.\nIf you wish to restart the tutorial, press R");
         this.TextArray.Add("");
         Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyDown);
         Zero.Connect(this.Space, Events.LeftMouseDown, this.OnLeftMouseDown);
@@ -77,18 +77,22 @@ class TutorialProgression : ZilchComponent
         if (this.TextIndex == 16)
         {
             this.Space.CreateAtPosition(Archetype.HealthUpgradeTutorial, Real3(8,1,0));
-            Console.WriteLine(this.FLock);
         }
         if (this.TextIndex == 17)
         {
             this.Space.CreateAtPosition(Archetype.SpeedUpgradeTutorial, Real3(12,1,0));
         }
+        if (this.TextIndex == 18)
+        {
+            this.FLock = true;
+        }
         if (this.TextIndex == 19)
         {
             this.Space.FindObjectByName("TutorialDoor").Sprite.Visible = true;
             this.Space.FindObjectByName("TutorialDoor").Collider.Ghost = true;
+            this.FLock = true;
         }
-        if (this.TextIndex == 19)
+        if (this.TextIndex == 20)
         {
             this.TextIndex = 0;
         }
@@ -119,6 +123,11 @@ class TutorialProgression : ZilchComponent
             this.IncrementProgression();
         }
         if ((event.Key == Keys.M) && this.TextIndex == 13)
+        {
+            this.IncrementProgression();
+            this.FLock = false;
+        }
+        if ((event.Key == Keys.R) && this.TextIndex == 20)
         {
             this.IncrementProgression();
             this.FLock = false;

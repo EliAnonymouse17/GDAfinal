@@ -18,7 +18,7 @@ class TutorialObjectScript : ZilchComponent
 
     function OnDeath(event : ZilchEvent)
     {
-        this.Space.FindObjectByName("Tutorial NPC").TutorialProgression.IncrementProgression();
         this.Space.FindObjectByName("Tutorial NPC").TutorialProgression.FLock = false;
+        this.Space.FindObjectByName("Tutorial NPC").TutorialProgression.IncrementProgression();
     }
 }

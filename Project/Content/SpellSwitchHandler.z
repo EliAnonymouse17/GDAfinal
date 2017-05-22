@@ -54,6 +54,74 @@ enum SpellTypes
     
 class SpellSwitchHandler : ZilchComponent
 {
+    var HUDPlayerShoot : PlayerShoot
+    {
+        get
+        {
+            if(this.HUDSpell == SpellTypes.NULL)
+            {
+                return this.Owner.NullPlayerShoot;
+            }
+            else if(this.HUDSpell == SpellTypes.BASIC)
+            {
+                return this.Owner.BasicPlayerShoot;
+            }
+            else if(this.HUDSpell == SpellTypes.BUBBLESHOT)
+            {
+                return this.Owner.BubbleShotPlayerShoot;
+            }
+            else if(this.HUDSpell == SpellTypes.EXPLODINGBULLET)
+            {
+                return this.Owner.ExplodingBulletPlayerShoot;
+            }
+            else if(this.HUDSpell == SpellTypes.ICESPEAR)
+            {
+                return this.Owner.IceSpearPlayerShoot;
+            }
+            else if(this.HUDSpell == SpellTypes.SEEKINGARROW)
+            {
+                return this.Owner.SeekingArrowPlayerShoot;
+            }
+            else if(this.HUDSpell == SpellTypes.WATERSTREAM)
+            {
+                return this.Owner.WaterStreamPlayerShoot;
+            }
+            else if (this.HUDSpell == SpellTypes.BONESHOT)
+            {
+                return this.Owner.BoneShotPlayerShoot;
+            }
+            else if (this.HUDSpell == SpellTypes.ACIDPOOL)
+            {
+                return this.Owner.AcidPoolPlayerShoot;
+            }
+            else if (this.HUDSpell == SpellTypes.RINGOFFIRE)
+            {
+                return this.Owner.RingOfFirePlayerShoot;
+            }
+            else if (this.HUDSpell == SpellTypes.RAINBOWSHOT)
+            {
+                return this.Owner.RainbowShotPlayerShoot;
+            }
+            else if (this.HUDSpell == SpellTypes.DEVSHOT)
+            {
+                return this.Owner.DevShotPlayerShoot;
+            }
+            else if (this.HUDSpell == SpellTypes.BLACKHOLE)
+            {
+                return this.Owner.BlackHolePlayerShoot;
+            }
+            else
+            {
+                return this.Owner.VampireBatPlayerShoot;
+            }
+            
+        }
+        set
+        {
+            
+        }
+    }
+    
     var CurrentPlayerShoot : PlayerShoot
     {
         get
@@ -137,6 +205,21 @@ class SpellSwitchHandler : ZilchComponent
             }
         }
     }
+    var HUDSpell : SpellTypes
+    {
+        get
+        {
+            return this.SpellArray[this.HUDSpellIndex];
+        }
+        set
+        {
+            var index = this.SpellArray.FindFirstIndex(value);
+            if(index >= 0)
+            {
+                this.HUDSpellIndex = index;
+            }
+        }
+    }
     var PrivateSpellIndex : Integer = 0;
     var SpellIndex : Integer
     {
@@ -154,6 +237,26 @@ class SpellSwitchHandler : ZilchComponent
             else 
             {
                 this.PrivateSpellIndex = value;
+            }
+        }
+    }
+    var PRVHUDIndex : Integer = 0;
+    var HUDSpellIndex : Integer
+    {
+        get {return this.PRVHUDIndex;}
+        set 
+        {
+            if(value > this.SpellArray.Count - 1)
+            {
+                this.PRVHUDIndex = 0;
+            }
+            else if (value < 0)
+            {
+                this.PRVHUDIndex = this.SpellArray.Count - 1;
+            }
+            else 
+            {
+                this.PRVHUDIndex = value;
             }
         }
     }
@@ -183,9 +286,19 @@ class SpellSwitchHandler : ZilchComponent
     function RefreshSpellHUD()
     {
         var childCamera = this.Owner.FindChildByName("Camera");
-        
         if(childCamera != null)
         {
+            if (this.SpellArray.Count > 1)
+            {
+                this.HUDSpellIndex = this.SpellIndex-1;
+                childCamera.FindChildByName("SpellHUDLeft").FindChildByName("SpellIcon").Sprite.SpriteSource = this.HUDPlayerShoot.BulletSprite;
+            }
+            if (this.SpellArray.Count > 1)
+            {
+                this.HUDSpellIndex = this.SpellIndex+1;
+                childCamera.FindChildByName("SpellHUDRight").FindChildByName("SpellIcon").Sprite.SpriteSource = this.HUDPlayerShoot.BulletSprite;
+            }
+            
             childCamera.FindChildByName("SpellHUD").FindChildByName("SpellIcon").Sprite.SpriteSource = this.CurrentPlayerShoot.BulletSprite;
             childCamera.FindChildByName("SpellHUD").FindChildByName("SpellName").SpriteText.Text = this.CurrentPlayerShoot.SpellName;
         }
@@ -265,7 +378,12 @@ class SpellSwitchHandler : ZilchComponent
         Zero.Connect(Zero.Keyboard, Events.KeyDown, this.OnKeyUpdate);
         Zero.Connect(this.Space, Events.MouseScroll, this.OnMouseUpdate);
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
-        
+        var childCamera = this.Owner.FindChildByName("Camera");
+        if (childCamera != null)
+        {
+            childCamera.FindChildByName("SpellHUDLeft").FindChildByName("SpellIcon").Sprite.SpriteSource = SpriteSource.Texture_Invisible;
+            childCamera.FindChildByName("SpellHUDRight").FindChildByName("SpellIcon").Sprite.SpriteSource = SpriteSource.Texture_Invisible;
+        }
         this.RefreshSpellHUD();
     }
 
