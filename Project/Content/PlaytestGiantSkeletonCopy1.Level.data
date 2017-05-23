@@ -192,12 +192,19 @@ Level =
 			string Name = "Heart Pickup",
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "598ddf2a8e6d2985:Ragnar",
 		LinkId = 
 		{
 			uint Id = 7,
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+		Archetyped = 
+		{
+			string Name = "598ddf2a8e6d2985:Ragnar",
 		},
 		Transform = 
 		{
@@ -205,9 +212,224 @@ Level =
 			Vec3 Scale = [2.5, 2.5, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		Sprite = 
 		{
-			string Name = "Enemy",
+			bool Visible = true,
+			bool VisibilityCulling = true,
+			bool VisibilityEvents = true,
+			bool CastShadows = false,
+			Vec4 Color = [1, 1, 1, 1],
+			BlendMode BlendMode = Alpha,
+			SpriteGeometryMode GeometryMode = ZPlane,
+			string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+			string SpriteSource = "59dad58c23978aa2:Texture_RagnarIdle0",
+			bool RenderMask = false,
+			bool FlipX = false,
+			bool FlipY = false,
+			bool AnimationActive = true,
+			float AnimationSpeed = 1,
+			uint StartFrame = 0,
+		},
+		BoxCollider = 
+		{
+			bool Ghost = false,
+			bool SendsMessages = true,
+			bool Seamless = true,
+			string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+			string SerializedGroupName = "580e65c5299dde20:Enemy",
+			Vec3 Offset = [0, -0.3, 0],
+			Vec3 Size = [0.8, 1, 0.5],
+		},
+		RigidBody = 
+		{
+			bool Static = false,
+			bool Asleep = false,
+			bool Kinematic = true,
+			bool RotationLocked = true,
+			bool Mode2D = true,
+			bool AllowSleep = false,
+			bool Inherit2DMode = true,
+			Vec3 Velocity = [0, 0, 0],
+			Vec3 AngularVelocity = [0, 0, 0],
+		},
+		HitpointScript = 
+		{
+			int PrivateHP = 110,
+			int MaxHP = 5,
+			bool MaxHPBoolean = false,
+			string HurtSound = "",
+			string DeathSound = "",
+			float HurtDuration = 0.1,
+			string SpawnOnDeath = "",
+			int SpawnCount = 1,
+			bool FlameImmune = true,
+		},
+		Shoot = 
+		{
+			string BulletType = "5804092c3eb1cc11:EnemyBoneShot",
+			int RingCount = 3,
+			float RingOffset = 90,
+			int SpreadBullets = 16,
+		},
+		Orientation = 
+		{
+			Vec3 GlobalUp = [0, 1, 0],
+			Vec3 UpVector = [0, 0, 1],
+			Vec3 ForwardVector = [0, 1, 0],
+			OrientationBases DefaultBases = ForwardYUpZ,
+		},
+		SpellDrop = 
+		{
+			Enum SpellDrop1 = EXPLODINGBULLET,
+			Enum SpellDrop2 = RINGOFFIRE,
+			Enum SpellDrop3 = ACIDPOOL,
+			string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
+			string SpellDropSprite2 = "587c2b12779d37c6:Texture_MagicMissle",
+			string SpellDropSprite3 = "59c395ad9a232790:Animation_AcidPool",
+			bool TreasureDropBool = false,
+		},
+		BossHealthBarScript = 
+		{
+			float HealthBarSize = 15,
+			string HealthBarName = "BossHealthBar",
+		},
+		ChangeLevelOnDeath = 
+		{
+			string LevelToLoad = "59df84c1f2e0c939:WinLevel",
+		},
+		BossAttackLogic = 
+		{
+			string StandTexture = "59dad58c23978aa2:Texture_RagnarIdle0",
+			float AttackDelay1 = 8,
+			float BulletSpeed1 = 100,
+			Enum ShotPattern1 = SPREAD,
+			string BulletType1 = "598e5f6fd050673b:EnemyFlamingBullet",
+			string AttackAnimation1 = "59c1dd27aad3a4bf:Animation_RagnarFireAttack",
+			string ShootSound1 = "",
+			float BurstDelay1 = 0.1,
+			int BurstCount1 = 20,
+			Vec4 Space1 = [1, 1, 1, 1],
+			float AttackDelay2 = 11,
+			float BulletSpeed2 = 1200,
+			Enum ShotPattern2 = SINGLE,
+			string BulletType2 = "598de625b28f596b:LavaRock",
+			string AttackAnimation2 = "",
+			string ShootSound2 = "",
+			float BurstDelay2 = 0.6,
+			int BurstCount2 = 5,
+			Vec4 Space2 = [1, 1, 1, 1],
+			float AttackDelay3 = 12,
+			float BulletSpeed3 = 2800,
+			Enum ShotPattern3 = SINGLE,
+			string BulletType3 = "598de812fb7af5cf:DIEINSECT",
+			string AttackAnimation3 = "59c11d9a63bab515:Animation_RagnarDIEINSECT",
+			string ShootSound3 = "",
+			float BurstDelay3 = 0,
+			int BurstCount3 = 1,
+			Vec4 Space3 = [1, 1, 1, 1],
+			float ChallengeAttackDelay1 = 6.5,
+			float ChallengeBulletSpeed1 = 120,
+			Enum ChallengeShotPattern1 = SPREAD,
+			string ChallengeBulletType1 = "598e5f6fd050673b:EnemyFlamingBullet",
+			float BurstDelay4 = 0.1,
+			int BurstCount4 = 25,
+			Vec4 Space4 = [1, 1, 1, 1],
+			float ChallengeAttackDelay2 = 15,
+			float ChallengeBulletSpeed2 = 1000,
+			Enum ChallengeShotPattern2 = SINGLE,
+			string ChallengeBulletType2 = "5997083aad1f9206:RagnarLavaShot",
+			float BurstDelay5 = 0,
+			int BurstCount5 = 1,
+			Vec4 Space5 = [1, 1, 1, 1],
+			float ChallengeAttackDelay3 = 15,
+			float ChallengeBulletSpeed3 = 2900,
+			Enum ChallengeShotPattern3 = SINGLE,
+			string ChallengeBulletType3 = "598de812fb7af5cf:DIEINSECT",
+			float BurstDelay6 = 5,
+			int BurstCount6 = 2,
+			float StageSwitch = 35,
+			Vec4 ChallengeColor = [1, 1, 1, 1],
+			float AttackTimer1 = 3,
+			float AttackTimer2 = 6,
+			float AttackTimer3 = 8,
+			float ChallengeAttackTimer1 = 2,
+			float ChallengeAttackTimer2 = 5,
+			float ChallengeAttackTimer3 = 4,
+		},
+		Hierarchy = 
+		{
+			ArchetypeInstance = 
+			{
+				string Name = "59a180e9d8f36e27:Blockade3",
+				LinkId = 
+				{
+					uint Id = 8,
+				},
+				Transform = 
+				{
+					Vec3 Translation = [4.5, -3.5, 0],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Named = 
+				{
+					string Name = "Item",
+				},
+			},
+			ArchetypeInstance = 
+			{
+				string Name = "59a180e9d8f36e27:Blockade3",
+				LinkId = 
+				{
+					uint Id = 9,
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-2.5, -3.5, 0],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Named = 
+				{
+					string Name = "Item",
+				},
+			},
+			ArchetypeInstance = 
+			{
+				string Name = "59a180e9d8f36e27:Blockade3",
+				LinkId = 
+				{
+					uint Id = 10,
+				},
+				Transform = 
+				{
+					Vec3 Translation = [5.5, 1.5, 0],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Named = 
+				{
+					string Name = "Item",
+				},
+			},
+			ArchetypeInstance = 
+			{
+				string Name = "59a180e9d8f36e27:Blockade3",
+				LinkId = 
+				{
+					uint Id = 11,
+				},
+				Transform = 
+				{
+					Vec3 Translation = [-4.5, 1.5, 0],
+					Vec3 Scale = [1, 1, 1],
+					Quat Rotation = [0, 0, 0, 1],
+				},
+				Named = 
+				{
+					string Name = "Item",
+				},
+			},
 		},
 	},
 	ArchetypeInstance = 
@@ -215,7 +437,7 @@ Level =
 		string Name = "584fd89208ba642f:TMSquare24",
 		LinkId = 
 		{
-			uint Id = 8,
+			uint Id = 12,
 		},
 		Transform = 
 		{
