@@ -8,10 +8,6 @@ Cog =
 	{
 		string Name = "Enemy",
 	},
-	Archetyped = 
-	{
-		string Name = "5804081ec54e02a3:BoneSpawner",
-	},
 	Transform = 
 	{
 		Vec3 Translation = [0, 0, 0],
@@ -28,7 +24,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "585fa9b4d9ed16a3:Texture_PileOfBones000",
+		string SpriteSource = "58230430c7b3754c:Texture_SkeletonStill",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -36,13 +32,23 @@ Cog =
 		float AnimationSpeed = 1,
 		uint StartFrame = 0,
 	},
+	BoxCollider = 
+	{
+		bool Ghost = false,
+		bool SendsMessages = true,
+		bool Seamless = true,
+		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
+		string SerializedGroupName = "580e65c5299dde20:Enemy",
+		Vec3 Offset = [-0.05, 0, 0],
+		Vec3 Size = [0.375, 1, 0.5],
+	},
 	RigidBody = 
 	{
 		bool Static = false,
 		bool Asleep = false,
-		bool Kinematic = true,
+		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -50,25 +56,22 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 1,
+		int PrivateHP = 4,
 		int MaxHP = 5,
 		bool MaxHPBoolean = false,
-		string HurtSound = "",
-		string DeathSound = "",
+		string HurtSound = "5854e373c41f5152:Audio_BasicHurtEnemy",
+		string DeathSound = "5854e0e94b4d9613:Audio_SkeletonDeath",
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
 		bool FlameImmune = false,
 	},
-	BoxCollider = 
+	Shoot = 
 	{
-		bool Ghost = false,
-		bool SendsMessages = true,
-		bool Seamless = true,
-		string MaterialName = "4de020863e872da8:DefaultPhysicsMaterial",
-		string SerializedGroupName = "580474add6d2282f:BoneSpawner",
-		Vec3 Offset = [0, 0, 0],
-		Vec3 Size = [0.5, 0.5, 0.5],
+		string BulletType = "580e65c5299defb0:EnemyBullet",
+		int RingCount = 10,
+		float RingOffset = 90,
+		int SpreadBullets = 3,
 	},
 	Orientation = 
 	{
@@ -77,14 +80,30 @@ Cog =
 		Vec3 ForwardVector = [0, 1, 0],
 		OrientationBases DefaultBases = ForwardYUpZ,
 	},
-	BoneSpawnerLogic = 
+	EnemyShoot = 
 	{
-		float SpawnTimer = 4,
-		string EnemyToSpawn = "59a1a6f993ebe7ed:GSSkeleton",
+		float BulletDelay = 1,
+		float BulletSpeed = 150,
+		Enum ShotPattern = SINGLE,
+		string ShootSound = "598b7d3bf34203ab:EnemyMagicMissile",
+		string WalkAnimation = "",
+		string AttackAnimation = "",
+		float BurstDelay = 0,
+		int BurstCount = 1,
+	},
+	SideToSide = 
+	{
 	},
 	EnemyHealthbarScript = 
 	{
-		float HealthBarSize = 1,
+		float HealthBarSize = 3,
+	},
+	DestroyTimer = 
+	{
+		float Time = 3,
+		float Time2 = 3.5,
+		bool Random = true,
+		bool Warp = true,
 	},
 	Hierarchy = 
 	{
