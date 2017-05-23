@@ -28,7 +28,7 @@ Cog =
 		BlendMode BlendMode = Alpha,
 		SpriteGeometryMode GeometryMode = ZPlane,
 		string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-		string SpriteSource = "585fc298140f20a7:Texture_WandmanFront000",
+		string SpriteSource = "59a17c8dc5973f13:animation_WandmanIdle",
 		bool RenderMask = false,
 		bool FlipX = false,
 		bool FlipY = false,
@@ -93,7 +93,7 @@ Cog =
 	},
 	PlayerAnimations = 
 	{
-		string PlayerStand = "585fc298140f20a7:Texture_WandmanFront000",
+		string PlayerStand = "59a17c8dc5973f13:animation_WandmanIdle",
 		string PlayerWalkSide = "58586c83879fbdf0:animation_WandmanWalkRight",
 		string PlayerWalkUp = "58586c25bcd98f54:animation_WandmanWalkBack",
 		string PlayerWalkDown = "58586dcfa50649dc:animation_WandmanWalkForward",

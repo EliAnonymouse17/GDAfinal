@@ -37,25 +37,17 @@ class ExplodingBulletScript : ZilchComponent
             {
                 return;
             }
-        } 
+        }
         this.BulletOrientation = this.Owner.Transform.EulerAngles.Z;
         var currentAngle = this.BulletOrientation;
-        if (this.NumBullets == 1)
-        {
-            currentAngle -= Math.ToRadians(90);
-            var bullet = this.Space.CreateAtPosition(this.ArchetypeToSpawn, this.Owner.Transform.Translation);
-            var fireDir = Real3(Math.Cos(currentAngle), Math.Sin(currentAngle), 0);
-            var rotationAngle = Math.ATan2(fireDir.Y, fireDir.X);
-            bullet.RigidBody.ApplyForce(fireDir * this.SpawnedBulletVelocity);
-            bullet.Transform.SetEulerAnglesXYZ(0, 0, rotationAngle - 3.14/2);
-            
-        }
-        if (this.NumBullets != 0 && this.NumBullets != 1)
+        if (this.NumBullets != 0)
         {
             var angleStep = (Math.Pi * 2) / this.NumBullets;
             
             for(var i = 0; i < this.NumBullets; ++i)
             {
+                
+                
                 var bullet = this.Space.CreateAtPosition(this.ArchetypeToSpawn, this.Owner.Transform.Translation);
                 var fireDir = Real3(Math.Cos(currentAngle), Math.Sin(currentAngle), 0);
                 var rotationAngle = Math.ATan2(fireDir.Y, fireDir.X);
