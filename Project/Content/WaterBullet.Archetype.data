@@ -42,7 +42,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -110,10 +110,10 @@ Cog =
 	},
 	ExplodingBulletScript = 
 	{
-		float AngleOffset = 90,
+		float AngleOffset = 0,
 		string ArchetypeToSpawn = "5991d3bcfd77ce35:WaterBullet2",
 		float SpawnedBulletVelocity = 180,
-		int NumBullets = 2,
+		int NumBullets = 1,
 		string BoomSound = "585fc00d67fa4059:ExplodingBulletImpact",
 		bool DestroyOwner = true,
 	},
