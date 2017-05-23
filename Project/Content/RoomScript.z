@@ -112,9 +112,7 @@ class RoomScript : ZilchComponent
         this.Map = this.InitMap();
         this.MapPosition = Integer2(0, 0);
         this.CurrentEnemyList = new Array[RoomObject]();
-        this.CurrentEnemyList.Add(new RoomObject(Archetype.Skeleton, Real3(-7, 7.5, 0)));
         this.CurrentItemList = new Array[RoomObject]();
-        this.CurrentItemList.Add(new RoomObject(Archetype.Blockade, Real3(7, 7.5, 0)));
         this.CurrentRoom = new Room(this.CurrentEnemyList, this.CurrentItemList, Archetype.TMSquare22, 0, RoomType.BASIC, this.World);
         Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
     }
@@ -361,7 +359,12 @@ class RoomScript : ZilchComponent
             
             if(temp < 7)
             {
-                items.Add(new RoomObject(Archetype.Blockade, position));
+                if(this.World == 1)
+                    items.Add(new RoomObject(Archetype.Blockade, position));
+                if(this.World == 2)
+                    items.Add(new RoomObject(Archetype.Blockade2, position));
+                if(this.World == 3)
+                    items.Add(new RoomObject(Archetype.Blockade3, position));
             }
             else
             {
