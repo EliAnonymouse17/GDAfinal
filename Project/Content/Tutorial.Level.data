@@ -8060,12 +8060,19 @@ Level =
 			},
 		},
 	},
-	ArchetypeInstance = 
+	Cog = 
 	{
-		string Name = "5991d5b6966a2720:Room",
 		LinkId = 
 		{
 			uint Id = 185,
+		},
+		Named = 
+		{
+			string Name = "Room",
+		},
+		Archetyped = 
+		{
+			string Name = "5991d5b6966a2720:Room",
 		},
 		Transform = 
 		{
@@ -8073,9 +8080,9 @@ Level =
 			Vec3 Scale = [1, 1, 1],
 			Quat Rotation = [0, 0, 0, 1],
 		},
-		Named = 
+		RoomScript = 
 		{
-			string Name = "Room",
+			int World = 1,
 		},
 	},
 },

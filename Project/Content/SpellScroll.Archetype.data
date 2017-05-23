@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [6.33185, 10.725, 0],
+		Vec3 Translation = [-0.163332, 0.359134, 0],
 		Vec3 Scale = [1, 1, 0.1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -49,7 +49,7 @@ Cog =
 	SpellScrollScript = 
 	{
 		Enum Spell = ICESPEAR,
-		string SpellIcon = "583a1b2cfe6b1569:Texture_BubbleBullet",
+		string SpellIcon = "5858739c8bef319d:Texture_BigIce",
 	},
 	Hierarchy = 
 	{

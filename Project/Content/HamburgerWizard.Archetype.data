@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-1.1704, 7.5, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [2.5, 2.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -66,8 +66,8 @@ Cog =
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,
-		string SpawnOnDeath = "",
-		int SpawnCount = 1,
+		string SpawnOnDeath = "59a1aa372822187a:BTWText",
+		int SpawnCount = 0,
 		bool FlameImmune = false,
 	},
 	Shoot = 
@@ -147,10 +147,6 @@ Cog =
 		float ChallengeAttackTimer1 = 4,
 		float ChallengeAttackTimer2 = 1,
 		float ChallengeAttackTimer3 = 2,
-	},
-	ChangeLevelOnDeath = 
-	{
-		string LevelToLoad = "582db5802eefae05:PlaytestMainMenu",
 	},
 	Hierarchy = 
 	{
