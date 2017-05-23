@@ -293,10 +293,6 @@ Level =
 			float HealthBarSize = 15,
 			string HealthBarName = "BossHealthBar",
 		},
-		ChangeLevelOnDeath = 
-		{
-			string LevelToLoad = "59df84c1f2e0c939:WinLevel",
-		},
 		BossAttackLogic = 
 		{
 			string StandTexture = "59dad58c23978aa2:Texture_RagnarIdle0",
@@ -448,6 +444,60 @@ Level =
 		Named = 
 		{
 			string Name = "TileMap",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58681d50bb219a4c:TheLibrarian",
+		LinkId = 
+		{
+			uint Id = 13,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-0.864765, 10.1345, 0],
+			Vec3 Scale = [1.5, 1.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "5991c7cfae23c0c6:LibrarianRunes",
+		LinkId = 
+		{
+			uint Id = 14,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-0.864765, 10.2072, 0],
+			Vec3 Scale = [1, 1, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Runes",
+		},
+	},
+	ArchetypeInstance = 
+	{
+		string Name = "58040c758067a641:GiantSkeleton",
+		LinkId = 
+		{
+			uint Id = 15,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [17.3901, 7.57745, 0],
+			Vec3 Scale = [2.5, 2.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
 		},
 	},
 },
