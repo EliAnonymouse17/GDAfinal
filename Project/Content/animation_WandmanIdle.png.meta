@@ -3,12 +3,12 @@ ImageContent =
 	SpriteSourceBuilder = 
 	{
 		string Name = "animation_WandmanIdle",
-		uint64 ResourceId = 599700d11a24d243,
+		uint64 ResourceId = 59a17c8dc5973f13,
 		uint64 AtlasId = 5274cf95e4a661fd,
 		uint FrameSizeX = 32,
 		uint FrameSizeY = 32,
-		uint FrameCount = 5,
-		float FrameDelay = 0.125,
+		uint FrameCount = 4,
+		float FrameDelay = 0.166667,
 		float OriginX = 16,
 		float OriginY = 16,
 		float PixelsPerUnit = 20,
