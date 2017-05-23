@@ -205,22 +205,4 @@ Level =
 			string Name = "TileMap",
 		},
 	},
-	ArchetypeInstance = 
-	{
-		string Name = "58639e0fc7f7898f:Apprentice",
-		LinkId = 
-		{
-			uint Id = 7,
-		},
-		Transform = 
-		{
-			Vec3 Translation = [-5.32292, 4.86309, 20],
-			Vec3 Scale = [1, 1, 1],
-			Quat Rotation = [0, 0, 0, 1],
-		},
-		Named = 
-		{
-			string Name = "Enemy",
-		},
-	},
 },
