@@ -166,15 +166,15 @@ Cog =
 	{
 		ArchetypeInstance = 
 		{
-			string Name = "58acdd7949bd72ac:Blockade",
+			string Name = "59a180e9d8f36e27:Blockade3",
 			LinkId = 
 			{
 				uint Id = 2,
 			},
 			Transform = 
 			{
-				Vec3 Translation = [5.64084, 1.70759, 0],
-				Vec3 Scale = [1.2, 0.8, 1],
+				Vec3 Translation = [4.5, -3.5, 0],
+				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
 			Named = 
@@ -184,15 +184,15 @@ Cog =
 		},
 		ArchetypeInstance = 
 		{
-			string Name = "58acdd7949bd72ac:Blockade",
+			string Name = "59a180e9d8f36e27:Blockade3",
 			LinkId = 
 			{
 				uint Id = 3,
 			},
 			Transform = 
 			{
-				Vec3 Translation = [-2.44057, -3.53403, 0],
-				Vec3 Scale = [1.2, 0.8, 1],
+				Vec3 Translation = [-2.5, -3.5, 0],
+				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
 			Named = 
@@ -202,15 +202,15 @@ Cog =
 		},
 		ArchetypeInstance = 
 		{
-			string Name = "58acdd7949bd72ac:Blockade",
+			string Name = "59a180e9d8f36e27:Blockade3",
 			LinkId = 
 			{
 				uint Id = 4,
 			},
 			Transform = 
 			{
-				Vec3 Translation = [-5.12016, 1.56073, 0],
-				Vec3 Scale = [0.8, 1.2, 1],
+				Vec3 Translation = [5.5, 1.5, 0],
+				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
 			Named = 
@@ -220,15 +220,15 @@ Cog =
 		},
 		ArchetypeInstance = 
 		{
-			string Name = "58acdd7949bd72ac:Blockade",
+			string Name = "59a180e9d8f36e27:Blockade3",
 			LinkId = 
 			{
 				uint Id = 5,
 			},
 			Transform = 
 			{
-				Vec3 Translation = [4.52068, -3.40052, 0],
-				Vec3 Scale = [1, 1.2, 1],
+				Vec3 Translation = [-4.5, 1.5, 0],
+				Vec3 Scale = [1, 1, 1],
 				Quat Rotation = [0, 0, 0, 1],
 			},
 			Named = 
