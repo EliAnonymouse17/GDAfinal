@@ -8,6 +8,10 @@ Cog =
 	{
 		string Name = "Enemy",
 	},
+	Archetyped = 
+	{
+		string Name = "59a1a6f993ebe7ed:GSSkeleton",
+	},
 	Transform = 
 	{
 		Vec3 Translation = [0, 0, 0],
@@ -56,7 +60,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 4,
+		int PrivateHP = 3,
 		int MaxHP = 5,
 		bool MaxHPBoolean = false,
 		string HurtSound = "5854e373c41f5152:Audio_BasicHurtEnemy",
@@ -100,8 +104,8 @@ Cog =
 	},
 	DestroyTimer = 
 	{
-		float Time = 3,
-		float Time2 = 3.5,
+		float Time = 5,
+		float Time2 = 5.5,
 		bool Random = true,
 		bool Warp = true,
 	},

@@ -42,7 +42,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = true,
 		bool RotationLocked = true,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -50,7 +50,7 @@ Cog =
 	},
 	HitpointScript = 
 	{
-		int PrivateHP = 1,
+		int PrivateHP = 2,
 		int MaxHP = 5,
 		bool MaxHPBoolean = false,
 		string HurtSound = "",
