@@ -59,7 +59,7 @@ Cog =
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
 		bool HealthDropBoolean = true,
-		int HealthDropChance = 10,
+		int HealthDropChance = 7,
 		bool FlameImmune = false,
 	},
 	BoxCollider = 
