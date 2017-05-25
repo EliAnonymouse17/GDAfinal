@@ -46,6 +46,8 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "598b172e72a8d5ef:LavaPool",
 		int SpawnCount = 1,
+		bool HealthDropBoolean = true,
+		int HealthDropChance = 6,
 		bool FlameImmune = true,
 	},
 	BoxCollider = 

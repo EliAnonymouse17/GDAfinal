@@ -185,6 +185,8 @@ Level =
 			float HurtDuration = 0.1,
 			string SpawnOnDeath = "",
 			int SpawnCount = 1,
+			bool HealthDropBoolean = false,
+			int HealthDropChance = 6,
 			bool FlameImmune = false,
 		},
 		PlayerFade = 
@@ -381,9 +383,9 @@ Level =
 		RingOfFirePlayerShoot = 
 		{
 			Enum SpellType = RINGOFFIRE,
-			bool UnlockAtStart = false,
+			bool UnlockAtStart = true,
 			string SpellName = "Ring Of Fire",
-			string BulletSprite = "587c2b12779d37c6:Texture_MagicMissle",
+			string BulletSprite = "59f2c332ac949314:Texture_FlamingBullet",
 			int SpreadBullets = 3,
 			int RingCount = 26,
 			string BulletType = "598dd55410ce6a8a:FlamingBullet",
@@ -1102,7 +1104,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 26.9275,
+			float Size = 18.05,
 		},
 		EditorCameraController = 
 		{

@@ -71,6 +71,8 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "587c02da03a631fd:Fireling",
 		int SpawnCount = 4,
+		bool HealthDropBoolean = true,
+		int HealthDropChance = 8,
 		bool FlameImmune = false,
 	},
 	BoxCollider = 

@@ -46,6 +46,12 @@ class HitpointScript : ZilchComponent
     [Property]
     var SpawnCount : Integer = 1;
     
+    [Property]
+    var HealthDropBoolean : Boolean = false;
+    
+    [Property]
+    var HealthDropChance : Integer = 6;
+    
     var DidSpawn : Boolean = false;
     
     var FlamingTimer : Real = 0;
@@ -54,6 +60,8 @@ class HitpointScript : ZilchComponent
     
     [Property]
     var FlameImmune : Boolean = false;
+    
+    var RandomGenerator : Random = Random();
     
     //Manipulates HP by accessing through other scripts
     var HP : Integer
@@ -76,6 +84,15 @@ class HitpointScript : ZilchComponent
             {
                 if(this.Owner.Name == "Enemy")
                 {
+                    if(this.HealthDropBoolean)
+                    {
+                        var healthRoll = this.RandomGenerator.DieRoll(this.HealthDropChance);
+                        
+                        if(healthRoll == this.HealthDropChance)
+                        {
+                            this.Space.CreateAtPosition(Archetype.HeartPickup, this.Owner.Transform.WorldTranslation);
+                        }
+                    }
                     if(this.Owner.SpellDrop != null && !this.SpellDropBool)
                     {
                         this.Owner.SpellDrop.SpellDrop();
