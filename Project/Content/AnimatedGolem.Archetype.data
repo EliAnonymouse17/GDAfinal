@@ -46,6 +46,8 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "584ffadd5e943f48:MiniGolem",
 		int SpawnCount = 2,
+		bool HealthDropBoolean = true,
+		int HealthDropChance = 6,
 		bool FlameImmune = false,
 	},
 	BoxCollider = 
@@ -64,7 +66,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -111,7 +113,6 @@ Cog =
 	EnemyHealthbarScript = 
 	{
 		float HealthBarSize = 10,
-		float YSize = 1.5,
 	},
 	Hierarchy = 
 	{
