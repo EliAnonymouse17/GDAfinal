@@ -17,10 +17,10 @@ class VampireBatScript : ZilchComponent
         }
         
         var randomGenerator = Random();
-        var restoreRoll = randomGenerator.DieRoll(7);
+        var restoreRoll = randomGenerator.DieRoll(9);
         
         
-        if(restoreRoll == 1)
+        if(restoreRoll == 9)
         {
             this.Space.FindObjectByName("Player").HitpointScript.PrivateHP += this.HealthToRestore;
         }

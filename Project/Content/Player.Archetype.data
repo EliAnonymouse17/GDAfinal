@@ -79,6 +79,8 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
+		bool HealthDropBoolean = false,
+		int HealthDropChance = 6,
 		bool FlameImmune = false,
 	},
 	PlayerFade = 
