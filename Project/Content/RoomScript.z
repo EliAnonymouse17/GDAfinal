@@ -126,6 +126,7 @@ class RoomScript : ZilchComponent
             {
                 this.Space.FindObjectByName("Player").Transform.WorldTranslation = 
                     this.GetDoorPosition(this.OppositeDirection(this.LoadDirection));
+                this.Space.FindObjectByName("Loading").Sprite.Visible = false;
             }
         }
         if(this.AttackDelay > 0)
@@ -617,12 +618,12 @@ class RoomScript : ZilchComponent
             this.CurrentRoom = this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer];
         this.Minimap.SetNodeState(this.MapPosition, MMNodeState.Current);
         this.CurrentRoom.InitRoom(this.Space);
-        this.Space.FindObjectByName("Player").Transform.Translation = Real3(0, 0, 0);
+        this.Space.FindObjectByName("Loading").Sprite.Visible = true;
         foreach(var door in this.Space.FindAllObjectsByName("Door"))
         {
             door.Door.SetActive(false);
         }
-        this.Timer = 0.1;
+        this.Timer = 0.3;
         this.LoadDirection = direction;
         this.AttackDelay = 1;
         if(this.MapPosition == Integer2(2, 2))
