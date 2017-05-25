@@ -24,7 +24,7 @@ Cog =
 		Enum SpellDrop2 = RINGOFFIRE,
 		Enum SpellDrop3 = VAMPIREBAT,
 		string SpellDropSprite1 = "5274db4c2e7c11f9:Circle",
-		string SpellDropSprite2 = "587c2b12779d37c6:Texture_MagicMissle",
+		string SpellDropSprite2 = "59f2c332ac949314:Texture_FlamingBullet",
 		string SpellDropSprite3 = "5991a8d66cbccab3:Animation_VampireBat",
 		bool TreasureDropBool = true,
 	},
