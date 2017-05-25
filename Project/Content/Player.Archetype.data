@@ -403,7 +403,7 @@ Cog =
 					},
 					Transform = 
 					{
-						Vec3 Translation = [-18.6753, 8.64901, -40],
+						Vec3 Translation = [-12.9372, 7.10413, -40],
 						Vec3 Scale = [1, 1, 1],
 						Quat Rotation = [0, 0, 0, 1],
 					},
@@ -489,48 +489,11 @@ Cog =
 					},
 					Named = 
 					{
-						string Name = "Score",
-					},
-					Transform = 
-					{
-						Vec3 Translation = [-12.2024, 9.1349, -20],
-						Vec3 Scale = [1, 1, 1],
-						Quat Rotation = [0, 0, 0, 1],
-					},
-					SpriteText = 
-					{
-						bool Visible = true,
-						bool VisibilityCulling = true,
-						bool VisibilityEvents = true,
-						bool CastShadows = false,
-						Vec4 Color = [1, 1, 1, 1],
-						BlendMode BlendMode = Alpha,
-						SpriteGeometryMode GeometryMode = ZPlane,
-						string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
-						string FontName = "4e7bac697bec55c5:Verdana",
-						uint FontSize = 72,
-						string Text = "0",
-						TextAlign Align = Left,
-						float PixelsPerUnit = 100,
-						bool Smoothing = true,
-					},
-					Score = 
-					{
-					},
-				},
-				Cog = 
-				{
-					LinkId = 
-					{
-						uint Id = 6,
-					},
-					Named = 
-					{
 						string Name = "FadeCooldownParent",
 					},
 					Transform = 
 					{
-						Vec3 Translation = [-18.7283, 7.0545, -20],
+						Vec3 Translation = [-12.9902, 5.50961, -20],
 						Vec3 Scale = [1, 1, 1],
 						Quat Rotation = [0, 0, 0, 1],
 					},
@@ -561,7 +524,7 @@ Cog =
 						{
 							LinkId = 
 							{
-								uint Id = 7,
+								uint Id = 6,
 							},
 							Named = 
 							{
@@ -598,7 +561,7 @@ Cog =
 				{
 					LinkId = 
 					{
-						uint Id = 8,
+						uint Id = 7,
 					},
 					Named = 
 					{
@@ -606,7 +569,7 @@ Cog =
 					},
 					Transform = 
 					{
-						Vec3 Translation = [-16.7638, 5.64809, -20],
+						Vec3 Translation = [-11.0257, 4.1032, -20],
 						Vec3 Scale = [1, 1, 1],
 						Quat Rotation = [0, 0, 0, 1],
 					},
@@ -634,7 +597,7 @@ Cog =
 						{
 							LinkId = 
 							{
-								uint Id = 9,
+								uint Id = 8,
 							},
 							Named = 
 							{
@@ -669,7 +632,7 @@ Cog =
 						{
 							LinkId = 
 							{
-								uint Id = 10,
+								uint Id = 9,
 							},
 							Named = 
 							{
@@ -705,7 +668,7 @@ Cog =
 				{
 					LinkId = 
 					{
-						uint Id = 11,
+						uint Id = 10,
 					},
 					Named = 
 					{
@@ -743,7 +706,7 @@ Cog =
 				{
 					LinkId = 
 					{
-						uint Id = 12,
+						uint Id = 11,
 					},
 					Named = 
 					{
@@ -784,7 +747,7 @@ Cog =
 						{
 							LinkId = 
 							{
-								uint Id = 13,
+								uint Id = 12,
 							},
 							Named = 
 							{
@@ -826,7 +789,7 @@ Cog =
 				{
 					LinkId = 
 					{
-						uint Id = 14,
+						uint Id = 13,
 					},
 					Named = 
 					{
@@ -834,7 +797,7 @@ Cog =
 					},
 					Transform = 
 					{
-						Vec3 Translation = [-18.5638, 5.64809, -20],
+						Vec3 Translation = [-12.8257, 4.1032, -20],
 						Vec3 Scale = [0.75, 0.75, 1],
 						Quat Rotation = [0, 0, 0, 1],
 					},
@@ -862,7 +825,7 @@ Cog =
 						{
 							LinkId = 
 							{
-								uint Id = 15,
+								uint Id = 14,
 							},
 							Named = 
 							{
@@ -899,7 +862,7 @@ Cog =
 				{
 					LinkId = 
 					{
-						uint Id = 16,
+						uint Id = 15,
 					},
 					Named = 
 					{
@@ -907,7 +870,7 @@ Cog =
 					},
 					Transform = 
 					{
-						Vec3 Translation = [-14.9638, 5.64809, -20],
+						Vec3 Translation = [-11.3223, 4.7653, -20],
 						Vec3 Scale = [0.75, 0.75, 1],
 						Quat Rotation = [0, 0, 0, 1],
 					},
@@ -935,7 +898,7 @@ Cog =
 						{
 							LinkId = 
 							{
-								uint Id = 17,
+								uint Id = 16,
 							},
 							Named = 
 							{
@@ -943,7 +906,7 @@ Cog =
 							},
 							Transform = 
 							{
-								Vec3 Translation = [-0.03, 0, 1],
+								Vec3 Translation = [2.7655, -0.882791, 1],
 								Vec3 Scale = [2, 2, 1],
 								Quat Rotation = [0, 0, 0, 1],
 							},
