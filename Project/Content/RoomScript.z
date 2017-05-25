@@ -145,6 +145,10 @@ class RoomScript : ZilchComponent
                 if(door.Door.Direction == Directions.RIGHT)
                 {
                     posCheck += Integer2(1, 0);
+                    if(this.MapPosition == Integer2(1, 2))
+                    {
+                        door.Sprite.Color = Real4(1, 0, 0, 1);
+                    }
                 }
                 else if(door.Door.Direction == Directions.LEFT)
                 {
@@ -157,10 +161,14 @@ class RoomScript : ZilchComponent
                 else if(door.Door.Direction == Directions.DOWN)
                 {
                     posCheck += Integer2(0, 1);
+                    if(this.MapPosition == Integer2(2, 1))
+                    {
+                        door.Sprite.Color = Real4(1, 0, 0, 1);
+                    }
                     if(this.MapPosition == Integer2(2, 2))
                     {
+                        door.Sprite.Color = Real4(0, 1, 0, 1);
                         door.Door.SetActive(true);
-                        return;
                     }
                 }
                 if(posCheck.X < this.MapDimensions && posCheck.X >  -1 && posCheck.Y < this.MapDimensions && posCheck.Y > -1)
@@ -169,11 +177,17 @@ class RoomScript : ZilchComponent
                     if(this.Minimap.GetNodeState(posCheck) == MMNodeState.Unknown)
                         this.Minimap.SetNodeState(posCheck, MMNodeState.Unexplored);
                     if(posCheck.X + posCheck.Y == 4)
+                    {
                         door.Sprite.Color = Real4(1, 0, 0, 1);
-                    if(posCheck.X + posCheck.Y == 5)
+                    }
+                    else if(posCheck.X + posCheck.Y == 5)
+                    {
                         door.Sprite.Color = Real4(0, 1, 0, 1);
+                    }
                     else
+                    {
                         door.Sprite.Color = Real4(0, 0, 1, 1);
+                    }
                 }
             }
         }
