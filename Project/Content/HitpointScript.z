@@ -158,6 +158,15 @@ class HitpointScript : ZilchComponent
             this.Owner.Sprite.Color = Real4(1,0,0,0.9);
             
             this.HurtTimer -= event.Dt;
+            
+            if(this.Owner.Name == "Player")
+            {
+                this.Space.FindObjectByName("Flash").Sprite.Visible = true;
+                if(this.HurtTimer <= 0)
+                {
+                    this.Space.FindObjectByName("Flash").Sprite.Visible = false;
+                }
+            }
         }
         
         if(this.HurtTimer <= 0 && this.HurtBool == true)
