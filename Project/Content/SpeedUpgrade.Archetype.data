@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [6.20511, 1.0244, -0.000999451],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [2, 2, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -64,6 +64,6 @@ Cog =
 		string SpeedUpTexture = "599196b7342f5e62:Texture_SpeedUpgrade",
 		string HealthUpTexture = "5844c3b37b493413:SpikeAnim",
 		int HealthIncrease = 2,
-		int SpeedIncrease = 100,
+		int SpeedIncrease = 150,
 	},
 },
