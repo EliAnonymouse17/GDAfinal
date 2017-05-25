@@ -185,6 +185,8 @@ Level =
 			float HurtDuration = 0.1,
 			string SpawnOnDeath = "",
 			int SpawnCount = 1,
+			bool HealthDropBoolean = false,
+			int HealthDropChance = 6,
 			bool FlameImmune = false,
 		},
 		PlayerFade = 
@@ -1037,6 +1039,41 @@ Level =
 							},
 						},
 					},
+					Cog = 
+					{
+						LinkId = 
+						{
+							uint Id = 18,
+						},
+						Named = 
+						{
+							string Name = "Loading",
+						},
+						Transform = 
+						{
+							Vec3 Translation = [0, -2.5, -20],
+							Vec3 Scale = [25, 25, 1],
+							Quat Rotation = [0, 0, 0, 1],
+						},
+						Sprite = 
+						{
+							bool Visible = false,
+							bool VisibilityCulling = true,
+							bool VisibilityEvents = true,
+							bool CastShadows = false,
+							Vec4 Color = [1, 1, 1, 1],
+							BlendMode BlendMode = Alpha,
+							SpriteGeometryMode GeometryMode = ZPlane,
+							string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+							string SpriteSource = "59a232bbdd3afb0c:load",
+							bool RenderMask = false,
+							bool FlipX = false,
+							bool FlipY = false,
+							bool AnimationActive = true,
+							float AnimationSpeed = 1,
+							uint StartFrame = 0,
+						},
+					},
 				},
 			},
 		},
@@ -1045,7 +1082,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 18,
+			uint Id = 19,
 		},
 		Named = 
 		{
@@ -1065,7 +1102,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 24.365,
+			float Size = 98.8048,
 		},
 		EditorCameraController = 
 		{
@@ -1089,7 +1126,7 @@ Level =
 	{
 		LinkId = 
 		{
-			uint Id = 19,
+			uint Id = 20,
 		},
 		Named = 
 		{
@@ -1111,7 +1148,7 @@ Level =
 		string Name = "597b65f4bcfdc3f0:TMSquare22",
 		LinkId = 
 		{
-			uint Id = 20,
+			uint Id = 21,
 		},
 		Transform = 
 		{

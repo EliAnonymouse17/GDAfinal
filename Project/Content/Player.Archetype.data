@@ -79,6 +79,8 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
+		bool HealthDropBoolean = false,
+		int HealthDropChance = 6,
 		bool FlameImmune = false,
 	},
 	PlayerFade = 
@@ -929,6 +931,41 @@ Cog =
 								uint StartFrame = 0,
 							},
 						},
+					},
+				},
+				Cog = 
+				{
+					LinkId = 
+					{
+						uint Id = 17,
+					},
+					Named = 
+					{
+						string Name = "Sprite",
+					},
+					Transform = 
+					{
+						Vec3 Translation = [0, 0, -20],
+						Vec3 Scale = [25, 25, 1],
+						Quat Rotation = [0, 0, 0, 1],
+					},
+					Sprite = 
+					{
+						bool Visible = false,
+						bool VisibilityCulling = true,
+						bool VisibilityEvents = true,
+						bool CastShadows = false,
+						Vec4 Color = [1, 1, 1, 1],
+						BlendMode BlendMode = Alpha,
+						SpriteGeometryMode GeometryMode = ZPlane,
+						string SpriteLayer = "52ad5fa30d7fcd50:DefaultSpriteLayer",
+						string SpriteSource = "59a232bbdd3afb0c:load",
+						bool RenderMask = false,
+						bool FlipX = false,
+						bool FlipY = false,
+						bool AnimationActive = true,
+						float AnimationSpeed = 1,
+						uint StartFrame = 0,
 					},
 				},
 			},
