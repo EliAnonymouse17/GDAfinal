@@ -338,7 +338,6 @@ class BossAttackLogic : ZilchComponent
             if(this.AttackTimer3 <= 0 && this.IsBursting3 == false)
             {
                 this.Owner.Shoot.BulletType = this.BulletType3;
-
                 
                 
                 this.AttackTimer3 = this.AttackDelay3;
