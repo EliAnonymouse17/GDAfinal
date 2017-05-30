@@ -6,7 +6,7 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "Heart Pickup",
+		string Name = "Item",
 	},
 	Archetyped = 
 	{
