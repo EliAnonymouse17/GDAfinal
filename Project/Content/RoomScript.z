@@ -353,6 +353,7 @@ class RoomScript : ZilchComponent
                 if(this.World == 3)
                     enemies.Add(new RoomObject(Archetype.Pyromaniac, position));
             }
+            posArray.Add(position);
         }
         
         var itemNum = random.DieRoll(4) - 2 + Math.Floor(roomSize/2.0);
@@ -385,6 +386,7 @@ class RoomScript : ZilchComponent
             {
                 items.Add(new RoomObject(Archetype.HeartPickup, position));
             }
+            posArray.Add(position);
         }
         
         return new Room(enemies, items, tileMap, rotation, RoomType.BASIC, this.World);
@@ -549,6 +551,25 @@ class RoomScript : ZilchComponent
         return null;
     }
     
+    function CogToRoomObject(cog : Cog) : RoomObject
+    {
+        var archetypeName = cog.ArchetypeName;
+        var arch : Archetype = Archetype.HeartPickup;
+        if(archetypeName == "Blockade")
+        {
+            arch = Archetype.Blockade;
+        }
+        if(archetypeName == "Blockade2")
+        {
+            arch = Archetype.Blockade2;
+        }
+        if(archetypeName == "Blockade3")
+        {
+            arch = Archetype.Blockade3;
+        }
+        return RoomObject(arch, cog.Transform.Translation);
+    }
+    
     function OppositeDirection(direction : Directions) : Directions
     {
         if(direction == Directions.DOWN)
@@ -578,7 +599,12 @@ class RoomScript : ZilchComponent
     
     function NextRoom(direction : Directions)
     {
-        this.Map[this.MapPosition.X][this.MapPosition.Y] = new Room(new Array[RoomObject](), new Array[RoomObject](), this.CurrentRoom.TM, this.CurrentRoom.Rotation, this.CurrentRoom.Type, this.World);
+        var itemArray = new Array[RoomObject]();
+        foreach(var item in this.Space.FindAllObjectsByName("Item"))
+        {
+            itemArray.Add(this.CogToRoomObject(item));
+        }
+        this.Map[this.MapPosition.X][this.MapPosition.Y] = new Room(new Array[RoomObject](), itemArray, this.CurrentRoom.TM, this.CurrentRoom.Rotation, this.CurrentRoom.Type, this.World);
         this.Minimap.SetNodeState(this.MapPosition, MMNodeState.Complete);
         foreach (var bullet in this.Space.FindAllObjectsByName("Bullet"))
         {
