@@ -270,7 +270,7 @@ Level =
 		},
 		StartGameScript = 
 		{
-			string LevelToLoad = "582db5f31b57da50:PlaytestTutorial",
+			string LevelToLoad = "554cea0f94af672f:Level",
 		},
 		Reactive = 
 		{
@@ -367,7 +367,7 @@ Level =
 		},
 		StartGameScript = 
 		{
-			string LevelToLoad = "554cea0f94af672f:Level",
+			string LevelToLoad = "598dea04281989a8:Ragnar",
 		},
 		Reactive = 
 		{
