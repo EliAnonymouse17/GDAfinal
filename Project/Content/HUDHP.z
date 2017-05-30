@@ -74,6 +74,14 @@ class HUDHP : ZilchComponent
                 childHP.Sprite.Color = this.OriginalHealthColor;
             }
         }
+        if(playerHP > 2 && this.FlashingHealthBoolean == true)
+        {
+            this.FlashingHealthBoolean = false;
+            childHP.Transform.Scale = Real3(1, 1, 1);
+            this.FlashDurationTimer = this.FlashDuration;
+            this.FlashingHealthTimer = this.FlashingHealthDelay;
+            childHP.Sprite.Color = this.OriginalHealthColor;
+        }
         
     }
 }
