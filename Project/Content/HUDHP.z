@@ -56,7 +56,7 @@ class HUDHP : ZilchComponent
             if(this.FlashingHealthBoolean)
             {
                 this.FlashDurationTimer -= event.Dt;
-                childHP.Transform.Scale = Real3(1, 2, 1);
+                childHP.Transform.Scale = Real3(1, 1.5, 1);
                 childHP.Sprite.Color = this.FlashingHealthColor;
             }
             
