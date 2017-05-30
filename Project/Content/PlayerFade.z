@@ -59,6 +59,9 @@ class PlayerFade : ZilchComponent
             this.FadeIsActive = true;
             this.TimeLeft = this.Cooldown;
             
+            
+            this.Owner.SphericalParticleEmitter.Active = true;
+            
             var seq = Action.Sequence(this.Owner.Actions);
             Action.Property(seq, @this.Owner.Sprite.Color, Real4(1, 1, 1, 0.2), this.FadeDuration / 2, Ease.Linear);
         }
@@ -70,10 +73,14 @@ class PlayerFade : ZilchComponent
             Action.Property(seq, @this.Owner.Sprite.Color, Real4(1, 1, 1, 1), 0.25, Ease.Linear);
         }
         
+        
         if (this.Duration <= 0)
         {
             
             this.Owner.BoxCollider.CollisionGroup = CollisionGroup.Find("Player");
+            this.Owner.SphericalParticleEmitter.Active = false;
+            this.Owner.SphericalParticleEmitter.ResetCount();
+            Console.WriteLine(this.Owner.SphericalParticleEmitter.EmitCount);
             this.FadeIsActive = false;
             
             

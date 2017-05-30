@@ -6,7 +6,7 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "Sprite",
+		string Name = "Bullet",
 	},
 	Archetyped = 
 	{
@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [7.15145, 4.62185, -3.8147e-006],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [3.5, 3.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
