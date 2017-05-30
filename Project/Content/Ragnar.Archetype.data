@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-1, 6.5, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [2.5, 2.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -68,6 +68,8 @@ Cog =
 		float HurtDuration = 0.1,
 		string SpawnOnDeath = "",
 		int SpawnCount = 1,
+		bool HealthDropBoolean = false,
+		int HealthDropChance = 6,
 		bool FlameImmune = true,
 	},
 	Shoot = 
@@ -140,7 +142,7 @@ Cog =
 		float BurstDelay4 = 0.1,
 		int BurstCount4 = 25,
 		Vec4 Space4 = [1, 1, 1, 1],
-		float ChallengeAttackDelay2 = 15,
+		float ChallengeAttackDelay2 = 20,
 		float ChallengeBulletSpeed2 = 1000,
 		Enum ChallengeShotPattern2 = SINGLE,
 		string ChallengeBulletType2 = "5997083aad1f9206:RagnarLavaShot",
