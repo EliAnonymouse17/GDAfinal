@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [-0.12007, 5.25541, 0],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [2.5, 2.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
@@ -52,7 +52,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = true,
-		bool Mode2D = true,
+		bool Mode2D = false,
 		bool AllowSleep = false,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -66,8 +66,10 @@ Cog =
 		string HurtSound = "599e626aaf43bde3:Audio_HurtGiantSkeleton",
 		string DeathSound = "599e6349c93fc751:Audio_DeathGiantSkeleton",
 		float HurtDuration = 0.1,
-		string SpawnOnDeath = "",
+		string SpawnOnDeath = "59fa6ed722d7c717:GiantSkeletonDeath",
 		int SpawnCount = 1,
+		bool HealthDropBoolean = false,
+		int HealthDropChance = 6,
 		bool FlameImmune = false,
 	},
 	Shoot = 

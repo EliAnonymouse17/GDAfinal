@@ -1,0 +1,20 @@
+ImageContent = 
+{
+	SpriteSourceBuilder = 
+	{
+		string Name = "Animation_GiantskeletonDeath",
+		uint64 ResourceId = 59fa6ee6342085a1,
+		uint64 AtlasId = 5274cf95e4a661fd,
+		uint FrameSizeX = 32,
+		uint FrameSizeY = 64,
+		uint FrameCount = 19,
+		float FrameDelay = 0.125,
+		float OriginX = 16,
+		float OriginY = 32,
+		float PixelsPerUnit = 32,
+		bool Smoothing = false,
+		bool Looping = false,
+		Vec4 Slices = [0, 0, 0, 0],
+		SpriteFill Fill = Stretch,
+	},
+},
