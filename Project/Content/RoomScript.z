@@ -370,7 +370,7 @@ class RoomScript : ZilchComponent
                 position = this.GetPosition(random.DieRoll(roomSize), random.DieRoll(9), tileMap, rotation);
                 for(var j = 0; j < posArray.Count; j += 1)
                 {
-                    if (Math.Length(posArray[j] - position) < 3)
+                    if (Math.Length(posArray[j] - position) < 2)
                     {
                         inArray = true;
                     }
