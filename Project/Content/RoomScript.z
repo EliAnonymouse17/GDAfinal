@@ -304,8 +304,8 @@ class RoomScript : ZilchComponent
         rotation = (random.DieRoll(4) - 1) * 90;
         
         var enemyNum = random.DieRoll(4) + Math.Ceil(roomSize/4) + Math.Floor((this.MapPosition.X + this.MapPosition.Y)/2) - 2;
-        if(enemyNum < 1)
-            enemyNum = 1;
+        if(enemyNum <= 1)
+            enemyNum = 2;
         var inArray = false;
         var posArray = new Array[Real3]();
         var position = Real3(0, 0, 0);

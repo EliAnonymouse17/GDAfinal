@@ -6,7 +6,7 @@ Cog =
 	},
 	Named = 
 	{
-		string Name = "LibrarianDeath",
+		string Name = "Item",
 	},
 	Archetyped = 
 	{
@@ -14,7 +14,7 @@ Cog =
 	},
 	Transform = 
 	{
-		Vec3 Translation = [4.04843, 6.94699, 3.37935e-007],
+		Vec3 Translation = [0, 0, 0],
 		Vec3 Scale = [1.5, 1.5, 1],
 		Quat Rotation = [0, 0, 0, 1],
 	},
