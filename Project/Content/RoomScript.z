@@ -129,6 +129,10 @@ class RoomScript : ZilchComponent
                 this.Space.FindObjectByName("Loading").Sprite.Visible = false;
             }
         }
+        if(this.World == 4)
+        {
+            this.Space.LoadLevel(Level.WinLevel);
+        }
         if(this.AttackDelay > 0)
             this.AttackDelay -= event.Dt;
         this.CheckTimer -= event.Dt;
@@ -196,10 +200,7 @@ class RoomScript : ZilchComponent
     
     function InitMap() : Array[Array[Room]]
     {
-        if(this.World == 4)
-        {
-            this.Space.LoadLevel(Level.WinLevel);
-        }
+        
         var random = Random();
         var map = new Array[Array[Room]]();
         for(var i = 0; i < this.MapDimensions; ++i)
