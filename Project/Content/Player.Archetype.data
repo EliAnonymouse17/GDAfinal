@@ -222,7 +222,7 @@ Cog =
 	AcidPoolPlayerShoot = 
 	{
 		Enum SpellType = ACIDPOOL,
-		bool UnlockAtStart = true,
+		bool UnlockAtStart = false,
 		string SpellName = "Acid Pool",
 		string BulletSprite = "59c395ad9a232790:Animation_AcidPool",
 		int SpreadBullets = 3,
