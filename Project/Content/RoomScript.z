@@ -196,6 +196,10 @@ class RoomScript : ZilchComponent
     
     function InitMap() : Array[Array[Room]]
     {
+        if(this.World == 4)
+        {
+            this.Space.LoadLevel(Level.WinLevel);
+        }
         var random = Random();
         var map = new Array[Array[Room]]();
         for(var i = 0; i < this.MapDimensions; ++i)

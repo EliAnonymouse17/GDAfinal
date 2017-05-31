@@ -101,10 +101,6 @@ Cog =
 		float HealthBarSize = 15,
 		string HealthBarName = "BossHealthBar",
 	},
-	ChangeLevelOnDeath = 
-	{
-		string LevelToLoad = "59df84c1f2e0c939:WinLevel",
-	},
 	BossAttackLogic = 
 	{
 		string StandTexture = "59dad58c23978aa2:Texture_RagnarIdle0",
