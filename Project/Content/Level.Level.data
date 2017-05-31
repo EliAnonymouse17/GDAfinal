@@ -146,7 +146,7 @@ Level =
 			float FieldOfView = 45,
 			float NearPlane = 0.5,
 			float FarPlane = 500,
-			float Size = 73.1967,
+			float Size = 49.0652,
 		},
 		EditorCameraController = 
 		{
@@ -184,7 +184,7 @@ Level =
 		},
 		RoomScript = 
 		{
-			int World = 1,
+			int World = 3,
 		},
 	},
 	ArchetypeInstance = 

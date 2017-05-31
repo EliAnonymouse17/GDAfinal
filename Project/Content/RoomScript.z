@@ -312,9 +312,16 @@ class RoomScript : ZilchComponent
         }
         if(enemyNum <= 1)
         {
-            Console.WriteLine(enemyNum);
-            enemyNum = 2;
+            if(this.World != 3)
+            {
+                enemyNum = 2;
+            }
+            else
+            {
+                enemyNum = 3;
+            }
         }
+        Console.WriteLine(enemyNum);
         var inArray = false;
         var posArray = new Array[Real3]();
         var position = Real3(0, 0, 0);
