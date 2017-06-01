@@ -42,7 +42,7 @@ Cog =
 		bool Asleep = false,
 		bool Kinematic = false,
 		bool RotationLocked = false,
-		bool Mode2D = false,
+		bool Mode2D = true,
 		bool AllowSleep = true,
 		bool Inherit2DMode = true,
 		Vec3 Velocity = [0, 0, 0],
@@ -54,6 +54,8 @@ Cog =
 		int PRVHitCount = 1,
 		string SpawnOnDeath = "",
 		string SpawnOnDeath2 = "",
+		bool Flaming = false,
+		float FlamingTime = 1,
 	},
 	BoxCollider = 
 	{
@@ -75,7 +77,7 @@ Cog =
 	PointTowards = 
 	{
 		Enum TrackedCog = PLAYER,
-		float Speed = 9,
+		float Speed = 7,
 		float Radians = 0.1,
 	},
 	SpriteParticleSystem = 
@@ -140,5 +142,8 @@ Cog =
 	DestroyTimer = 
 	{
 		float Time = 2.9,
+		float Time2 = 0.4,
+		bool Random = false,
+		bool Warp = true,
 	},
 },
