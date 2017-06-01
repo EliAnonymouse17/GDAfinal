@@ -305,14 +305,18 @@ class RoomScript : ZilchComponent
         
         var enemyNumCoinFlip = random.DieRoll(2);
         
-        var enemyNum = random.DieRoll(4) + Math.Ceil(roomSize/4) + Math.Floor((this.MapPosition.X + this.MapPosition.Y + 1)/2) - 1;
+        var enemyNum = random.DieRoll(4) + Math.Ceil(roomSize/4) + Math.Floor((this.MapPosition.X + this.MapPosition.Y + 1)/2) - 4 + this.World;
         if(enemyNumCoinFlip == 2)
         {
             enemyNum += 1;
         }
         if(enemyNum <= 1)
         {
-            if(this.World != 3)
+            if(this.World == 1)
+            {
+                enemyNum = random.DieRoll(2);
+            }
+            else if(this.World == 2)
             {
                 enemyNum = 2;
             }

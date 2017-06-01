@@ -46,7 +46,7 @@ Cog =
 	EnemyShoot = 
 	{
 		float BulletDelay = 2,
-		float BulletSpeed = 240,
+		float BulletSpeed = 350,
 		Enum ShotPattern = RING,
 		string ShootSound = "",
 		string WalkAnimation = "",
