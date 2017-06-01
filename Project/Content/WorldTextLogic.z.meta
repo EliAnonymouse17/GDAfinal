@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "WorldTextLogic",
+		uint64 ResourceId = 59fb4fbe983965e2,
+	},
+},
