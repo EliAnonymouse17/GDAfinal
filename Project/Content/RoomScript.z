@@ -668,8 +668,6 @@ class RoomScript : ZilchComponent
                     this.Minimap.SetNodeState(Integer2(i, j), MMNodeState.Unknown);
                 }
             }
-            if(this.World == 3)
-                this.Space.FindObjectByName("LibrarianDeath").Destroy();
         }
         else
             this.CurrentRoom = this.Map[this.MapPosition.X as Integer][this.MapPosition.Y as Integer];
