@@ -20,10 +20,10 @@ Cog =
 	},
 	SpellDrop = 
 	{
-		Enum SpellDrop1 = BLACKHOLE,
+		Enum SpellDrop1 = EXPLODINGBULLET,
 		Enum SpellDrop2 = RINGOFFIRE,
 		Enum SpellDrop3 = VAMPIREBAT,
-		string SpellDropSprite1 = "5274db4c2e7c11f9:Circle",
+		string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
 		string SpellDropSprite2 = "59f2c332ac949314:Texture_FlamingBullet",
 		string SpellDropSprite3 = "5991a8d66cbccab3:Animation_VampireBat",
 		bool TreasureDropBool = true,

@@ -92,7 +92,7 @@ Cog =
 		Enum SpellDrop2 = RINGOFFIRE,
 		Enum SpellDrop3 = ACIDPOOL,
 		string SpellDropSprite1 = "5844c21540463a97:Texture_SpikeBall",
-		string SpellDropSprite2 = "587c2b12779d37c6:Texture_MagicMissle",
+		string SpellDropSprite2 = "59f2c332ac949314:Texture_FlamingBullet",
 		string SpellDropSprite3 = "59c395ad9a232790:Animation_AcidPool",
 		bool TreasureDropBool = false,
 	},
