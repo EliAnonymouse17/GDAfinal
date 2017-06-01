@@ -66,8 +66,10 @@ Cog =
 		string HurtSound = "",
 		string DeathSound = "",
 		float HurtDuration = 0.1,
-		string SpawnOnDeath = "59a1aa372822187a:BTWText",
-		int SpawnCount = 0,
+		string SpawnOnDeath = "59b54fb4181f6d38:HamburgerWizardDeath",
+		int SpawnCount = 1,
+		bool HealthDropBoolean = false,
+		int HealthDropChance = 6,
 		bool FlameImmune = false,
 	},
 	Shoot = 

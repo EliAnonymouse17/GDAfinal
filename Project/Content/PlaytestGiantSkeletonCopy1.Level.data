@@ -502,4 +502,22 @@ Level =
 			string Name = "Enemy",
 		},
 	},
+	ArchetypeInstance = 
+	{
+		string Name = "585ef838d9e4b2d5:HamburgerWizard",
+		LinkId = 
+		{
+			uint Id = 16,
+		},
+		Transform = 
+		{
+			Vec3 Translation = [-1.11182, 0.150092, 0],
+			Vec3 Scale = [2.5, 2.5, 1],
+			Quat Rotation = [0, 0, 0, 1],
+		},
+		Named = 
+		{
+			string Name = "Enemy",
+		},
+	},
 },

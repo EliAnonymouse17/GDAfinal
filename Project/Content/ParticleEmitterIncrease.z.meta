@@ -1,0 +1,8 @@
+TextContent = 
+{
+	ZilchScriptBuilder = 
+	{
+		string Name = "ParticleEmitterIncrease",
+		uint64 ResourceId = 59b55006c0404a3c,
+	},
+},

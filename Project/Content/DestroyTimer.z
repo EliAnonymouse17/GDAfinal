@@ -41,12 +41,17 @@ class DestroyTimer : ZilchComponent
         this.RandomTime -= event.Dt;
         if (this.Time <= 0 && !this.Random)
         {
-            this.Owner.Destroy();
+            this.DelayedDestroy();
         }
         
         if (this.RandomTime <= 0 && this.Random)
         {
-            this.Owner.Destroy();
+            this.DelayedDestroy();
         }
+    }
+    
+    function DelayedDestroy()
+    {
+        this.Owner.Destroy();
     }
 }

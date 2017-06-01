@@ -1,0 +1,38 @@
+class ParticleEmitterIncrease : ZilchComponent
+{
+    
+    var InvisTimer : Real = 1;
+    
+    var ParticleSystem : Cog = null;
+    
+    var InvisBool : Boolean = false;
+    
+    function Initialize(init : CogInitializer)
+    {
+        this.ParticleSystem = this.Owner.FindChildByName("TeleportParticle");
+        
+        Zero.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+    }
+
+    function OnLogicUpdate(event : UpdateEvent)
+    {
+        this.InvisTimer -= event.Dt;
+        
+        if(this.InvisTimer <= 0)
+        {
+            this.InvisBool = true;
+        }
+        
+        if(!this.InvisBool)
+        {
+            this.ParticleSystem.SphericalParticleEmitter.EmitRate += 10;
+        }
+        else
+        {
+            this.Owner.Sprite.Visible = false;
+            
+            this.ParticleSystem.SphericalParticleEmitter.EmitRate -= 20;
+        }
+        
+    }
+}
